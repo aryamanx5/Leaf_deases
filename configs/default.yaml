@@ -16,6 +16,34 @@ paths:
 crops: [turmeric, blackgram]
 labels: [healthy, diseased]
 
+# Public datasets (Mendeley Data). Files are fetched through the public API and
+# verified against the sha256 the API reports. Original class folder names are
+# mapped to healthy/diseased; classes mapped to null are excluded (not leaves).
+datasets:
+  blackgram:
+    mendeley_id: zfcv9fmrgv
+    version: 3
+    files: ["BPLD Dataset.zip"]
+    citation: "Talasila et al., Black gram Plant Leaf Disease (BPLD) dataset, Data in Brief 45 (2022) 108725, doi:10.17632/zfcv9fmrgv.3"
+    class_map:
+      healthy: healthy
+      anthracnose: diseased
+      leaf crinkle: diseased
+      leaf crinckle: diseased    # spelling used in the BPLD archive
+      powdery mildew: diseased
+      yellow mosaic: diseased
+  turmeric:
+    mendeley_id: g46dvrcvwn
+    version: 2
+    files: ["Turmeric Plant Disease.zip"]   # original images only; the augmented zip is NOT used (R2)
+    citation: "A data-driven approach to turmeric disease detection: Dataset for plant condition classification, Data in Brief 59 (2025) 111435, doi:10.17632/g46dvrcvwn.2"
+    class_map:
+      healthy leaf: healthy
+      leaf blotch: diseased
+      dry leaf: diseased
+      rhizome disease root: null      # rhizome (root) images are not leaves: excluded
+      rhizome healthy root: null
+
 split:
   ratios: {train: 0.70, val: 0.15, test: 0.15}
   phash_size: 8            # 8x8 -> 64-bit perceptual hash
@@ -29,7 +57,21 @@ preprocess:
   clahe_clip: 2.0
   clahe_tile: 8
 
-segment: {}
+segment:
+  hue_min: 8              # OpenCV hue 0-180; 8 ~ brown/orange, 95 ~ blue-green
+  hue_max: 95
+  sat_min: 22             # dull dark leaves on cloth can be as low as ~25
+  val_min: 30
+  pale_sat_min: 12        # pale tissue: mildew / chlorosis
+  pale_val_min: 140
+  grabcut_side: 256       # GrabCut runs on a downscaled copy for speed
+  grabcut_iters: 5
+  centre_frac: 0.75       # central ellipse treated as probable leaf
+  core_frac: 0.20         # central core treated as definite leaf (if plant-coloured)
+  border_frac: 0.03       # outer border treated as definite background
+  open_ksize: 5
+  close_ksize: 9
+  fallback_min_coverage: 0.08   # below this GrabCut is assumed to have collapsed
 lesions: {}
 features: {}
 decide: {}
