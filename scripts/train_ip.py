@@ -66,7 +66,7 @@ def main() -> int:
     print(f"SVM grid search {time.time() - t0:.0f}s best {search.best_params_} CV macro-F1 {search.best_score_:.3f}")
 
     preds = []
-    for name, part in (("val", val), ("test", test)):
+    for part in (val, test):
         part = part.assign(rule_score=rule.score(part).to_numpy(), rule_pred=rule.predict(part),
                            svm_score=svm.decision_function(svm_matrix(part)),
                            svm_pred=svm.predict(svm_matrix(part)))
