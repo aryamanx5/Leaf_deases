@@ -114,7 +114,6 @@ with tab_an:
                 st.dataframe(pd.Series(res["features"], name="value").round(4), width="stretch")
 
 with tab_res:
-    st.subheader("Comparison on the identical leakage-free TEST split")
     md = RESULTS / "comparison.md"
     if md.exists():
         st.markdown(md.read_text())

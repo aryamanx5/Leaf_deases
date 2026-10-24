@@ -15,7 +15,7 @@
 | T08 | Stage 2b: CNN training + evaluation | DONE | Evidence log T08 |
 | T09 | Comparison | DONE | Evidence log T09 |
 | T10 | Unified inference pipeline | DONE | Evidence log T10 |
-| T11 | Demo app | TODO | |
+| T11 | Demo app | DONE | Evidence log T11 |
 | T12 | Tests, lint, quality | TODO | |
 | T13 | Documentation + report | TODO | |
 | T14 | Final verification | TODO | |
@@ -23,6 +23,10 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-25 T11 Demo app
+- `streamlit run app/streamlit_app.py` started (built-in browser preview on :8501, no server errors in the log). Screenshots inspected: Analyze tab shows the card `Crop: Black Gram / Prediction: Diseased / Affected Region: 22.8% / CNN Confidence: 100%` for TEST sample 114p.jpg (powdery mildew), the Original -> Segmented Leaf -> Detected Abnormal Regions strip + Grad-CAM, "Image Processing says Diseased (SVM) | CNN says Diseased (confidence 100%)" with an AGREE badge and rule components; Results tab renders comparison.md, comparison.csv and figures.
+- `pytest tests/test_app.py` (Streamlit AppTest, headless) -> `1 passed` (no exceptions, four-line card present, two tabs).
 
 ### 2026-10-24 T10 Unified inference pipeline
 - `pytest tests/test_pipeline.py` -> `3 passed` (synthetic leaf with user crop; 5 real TEST images with `affected_region_pct == features.csv affected_pct` (abs 1e-9) + auto crop via CNN; corrupt bytes / 20x20 image -> InvalidImageError, plain blue card / grey frame -> NotALeafError, unknown crop -> ValueError).
@@ -128,4 +132,4 @@
 
 ## NEXT
 
-T11: start the Streamlit app, screenshot both tabs in the browser, confirm AppTest smoke test passes.
+T12: full pytest + ruff, remove dead code.
