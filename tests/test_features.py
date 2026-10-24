@@ -29,8 +29,8 @@ def test_no_lesion_and_failed_segmentation_are_finite():
 
 def test_diseased_leaf_has_higher_affected_pct_than_healthy():
     healthy, _, _ = make_leaf("grey", seed=5)
-    sick, _, _ = make_leaf("grey", seed=5, lesions=[{"centre": (0.4, 0.5), "radius": 30, "colour": "brown"},
-                                                     {"centre": (0.65, 0.5), "radius": 25, "colour": "yellow"}])
+    sick, _, _ = make_leaf("grey", seed=5, lesions=[{"centre": (0.3, 0.5), "radius": 22, "colour": "brown"},
+                                                     {"centre": (0.72, 0.5), "radius": 18, "colour": "yellow"}])
     fh = stage1(healthy, CFG, "blackgram")["features"]
     fs = stage1(sick, CFG, "blackgram")["features"]
     assert fs["affected_pct"] > fh["affected_pct"] + 5

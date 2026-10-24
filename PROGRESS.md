@@ -28,7 +28,7 @@
 - `python scripts/extract_features.py` -> `Wrote data/processed/features.csv: 1606 rows x 57 features in 248s`; `non-finite values: 0; rows with missing features: 0; seg_failed: 0`; stage1 median 603 ms/image under parallel load. Cache: data/processed/cache/features_<config-hash>/.
 - results/feature_list.txt lists the 57 features in order + degenerate-case handling.
 - Segmentation mode by stratum: blackgram_diseased plain 203 / field 583; blackgram_healthy plain 67 / field 154; turmeric all plain except 1.
-- `pytest tests/test_features.py` -> `4 passed` (fixed order + finite; no-lesion and failed-segmentation cases finite; synthetic diseased > healthy affected-%; real file one row per image, all finite).
+- `pytest tests/test_features.py` -> `4 passed` (after fixing the first version of the diseased-vs-healthy test, whose two painted lesions overlapped and were correctly detected as one) (fixed order + finite; no-lesion and failed-segmentation cases finite; synthetic diseased > healthy affected-%; real file one row per image, all finite).
 
 ### 2026-10-24 T04 Disease region detection
 - `pytest tests/test_lesions.py` -> `9 passed` (painted brown/yellow/dark lesions on paper and field backgrounds: area within 15% of truth and count == 3; healthy synthetic leaf 0 lesions; min-area filter + circularity).
