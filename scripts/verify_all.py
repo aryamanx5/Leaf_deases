@@ -52,6 +52,11 @@ def check_artefacts() -> tuple[bool, str]:
 
 def _resolve(src: dict) -> float:
     f = ROOT / src["file"]
+    if "config" in src:
+        v = load_config()
+        for k in src["config"]:
+            v = v[k]
+        return float(v)
     if "keys" in src:
         v = json.loads(f.read_text())
         for k in src["keys"]:
@@ -67,11 +72,6 @@ def _resolve(src: dict) -> float:
         for k, val in src["count_where"].items():
             df = df[df[k] == val]
         return float(len(df))
-    if "config" in src:
-        v = load_config()
-        for k in src["config"]:
-            v = v[k]
-        return float(v)
     raise ValueError(src)
 
 
@@ -80,6 +80,14 @@ def check_report() -> tuple[bool, str]:
 
     rep = (ROOT / "results/REPORT.md").read_text()
     recs = json.loads((ROOT / "results/report_numbers.json").read_text())
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from make_report import build  # noqa: PLC0415
+
+    fresh, _ = build()
+    if fresh != rep:
+        diff = next(i for i, (a, b) in enumerate(zip(fresh.splitlines(), rep.splitlines(), strict=False)) if a != b) \
+            if any(a != b for a, b in zip(fresh.splitlines(), rep.splitlines(), strict=False)) else None
+        return False, f"REPORT.md differs from a fresh render of the results files (first differing line {diff})"
     stale = []
     for r in recs:
         v = _resolve(r["source"])
@@ -92,7 +100,7 @@ def check_report() -> tuple[bool, str]:
     unknown = sorted({t for t in NUM.findall(body)
                       if (len(t.strip("-%")) > 1 or "." in t) and t not in known and t.rstrip("%") not in known})
     ok = not stale and not unknown
-    msg = f"{len(recs)} numbers re-read from sources"
+    msg = f"identical to a fresh render; {len(recs)} numbers re-read from sources"
     if stale:
         msg += f"; {len(stale)} stale e.g. {stale[:2]}"
     if unknown:

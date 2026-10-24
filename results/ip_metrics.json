@@ -429,10 +429,10 @@
   },
   "inference_time": {
     "n_images": 40,
-    "stage1_ms_median": 161.25310398638248,
-    "stage1_ms_mean": 463.6961406751652,
-    "decision_ms_median": 6.313479476375505,
-    "total_ms_median": 173.77485349425115,
+    "stage1_ms_median": 114.15618800674565,
+    "stage1_ms_mean": 446.0476052190643,
+    "decision_ms_median": 6.245395517908037,
+    "total_ms_median": 119.61304198484868,
     "note": "single process, image already decoded; includes pre-processing, segmentation, lesions, features"
   }
 }

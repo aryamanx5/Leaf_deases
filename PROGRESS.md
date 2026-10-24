@@ -18,11 +18,18 @@
 | T11 | Demo app | DONE | Evidence log T11 |
 | T12 | Tests, lint, quality | DONE | Evidence log T12 |
 | T13 | Documentation + report | DONE | Evidence log T13 |
-| T14 | Final verification | TODO | |
+| T14 | Final verification | DONE | Evidence log T14 |
 
 ## Evidence log
 
 (newest first)
+
+### 2026-10-25 T14 Final verification
+- `python scripts/verify_all.py` (full) -> exit 0:
+  `lint (ruff) PASS`; `all tests incl. pipeline + app smoke PASS 47 passed`; `split leakage PASS 0 clusters span splits; 1606 images`; `artefacts PASS all present`; `REPORT.md numbers vs sources PASS identical to a fresh render; 498 numbers re-read from sources`; `comparison.md numbers in comparison.csv PASS`; `OVERALL: PASS`.
+- `verify_all.py --quick` -> PASS (lint, unit tests without app/pipeline, leakage).
+- Checker self-test: editing one number in REPORT.md (1548 -> 1549) and, separately, swapping a number for another valid one (0.935 -> 0.991) both make the report check FAIL; regenerating restores PASS. The second case led to the fresh-render comparison being added.
+- Re-ran `make data splits features train-ip compare report`: splits.csv byte-identical (md5 919846308c8edef2ad552c38fe36c8c9), IP metrics identical; only wall-clock timings changed (Stage 1 + decision median 173.8 -> 119.6 ms/image; timing is load-dependent). Comparison and report regenerated from the new timings. The CNN was not retrained in this re-run (MPS is not bit-deterministic; models/cnn_best.pt from T08 is used).
 
 ### 2026-10-25 T13 Documentation + report
 - `make report` -> `wrote results/REPORT.md (212 lines, 498 recorded numbers)`; deleting REPORT.md + report_numbers.json and re-running `make report` gives a byte-identical file (`cmp` -> identical).
@@ -143,4 +150,4 @@
 
 ## NEXT
 
-T14: run scripts/verify_all.py (full) and fix whatever fails.
+All tasks T00-T14 DONE and verify_all.py exits 0. Possible follow-ups (out of current scope): disease-type classification, cross-region test data, second CNN seed / EfficientNet-B0 run.

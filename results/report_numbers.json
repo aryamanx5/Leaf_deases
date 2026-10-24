@@ -4962,8 +4962,8 @@
   }
  },
  {
-  "text": "173.8",
-  "value": 173.77485349425115,
+  "text": "119.6",
+  "value": 119.61304198484868,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -4976,8 +4976,8 @@
   }
  },
  {
-  "text": "173.8",
-  "value": 173.77485349425115,
+  "text": "119.6",
+  "value": 119.61304198484868,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",

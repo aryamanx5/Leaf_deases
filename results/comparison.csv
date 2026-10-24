@@ -134,8 +134,8 @@ confusion,cnn,turmeric,tn,29.0
 confusion,cnn,turmeric,fp,0.0
 confusion,cnn,turmeric,fn,0.0
 confusion,cnn,turmeric,tp,60.0
-inference,rule_based,overall,ms_per_image,173.77485349425115
-inference,svm,overall,ms_per_image,173.77485349425115
+inference,rule_based,overall,ms_per_image,119.61304198484868
+inference,svm,overall,ms_per_image,119.61304198484868
 inference,cnn_cpu,overall,ms_per_image,48.18129100021906
 inference,cnn_accelerator,overall,ms_per_image,35.76733299996704
 per_class,rule_based,anthracnose,accuracy,0.8666666666666667
