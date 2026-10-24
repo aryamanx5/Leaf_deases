@@ -14,7 +14,7 @@
 | T07 | Stage 2a: CNN data + model | DONE | Evidence log T07 |
 | T08 | Stage 2b: CNN training + evaluation | DONE | Evidence log T08 |
 | T09 | Comparison | DONE | Evidence log T09 |
-| T10 | Unified inference pipeline | TODO | |
+| T10 | Unified inference pipeline | DONE | Evidence log T10 |
 | T11 | Demo app | TODO | |
 | T12 | Tests, lint, quality | TODO | |
 | T13 | Documentation + report | TODO | |
@@ -23,6 +23,10 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-24 T10 Unified inference pipeline
+- `pytest tests/test_pipeline.py` -> `3 passed` (synthetic leaf with user crop; 5 real TEST images with `affected_region_pct == features.csv affected_pct` (abs 1e-9) + auto crop via CNN; corrupt bytes / 20x20 image -> InvalidImageError, plain blue card / grey frame -> NotALeafError, unknown crop -> ValueError).
+- Example `analyze(<black gram yellow mosaic TEST image>)` printed the four-line card (see app check in T11).
 
 ### 2026-10-24 T09 Comparison + leakage ablation
 - `python scripts/run_comparison.py` -> identical TEST split (n=239; black gram 150, turmeric 89). Macro-F1 [95% bootstrap CI]: rule-based 0.839 [0.780, 0.892], SVM 0.935 [0.896, 0.968], CNN 0.978 [0.954, 0.995]; ROC-AUC 0.924 / 0.981 / 0.999.
@@ -120,6 +124,8 @@
 - Comparison (T09): every reported number lives in the long-format results/comparison.csv (section, method, scope, metric, value); comparison.md is rendered from it and checked automatically (no number in the markdown may be missing from the CSV). Bootstrap CIs (1000 resamples) and an exact McNemar test qualify the differences; wording ("higher/lower, CIs overlap") is generated from the numbers.
 - Leakage ablation uses a frozen ImageNet MobileNetV2 + logistic-regression head instead of the fine-tuned CNN, because the fine-tuned CNN has already seen clean-TRAIN images that a naive split would place in TEST. Augmented copies exist only in the cache, never in data/raw.
 
+- Pipeline headline prediction (T10): when SVM and CNN agree, that label; when they disagree, the method with the higher measured TEST macro-F1 in results/comparison.csv decides (CNN at present), and the card says the methods disagree. Both individual predictions are always shown.
+
 ## NEXT
 
-T10: record pipeline evidence (tests/test_pipeline.py already passing) and commit.
+T11: start the Streamlit app, screenshot both tabs in the browser, confirm AppTest smoke test passes.
