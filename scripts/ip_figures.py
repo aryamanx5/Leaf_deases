@@ -21,6 +21,7 @@ import pandas as pd
 from joblib import Parallel, delayed
 
 from leafdx.config import ROOT, load_config, path
+from leafdx.ip.lesions import detect_lesions, overlay_lesions
 from leafdx.ip.preprocess import load_bgr, preprocess
 from leafdx.ip.segment import is_single_dominant, segment_leaf
 from leafdx.viz import contact_sheet, overlay_mask
@@ -72,6 +73,52 @@ def stage_segment(df: pd.DataFrame, cfg: dict) -> int:
     return 0 if result["single_dominant_rate"] >= 0.9 else 1
 
 
+def _lesion_stats(r, cfg: dict) -> dict:
+    out = _segment(r.path, cfg)
+    res = detect_lesions(out["pre"], out["seg"]["leaf_mask"], cfg, r.crop)
+    return {"path": r.path, "crop": r.crop, "label": r.label, "orig_class": r.orig_class,
+            "affected_pct": res["affected_pct"], "lesion_count": res["lesion_count"], **res["class_pct"]}
+
+
+def stage_lesions(df: pd.DataFrame, cfg: dict) -> int:
+    seed = cfg["seed"]
+    for label in ("diseased", "healthy"):
+        sub = df[df.label == label]
+        sample = sub.groupby("crop").sample(12, random_state=seed)
+        rows, titles = [], []
+        for r in sample.itertuples():
+            out = _segment(r.path, cfg)
+            pre, seg = out["pre"], out["seg"]
+            res = detect_lesions(pre, seg["leaf_mask"], cfg, r.crop)
+            rows.append([pre["resized"], seg["segmented"], res["lesion_mask"],
+                         overlay_lesions(pre["resized"], seg["leaf_mask"], res)])
+            titles.append([f"{r.crop} {r.orig_class}", "segmented leaf", "abnormal mask",
+                           f"{res['affected_pct']:.1f}% n={res['lesion_count']}"])
+        sheet = contact_sheet([rows[i] + rows[i + 1] for i in range(0, len(rows), 2)],
+                              [titles[i] + titles[i + 1] for i in range(0, len(rows), 2)], size=170)
+        fig = path("figures", cfg) / f"lesion_samples_{label}.png"
+        cv2.imwrite(str(fig), sheet)
+        print(f"saved {fig.relative_to(ROOT)}")
+
+    check = df.groupby("stratum").sample(60, random_state=seed)
+    stats = pd.DataFrame(Parallel(n_jobs=-1)(delayed(_lesion_stats)(r, cfg) for r in check.itertuples()))
+    by = stats.groupby(["crop", "label"]).affected_pct.agg(["mean", "median", "count"]).round(2)
+    by_class = stats.groupby("orig_class")[["affected_pct", "lesion_count", "yellow", "brown", "dark", "pale"]].mean().round(2)
+    means = stats.groupby("label").affected_pct.mean()
+    result = {
+        "n_images": len(stats),
+        "mean_affected_pct": {"healthy": float(means["healthy"]), "diseased": float(means["diseased"])},
+        "by_crop_label": {f"{c}_{lab}": row.to_dict() for (c, lab), row in by.iterrows()},
+        "by_orig_class": by_class.to_dict(orient="index"),
+    }
+    (path("results", cfg) / "lesion_check.json").write_text(json.dumps(result, indent=2))
+    print(by.to_string())
+    print(by_class.to_string())
+    print(f"mean affected-%: healthy {means['healthy']:.2f} vs diseased {means['diseased']:.2f}")
+    ok = all(by.loc[(c, "healthy"), "mean"] < 0.5 * by.loc[(c, "diseased"), "mean"] for c in cfg["crops"])
+    return 0 if ok else 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", choices=["segment", "lesions"], required=True)
@@ -82,9 +129,7 @@ def main() -> int:
     np.random.seed(cfg["seed"])
     if args.stage == "segment":
         return stage_segment(df, cfg)
-    from leafdx.ip.lesions import stage_lesions_figure  # noqa: PLC0415 (added in T04)
-
-    return stage_lesions_figure(df, cfg)
+    return stage_lesions(df, cfg)
 
 
 if __name__ == "__main__":

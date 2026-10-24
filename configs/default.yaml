@@ -93,7 +93,42 @@ segment:
   fallback_max_coverage: 0.95   # a colour fallback covering the whole frame is not a leaf
   solidity_margin: 0.03         # core-seeded GrabCut must beat loose seeding by this much
   quality: {min_dominant_share: 0.8, min_coverage: 0.05, max_coverage: 0.95}
-lesions: {}
+lesions:
+  # Calibrated on TRAIN leaf-pixel statistics (OpenCV HSV: H 0-180; Lab offset 128).
+  # healthy hue median: black gram ~50, turmeric ~41; yellow-mosaic/blotch/dry pixels
+  # concentrate at H 20-30, brown/necrotic at H < 20.
+  default:
+    green_hue_min: 34
+    green_hue_max: 85
+    green_sat_min: 40
+    min_green_px: 200
+    default_green_hue: 45
+    yellow_hue_gap: 9        # yellow = hue at least this far below the leaf's own green ...
+    yellow_hue_max: 33       # ... and below this absolute hue
+    yellow_sat_min: 70
+    yellow_val_min: 80
+    brown_hue_max: 20        # brown/orange: hue < 20 ...
+    red_hue_min: 150         # ... or red/purple hue >= 150 (anthracnose margins)
+    brown_sat_min: 45
+    dark_val_ratio: 0.45     # darker than 45% of the leaf's median V (or dark_val_abs) ...
+    dark_val_abs: 55         # absolute floor: a fully necrotic leaf has no green reference
+    dark_sat_max: 50         # ... with non-green hue or low saturation
+    pale_chroma_ratio: 0.65  # powdery mildew: chroma below 65% of the leaf's ...
+    pale_l_gain: 15          # ... and lighter than the leaf by this much (grid on train: mildew 8.6% vs healthy 0.9%)
+    pale_l_max: 235          # ... but not a specular highlight
+    hyst_l_weight: 0.5       # hysteresis: relaxed mask = Lab distance from reference green ...
+    hyst_dist_min: 38        # ... above max(Otsu, this floor), kept only where touching a seed (train grid: AUC flat 22-999, 38 limits healthy inflation)
+    edge_margin: 3           # px of leaf outline ignored
+    open_ksize: 3
+    close_ksize: 5
+    min_lesion_px: 25
+    min_lesion_frac: 0.0005
+  per_crop:
+    turmeric:
+      green_hue_min: 32
+      default_green_hue: 41
+    blackgram:
+      green_hue_min: 36
 features: {}
 decide: {}
 cnn: {}

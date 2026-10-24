@@ -8,7 +8,7 @@
 | T01 | Data acquisition + inventory | DONE | Evidence log T01 |
 | T02 | Leakage-free split | DONE | Evidence log T02 |
 | T03 | Stage 1a: pre-processing + leaf segmentation | DONE | Evidence log T03 |
-| T04 | Stage 1b: disease region detection | TODO | |
+| T04 | Stage 1b: disease region detection | DONE | Evidence log T04 |
 | T05 | Stage 1c: features | TODO | |
 | T06 | Stage 1d: decisions (rule-based + SVM) | TODO | |
 | T07 | Stage 2a: CNN data + model | TODO | |
@@ -23,6 +23,12 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-24 T04 Disease region detection
+- `pytest tests/test_lesions.py` -> `9 passed` (painted brown/yellow/dark lesions on paper and field backgrounds: area within 15% of truth and count == 3; healthy synthetic leaf 0 lesions; min-area filter + circularity).
+- `python scripts/ip_figures.py --stage lesions` (60 random train+val images per crop x label) -> mean affected-%: blackgram healthy 2.46 vs diseased 16.42; turmeric healthy 1.30 vs diseased 62.84; overall `healthy 1.88 vs diseased 39.63` (results/lesion_check.json).
+- Per class mean affected-%: anthracnose 8.55, dry_leaf 78.99, leaf_blotch 40.22, leaf_crinckle 8.15, powdery_mildew 5.72, yellow_mosaic 35.25, healthy (bg) 2.46, healthy_leaf (tu) 1.30.
+- results/figures/lesion_samples_{diseased,healthy}.png (24 + 24) opened and inspected: yellow mosaic, anthracnose spots, turmeric blotch and dry/necrotic tissue detected; healthy leaves ~0%. Weak: powdery mildew on dark leaves (faint film, 0.2-1.9%), bright turmeric midribs sometimes flagged as pale.
 
 ### 2026-10-24 T03 Pre-processing + leaf segmentation
 - `pytest tests/test_segment.py` -> `16 passed` (synthetic leaf on paper/grey/cloth/field x 3 seeds, IoU > 0.9 each; lesions stay inside the leaf mask; blank image does not crash). Extra check over 8 seeds: field IoU 0.977-0.991, paper/grey/cloth >= 0.999.
@@ -66,6 +72,9 @@
 - Segmentation (T03) is two-mode, chosen per image by the share of bright non-plant pixels in a 5% border ring (bimodal on real data: field shots < 0.2, card/paper/cloth > 0.6; all turmeric >= 0.28; switch at 0.25). Plain mode: k-means (k<=3) background colours in Lab, colour distance with L down-weighted (shadows), Otsu threshold. Field mode: GrabCut with a centre prior, run with loose and with core-colour seeding, keep the more solid mask. Otsu on saturation was tried first and rejected: blue cloth / grey card backgrounds are more saturated than dull dark leaves.
 - Known segmentation limits: two-tone (yellow mosaic) leaves against dark foliage can fragment; frame-filling field leaves lose a thin border; a beige card passes the plant-colour test (GrabCut still separates it).
 
+- Lesion colour rules (T04) were calibrated on TRAIN leaf-pixel statistics (30 images per original class): healthy hue median black gram ~50 / turmeric ~41; yellow-mosaic, blotch and dry pixels concentrate at H 20-30, necrosis at H < 20. Rules are relative to each leaf's own green reference. Hysteresis growth (Lab distance to the reference green) recovers soft lesion edges; its floor (38) was chosen on a train grid where the affected-% AUC was flat (bg 0.87-0.88, tu ~0.98) and healthy inflation was the deciding factor. Pale (mildew) rule grid: chroma < 0.65 x leaf chroma and L > leaf L + 15 (mildew 8.6% vs healthy 0.9% pale on train).
+- Leaf crinkle is mostly a shape/texture disease (little colour change); its signal is expected to come from GLCM texture and dark fold shading, not abnormal colour.
+
 ## NEXT
 
-T04: implement ip/lesions.py (abnormal colour mask inside the leaf, per-crop ranges in config, adaptive to the leaf's own green), synthetic lesion tests, lesion contact sheets (24 diseased + 24 healthy) and healthy vs diseased mean affected-%.
+T05: implement ip/features.py (fixed-order vector: colour stats over leaf and lesions, abnormal-%, GLCM, shape, affected-%) and scripts/extract_features.py with parallel on-disk cache -> data/processed/features.csv + results/feature_list.txt.
