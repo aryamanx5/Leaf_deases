@@ -11,7 +11,7 @@
 | T04 | Stage 1b: disease region detection | DONE | Evidence log T04 |
 | T05 | Stage 1c: features | DONE | Evidence log T05 |
 | T06 | Stage 1d: decisions (rule-based + SVM) | DONE | Evidence log T06 |
-| T07 | Stage 2a: CNN data + model | TODO | |
+| T07 | Stage 2a: CNN data + model | DONE | Evidence log T07 |
 | T08 | Stage 2b: CNN training + evaluation | TODO | |
 | T09 | Comparison | TODO | |
 | T10 | Unified inference pipeline | TODO | |
@@ -23,6 +23,10 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-24 T07 CNN data + model
+- `python scripts/train_cnn.py --smoke` -> MobileNetV2 ImageNet weights downloaded (mobilenet_v2-7ebf99e0.pth); `epoch 1 [head] ... (10s)`; `smoke: trained 64 images, 1 epoch on mps, pretrained=True; checkpoint cnn_smoke.pt reloaded (epoch 1)`; 4 predictions printed.
+- `pytest tests/test_cnn.py` -> `3 passed` (forward + freeze + checkpoint round trip; dataset/transforms on synthetic images; P(diseased) aggregation).
 
 ### 2026-10-24 T06 Decisions (rule-based + SVM)
 - `python scripts/train_ip.py` (train 1125 / val 242 / test 239):
@@ -98,6 +102,8 @@
 - Rule-based score (T06): four inputs with fixed equal weights (not fitted), each min-max scaled per crop by its TRAIN 1st-99th percentile; directions are the domain hypothesis "more abnormal = more diseased", confirmed on TRAIN medians for all four in both crops. Only the per-crop threshold is learned (VAL macro-F1 grid). Macro-F1 is used for both the rule threshold and the SVM CV because healthy is the minority class.
 - SVM score = decision_function (sklearn 1.9 deprecates SVC(probability=True)); it is used for ROC curves. Single SVM for both crops with an is_turmeric indicator, mirroring the single 4-class CNN.
 
+- CNN (T07): single 4-class model (turmeric/blackgram x healthy/diseased); P(diseased) = sum of the two diseased-class probabilities, binary decision at 0.5. Eval transform = resize of the whole image to 224x224 (no centre crop, leaves are often off-centre). Hue jitter kept at 0.02 because colour is the disease signal.
+
 ## NEXT
 
-T07: cnn/dataset.py (train-only augmentation), cnn/model.py (MobileNetV2 pretrained, 4-class head; EfficientNet-B0 flag), scripts/train_cnn.py --smoke (1 epoch on 64 images, save, reload, predict).
+T08: full CNN training (two stages, early stopping on VAL binary macro-F1), cnn/evaluate.py -> results/cnn_metrics.json, training curves, Grad-CAM figure.

@@ -146,4 +146,24 @@ decide:
     gamma: [scale, 0.003, 0.01, 0.03, 0.1]
     cv_folds: 5
   timing_images: 40        # VAL images timed sequentially for per-image inference ms
-cnn: {}
+cnn:
+  arch: mobilenet_v2       # or efficientnet_b0
+  pretrained: true
+  image_size: 224
+  cache_side: 288          # decoded images kept in memory at this size
+  batch_size: 32
+  augment:                 # TRAIN split only, applied at load time
+    crop_scale: [0.6, 1.0]
+    rotation: 20
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.15
+    hue: 0.02              # small: colour carries the disease signal
+  stage1: {epochs: 6, lr: 0.001, unfreeze_last_blocks: 0}     # head only
+  stage2: {epochs: 20, lr: 0.0002, unfreeze_last_blocks: 4}   # last blocks + head
+  weight_decay: 0.0001
+  label_smoothing: 0.0
+  early_stopping_patience: 5   # on VAL binary macro-F1 (stage 2)
+  time_budget_min: 40          # stop training (keeping the best checkpoint) after this
+  smoke: {n_images: 64, epochs: 1}
+  gradcam_images: 8
