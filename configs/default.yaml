@@ -63,19 +63,36 @@ preprocess:
 
 segment:
   hue_min: 8              # OpenCV hue 0-180; 8 ~ brown/orange, 95 ~ blue-green
-  hue_max: 95
+  hue_max: 90             # turmeric's white paper reads as hue 75-104 with low saturation
   sat_min: 22             # dull dark leaves on cloth can be as low as ~25
   val_min: 30
-  pale_sat_min: 12        # pale tissue: mildew / chlorosis
+  pale_hue_min: 20        # pale tissue (mildew / chlorosis): yellow-green, low saturation
+  pale_hue_max: 65
+  pale_sat_min: 12
   pale_val_min: 140
+  ring_frac: 0.05         # border ring used to decide plain vs field background
+  plain_bg_min_frac: 0.25 # >= this share of the ring is non-plant -> plain mode (bimodal: field <0.2, card >0.6)
+  bg_clusters: 3          # k-means background colours (paper + ruled lines + table, ...)
+  bg_min_cluster_share: 0.12
+  bg_val_min: 110         # background candidates must be at least this bright (HSV V)
+  l_weight: 0.35          # down-weight lightness so shadows stay background
+  dist_min: 12            # clamp on the Otsu threshold of the colour distance
+  dist_max: 60
+  plain_centre_weight: 0.3
+  field_centre_weight: 1.0
   grabcut_side: 256       # GrabCut runs on a downscaled copy for speed
   grabcut_iters: 5
   centre_frac: 0.75       # central ellipse treated as probable leaf
   core_frac: 0.20         # central core treated as definite leaf (if plant-coloured)
+  core_dist_min: 15       # lower clamp on the Otsu split of colour distance to the core
   border_frac: 0.03       # outer border treated as definite background
   open_ksize: 5
+  plain_open_ksize: 9     # larger opening detaches textured backgrounds (soil grains) in plain mode
   close_ksize: 9
   fallback_min_coverage: 0.08   # below this GrabCut is assumed to have collapsed
+  fallback_max_coverage: 0.95   # a colour fallback covering the whole frame is not a leaf
+  solidity_margin: 0.03         # core-seeded GrabCut must beat loose seeding by this much
+  quality: {min_dominant_share: 0.8, min_coverage: 0.05, max_coverage: 0.95}
 lesions: {}
 features: {}
 decide: {}

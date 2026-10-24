@@ -7,7 +7,7 @@
 | T00 | Bootstrap | DONE | Evidence log 2026-10-24 T00 |
 | T01 | Data acquisition + inventory | DONE | Evidence log T01 |
 | T02 | Leakage-free split | DONE | Evidence log T02 |
-| T03 | Stage 1a: pre-processing + leaf segmentation | TODO | |
+| T03 | Stage 1a: pre-processing + leaf segmentation | DONE | Evidence log T03 |
 | T04 | Stage 1b: disease region detection | TODO | |
 | T05 | Stage 1c: features | TODO | |
 | T06 | Stage 1d: decisions (rule-based + SVM) | TODO | |
@@ -23,6 +23,11 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-24 T03 Pre-processing + leaf segmentation
+- `pytest tests/test_segment.py` -> `16 passed` (synthetic leaf on paper/grey/cloth/field x 3 seeds, IoU > 0.9 each; lesions stay inside the leaf mask; blank image does not crash). Extra check over 8 seeds: field IoU 0.977-0.991, paper/grey/cloth >= 0.999.
+- `python scripts/ip_figures.py --stage segment` -> `single dominant leaf mask (coverage 5-95%): 99/100 = 99.0%`; by stratum bg_dis 1.0, bg_h 1.0, tu_dis 1.0, tu_h 0.917; methods plain_bg_threshold 54, field_grabcut 40, field_grabcut_core 6 (results/segmentation_check.json). Sampled from train+val only.
+- results/figures/segmentation_samples.png (24 images, 6 per crop x label) opened and inspected: turmeric (paper background, incl. curled dry leaves) segmented cleanly; black gram card/cloth shots clean; field shots mostly correct, a few partial (crinkled leaf) or slightly over-inclusive masks.
 
 ### 2026-10-24 T02 Leakage-free split
 - `python scripts/make_splits.py` -> `clusters_spanning_splits: 0, clusters_with_mixed_labels: 0, n_clusters: 1548, n_multi_image_clusters: 50`; cluster sizes `{1: 1498, 2: 45, 3: 3, 4: 1, 5: 1}`
@@ -58,6 +63,9 @@
 
 - Dedup rule (T02): a single 64-bit pHash threshold was not good enough on these datasets. With threshold 6 it merged DIFFERENT leaves posed alike on a plain card (3 mixed-label clusters, e.g. healthy 167h with anthracnose 92a) while missing true burst shots at distance 8 (e.g. 134h/135h). I inspected labelled pairs and switched to: 256-bit pHash <= 54, or (64-bit <= 6 and 256-bit <= 70), or consecutive file numbers (gap <= 3) in the same class with 64-bit <= 12. All hashes are taken over the 8 flip/rot90 variants. Result: 50 duplicate groups, 0 mixed-label. The burst rule over-merges a few distinct leaves (e.g. healthy 30h-36h chain); that only costs a little stratification balance and never causes leakage.
 
+- Segmentation (T03) is two-mode, chosen per image by the share of bright non-plant pixels in a 5% border ring (bimodal on real data: field shots < 0.2, card/paper/cloth > 0.6; all turmeric >= 0.28; switch at 0.25). Plain mode: k-means (k<=3) background colours in Lab, colour distance with L down-weighted (shadows), Otsu threshold. Field mode: GrabCut with a centre prior, run with loose and with core-colour seeding, keep the more solid mask. Otsu on saturation was tried first and rejected: blue cloth / grey card backgrounds are more saturated than dull dark leaves.
+- Known segmentation limits: two-tone (yellow mosaic) leaves against dark foliage can fragment; frame-filling field leaves lose a thin border; a beige card passes the plant-colour test (GrabCut still separates it).
+
 ## NEXT
 
-T03: finish segmentation tuning on both crops, add synthetic IoU tests, build results/figures/segmentation_samples.png (24 images) and measure the single-dominant-mask rate on 100 random images.
+T04: implement ip/lesions.py (abnormal colour mask inside the leaf, per-crop ranges in config, adaptive to the leaf's own green), synthetic lesion tests, lesion contact sheets (24 diseased + 24 healthy) and healthy vs diseased mean affected-%.

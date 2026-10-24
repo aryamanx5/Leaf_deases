@@ -1,0 +1,29 @@
+{
+  "n_images": 100,
+  "single_dominant_rate": 0.99,
+  "criterion": {
+    "min_dominant_share": 0.8,
+    "min_coverage": 0.05,
+    "max_coverage": 0.95
+  },
+  "rate_by_stratum": {
+    "blackgram_diseased": 1.0,
+    "blackgram_healthy": 1.0,
+    "turmeric_diseased": 1.0,
+    "turmeric_healthy": 0.917
+  },
+  "method_counts": {
+    "plain_bg_threshold": 54,
+    "field_grabcut": 40,
+    "field_grabcut_core": 6
+  },
+  "coverage_median": 0.3527240753173828,
+  "failures": [
+    {
+      "path": "data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00060.JPG",
+      "coverage": 0.2769889831542969,
+      "dominant_share": 0.7601494943573208,
+      "method": "plain_bg_threshold"
+    }
+  ]
+}
