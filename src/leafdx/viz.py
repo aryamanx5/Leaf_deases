@@ -60,3 +60,29 @@ def overlay_mask(img: np.ndarray, mask: np.ndarray, colour=(0, 0, 255), alpha: f
         cnts, _ = cv2.findContours(outline.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         cv2.drawContours(out, cnts, -1, (0, 255, 255), 2)
     return out
+
+
+def plot_training(hist, out_path) -> None:
+    """Loss and VAL metric curves per epoch; dashed line marks the head -> fine-tune switch."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    fig, ax = plt.subplots(1, 2, figsize=(10, 3.6))
+    ax[0].plot(hist.epoch, hist.train_loss, label="train loss")
+    ax[0].plot(hist.epoch, hist.val_loss, label="val loss")
+    ax[1].plot(hist.epoch, hist.val_macro_f1_bin, label="val macro-F1 (healthy/diseased)")
+    ax[1].plot(hist.epoch, hist.val_acc4, label="val accuracy (4-class)")
+    switch = hist.loc[hist.stage != hist.stage.iloc[0], "epoch"]
+    for a in ax:
+        if len(switch):
+            a.axvline(switch.iloc[0] - 0.5, ls="--", c="grey", lw=1)
+        a.set_xlabel("epoch")
+        a.legend(frameon=False, fontsize=8)
+        a.grid(alpha=0.3)
+    ax[0].set_title("CNN loss")
+    ax[1].set_title("CNN validation metrics")
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=130)
+    plt.close(fig)

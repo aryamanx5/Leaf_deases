@@ -12,7 +12,7 @@
 | T05 | Stage 1c: features | DONE | Evidence log T05 |
 | T06 | Stage 1d: decisions (rule-based + SVM) | DONE | Evidence log T06 |
 | T07 | Stage 2a: CNN data + model | DONE | Evidence log T07 |
-| T08 | Stage 2b: CNN training + evaluation | TODO | |
+| T08 | Stage 2b: CNN training + evaluation | DONE | Evidence log T08 |
 | T09 | Comparison | TODO | |
 | T10 | Unified inference pipeline | TODO | |
 | T11 | Demo app | TODO | |
@@ -23,6 +23,10 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-24 T07 CNN data + model
+- `python scripts/train_cnn.py --smoke` -> MobileNetV2 ImageNet weights downloaded (mobilenet_v2-7ebf99e0.pth); `epoch 1 [head] ... (10s)`; `smoke: trained 64 images, 1 epoch on mps, pretrained=True; checkpoint cnn_smoke.pt reloaded (epoch 1)`; 4 predictions printed.
+- `pytest tests/test_cnn.py` -> `3 passed` (forward + freeze + checkpoint round trip; dataset/transforms on synthetic images; P(diseased) aggregation).
 
 ### 2026-10-24 T07 CNN data + model
 - `python scripts/train_cnn.py --smoke` -> MobileNetV2 ImageNet weights downloaded (mobilenet_v2-7ebf99e0.pth); `epoch 1 [head] ... (10s)`; `smoke: trained 64 images, 1 epoch on mps, pretrained=True; checkpoint cnn_smoke.pt reloaded (epoch 1)`; 4 predictions printed.
@@ -106,4 +110,4 @@
 
 ## NEXT
 
-T08: full CNN training (two stages, early stopping on VAL binary macro-F1), cnn/evaluate.py -> results/cnn_metrics.json, training curves, Grad-CAM figure.
+T09: run scripts/run_comparison.py (comparison.csv/md, figures, McNemar, error galleries, leakage ablation) and inspect the figures.

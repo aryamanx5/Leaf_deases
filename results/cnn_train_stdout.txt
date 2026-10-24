@@ -1,0 +1,27 @@
+epoch  1 [head] loss 0.873 val_loss 0.521 val acc4 0.897 binF1 0.882 (18s) *
+epoch  2 [head] loss 0.405 val_loss 0.335 val acc4 0.930 binF1 0.923 (14s) *
+epoch  3 [head] loss 0.279 val_loss 0.273 val acc4 0.921 binF1 0.919 (15s)
+epoch  4 [head] loss 0.246 val_loss 0.244 val acc4 0.950 binF1 0.942 (15s) *
+epoch  5 [head] loss 0.227 val_loss 0.235 val acc4 0.950 binF1 0.943 (17s) *
+epoch  6 [head] loss 0.210 val_loss 0.221 val acc4 0.938 binF1 0.933 (14s)
+epoch  7 [finetune] loss 0.125 val_loss 0.064 val acc4 0.967 binF1 0.959 (19s) *
+epoch  8 [finetune] loss 0.063 val_loss 0.047 val acc4 0.979 binF1 0.974 (17s) *
+epoch  9 [finetune] loss 0.036 val_loss 0.045 val acc4 0.983 binF1 0.979 (17s) *
+epoch 10 [finetune] loss 0.035 val_loss 0.039 val acc4 0.979 binF1 0.974 (18s)
+epoch 11 [finetune] loss 0.028 val_loss 0.028 val acc4 0.983 binF1 0.979 (19s)
+epoch 12 [finetune] loss 0.046 val_loss 0.036 val acc4 0.975 binF1 0.974 (16s)
+epoch 13 [finetune] loss 0.032 val_loss 0.041 val acc4 0.979 binF1 0.974 (16s)
+epoch 14 [finetune] loss 0.029 val_loss 0.036 val acc4 0.983 binF1 0.984 (17s) *
+epoch 15 [finetune] loss 0.029 val_loss 0.030 val acc4 0.988 binF1 0.989 (17s) *
+epoch 16 [finetune] loss 0.027 val_loss 0.040 val acc4 0.983 binF1 0.984 (17s)
+epoch 17 [finetune] loss 0.021 val_loss 0.035 val acc4 0.983 binF1 0.984 (17s)
+epoch 18 [finetune] loss 0.023 val_loss 0.030 val acc4 0.983 binF1 0.984 (17s)
+epoch 19 [finetune] loss 0.017 val_loss 0.040 val acc4 0.979 binF1 0.979 (16s)
+epoch 20 [finetune] loss 0.017 val_loss 0.035 val acc4 0.979 binF1 0.979 (17s)
+early stopping at epoch 20
+best epoch 15 VAL binary macro-F1 0.989 (20 epochs, 5.6 min on mps)
+cnn val  binary acc 0.992 P 1.000 R 0.989 F1 0.994 macroF1 0.989 AUC 0.999 CM [[64, 0], [2, 176]] per-crop macroF1 {'blackgram': 0.981, 'turmeric': 1.0} | 4-class acc 0.988 macroF1 0.988 crop acc 0.996
+cnn test binary acc 0.983 P 0.989 R 0.989 F1 0.989 macroF1 0.978 AUC 0.999 CM [[59, 2], [2, 176]] per-crop macroF1 {'blackgram': 0.96, 'turmeric': 1.0} | 4-class acc 0.983 macroF1 0.980 crop acc 1.000
+inference ms/image: mps 35.8, cpu 48.2
+confidence (test): {'mean_conf_correct': 0.9930475950241089, 'mean_conf_wrong': 0.8178677558898926, 'median_conf': 0.9997020363807678, 'share_conf_ge_0.9': 0.9707112970711297}
+saved results/figures/gradcam_samples.png

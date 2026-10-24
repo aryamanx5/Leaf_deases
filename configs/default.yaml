@@ -167,3 +167,7 @@ cnn:
   time_budget_min: 40          # stop training (keeping the best checkpoint) after this
   smoke: {n_images: 64, epochs: 1}
   gradcam_images: 8
+
+pipeline:
+  min_side: 64             # smaller images are rejected
+  min_plant_fraction: 0.05 # share of leaf-coloured pixels below which the input is "not a leaf"

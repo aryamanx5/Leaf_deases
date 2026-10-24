@@ -1,0 +1,240 @@
+{
+  "checkpoint": {
+    "arch": "mobilenet_v2",
+    "epoch": 15,
+    "image_size": 224,
+    "pretrained": true
+  },
+  "val": {
+    "binary": {
+      "overall": {
+        "n": 242,
+        "accuracy": 0.9917355371900827,
+        "precision": 1.0,
+        "recall": 0.9887640449438202,
+        "f1": 0.9943502824858758,
+        "macro_f1": 0.9894828335506303,
+        "healthy_recall": 1.0,
+        "confusion_matrix": [
+          [
+            64,
+            0
+          ],
+          [
+            2,
+            176
+          ]
+        ],
+        "roc_auc": 0.9993855337078652
+      },
+      "per_crop": {
+        "blackgram": {
+          "n": 152,
+          "accuracy": 0.9868421052631579,
+          "precision": 1.0,
+          "recall": 0.9830508474576272,
+          "f1": 0.9914529914529915,
+          "macro_f1": 0.9814407814407815,
+          "healthy_recall": 1.0,
+          "confusion_matrix": [
+            [
+              34,
+              0
+            ],
+            [
+              2,
+              116
+            ]
+          ],
+          "roc_auc": 0.9985044865403788
+        },
+        "turmeric": {
+          "n": 90,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "macro_f1": 1.0,
+          "healthy_recall": 1.0,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              0,
+              60
+            ]
+          ],
+          "roc_auc": 1.0
+        }
+      }
+    },
+    "four_class": {
+      "accuracy": 0.987603305785124,
+      "macro_f1": 0.9875721430344918,
+      "confusion_matrix": [
+        [
+          30,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          60,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          34,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          115
+        ]
+      ],
+      "classes": [
+        "turmeric_healthy",
+        "turmeric_diseased",
+        "blackgram_healthy",
+        "blackgram_diseased"
+      ],
+      "crop_accuracy": 0.9958677685950413
+    },
+    "confidence": {
+      "mean_conf_correct": 0.9898426532745361,
+      "mean_conf_wrong": 0.9625652432441711,
+      "median_conf": 0.999567985534668,
+      "share_conf_ge_0.9": 0.9834710743801653
+    }
+  },
+  "test": {
+    "binary": {
+      "overall": {
+        "n": 239,
+        "accuracy": 0.9832635983263598,
+        "precision": 0.9887640449438202,
+        "recall": 0.9887640449438202,
+        "f1": 0.9887640449438202,
+        "macro_f1": 0.9779885798489593,
+        "healthy_recall": 0.9672131147540983,
+        "confusion_matrix": [
+          [
+            59,
+            2
+          ],
+          [
+            2,
+            176
+          ]
+        ],
+        "roc_auc": 0.9990790200773623
+      },
+      "per_crop": {
+        "blackgram": {
+          "n": 150,
+          "accuracy": 0.9733333333333334,
+          "precision": 0.9830508474576272,
+          "recall": 0.9830508474576272,
+          "f1": 0.9830508474576272,
+          "macro_f1": 0.9602754237288136,
+          "healthy_recall": 0.9375,
+          "confusion_matrix": [
+            [
+              30,
+              2
+            ],
+            [
+              2,
+              116
+            ]
+          ],
+          "roc_auc": 0.9976165254237288
+        },
+        "turmeric": {
+          "n": 89,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "macro_f1": 1.0,
+          "healthy_recall": 1.0,
+          "confusion_matrix": [
+            [
+              29,
+              0
+            ],
+            [
+              0,
+              60
+            ]
+          ],
+          "roc_auc": 1.0
+        }
+      }
+    },
+    "four_class": {
+      "accuracy": 0.9832635983263598,
+      "macro_f1": 0.9801377118644068,
+      "confusion_matrix": [
+        [
+          29,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          60,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          30,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          116
+        ]
+      ],
+      "classes": [
+        "turmeric_healthy",
+        "turmeric_diseased",
+        "blackgram_healthy",
+        "blackgram_diseased"
+      ],
+      "crop_accuracy": 1.0
+    },
+    "confidence": {
+      "mean_conf_correct": 0.9930475950241089,
+      "mean_conf_wrong": 0.8178677558898926,
+      "median_conf": 0.9997020363807678,
+      "share_conf_ge_0.9": 0.9707112970711297
+    }
+  },
+  "inference_time": {
+    "accelerator": {
+      "device": "mps",
+      "n_images": 40,
+      "ms_median": 35.76733299996704,
+      "ms_mean": 36.567385455418844
+    },
+    "cpu": {
+      "device": "cpu",
+      "n_images": 40,
+      "ms_median": 48.18129100021906,
+      "ms_mean": 48.1387853535125
+    }
+  }
+}
