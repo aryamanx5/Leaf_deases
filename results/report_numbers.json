@@ -1,0 +1,6952 @@
+[
+ {
+  "text": "230",
+  "value": 230.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "anthracnose"
+   }
+  }
+ },
+ {
+  "text": "169",
+  "value": 169.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "anthracnose",
+    "split": "train"
+   }
+  }
+ },
+ {
+  "text": "31",
+  "value": 31.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "anthracnose",
+    "split": "val"
+   }
+  }
+ },
+ {
+  "text": "30",
+  "value": 30.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "anthracnose",
+    "split": "test"
+   }
+  }
+ },
+ {
+  "text": "221",
+  "value": 221.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "healthy"
+   }
+  }
+ },
+ {
+  "text": "155",
+  "value": 155.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "healthy",
+    "split": "train"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "healthy",
+    "split": "val"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "healthy",
+    "split": "test"
+   }
+  }
+ },
+ {
+  "text": "152",
+  "value": 152.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "leaf_crinckle"
+   }
+  }
+ },
+ {
+  "text": "108",
+  "value": 108.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "leaf_crinckle",
+    "split": "train"
+   }
+  }
+ },
+ {
+  "text": "23",
+  "value": 23.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "leaf_crinckle",
+    "split": "val"
+   }
+  }
+ },
+ {
+  "text": "21",
+  "value": 21.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "leaf_crinckle",
+    "split": "test"
+   }
+  }
+ },
+ {
+  "text": "180",
+  "value": 180.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "powdery_mildew"
+   }
+  }
+ },
+ {
+  "text": "115",
+  "value": 115.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "powdery_mildew",
+    "split": "train"
+   }
+  }
+ },
+ {
+  "text": "31",
+  "value": 31.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "powdery_mildew",
+    "split": "val"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "powdery_mildew",
+    "split": "test"
+   }
+  }
+ },
+ {
+  "text": "224",
+  "value": 224.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "yellow_mosaic"
+   }
+  }
+ },
+ {
+  "text": "158",
+  "value": 158.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "yellow_mosaic",
+    "split": "train"
+   }
+  }
+ },
+ {
+  "text": "33",
+  "value": 33.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "yellow_mosaic",
+    "split": "val"
+   }
+  }
+ },
+ {
+  "text": "33",
+  "value": 33.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "orig_class": "yellow_mosaic",
+    "split": "test"
+   }
+  }
+ },
+ {
+  "text": "203",
+  "value": 203.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "dry_leaf"
+   }
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "dry_leaf",
+    "split": "train"
+   }
+  }
+ },
+ {
+  "text": "28",
+  "value": 28.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "dry_leaf",
+    "split": "val"
+   }
+  }
+ },
+ {
+  "text": "25",
+  "value": 25.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "dry_leaf",
+    "split": "test"
+   }
+  }
+ },
+ {
+  "text": "197",
+  "value": 197.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "healthy_leaf"
+   }
+  }
+ },
+ {
+  "text": "138",
+  "value": 138.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "healthy_leaf",
+    "split": "train"
+   }
+  }
+ },
+ {
+  "text": "30",
+  "value": 30.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "healthy_leaf",
+    "split": "val"
+   }
+  }
+ },
+ {
+  "text": "29",
+  "value": 29.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "healthy_leaf",
+    "split": "test"
+   }
+  }
+ },
+ {
+  "text": "199",
+  "value": 199.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "leaf_blotch"
+   }
+  }
+ },
+ {
+  "text": "132",
+  "value": 132.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "leaf_blotch",
+    "split": "train"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "leaf_blotch",
+    "split": "val"
+   }
+  }
+ },
+ {
+  "text": "35",
+  "value": 35.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/splits.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "orig_class": "leaf_blotch",
+    "split": "test"
+   }
+  }
+ },
+ {
+  "text": "1606",
+  "value": 1606.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/inventory.csv",
+   "count_where": {
+    "readable": true
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/inventory.csv",
+   "count_where": {
+    "readable": false
+   }
+  }
+ },
+ {
+  "text": "42",
+  "value": 42.0,
+  "fmt": "d",
+  "source": {
+   "config": [
+    "seed"
+   ],
+   "file": "configs/default.yaml"
+  }
+ },
+ {
+  "text": "1548",
+  "value": 1548.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/split_meta.json",
+   "keys": [
+    "n_clusters"
+   ]
+  }
+ },
+ {
+  "text": "50",
+  "value": 50.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/split_meta.json",
+   "keys": [
+    "n_multi_image_clusters"
+   ]
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/split_meta.json",
+   "keys": [
+    "clusters_spanning_splits"
+   ]
+  }
+ },
+ {
+  "text": "67",
+  "value": 67.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/features.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "label": "healthy",
+    "bg_mode": "plain"
+   }
+  }
+ },
+ {
+  "text": "221",
+  "value": 221.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/features.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "label": "healthy"
+   }
+  }
+ },
+ {
+  "text": "203",
+  "value": 203.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/features.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "label": "diseased",
+    "bg_mode": "plain"
+   }
+  }
+ },
+ {
+  "text": "786",
+  "value": 786.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/features.csv",
+   "count_where": {
+    "crop": "blackgram",
+    "label": "diseased"
+   }
+  }
+ },
+ {
+  "text": "197",
+  "value": 197.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/features.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "label": "healthy",
+    "bg_mode": "plain"
+   }
+  }
+ },
+ {
+  "text": "197",
+  "value": 197.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/features.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "label": "healthy"
+   }
+  }
+ },
+ {
+  "text": "401",
+  "value": 401.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/features.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "label": "diseased",
+    "bg_mode": "plain"
+   }
+  }
+ },
+ {
+  "text": "402",
+  "value": 402.0,
+  "fmt": "d",
+  "source": {
+   "file": "data/processed/features.csv",
+   "count_where": {
+    "crop": "turmeric",
+    "label": "diseased"
+   }
+  }
+ },
+ {
+  "text": "20",
+  "value": 20.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/cnn_train_info.json",
+   "keys": [
+    "epochs_run"
+   ]
+  }
+ },
+ {
+  "text": "15",
+  "value": 15.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/cnn_train_info.json",
+   "keys": [
+    "best",
+    "epoch"
+   ]
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9894828335506303,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_train_info.json",
+   "keys": [
+    "best",
+    "macro_f1_bin"
+   ]
+  }
+ },
+ {
+  "text": "5.6",
+  "value": 5.553176911671956,
+  "fmt": ".1f",
+  "source": {
+   "file": "results/cnn_train_info.json",
+   "keys": [
+    "minutes"
+   ]
+  }
+ },
+ {
+  "text": "99.0%",
+  "value": 0.99,
+  "fmt": ".1%",
+  "source": {
+   "file": "results/segmentation_check.json",
+   "keys": [
+    "single_dominant_rate"
+   ]
+  }
+ },
+ {
+  "text": "100",
+  "value": 100.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/segmentation_check.json",
+   "keys": [
+    "n_images"
+   ]
+  }
+ },
+ {
+  "text": "5%",
+  "value": 0.05,
+  "fmt": ".0%",
+  "source": {
+   "config": [
+    "segment",
+    "quality",
+    "min_coverage"
+   ],
+   "file": "configs/default.yaml"
+  }
+ },
+ {
+  "text": "95%",
+  "value": 0.95,
+  "fmt": ".0%",
+  "source": {
+   "config": [
+    "segment",
+    "quality",
+    "max_coverage"
+   ],
+   "file": "configs/default.yaml"
+  }
+ },
+ {
+  "text": "240",
+  "value": 240.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/lesion_check.json",
+   "keys": [
+    "n_images"
+   ]
+  }
+ },
+ {
+  "text": "1.88",
+  "value": 1.8793749596426268,
+  "fmt": ".2f",
+  "source": {
+   "file": "results/lesion_check.json",
+   "keys": [
+    "mean_affected_pct",
+    "healthy"
+   ]
+  }
+ },
+ {
+  "text": "39.63",
+  "value": 39.62938915292229,
+  "fmt": ".2f",
+  "source": {
+   "file": "results/lesion_check.json",
+   "keys": [
+    "mean_affected_pct",
+    "diseased"
+   ]
+  }
+ },
+ {
+  "text": "242",
+  "value": 242.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "overall",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.913",
+  "value": 0.9132231404958677,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "overall",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.915",
+  "value": 0.9153439153439153,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "overall",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.972",
+  "value": 0.9719101123595506,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "overall",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.943",
+  "value": 0.9427792915531336,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "overall",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.882",
+  "value": 0.8816460560329771,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "overall",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.914",
+  "value": 0.9137113764044944,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "overall",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "152",
+  "value": 152.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "blackgram",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.895",
+  "value": 0.8947368421052632,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "blackgram",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.905",
+  "value": 0.9047619047619048,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "blackgram",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9661016949152542,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "blackgram",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.934",
+  "value": 0.9344262295081968,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "blackgram",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.834",
+  "value": 0.833879781420765,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "blackgram",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.893",
+  "value": 0.8933200398803589,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "blackgram",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "90",
+  "value": 90.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "turmeric",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.944",
+  "value": 0.9444444444444444,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "turmeric",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.937",
+  "value": 0.9365079365079365,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "turmeric",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9833333333333333,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "turmeric",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.959",
+  "value": 0.959349593495935,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "turmeric",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.936",
+  "value": 0.9358151476251604,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "turmeric",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.975",
+  "value": 0.9750000000000001,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "val",
+    "per_crop",
+    "turmeric",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "overall",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.883",
+  "value": 0.8828451882845189,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "overall",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.903",
+  "value": 0.9032258064516129,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "overall",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.944",
+  "value": 0.9438202247191011,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "overall",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.923",
+  "value": 0.9230769230769231,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "overall",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.839",
+  "value": 0.8387314439946019,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "overall",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.924",
+  "value": 0.9242033523669183,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "overall",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "blackgram",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.840",
+  "value": 0.84,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "blackgram",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.873",
+  "value": 0.873015873015873,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "blackgram",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.932",
+  "value": 0.9322033898305084,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "blackgram",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.902",
+  "value": 0.9016393442622951,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "blackgram",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.737",
+  "value": 0.7365339578454333,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "blackgram",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.864",
+  "value": 0.8638771186440678,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "blackgram",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "turmeric",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.955",
+  "value": 0.9550561797752809,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "turmeric",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.967",
+  "value": 0.9666666666666667,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "turmeric",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.967",
+  "value": 0.9666666666666667,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "turmeric",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.967",
+  "value": 0.9666666666666667,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "turmeric",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.949",
+  "value": 0.9488505747126437,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "turmeric",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.998",
+  "value": 0.9977011494252873,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "test",
+    "per_crop",
+    "turmeric",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "242",
+  "value": 242.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "overall",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.955",
+  "value": 0.9545454545454546,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "overall",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.972",
+  "value": 0.9717514124293786,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "overall",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9662921348314607,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "overall",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.969",
+  "value": 0.9690140845070423,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "overall",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.942",
+  "value": 0.9418713833387924,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "overall",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.986",
+  "value": 0.9857794943820224,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "overall",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "152",
+  "value": 152.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "blackgram",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.928",
+  "value": 0.9276315789473685,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "blackgram",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.957",
+  "value": 0.9572649572649573,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "blackgram",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.949",
+  "value": 0.9491525423728814,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "blackgram",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.953",
+  "value": 0.9531914893617022,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "blackgram",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.897",
+  "value": 0.8968855997533148,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "blackgram",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.965",
+  "value": 0.964606181455633,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "blackgram",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "90",
+  "value": 90.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "turmeric",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "turmeric",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "turmeric",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "turmeric",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "turmeric",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "turmeric",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "val",
+    "per_crop",
+    "turmeric",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "overall",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.950",
+  "value": 0.9497907949790795,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "overall",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.972",
+  "value": 0.9715909090909091,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "overall",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.961",
+  "value": 0.9606741573033708,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "overall",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9661016949152542,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "overall",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.935",
+  "value": 0.9346637506834335,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "overall",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.981",
+  "value": 0.9807515196168723,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "overall",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "blackgram",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.940",
+  "value": 0.94,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "blackgram",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.958",
+  "value": 0.957983193277311,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "blackgram",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9661016949152542,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "blackgram",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.962",
+  "value": 0.9620253164556962,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "blackgram",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.910",
+  "value": 0.9095840867992766,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "blackgram",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.963",
+  "value": 0.9631885593220338,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "blackgram",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "turmeric",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9662921348314607,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "turmeric",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "turmeric",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.950",
+  "value": 0.95,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "turmeric",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.974",
+  "value": 0.9743589743589743,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "turmeric",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.963",
+  "value": 0.9625893232450609,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "turmeric",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "test",
+    "per_crop",
+    "turmeric",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "30",
+  "value": 30.0,
+  "fmt": "g",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "best_params",
+    "svc__C"
+   ]
+  }
+ },
+ {
+  "text": "0.01",
+  "value": 0.01,
+  "fmt": "g",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "best_params",
+    "svc__gamma"
+   ]
+  }
+ },
+ {
+  "text": "0.934",
+  "value": 0.9337733965903091,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "svm",
+    "cv_macro_f1_train"
+   ]
+  }
+ },
+ {
+  "text": "0.110",
+  "value": 0.11,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "thresholds_from_val",
+    "blackgram"
+   ]
+  }
+ },
+ {
+  "text": "0.235",
+  "value": 0.23500000000000001,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/ip_metrics.json",
+   "keys": [
+    "rule_based",
+    "thresholds_from_val",
+    "turmeric"
+   ]
+  }
+ },
+ {
+  "text": "242",
+  "value": 242.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "overall",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.992",
+  "value": 0.9917355371900827,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "overall",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "overall",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9887640449438202,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "overall",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.994",
+  "value": 0.9943502824858758,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "overall",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9894828335506303,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "overall",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.999",
+  "value": 0.9993855337078652,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "overall",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "152",
+  "value": 152.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.987",
+  "value": 0.9868421052631579,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9830508474576272,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.991",
+  "value": 0.9914529914529915,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.981",
+  "value": 0.9814407814407815,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.999",
+  "value": 0.9985044865403788,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "90",
+  "value": 90.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "val",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "overall",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9832635983263598,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "overall",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9887640449438202,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "overall",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9887640449438202,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "overall",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9887640449438202,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "overall",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.978",
+  "value": 0.9779885798489593,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "overall",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.999",
+  "value": 0.9990790200773623,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "overall",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "0.973",
+  "value": 0.9733333333333334,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9830508474576272,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9830508474576272,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9830508474576272,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "0.960",
+  "value": 0.9602754237288136,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "0.998",
+  "value": 0.9976165254237288,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "blackgram",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "n"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "precision"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "recall"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "f1"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "binary",
+    "per_crop",
+    "turmeric",
+    "roc_auc"
+   ]
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9832635983263598,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "four_class",
+    "accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.980",
+  "value": 0.9801377118644068,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "four_class",
+    "macro_f1"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "four_class",
+    "crop_accuracy"
+   ]
+  }
+ },
+ {
+  "text": "0.993",
+  "value": 0.9930475950241089,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "confidence",
+    "mean_conf_correct"
+   ]
+  }
+ },
+ {
+  "text": "0.818",
+  "value": 0.8178677558898926,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/cnn_metrics.json",
+   "keys": [
+    "test",
+    "confidence",
+    "mean_conf_wrong"
+   ]
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.883",
+  "value": 0.8828451882845189,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.903",
+  "value": 0.9032258064516129,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "0.944",
+  "value": 0.9438202247191011,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.839",
+  "value": 0.8387314439946019,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.705",
+  "value": 0.7049180327868853,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "0.924",
+  "value": 0.9242033523669183,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "0.971",
+  "value": 0.9706994702016853,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.780",
+  "value": 0.7801061031696422,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "0.892",
+  "value": 0.8922323747159274,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "43",
+  "value": 43.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "43",
+  "value": 43.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "18",
+  "value": 18.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "18",
+  "value": 18.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "10",
+  "value": 10.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "10",
+  "value": 10.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.950",
+  "value": 0.9497907949790795,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.972",
+  "value": 0.9715909090909091,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "0.961",
+  "value": 0.9606741573033708,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9661016949152542,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "0.935",
+  "value": 0.9346637506834335,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.918",
+  "value": 0.9180327868852459,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "0.981",
+  "value": 0.9807515196168723,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "0.993",
+  "value": 0.9928625607871282,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.896",
+  "value": 0.8962542967960366,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "0.968",
+  "value": 0.9679910714285714,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "5",
+  "value": 5.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "5",
+  "value": 5.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "7",
+  "value": 7.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "7",
+  "value": 7.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9832635983263598,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9887640449438202,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9887640449438202,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9887640449438202,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "0.978",
+  "value": 0.9779885798489593,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.967",
+  "value": 0.9672131147540983,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "0.999",
+  "value": 0.9990790200773623,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 0.999684680025944,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.954",
+  "value": 0.9544563175202391,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "0.995",
+  "value": 0.9946938652485583,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.840",
+  "value": 0.84,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.873",
+  "value": 0.873015873015873,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "0.932",
+  "value": 0.9322033898305084,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.737",
+  "value": 0.7365339578454333,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.500",
+  "value": 0.5,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "0.864",
+  "value": 0.8638771186440678,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "0.954",
+  "value": 0.9535950805015118,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.641",
+  "value": 0.640534063676823,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "0.824",
+  "value": 0.8237926398989276,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "8",
+  "value": 8.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "8",
+  "value": 8.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "blackgram",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.940",
+  "value": 0.94,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.958",
+  "value": 0.957983193277311,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9661016949152542,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.962",
+  "value": 0.9620253164556962,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "0.910",
+  "value": 0.9095840867992766,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.844",
+  "value": 0.84375,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "0.963",
+  "value": 0.9631885593220338,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "0.989",
+  "value": 0.9890516105650126,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.842",
+  "value": 0.8417610239819959,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "0.962",
+  "value": 0.9619722633136725,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "5",
+  "value": 5.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "5",
+  "value": 5.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "4",
+  "value": 4.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "4",
+  "value": 4.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "blackgram",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "150",
+  "value": 150.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.973",
+  "value": 0.9733333333333334,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9830508474576272,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9830508474576272,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9830508474576272,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "0.960",
+  "value": 0.9602754237288136,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.938",
+  "value": 0.9375,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "0.998",
+  "value": 0.9976165254237288,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "0.999",
+  "value": 0.9993570711399127,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.917",
+  "value": 0.9166666666666667,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "0.991",
+  "value": 0.9905937515074396,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.955",
+  "value": 0.9550561797752809,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.967",
+  "value": 0.9666666666666667,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "0.967",
+  "value": 0.9666666666666667,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.967",
+  "value": 0.9666666666666667,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "0.949",
+  "value": 0.9488505747126437,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.931",
+  "value": 0.9310344827586207,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "0.998",
+  "value": 0.9977011494252873,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "0.999",
+  "value": 0.9989159175039661,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.896",
+  "value": 0.8958504684650694,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "0.988",
+  "value": 0.9880328089283312,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "58",
+  "value": 58.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "tp"
+   }
+  }
+ },
+ {
+  "text": "58",
+  "value": 58.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "tp"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9662921348314607,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "0.950",
+  "value": 0.95,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.974",
+  "value": 0.9743589743589743,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "0.963",
+  "value": 0.9625893232450609,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.915",
+  "value": 0.9151614618788292,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "3",
+  "value": 3.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "3",
+  "value": 3.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "57",
+  "value": 57.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "tp"
+   }
+  }
+ },
+ {
+  "text": "57",
+  "value": 57.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "tp"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "60",
+  "value": 60.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "tp"
+   }
+  }
+ },
+ {
+  "text": "60",
+  "value": 60.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "turmeric",
+    "metric": "tp"
+   }
+  }
+ },
+ {
+  "text": "173.8",
+  "value": 173.77485349425115,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "inference",
+    "method": "rule_based",
+    "scope": "overall",
+    "metric": "ms_per_image"
+   }
+  }
+ },
+ {
+  "text": "173.8",
+  "value": 173.77485349425115,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "inference",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "ms_per_image"
+   }
+  }
+ },
+ {
+  "text": "48.2",
+  "value": 48.18129100021906,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "inference",
+    "method": "cnn_cpu",
+    "scope": "overall",
+    "metric": "ms_per_image"
+   }
+  }
+ },
+ {
+  "text": "35.8",
+  "value": 35.76733299996704,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "inference",
+    "method": "cnn_accelerator",
+    "scope": "overall",
+    "metric": "ms_per_image"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "anthracnose",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "anthracnose",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.500",
+  "value": 0.5,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "healthy",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "healthy",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "healthy",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.844",
+  "value": 0.84375,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.938",
+  "value": 0.9375,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "healthy",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "healthy",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "healthy",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.931",
+  "value": 0.9310344827586207,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "healthy_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "healthy_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "healthy_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "35",
+  "value": 35.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "leaf_blotch",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "35",
+  "value": 35.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "leaf_blotch",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "35",
+  "value": 35.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_blotch",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "35",
+  "value": 35.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_blotch",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_blotch",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_blotch",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "35",
+  "value": 35.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_blotch",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "35",
+  "value": 35.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_blotch",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_crinckle",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_crinckle",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_crinckle",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_crinckle",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "powdery_mildew",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "powdery_mildew",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.971",
+  "value": 0.9705882352941176,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "powdery_mildew",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.941",
+  "value": 0.9411764705882353,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "powdery_mildew",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "3",
+  "value": 3.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "a_right_b_wrong"
+   }
+  }
+ },
+ {
+  "text": "3",
+  "value": 3.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "a_right_b_wrong"
+   }
+  }
+ },
+ {
+  "text": "11",
+  "value": 11.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "a_wrong_b_right"
+   }
+  }
+ },
+ {
+  "text": "11",
+  "value": 11.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "a_wrong_b_right"
+   }
+  }
+ },
+ {
+  "text": "0.0574",
+  "value": 0.057373046875,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "p_value"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "rule_based_vs_cnn",
+    "scope": "overall",
+    "metric": "a_right_b_wrong"
+   }
+  }
+ },
+ {
+  "text": "2",
+  "value": 2.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "rule_based_vs_cnn",
+    "scope": "overall",
+    "metric": "a_right_b_wrong"
+   }
+  }
+ },
+ {
+  "text": "4",
+  "value": 4.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "rule_based_vs_svm",
+    "scope": "overall",
+    "metric": "a_right_b_wrong"
+   }
+  }
+ },
+ {
+  "text": "4",
+  "value": 4.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "rule_based_vs_svm",
+    "scope": "overall",
+    "metric": "a_right_b_wrong"
+   }
+  }
+ },
+ {
+  "text": "0.941",
+  "value": 0.9414225941422594,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "agreement",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "agreement_rate"
+   }
+  }
+ },
+ {
+  "text": "0.996",
+  "value": 0.9955555555555555,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "agreement",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "accuracy_when_agree"
+   }
+  }
+ },
+ {
+  "text": "14",
+  "value": 14.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "agreement",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "n_disagree"
+   }
+  }
+ },
+ {
+  "text": "14",
+  "value": 14.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "agreement",
+    "method": "svm_vs_cnn",
+    "scope": "overall",
+    "metric": "n_disagree"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "crop_accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "crop_accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.950",
+  "value": 0.9497907949790795,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.935",
+  "value": 0.9346637506834335,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.000",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "test_items_with_cluster_in_train"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "test_items_with_cluster_in_train"
+   }
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "n_test"
+   }
+  }
+ },
+ {
+  "text": "0.000",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "macro_f1_inflation"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "macro_f1_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.000",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "accuracy_inflation"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "clean",
+    "metric": "accuracy_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.987",
+  "value": 0.9874476987447699,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.984",
+  "value": 0.9835795259361044,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.000",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "test_items_with_cluster_in_train"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "test_items_with_cluster_in_train"
+   }
+  }
+ },
+ {
+  "text": "239",
+  "value": 239.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "n_test"
+   }
+  }
+ },
+ {
+  "text": "0.000",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "macro_f1_inflation"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "macro_f1_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.000",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "accuracy_inflation"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "clean",
+    "metric": "accuracy_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.946",
+  "value": 0.946058091286307,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "naive_random",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.931",
+  "value": 0.9311988053670641,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "naive_random",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.054",
+  "value": 0.05394190871369295,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "naive_random",
+    "metric": "test_items_with_cluster_in_train"
+   }
+  }
+ },
+ {
+  "text": "-0.003",
+  "value": -0.0034649453163694277,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "naive_random",
+    "metric": "macro_f1_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.988",
+  "value": 0.9875518672199171,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "naive_random",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.984",
+  "value": 0.9836266050682791,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "naive_random",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.054",
+  "value": 0.05394190871369295,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "naive_random",
+    "metric": "test_items_with_cluster_in_train"
+   }
+  }
+ },
+ {
+  "text": "0.000",
+  "value": 4.707913217472104e-05,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "naive_random",
+    "metric": "macro_f1_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.000",
+  "value": 0.00010416847514715943,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "naive_random",
+    "metric": "accuracy_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.979",
+  "value": 0.979253112033195,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "augment_then_split",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.974",
+  "value": 0.9735380020642554,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "augment_then_split",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.949",
+  "value": 0.9491701244813278,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "augment_then_split",
+    "metric": "test_items_with_cluster_in_train"
+   }
+  }
+ },
+ {
+  "text": "0.039",
+  "value": 0.0388742513808219,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "svm",
+    "scope": "augment_then_split",
+    "metric": "macro_f1_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.993",
+  "value": 0.9927385892116183,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "augment_then_split",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.991",
+  "value": 0.9905612740881237,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "augment_then_split",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.949",
+  "value": 0.9491701244813278,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "augment_then_split",
+    "metric": "test_items_with_cluster_in_train"
+   }
+  }
+ },
+ {
+  "text": "0.007",
+  "value": 0.00698174815201924,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "leakage_ablation",
+    "method": "cnn_head",
+    "scope": "augment_then_split",
+    "metric": "macro_f1_inflation"
+   }
+  }
+ },
+ {
+  "text": "0.043",
+  "value": 0.04332482916552571,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "summary",
+    "method": "cnn_minus_svm",
+    "scope": "overall",
+    "metric": "macro_f1_gap"
+   }
+  }
+ },
+ {
+  "text": "0.050",
+  "value": 0.05,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "settings",
+    "method": "all",
+    "scope": "overall",
+    "metric": "alpha"
+   }
+  }
+ },
+ {
+  "text": "95",
+  "value": 95.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "settings",
+    "method": "all",
+    "scope": "overall",
+    "metric": "ci_level_pct"
+   }
+  }
+ },
+ {
+  "text": "42",
+  "value": 42.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "settings",
+    "method": "all",
+    "scope": "overall",
+    "metric": "seed"
+   }
+  }
+ },
+ {
+  "text": "30",
+  "value": 30.0,
+  "fmt": ".0f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "anthracnose",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.867",
+  "value": 0.8666666666666667,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "anthracnose",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.933",
+  "value": 0.9333333333333333,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "anthracnose",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "anthracnose",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "25",
+  "value": 25.0,
+  "fmt": ".0f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "dry_leaf",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "dry_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "32",
+  "value": 32.0,
+  "fmt": ".0f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.500",
+  "value": 0.5,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "healthy",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.844",
+  "value": 0.84375,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.938",
+  "value": 0.9375,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "healthy",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "29",
+  "value": 29.0,
+  "fmt": ".0f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy_leaf",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.931",
+  "value": 0.9310344827586207,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "healthy_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "healthy_leaf",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "35",
+  "value": 35.0,
+  "fmt": ".0f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_blotch",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.943",
+  "value": 0.9428571428571428,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "leaf_blotch",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.914",
+  "value": 0.9142857142857143,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_blotch",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_blotch",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "21",
+  "value": 21.0,
+  "fmt": ".0f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_crinckle",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.810",
+  "value": 0.8095238095238095,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "leaf_crinckle",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_crinckle",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_crinckle",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": ".0f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "powdery_mildew",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.971",
+  "value": 0.9705882352941176,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "powdery_mildew",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.941",
+  "value": 0.9411764705882353,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "powdery_mildew",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "33",
+  "value": 33.0,
+  "fmt": ".0f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "yellow_mosaic",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.970",
+  "value": 0.9696969696969697,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.844",
+  "value": 0.84375,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "healthy",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.914",
+  "value": 0.9142857142857143,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_blotch",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.938",
+  "value": 0.9375,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "healthy",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.941",
+  "value": 0.9411764705882353,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "powdery_mildew",
+    "metric": "accuracy"
+   }
+  }
+ }
+]

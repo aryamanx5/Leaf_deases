@@ -99,8 +99,8 @@ PROGRESS.md               task log with evidence for every step
   read from the background, and turmeric results say little about field photos.
 * Turmeric "Dry Leaf" is treated as diseased.
 * Stage 1 colour thresholds were calibrated on the training images of these datasets.
-* Powdery mildew and leaf crinkle change leaf colour little and are the hardest classes for colour-based
-  features; see the per-class table in the report.
+* Abnormal-region detection under-measures faint powdery mildew on dark leaves and very small dark spots; the
+  weakest classes of each method are listed (from measured numbers) in the report's limitations and per-class table.
 * Disease-type classification is out of scope (future work).
 
 No known caveats are open in `BLOCKERS.md` (the file is absent when nothing is blocked).

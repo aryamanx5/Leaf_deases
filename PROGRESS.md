@@ -17,12 +17,18 @@
 | T10 | Unified inference pipeline | DONE | Evidence log T10 |
 | T11 | Demo app | DONE | Evidence log T11 |
 | T12 | Tests, lint, quality | DONE | Evidence log T12 |
-| T13 | Documentation + report | TODO | |
+| T13 | Documentation + report | DONE | Evidence log T13 |
 | T14 | Final verification | TODO | |
 
 ## Evidence log
 
 (newest first)
+
+### 2026-10-25 T13 Documentation + report
+- `make report` -> `wrote results/REPORT.md (212 lines, 498 recorded numbers)`; deleting REPORT.md + report_numbers.json and re-running `make report` gives a byte-identical file (`cmp` -> identical).
+- REPORT.md covers: research question, datasets + per-class split counts, leakage control, capture conditions, methods + pipeline diagram, Stage 1 checks, IP and CNN VAL/TEST tables, comparison table + findings, leakage ablation, per-class error analysis + galleries, measured answer, limitations (weakest classes read from comparison.csv), future work. Every number goes through a recorder that stores its source in results/report_numbers.json.
+- Review fixes before acceptance: a typed limitation ("leaf crinkle / powdery mildew are hardest") contradicted the measured per-class table (SVM 1.000 / 0.971) and was replaced by the measured weakest classes; README limitation corrected the same way; plain-background counts now include colour-fallback images (new `bg_mode` column).
+- README.md: setup, data download + manual placement, `make all`, app, programmatic use, repo map, limitations (no metric values in README by design).
 
 ### 2026-10-25 T12 Tests, lint, quality
 - `make test` -> `47 passed` (split integrity, data/inventory, preprocess + segmentation, lesions, features, decisions, CNN smoke, pipeline, Streamlit AppTest).
@@ -137,4 +143,4 @@
 
 ## NEXT
 
-T13: run scripts/make_report.py (results/REPORT.md generated from results files), check README, then T14 verify_all.py.
+T14: run scripts/verify_all.py (full) and fix whatever fails.

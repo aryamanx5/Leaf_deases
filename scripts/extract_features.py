@@ -54,6 +54,7 @@ def main() -> int:
     )
     feats = pd.DataFrame(recs)
     df = splits.merge(feats, on="path", how="left", validate="one_to_one")
+    df["bg_mode"] = np.where(df["seg_method"].str.startswith("plain"), "plain", "field")
     out = path("features", cfg)
     df.to_csv(out, index=False)
 

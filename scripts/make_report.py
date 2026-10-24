@@ -96,7 +96,7 @@ def dataset_section() -> list[str]:
             f"clusters spanning two splits: {R.num('data/processed/split_meta.json', 'clusters_spanning_splits', fmt='d')}.", ""]
     out += ["**Capture conditions.** Share of images photographed on a plain card/paper/cloth (Stage 1 plain-background mode): "]
     for crop, lab in (("blackgram", "healthy"), ("blackgram", "diseased"), ("turmeric", "healthy"), ("turmeric", "diseased")):
-        n_plain = R.count(FEAT, crop=crop, label=lab, seg_method="plain_bg_threshold")
+        n_plain = R.count(FEAT, crop=crop, label=lab, bg_mode="plain")
         out.append(f"- {crop} {lab}: {n_plain} of {R.count(FEAT, crop=crop, label=lab)}")
     return out + [""]
 
@@ -226,6 +226,16 @@ def per_class_table() -> list[str]:
     return rows
 
 
+def weakest_classes() -> str:
+    t = R.csv("results/comparison.csv")
+    pc = t[(t.section == "per_class") & (t.metric == "accuracy")]
+    parts = []
+    for m, name in (("svm", "SVM"), ("cnn", "CNN")):
+        g = pc[pc.method == m].sort_values("value").head(2)
+        parts.append(f"{name}: " + ", ".join(f"{c} ({R.cmp('per_class', m, c, 'accuracy')})" for c in g.scope))
+    return "Weakest TEST classes by accuracy - " + "; ".join(parts) + "."
+
+
 def limitations_section() -> list[str]:
     return [
         "## Limitations", "",
@@ -236,8 +246,10 @@ def limitations_section() -> list[str]:
         "therefore trivially predictable from the background, and the turmeric results say little about field photos.",
         "- Turmeric 'Dry Leaf' is counted as diseased (abnormal condition class in the source dataset).",
         "- Stage 1 colour rules were calibrated on TRAIN images of these two datasets; other cultivars, cameras or "
-        "lighting may need recalibration. Leaf crinkle and powdery mildew show little colour change and are the "
-        "hardest classes for colour-based features (see per-class table).",
+        "lighting may need recalibration. " + weakest_classes(),
+        "- Abnormal-region detection under-measures faint powdery mildew on dark leaves and very small dark spots "
+        "(see the lesion figure and the disagreement gallery); the SVM partly compensates through colour and texture "
+        "statistics of the whole leaf.",
         "- Segmentation of field photos can include neighbouring foliage or miss part of a two-tone leaf.",
         "- The CNN was trained once (one seed) with a time budget; no architecture search.",
         "", "## Future work", "",

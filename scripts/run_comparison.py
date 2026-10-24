@@ -295,8 +295,11 @@ def render_md(tab, abl, class_crop: dict) -> str:
               f"of naive-random TEST items have a near-duplicate in TRAIN, and macro-F1 moves by {a('svm', 'naive_random', 'macro_f1_inflation')} (SVM) "
               f"and {a('cnn_head', 'naive_random', 'macro_f1_inflation')} (CNN head). Creating augmented copies before splitting puts a sibling of "
               f"{a('svm', 'augment_then_split', 'test_items_with_cluster_in_train')} of TEST items in TRAIN and inflates macro-F1 by "
-              f"{a('svm', 'augment_then_split', 'macro_f1_inflation')} (SVM) and {a('cnn_head', 'augment_then_split', 'macro_f1_inflation')} (CNN head): "
-              "the gap between methods also shrinks, which is how pre-augmented benchmarks can flatter weaker methods. "
+              f"{a('svm', 'augment_then_split', 'macro_f1_inflation')} (SVM) and {a('cnn_head', 'augment_then_split', 'macro_f1_inflation')} (CNN head)"
+              + (": the weaker method gains more, so the gap between methods shrinks, which is how pre-augmented benchmarks can flatter weaker methods. "
+                 if V("leakage_ablation", "svm", "augment_then_split", "macro_f1_inflation")
+                 > V("leakage_ablation", "cnn_head", "augment_then_split", "macro_f1_inflation") else ". ")
+              +
               f"Side note: on the clean split the frozen-embedding CNN head ({a('cnn_head', 'clean', 'macro_f1')}) is on par with the "
               f"fine-tuned CNN ({G('metrics', 'cnn', 'overall', 'macro_f1')})."]
     lines += ["", "## What this answers", ""]
@@ -307,7 +310,7 @@ def render_md(tab, abl, class_crop: dict) -> str:
         f"{G('metrics', 'svm', 'overall', 'macro_f1')} on unseen leaves. "
         + (f"The CNN is higher by {G('summary', 'cnn_minus_svm', 'overall', 'macro_f1_gap')} macro-F1"
            if gap > 0 else f"The CNN is lower by {G('summary', 'svm_minus_cnn', 'overall', 'macro_f1_gap')} macro-F1")
-        + ("; the difference is statistically significant (McNemar), " if sig else "; the difference is not statistically significant (McNemar), ")
+        + ("; the difference is statistically significant (McNemar). " if sig else "; the difference is not statistically significant (McNemar). ")
         + "Turmeric is close to solved by both routes on this paper-background dataset; black gram, photographed "
         "mostly in the field, is where hand-designed features fall short, mainly by calling healthy leaves diseased "
         "(see the healthy recall values above). The image-processing route buys an explicit, inspectable measurement "
