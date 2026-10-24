@@ -10,7 +10,6 @@ Bad input raises InvalidImageError (unreadable / too small) or NotALeafError.
 
 from __future__ import annotations
 
-import io
 import os
 from functools import lru_cache
 from pathlib import Path
@@ -176,8 +175,3 @@ def result_card(res: dict) -> str:
     return (f"Crop: {res['crop_name']}\nPrediction: {res['prediction']}\n"
             f"Affected Region: {res['affected_region_pct']:.1f}%\nCNN Confidence: {res['cnn_confidence']:.0%}")
 
-
-def encode_png(rgb: np.ndarray) -> bytes:
-    buf = io.BytesIO()
-    Image.fromarray(rgb).save(buf, format="PNG")
-    return buf.getvalue()

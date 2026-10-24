@@ -16,13 +16,18 @@
 | T09 | Comparison | DONE | Evidence log T09 |
 | T10 | Unified inference pipeline | DONE | Evidence log T10 |
 | T11 | Demo app | DONE | Evidence log T11 |
-| T12 | Tests, lint, quality | TODO | |
+| T12 | Tests, lint, quality | DONE | Evidence log T12 |
 | T13 | Documentation + report | TODO | |
 | T14 | Final verification | TODO | |
 
 ## Evidence log
 
 (newest first)
+
+### 2026-10-25 T12 Tests, lint, quality
+- `make test` -> `47 passed` (split integrity, data/inventory, preprocess + segmentation, lesions, features, decisions, CNN smoke, pipeline, Streamlit AppTest).
+- `make lint` -> `All checks passed!`
+- Dead code removed: pipeline.encode_png, ablation.stage1_matrix, cnn.dataset.diseased_prob (+ its test); unused imports cleaned by ruff.
 
 ### 2026-10-25 T11 Demo app
 - `streamlit run app/streamlit_app.py` started (built-in browser preview on :8501, no server errors in the log). Screenshots inspected: Analyze tab shows the card `Crop: Black Gram / Prediction: Diseased / Affected Region: 22.8% / CNN Confidence: 100%` for TEST sample 114p.jpg (powdery mildew), the Original -> Segmented Leaf -> Detected Abnormal Regions strip + Grad-CAM, "Image Processing says Diseased (SVM) | CNN says Diseased (confidence 100%)" with an AGREE badge and rule components; Results tab renders comparison.md, comparison.csv and figures.
@@ -132,4 +137,4 @@
 
 ## NEXT
 
-T12: full pytest + ruff, remove dead code.
+T13: run scripts/make_report.py (results/REPORT.md generated from results files), check README, then T14 verify_all.py.

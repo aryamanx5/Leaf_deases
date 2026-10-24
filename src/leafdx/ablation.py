@@ -28,7 +28,6 @@ from sklearn.svm import SVC
 from leafdx.cnn.dataset import eval_transform
 from leafdx.cnn.model import build_model, device
 from leafdx.config import ROOT
-from leafdx.ip.decide import svm_matrix
 
 AUGMENTS = ("orig", "hflip", "rot90", "bright")
 
@@ -113,6 +112,3 @@ def run_ablation(items: pd.DataFrame, X_feat: np.ndarray, X_emb: np.ndarray, spl
                          "test_items_with_cluster_in_train": leakage_share(items, s)})
     return pd.DataFrame(rows)
 
-
-def stage1_matrix(feats: pd.DataFrame) -> np.ndarray:
-    return svm_matrix(feats)

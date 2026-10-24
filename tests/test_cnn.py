@@ -1,9 +1,8 @@
 import cv2
-import numpy as np
 import pandas as pd
 import torch
 
-from leafdx.cnn.dataset import CLASSES4, LeafDataset, diseased_prob, eval_transform, train_transform
+from leafdx.cnn.dataset import CLASSES4, LeafDataset, eval_transform, train_transform
 from leafdx.cnn.model import build_model, load_checkpoint, save_checkpoint, set_trainable
 from leafdx.config import load_config
 from tests.synthetic import make_leaf
@@ -41,7 +40,3 @@ def test_dataset_and_transforms_on_synthetic_images(tmp_path, monkeypatch):
     ds.transform = eval_transform(CFG["cnn"])
     assert torch.equal(ds[0][0], ds[0][0])  # eval transform is deterministic
 
-
-def test_diseased_prob_sums_diseased_classes():
-    p = torch.tensor([[0.1, 0.2, 0.3, 0.4]])
-    assert np.isclose(diseased_prob(p).item(), 0.2 + 0.4)

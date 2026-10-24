@@ -7,7 +7,6 @@ augmentation is applied on the fly and ONLY to the training split.
 from __future__ import annotations
 
 import pandas as pd
-import torch
 from joblib import Parallel, delayed
 from PIL import Image
 from torch.utils.data import Dataset
@@ -63,7 +62,3 @@ class LeafDataset(Dataset):
     def __getitem__(self, i: int):
         return self.transform(self.images[i]), self.targets[i]
 
-
-def diseased_prob(probs4: torch.Tensor) -> torch.Tensor:
-    """P(diseased) = sum of the two diseased-class probabilities."""
-    return probs4[:, list(DISEASED_IDX)].sum(1)
