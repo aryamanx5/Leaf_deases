@@ -1,0 +1,44 @@
+{
+  "seed": 42,
+  "dedup_rules": {
+    "strong_d256": 54,
+    "medium_d64": 6,
+    "medium_d256": 70,
+    "burst_index_gap": 3,
+    "burst_d64": 12
+  },
+  "clusters_spanning_splits": 0,
+  "clusters_with_mixed_labels": 0,
+  "n_clusters": 1548,
+  "n_multi_image_clusters": 50,
+  "counts": {
+    "test": {
+      "blackgram_diseased": 118,
+      "blackgram_healthy": 32,
+      "turmeric_diseased": 60,
+      "turmeric_healthy": 29
+    },
+    "train": {
+      "blackgram_diseased": 550,
+      "blackgram_healthy": 155,
+      "turmeric_diseased": 282,
+      "turmeric_healthy": 138
+    },
+    "val": {
+      "blackgram_diseased": 118,
+      "blackgram_healthy": 34,
+      "turmeric_diseased": 60,
+      "turmeric_healthy": 30
+    }
+  },
+  "class_weights_binary": {
+    "diseased": 0.6760817307692307,
+    "healthy": 1.9197952218430034
+  },
+  "class_weights_4class": {
+    "blackgram_diseased": 0.5113636363636364,
+    "blackgram_healthy": 1.814516129032258,
+    "turmeric_diseased": 0.9973404255319149,
+    "turmeric_healthy": 2.0380434782608696
+  }
+}

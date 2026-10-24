@@ -46,8 +46,12 @@ datasets:
 
 split:
   ratios: {train: 0.70, val: 0.15, test: 0.15}
-  phash_size: 8            # 8x8 -> 64-bit perceptual hash
-  phash_max_distance: 6    # Hamming distance <= this => same cluster
+  dedup:                   # near-duplicate rules (pHash 64-bit "d64" and 256-bit "d256")
+    strong_d256: 54        # calibrated on inspected pairs: <=52 were all the same leaf
+    medium_d64: 6
+    medium_d256: 70
+    burst_index_gap: 3     # consecutive file numbers in one class = burst shots
+    burst_d64: 12
   stem_grouping: true      # strip augmentation suffixes from filenames before grouping
 
 preprocess:

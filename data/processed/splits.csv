@@ -1,0 +1,1607 @@
+path,crop,label,orig_class,cluster_id,stratum,split
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00001.JPG,turmeric,healthy,healthy_leaf,0,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00002.JPG,turmeric,healthy,healthy_leaf,1,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00003.JPG,turmeric,healthy,healthy_leaf,2,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00004.JPG,turmeric,healthy,healthy_leaf,0,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00005.JPG,turmeric,healthy,healthy_leaf,3,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00006.JPG,turmeric,healthy,healthy_leaf,4,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00007.JPG,turmeric,healthy,healthy_leaf,5,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00008.JPG,turmeric,healthy,healthy_leaf,6,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00009.JPG,turmeric,healthy,healthy_leaf,7,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00010.JPG,turmeric,healthy,healthy_leaf,8,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00011.JPG,turmeric,healthy,healthy_leaf,9,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00012.JPG,turmeric,healthy,healthy_leaf,10,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00013.JPG,turmeric,healthy,healthy_leaf,11,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00014.JPG,turmeric,healthy,healthy_leaf,12,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00015.JPG,turmeric,healthy,healthy_leaf,13,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00016.JPG,turmeric,healthy,healthy_leaf,14,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00017.JPG,turmeric,healthy,healthy_leaf,13,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00018.JPG,turmeric,healthy,healthy_leaf,15,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00019.JPG,turmeric,healthy,healthy_leaf,16,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00020.JPG,turmeric,healthy,healthy_leaf,17,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00021.JPG,turmeric,healthy,healthy_leaf,18,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00022.JPG,turmeric,healthy,healthy_leaf,19,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00023.JPG,turmeric,healthy,healthy_leaf,20,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00024.JPG,turmeric,healthy,healthy_leaf,21,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00025.JPG,turmeric,healthy,healthy_leaf,22,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00026.JPG,turmeric,healthy,healthy_leaf,23,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00027.JPG,turmeric,healthy,healthy_leaf,24,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00028.JPG,turmeric,healthy,healthy_leaf,25,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00029.JPG,turmeric,healthy,healthy_leaf,26,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00030.JPG,turmeric,healthy,healthy_leaf,27,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00031.JPG,turmeric,healthy,healthy_leaf,28,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00032.JPG,turmeric,healthy,healthy_leaf,29,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00033.JPG,turmeric,healthy,healthy_leaf,30,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00034.JPG,turmeric,healthy,healthy_leaf,31,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00035.JPG,turmeric,healthy,healthy_leaf,32,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00036.JPG,turmeric,healthy,healthy_leaf,33,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00037.JPG,turmeric,healthy,healthy_leaf,34,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00038.JPG,turmeric,healthy,healthy_leaf,34,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00039.JPG,turmeric,healthy,healthy_leaf,35,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00040.JPG,turmeric,healthy,healthy_leaf,36,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00041.JPG,turmeric,healthy,healthy_leaf,37,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00042.JPG,turmeric,healthy,healthy_leaf,38,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00043.JPG,turmeric,healthy,healthy_leaf,39,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00044.JPG,turmeric,healthy,healthy_leaf,37,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00045.JPG,turmeric,healthy,healthy_leaf,40,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00046.JPG,turmeric,healthy,healthy_leaf,41,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00047.JPG,turmeric,healthy,healthy_leaf,42,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00048.JPG,turmeric,healthy,healthy_leaf,42,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00049.JPG,turmeric,healthy,healthy_leaf,43,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00050.JPG,turmeric,healthy,healthy_leaf,44,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00051.JPG,turmeric,healthy,healthy_leaf,45,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00052.JPG,turmeric,healthy,healthy_leaf,46,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00053.JPG,turmeric,healthy,healthy_leaf,47,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00054.JPG,turmeric,healthy,healthy_leaf,48,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00055.JPG,turmeric,healthy,healthy_leaf,49,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00056.JPG,turmeric,healthy,healthy_leaf,50,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00057.JPG,turmeric,healthy,healthy_leaf,51,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00058.JPG,turmeric,healthy,healthy_leaf,52,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00059.JPG,turmeric,healthy,healthy_leaf,53,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00060.JPG,turmeric,healthy,healthy_leaf,54,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00061.JPG,turmeric,healthy,healthy_leaf,55,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00062.JPG,turmeric,healthy,healthy_leaf,53,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00063.JPG,turmeric,healthy,healthy_leaf,56,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00064.JPG,turmeric,healthy,healthy_leaf,57,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00065.JPG,turmeric,healthy,healthy_leaf,58,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00066.JPG,turmeric,healthy,healthy_leaf,59,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00067.JPG,turmeric,healthy,healthy_leaf,60,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00068.JPG,turmeric,healthy,healthy_leaf,61,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00069.JPG,turmeric,healthy,healthy_leaf,62,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00070.JPG,turmeric,healthy,healthy_leaf,63,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00071.JPG,turmeric,healthy,healthy_leaf,64,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00072.JPG,turmeric,healthy,healthy_leaf,65,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00073.JPG,turmeric,healthy,healthy_leaf,66,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00074.JPG,turmeric,healthy,healthy_leaf,67,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00075.JPG,turmeric,healthy,healthy_leaf,68,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00076.JPG,turmeric,healthy,healthy_leaf,69,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00077.JPG,turmeric,healthy,healthy_leaf,70,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00078.JPG,turmeric,healthy,healthy_leaf,71,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00079.JPG,turmeric,healthy,healthy_leaf,72,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00080.JPG,turmeric,healthy,healthy_leaf,73,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00081.JPG,turmeric,healthy,healthy_leaf,74,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00082.JPG,turmeric,healthy,healthy_leaf,75,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00083.JPG,turmeric,healthy,healthy_leaf,76,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00084.JPG,turmeric,healthy,healthy_leaf,77,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00085.JPG,turmeric,healthy,healthy_leaf,78,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00086.JPG,turmeric,healthy,healthy_leaf,79,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00087.JPG,turmeric,healthy,healthy_leaf,80,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00088.JPG,turmeric,healthy,healthy_leaf,81,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00089.JPG,turmeric,healthy,healthy_leaf,82,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00090.JPG,turmeric,healthy,healthy_leaf,83,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00091.JPG,turmeric,healthy,healthy_leaf,84,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00092.JPG,turmeric,healthy,healthy_leaf,85,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00093.JPG,turmeric,healthy,healthy_leaf,86,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00094.JPG,turmeric,healthy,healthy_leaf,87,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00095.JPG,turmeric,healthy,healthy_leaf,88,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00096.JPG,turmeric,healthy,healthy_leaf,89,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00097.JPG,turmeric,healthy,healthy_leaf,90,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00098.JPG,turmeric,healthy,healthy_leaf,91,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00099.JPG,turmeric,healthy,healthy_leaf,92,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00100.JPG,turmeric,healthy,healthy_leaf,93,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00101.JPG,turmeric,healthy,healthy_leaf,94,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00102.JPG,turmeric,healthy,healthy_leaf,95,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00103.JPG,turmeric,healthy,healthy_leaf,96,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00104.JPG,turmeric,healthy,healthy_leaf,83,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00105.JPG,turmeric,healthy,healthy_leaf,97,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00106.JPG,turmeric,healthy,healthy_leaf,98,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00107.JPG,turmeric,healthy,healthy_leaf,99,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00108.JPG,turmeric,healthy,healthy_leaf,100,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00109.JPG,turmeric,healthy,healthy_leaf,101,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00110.JPG,turmeric,healthy,healthy_leaf,102,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00111.JPG,turmeric,healthy,healthy_leaf,103,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00112.JPG,turmeric,healthy,healthy_leaf,104,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00113.JPG,turmeric,healthy,healthy_leaf,105,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00114.JPG,turmeric,healthy,healthy_leaf,106,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00115.JPG,turmeric,healthy,healthy_leaf,107,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00116.JPG,turmeric,healthy,healthy_leaf,108,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00117.JPG,turmeric,healthy,healthy_leaf,109,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00118.JPG,turmeric,healthy,healthy_leaf,110,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00119.JPG,turmeric,healthy,healthy_leaf,111,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00120.JPG,turmeric,healthy,healthy_leaf,112,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00121.JPG,turmeric,healthy,healthy_leaf,111,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00122.JPG,turmeric,healthy,healthy_leaf,113,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00123.JPG,turmeric,healthy,healthy_leaf,114,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00124.JPG,turmeric,healthy,healthy_leaf,115,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00125.JPG,turmeric,healthy,healthy_leaf,116,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00126.JPG,turmeric,healthy,healthy_leaf,117,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00127.JPG,turmeric,healthy,healthy_leaf,118,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00128.JPG,turmeric,healthy,healthy_leaf,119,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00129.JPG,turmeric,healthy,healthy_leaf,120,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00130.JPG,turmeric,healthy,healthy_leaf,121,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00131.JPG,turmeric,healthy,healthy_leaf,122,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00132.JPG,turmeric,healthy,healthy_leaf,123,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00133.JPG,turmeric,healthy,healthy_leaf,124,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00134.JPG,turmeric,healthy,healthy_leaf,125,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00135.JPG,turmeric,healthy,healthy_leaf,126,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00136.JPG,turmeric,healthy,healthy_leaf,126,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00137.JPG,turmeric,healthy,healthy_leaf,127,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00138.JPG,turmeric,healthy,healthy_leaf,128,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00139.JPG,turmeric,healthy,healthy_leaf,36,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00140.JPG,turmeric,healthy,healthy_leaf,129,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00141.JPG,turmeric,healthy,healthy_leaf,130,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00142.JPG,turmeric,healthy,healthy_leaf,131,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00143.JPG,turmeric,healthy,healthy_leaf,132,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00144.JPG,turmeric,healthy,healthy_leaf,133,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00145.JPG,turmeric,healthy,healthy_leaf,134,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00146.JPG,turmeric,healthy,healthy_leaf,135,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00147.JPG,turmeric,healthy,healthy_leaf,136,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00148.JPG,turmeric,healthy,healthy_leaf,137,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00149.JPG,turmeric,healthy,healthy_leaf,138,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00150.JPG,turmeric,healthy,healthy_leaf,139,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00151.JPG,turmeric,healthy,healthy_leaf,140,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00152.JPG,turmeric,healthy,healthy_leaf,141,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00153.JPG,turmeric,healthy,healthy_leaf,142,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00154.JPG,turmeric,healthy,healthy_leaf,143,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00155.JPG,turmeric,healthy,healthy_leaf,144,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00156.JPG,turmeric,healthy,healthy_leaf,145,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00157.JPG,turmeric,healthy,healthy_leaf,146,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00158.JPG,turmeric,healthy,healthy_leaf,147,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00159.JPG,turmeric,healthy,healthy_leaf,148,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00160.JPG,turmeric,healthy,healthy_leaf,149,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00161.JPG,turmeric,healthy,healthy_leaf,150,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00162.JPG,turmeric,healthy,healthy_leaf,151,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00163.JPG,turmeric,healthy,healthy_leaf,152,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00164.JPG,turmeric,healthy,healthy_leaf,151,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00165.JPG,turmeric,healthy,healthy_leaf,153,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00166.JPG,turmeric,healthy,healthy_leaf,154,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00167.JPG,turmeric,healthy,healthy_leaf,155,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00168.JPG,turmeric,healthy,healthy_leaf,156,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00169.JPG,turmeric,healthy,healthy_leaf,157,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00170.JPG,turmeric,healthy,healthy_leaf,158,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00171.JPG,turmeric,healthy,healthy_leaf,159,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00172.JPG,turmeric,healthy,healthy_leaf,160,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00173.JPG,turmeric,healthy,healthy_leaf,161,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00174.JPG,turmeric,healthy,healthy_leaf,162,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00175.JPG,turmeric,healthy,healthy_leaf,163,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00176.JPG,turmeric,healthy,healthy_leaf,164,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00177.JPG,turmeric,healthy,healthy_leaf,165,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00178.JPG,turmeric,healthy,healthy_leaf,166,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00179.JPG,turmeric,healthy,healthy_leaf,167,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00180.JPG,turmeric,healthy,healthy_leaf,168,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00181.JPG,turmeric,healthy,healthy_leaf,169,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00182.JPG,turmeric,healthy,healthy_leaf,170,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00183.JPG,turmeric,healthy,healthy_leaf,171,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00184.JPG,turmeric,healthy,healthy_leaf,172,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00185.JPG,turmeric,healthy,healthy_leaf,173,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00186.JPG,turmeric,healthy,healthy_leaf,174,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00187.JPG,turmeric,healthy,healthy_leaf,175,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00188.JPG,turmeric,healthy,healthy_leaf,176,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00189.JPG,turmeric,healthy,healthy_leaf,177,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00190.JPG,turmeric,healthy,healthy_leaf,178,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00191.JPG,turmeric,healthy,healthy_leaf,179,turmeric_healthy,test
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00192.JPG,turmeric,healthy,healthy_leaf,180,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00193.JPG,turmeric,healthy,healthy_leaf,181,turmeric_healthy,val
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00194.JPG,turmeric,healthy,healthy_leaf,182,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00195.JPG,turmeric,healthy,healthy_leaf,183,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00196.JPG,turmeric,healthy,healthy_leaf,184,turmeric_healthy,train
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00197.JPG,turmeric,healthy,healthy_leaf,185,turmeric_healthy,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00001.JPG,turmeric,diseased,dry_leaf,186,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00002.JPG,turmeric,diseased,dry_leaf,187,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00003.JPG,turmeric,diseased,dry_leaf,188,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00004.JPG,turmeric,diseased,dry_leaf,189,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00005.JPG,turmeric,diseased,dry_leaf,190,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00006.JPG,turmeric,diseased,dry_leaf,191,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00007.JPG,turmeric,diseased,dry_leaf,192,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00008.JPG,turmeric,diseased,dry_leaf,193,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00009.JPG,turmeric,diseased,dry_leaf,194,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00010.JPG,turmeric,diseased,dry_leaf,195,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00011.JPG,turmeric,diseased,dry_leaf,196,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00012.JPG,turmeric,diseased,dry_leaf,197,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00013.JPG,turmeric,diseased,dry_leaf,198,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00014.JPG,turmeric,diseased,dry_leaf,199,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00015.JPG,turmeric,diseased,dry_leaf,200,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00016.JPG,turmeric,diseased,dry_leaf,201,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00017.JPG,turmeric,diseased,dry_leaf,202,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00018.JPG,turmeric,diseased,dry_leaf,203,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00019.JPG,turmeric,diseased,dry_leaf,204,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00020.JPG,turmeric,diseased,dry_leaf,205,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00021.JPG,turmeric,diseased,dry_leaf,206,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00022.JPG,turmeric,diseased,dry_leaf,207,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00023.JPG,turmeric,diseased,dry_leaf,208,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00024.JPG,turmeric,diseased,dry_leaf,209,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00025.JPG,turmeric,diseased,dry_leaf,210,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00026.JPG,turmeric,diseased,dry_leaf,211,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00027.JPG,turmeric,diseased,dry_leaf,212,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00028.JPG,turmeric,diseased,dry_leaf,213,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00029.JPG,turmeric,diseased,dry_leaf,213,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00030.JPG,turmeric,diseased,dry_leaf,214,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00031.JPG,turmeric,diseased,dry_leaf,215,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00032.JPG,turmeric,diseased,dry_leaf,216,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00033.JPG,turmeric,diseased,dry_leaf,217,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00034.JPG,turmeric,diseased,dry_leaf,218,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00035.JPG,turmeric,diseased,dry_leaf,219,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00036.JPG,turmeric,diseased,dry_leaf,220,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00037.JPG,turmeric,diseased,dry_leaf,221,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00038.JPG,turmeric,diseased,dry_leaf,222,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00039.JPG,turmeric,diseased,dry_leaf,223,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00040.JPG,turmeric,diseased,dry_leaf,224,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00041.JPG,turmeric,diseased,dry_leaf,225,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00042.JPG,turmeric,diseased,dry_leaf,226,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00043.JPG,turmeric,diseased,dry_leaf,227,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00044.JPG,turmeric,diseased,dry_leaf,228,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00045.JPG,turmeric,diseased,dry_leaf,229,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00046.JPG,turmeric,diseased,dry_leaf,230,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00047.JPG,turmeric,diseased,dry_leaf,231,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00048.JPG,turmeric,diseased,dry_leaf,232,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00049.JPG,turmeric,diseased,dry_leaf,233,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00050.JPG,turmeric,diseased,dry_leaf,234,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00051.JPG,turmeric,diseased,dry_leaf,235,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00052.JPG,turmeric,diseased,dry_leaf,236,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00053.JPG,turmeric,diseased,dry_leaf,237,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00054.JPG,turmeric,diseased,dry_leaf,238,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00055.JPG,turmeric,diseased,dry_leaf,239,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00056.JPG,turmeric,diseased,dry_leaf,240,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00057.JPG,turmeric,diseased,dry_leaf,241,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00058.JPG,turmeric,diseased,dry_leaf,242,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00059.JPG,turmeric,diseased,dry_leaf,243,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00060.JPG,turmeric,diseased,dry_leaf,244,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00061.JPG,turmeric,diseased,dry_leaf,245,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00062.JPG,turmeric,diseased,dry_leaf,246,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00063.JPG,turmeric,diseased,dry_leaf,247,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00064.JPG,turmeric,diseased,dry_leaf,248,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00065.JPG,turmeric,diseased,dry_leaf,249,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00066.JPG,turmeric,diseased,dry_leaf,250,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00067.JPG,turmeric,diseased,dry_leaf,251,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00068.JPG,turmeric,diseased,dry_leaf,252,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00069.JPG,turmeric,diseased,dry_leaf,253,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00070.JPG,turmeric,diseased,dry_leaf,254,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00071.JPG,turmeric,diseased,dry_leaf,255,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00072.JPG,turmeric,diseased,dry_leaf,256,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00073.JPG,turmeric,diseased,dry_leaf,257,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00074.JPG,turmeric,diseased,dry_leaf,258,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00075.JPG,turmeric,diseased,dry_leaf,259,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00076.JPG,turmeric,diseased,dry_leaf,260,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00077.JPG,turmeric,diseased,dry_leaf,261,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00078.JPG,turmeric,diseased,dry_leaf,262,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00079.JPG,turmeric,diseased,dry_leaf,263,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00080.JPG,turmeric,diseased,dry_leaf,264,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00081.JPG,turmeric,diseased,dry_leaf,265,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00082.JPG,turmeric,diseased,dry_leaf,266,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00083.JPG,turmeric,diseased,dry_leaf,267,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00084.JPG,turmeric,diseased,dry_leaf,268,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00085.JPG,turmeric,diseased,dry_leaf,269,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00086.JPG,turmeric,diseased,dry_leaf,270,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00087.JPG,turmeric,diseased,dry_leaf,271,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00088.JPG,turmeric,diseased,dry_leaf,272,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00089.JPG,turmeric,diseased,dry_leaf,273,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00090.JPG,turmeric,diseased,dry_leaf,274,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00091.JPG,turmeric,diseased,dry_leaf,275,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00092.JPG,turmeric,diseased,dry_leaf,276,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00093.JPG,turmeric,diseased,dry_leaf,277,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00094.JPG,turmeric,diseased,dry_leaf,278,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00095.JPG,turmeric,diseased,dry_leaf,279,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00096.JPG,turmeric,diseased,dry_leaf,280,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00097.JPG,turmeric,diseased,dry_leaf,281,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00098.JPG,turmeric,diseased,dry_leaf,282,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00099.JPG,turmeric,diseased,dry_leaf,283,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00100.JPG,turmeric,diseased,dry_leaf,284,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00101.JPG,turmeric,diseased,dry_leaf,285,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00102.JPG,turmeric,diseased,dry_leaf,286,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00103.JPG,turmeric,diseased,dry_leaf,287,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00104.JPG,turmeric,diseased,dry_leaf,288,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00105.JPG,turmeric,diseased,dry_leaf,289,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00106.JPG,turmeric,diseased,dry_leaf,290,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00107.JPG,turmeric,diseased,dry_leaf,291,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00108.JPG,turmeric,diseased,dry_leaf,292,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00109.JPG,turmeric,diseased,dry_leaf,293,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00110.JPG,turmeric,diseased,dry_leaf,294,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00111.JPG,turmeric,diseased,dry_leaf,295,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00112.JPG,turmeric,diseased,dry_leaf,296,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00113.JPG,turmeric,diseased,dry_leaf,297,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00114.JPG,turmeric,diseased,dry_leaf,298,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00115.JPG,turmeric,diseased,dry_leaf,299,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00116.JPG,turmeric,diseased,dry_leaf,297,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00117.JPG,turmeric,diseased,dry_leaf,300,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00118.JPG,turmeric,diseased,dry_leaf,299,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00119.JPG,turmeric,diseased,dry_leaf,301,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00120.JPG,turmeric,diseased,dry_leaf,302,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00121.JPG,turmeric,diseased,dry_leaf,303,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00122.JPG,turmeric,diseased,dry_leaf,304,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00123.JPG,turmeric,diseased,dry_leaf,305,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00124.JPG,turmeric,diseased,dry_leaf,306,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00125.JPG,turmeric,diseased,dry_leaf,307,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00126.JPG,turmeric,diseased,dry_leaf,308,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00127.JPG,turmeric,diseased,dry_leaf,309,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00128.JPG,turmeric,diseased,dry_leaf,309,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00129.JPG,turmeric,diseased,dry_leaf,310,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00130.JPG,turmeric,diseased,dry_leaf,311,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00131.JPG,turmeric,diseased,dry_leaf,312,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00132.JPG,turmeric,diseased,dry_leaf,313,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00133.JPG,turmeric,diseased,dry_leaf,314,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00134.JPG,turmeric,diseased,dry_leaf,315,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00135.JPG,turmeric,diseased,dry_leaf,316,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00136.JPG,turmeric,diseased,dry_leaf,317,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00137.JPG,turmeric,diseased,dry_leaf,318,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00138.JPG,turmeric,diseased,dry_leaf,319,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00139.JPG,turmeric,diseased,dry_leaf,320,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00140.JPG,turmeric,diseased,dry_leaf,321,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00141.JPG,turmeric,diseased,dry_leaf,322,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00142.JPG,turmeric,diseased,dry_leaf,323,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00143.JPG,turmeric,diseased,dry_leaf,324,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00144.JPG,turmeric,diseased,dry_leaf,325,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00145.JPG,turmeric,diseased,dry_leaf,326,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00146.JPG,turmeric,diseased,dry_leaf,327,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00147.JPG,turmeric,diseased,dry_leaf,328,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00148.JPG,turmeric,diseased,dry_leaf,329,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00149.JPG,turmeric,diseased,dry_leaf,330,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00150.JPG,turmeric,diseased,dry_leaf,330,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00151.JPG,turmeric,diseased,dry_leaf,331,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00152.JPG,turmeric,diseased,dry_leaf,330,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00153.JPG,turmeric,diseased,dry_leaf,332,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00154.JPG,turmeric,diseased,dry_leaf,333,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00155.JPG,turmeric,diseased,dry_leaf,334,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00156.JPG,turmeric,diseased,dry_leaf,335,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00157.JPG,turmeric,diseased,dry_leaf,336,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00158.JPG,turmeric,diseased,dry_leaf,337,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00159.JPG,turmeric,diseased,dry_leaf,338,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00160.JPG,turmeric,diseased,dry_leaf,339,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00161.JPG,turmeric,diseased,dry_leaf,340,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00162.JPG,turmeric,diseased,dry_leaf,341,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00163.JPG,turmeric,diseased,dry_leaf,342,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00164.JPG,turmeric,diseased,dry_leaf,343,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00165.JPG,turmeric,diseased,dry_leaf,342,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00166.JPG,turmeric,diseased,dry_leaf,344,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00167.JPG,turmeric,diseased,dry_leaf,345,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00168.JPG,turmeric,diseased,dry_leaf,346,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00169.JPG,turmeric,diseased,dry_leaf,347,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00170.JPG,turmeric,diseased,dry_leaf,348,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00171.JPG,turmeric,diseased,dry_leaf,349,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00172.JPG,turmeric,diseased,dry_leaf,350,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00173.JPG,turmeric,diseased,dry_leaf,351,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00174.JPG,turmeric,diseased,dry_leaf,352,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00175.JPG,turmeric,diseased,dry_leaf,353,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00176.JPG,turmeric,diseased,dry_leaf,354,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00177.JPG,turmeric,diseased,dry_leaf,355,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00178.JPG,turmeric,diseased,dry_leaf,356,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00179.JPG,turmeric,diseased,dry_leaf,357,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00180.JPG,turmeric,diseased,dry_leaf,358,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00181.JPG,turmeric,diseased,dry_leaf,359,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00182.JPG,turmeric,diseased,dry_leaf,360,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00183.JPG,turmeric,diseased,dry_leaf,361,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00184.JPG,turmeric,diseased,dry_leaf,362,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00185.JPG,turmeric,diseased,dry_leaf,363,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00186.JPG,turmeric,diseased,dry_leaf,364,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00187.JPG,turmeric,diseased,dry_leaf,365,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00188.JPG,turmeric,diseased,dry_leaf,366,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00189.JPG,turmeric,diseased,dry_leaf,367,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00190.JPG,turmeric,diseased,dry_leaf,368,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00191.JPG,turmeric,diseased,dry_leaf,369,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00192.JPG,turmeric,diseased,dry_leaf,370,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00193.JPG,turmeric,diseased,dry_leaf,371,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00194.JPG,turmeric,diseased,dry_leaf,372,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00195.JPG,turmeric,diseased,dry_leaf,373,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00196.JPG,turmeric,diseased,dry_leaf,374,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00197.JPG,turmeric,diseased,dry_leaf,375,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00198.JPG,turmeric,diseased,dry_leaf,376,turmeric_diseased,val
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00199.JPG,turmeric,diseased,dry_leaf,377,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00200.JPG,turmeric,diseased,dry_leaf,378,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00201.JPG,turmeric,diseased,dry_leaf,379,turmeric_diseased,test
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00202.JPG,turmeric,diseased,dry_leaf,380,turmeric_diseased,train
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00203.JPG,turmeric,diseased,dry_leaf,381,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00001.JPG,turmeric,diseased,leaf_blotch,382,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00002.JPG,turmeric,diseased,leaf_blotch,383,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00003.JPG,turmeric,diseased,leaf_blotch,384,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00004.JPG,turmeric,diseased,leaf_blotch,385,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00005.JPG,turmeric,diseased,leaf_blotch,386,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00006.JPG,turmeric,diseased,leaf_blotch,384,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00007.JPG,turmeric,diseased,leaf_blotch,387,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00008.JPG,turmeric,diseased,leaf_blotch,388,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00009.JPG,turmeric,diseased,leaf_blotch,389,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00010.JPG,turmeric,diseased,leaf_blotch,387,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00011.JPG,turmeric,diseased,leaf_blotch,390,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00012.JPG,turmeric,diseased,leaf_blotch,390,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00013.JPG,turmeric,diseased,leaf_blotch,391,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00014.JPG,turmeric,diseased,leaf_blotch,392,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00015.JPG,turmeric,diseased,leaf_blotch,393,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00016.JPG,turmeric,diseased,leaf_blotch,394,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00017.JPG,turmeric,diseased,leaf_blotch,395,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00018.JPG,turmeric,diseased,leaf_blotch,396,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00019.JPG,turmeric,diseased,leaf_blotch,396,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00020.JPG,turmeric,diseased,leaf_blotch,396,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00021.JPG,turmeric,diseased,leaf_blotch,397,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00022.JPG,turmeric,diseased,leaf_blotch,398,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00023.JPG,turmeric,diseased,leaf_blotch,399,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00024.JPG,turmeric,diseased,leaf_blotch,400,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00025.JPG,turmeric,diseased,leaf_blotch,399,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00026.JPG,turmeric,diseased,leaf_blotch,401,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00027.JPG,turmeric,diseased,leaf_blotch,402,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00028.JPG,turmeric,diseased,leaf_blotch,403,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00029.JPG,turmeric,diseased,leaf_blotch,404,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00030.JPG,turmeric,diseased,leaf_blotch,405,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00031.JPG,turmeric,diseased,leaf_blotch,406,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00032.JPG,turmeric,diseased,leaf_blotch,407,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00033.JPG,turmeric,diseased,leaf_blotch,408,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00034.JPG,turmeric,diseased,leaf_blotch,409,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00035.JPG,turmeric,diseased,leaf_blotch,410,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00036.JPG,turmeric,diseased,leaf_blotch,411,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00037.JPG,turmeric,diseased,leaf_blotch,412,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00038.JPG,turmeric,diseased,leaf_blotch,413,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00039.JPG,turmeric,diseased,leaf_blotch,414,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00040.JPG,turmeric,diseased,leaf_blotch,415,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00041.JPG,turmeric,diseased,leaf_blotch,416,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00042.JPG,turmeric,diseased,leaf_blotch,417,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00043.JPG,turmeric,diseased,leaf_blotch,418,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00044.JPG,turmeric,diseased,leaf_blotch,419,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00045.JPG,turmeric,diseased,leaf_blotch,420,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00046.JPG,turmeric,diseased,leaf_blotch,421,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00047.JPG,turmeric,diseased,leaf_blotch,422,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00048.JPG,turmeric,diseased,leaf_blotch,423,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00049.JPG,turmeric,diseased,leaf_blotch,424,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00050.JPG,turmeric,diseased,leaf_blotch,425,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00051.JPG,turmeric,diseased,leaf_blotch,426,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00052.JPG,turmeric,diseased,leaf_blotch,427,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00053.JPG,turmeric,diseased,leaf_blotch,428,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00054.JPG,turmeric,diseased,leaf_blotch,429,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00055.JPG,turmeric,diseased,leaf_blotch,430,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00056.JPG,turmeric,diseased,leaf_blotch,431,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00057.JPG,turmeric,diseased,leaf_blotch,432,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00058.JPG,turmeric,diseased,leaf_blotch,433,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00059.JPG,turmeric,diseased,leaf_blotch,434,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00060.JPG,turmeric,diseased,leaf_blotch,435,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00061.JPG,turmeric,diseased,leaf_blotch,436,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00062.JPG,turmeric,diseased,leaf_blotch,437,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00063.JPG,turmeric,diseased,leaf_blotch,438,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00064.JPG,turmeric,diseased,leaf_blotch,439,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00065.JPG,turmeric,diseased,leaf_blotch,440,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00066.JPG,turmeric,diseased,leaf_blotch,441,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00067.JPG,turmeric,diseased,leaf_blotch,442,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00068.JPG,turmeric,diseased,leaf_blotch,443,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00069.JPG,turmeric,diseased,leaf_blotch,444,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00070.JPG,turmeric,diseased,leaf_blotch,445,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00071.JPG,turmeric,diseased,leaf_blotch,446,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00072.JPG,turmeric,diseased,leaf_blotch,447,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00073.JPG,turmeric,diseased,leaf_blotch,448,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00074.JPG,turmeric,diseased,leaf_blotch,449,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00075.JPG,turmeric,diseased,leaf_blotch,450,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00076.JPG,turmeric,diseased,leaf_blotch,451,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00077.JPG,turmeric,diseased,leaf_blotch,452,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00078.JPG,turmeric,diseased,leaf_blotch,453,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00079.JPG,turmeric,diseased,leaf_blotch,454,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00080.JPG,turmeric,diseased,leaf_blotch,455,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00081.JPG,turmeric,diseased,leaf_blotch,456,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00082.JPG,turmeric,diseased,leaf_blotch,457,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00083.JPG,turmeric,diseased,leaf_blotch,458,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00084.JPG,turmeric,diseased,leaf_blotch,459,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00085.JPG,turmeric,diseased,leaf_blotch,460,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00086.JPG,turmeric,diseased,leaf_blotch,461,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00087.JPG,turmeric,diseased,leaf_blotch,462,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00088.JPG,turmeric,diseased,leaf_blotch,463,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00089.JPG,turmeric,diseased,leaf_blotch,464,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00090.JPG,turmeric,diseased,leaf_blotch,465,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00091.JPG,turmeric,diseased,leaf_blotch,466,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00092.JPG,turmeric,diseased,leaf_blotch,467,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00093.JPG,turmeric,diseased,leaf_blotch,468,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00094.JPG,turmeric,diseased,leaf_blotch,469,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00095.JPG,turmeric,diseased,leaf_blotch,470,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00096.JPG,turmeric,diseased,leaf_blotch,471,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00097.JPG,turmeric,diseased,leaf_blotch,472,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00098.JPG,turmeric,diseased,leaf_blotch,473,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00099.JPG,turmeric,diseased,leaf_blotch,474,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00100.JPG,turmeric,diseased,leaf_blotch,475,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00101.JPG,turmeric,diseased,leaf_blotch,476,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00102.JPG,turmeric,diseased,leaf_blotch,477,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00103.JPG,turmeric,diseased,leaf_blotch,478,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00104.JPG,turmeric,diseased,leaf_blotch,479,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00105.JPG,turmeric,diseased,leaf_blotch,480,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00106.JPG,turmeric,diseased,leaf_blotch,481,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00107.JPG,turmeric,diseased,leaf_blotch,482,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00108.JPG,turmeric,diseased,leaf_blotch,483,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00109.JPG,turmeric,diseased,leaf_blotch,484,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00110.JPG,turmeric,diseased,leaf_blotch,485,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00111.JPG,turmeric,diseased,leaf_blotch,486,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00112.JPG,turmeric,diseased,leaf_blotch,487,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00113.JPG,turmeric,diseased,leaf_blotch,488,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00114.JPG,turmeric,diseased,leaf_blotch,489,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00115.JPG,turmeric,diseased,leaf_blotch,490,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00116.JPG,turmeric,diseased,leaf_blotch,491,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00117.JPG,turmeric,diseased,leaf_blotch,492,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00118.JPG,turmeric,diseased,leaf_blotch,493,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00119.JPG,turmeric,diseased,leaf_blotch,494,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00120.JPG,turmeric,diseased,leaf_blotch,495,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00121.JPG,turmeric,diseased,leaf_blotch,496,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00122.JPG,turmeric,diseased,leaf_blotch,497,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00123.JPG,turmeric,diseased,leaf_blotch,498,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00124.JPG,turmeric,diseased,leaf_blotch,499,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00125.JPG,turmeric,diseased,leaf_blotch,500,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00126.JPG,turmeric,diseased,leaf_blotch,501,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00127.JPG,turmeric,diseased,leaf_blotch,502,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00128.JPG,turmeric,diseased,leaf_blotch,503,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00129.JPG,turmeric,diseased,leaf_blotch,504,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00130.JPG,turmeric,diseased,leaf_blotch,505,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00131.JPG,turmeric,diseased,leaf_blotch,506,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00132.JPG,turmeric,diseased,leaf_blotch,507,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00133.JPG,turmeric,diseased,leaf_blotch,508,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00134.JPG,turmeric,diseased,leaf_blotch,509,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00135.JPG,turmeric,diseased,leaf_blotch,510,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00136.JPG,turmeric,diseased,leaf_blotch,511,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00137.JPG,turmeric,diseased,leaf_blotch,512,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00138.JPG,turmeric,diseased,leaf_blotch,513,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00139.JPG,turmeric,diseased,leaf_blotch,514,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00140.JPG,turmeric,diseased,leaf_blotch,515,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00141.JPG,turmeric,diseased,leaf_blotch,516,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00142.JPG,turmeric,diseased,leaf_blotch,517,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00143.JPG,turmeric,diseased,leaf_blotch,518,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00144.JPG,turmeric,diseased,leaf_blotch,519,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00145.JPG,turmeric,diseased,leaf_blotch,520,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00146.JPG,turmeric,diseased,leaf_blotch,521,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00147.JPG,turmeric,diseased,leaf_blotch,522,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00148.JPG,turmeric,diseased,leaf_blotch,523,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00149.JPG,turmeric,diseased,leaf_blotch,524,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00150.JPG,turmeric,diseased,leaf_blotch,525,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00151.JPG,turmeric,diseased,leaf_blotch,526,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00152.JPG,turmeric,diseased,leaf_blotch,527,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00153.JPG,turmeric,diseased,leaf_blotch,528,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00154.JPG,turmeric,diseased,leaf_blotch,529,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00155.JPG,turmeric,diseased,leaf_blotch,530,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00156.JPG,turmeric,diseased,leaf_blotch,531,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00157.JPG,turmeric,diseased,leaf_blotch,532,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00158.JPG,turmeric,diseased,leaf_blotch,533,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00159.JPG,turmeric,diseased,leaf_blotch,534,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00160.JPG,turmeric,diseased,leaf_blotch,535,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00161.JPG,turmeric,diseased,leaf_blotch,536,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00162.JPG,turmeric,diseased,leaf_blotch,537,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00163.JPG,turmeric,diseased,leaf_blotch,538,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00164.JPG,turmeric,diseased,leaf_blotch,539,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00165.JPG,turmeric,diseased,leaf_blotch,540,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00166.JPG,turmeric,diseased,leaf_blotch,541,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00167.JPG,turmeric,diseased,leaf_blotch,542,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00168.JPG,turmeric,diseased,leaf_blotch,543,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00169.JPG,turmeric,diseased,leaf_blotch,544,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00170.JPG,turmeric,diseased,leaf_blotch,545,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00171.JPG,turmeric,diseased,leaf_blotch,546,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00172.JPG,turmeric,diseased,leaf_blotch,547,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00173.JPG,turmeric,diseased,leaf_blotch,548,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00174.JPG,turmeric,diseased,leaf_blotch,549,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00175.JPG,turmeric,diseased,leaf_blotch,550,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00176.JPG,turmeric,diseased,leaf_blotch,551,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00177.JPG,turmeric,diseased,leaf_blotch,552,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00178.JPG,turmeric,diseased,leaf_blotch,553,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00179.JPG,turmeric,diseased,leaf_blotch,554,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00180.JPG,turmeric,diseased,leaf_blotch,555,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00181.JPG,turmeric,diseased,leaf_blotch,556,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00182.JPG,turmeric,diseased,leaf_blotch,557,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00183.JPG,turmeric,diseased,leaf_blotch,558,turmeric_diseased,val
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00184.JPG,turmeric,diseased,leaf_blotch,559,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00185.JPG,turmeric,diseased,leaf_blotch,560,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00186.JPG,turmeric,diseased,leaf_blotch,561,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00187.JPG,turmeric,diseased,leaf_blotch,562,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00188.JPG,turmeric,diseased,leaf_blotch,563,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00189.JPG,turmeric,diseased,leaf_blotch,564,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00190.JPG,turmeric,diseased,leaf_blotch,565,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00191.JPG,turmeric,diseased,leaf_blotch,566,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00192.JPG,turmeric,diseased,leaf_blotch,567,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00193.JPG,turmeric,diseased,leaf_blotch,568,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00194.JPG,turmeric,diseased,leaf_blotch,569,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00195.JPG,turmeric,diseased,leaf_blotch,570,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00196.JPG,turmeric,diseased,leaf_blotch,571,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00197.JPG,turmeric,diseased,leaf_blotch,572,turmeric_diseased,test
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00198.JPG,turmeric,diseased,leaf_blotch,573,turmeric_diseased,train
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00199.JPG,turmeric,diseased,leaf_blotch,574,turmeric_diseased,train
+data/raw/blackgram/healthy/healthy/100h.jpg,blackgram,healthy,healthy,575,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/101h.jpg,blackgram,healthy,healthy,575,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/102h.jpg,blackgram,healthy,healthy,576,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/103h.jpg,blackgram,healthy,healthy,577,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/104h.jpg,blackgram,healthy,healthy,578,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/105h.jpg,blackgram,healthy,healthy,579,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/106h.jpg,blackgram,healthy,healthy,580,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/107h.jpg,blackgram,healthy,healthy,581,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/108h.jpg,blackgram,healthy,healthy,582,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/109h.jpg,blackgram,healthy,healthy,583,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/10h.jpg,blackgram,healthy,healthy,584,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/110h.jpg,blackgram,healthy,healthy,585,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/111h.jpg,blackgram,healthy,healthy,586,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/112h.jpg,blackgram,healthy,healthy,587,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/113h.jpg,blackgram,healthy,healthy,588,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/114h.jpg,blackgram,healthy,healthy,589,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/115h.jpg,blackgram,healthy,healthy,590,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/116h.jpg,blackgram,healthy,healthy,591,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/117h.jpg,blackgram,healthy,healthy,592,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/118h.jpg,blackgram,healthy,healthy,593,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/119h.jpg,blackgram,healthy,healthy,593,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/11h.jpg,blackgram,healthy,healthy,594,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/120h.jpg,blackgram,healthy,healthy,595,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/121h.jpg,blackgram,healthy,healthy,596,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/122h.jpg,blackgram,healthy,healthy,597,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/123h.jpg,blackgram,healthy,healthy,598,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/124h.jpg,blackgram,healthy,healthy,599,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/125h.jpg,blackgram,healthy,healthy,600,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/126h.jpg,blackgram,healthy,healthy,601,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/127h.jpg,blackgram,healthy,healthy,602,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/128h.jpg,blackgram,healthy,healthy,603,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/129h.jpg,blackgram,healthy,healthy,593,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/12h.jpg,blackgram,healthy,healthy,604,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/130h.jpg,blackgram,healthy,healthy,593,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/131h.jpg,blackgram,healthy,healthy,605,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/132h.jpg,blackgram,healthy,healthy,606,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/133h.jpg,blackgram,healthy,healthy,607,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/134h.jpg,blackgram,healthy,healthy,608,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/135h.jpg,blackgram,healthy,healthy,608,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/136h.jpg,blackgram,healthy,healthy,609,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/137h.jpg,blackgram,healthy,healthy,610,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/138h.jpg,blackgram,healthy,healthy,611,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/139h.jpg,blackgram,healthy,healthy,612,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/13h.jpg,blackgram,healthy,healthy,613,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/140h.jpg,blackgram,healthy,healthy,614,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/141h.jpg,blackgram,healthy,healthy,615,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/142h.jpg,blackgram,healthy,healthy,616,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/143h.jpg,blackgram,healthy,healthy,617,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/144h.jpg,blackgram,healthy,healthy,618,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/145h.jpg,blackgram,healthy,healthy,619,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/146h.jpg,blackgram,healthy,healthy,620,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/147h.jpg,blackgram,healthy,healthy,621,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/148h.jpg,blackgram,healthy,healthy,622,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/149h.jpg,blackgram,healthy,healthy,623,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/14h.jpg,blackgram,healthy,healthy,624,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/150h.jpg,blackgram,healthy,healthy,625,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/151h.jpg,blackgram,healthy,healthy,626,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/152h.jpg,blackgram,healthy,healthy,627,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/153h.jpg,blackgram,healthy,healthy,628,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/154h.jpg,blackgram,healthy,healthy,629,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/155h.jpg,blackgram,healthy,healthy,630,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/156h.jpg,blackgram,healthy,healthy,631,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/157h.jpg,blackgram,healthy,healthy,632,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/158h.jpg,blackgram,healthy,healthy,633,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/159h.jpg,blackgram,healthy,healthy,634,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/15h.jpg,blackgram,healthy,healthy,635,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/160h.jpg,blackgram,healthy,healthy,636,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/161h.jpg,blackgram,healthy,healthy,637,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/162h.jpg,blackgram,healthy,healthy,638,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/163h.jpg,blackgram,healthy,healthy,639,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/164h.jpg,blackgram,healthy,healthy,640,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/165h.jpg,blackgram,healthy,healthy,641,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/166h.jpg,blackgram,healthy,healthy,642,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/167h.jpg,blackgram,healthy,healthy,643,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/168h.jpg,blackgram,healthy,healthy,644,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/169h.jpg,blackgram,healthy,healthy,645,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/16h.jpg,blackgram,healthy,healthy,646,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/170h.jpg,blackgram,healthy,healthy,647,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/171h.jpg,blackgram,healthy,healthy,648,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/172h.jpg,blackgram,healthy,healthy,649,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/173h.jpg,blackgram,healthy,healthy,650,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/174h.jpg,blackgram,healthy,healthy,651,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/175h.jpg,blackgram,healthy,healthy,652,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/176h.jpg,blackgram,healthy,healthy,653,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/177h.jpg,blackgram,healthy,healthy,654,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/178h.jpg,blackgram,healthy,healthy,653,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/179h.jpg,blackgram,healthy,healthy,655,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/17h.jpg,blackgram,healthy,healthy,656,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/180h.jpg,blackgram,healthy,healthy,657,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/181h.jpg,blackgram,healthy,healthy,658,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/182h.jpg,blackgram,healthy,healthy,659,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/183h.jpg,blackgram,healthy,healthy,660,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/184h.jpg,blackgram,healthy,healthy,660,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/185h.jpg,blackgram,healthy,healthy,661,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/186h.jpg,blackgram,healthy,healthy,662,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/187h.jpg,blackgram,healthy,healthy,663,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/188h.jpg,blackgram,healthy,healthy,664,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/189h.jpg,blackgram,healthy,healthy,665,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/18h.jpg,blackgram,healthy,healthy,666,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/190h.jpg,blackgram,healthy,healthy,667,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/191h.jpg,blackgram,healthy,healthy,668,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/192h.jpg,blackgram,healthy,healthy,669,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/193h.jpg,blackgram,healthy,healthy,670,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/194h.jpg,blackgram,healthy,healthy,671,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/195h.jpg,blackgram,healthy,healthy,672,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/196h.jpg,blackgram,healthy,healthy,673,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/197h.jpg,blackgram,healthy,healthy,674,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/198h.jpg,blackgram,healthy,healthy,675,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/199h.jpg,blackgram,healthy,healthy,676,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/19h.jpg,blackgram,healthy,healthy,677,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/1h.jpg,blackgram,healthy,healthy,678,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/200h.jpg,blackgram,healthy,healthy,679,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/201h.jpg,blackgram,healthy,healthy,680,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/202h.jpg,blackgram,healthy,healthy,681,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/203h.jpg,blackgram,healthy,healthy,682,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/204h.jpg,blackgram,healthy,healthy,683,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/205h.jpg,blackgram,healthy,healthy,684,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/206h.jpg,blackgram,healthy,healthy,685,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/207h.jpg,blackgram,healthy,healthy,686,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/208h.jpg,blackgram,healthy,healthy,687,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/209h.jpg,blackgram,healthy,healthy,688,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/20h.jpg,blackgram,healthy,healthy,689,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/210h.jpg,blackgram,healthy,healthy,690,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/211h.jpg,blackgram,healthy,healthy,691,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/212h.jpg,blackgram,healthy,healthy,692,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/213h.jpg,blackgram,healthy,healthy,693,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/214h.jpg,blackgram,healthy,healthy,694,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/215h.jpg,blackgram,healthy,healthy,695,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/216h.jpg,blackgram,healthy,healthy,696,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/217h.jpg,blackgram,healthy,healthy,697,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/218h.jpg,blackgram,healthy,healthy,698,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/219h.jpg,blackgram,healthy,healthy,699,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/21h.jpg,blackgram,healthy,healthy,700,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/220h.jpg,blackgram,healthy,healthy,701,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/221h.jpg,blackgram,healthy,healthy,702,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/22h.jpg,blackgram,healthy,healthy,703,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/23h.jpg,blackgram,healthy,healthy,704,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/24h.jpg,blackgram,healthy,healthy,705,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/25h.jpg,blackgram,healthy,healthy,706,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/26h.jpg,blackgram,healthy,healthy,705,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/27h.jpg,blackgram,healthy,healthy,707,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/28h.jpg,blackgram,healthy,healthy,708,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/29h.jpg,blackgram,healthy,healthy,707,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/2h.jpg,blackgram,healthy,healthy,709,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/30h.jpg,blackgram,healthy,healthy,710,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/31h.jpg,blackgram,healthy,healthy,711,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/32h.jpg,blackgram,healthy,healthy,710,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/33h.jpg,blackgram,healthy,healthy,710,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/34h.jpg,blackgram,healthy,healthy,711,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/35h.jpg,blackgram,healthy,healthy,710,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/36h.jpg,blackgram,healthy,healthy,710,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/37h.jpg,blackgram,healthy,healthy,712,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/38h.jpg,blackgram,healthy,healthy,713,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/39h.jpg,blackgram,healthy,healthy,714,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/3h.jpg,blackgram,healthy,healthy,715,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/40h.jpg,blackgram,healthy,healthy,716,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/41h.jpg,blackgram,healthy,healthy,717,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/42h.jpg,blackgram,healthy,healthy,718,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/43h.jpg,blackgram,healthy,healthy,719,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/44h.jpg,blackgram,healthy,healthy,720,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/45h.jpg,blackgram,healthy,healthy,721,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/46h.jpg,blackgram,healthy,healthy,722,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/47h.jpg,blackgram,healthy,healthy,723,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/48h.jpg,blackgram,healthy,healthy,724,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/49h.jpg,blackgram,healthy,healthy,725,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/4h.jpg,blackgram,healthy,healthy,726,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/50h.jpg,blackgram,healthy,healthy,727,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/51h.jpg,blackgram,healthy,healthy,728,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/52h.jpg,blackgram,healthy,healthy,729,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/53h.jpg,blackgram,healthy,healthy,730,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/54h.jpg,blackgram,healthy,healthy,731,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/55h.jpg,blackgram,healthy,healthy,732,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/56h.jpg,blackgram,healthy,healthy,733,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/57h.jpg,blackgram,healthy,healthy,734,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/58h.jpg,blackgram,healthy,healthy,735,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/59h.jpg,blackgram,healthy,healthy,736,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/5h.jpg,blackgram,healthy,healthy,737,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/60h.jpg,blackgram,healthy,healthy,738,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/61h.jpg,blackgram,healthy,healthy,739,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/62h.jpg,blackgram,healthy,healthy,740,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/63h.jpg,blackgram,healthy,healthy,741,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/64h.jpg,blackgram,healthy,healthy,742,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/65h.jpg,blackgram,healthy,healthy,743,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/66h.jpg,blackgram,healthy,healthy,744,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/67h.jpg,blackgram,healthy,healthy,745,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/68h.jpg,blackgram,healthy,healthy,746,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/69h.jpg,blackgram,healthy,healthy,747,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/6h.jpg,blackgram,healthy,healthy,748,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/70h.jpg,blackgram,healthy,healthy,749,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/71h.jpg,blackgram,healthy,healthy,750,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/72h.jpg,blackgram,healthy,healthy,751,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/73h.jpg,blackgram,healthy,healthy,752,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/74h.jpg,blackgram,healthy,healthy,753,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/75h.jpg,blackgram,healthy,healthy,754,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/76h.jpg,blackgram,healthy,healthy,755,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/77h.jpg,blackgram,healthy,healthy,756,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/78h.jpg,blackgram,healthy,healthy,757,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/79h.jpg,blackgram,healthy,healthy,758,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/7h.jpg,blackgram,healthy,healthy,759,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/80h.jpg,blackgram,healthy,healthy,760,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/81h.jpg,blackgram,healthy,healthy,761,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/82h.jpg,blackgram,healthy,healthy,762,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/83h.jpg,blackgram,healthy,healthy,763,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/84h.jpg,blackgram,healthy,healthy,764,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/85h.jpg,blackgram,healthy,healthy,765,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/86h.jpg,blackgram,healthy,healthy,766,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/87h.jpg,blackgram,healthy,healthy,767,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/88h.jpg,blackgram,healthy,healthy,768,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/89h.jpg,blackgram,healthy,healthy,769,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/8h.jpg,blackgram,healthy,healthy,770,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/90h.jpg,blackgram,healthy,healthy,771,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/91h.jpg,blackgram,healthy,healthy,772,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/92h.jpg,blackgram,healthy,healthy,773,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/93h.jpg,blackgram,healthy,healthy,774,blackgram_healthy,val
+data/raw/blackgram/healthy/healthy/94h.jpg,blackgram,healthy,healthy,775,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/95h.jpg,blackgram,healthy,healthy,775,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/96h.jpg,blackgram,healthy,healthy,776,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/97h.jpg,blackgram,healthy,healthy,777,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/98h.jpg,blackgram,healthy,healthy,778,blackgram_healthy,train
+data/raw/blackgram/healthy/healthy/99h.jpg,blackgram,healthy,healthy,777,blackgram_healthy,test
+data/raw/blackgram/healthy/healthy/9h.jpg,blackgram,healthy,healthy,779,blackgram_healthy,train
+data/raw/blackgram/diseased/anthracnose/100a.jpg,blackgram,diseased,anthracnose,780,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/101a.jpg,blackgram,diseased,anthracnose,781,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/102a.jpg,blackgram,diseased,anthracnose,782,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/103a.jpg,blackgram,diseased,anthracnose,780,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/104a.jpg,blackgram,diseased,anthracnose,783,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/105a.jpg,blackgram,diseased,anthracnose,784,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/106a.jpg,blackgram,diseased,anthracnose,785,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/107a.jpg,blackgram,diseased,anthracnose,786,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/108a.jpg,blackgram,diseased,anthracnose,784,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/109a.jpg,blackgram,diseased,anthracnose,786,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/10a.jpg,blackgram,diseased,anthracnose,787,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/110a.jpg,blackgram,diseased,anthracnose,788,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/111a.jpg,blackgram,diseased,anthracnose,789,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/112a.jpg,blackgram,diseased,anthracnose,790,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/113a.jpg,blackgram,diseased,anthracnose,791,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/114a.jpg,blackgram,diseased,anthracnose,792,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/115a.jpg,blackgram,diseased,anthracnose,793,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/116a.jpg,blackgram,diseased,anthracnose,794,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/117a.jpg,blackgram,diseased,anthracnose,795,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/118a.jpg,blackgram,diseased,anthracnose,796,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/119a.jpg,blackgram,diseased,anthracnose,797,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/11a.jpg,blackgram,diseased,anthracnose,798,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/120a.jpg,blackgram,diseased,anthracnose,799,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/121a.jpg,blackgram,diseased,anthracnose,800,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/122a.jpg,blackgram,diseased,anthracnose,801,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/123a.jpg,blackgram,diseased,anthracnose,802,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/124a.jpg,blackgram,diseased,anthracnose,803,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/125a.jpg,blackgram,diseased,anthracnose,804,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/126a.jpg,blackgram,diseased,anthracnose,805,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/127a.jpg,blackgram,diseased,anthracnose,806,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/128a.jpg,blackgram,diseased,anthracnose,807,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/129a.jpg,blackgram,diseased,anthracnose,808,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/12a.jpg,blackgram,diseased,anthracnose,809,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/130a.jpg,blackgram,diseased,anthracnose,810,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/131a.jpg,blackgram,diseased,anthracnose,811,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/132a.jpg,blackgram,diseased,anthracnose,812,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/133a.jpg,blackgram,diseased,anthracnose,813,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/134a.jpg,blackgram,diseased,anthracnose,814,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/135a.jpg,blackgram,diseased,anthracnose,815,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/136a.jpg,blackgram,diseased,anthracnose,816,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/137a.jpg,blackgram,diseased,anthracnose,817,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/138a.jpg,blackgram,diseased,anthracnose,818,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/139a.jpg,blackgram,diseased,anthracnose,819,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/13a.jpg,blackgram,diseased,anthracnose,820,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/140a.jpg,blackgram,diseased,anthracnose,819,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/141a.jpg,blackgram,diseased,anthracnose,821,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/142a.jpg,blackgram,diseased,anthracnose,822,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/143a.jpg,blackgram,diseased,anthracnose,823,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/144a.jpg,blackgram,diseased,anthracnose,824,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/145a.jpg,blackgram,diseased,anthracnose,825,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/146a.jpg,blackgram,diseased,anthracnose,826,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/147a.jpg,blackgram,diseased,anthracnose,827,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/148a.jpg,blackgram,diseased,anthracnose,828,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/149a.jpg,blackgram,diseased,anthracnose,829,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/14a.jpg,blackgram,diseased,anthracnose,830,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/150a.jpg,blackgram,diseased,anthracnose,831,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/151a.jpg,blackgram,diseased,anthracnose,832,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/152a.jpg,blackgram,diseased,anthracnose,833,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/153a.jpg,blackgram,diseased,anthracnose,834,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/154a.jpg,blackgram,diseased,anthracnose,835,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/155a.jpg,blackgram,diseased,anthracnose,836,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/156a.jpg,blackgram,diseased,anthracnose,837,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/157a.jpg,blackgram,diseased,anthracnose,838,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/158a.jpg,blackgram,diseased,anthracnose,839,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/159a.jpg,blackgram,diseased,anthracnose,840,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/15a.jpg,blackgram,diseased,anthracnose,841,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/160a.jpg,blackgram,diseased,anthracnose,842,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/161a.jpg,blackgram,diseased,anthracnose,843,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/162a.jpg,blackgram,diseased,anthracnose,844,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/163a.jpg,blackgram,diseased,anthracnose,845,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/164a.jpg,blackgram,diseased,anthracnose,846,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/165a.jpg,blackgram,diseased,anthracnose,847,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/166a.jpg,blackgram,diseased,anthracnose,848,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/167a.jpg,blackgram,diseased,anthracnose,849,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/168a.jpg,blackgram,diseased,anthracnose,850,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/169a.jpg,blackgram,diseased,anthracnose,851,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/16a.jpg,blackgram,diseased,anthracnose,852,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/170a.jpg,blackgram,diseased,anthracnose,853,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/171a.jpg,blackgram,diseased,anthracnose,854,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/172a.jpg,blackgram,diseased,anthracnose,855,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/173a.jpg,blackgram,diseased,anthracnose,856,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/174a.jpg,blackgram,diseased,anthracnose,857,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/175a.jpg,blackgram,diseased,anthracnose,858,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/176a.jpg,blackgram,diseased,anthracnose,859,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/177a.jpg,blackgram,diseased,anthracnose,860,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/178a.jpg,blackgram,diseased,anthracnose,861,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/179a.jpg,blackgram,diseased,anthracnose,862,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/17a.jpg,blackgram,diseased,anthracnose,863,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/180a.jpg,blackgram,diseased,anthracnose,864,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/181a.jpg,blackgram,diseased,anthracnose,865,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/182a.jpg,blackgram,diseased,anthracnose,866,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/183a.jpg,blackgram,diseased,anthracnose,867,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/184a.jpg,blackgram,diseased,anthracnose,868,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/185a.jpg,blackgram,diseased,anthracnose,869,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/186a.jpg,blackgram,diseased,anthracnose,870,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/187a.jpg,blackgram,diseased,anthracnose,871,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/188a.jpg,blackgram,diseased,anthracnose,872,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/189a.jpg,blackgram,diseased,anthracnose,873,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/18a.jpg,blackgram,diseased,anthracnose,874,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/190a.jpg,blackgram,diseased,anthracnose,875,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/191a.jpg,blackgram,diseased,anthracnose,876,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/192a.jpg,blackgram,diseased,anthracnose,877,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/193a.jpg,blackgram,diseased,anthracnose,878,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/194a.jpg,blackgram,diseased,anthracnose,879,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/195a.jpg,blackgram,diseased,anthracnose,880,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/196a.jpg,blackgram,diseased,anthracnose,881,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/197a.jpg,blackgram,diseased,anthracnose,882,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/198a.jpg,blackgram,diseased,anthracnose,883,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/199a.jpg,blackgram,diseased,anthracnose,884,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/19a.jpg,blackgram,diseased,anthracnose,885,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/1a.jpg,blackgram,diseased,anthracnose,886,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/200a.jpg,blackgram,diseased,anthracnose,887,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/201a.jpg,blackgram,diseased,anthracnose,888,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/202a.jpg,blackgram,diseased,anthracnose,889,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/203a.jpg,blackgram,diseased,anthracnose,890,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/204a.jpg,blackgram,diseased,anthracnose,891,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/205a.jpg,blackgram,diseased,anthracnose,892,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/206a.jpg,blackgram,diseased,anthracnose,893,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/207a.jpg,blackgram,diseased,anthracnose,894,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/208a.jpg,blackgram,diseased,anthracnose,895,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/209a.jpg,blackgram,diseased,anthracnose,896,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/20a.jpg,blackgram,diseased,anthracnose,897,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/210a.jpg,blackgram,diseased,anthracnose,898,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/211a.jpg,blackgram,diseased,anthracnose,899,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/212a.jpg,blackgram,diseased,anthracnose,900,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/213a.jpg,blackgram,diseased,anthracnose,901,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/214a.jpg,blackgram,diseased,anthracnose,902,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/215a.jpg,blackgram,diseased,anthracnose,903,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/216a.jpg,blackgram,diseased,anthracnose,904,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/217a.jpg,blackgram,diseased,anthracnose,905,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/218a.jpg,blackgram,diseased,anthracnose,906,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/219a.jpg,blackgram,diseased,anthracnose,907,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/21a.jpg,blackgram,diseased,anthracnose,908,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/220a.jpg,blackgram,diseased,anthracnose,909,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/221a.jpg,blackgram,diseased,anthracnose,910,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/222a.jpg,blackgram,diseased,anthracnose,911,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/223a.jpg,blackgram,diseased,anthracnose,912,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/224a.jpg,blackgram,diseased,anthracnose,913,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/225a.jpg,blackgram,diseased,anthracnose,914,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/226a.jpg,blackgram,diseased,anthracnose,915,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/227a.jpg,blackgram,diseased,anthracnose,916,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/228a.jpg,blackgram,diseased,anthracnose,917,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/229a.jpg,blackgram,diseased,anthracnose,918,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/22a.jpg,blackgram,diseased,anthracnose,919,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/230a.jpg,blackgram,diseased,anthracnose,920,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/23a.jpg,blackgram,diseased,anthracnose,921,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/24a.jpg,blackgram,diseased,anthracnose,922,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/25a.jpg,blackgram,diseased,anthracnose,923,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/26a.jpg,blackgram,diseased,anthracnose,924,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/27a.jpg,blackgram,diseased,anthracnose,925,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/28a.jpg,blackgram,diseased,anthracnose,926,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/29a.jpg,blackgram,diseased,anthracnose,927,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/2a.jpg,blackgram,diseased,anthracnose,928,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/30a.jpg,blackgram,diseased,anthracnose,929,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/31a.jpg,blackgram,diseased,anthracnose,930,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/32a.jpg,blackgram,diseased,anthracnose,931,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/33a.jpg,blackgram,diseased,anthracnose,932,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/34a.jpg,blackgram,diseased,anthracnose,933,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/35a.jpg,blackgram,diseased,anthracnose,934,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/36a.jpg,blackgram,diseased,anthracnose,935,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/37a.jpg,blackgram,diseased,anthracnose,936,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/38a.jpg,blackgram,diseased,anthracnose,937,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/39a.jpg,blackgram,diseased,anthracnose,938,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/3a.jpg,blackgram,diseased,anthracnose,939,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/40a.jpg,blackgram,diseased,anthracnose,940,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/41a.jpg,blackgram,diseased,anthracnose,941,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/42a.jpg,blackgram,diseased,anthracnose,942,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/43a.jpg,blackgram,diseased,anthracnose,943,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/44a.jpg,blackgram,diseased,anthracnose,944,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/45a.jpg,blackgram,diseased,anthracnose,945,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/46a.jpg,blackgram,diseased,anthracnose,946,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/47a.jpg,blackgram,diseased,anthracnose,947,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/48a.jpg,blackgram,diseased,anthracnose,948,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/49a.jpg,blackgram,diseased,anthracnose,949,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/4a.jpg,blackgram,diseased,anthracnose,950,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/50a.jpg,blackgram,diseased,anthracnose,951,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/51a.jpg,blackgram,diseased,anthracnose,952,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/52a.jpg,blackgram,diseased,anthracnose,953,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/53a.jpg,blackgram,diseased,anthracnose,954,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/54a.jpg,blackgram,diseased,anthracnose,955,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/55a.jpg,blackgram,diseased,anthracnose,956,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/56a.jpg,blackgram,diseased,anthracnose,957,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/57a.jpg,blackgram,diseased,anthracnose,958,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/58a.jpg,blackgram,diseased,anthracnose,959,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/59a.jpg,blackgram,diseased,anthracnose,960,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/5a.jpg,blackgram,diseased,anthracnose,961,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/60a.jpg,blackgram,diseased,anthracnose,962,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/61a.jpg,blackgram,diseased,anthracnose,963,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/62a.jpg,blackgram,diseased,anthracnose,964,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/63a.jpg,blackgram,diseased,anthracnose,965,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/64a.jpg,blackgram,diseased,anthracnose,966,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/65a.jpg,blackgram,diseased,anthracnose,967,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/66a.jpg,blackgram,diseased,anthracnose,968,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/67a.jpg,blackgram,diseased,anthracnose,969,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/68a.jpg,blackgram,diseased,anthracnose,967,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/69a.jpg,blackgram,diseased,anthracnose,970,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/6a.jpg,blackgram,diseased,anthracnose,971,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/70a.jpg,blackgram,diseased,anthracnose,972,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/71a.jpg,blackgram,diseased,anthracnose,973,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/72a.jpg,blackgram,diseased,anthracnose,974,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/73a.jpg,blackgram,diseased,anthracnose,975,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/74a.jpg,blackgram,diseased,anthracnose,976,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/75a.jpg,blackgram,diseased,anthracnose,977,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/76a.jpg,blackgram,diseased,anthracnose,978,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/77a.jpg,blackgram,diseased,anthracnose,979,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/78a.jpg,blackgram,diseased,anthracnose,980,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/79a.jpg,blackgram,diseased,anthracnose,981,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/7a.jpg,blackgram,diseased,anthracnose,982,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/80a.jpg,blackgram,diseased,anthracnose,983,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/81a.jpg,blackgram,diseased,anthracnose,984,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/82a.jpg,blackgram,diseased,anthracnose,985,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/83a.jpg,blackgram,diseased,anthracnose,986,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/84a.jpg,blackgram,diseased,anthracnose,987,blackgram_diseased,val
+data/raw/blackgram/diseased/anthracnose/85a.jpg,blackgram,diseased,anthracnose,988,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/86a.jpg,blackgram,diseased,anthracnose,989,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/87a.jpg,blackgram,diseased,anthracnose,990,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/88a.jpg,blackgram,diseased,anthracnose,991,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/89a.jpg,blackgram,diseased,anthracnose,992,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/8a.jpg,blackgram,diseased,anthracnose,993,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/90a.jpg,blackgram,diseased,anthracnose,994,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/91a.jpg,blackgram,diseased,anthracnose,992,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/92a.jpg,blackgram,diseased,anthracnose,995,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/93a.jpg,blackgram,diseased,anthracnose,996,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/94a.jpg,blackgram,diseased,anthracnose,997,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/95a.jpg,blackgram,diseased,anthracnose,998,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/96a.jpg,blackgram,diseased,anthracnose,999,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/97a.jpg,blackgram,diseased,anthracnose,1000,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/98a.jpg,blackgram,diseased,anthracnose,1001,blackgram_diseased,test
+data/raw/blackgram/diseased/anthracnose/99a.jpg,blackgram,diseased,anthracnose,1002,blackgram_diseased,train
+data/raw/blackgram/diseased/anthracnose/9a.jpg,blackgram,diseased,anthracnose,1003,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/100l.jpg,blackgram,diseased,leaf_crinckle,1004,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/101l.jpg,blackgram,diseased,leaf_crinckle,1005,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/102l.jpg,blackgram,diseased,leaf_crinckle,1006,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/103l.jpg,blackgram,diseased,leaf_crinckle,1007,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/104l.jpg,blackgram,diseased,leaf_crinckle,1008,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/105l.jpg,blackgram,diseased,leaf_crinckle,1009,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/106l.jpg,blackgram,diseased,leaf_crinckle,1010,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/107l.jpg,blackgram,diseased,leaf_crinckle,1011,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/108l.jpg,blackgram,diseased,leaf_crinckle,1012,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/109l.jpg,blackgram,diseased,leaf_crinckle,1013,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/10l.jpg,blackgram,diseased,leaf_crinckle,1014,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/110l.jpg,blackgram,diseased,leaf_crinckle,1015,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/111l.jpg,blackgram,diseased,leaf_crinckle,1016,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/112l.jpg,blackgram,diseased,leaf_crinckle,1017,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/113l.jpg,blackgram,diseased,leaf_crinckle,1018,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/114l.jpg,blackgram,diseased,leaf_crinckle,1019,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/115l.jpg,blackgram,diseased,leaf_crinckle,1020,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/116l.jpg,blackgram,diseased,leaf_crinckle,1021,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/117l.jpg,blackgram,diseased,leaf_crinckle,1022,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/118l.jpg,blackgram,diseased,leaf_crinckle,1023,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/119l.jpg,blackgram,diseased,leaf_crinckle,1024,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/11l.jpg,blackgram,diseased,leaf_crinckle,1025,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/120l.jpg,blackgram,diseased,leaf_crinckle,1026,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/121l.jpg,blackgram,diseased,leaf_crinckle,1027,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/122l.jpg,blackgram,diseased,leaf_crinckle,1028,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/123l.jpg,blackgram,diseased,leaf_crinckle,1029,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/124l.jpg,blackgram,diseased,leaf_crinckle,1030,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/125l.jpg,blackgram,diseased,leaf_crinckle,1031,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/126l.jpg,blackgram,diseased,leaf_crinckle,1032,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/127l.jpg,blackgram,diseased,leaf_crinckle,1033,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/128l.jpg,blackgram,diseased,leaf_crinckle,1034,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/129l.jpg,blackgram,diseased,leaf_crinckle,1035,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/12l.jpg,blackgram,diseased,leaf_crinckle,1036,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/130l.jpg,blackgram,diseased,leaf_crinckle,1035,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/131l.jpg,blackgram,diseased,leaf_crinckle,1037,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/132l.jpg,blackgram,diseased,leaf_crinckle,1038,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/133l.jpg,blackgram,diseased,leaf_crinckle,1039,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/134l.jpg,blackgram,diseased,leaf_crinckle,1040,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/135l.jpg,blackgram,diseased,leaf_crinckle,1041,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/136l.jpg,blackgram,diseased,leaf_crinckle,1042,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/137l.jpg,blackgram,diseased,leaf_crinckle,1043,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/138l.jpg,blackgram,diseased,leaf_crinckle,1044,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/139l.jpg,blackgram,diseased,leaf_crinckle,1045,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/13l.jpg,blackgram,diseased,leaf_crinckle,1046,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/140l.jpg,blackgram,diseased,leaf_crinckle,1047,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/141l.jpg,blackgram,diseased,leaf_crinckle,1048,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/142l.jpg,blackgram,diseased,leaf_crinckle,1049,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/143l.jpg,blackgram,diseased,leaf_crinckle,1050,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/144l.jpg,blackgram,diseased,leaf_crinckle,1051,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/145l.jpg,blackgram,diseased,leaf_crinckle,1052,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/146l.jpg,blackgram,diseased,leaf_crinckle,1053,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/147l.jpg,blackgram,diseased,leaf_crinckle,1054,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/148l.jpg,blackgram,diseased,leaf_crinckle,1054,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/149l.jpg,blackgram,diseased,leaf_crinckle,1055,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/14l.jpg,blackgram,diseased,leaf_crinckle,1056,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/150l.jpg,blackgram,diseased,leaf_crinckle,1057,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/151l.jpg,blackgram,diseased,leaf_crinckle,1058,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/152l.jpg,blackgram,diseased,leaf_crinckle,1059,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/15l.jpg,blackgram,diseased,leaf_crinckle,1060,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/16l.jpg,blackgram,diseased,leaf_crinckle,1061,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/17l.jpg,blackgram,diseased,leaf_crinckle,1062,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/18l.jpg,blackgram,diseased,leaf_crinckle,1063,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/19l.jpg,blackgram,diseased,leaf_crinckle,1064,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/1l.jpg,blackgram,diseased,leaf_crinckle,1065,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/20l.jpg,blackgram,diseased,leaf_crinckle,1066,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/21l.jpg,blackgram,diseased,leaf_crinckle,1067,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/22l.jpg,blackgram,diseased,leaf_crinckle,1068,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/23l.jpg,blackgram,diseased,leaf_crinckle,1069,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/24l.jpg,blackgram,diseased,leaf_crinckle,1070,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/25l.jpg,blackgram,diseased,leaf_crinckle,1071,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/26l.jpg,blackgram,diseased,leaf_crinckle,1072,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/27l.jpg,blackgram,diseased,leaf_crinckle,1073,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/28l.jpg,blackgram,diseased,leaf_crinckle,1074,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/29l.jpg,blackgram,diseased,leaf_crinckle,1075,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/2l.jpg,blackgram,diseased,leaf_crinckle,1076,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/30l.jpg,blackgram,diseased,leaf_crinckle,1077,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/31l.jpg,blackgram,diseased,leaf_crinckle,1078,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/32l.jpg,blackgram,diseased,leaf_crinckle,1079,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/33l.jpg,blackgram,diseased,leaf_crinckle,1080,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/34l.jpg,blackgram,diseased,leaf_crinckle,1081,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/35l.jpg,blackgram,diseased,leaf_crinckle,1082,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/36l.jpg,blackgram,diseased,leaf_crinckle,1083,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/37l.jpg,blackgram,diseased,leaf_crinckle,1084,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/38l.jpg,blackgram,diseased,leaf_crinckle,1084,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/39l.jpg,blackgram,diseased,leaf_crinckle,1085,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/3l.jpg,blackgram,diseased,leaf_crinckle,1086,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/40l.jpg,blackgram,diseased,leaf_crinckle,1087,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/41l.jpg,blackgram,diseased,leaf_crinckle,1088,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/42l.jpg,blackgram,diseased,leaf_crinckle,1089,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/43l.jpg,blackgram,diseased,leaf_crinckle,1090,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/44l.jpg,blackgram,diseased,leaf_crinckle,1091,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/45l.jpg,blackgram,diseased,leaf_crinckle,1092,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/46l.jpg,blackgram,diseased,leaf_crinckle,1093,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/47l.jpg,blackgram,diseased,leaf_crinckle,1094,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/48l.jpg,blackgram,diseased,leaf_crinckle,1095,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/49l.jpg,blackgram,diseased,leaf_crinckle,1096,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/4l.jpg,blackgram,diseased,leaf_crinckle,1097,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/50l.jpg,blackgram,diseased,leaf_crinckle,1098,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/51l.jpg,blackgram,diseased,leaf_crinckle,1099,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/52l.jpg,blackgram,diseased,leaf_crinckle,1100,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/53l.jpg,blackgram,diseased,leaf_crinckle,1101,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/54l.jpg,blackgram,diseased,leaf_crinckle,1102,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/55l.jpg,blackgram,diseased,leaf_crinckle,1103,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/56l.jpg,blackgram,diseased,leaf_crinckle,1104,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/57l.jpg,blackgram,diseased,leaf_crinckle,1105,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/58l.jpg,blackgram,diseased,leaf_crinckle,1106,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/59l.jpg,blackgram,diseased,leaf_crinckle,1107,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/5l.jpg,blackgram,diseased,leaf_crinckle,1108,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/60l.jpg,blackgram,diseased,leaf_crinckle,1109,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/61l.jpg,blackgram,diseased,leaf_crinckle,1110,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/62l.jpg,blackgram,diseased,leaf_crinckle,1111,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/63l.jpg,blackgram,diseased,leaf_crinckle,1112,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/64l.jpg,blackgram,diseased,leaf_crinckle,1113,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/65l.jpg,blackgram,diseased,leaf_crinckle,1114,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/66l.jpg,blackgram,diseased,leaf_crinckle,1115,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/67l.jpg,blackgram,diseased,leaf_crinckle,1116,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/68l.jpg,blackgram,diseased,leaf_crinckle,1117,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/69l.jpg,blackgram,diseased,leaf_crinckle,1118,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/6l.jpg,blackgram,diseased,leaf_crinckle,1119,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/70l.jpg,blackgram,diseased,leaf_crinckle,1120,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/71l.jpg,blackgram,diseased,leaf_crinckle,1121,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/72l.jpg,blackgram,diseased,leaf_crinckle,1122,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/73l.jpg,blackgram,diseased,leaf_crinckle,1123,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/74l.jpg,blackgram,diseased,leaf_crinckle,1124,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/75l.jpg,blackgram,diseased,leaf_crinckle,1125,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/76l.jpg,blackgram,diseased,leaf_crinckle,1126,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/77l.jpg,blackgram,diseased,leaf_crinckle,1127,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/78l.jpg,blackgram,diseased,leaf_crinckle,1128,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/79l.jpg,blackgram,diseased,leaf_crinckle,1129,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/7l.jpg,blackgram,diseased,leaf_crinckle,1130,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/80l.jpg,blackgram,diseased,leaf_crinckle,1131,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/81l.jpg,blackgram,diseased,leaf_crinckle,1132,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/82l.jpg,blackgram,diseased,leaf_crinckle,1133,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/83l.jpg,blackgram,diseased,leaf_crinckle,1134,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/84l.jpg,blackgram,diseased,leaf_crinckle,1135,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/85l.jpg,blackgram,diseased,leaf_crinckle,1136,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/86l.jpg,blackgram,diseased,leaf_crinckle,1137,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/87l.jpg,blackgram,diseased,leaf_crinckle,1138,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/88l.jpg,blackgram,diseased,leaf_crinckle,1139,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/89l.jpg,blackgram,diseased,leaf_crinckle,1139,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/8l.jpg,blackgram,diseased,leaf_crinckle,1140,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/90l.jpg,blackgram,diseased,leaf_crinckle,1139,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/91l.jpg,blackgram,diseased,leaf_crinckle,1141,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/92l.jpg,blackgram,diseased,leaf_crinckle,1142,blackgram_diseased,test
+data/raw/blackgram/diseased/leaf_crinckle/93l.jpg,blackgram,diseased,leaf_crinckle,1143,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/94l.jpg,blackgram,diseased,leaf_crinckle,1144,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/95l.jpg,blackgram,diseased,leaf_crinckle,1145,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/96l.jpg,blackgram,diseased,leaf_crinckle,1146,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/97l.jpg,blackgram,diseased,leaf_crinckle,1147,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/98l.jpg,blackgram,diseased,leaf_crinckle,1148,blackgram_diseased,train
+data/raw/blackgram/diseased/leaf_crinckle/99l.jpg,blackgram,diseased,leaf_crinckle,1149,blackgram_diseased,val
+data/raw/blackgram/diseased/leaf_crinckle/9l.jpg,blackgram,diseased,leaf_crinckle,1150,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/100p.jpg,blackgram,diseased,powdery_mildew,1151,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/101p.jpg,blackgram,diseased,powdery_mildew,1152,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/102p.jpg,blackgram,diseased,powdery_mildew,1153,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/103p.jpg,blackgram,diseased,powdery_mildew,1154,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/104p.jpg,blackgram,diseased,powdery_mildew,1155,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/105p.jpg,blackgram,diseased,powdery_mildew,1156,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/106p.jpg,blackgram,diseased,powdery_mildew,1157,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/107p.jpg,blackgram,diseased,powdery_mildew,1158,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/108p.jpg,blackgram,diseased,powdery_mildew,1159,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/109p.jpg,blackgram,diseased,powdery_mildew,1160,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/10p.jpg,blackgram,diseased,powdery_mildew,1161,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/110p.jpg,blackgram,diseased,powdery_mildew,1162,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/111p.jpg,blackgram,diseased,powdery_mildew,1163,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/112p.jpg,blackgram,diseased,powdery_mildew,1164,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/113p.jpg,blackgram,diseased,powdery_mildew,1165,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/114p.jpg,blackgram,diseased,powdery_mildew,1166,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/115p.jpg,blackgram,diseased,powdery_mildew,1167,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/116p.jpg,blackgram,diseased,powdery_mildew,1168,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/117p.jpg,blackgram,diseased,powdery_mildew,1169,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/118p.jpg,blackgram,diseased,powdery_mildew,1170,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/119p.jpg,blackgram,diseased,powdery_mildew,1171,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/11p.jpg,blackgram,diseased,powdery_mildew,1172,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/120p.jpg,blackgram,diseased,powdery_mildew,1170,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/121p.jpg,blackgram,diseased,powdery_mildew,1171,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/122p.jpg,blackgram,diseased,powdery_mildew,1173,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/123p.jpg,blackgram,diseased,powdery_mildew,1174,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/124p.jpg,blackgram,diseased,powdery_mildew,1175,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/125p.jpg,blackgram,diseased,powdery_mildew,1176,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/126p.jpg,blackgram,diseased,powdery_mildew,1177,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/127p.jpg,blackgram,diseased,powdery_mildew,1177,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/128p.jpg,blackgram,diseased,powdery_mildew,1178,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/129p.jpg,blackgram,diseased,powdery_mildew,1179,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/12p.jpg,blackgram,diseased,powdery_mildew,1180,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/130p.jpg,blackgram,diseased,powdery_mildew,1181,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/131p.jpg,blackgram,diseased,powdery_mildew,1182,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/132p.jpg,blackgram,diseased,powdery_mildew,1179,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/133p.jpg,blackgram,diseased,powdery_mildew,1183,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/134p.jpg,blackgram,diseased,powdery_mildew,1184,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/135p.jpg,blackgram,diseased,powdery_mildew,1185,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/136p.jpg,blackgram,diseased,powdery_mildew,1186,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/137p.jpg,blackgram,diseased,powdery_mildew,1187,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/138p.jpg,blackgram,diseased,powdery_mildew,1188,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/139p.jpg,blackgram,diseased,powdery_mildew,1189,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/13p.jpg,blackgram,diseased,powdery_mildew,1190,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/140p.jpg,blackgram,diseased,powdery_mildew,1191,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/141p.jpg,blackgram,diseased,powdery_mildew,1192,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/142p.jpg,blackgram,diseased,powdery_mildew,1193,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/143p.jpg,blackgram,diseased,powdery_mildew,1194,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/144p.jpg,blackgram,diseased,powdery_mildew,1193,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/145p.jpg,blackgram,diseased,powdery_mildew,1195,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/146p.jpg,blackgram,diseased,powdery_mildew,1196,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/147p.jpg,blackgram,diseased,powdery_mildew,1197,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/148p.jpg,blackgram,diseased,powdery_mildew,1198,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/149p.jpg,blackgram,diseased,powdery_mildew,1199,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/14p.jpg,blackgram,diseased,powdery_mildew,1200,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/150p.jpg,blackgram,diseased,powdery_mildew,1201,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/151p.jpg,blackgram,diseased,powdery_mildew,1202,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/152p.jpg,blackgram,diseased,powdery_mildew,1203,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/153p.jpg,blackgram,diseased,powdery_mildew,1204,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/154p.jpg,blackgram,diseased,powdery_mildew,1205,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/155p.jpg,blackgram,diseased,powdery_mildew,1206,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/156p.jpg,blackgram,diseased,powdery_mildew,1207,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/157p.jpg,blackgram,diseased,powdery_mildew,1208,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/158p.jpg,blackgram,diseased,powdery_mildew,1209,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/159p.jpg,blackgram,diseased,powdery_mildew,1210,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/15p.jpg,blackgram,diseased,powdery_mildew,1211,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/160p.jpg,blackgram,diseased,powdery_mildew,1212,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/161p.jpg,blackgram,diseased,powdery_mildew,1213,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/162p.jpg,blackgram,diseased,powdery_mildew,1214,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/163p.jpg,blackgram,diseased,powdery_mildew,1215,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/164p.jpg,blackgram,diseased,powdery_mildew,1216,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/165p.jpg,blackgram,diseased,powdery_mildew,1217,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/166p.jpg,blackgram,diseased,powdery_mildew,1218,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/167p.jpg,blackgram,diseased,powdery_mildew,1219,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/168p.jpg,blackgram,diseased,powdery_mildew,1220,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/169p.jpg,blackgram,diseased,powdery_mildew,1221,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/16p.jpg,blackgram,diseased,powdery_mildew,1222,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/170p.jpg,blackgram,diseased,powdery_mildew,1223,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/171p.jpg,blackgram,diseased,powdery_mildew,1224,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/172p.jpg,blackgram,diseased,powdery_mildew,1225,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/173p.jpg,blackgram,diseased,powdery_mildew,1226,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/174p.jpg,blackgram,diseased,powdery_mildew,1227,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/175p.jpg,blackgram,diseased,powdery_mildew,1228,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/176p.jpg,blackgram,diseased,powdery_mildew,1229,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/177p.jpg,blackgram,diseased,powdery_mildew,1230,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/178p.jpg,blackgram,diseased,powdery_mildew,1231,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/179p.jpg,blackgram,diseased,powdery_mildew,1232,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/17p.jpg,blackgram,diseased,powdery_mildew,1233,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/180p.jpg,blackgram,diseased,powdery_mildew,1234,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/18p.jpg,blackgram,diseased,powdery_mildew,1235,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/19p.jpg,blackgram,diseased,powdery_mildew,1236,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/1p.jpg,blackgram,diseased,powdery_mildew,1237,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/20p.jpg,blackgram,diseased,powdery_mildew,1238,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/21p.jpg,blackgram,diseased,powdery_mildew,1239,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/22p.jpg,blackgram,diseased,powdery_mildew,1240,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/23p.jpg,blackgram,diseased,powdery_mildew,1241,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/24p.jpg,blackgram,diseased,powdery_mildew,1242,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/25p.jpg,blackgram,diseased,powdery_mildew,1243,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/26p.jpg,blackgram,diseased,powdery_mildew,1244,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/27p.jpg,blackgram,diseased,powdery_mildew,1245,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/28p.jpg,blackgram,diseased,powdery_mildew,1246,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/29p.jpg,blackgram,diseased,powdery_mildew,1247,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/2p.jpg,blackgram,diseased,powdery_mildew,1248,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/30p.jpg,blackgram,diseased,powdery_mildew,1249,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/31p.jpg,blackgram,diseased,powdery_mildew,1250,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/32p.jpg,blackgram,diseased,powdery_mildew,1251,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/33p.jpg,blackgram,diseased,powdery_mildew,1252,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/34p.jpg,blackgram,diseased,powdery_mildew,1253,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/35p.jpg,blackgram,diseased,powdery_mildew,1254,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/36p.jpg,blackgram,diseased,powdery_mildew,1255,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/37p.jpg,blackgram,diseased,powdery_mildew,1256,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/38p.jpg,blackgram,diseased,powdery_mildew,1257,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/39p.jpg,blackgram,diseased,powdery_mildew,1258,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/3p.jpg,blackgram,diseased,powdery_mildew,1259,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/40p.jpg,blackgram,diseased,powdery_mildew,1260,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/41p.jpg,blackgram,diseased,powdery_mildew,1261,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/42p.jpg,blackgram,diseased,powdery_mildew,1262,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/43p.jpg,blackgram,diseased,powdery_mildew,1263,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/44p.jpg,blackgram,diseased,powdery_mildew,1264,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/45p.jpg,blackgram,diseased,powdery_mildew,1265,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/46p.jpg,blackgram,diseased,powdery_mildew,1266,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/47p.jpg,blackgram,diseased,powdery_mildew,1267,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/48p.jpg,blackgram,diseased,powdery_mildew,1268,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/49p.jpg,blackgram,diseased,powdery_mildew,1269,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/4p.jpg,blackgram,diseased,powdery_mildew,1270,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/50p.jpg,blackgram,diseased,powdery_mildew,1271,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/51p.jpg,blackgram,diseased,powdery_mildew,1272,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/52p.jpg,blackgram,diseased,powdery_mildew,1273,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/53p.jpg,blackgram,diseased,powdery_mildew,1274,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/54p.jpg,blackgram,diseased,powdery_mildew,1274,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/55p.jpg,blackgram,diseased,powdery_mildew,1275,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/56p.jpg,blackgram,diseased,powdery_mildew,1276,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/57p.jpg,blackgram,diseased,powdery_mildew,1277,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/58p.jpg,blackgram,diseased,powdery_mildew,1278,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/59p.jpg,blackgram,diseased,powdery_mildew,1279,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/5p.jpg,blackgram,diseased,powdery_mildew,1280,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/60p.jpg,blackgram,diseased,powdery_mildew,1281,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/61p.jpg,blackgram,diseased,powdery_mildew,1282,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/62p.jpg,blackgram,diseased,powdery_mildew,1283,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/63p.jpg,blackgram,diseased,powdery_mildew,1284,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/64p.jpg,blackgram,diseased,powdery_mildew,1285,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/65p.jpg,blackgram,diseased,powdery_mildew,1286,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/66p.jpg,blackgram,diseased,powdery_mildew,1287,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/67p.jpg,blackgram,diseased,powdery_mildew,1288,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/68p.jpg,blackgram,diseased,powdery_mildew,1289,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/69p.jpg,blackgram,diseased,powdery_mildew,1290,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/6p.jpg,blackgram,diseased,powdery_mildew,1291,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/70p.jpg,blackgram,diseased,powdery_mildew,1292,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/71p.jpg,blackgram,diseased,powdery_mildew,1293,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/72p.jpg,blackgram,diseased,powdery_mildew,1294,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/73p.jpg,blackgram,diseased,powdery_mildew,1295,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/74p.jpg,blackgram,diseased,powdery_mildew,1296,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/75p.jpg,blackgram,diseased,powdery_mildew,1297,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/76p.jpg,blackgram,diseased,powdery_mildew,1298,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/77p.jpg,blackgram,diseased,powdery_mildew,1299,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/78p.jpg,blackgram,diseased,powdery_mildew,1300,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/79p.jpg,blackgram,diseased,powdery_mildew,1301,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/7p.jpg,blackgram,diseased,powdery_mildew,1302,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/80p.jpg,blackgram,diseased,powdery_mildew,1303,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/81p.jpg,blackgram,diseased,powdery_mildew,1304,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/82p.jpg,blackgram,diseased,powdery_mildew,1305,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/83p.jpg,blackgram,diseased,powdery_mildew,1306,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/84p.jpg,blackgram,diseased,powdery_mildew,1307,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/85p.jpg,blackgram,diseased,powdery_mildew,1308,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/86p.jpg,blackgram,diseased,powdery_mildew,1309,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/87p.jpg,blackgram,diseased,powdery_mildew,1310,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/88p.jpg,blackgram,diseased,powdery_mildew,1311,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/89p.jpg,blackgram,diseased,powdery_mildew,1312,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/8p.jpg,blackgram,diseased,powdery_mildew,1313,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/90p.jpg,blackgram,diseased,powdery_mildew,1314,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/91p.jpg,blackgram,diseased,powdery_mildew,1315,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/92p.jpg,blackgram,diseased,powdery_mildew,1316,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/93p.jpg,blackgram,diseased,powdery_mildew,1317,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/94p.jpg,blackgram,diseased,powdery_mildew,1318,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/95p.jpg,blackgram,diseased,powdery_mildew,1319,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/96p.jpg,blackgram,diseased,powdery_mildew,1320,blackgram_diseased,val
+data/raw/blackgram/diseased/powdery_mildew/97p.jpg,blackgram,diseased,powdery_mildew,1321,blackgram_diseased,test
+data/raw/blackgram/diseased/powdery_mildew/98p.jpg,blackgram,diseased,powdery_mildew,1322,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/99p.jpg,blackgram,diseased,powdery_mildew,1323,blackgram_diseased,train
+data/raw/blackgram/diseased/powdery_mildew/9p.jpg,blackgram,diseased,powdery_mildew,1324,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/100y.jpg,blackgram,diseased,yellow_mosaic,1325,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/101y.jpg,blackgram,diseased,yellow_mosaic,1326,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/102y.jpg,blackgram,diseased,yellow_mosaic,1327,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/103y.jpg,blackgram,diseased,yellow_mosaic,1328,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/104y.jpg,blackgram,diseased,yellow_mosaic,1329,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/105y.jpg,blackgram,diseased,yellow_mosaic,1330,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/106y.jpg,blackgram,diseased,yellow_mosaic,1331,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/107y.jpg,blackgram,diseased,yellow_mosaic,1332,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/108y.jpg,blackgram,diseased,yellow_mosaic,1333,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/109y.jpg,blackgram,diseased,yellow_mosaic,1334,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/10y.jpg,blackgram,diseased,yellow_mosaic,1335,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/110y.jpg,blackgram,diseased,yellow_mosaic,1336,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/111y.jpg,blackgram,diseased,yellow_mosaic,1337,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/112y.jpg,blackgram,diseased,yellow_mosaic,1338,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/113y.jpg,blackgram,diseased,yellow_mosaic,1339,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/114y.jpg,blackgram,diseased,yellow_mosaic,1340,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/115y.jpg,blackgram,diseased,yellow_mosaic,1341,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/116y.jpg,blackgram,diseased,yellow_mosaic,1342,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/117y.jpg,blackgram,diseased,yellow_mosaic,1343,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/118y.jpg,blackgram,diseased,yellow_mosaic,1344,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/119y.jpg,blackgram,diseased,yellow_mosaic,1345,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/11y.jpg,blackgram,diseased,yellow_mosaic,1346,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/120y.jpg,blackgram,diseased,yellow_mosaic,1347,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/121y.jpg,blackgram,diseased,yellow_mosaic,1348,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/122y.jpg,blackgram,diseased,yellow_mosaic,1349,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/123y.jpg,blackgram,diseased,yellow_mosaic,1350,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/124y.jpg,blackgram,diseased,yellow_mosaic,1351,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/125y.jpg,blackgram,diseased,yellow_mosaic,1352,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/126y.jpg,blackgram,diseased,yellow_mosaic,1353,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/127y.jpg,blackgram,diseased,yellow_mosaic,1354,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/128y.jpg,blackgram,diseased,yellow_mosaic,1355,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/129y.jpg,blackgram,diseased,yellow_mosaic,1356,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/12y.jpg,blackgram,diseased,yellow_mosaic,1357,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/130y.jpg,blackgram,diseased,yellow_mosaic,1358,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/131y.jpg,blackgram,diseased,yellow_mosaic,1359,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/132y.jpg,blackgram,diseased,yellow_mosaic,1360,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/133y.jpg,blackgram,diseased,yellow_mosaic,1361,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/134y.jpg,blackgram,diseased,yellow_mosaic,1362,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/135y.jpg,blackgram,diseased,yellow_mosaic,1363,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/136y.jpg,blackgram,diseased,yellow_mosaic,1362,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/137y.jpg,blackgram,diseased,yellow_mosaic,1364,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/138y.jpg,blackgram,diseased,yellow_mosaic,1365,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/139y.jpg,blackgram,diseased,yellow_mosaic,1366,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/13y.jpg,blackgram,diseased,yellow_mosaic,1367,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/140y.jpg,blackgram,diseased,yellow_mosaic,1368,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/141y.jpg,blackgram,diseased,yellow_mosaic,1369,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/142y.jpg,blackgram,diseased,yellow_mosaic,1370,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/143y.jpg,blackgram,diseased,yellow_mosaic,1371,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/144y.jpg,blackgram,diseased,yellow_mosaic,1372,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/145y.jpg,blackgram,diseased,yellow_mosaic,1373,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/146y.jpg,blackgram,diseased,yellow_mosaic,1374,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/147y.jpg,blackgram,diseased,yellow_mosaic,1375,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/148y.jpg,blackgram,diseased,yellow_mosaic,1376,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/149y.jpg,blackgram,diseased,yellow_mosaic,1377,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/14y.jpg,blackgram,diseased,yellow_mosaic,1378,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/150y.jpg,blackgram,diseased,yellow_mosaic,1379,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/151y.jpg,blackgram,diseased,yellow_mosaic,1380,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/152y.jpg,blackgram,diseased,yellow_mosaic,1381,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/153y.jpg,blackgram,diseased,yellow_mosaic,1382,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/154y.jpg,blackgram,diseased,yellow_mosaic,1383,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/155y.jpg,blackgram,diseased,yellow_mosaic,1384,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/156y.jpg,blackgram,diseased,yellow_mosaic,1385,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/157y.jpg,blackgram,diseased,yellow_mosaic,1386,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/158y.jpg,blackgram,diseased,yellow_mosaic,1387,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/159y.jpg,blackgram,diseased,yellow_mosaic,1388,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/15y.jpg,blackgram,diseased,yellow_mosaic,1389,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/160y.jpg,blackgram,diseased,yellow_mosaic,1390,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/161y.jpg,blackgram,diseased,yellow_mosaic,1391,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/162y.jpg,blackgram,diseased,yellow_mosaic,1392,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/163y.jpg,blackgram,diseased,yellow_mosaic,1393,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/164y.jpg,blackgram,diseased,yellow_mosaic,1394,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/165y.jpg,blackgram,diseased,yellow_mosaic,1395,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/166y.jpg,blackgram,diseased,yellow_mosaic,1396,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/167y.jpg,blackgram,diseased,yellow_mosaic,1397,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/168y.jpg,blackgram,diseased,yellow_mosaic,1398,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/169y.jpg,blackgram,diseased,yellow_mosaic,1399,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/16y.jpg,blackgram,diseased,yellow_mosaic,1400,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/170y.jpg,blackgram,diseased,yellow_mosaic,1401,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/171y.jpg,blackgram,diseased,yellow_mosaic,1402,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/172y.jpg,blackgram,diseased,yellow_mosaic,1403,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/173y.jpg,blackgram,diseased,yellow_mosaic,1404,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/174y.jpg,blackgram,diseased,yellow_mosaic,1405,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/175y.jpg,blackgram,diseased,yellow_mosaic,1406,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/176y.jpg,blackgram,diseased,yellow_mosaic,1407,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/177y.jpg,blackgram,diseased,yellow_mosaic,1408,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/178y.jpg,blackgram,diseased,yellow_mosaic,1409,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/179y.jpg,blackgram,diseased,yellow_mosaic,1410,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/17y.jpg,blackgram,diseased,yellow_mosaic,1411,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/180y.jpg,blackgram,diseased,yellow_mosaic,1412,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/181y.jpg,blackgram,diseased,yellow_mosaic,1413,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/182y.jpg,blackgram,diseased,yellow_mosaic,1414,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/183y.jpg,blackgram,diseased,yellow_mosaic,1415,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/184y.jpg,blackgram,diseased,yellow_mosaic,1416,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/185y.jpg,blackgram,diseased,yellow_mosaic,1417,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/186y.jpg,blackgram,diseased,yellow_mosaic,1418,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/187y.jpg,blackgram,diseased,yellow_mosaic,1419,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/188y.jpg,blackgram,diseased,yellow_mosaic,1420,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/189y.jpg,blackgram,diseased,yellow_mosaic,1421,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/18y.jpg,blackgram,diseased,yellow_mosaic,1422,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/190y.jpg,blackgram,diseased,yellow_mosaic,1423,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/191y.jpg,blackgram,diseased,yellow_mosaic,1424,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/192y.jpg,blackgram,diseased,yellow_mosaic,1425,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/193y.jpg,blackgram,diseased,yellow_mosaic,1426,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/194y.jpg,blackgram,diseased,yellow_mosaic,1427,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/195y.jpg,blackgram,diseased,yellow_mosaic,1428,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/196y.jpg,blackgram,diseased,yellow_mosaic,1429,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/197y.jpg,blackgram,diseased,yellow_mosaic,1430,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/198y.jpg,blackgram,diseased,yellow_mosaic,1431,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/199y.jpg,blackgram,diseased,yellow_mosaic,1432,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/19y.jpg,blackgram,diseased,yellow_mosaic,1433,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/1y.jpg,blackgram,diseased,yellow_mosaic,1434,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/200y.jpg,blackgram,diseased,yellow_mosaic,1435,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/201y.jpg,blackgram,diseased,yellow_mosaic,1436,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/202y.jpg,blackgram,diseased,yellow_mosaic,1437,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/203y.jpg,blackgram,diseased,yellow_mosaic,1438,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/204y.jpg,blackgram,diseased,yellow_mosaic,1439,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/205y.jpg,blackgram,diseased,yellow_mosaic,1440,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/206y.jpg,blackgram,diseased,yellow_mosaic,1441,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/207y.jpg,blackgram,diseased,yellow_mosaic,1442,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/208y.jpg,blackgram,diseased,yellow_mosaic,1443,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/209y.jpg,blackgram,diseased,yellow_mosaic,1444,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/20y.jpg,blackgram,diseased,yellow_mosaic,1445,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/210y.jpg,blackgram,diseased,yellow_mosaic,1446,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/211y.jpg,blackgram,diseased,yellow_mosaic,1447,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/212y.jpg,blackgram,diseased,yellow_mosaic,1448,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/213y.jpg,blackgram,diseased,yellow_mosaic,1449,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/214y.jpg,blackgram,diseased,yellow_mosaic,1450,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/215y.jpg,blackgram,diseased,yellow_mosaic,1451,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/216y.jpg,blackgram,diseased,yellow_mosaic,1452,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/217y.jpg,blackgram,diseased,yellow_mosaic,1453,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/218y.jpg,blackgram,diseased,yellow_mosaic,1454,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/219y.jpg,blackgram,diseased,yellow_mosaic,1455,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/21y.jpg,blackgram,diseased,yellow_mosaic,1456,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/220y.jpg,blackgram,diseased,yellow_mosaic,1457,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/221y.jpg,blackgram,diseased,yellow_mosaic,1458,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/222y.jpg,blackgram,diseased,yellow_mosaic,1459,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/223y.jpg,blackgram,diseased,yellow_mosaic,1460,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/224y.jpg,blackgram,diseased,yellow_mosaic,1461,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/22y.jpg,blackgram,diseased,yellow_mosaic,1462,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/23y.jpg,blackgram,diseased,yellow_mosaic,1463,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/24y.jpg,blackgram,diseased,yellow_mosaic,1464,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/25y.jpg,blackgram,diseased,yellow_mosaic,1465,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/26y.jpg,blackgram,diseased,yellow_mosaic,1466,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/27y.jpg,blackgram,diseased,yellow_mosaic,1467,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/28y.jpg,blackgram,diseased,yellow_mosaic,1468,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/29y.jpg,blackgram,diseased,yellow_mosaic,1469,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/2y.jpg,blackgram,diseased,yellow_mosaic,1470,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/30y.jpg,blackgram,diseased,yellow_mosaic,1471,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/31y.jpg,blackgram,diseased,yellow_mosaic,1472,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/32y.jpg,blackgram,diseased,yellow_mosaic,1473,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/33y.jpg,blackgram,diseased,yellow_mosaic,1474,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/34y.jpg,blackgram,diseased,yellow_mosaic,1475,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/35y.jpg,blackgram,diseased,yellow_mosaic,1476,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/36y.jpg,blackgram,diseased,yellow_mosaic,1477,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/37y.jpg,blackgram,diseased,yellow_mosaic,1478,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/38y.jpg,blackgram,diseased,yellow_mosaic,1479,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/39y.jpg,blackgram,diseased,yellow_mosaic,1480,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/3y.jpg,blackgram,diseased,yellow_mosaic,1481,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/40y.jpg,blackgram,diseased,yellow_mosaic,1482,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/41y.jpg,blackgram,diseased,yellow_mosaic,1483,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/42y.jpg,blackgram,diseased,yellow_mosaic,1484,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/43y.jpg,blackgram,diseased,yellow_mosaic,1485,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/44y.jpg,blackgram,diseased,yellow_mosaic,1486,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/45y.jpg,blackgram,diseased,yellow_mosaic,1487,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/46y.jpg,blackgram,diseased,yellow_mosaic,1488,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/47y.jpg,blackgram,diseased,yellow_mosaic,1489,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/48y.jpg,blackgram,diseased,yellow_mosaic,1490,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/49y.jpg,blackgram,diseased,yellow_mosaic,1491,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/4y.jpg,blackgram,diseased,yellow_mosaic,1492,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/50y.jpg,blackgram,diseased,yellow_mosaic,1493,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/51y.jpg,blackgram,diseased,yellow_mosaic,1494,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/52y.jpg,blackgram,diseased,yellow_mosaic,1495,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/53y.jpg,blackgram,diseased,yellow_mosaic,1496,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/54y.jpg,blackgram,diseased,yellow_mosaic,1497,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/55y.jpg,blackgram,diseased,yellow_mosaic,1498,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/56y.jpg,blackgram,diseased,yellow_mosaic,1499,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/57y.jpg,blackgram,diseased,yellow_mosaic,1500,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/58y.jpg,blackgram,diseased,yellow_mosaic,1501,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/59y.jpg,blackgram,diseased,yellow_mosaic,1502,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/5y.jpg,blackgram,diseased,yellow_mosaic,1503,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/60y.jpg,blackgram,diseased,yellow_mosaic,1504,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/61y.jpg,blackgram,diseased,yellow_mosaic,1505,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/62y.jpg,blackgram,diseased,yellow_mosaic,1506,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/63y.jpg,blackgram,diseased,yellow_mosaic,1507,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/64y.jpg,blackgram,diseased,yellow_mosaic,1508,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/65y.jpg,blackgram,diseased,yellow_mosaic,1509,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/66y.jpg,blackgram,diseased,yellow_mosaic,1510,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/67y.jpg,blackgram,diseased,yellow_mosaic,1511,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/68y.jpg,blackgram,diseased,yellow_mosaic,1512,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/69y.jpg,blackgram,diseased,yellow_mosaic,1513,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/6y.jpg,blackgram,diseased,yellow_mosaic,1514,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/70y.jpg,blackgram,diseased,yellow_mosaic,1515,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/71y.jpg,blackgram,diseased,yellow_mosaic,1516,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/72y.jpg,blackgram,diseased,yellow_mosaic,1517,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/73y.jpg,blackgram,diseased,yellow_mosaic,1518,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/74y.jpg,blackgram,diseased,yellow_mosaic,1519,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/75y.jpg,blackgram,diseased,yellow_mosaic,1520,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/76y.jpg,blackgram,diseased,yellow_mosaic,1521,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/77y.jpg,blackgram,diseased,yellow_mosaic,1522,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/78y.jpg,blackgram,diseased,yellow_mosaic,1523,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/79y.jpg,blackgram,diseased,yellow_mosaic,1524,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/7y.jpg,blackgram,diseased,yellow_mosaic,1525,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/80y.jpg,blackgram,diseased,yellow_mosaic,1526,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/81y.jpg,blackgram,diseased,yellow_mosaic,1527,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/82y.jpg,blackgram,diseased,yellow_mosaic,1528,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/83y.jpg,blackgram,diseased,yellow_mosaic,1529,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/84y.jpg,blackgram,diseased,yellow_mosaic,1530,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/85y.jpg,blackgram,diseased,yellow_mosaic,1531,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/86y.jpg,blackgram,diseased,yellow_mosaic,1532,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/87y.jpg,blackgram,diseased,yellow_mosaic,1533,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/88y.jpg,blackgram,diseased,yellow_mosaic,1534,blackgram_diseased,test
+data/raw/blackgram/diseased/yellow_mosaic/89y.jpg,blackgram,diseased,yellow_mosaic,1535,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/8y.jpg,blackgram,diseased,yellow_mosaic,1536,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/90y.jpg,blackgram,diseased,yellow_mosaic,1537,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/91y.jpg,blackgram,diseased,yellow_mosaic,1538,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/92y.jpg,blackgram,diseased,yellow_mosaic,1539,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/93y.jpg,blackgram,diseased,yellow_mosaic,1540,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/94y.jpg,blackgram,diseased,yellow_mosaic,1541,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/95y.jpg,blackgram,diseased,yellow_mosaic,1542,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/96y.jpg,blackgram,diseased,yellow_mosaic,1543,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/97y.jpg,blackgram,diseased,yellow_mosaic,1544,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/98y.jpg,blackgram,diseased,yellow_mosaic,1545,blackgram_diseased,train
+data/raw/blackgram/diseased/yellow_mosaic/99y.jpg,blackgram,diseased,yellow_mosaic,1546,blackgram_diseased,val
+data/raw/blackgram/diseased/yellow_mosaic/9y.jpg,blackgram,diseased,yellow_mosaic,1547,blackgram_diseased,test

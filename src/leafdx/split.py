@@ -1,8 +1,14 @@
 """Leakage-free splitting: cluster near-duplicates, then split by cluster.
 
-1. Perceptual hash (pHash) per image and per flip/rot90 variant; images whose
-   closest variants are within `phash_max_distance` bits (same crop) are joined
-   into one cluster (union-find). This also catches flipped/rotated copies.
+1. Perceptual hashes at two resolutions (64-bit and 256-bit pHash), each for all
+   8 flip/rot90 variants so flipped/rotated copies match. Two images of the same
+   crop are joined (union-find) when
+     strong:  256-bit distance <= `strong_d256`, or
+     medium:  64-bit distance <= `medium_d64` and 256-bit <= `medium_d256`, or
+     burst:   same original class, file numbers within `burst_index_gap` and
+              64-bit distance <= `burst_d64` (consecutive shots of one leaf).
+   The 64-bit hash alone over-merges different leaves posed alike on a plain card
+   and under-merges true burst shots, hence the combination (see PROGRESS.md).
 2. Filename-stem grouping: files whose names differ only by an augmentation /
    copy suffix (e.g. "_flip", "_aug3", " - Copy") are joined too.
 3. Clusters are assigned whole to train/val/test, stratified by crop+label,
@@ -55,24 +61,47 @@ def phash_bits(path: str | Path, hash_size: int = 8) -> np.ndarray:
     return np.stack(variants).astype(np.uint8)
 
 
+def phash_pair(path: str | Path, small: int = 8, large: int = 16) -> tuple[np.ndarray, np.ndarray]:
+    return phash_bits(path, small), phash_bits(path, large)
+
+
+def file_number(path: str) -> int:
+    """Last integer in the file stem ('Dry Leaf00152' -> 152); -1 if none."""
+    nums = re.findall(r"\d+", Path(path).stem)
+    return int(nums[-1]) if nums else -1
+
+
 def stem_key(path: str) -> str:
     stem = Path(path).stem
     return AUG_SUFFIX.sub("", stem).strip().lower() or stem.lower()
 
 
-def cluster_images(df: pd.DataFrame, hashes: np.ndarray, max_distance: int,
+def _variant_distance(h: np.ndarray, k: int) -> np.ndarray:
+    """Hamming distance from row k's canonical hash to the closest variant of rows k+1.."""
+    return np.abs(h[k + 1:] - h[k, 0]).sum(axis=2).min(axis=1)
+
+
+def cluster_images(df: pd.DataFrame, h_small: np.ndarray, h_large: np.ndarray, rules: dict,
                    use_stems: bool = True) -> np.ndarray:
-    """Cluster id per row. `hashes` is (n, variants, bits); rows are only joined within a crop."""
+    """Cluster id per row. Hashes are (n, variants, bits); rows are only joined within a crop."""
     n = len(df)
     uf = UnionFind(n)
     crops = df["crop"].to_numpy()
+    classes = df["orig_class"].to_numpy()
+    numbers = df["path"].map(file_number).to_numpy()
     for crop in np.unique(crops):
         idx = np.flatnonzero(crops == crop)
-        h = hashes[idx].astype(np.int16)
+        hs, hl = h_small[idx].astype(np.int16), h_large[idx].astype(np.int16)
         for k, i in enumerate(idx[:-1]):
-            # Hamming distance from i's canonical hash to the closest variant of each later image
-            d = np.abs(h[k + 1:] - h[k, 0]).sum(axis=2).min(axis=1)
-            for j in idx[k + 1:][d <= max_distance]:
+            rest = idx[k + 1:]
+            d64, d256 = _variant_distance(hs, k), _variant_distance(hl, k)
+            burst = ((classes[rest] == classes[i]) & (numbers[i] >= 0)
+                     & (np.abs(numbers[rest] - numbers[i]) <= rules["burst_index_gap"])
+                     & (d64 <= rules["burst_d64"]))
+            join = ((d256 <= rules["strong_d256"])
+                    | ((d64 <= rules["medium_d64"]) & (d256 <= rules["medium_d256"]))
+                    | burst)
+            for j in rest[join]:
                 uf.union(i, j)
     if use_stems:
         keys = df["crop"] + "|" + df["orig_class"] + "|" + df["path"].map(stem_key)

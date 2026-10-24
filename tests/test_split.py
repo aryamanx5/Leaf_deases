@@ -12,7 +12,7 @@ from leafdx.split import (
     cluster_images,
     grouped_stratified_split,
     leakage_report,
-    phash_bits,
+    phash_pair,
     stem_key,
 )
 
@@ -48,8 +48,9 @@ def synthetic_set(tmp_path):
 
 def _split(df: pd.DataFrame, seed: int = 42) -> pd.DataFrame:
     df = df.copy()
-    hashes = np.stack([phash_bits(p) for p in df.path])
-    df["cluster_id"] = cluster_images(df, hashes, max_distance=6)
+    hs, hl = (np.stack(h) for h in zip(*[phash_pair(p) for p in df.path], strict=True))
+    rules = load_config()["split"]["dedup"]
+    df["cluster_id"] = cluster_images(df, hs, hl, rules)
     df["stratum"] = df["crop"] + "_" + df["label"]
     df["split"] = grouped_stratified_split(df, {"train": 0.7, "val": 0.15, "test": 0.15}, seed)
     return df

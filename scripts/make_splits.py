@@ -15,7 +15,7 @@ from leafdx.split import (
     cluster_images,
     grouped_stratified_split,
     leakage_report,
-    phash_bits,
+    phash_pair,
 )
 
 
@@ -26,10 +26,9 @@ def main() -> int:
     df = inv[inv.readable].reset_index(drop=True)
     print(f"{len(df)} readable images ({len(inv) - len(df)} unreadable excluded)")
 
-    hashes = np.stack(
-        Parallel(n_jobs=-1)(delayed(phash_bits)(ROOT / p, sc["phash_size"]) for p in df.path)
-    )
-    df["cluster_id"] = cluster_images(df, hashes, sc["phash_max_distance"], sc["stem_grouping"])
+    pairs = Parallel(n_jobs=-1)(delayed(phash_pair)(ROOT / p) for p in df.path)
+    h_small, h_large = (np.stack(h) for h in zip(*pairs, strict=True))
+    df["cluster_id"] = cluster_images(df, h_small, h_large, sc["dedup"], sc["stem_grouping"])
     df["stratum"] = df["crop"] + "_" + df["label"]
     df["split"] = grouped_stratified_split(df, sc["ratios"], cfg["seed"])
 
@@ -39,7 +38,7 @@ def main() -> int:
     train = df[df.split == "train"]
     meta = {
         "seed": cfg["seed"],
-        "phash_max_distance": sc["phash_max_distance"],
+        "dedup_rules": sc["dedup"],
         **rep,
         "counts": df.groupby(["split", "stratum"]).size().unstack(fill_value=0).to_dict(orient="index"),
         "class_weights_binary": class_weights(train, "label"),
