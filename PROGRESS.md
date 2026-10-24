@@ -13,7 +13,7 @@
 | T06 | Stage 1d: decisions (rule-based + SVM) | DONE | Evidence log T06 |
 | T07 | Stage 2a: CNN data + model | DONE | Evidence log T07 |
 | T08 | Stage 2b: CNN training + evaluation | DONE | Evidence log T08 |
-| T09 | Comparison | TODO | |
+| T09 | Comparison | DONE | Evidence log T09 |
 | T10 | Unified inference pipeline | TODO | |
 | T11 | Demo app | TODO | |
 | T12 | Tests, lint, quality | TODO | |
@@ -23,6 +23,15 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-24 T09 Comparison + leakage ablation
+- `python scripts/run_comparison.py` -> identical TEST split (n=239; black gram 150, turmeric 89). Macro-F1 [95% bootstrap CI]: rule-based 0.839 [0.780, 0.892], SVM 0.935 [0.896, 0.968], CNN 0.978 [0.954, 0.995]; ROC-AUC 0.924 / 0.981 / 0.999.
+- Per crop macro-F1: black gram rule 0.737, SVM 0.910, CNN 0.960; turmeric rule 0.949, SVM 0.963, CNN 1.000.
+- `McNemar SVM vs CNN p = 0.0574` (SVM right/CNN wrong 3, reverse 11); SVM-CNN agreement 0.941, accuracy when agreeing 0.996, 14 disagreements.
+- Inference: Stage 1 + decision 173.8 ms/image CPU; CNN 48.2 ms CPU / 35.8 ms MPS.
+- Leakage ablation (macro-F1): clean SVM 0.935 / CNN-head 0.984; naive_random 0.931 / 0.984 (5.4% of TEST items have a near-duplicate in TRAIN); augment_then_split 0.974 / 0.991 (94.9% have a sibling in TRAIN) -> inflation +0.039 SVM, +0.007 CNN head.
+- `numbers in comparison.md not found in comparison.csv: []`
+- Files: results/comparison.csv, comparison.md, comparison_table.md, figures comparison_bars / confusion_matrices / roc_pr_curves / inference_time / errors_gallery / disagreements_gallery (bars, ROC/PR and disagreement gallery opened: SVM misses small dark anthracnose spots and thin turmeric blotch margins; SVM catches faint mildew the CNN misses).
 
 ### 2026-10-24 T07 CNN data + model
 - `python scripts/train_cnn.py --smoke` -> MobileNetV2 ImageNet weights downloaded (mobilenet_v2-7ebf99e0.pth); `epoch 1 [head] ... (10s)`; `smoke: trained 64 images, 1 epoch on mps, pretrained=True; checkpoint cnn_smoke.pt reloaded (epoch 1)`; 4 predictions printed.
@@ -108,6 +117,9 @@
 
 - CNN (T07): single 4-class model (turmeric/blackgram x healthy/diseased); P(diseased) = sum of the two diseased-class probabilities, binary decision at 0.5. Eval transform = resize of the whole image to 224x224 (no centre crop, leaves are often off-centre). Hue jitter kept at 0.02 because colour is the disease signal.
 
+- Comparison (T09): every reported number lives in the long-format results/comparison.csv (section, method, scope, metric, value); comparison.md is rendered from it and checked automatically (no number in the markdown may be missing from the CSV). Bootstrap CIs (1000 resamples) and an exact McNemar test qualify the differences; wording ("higher/lower, CIs overlap") is generated from the numbers.
+- Leakage ablation uses a frozen ImageNet MobileNetV2 + logistic-regression head instead of the fine-tuned CNN, because the fine-tuned CNN has already seen clean-TRAIN images that a naive split would place in TEST. Augmented copies exist only in the cache, never in data/raw.
+
 ## NEXT
 
-T09: run scripts/run_comparison.py (comparison.csv/md, figures, McNemar, error galleries, leakage ablation) and inspect the figures.
+T10: record pipeline evidence (tests/test_pipeline.py already passing) and commit.

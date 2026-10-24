@@ -205,7 +205,11 @@ def md_table(tab) -> str:
     return head + "\n".join(lines) + "\n"
 
 
-def render_md(tab, abl) -> str:
+CROP_TXT = {"blackgram": "Black gram", "turmeric": "Turmeric"}
+
+
+def render_md(tab, abl, class_crop: dict) -> str:
+    class_txt = {c: f"{CROP_TXT[k].lower()} {c.replace('_', ' ')}" for c, k in class_crop.items()}
     G = lambda s, m, sc, k: fmt(get(tab, s, m, sc, k), k)  # noqa: E731
     V = lambda s, m, sc, k: get(tab, s, m, sc, k)  # noqa: E731
     f1 = {m: V("metrics", m, "overall", "macro_f1") for m in METHODS}
@@ -241,24 +245,26 @@ def render_md(tab, abl) -> str:
         s_lo, s_hi = V("metrics", "svm", crop, "macro_f1_ci_low"), V("metrics", "svm", crop, "macro_f1_ci_high")
         c_lo, c_hi = V("metrics", "cnn", crop, "macro_f1_ci_low"), V("metrics", "cnn", crop, "macro_f1_ci_high")
         overlap = s_lo <= c_hi and c_lo <= s_hi
-        verb = "matches" if overlap else ("exceeds" if s > c else "falls short of")
-        findings.append(f"**{crop}:** the SVM on hand-designed features ({G('metrics', 'svm', crop, 'macro_f1')}) "
-                     f"{verb} the CNN ({G('metrics', 'cnn', crop, 'macro_f1')})"
-                     + (" (overlapping 95% CIs)." if overlap else " (non-overlapping 95% CIs)."))
+        rel = "is higher than" if s > c else "is lower than"
+        findings.append(f"**{CROP_TXT[crop]}:** the SVM on hand-designed features (macro-F1 {G('metrics', 'svm', crop, 'macro_f1')}, "
+                        f"healthy recall {G('metrics', 'svm', crop, 'healthy_recall')}) {rel} the CNN "
+                        f"({G('metrics', 'cnn', crop, 'macro_f1')}, healthy recall {G('metrics', 'cnn', crop, 'healthy_recall')})"
+                        + ("; the 95% bootstrap CIs overlap." if overlap else "; the 95% bootstrap CIs do not overlap."))
     # per original class
     pc = tab[tab.section == "per_class"].pivot_table(index="scope", columns=["method", "metric"], values="value")
     gaps = {cls: pc.loc[cls, ("cnn", "accuracy")] - pc.loc[cls, ("svm", "accuracy")] for cls in pc.index}
     worst = max(gaps, key=gaps.get)
     best_ip = min(gaps, key=gaps.get)
-    findings.append(f"**By original class**, the largest CNN advantage over the SVM is on *{worst}* "
+    findings.append(f"**By original class**, the largest CNN advantage over the SVM is on *{class_txt[worst]}* "
                  f"(CNN {G('per_class', 'cnn', worst, 'accuracy')} vs SVM {G('per_class', 'svm', worst, 'accuracy')}, "
-                 f"n = {G('per_class', 'svm', worst, 'n')}); the SVM fares best relative to the CNN on *{best_ip}* "
+                 f"n = {G('per_class', 'svm', worst, 'n')}); the SVM fares best relative to the CNN on *{class_txt[best_ip]}* "
                  f"(SVM {G('per_class', 'svm', best_ip, 'accuracy')} vs CNN {G('per_class', 'cnn', best_ip, 'accuracy')}, "
                  f"n = {G('per_class', 'svm', best_ip, 'n')}).")
     findings.append(f"**Rule-based score vs SVM:** the transparent four-measurement rule reaches macro-F1 "
                  f"{G('metrics', 'rule_based', 'overall', 'macro_f1')} (healthy recall {G('metrics', 'rule_based', 'overall', 'healthy_recall')}) "
                  f"against {G('metrics', 'svm', 'overall', 'macro_f1')} (healthy recall {G('metrics', 'svm', 'overall', 'healthy_recall')}) "
-                 "for the SVM on the full feature vector: the same measurements, combined by a learned boundary, recover much of the gap.")
+                 "for the SVM, which combines the full Stage 1 feature vector with a learned boundary. The four transparent "
+                 "measurements alone over-call disease on healthy leaves; the colour and texture statistics fix most of that.")
     findings.append(f"**Interpretability and cost:** the image-processing route returns the affected-area %, lesion count "
                  "and the segmented leaf / abnormal-region masks that explain each decision, at "
                  f"{G('inference', 'svm', 'overall', 'ms_per_image')} ms per image on CPU versus "
@@ -283,6 +289,16 @@ def render_md(tab, abl) -> str:
         lines.append(f"| {r.scenario} | {r.method} | {G('leakage_ablation', r.method, r.scenario, 'accuracy')} | "
                      f"{G('leakage_ablation', r.method, r.scenario, 'macro_f1')} | "
                      f"{G('leakage_ablation', r.method, r.scenario, 'test_items_with_cluster_in_train')} | {infl} |")
+    a = lambda m, sc, k: G("leakage_ablation", m, sc, k)  # noqa: E731
+    lines += ["",
+              f"With original images only, near-duplicates are rare in these datasets: {a('svm', 'naive_random', 'test_items_with_cluster_in_train')} "
+              f"of naive-random TEST items have a near-duplicate in TRAIN, and macro-F1 moves by {a('svm', 'naive_random', 'macro_f1_inflation')} (SVM) "
+              f"and {a('cnn_head', 'naive_random', 'macro_f1_inflation')} (CNN head). Creating augmented copies before splitting puts a sibling of "
+              f"{a('svm', 'augment_then_split', 'test_items_with_cluster_in_train')} of TEST items in TRAIN and inflates macro-F1 by "
+              f"{a('svm', 'augment_then_split', 'macro_f1_inflation')} (SVM) and {a('cnn_head', 'augment_then_split', 'macro_f1_inflation')} (CNN head): "
+              "the gap between methods also shrinks, which is how pre-augmented benchmarks can flatter weaker methods. "
+              f"Side note: on the clean split the frozen-embedding CNN head ({a('cnn_head', 'clean', 'macro_f1')}) is on par with the "
+              f"fine-tuned CNN ({G('metrics', 'cnn', 'overall', 'macro_f1')})."]
     lines += ["", "## What this answers", ""]
     gap = f1["cnn"] - f1["svm"]
     lines.append(
@@ -292,8 +308,10 @@ def render_md(tab, abl) -> str:
         + (f"The CNN is higher by {G('summary', 'cnn_minus_svm', 'overall', 'macro_f1_gap')} macro-F1"
            if gap > 0 else f"The CNN is lower by {G('summary', 'svm_minus_cnn', 'overall', 'macro_f1_gap')} macro-F1")
         + ("; the difference is statistically significant (McNemar), " if sig else "; the difference is not statistically significant (McNemar), ")
-        + "and the per-class table shows where the colour-based features run out (see finding on the original classes). "
-        "The image-processing route buys an explicit, inspectable measurement of how much of the leaf is affected.")
+        + "Turmeric is close to solved by both routes on this paper-background dataset; black gram, photographed "
+        "mostly in the field, is where hand-designed features fall short, mainly by calling healthy leaves diseased "
+        "(see the healthy recall values above). The image-processing route buys an explicit, inspectable measurement "
+        "of how much of each leaf is affected and why it was flagged; the CNN buys accuracy without feature design.")
     return "\n".join(lines) + "\n"
 
 
@@ -301,8 +319,8 @@ def check_md_numbers(md: str, tab: pd.DataFrame) -> list[str]:
     """Every multi-digit or decimal number in the markdown must appear in comparison.csv."""
     allowed = {fmt(v, m) for v, m in zip(tab.value, tab.metric, strict=True)}
     allowed |= {str(int(v)) for v in tab.value if float(v).is_integer()}
-    tokens = re.findall(r"(?<![\w.])\d+(?:\.\d+)?(?![\w])", md)
-    return [t for t in tokens if (len(t) > 1 or "." in t) and t not in allowed]
+    tokens = re.findall(r"(?<![\w./])-?\d+(?:\.\d+)?(?![\w])", md)
+    return [t for t in tokens if (len(t.lstrip("-")) > 1 or "." in t) and t not in allowed]
 
 
 def main() -> int:
@@ -342,7 +360,8 @@ def main() -> int:
     tab.to_csv(res / "comparison.csv", index=False)
 
     (res / "comparison_table.md").write_text(md_table(tab))
-    md = render_md(tab, abl)
+    class_crop = feats.drop_duplicates("orig_class").set_index("orig_class")["crop"].to_dict()
+    md = render_md(tab, abl, class_crop)
     bad = check_md_numbers(md, tab)
     (res / "comparison.md").write_text(md)
 

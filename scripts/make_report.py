@@ -35,7 +35,7 @@ class Recorder:
         return self._csv[file]
 
     def _emit(self, value: float, fmt: str, source: dict) -> str:
-        s = format(value, fmt)
+        s = format(int(round(value)), fmt) if fmt == "d" else format(value, fmt)
         self.records.append({"text": s, "value": float(value), "fmt": fmt, "source": source})
         return s
 
@@ -51,6 +51,12 @@ class Recorder:
         assert len(v) == 1, (section, method, scope, metric)
         q = {"section": section, "method": method, "scope": scope, "metric": metric}
         return self._emit(float(v.iloc[0]), fmt, {"file": "results/comparison.csv", "query": q})
+
+    def cfg(self, *keys, fmt: str = "d") -> str:
+        v = CFG
+        for k in keys:
+            v = v[k]
+        return self._emit(float(v), fmt, {"config": list(keys), "file": "configs/default.yaml"})
 
     def count(self, file: str, fmt: str = "d", **where) -> str:
         df = self.csv(file)
@@ -71,7 +77,7 @@ def pct(file, *keys):
 
 
 def dataset_section() -> list[str]:
-    out = ["## 1. Data", "",
+    out = ["## Data", "",
            "Public datasets (Mendeley Data, sha256-verified on download; see README):", "",
            f"- **Black gram:** {CFG['datasets']['blackgram']['citation']}",
            f"- **Turmeric:** {CFG['datasets']['turmeric']['citation']} - original images only (the pre-augmented archive is not used).",
@@ -82,9 +88,9 @@ def dataset_section() -> list[str]:
                    + " | ".join(R.count(SPL, crop=crop, orig_class=cls, split=s) for s in ("train", "val", "test")) + " |")
     out += ["", f"Total readable leaf images: {R.count(INV, readable=True)} "
             f"(unreadable: {R.count(INV, readable=False)}). Rhizome/root classes of the turmeric dataset are excluded.", "",
-            "**Leakage control.** Near-duplicates are clustered with 64- and 256-bit perceptual hashes over all "
+            "**Leakage control.** Near-duplicates are clustered with perceptual hashes at two resolutions over all "
             "flip/rotation variants plus consecutive-file-number (burst shot) grouping; whole clusters are assigned to "
-            f"train/val/test (stratified by crop x label, seed {CFG['seed']}). "
+            f"train/val/test (stratified by crop x label, seed {R.cfg('seed')}). "
             f"Clusters: {R.num('data/processed/split_meta.json', 'n_clusters', fmt='d')}, of which "
             f"{R.num('data/processed/split_meta.json', 'n_multi_image_clusters', fmt='d')} contain more than one image; "
             f"clusters spanning two splits: {R.num('data/processed/split_meta.json', 'clusters_spanning_splits', fmt='d')}.", ""]
@@ -98,7 +104,7 @@ def dataset_section() -> list[str]:
 def methods_section() -> list[str]:
     info = "results/cnn_train_info.json"
     return [
-        "## 2. Methods", "",
+        "## Methods", "",
         "```",
         "              LEAF IMAGE",
         "                  |",
@@ -118,7 +124,7 @@ def methods_section() -> list[str]:
         "in Lab + Otsu threshold on colour distance; field background: GrabCut with a centre prior); morphology and "
         "dominant-component selection with hole filling. Abnormal regions: yellow / brown / dark / pale colour rules "
         "relative to each leaf's own green reference, hysteresis growth, opening/closing and connected components. "
-        "Features (57): colour statistics over leaf and lesions (RGB/HSV/Lab), abnormal-colour %, GLCM contrast / "
+        "Features (listed in `results/feature_list.txt`): colour statistics over leaf and lesions (RGB/HSV/Lab), abnormal-colour %, GLCM contrast / "
         "energy / homogeneity / correlation / dissimilarity, edge density, lesion count / area / perimeter / "
         "circularity / mean and max size, leaf solidity. Decisions: (a) a fixed-weight rule score over affected-%, "
         "lesion count, abnormal-colour % and GLCM contrast with a per-crop threshold chosen on VAL; (b) an RBF SVM "
@@ -135,9 +141,10 @@ def methods_section() -> list[str]:
 def stage1_checks() -> list[str]:
     sc, lc = "results/segmentation_check.json", "results/lesion_check.json"
     return [
-        "## 3. Stage 1 checks", "",
+        "## Stage 1 checks", "",
         f"- Segmentation: {pct(sc, 'single_dominant_rate')} of {R.num(sc, 'n_images', fmt='d')} random train/val images "
-        "give a single dominant leaf mask covering 5-95% of the frame.",
+        f"give a single dominant leaf mask covering {R.cfg('segment', 'quality', 'min_coverage', fmt='.0%')} to "
+        f"{R.cfg('segment', 'quality', 'max_coverage', fmt='.0%')} of the frame.",
         f"- Abnormal-region detection ({R.num(lc, 'n_images', fmt='d')} train/val images): mean affected area "
         f"{R.num(lc, 'mean_affected_pct', 'healthy', fmt='.2f')}% on healthy vs {R.num(lc, 'mean_affected_pct', 'diseased', fmt='.2f')}% "
         "on diseased leaves.", "",
@@ -158,7 +165,7 @@ def metrics_block(title: str, file: str, model_key: str | None, split: str, bina
 
 
 def results_section() -> list[str]:
-    out = ["## 4. Results", "", "### 4.1 Stage 1 decisions", ""]
+    out = ["## Results", "", "### Stage 1 decisions", ""]
     out += metrics_block("Rule-based score - VAL", IPM, "rule_based", "val")
     out += metrics_block("Rule-based score - TEST", IPM, "rule_based", "test")
     out += metrics_block("SVM - VAL", IPM, "svm", "val")
@@ -167,7 +174,7 @@ def results_section() -> list[str]:
             f"gamma = {R.num(IPM, 'svm', 'best_params', 'svc__gamma', fmt='g')}; CV macro-F1 {R.num(IPM, 'svm', 'cv_macro_f1_train')}. "
             f"Rule thresholds from VAL: black gram {R.num(IPM, 'rule_based', 'thresholds_from_val', 'blackgram')}, "
             f"turmeric {R.num(IPM, 'rule_based', 'thresholds_from_val', 'turmeric')}.", "",
-            "### 4.2 CNN", ""]
+            "### CNN", ""]
     out += metrics_block("CNN healthy/diseased - VAL", CNM, None, "val", "binary")
     out += metrics_block("CNN healthy/diseased - TEST", CNM, None, "test", "binary")
     out += [f"4-class (crop x state) TEST accuracy {R.num(CNM, 'test', 'four_class', 'accuracy')}, macro-F1 "
@@ -189,22 +196,24 @@ def comparison_section() -> list[str]:
     for v, m, sec, meth, sc in zip(t.value, t.metric, t.section, t.method, t.scope, strict=True):
         from leafdx.compare import fmt
 
+        src = {"file": "results/comparison.csv", "query": {"section": sec, "method": meth, "scope": sc, "metric": m}}
         s = fmt(v, m)
         if s in md:
-            R.records.append({"text": s, "value": float(v), "fmt": "compare.fmt", "source": {
-                "file": "results/comparison.csv", "query": {"section": sec, "method": meth, "scope": sc, "metric": m}}})
+            R.records.append({"text": s, "value": float(v), "fmt": "compare.fmt", "source": src})
+        if float(v).is_integer() and str(int(v)) in md:
+            R.records.append({"text": str(int(v)), "value": float(v), "fmt": "d", "source": src})
     table = (RES / "comparison_table.md").read_text()
-    return ["## 5. Comparison: image processing vs CNN (identical TEST split)", "", table, "### Findings", findings.strip(), "",
+    return ["## Comparison: image processing vs CNN (identical TEST split)", "", table, "### Findings", findings.strip(), "",
             "![bars](figures/comparison_bars.png)", "", "![confusion](figures/confusion_matrices.png)", "",
             "![roc](figures/roc_pr_curves.png)", "", "![time](figures/inference_time.png)", "",
-            "## 6. Leakage ablation", abl.strip(), "",
-            "## 7. Error analysis", "",
+            "## Leakage ablation", abl.strip(), "",
+            "## Error analysis", "",
             "Per-original-class TEST accuracy (share of images classified correctly as healthy/diseased):", "",
             *per_class_table(), "",
             "![errors](figures/errors_gallery.png)", "",
             "SVM vs CNN disagreements with both kinds of evidence (original | Stage 1 abnormal regions | Grad-CAM):", "",
             "![disagreements](figures/disagreements_gallery.png)", "",
-            "## 8. Answer to the research question", "", answer.strip(), ""]
+            "## Answer to the research question", "", answer.strip(), ""]
 
 
 def per_class_table() -> list[str]:
@@ -219,7 +228,7 @@ def per_class_table() -> list[str]:
 
 def limitations_section() -> list[str]:
     return [
-        "## 9. Limitations", "",
+        "## Limitations", "",
         "- Both datasets come from single regions (Andhra Pradesh, India for black gram; Jamalpur, Bangladesh for "
         "turmeric) and single capture campaigns; no cross-region test was possible, so the measured accuracies are "
         "within-dataset estimates.",
@@ -231,7 +240,7 @@ def limitations_section() -> list[str]:
         "hardest classes for colour-based features (see per-class table).",
         "- Segmentation of field photos can include neighbouring foliage or miss part of a two-tone leaf.",
         "- The CNN was trained once (one seed) with a time budget; no architecture search.",
-        "", "## 10. Future work", "",
+        "", "## Future work", "",
         "- Specific-disease classification (e.g. turmeric leaf spot / blotch, black gram yellow mosaic) instead of "
         "healthy vs diseased.",
         "- Cross-region testing with leaves photographed in other districts / seasons.",

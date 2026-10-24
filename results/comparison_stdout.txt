@@ -1,0 +1,23 @@
+ablation: Stage 1 features for 4818 augmented copies (cached) ...
+ablation: frozen ImageNet MobileNetV2 embeddings ...
+| Method | Scope | n | Accuracy | Macro-F1 [95% CI] | Precision | Recall (diseased) | Recall (healthy) | ROC-AUC |
+|---|---|---|---|---|---|---|---|---|
+| Rule-based (IP) | overall | 239 | 0.883 | 0.839 [0.780, 0.892] | 0.903 | 0.944 | 0.705 | 0.924 |
+| SVM (IP features) | overall | 239 | 0.950 | 0.935 [0.896, 0.968] | 0.972 | 0.961 | 0.918 | 0.981 |
+| CNN (MobileNetV2) | overall | 239 | 0.983 | 0.978 [0.954, 0.995] | 0.989 | 0.989 | 0.967 | 0.999 |
+| Rule-based (IP) | blackgram | 150 | 0.840 | 0.737 [0.641, 0.824] | 0.873 | 0.932 | 0.500 | 0.864 |
+| SVM (IP features) | blackgram | 150 | 0.940 | 0.910 [0.842, 0.962] | 0.958 | 0.966 | 0.844 | 0.963 |
+| CNN (MobileNetV2) | blackgram | 150 | 0.973 | 0.960 [0.917, 0.991] | 0.983 | 0.983 | 0.938 | 0.998 |
+| Rule-based (IP) | turmeric | 89 | 0.955 | 0.949 [0.896, 0.988] | 0.967 | 0.967 | 0.931 | 0.998 |
+| SVM (IP features) | turmeric | 89 | 0.966 | 0.963 [0.915, 1.000] | 1.000 | 0.950 | 1.000 | 1.000 |
+| CNN (MobileNetV2) | turmeric | 89 | 1.000 | 1.000 [1.000, 1.000] | 1.000 | 1.000 | 1.000 | 1.000 |
+
+          scenario   method  n_train  n_test  accuracy  macro_f1  test_items_with_cluster_in_train
+             clean      svm     1125     239     0.950     0.935                             0.000
+             clean cnn_head     1125     239     0.987     0.984                             0.000
+      naive_random      svm     1124     241     0.946     0.931                             0.054
+      naive_random cnn_head     1124     241     0.988     0.984                             0.054
+augment_then_split      svm     4496     964     0.979     0.974                             0.949
+augment_then_split cnn_head     4496     964     0.993     0.991                             0.949
+McNemar SVM vs CNN p = 0.0574
+numbers in comparison.md not found in comparison.csv: ['0.003']
