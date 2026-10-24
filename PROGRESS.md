@@ -10,7 +10,7 @@
 | T03 | Stage 1a: pre-processing + leaf segmentation | DONE | Evidence log T03 |
 | T04 | Stage 1b: disease region detection | DONE | Evidence log T04 |
 | T05 | Stage 1c: features | DONE | Evidence log T05 |
-| T06 | Stage 1d: decisions (rule-based + SVM) | TODO | |
+| T06 | Stage 1d: decisions (rule-based + SVM) | DONE | Evidence log T06 |
 | T07 | Stage 2a: CNN data + model | TODO | |
 | T08 | Stage 2b: CNN training + evaluation | TODO | |
 | T09 | Comparison | TODO | |
@@ -23,6 +23,17 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-24 T06 Decisions (rule-based + SVM)
+- `python scripts/train_ip.py` (train 1125 / val 242 / test 239):
+  - SVM grouped 5-fold CV on TRAIN: best `{'svc__C': 30, 'svc__gamma': 0.01}` CV macro-F1 0.934
+  - rule_based val: acc 0.913, macro-F1 0.882, AUC 0.914; thresholds from VAL blackgram 0.110, turmeric 0.235
+  - rule_based test: `acc 0.883 P 0.903 R 0.944 F1 0.923 macroF1 0.839 AUC 0.924 CM [[43, 18], [10, 168]]`; per-crop macro-F1 blackgram 0.737, turmeric 0.949
+  - svm val: acc 0.955, macro-F1 0.942, AUC 0.986
+  - svm test: `acc 0.950 P 0.972 R 0.961 F1 0.966 macroF1 0.935 AUC 0.981 CM [[56, 5], [7, 171]]`; per-crop macro-F1 blackgram 0.910, turmeric 0.963
+  - inference (sequential, 40 VAL images): Stage 1 median 161 ms + decision 6.3 ms per image
+- Saved models/ip_rule.joblib, models/ip_svm.joblib, results/ip_metrics.json, results/ip_predictions.csv.
+- `pytest tests/test_decide.py` -> `2 passed` (rule scorer on toy data; end-to-end predict on a synthetic image with the saved models).
 
 ### 2026-10-24 T05 Features
 - `python scripts/extract_features.py` -> `Wrote data/processed/features.csv: 1606 rows x 57 features in 248s`; `non-finite values: 0; rows with missing features: 0; seg_failed: 0`; stage1 median 603 ms/image under parallel load. Cache: data/processed/cache/features_<config-hash>/.
@@ -84,6 +95,9 @@
 - Background/label correlation (measured, T05): in black gram, 25.8% of diseased (203/786) vs 30.3% of healthy (67/221) images were taken on a plain card/cloth, so the plain-vs-field background is only weakly tied to the label. All turmeric images are on white paper (no background shortcut available within turmeric, but crop identity is trivially predictable from background).
 - Leaf area as a fraction of the frame and the segmentation method are NOT used as features (capture artefacts, not leaf properties); they are kept as metadata columns.
 
+- Rule-based score (T06): four inputs with fixed equal weights (not fitted), each min-max scaled per crop by its TRAIN 1st-99th percentile; directions are the domain hypothesis "more abnormal = more diseased", confirmed on TRAIN medians for all four in both crops. Only the per-crop threshold is learned (VAL macro-F1 grid). Macro-F1 is used for both the rule threshold and the SVM CV because healthy is the minority class.
+- SVM score = decision_function (sklearn 1.9 deprecates SVC(probability=True)); it is used for ROC curves. Single SVM for both crops with an is_turmeric indicator, mirroring the single 4-class CNN.
+
 ## NEXT
 
-T06: ip/decide.py rule-based score (threshold by VAL F1 grid) + RBF SVM (grouped CV on TRAIN), scripts/train_ip.py -> models/ and results/ip_metrics.json (VAL + TEST, per crop, inference ms).
+T07: cnn/dataset.py (train-only augmentation), cnn/model.py (MobileNetV2 pretrained, 4-class head; EfficientNet-B0 flag), scripts/train_cnn.py --smoke (1 epoch on 64 images, save, reload, predict).

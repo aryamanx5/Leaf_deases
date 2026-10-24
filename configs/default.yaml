@@ -137,5 +137,13 @@ features:
   glcm_max_side: 256       # leaf bounding box is downscaled to this for GLCM
   canny_low: 50
   canny_high: 150
-decide: {}
+decide:
+  rule:
+    weights: {affected_pct: 1.0, log_lesion_count: 1.0, abn_colour_pct: 1.0, glcm_contrast: 1.0}
+    threshold_grid: {start: 0.0, stop: 1.0, num: 201}   # per-crop threshold chosen on VAL (macro-F1)
+  svm:
+    C: [0.3, 1, 3, 10, 30, 100]
+    gamma: [scale, 0.003, 0.01, 0.03, 0.1]
+    cv_folds: 5
+  timing_images: 40        # VAL images timed sequentially for per-image inference ms
 cnn: {}
