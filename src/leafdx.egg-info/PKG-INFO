@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: leafdx
+Version: 0.1.0
+Summary: Image processing + CNN disease detection for turmeric and black gram leaves
+Requires-Python: >=3.10

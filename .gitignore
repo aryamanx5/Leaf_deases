@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+data/raw/**
+!data/raw/**/
+!data/raw/**/.gitkeep
+data/downloads/
+data/processed/cache/
+models/*.pt
+loop.log
+.DS_Store

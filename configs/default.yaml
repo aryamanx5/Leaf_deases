@@ -1,0 +1,36 @@
+# Central configuration. Scripts read this file; no magic numbers in code.
+seed: 42
+
+paths:
+  raw: data/raw
+  downloads: data/downloads
+  processed: data/processed
+  inventory: data/processed/inventory.csv
+  splits: data/processed/splits.csv
+  features: data/processed/features.csv
+  cache: data/processed/cache
+  results: results
+  figures: results/figures
+  models: models
+
+crops: [turmeric, blackgram]
+labels: [healthy, diseased]
+
+split:
+  ratios: {train: 0.70, val: 0.15, test: 0.15}
+  phash_size: 8            # 8x8 -> 64-bit perceptual hash
+  phash_max_distance: 6    # Hamming distance <= this => same cluster
+  stem_grouping: true      # strip augmentation suffixes from filenames before grouping
+
+preprocess:
+  max_side: 512            # resize longest side to this before processing
+  median_ksize: 5
+  gaussian_ksize: 5
+  clahe_clip: 2.0
+  clahe_tile: 8
+
+segment: {}
+lesions: {}
+features: {}
+decide: {}
+cnn: {}
