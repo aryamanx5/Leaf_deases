@@ -129,6 +129,13 @@ lesions:
       default_green_hue: 41
     blackgram:
       green_hue_min: 36
-features: {}
+features:
+  min_leaf_frac: 0.01      # below this the segmentation is treated as failed (whole frame used)
+  glcm_levels: 32
+  glcm_distances: [1, 2, 4]
+  glcm_angles: [0, 45, 90, 135]
+  glcm_max_side: 256       # leaf bounding box is downscaled to this for GLCM
+  canny_low: 50
+  canny_high: 150
 decide: {}
 cnn: {}

@@ -9,7 +9,7 @@
 | T02 | Leakage-free split | DONE | Evidence log T02 |
 | T03 | Stage 1a: pre-processing + leaf segmentation | DONE | Evidence log T03 |
 | T04 | Stage 1b: disease region detection | DONE | Evidence log T04 |
-| T05 | Stage 1c: features | TODO | |
+| T05 | Stage 1c: features | DONE | Evidence log T05 |
 | T06 | Stage 1d: decisions (rule-based + SVM) | TODO | |
 | T07 | Stage 2a: CNN data + model | TODO | |
 | T08 | Stage 2b: CNN training + evaluation | TODO | |
@@ -23,6 +23,12 @@
 ## Evidence log
 
 (newest first)
+
+### 2026-10-24 T05 Features
+- `python scripts/extract_features.py` -> `Wrote data/processed/features.csv: 1606 rows x 57 features in 248s`; `non-finite values: 0; rows with missing features: 0; seg_failed: 0`; stage1 median 603 ms/image under parallel load. Cache: data/processed/cache/features_<config-hash>/.
+- results/feature_list.txt lists the 57 features in order + degenerate-case handling.
+- Segmentation mode by stratum: blackgram_diseased plain 203 / field 583; blackgram_healthy plain 67 / field 154; turmeric all plain except 1.
+- `pytest tests/test_features.py` -> `4 passed` (fixed order + finite; no-lesion and failed-segmentation cases finite; synthetic diseased > healthy affected-%; real file one row per image, all finite).
 
 ### 2026-10-24 T04 Disease region detection
 - `pytest tests/test_lesions.py` -> `9 passed` (painted brown/yellow/dark lesions on paper and field backgrounds: area within 15% of truth and count == 3; healthy synthetic leaf 0 lesions; min-area filter + circularity).
@@ -75,6 +81,9 @@
 - Lesion colour rules (T04) were calibrated on TRAIN leaf-pixel statistics (30 images per original class): healthy hue median black gram ~50 / turmeric ~41; yellow-mosaic, blotch and dry pixels concentrate at H 20-30, necrosis at H < 20. Rules are relative to each leaf's own green reference. Hysteresis growth (Lab distance to the reference green) recovers soft lesion edges; its floor (38) was chosen on a train grid where the affected-% AUC was flat (bg 0.87-0.88, tu ~0.98) and healthy inflation was the deciding factor. Pale (mildew) rule grid: chroma < 0.65 x leaf chroma and L > leaf L + 15 (mildew 8.6% vs healthy 0.9% pale on train).
 - Leaf crinkle is mostly a shape/texture disease (little colour change); its signal is expected to come from GLCM texture and dark fold shading, not abnormal colour.
 
+- Background/label correlation (measured, T05): in black gram, 25.8% of diseased (203/786) vs 30.3% of healthy (67/221) images were taken on a plain card/cloth, so the plain-vs-field background is only weakly tied to the label. All turmeric images are on white paper (no background shortcut available within turmeric, but crop identity is trivially predictable from background).
+- Leaf area as a fraction of the frame and the segmentation method are NOT used as features (capture artefacts, not leaf properties); they are kept as metadata columns.
+
 ## NEXT
 
-T05: implement ip/features.py (fixed-order vector: colour stats over leaf and lesions, abnormal-%, GLCM, shape, affected-%) and scripts/extract_features.py with parallel on-disk cache -> data/processed/features.csv + results/feature_list.txt.
+T06: ip/decide.py rule-based score (threshold by VAL F1 grid) + RBF SVM (grouped CV on TRAIN), scripts/train_ip.py -> models/ and results/ip_metrics.json (VAL + TEST, per crop, inference ms).
