@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T05:27:11+00:00",
+ "generated_at": "2026-10-25T09:05:37+00:00",
  "dataset": {
   "total": 1606,
   "by_crop_label": {
@@ -763,6 +763,44 @@
    }
   }
  },
+ "samples": [
+  {
+   "id": "turmeric-leaf_blotch",
+   "crop": "turmeric",
+   "orig_class": "leaf_blotch",
+   "label": "diseased",
+   "src": "/media/samples/turmeric-leaf_blotch.jpg",
+   "thumb": "/media/samples/turmeric-leaf_blotch-thumb.webp",
+   "source": "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00086.JPG"
+  },
+  {
+   "id": "turmeric-healthy_leaf",
+   "crop": "turmeric",
+   "orig_class": "healthy_leaf",
+   "label": "healthy",
+   "src": "/media/samples/turmeric-healthy_leaf.jpg",
+   "thumb": "/media/samples/turmeric-healthy_leaf-thumb.webp",
+   "source": "data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00107.JPG"
+  },
+  {
+   "id": "blackgram-powdery_mildew",
+   "crop": "blackgram",
+   "orig_class": "powdery_mildew",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-powdery_mildew.jpg",
+   "thumb": "/media/samples/blackgram-powdery_mildew-thumb.webp",
+   "source": "data/raw/blackgram/diseased/powdery_mildew/31p.jpg"
+  },
+  {
+   "id": "blackgram-anthracnose",
+   "crop": "blackgram",
+   "orig_class": "anthracnose",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-anthracnose.jpg",
+   "thumb": "/media/samples/blackgram-anthracnose-thumb.webp",
+   "source": "data/raw/blackgram/diseased/anthracnose/125a.jpg"
+  }
+ ],
  "hero": {
   "credit": {
    "title": "File:Starr-190610-6608-Curcuma longa-leaves with morning dew-Hawea Pl Olinda-Maui (48301962546).jpg",

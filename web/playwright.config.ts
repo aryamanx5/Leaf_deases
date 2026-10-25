@@ -4,6 +4,7 @@ export default defineConfig({
   testDir: './e2e',
   testMatch: /.*\.spec\.ts/,
   timeout: 120_000,
+  outputDir: 'test-results/pw', // keeps test-results/shots across runs
   use: { baseURL: process.env.E2E_BASE_URL ?? 'http://localhost:5180', trace: 'retain-on-failure' },
   reporter: [['list']],
 });

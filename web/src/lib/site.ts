@@ -53,6 +53,15 @@ export type Heal = {
   affected_pct_initial: number;
   files: { diseased: string[]; healed: string[] };
 };
+export type Sample = {
+  id: string;
+  crop: 'turmeric' | 'blackgram';
+  orig_class: string;
+  label: 'healthy' | 'diseased';
+  src: string;
+  thumb: string;
+  source: string;
+};
 export type Site = {
   generated_at: string;
   dataset: {
@@ -90,6 +99,7 @@ export type Site = {
     stage1: { coverage: number; lesion_count: number; affected_pct: number; method: string };
   };
   example_card: string[] | null;
+  samples: Sample[];
 };
 
 let cache: Promise<Site> | null = null;

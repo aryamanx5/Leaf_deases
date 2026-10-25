@@ -105,14 +105,17 @@ body {
 }
 .scroll-line { animation: scrollLine 2.4s var(--ease) infinite; }
 
+/* /analyze: a line passes over the photo while the server works (stops when the response arrives) */
 @keyframes scanLine {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100%); }
+  0% { top: 0%; }
+  100% { top: calc(100% - 2px); }
 }
+.scan-line { animation: scanLine 1.6s var(--ease) infinite alternate; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-anim, .hero-zoom { animation: none; opacity: 1; }
   .scroll-line { animation: none; }
+  .scan-line { animation: none; top: 50%; }
   html:focus-within { scroll-behavior: auto; }
 }
 

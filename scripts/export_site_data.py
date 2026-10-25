@@ -199,6 +199,29 @@ def crop_panels(cfg: dict) -> dict:
     return out
 
 
+def samples(cfg: dict) -> list[dict]:
+    """Sample-image chips for /analyze: 2 turmeric + 2 black gram TEST photos, not used elsewhere on the site."""
+    f = pd.read_csv(path("features", cfg))
+    used = {v for v in pick_showcase(cfg).values()}
+    picks = [("turmeric", "leaf_blotch", "plain"), ("turmeric", "healthy_leaf", "plain"),
+             ("blackgram", "powdery_mildew", "field"), ("blackgram", "anthracnose", "plain")]
+    out = []
+    for crop, cls, bg in picks:
+        c = f[(f.split == "test") & (f.crop == crop) & (f.orig_class == cls) & (f.bg_mode == bg) & ~f.path.isin(used)]
+        p = c.sort_values("path").iloc[len(c) // 2].path
+        im = Image.open(ROOT / p).convert("RGB")
+        im.thumbnail((1024, 1024))
+        sid = f"{crop}-{cls}"
+        (MEDIA / "samples").mkdir(parents=True, exist_ok=True)
+        im.save(MEDIA / f"samples/{sid}.jpg", quality=88)
+        th = im.copy()
+        th.thumbnail((160, 160))
+        th.save(MEDIA / f"samples/{sid}-thumb.webp", quality=80)
+        out.append({"id": sid, "crop": crop, "orig_class": cls, "label": "healthy" if "healthy" in cls else "diseased",
+                    "src": f"/media/samples/{sid}.jpg", "thumb": f"/media/samples/{sid}-thumb.webp", "source": p})
+    return out
+
+
 def metrics_block(m: dict) -> dict:
     return {k: m[k] for k in ("accuracy", "precision", "recall", "f1", "macro_f1", "healthy_recall", "roc_auc") if k in m}
 
@@ -248,6 +271,7 @@ def main() -> int:
         "showcase": showcase,
         "heal": heal,
         "crops": crop_panels(cfg),
+        "samples": samples(cfg),
         "hero": hero(cfg),
         "example_card": rob["regression"]["after"]["card"] if rob["regression"]["after"] else None,
     }
