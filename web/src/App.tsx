@@ -1,11 +1,21 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Nav from '@/components/Nav';
+import { DEPLOYED_APP_URL } from '@/content/brand';
 import { useReducedMotion } from '@/lib/motion';
 import Landing from '@/pages/Landing';
 
 const Analyze = lazy(() => import('@/pages/Analyze'));
+
+/** With a hosted analysis app configured, this site's own /analyze page is not used: send visitors there. */
+function ToDeployedApp() {
+  useEffect(() => {
+    window.location.replace(DEPLOYED_APP_URL!);
+  }, []);
+  return <div className="min-h-dvh bg-ink" />;
+}
 
 export default function App() {
   const location = useLocation();
@@ -28,7 +38,7 @@ export default function App() {
           <Suspense fallback={<div className="min-h-dvh bg-ink" />}>
             <Routes location={location}>
               <Route path="/" element={<Landing />} />
-              <Route path="/analyze" element={<Analyze />} />
+              <Route path="/analyze" element={DEPLOYED_APP_URL ? <ToDeployedApp /> : <Analyze />} />
             </Routes>
           </Suspense>
         </motion.div>

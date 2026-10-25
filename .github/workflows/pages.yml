@@ -34,8 +34,8 @@ jobs:
         run: npm run build
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
-          # Backend URL, e.g. https://<user>-<space>.hf.space (repository variable, Settings > Variables)
-          VITE_API_BASE: ${{ vars.VITE_API_BASE }}
+          # The hosted analysis app that every "Run the model" button opens (Streamlit Community Cloud)
+          VITE_DEPLOYED_APP_URL: https://aryamanx5-leaf-deases-appstreamlit-app-u6bnwa.streamlit.app/
           VITE_GITHUB_URL: ${{ github.server_url }}/${{ github.repository }}
       # Pages answers unknown paths (e.g. a refresh on /analyze) with 404.html; serving the app there lets the router take over.
       - run: cp dist/index.html dist/404.html

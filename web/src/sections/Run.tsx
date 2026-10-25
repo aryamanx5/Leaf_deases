@@ -1,7 +1,5 @@
-import { ArrowUpRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { DEPLOYED_APP_URL } from '@/content/brand';
+import RunModelLink from '@/components/RunModelLink';
 import { asset } from '@/lib/asset';
 import { pctRaw } from '@/lib/format';
 import { useReducedMotion } from '@/lib/motion';
@@ -354,16 +352,10 @@ export default function Run({ site }: { site: Site }) {
           </label>
         )}
         <div className="flex flex-wrap gap-3">
-          <Link to="/analyze"
-                className="cursor-pointer rounded-full bg-cta px-7 py-3 text-sm font-medium text-white transition-all hover:scale-[1.03] hover:bg-cta-hover hover:shadow-lg hover:shadow-black/30 active:scale-95">
+          <RunModelLink
+            className="cursor-pointer rounded-full bg-cta px-7 py-3 text-sm font-medium text-white transition-all hover:scale-[1.03] hover:bg-cta-hover hover:shadow-lg hover:shadow-black/30 active:scale-95">
             Run the model
-          </Link>
-          {DEPLOYED_APP_URL && (
-            <a href={DEPLOYED_APP_URL} target="_blank" rel="noreferrer"
-               className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/40 px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10">
-              Open deployed app <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
-          )}
+          </RunModelLink>
         </div>
       </div>
 

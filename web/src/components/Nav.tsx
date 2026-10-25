@@ -2,6 +2,7 @@ import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '@/components/Logo';
+import RunModelLink from '@/components/RunModelLink';
 import { BRAND_NAME } from '@/content/brand';
 import { useActiveSection, type SectionId } from '@/lib/sections';
 import { scrollToId } from '@/lib/smooth';
@@ -53,12 +54,9 @@ export default function Nav() {
           </a>
         ))}
       </div>
-      <Link
-        to="/analyze"
-        className="hidden rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100 md:block"
-      >
+      <RunModelLink className="hidden rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100 md:block">
         Run the model
-      </Link>
+      </RunModelLink>
       <button
         type="button"
         className={`rounded-full p-2 md:hidden ${light ? 'text-ink' : 'text-white'}`}
@@ -76,9 +74,9 @@ export default function Nav() {
               {it.label}
             </a>
           ))}
-          <Link to="/analyze" className="mt-1 block rounded-xl bg-cta px-4 py-3 text-center font-medium text-white">
+          <RunModelLink className="mt-1 block rounded-xl bg-cta px-4 py-3 text-center font-medium text-white">
             Run the model
-          </Link>
+          </RunModelLink>
         </div>
       )}
     </nav>
