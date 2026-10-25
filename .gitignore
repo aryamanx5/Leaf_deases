@@ -11,3 +11,12 @@ data/processed/cache/
 models/*.pt
 loop.log
 .DS_Store
+# user-supplied web images (copyright of their owners): test-only, never committed
+data/wild/user_reported/*
+!data/wild/user_reported/.gitkeep
+tests/fixtures/regressions/*.jpg
+# web
+web/node_modules/
+web/dist/
+web/test-results/
+web/playwright-report/

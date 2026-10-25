@@ -151,3 +151,50 @@
 ## NEXT
 
 All tasks T00-T14 DONE and verify_all.py exits 0. Possible follow-ups (out of current scope): disease-type classification, cross-region test data, second CNN seed / EfficientNet-B0 run.
+
+## Phase 2
+
+Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch small tasks, targeted tests, full verify_all at phase ends).
+
+| ID | Task | Status | Evidence |
+|----|------|--------|----------|
+| P2-B00 | Reproduce the bug | DONE | P2 log B00 |
+| P2-B01 | Wild / OOD evaluation set | TODO | |
+| P2-B02 | Diagnose | TODO | |
+| P2-B03 | Background-swap + robust augmentation | TODO | |
+| P2-B04 | Hierarchical crop + disease models | TODO | |
+| P2-B05 | Calibration, abstention, OOD | TODO | |
+| P2-B06 | Stage 1 for field images | TODO | |
+| P2-B07 | FastAPI service | TODO | |
+| P2-B08 | Re-evaluate + robustness report | TODO | |
+| P2-F00 | Web scaffold | TODO | |
+| P2-F01 | Real content export | TODO | |
+| P2-F02 | Healing-leaves assets | TODO | |
+| P2-F03 | Shell: nav, smooth scroll, rail, routing | TODO | |
+| P2-F04 | 01 Hero | TODO | |
+| P2-F05 | 02 Problem | TODO | |
+| P2-F06 | 03 Crops | TODO | |
+| P2-F07 | 04 Stage 1 scrollytelling | TODO | |
+| P2-F08 | 05 CNN | TODO | |
+| P2-F09 | 06 Results | TODO | |
+| P2-F10 | 07 System diagram | TODO | |
+| P2-F11 | 08 Healing leaves + CTAs | TODO | |
+| P2-F12 | /analyze page | TODO | |
+| P2-F13 | Responsiveness, a11y, performance | TODO | |
+| P2-V01 | One-command dev + build | TODO | |
+| P2-V02 | Extend verify_all | TODO | |
+
+### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-B00 Reproduce the bug
+- User image found in ~/Downloads ("images (1).jpeg", in-field turmeric with brown speckles), copied to data/wild/user_reported/turmeric_google_01.jpg and tests/fixtures/regressions/ (gitignored: Google image, test-only).
+- `python scripts/bug_repro.py before` -> 4-class probs turmeric_healthy 0.030, turmeric_diseased 0.241, blackgram_healthy 0.021, blackgram_diseased 0.709; CNN Diseased (0.949); affected 5.7%, 1 lesion; rule 0.153 vs 0.110 -> Diseased; SVM Diseased. Saved results/bug_repro_before.json + figures/bug_repro_before.png (viewed: segmented leaf is a small central blob; one lesion outlined while dozens of specks are visible; Grad-CAM on the speckled blade).
+- tests/test_regressions.py -> `1 xfailed` (strict xfail until P2-B08).
+
+### Phase 2 decisions
+
+- Appendix B (hero prompt) is empty -> Section 8 fallback hero.
+
+## NEXT (Phase 2)
+
+P2-B01: build data/wild from openly licensed (CC0/CC-BY/CC-BY-SA) field photos via iNaturalist + Wikimedia Commons APIs, dedupe against training data, 50/50 grouped split.
