@@ -161,7 +161,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-B00 | Reproduce the bug | DONE | P2 log B00 |
 | P2-B01 | Wild / OOD evaluation set | DONE | P2 log B01 |
 | P2-B02 | Diagnose | DONE | P2 log B02 |
-| P2-B03 | Background-swap + robust augmentation | TODO | |
+| P2-B03 | Background-swap + robust augmentation | DONE | P2 log B03 |
 | P2-B04 | Hierarchical crop + disease models | TODO | |
 | P2-B05 | Calibration, abstention, OOD | TODO | |
 | P2-B06 | Stage 1 for field images | TODO | |
@@ -185,6 +185,10 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-V02 | Extend verify_all | TODO | |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-B03 Background-swap + robust augmentation
+- `python scripts/augment_preview.py` -> `banks: 1125 leaf cut-outs (turmeric 420, black gram 705), 1125 backgrounds` (TRAIN only, cached npz keyed on config + paths); results/figures/augment_samples.png viewed: turmeric leaves on soil / procedural foliage / inpainted black gram field backgrounds, black gram leaves on white paper and grey, same-crop collages, blur/JPEG/jitter visible.
+- `pytest tests/test_augment.py` -> `4 passed` (banks and SwapDataset raise LeakageError on non-TRAIN rows; real banks contain only TRAIN paths; swap keeps canvas + target leaf; paste clips at borders).
 
 #### 2026-10-25 P2-B02 Diagnose
 - `python scripts/diagnose.py` -> results/diagnosis.md + diagnosis.json. v1 crop accuracy: clean TEST 1.000, wild_val 0.916, wild_test 0.927; ALL wild crop errors are turmeric field scenes (iNaturalist 0.500, Commons 0.722); turmeric on white 1.000 (n=55), black gram on white 1.000 (n=70).
@@ -211,4 +215,4 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 ## NEXT (Phase 2)
 
-P2-B03: background-swap compositing augmentation (train masks only) + robust transforms, contact sheet of 32 samples, unit test that masks come only from TRAIN.
+P2-B04: crop model selection (DINOv2 ViT-S/14, OpenCLIP ViT-B/32, EfficientNet-B0) on wild_val + crop-conditioned disease CNN, TTA + tiles, results/crop_model_selection.csv, models/MODEL_CARD.md.
