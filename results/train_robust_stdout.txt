@@ -34,3 +34,32 @@ selected: openclip_vitb32 head x zero-shot prior
   epoch 8 loss 0.176 val 0.9587 (14s) *
   epoch 9 loss 0.164 val 0.9489 (16s)
   epoch 10 loss 0.174 val 0.9256 (14s)
+  epoch 11 loss 0.148 val 0.9637 (13s) *
+  epoch 12 loss 0.152 val 0.9533 (13s)
+  epoch 13 loss 0.167 val 0.9397 (12s)
+  epoch 14 loss 0.131 val 0.9637 (11s)
+  epoch 15 loss 0.122 val 0.9637 (11s)
+  epoch 16 loss 0.147 val 0.9392 (12s)
+disease: {
+ "clean_val": {
+  "n": 242,
+  "macro_f1": 0.96875,
+  "accuracy": 0.9752066115702479
+ },
+ "clean_test": {
+  "n": 239,
+  "macro_f1": 0.9944672083709517,
+  "accuracy": 0.99581589958159
+ },
+ "wild_val": {
+  "n": 63,
+  "macro_f1": 0.9678571428571429,
+  "accuracy": 0.9682539682539683
+ },
+ "wild_test": {
+  "n": 62,
+  "macro_f1": 0.9348739495798319,
+  "accuracy": 0.9354838709677419
+ }
+}
+exit 0

@@ -162,8 +162,8 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-B01 | Wild / OOD evaluation set | DONE | P2 log B01 |
 | P2-B02 | Diagnose | DONE | P2 log B02 |
 | P2-B03 | Background-swap + robust augmentation | DONE | P2 log B03 |
-| P2-B04 | Hierarchical crop + disease models | TODO | |
-| P2-B05 | Calibration, abstention, OOD | TODO | |
+| P2-B04 | Hierarchical crop + disease models | DONE | P2 log B04 |
+| P2-B05 | Calibration, abstention, OOD | DONE | P2 log B05 |
 | P2-B06 | Stage 1 for field images | DONE | P2 log B06 |
 | P2-B07 | FastAPI service | TODO | |
 | P2-B08 | Re-evaluate + robustness report | TODO | |
@@ -185,6 +185,18 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-V02 | Extend verify_all | TODO | |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-B05 Calibration, abstention, OOD
+- `python scripts/calibrate.py` -> results/calibration.json + models/calibration.json: T_crop 0.442, T_disease 0.682 (both < 1: TTA averaging made raw probabilities under-confident); OOD = DINOv2 kNN (k=10) cosine distance, threshold 0.346 (99th pct of clean VAL); tau_crop 0.500 (accepted precision on wild_val is already 1.000 at every tau, so abstention comes from the OOD gate).
+- Crop ECE before -> after: clean test 0.018 -> 0.007, wild_val 0.030 -> 0.014, wild_test 0.034 -> 0.015. Disease ECE: clean test 0.018 -> 0.007, wild_test 0.076 -> 0.054.
+- wild_test: crop accuracy 1.000, coverage 0.817, accepted precision 1.000, abstention 0.183 (all OOD-flagged).
+- Regression image: calibrated P(turmeric) 1.000, OOD 0.255 < 0.346 -> status confident (was confident black gram 0.73). Disease head calls it healthy (disease ECE 0.88 on this one image): reported, not tuned (R2).
+- `pytest tests/test_robust.py` -> `6 passed` (confident / uncertain-low-prob / uncertain-OOD / user_selected paths, kNN distance, temperature fit).
+
+#### 2026-10-25 P2-B04 Hierarchical crop + disease models
+- `python scripts/train_robust.py` -> results/crop_model_selection.csv (wild_val crop accuracy, CPU ms/image with TTA after warm-up): DINOv2 ViT-S/14 head 0.976 / 154 ms; OpenCLIP ViT-B/32 head 0.976 / 117 ms; OpenCLIP zero-shot 0.880 / 120 ms; **OpenCLIP head x zero-shot prior 0.988 / 113 ms (selected)**; EfficientNet-B0 fine-tuned with B03 aug 0.964 / 420 ms. (v1 4-class CNN wild_val crop accuracy: 0.916.)
+- Disease CNN (MobileNetV2, one diseased logit per crop, B03 augmentation), 16 epochs / 3.6 min on MPS, best epoch 11; with TTA: clean test macro-F1 0.994 (v1 0.978), wild_val 0.968, wild_test 0.935. models/MODEL_CARD.md generated; models/crop_model.joblib, models/disease_cnn.pt saved.
+- Two runs fixed on the way: float64 sample weights rejected by MPS; first latency numbers included one-time model loading on CPU (now warmed up before timing).
 
 #### 2026-10-25 P2-F02 Healing-leaves assets
 - `python scripts/make_heal_assets.py` -> `21x9: affected 23.9% SSIM(non-lesion) 1.0000`, `9x16: affected 22.8% SSIM(non-lesion) 1.0000` (0.99998); web/public/media/heal/: diseased + healed WebP/AVIF (1280/2520 and 720/1080 widths, 36-146 kB), lesion + leaf masks at half resolution, heal_<variant>.json with affected_pct_initial.
@@ -236,4 +248,4 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 ## NEXT (Phase 2)
 
-Finish P2-B04 (training running), then P2-B05 calibration/abstention/OOD.
+P2-B07: run tests/test_api.py against the FastAPI app, record p50 latency; then P2-B08 (re-extract features, retrain IP with Platt, evaluate_robust, robustness report).

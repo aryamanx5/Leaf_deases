@@ -97,8 +97,14 @@ def main() -> int:
     (path("results", cfg) / "ip_metrics.json").write_text(json.dumps(metrics, indent=2))
     mdir = path("models", cfg)
     joblib.dump(rule, mdir / "ip_rule.joblib")
-    joblib.dump({"model": svm, "features": FEATURE_NAMES + ["is_turmeric"], "best_params": search.best_params_},
-                mdir / "ip_svm.joblib")
+    # Platt scaling on VAL decision values, so the API can report an SVM probability
+    from sklearn.linear_model import LogisticRegression  # noqa: PLC0415
+
+    vd = pred[pred.split == "val"]
+    platt_lr = LogisticRegression(C=1e6).fit(vd[["svm_score"]].to_numpy(), vd["y"].to_numpy())
+    platt = [float(platt_lr.coef_[0, 0]), float(platt_lr.intercept_[0])]
+    joblib.dump({"model": svm, "features": FEATURE_NAMES + ["is_turmeric"], "best_params": search.best_params_,
+                 "platt": platt}, mdir / "ip_svm.joblib")
 
     for m in ("rule_based", "svm"):
         for s in ("val", "test"):

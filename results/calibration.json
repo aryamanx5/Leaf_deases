@@ -1,0 +1,82 @@
+{
+  "T_crop": 0.44181782045793416,
+  "T_disease": 0.6824044082866944,
+  "tau_crop": 0.5,
+  "precision_target": 0.95,
+  "ood": {
+    "backbone": "dinov2_vits14",
+    "k": 10,
+    "percentile": 99,
+    "threshold": 0.34562939405441284
+  },
+  "crop_model": "openclip_vitb32 head x zero-shot prior",
+  "sets": {
+    "clean_val": {
+      "n": 242,
+      "crop_ece_before": 0.022050954088029186,
+      "crop_ece_after": 0.007303376069705508,
+      "crop_accuracy": 0.9958677685950413,
+      "coverage": 0.987603305785124,
+      "accepted_precision": 0.99581589958159,
+      "abstention_rate": 0.012396694214875992,
+      "ood_flag_rate": 0.012396694214876033,
+      "disease_ece_before": 0.026566759861513942,
+      "disease_ece_after": 0.01589094100656897
+    },
+    "clean_test": {
+      "n": 239,
+      "crop_ece_before": 0.018444212224623897,
+      "crop_ece_after": 0.006811624747534134,
+      "crop_accuracy": 0.99581589958159,
+      "coverage": 1.0,
+      "accepted_precision": 0.99581589958159,
+      "abstention_rate": 0.0,
+      "ood_flag_rate": 0.0,
+      "disease_ece_before": 0.01809400506681267,
+      "disease_ece_after": 0.006583387989505999
+    },
+    "wild_val": {
+      "n": 83,
+      "crop_ece_before": 0.03003287256055434,
+      "crop_ece_after": 0.013976121870970797,
+      "crop_accuracy": 0.9879518072289156,
+      "coverage": 0.7831325301204819,
+      "accepted_precision": 1.0,
+      "abstention_rate": 0.2168674698795181,
+      "ood_flag_rate": 0.21686746987951808,
+      "disease_ece_before": 0.09074486525420934,
+      "disease_ece_after": 0.050367796496454384
+    },
+    "wild_test": {
+      "n": 82,
+      "crop_ece_before": 0.03427788334324281,
+      "crop_ece_after": 0.015442082854638698,
+      "crop_accuracy": 1.0,
+      "coverage": 0.8170731707317073,
+      "accepted_precision": 1.0,
+      "abstention_rate": 0.18292682926829273,
+      "ood_flag_rate": 0.18292682926829268,
+      "disease_ece_before": 0.07625876981024472,
+      "disease_ece_after": 0.053988832115210536
+    },
+    "regression": {
+      "n": 1,
+      "crop_ece_before": 0.0012991400000000874,
+      "crop_ece_after": 2.9403221024626447e-07,
+      "crop_accuracy": 1.0,
+      "coverage": 1.0,
+      "accepted_precision": 1.0,
+      "abstention_rate": 0.0,
+      "ood_flag_rate": 0.0,
+      "disease_ece_before": 0.7986845345697507,
+      "disease_ece_after": 0.8828258393398014,
+      "p_turmeric_calibrated": 0.9999997059677898,
+      "ood_score": 0.25521159172058105,
+      "status": "confident"
+    }
+  },
+  "wild_val_tau_choice": {
+    "coverage": 0.7831325301204819,
+    "accepted_precision": 1.0
+  }
+}

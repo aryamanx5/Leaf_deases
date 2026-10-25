@@ -1,0 +1,648 @@
+path,crop,label,set,source,p_turmeric__dinov2_vits14_head,p_turmeric__openclip_vitb32_head,p_turmeric__openclip_zeroshot,p_turmeric__openclip_head_x_zeroshot,p_turmeric__efficientnet_b0_finetune,p_diseased_given_crop
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00001.JPG,turmeric,healthy,clean_test,clean,0.99994224,0.99985355,0.96215725,0.9999942,0.999989,0.002501883078366518
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00003.JPG,turmeric,healthy,clean_val,clean,0.99995166,0.9996109,0.97272134,0.9999891,0.9999891,0.0008398203062824905
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00004.JPG,turmeric,healthy,clean_test,clean,0.99993414,0.9993646,0.97488385,0.9999836,0.9999917,0.00040543716750107706
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00005.JPG,turmeric,healthy,clean_test,clean,0.9999409,0.99977994,0.9508808,0.9999887,0.9999803,0.0005593186360783875
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00007.JPG,turmeric,healthy,clean_val,clean,0.9996832,0.99955875,0.971689,0.9999871,0.99995846,0.0003714769845828414
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00018.JPG,turmeric,healthy,clean_val,clean,0.99988836,0.9999104,0.9181662,0.999992,0.99997735,0.006549792364239693
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00019.JPG,turmeric,healthy,clean_val,clean,0.9999335,0.99961954,0.94846004,0.9999793,0.99990416,3.8138197851367295e-05
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00022.JPG,turmeric,healthy,clean_val,clean,0.9999102,0.9999097,0.9933417,0.9999994,0.999981,0.002189659746363759
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00024.JPG,turmeric,healthy,clean_val,clean,0.99985623,0.99954814,0.9967553,0.9999985,0.9999743,0.04502922296524048
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00025.JPG,turmeric,healthy,clean_val,clean,0.99988,0.99962205,0.9726264,0.99998933,0.99998933,0.002838009037077427
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00026.JPG,turmeric,healthy,clean_val,clean,0.99986464,0.9994335,0.996716,0.99999815,0.9999773,0.02136196941137314
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00033.JPG,turmeric,healthy,clean_test,clean,0.9991693,0.9978869,0.9620684,0.9999165,0.99982876,5.2401432185433805e-05
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00037.JPG,turmeric,healthy,clean_test,clean,0.99890167,0.99965864,0.9761517,0.99999166,0.9999917,8.666698704473674e-05
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00038.JPG,turmeric,healthy,clean_test,clean,0.9998474,0.99956745,0.95773727,0.99998087,0.99997306,6.871159712318331e-05
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00039.JPG,turmeric,healthy,clean_val,clean,0.9998786,0.99970037,0.8930452,0.99996406,0.9999842,0.002188184531405568
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00040.JPG,turmeric,healthy,clean_test,clean,0.99995273,0.9998742,0.71199876,0.9999491,0.99997646,0.0007702218717895448
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00045.JPG,turmeric,healthy,clean_val,clean,0.9992705,0.99923563,0.9757647,0.999981,0.99985677,9.614791633794084e-05
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00050.JPG,turmeric,healthy,clean_val,clean,0.99978995,0.9999099,0.9348881,0.99999374,0.99994427,0.0017963574500754476
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00051.JPG,turmeric,healthy,clean_val,clean,0.99984765,0.999805,0.99262685,0.99999857,0.99998635,0.0026579827535897493
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00055.JPG,turmeric,healthy,clean_test,clean,0.99995774,0.9999397,0.984979,0.9999991,0.99949247,0.0010322555899620056
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00063.JPG,turmeric,healthy,clean_test,clean,0.9999361,0.99985737,0.9972195,0.9999996,0.9999714,0.0048224241472780704
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00066.JPG,turmeric,healthy,clean_val,clean,0.9999666,0.9999439,0.9947433,0.9999997,0.9999662,0.0030410392209887505
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00067.JPG,turmeric,healthy,clean_val,clean,0.99994487,0.99987125,0.99704313,0.99999964,0.9999647,0.0003526945656631142
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00068.JPG,turmeric,healthy,clean_test,clean,0.99994653,0.9998818,0.98664474,0.99999845,0.9999506,0.000567598850466311
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00073.JPG,turmeric,healthy,clean_val,clean,0.99994296,0.99997264,0.9908379,0.99999976,0.9999945,0.0007696860120631754
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00081.JPG,turmeric,healthy,clean_val,clean,0.99971557,0.9997392,0.9945684,0.99999857,0.99992996,0.015157346613705158
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00090.JPG,turmeric,healthy,clean_test,clean,0.9999613,0.9998367,0.9942898,0.99999905,0.9999888,0.000271852157311514
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00091.JPG,turmeric,healthy,clean_test,clean,0.9999512,0.99982744,0.9959147,0.9999993,0.99998313,0.002405729377642274
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00094.JPG,turmeric,healthy,clean_val,clean,0.99989015,0.999676,0.99609756,0.99999875,0.9999582,0.004776769783347845
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00098.JPG,turmeric,healthy,clean_test,clean,0.99996346,0.9999106,0.9920811,0.9999993,0.99996346,0.0065960050560534
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00101.JPG,turmeric,healthy,clean_val,clean,0.99997765,0.9998887,0.9874585,0.9999986,0.9999209,0.000121036842756439
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00104.JPG,turmeric,healthy,clean_test,clean,0.9999742,0.99996734,0.9817531,0.9999994,0.9999783,0.0014557683607563376
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00107.JPG,turmeric,healthy,clean_test,clean,0.99996537,0.99998045,0.99441713,0.9999999,0.99998087,0.0019801442977041006
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00109.JPG,turmeric,healthy,clean_val,clean,0.9996993,0.99988586,0.99429846,0.99999934,0.999861,0.0343545526266098
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00110.JPG,turmeric,healthy,clean_test,clean,0.999826,0.9999611,0.9924001,0.9999997,0.9999655,0.00026751967379823327
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00114.JPG,turmeric,healthy,clean_val,clean,0.9999282,0.9997821,0.9818503,0.999996,0.9999864,0.0011992364889010787
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00115.JPG,turmeric,healthy,clean_test,clean,0.999903,0.9999256,0.992063,0.9999994,0.99998873,0.003859779564663768
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00116.JPG,turmeric,healthy,clean_test,clean,0.9999091,0.99984837,0.98407626,0.99999756,0.99992275,0.0008341201464645565
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00118.JPG,turmeric,healthy,clean_test,clean,0.9999388,0.9999404,0.98065114,0.99999887,0.99998456,0.0005245963111519814
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00119.JPG,turmeric,healthy,clean_val,clean,0.99993396,0.9999321,0.99474025,0.99999964,0.9999582,0.00017841911176219583
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00121.JPG,turmeric,healthy,clean_val,clean,0.9999571,0.9998985,0.99663097,0.99999964,0.99994165,0.0011854814365506172
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00122.JPG,turmeric,healthy,clean_test,clean,0.999942,0.99987227,0.9952278,0.9999994,0.9999628,0.002426901599392295
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00124.JPG,turmeric,healthy,clean_val,clean,0.9997895,0.9996392,0.9978574,0.9999992,0.9999501,0.030816787853837013
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00127.JPG,turmeric,healthy,clean_val,clean,0.9998388,0.99986345,0.9964034,0.9999995,0.99997956,0.003497379133477807
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00137.JPG,turmeric,healthy,clean_test,clean,0.9999707,0.9999664,0.99199766,0.9999997,0.99999756,0.006075339857488871
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00139.JPG,turmeric,healthy,clean_test,clean,0.99993014,0.9999528,0.9853292,0.9999993,0.9999644,0.0021521206945180893
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00146.JPG,turmeric,healthy,clean_val,clean,0.9999549,0.99988407,0.9828954,0.999998,0.99998254,0.0005668955855071545
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00148.JPG,turmeric,healthy,clean_test,clean,0.9999668,0.9999518,0.993239,0.9999997,0.99992484,7.737466512480751e-05
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00150.JPG,turmeric,healthy,clean_val,clean,0.99992985,0.9997244,0.99373645,0.9999983,0.9999878,6.097572986618616e-05
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00157.JPG,turmeric,healthy,clean_val,clean,0.99941754,0.9975794,0.98027563,0.9999512,0.9999649,0.023185133934020996
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00161.JPG,turmeric,healthy,clean_test,clean,0.9999611,0.99963856,0.95380527,0.9999825,0.99989223,0.0025527370162308216
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00166.JPG,turmeric,healthy,clean_test,clean,0.9999399,0.9991421,0.9801776,0.99998266,0.99998,0.019740933552384377
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00168.JPG,turmeric,healthy,clean_test,clean,0.9999493,0.9996054,0.9047958,0.99995846,0.9999915,0.006522967014461756
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00169.JPG,turmeric,healthy,clean_val,clean,0.99959135,0.99975497,0.9948576,0.99999875,0.9999766,0.12719358503818512
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00170.JPG,turmeric,healthy,clean_test,clean,0.9999091,0.9999667,0.9836609,0.99999946,0.99999195,0.01886000670492649
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00174.JPG,turmeric,healthy,clean_test,clean,0.999515,0.9999626,0.9957122,0.9999998,0.9999928,0.010656642727553844
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00186.JPG,turmeric,healthy,clean_val,clean,0.9998768,0.9996672,0.9824931,0.99999404,0.99996394,0.002220108173787594
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00191.JPG,turmeric,healthy,clean_test,clean,0.9998081,0.99990624,0.9941818,0.99999946,0.9999471,0.028006551787257195
+data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00193.JPG,turmeric,healthy,clean_val,clean,0.9991048,0.9998439,0.880125,0.9999787,0.9999554,3.288464722572826e-05
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00002.JPG,turmeric,diseased,clean_test,clean,0.9999995,0.99999577,0.84905094,0.9999992,0.99993914,0.9986081123352051
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00004.JPG,turmeric,diseased,clean_val,clean,0.9999854,0.99996424,0.94713235,0.999998,0.99997306,0.9994566440582275
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00007.JPG,turmeric,diseased,clean_test,clean,0.99998903,0.9999964,0.938716,0.99999976,0.9999859,0.9984999299049377
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00018.JPG,turmeric,diseased,clean_test,clean,0.99995303,0.99992895,0.80577546,0.9999829,0.9995175,0.9987730383872986
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00028.JPG,turmeric,diseased,clean_test,clean,0.9999635,0.9999366,0.34701952,0.99988073,0.9983718,0.999624490737915
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00029.JPG,turmeric,diseased,clean_test,clean,0.9999733,0.9999586,0.36745012,0.9999288,0.9989849,0.9997053146362305
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00030.JPG,turmeric,diseased,clean_test,clean,0.9999924,0.9999936,0.16763766,0.99996847,0.9998591,0.9975402355194092
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00037.JPG,turmeric,diseased,clean_val,clean,0.9999295,0.99968916,0.3026475,0.9992841,0.99766153,0.996804416179657
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00040.JPG,turmeric,diseased,clean_test,clean,0.99995965,0.999291,0.5878544,0.99950284,0.9955248,0.9965603947639465
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00042.JPG,turmeric,diseased,clean_val,clean,0.99999064,0.99998623,0.92597175,0.9999989,0.999029,0.9999753832817078
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00044.JPG,turmeric,diseased,clean_val,clean,0.9999803,0.99955916,0.61690664,0.99972624,0.9964352,0.9874574542045593
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00058.JPG,turmeric,diseased,clean_test,clean,0.9999959,0.999993,0.39974344,0.9999895,0.9993236,0.9996809959411621
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00060.JPG,turmeric,diseased,clean_test,clean,0.9999945,0.9999962,0.56522936,0.999997,0.99954563,0.9996077418327332
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00061.JPG,turmeric,diseased,clean_val,clean,0.9999786,0.999311,0.8220618,0.99985075,0.9994836,0.9973846077919006
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00066.JPG,turmeric,diseased,clean_val,clean,0.9999995,0.9999993,0.6493346,0.99999964,0.9996677,0.9986289143562317
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00067.JPG,turmeric,diseased,clean_val,clean,0.9999914,0.99991494,0.6620037,0.9999566,0.9993517,0.9968768954277039
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00070.JPG,turmeric,diseased,clean_val,clean,0.9999988,0.9999874,0.9576073,0.99999946,0.99856895,0.9999462962150574
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00073.JPG,turmeric,diseased,clean_test,clean,0.99999434,0.99998933,0.35706207,0.99998087,0.99992305,0.9956638216972351
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00074.JPG,turmeric,diseased,clean_test,clean,0.9999986,0.9999971,0.23235579,0.99999034,0.9997554,0.9990991950035095
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00075.JPG,turmeric,diseased,clean_val,clean,0.9999981,0.99999803,0.22559732,0.99999326,0.99970627,0.9989293217658997
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00080.JPG,turmeric,diseased,clean_val,clean,0.9999694,0.99991035,0.46311995,0.99989605,0.9938974,0.9993762969970703
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00089.JPG,turmeric,diseased,clean_val,clean,0.99993545,0.99992317,0.3599114,0.9998632,0.9994819,0.9991671442985535
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00090.JPG,turmeric,diseased,clean_val,clean,0.99991924,0.99994737,0.16229562,0.99972856,0.9986976,0.9968209266662598
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00091.JPG,turmeric,diseased,clean_test,clean,0.99995637,0.99988586,0.12653166,0.99921304,0.9994059,0.9930647015571594
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00096.JPG,turmeric,diseased,clean_val,clean,0.99995035,0.9998321,0.51473373,0.9998417,0.9994088,0.9985271096229553
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00099.JPG,turmeric,diseased,clean_test,clean,0.9999852,0.9999461,0.8832254,0.99999285,0.9984854,0.9914541840553284
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00105.JPG,turmeric,diseased,clean_test,clean,0.99999934,0.99999493,0.53835005,0.9999957,0.99976176,0.9996644854545593
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00109.JPG,turmeric,diseased,clean_val,clean,0.99999285,0.9999599,0.6309717,0.9999766,0.9974663,0.9999613761901855
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00114.JPG,turmeric,diseased,clean_val,clean,0.9999961,0.9999966,0.71943027,0.9999987,0.999801,0.9998903274536133
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00115.JPG,turmeric,diseased,clean_val,clean,0.9999983,0.999996,0.73654634,0.9999986,0.99985963,0.9988782405853271
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00117.JPG,turmeric,diseased,clean_test,clean,0.9999936,0.9999957,0.63566774,0.99999756,0.99982363,0.9998822212219238
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00118.JPG,turmeric,diseased,clean_val,clean,0.99999833,0.9999935,0.50704354,0.9999937,0.9998222,0.9990952014923096
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00122.JPG,turmeric,diseased,clean_test,clean,0.99974537,0.99937433,0.8638877,0.99990135,0.99721783,0.9993024468421936
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00124.JPG,turmeric,diseased,clean_test,clean,0.9999984,0.9999892,0.56020254,0.9999915,0.99964494,0.9985937476158142
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00131.JPG,turmeric,diseased,clean_val,clean,0.99999744,0.9999807,0.6488649,0.9999895,0.99985105,0.9989595413208008
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00133.JPG,turmeric,diseased,clean_val,clean,0.9999981,0.9979181,0.699759,0.9991057,0.9999605,0.984991729259491
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00142.JPG,turmeric,diseased,clean_test,clean,0.99992913,0.9996764,0.9725351,0.9999909,0.9995789,0.9994848370552063
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00144.JPG,turmeric,diseased,clean_val,clean,0.9999172,0.99986434,0.9905208,0.9999987,0.99872106,0.9997304081916809
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00146.JPG,turmeric,diseased,clean_test,clean,0.99999285,0.9999897,0.6478471,0.9999944,0.99945307,0.9996985793113708
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00154.JPG,turmeric,diseased,clean_val,clean,0.999996,0.9999013,0.8643711,0.99998456,0.9992256,0.99955153465271
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00158.JPG,turmeric,diseased,clean_val,clean,0.9999144,0.99986124,0.8366806,0.99997294,0.9992462,0.9992554783821106
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00160.JPG,turmeric,diseased,clean_val,clean,0.9999592,0.9671867,0.8781075,0.99531263,0.9997413,0.9943215250968933
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00161.JPG,turmeric,diseased,clean_val,clean,0.9999895,0.9982858,0.95949364,0.9999275,0.999958,0.9990242123603821
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00162.JPG,turmeric,diseased,clean_test,clean,0.9999903,0.9994274,0.8861141,0.9999264,0.99986213,0.9994228482246399
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00167.JPG,turmeric,diseased,clean_val,clean,0.99999475,0.99994797,0.67177707,0.9999746,0.9994915,0.9988992214202881
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00169.JPG,turmeric,diseased,clean_val,clean,0.9999953,0.9999948,0.84627455,0.9999991,0.999726,0.9994789958000183
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00172.JPG,turmeric,diseased,clean_test,clean,0.99996084,0.9999822,0.9623907,0.99999934,0.99983644,0.999662458896637
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00173.JPG,turmeric,diseased,clean_val,clean,0.9999995,0.9999988,0.9669879,0.99999994,0.9999578,0.9984128475189209
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00178.JPG,turmeric,diseased,clean_test,clean,0.9999966,0.9999836,0.9797513,0.99999964,0.9999624,0.9987068176269531
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00184.JPG,turmeric,diseased,clean_test,clean,0.9999996,0.99999857,0.8841872,0.9999998,0.9998839,0.9997718930244446
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00191.JPG,turmeric,diseased,clean_test,clean,0.99998856,0.99999493,0.89517,0.9999994,0.99979407,0.9999008178710938
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00198.JPG,turmeric,diseased,clean_val,clean,0.9999986,0.99999887,0.29478705,0.9999974,0.9998711,0.9995858669281006
+data/raw/turmeric/diseased/dry_leaf/Dry Leaf00201.JPG,turmeric,diseased,clean_test,clean,0.99998015,0.9999903,0.5579838,0.9999923,0.9999607,0.9996209144592285
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00004.JPG,turmeric,diseased,clean_val,clean,0.9993821,0.99659306,0.991009,0.999969,0.99985695,0.9995928406715393
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00009.JPG,turmeric,diseased,clean_test,clean,0.9997359,0.99961185,0.980407,0.9999922,0.99982303,0.9995556473731995
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00011.JPG,turmeric,diseased,clean_val,clean,0.99963754,0.99883705,0.9877639,0.9999856,0.9915281,0.9961927533149719
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00012.JPG,turmeric,diseased,clean_val,clean,0.99946624,0.9983149,0.9917938,0.99998605,0.98948175,0.9979957938194275
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00013.JPG,turmeric,diseased,clean_test,clean,0.99984854,0.9994054,0.9834304,0.99999,0.9947935,0.9989442825317383
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00018.JPG,turmeric,diseased,clean_val,clean,0.99998015,0.9999036,0.99669975,0.9999997,0.999595,0.9992968440055847
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00019.JPG,turmeric,diseased,clean_val,clean,0.9999799,0.9999683,0.99903417,0.99999994,0.99986345,0.996726930141449
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00020.JPG,turmeric,diseased,clean_val,clean,0.9999698,0.9999245,0.9958424,0.9999997,0.9999564,0.993614673614502
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00021.JPG,turmeric,diseased,clean_test,clean,0.9999892,0.99997264,0.99670744,0.9999999,0.9999252,0.9967544078826904
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00024.JPG,turmeric,diseased,clean_test,clean,0.9999208,0.99994904,0.998452,0.99999994,0.9999576,0.854250967502594
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00026.JPG,turmeric,diseased,clean_val,clean,0.9999934,0.99996406,0.99898416,0.99999994,0.9999842,0.9997697472572327
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00030.JPG,turmeric,diseased,clean_val,clean,0.99600905,0.998585,0.9880736,0.9999829,0.997365,0.9979133009910583
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00035.JPG,turmeric,diseased,clean_test,clean,0.9999965,0.99999064,0.9952493,0.99999994,0.9999898,0.9988283514976501
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00037.JPG,turmeric,diseased,clean_test,clean,0.9999868,0.99829507,0.9972938,0.9999954,0.99992627,0.9976617693901062
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00047.JPG,turmeric,diseased,clean_test,clean,0.9999954,0.99999577,0.99099773,0.99999994,0.9999381,0.9980023503303528
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00050.JPG,turmeric,diseased,clean_test,clean,0.9999674,0.99998623,0.99633384,0.99999994,0.9996887,0.99949711561203
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00053.JPG,turmeric,diseased,clean_test,clean,0.999988,0.99895865,0.99937224,0.99999934,0.99992114,0.9972111582756042
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00055.JPG,turmeric,diseased,clean_val,clean,0.99999595,0.9999955,0.99456644,1.0,0.9999066,0.9957000613212585
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00056.JPG,turmeric,diseased,clean_val,clean,0.9999957,0.9999915,0.998126,1.0,0.9999242,0.9977107644081116
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00061.JPG,turmeric,diseased,clean_test,clean,0.9999943,0.99999666,0.99951667,1.0,0.99988776,0.9997890591621399
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00062.JPG,turmeric,diseased,clean_test,clean,0.9999841,0.9999828,0.99855524,1.0,0.9999857,0.9999459385871887
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00063.JPG,turmeric,diseased,clean_test,clean,0.99999803,0.99992234,0.99599487,0.9999997,0.9999824,0.9993579983711243
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00065.JPG,turmeric,diseased,clean_val,clean,0.9999705,0.9995783,0.9987617,0.99999946,0.999983,0.9998756051063538
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00066.JPG,turmeric,diseased,clean_val,clean,0.9999853,0.99998647,0.9853347,0.9999998,0.9999817,0.9896325469017029
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00067.JPG,turmeric,diseased,clean_val,clean,0.9999953,0.9999694,0.9951394,0.9999999,0.9999946,0.9888997673988342
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00070.JPG,turmeric,diseased,clean_test,clean,0.9999416,0.99999255,0.9980201,1.0,0.9999802,0.9995054602622986
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00074.JPG,turmeric,diseased,clean_test,clean,0.99998164,0.9999911,0.9903911,0.99999994,0.99998665,0.9997518658638
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00075.JPG,turmeric,diseased,clean_test,clean,0.99998856,0.9995764,0.96991205,0.9999868,0.99999523,0.997053325176239
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00078.JPG,turmeric,diseased,clean_val,clean,0.9999676,0.9997973,0.983193,0.99999654,0.99999905,0.9999815821647644
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00079.JPG,turmeric,diseased,clean_test,clean,0.99996096,0.99978447,0.996738,0.9999993,0.99994594,0.9999592900276184
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00080.JPG,turmeric,diseased,clean_test,clean,0.99990743,0.9979219,0.9749906,0.9999466,0.9999797,0.9994969964027405
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00081.JPG,turmeric,diseased,clean_val,clean,0.9999245,0.9988754,0.9875981,0.9999859,0.99997014,0.9997349381446838
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00082.JPG,turmeric,diseased,clean_val,clean,0.9998763,0.9994249,0.99927974,0.9999996,0.99992424,0.9973974823951721
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00084.JPG,turmeric,diseased,clean_test,clean,0.9999693,0.9997187,0.9988989,0.9999997,0.9999321,0.999981701374054
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00086.JPG,turmeric,diseased,clean_test,clean,0.9999969,0.9999981,0.9992471,1.0,0.9999791,0.9999701380729675
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00092.JPG,turmeric,diseased,clean_test,clean,0.9999923,0.9997546,0.9970768,0.9999993,0.99995464,0.9985346794128418
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00094.JPG,turmeric,diseased,clean_val,clean,0.99996775,0.99826694,0.99707144,0.99999493,0.99997205,0.9875102043151855
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00098.JPG,turmeric,diseased,clean_val,clean,0.9999539,0.99924654,0.99600595,0.999997,0.9999807,0.9950210452079773
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00103.JPG,turmeric,diseased,clean_test,clean,0.999981,0.9999807,0.99649054,0.99999994,0.99999505,0.9997463226318359
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00104.JPG,turmeric,diseased,clean_val,clean,0.9999671,0.9999123,0.9943018,0.9999995,0.99997807,0.9999151229858398
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00105.JPG,turmeric,diseased,clean_test,clean,0.99996185,0.99992937,0.99669355,0.99999976,0.9999945,0.999972403049469
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00106.JPG,turmeric,diseased,clean_val,clean,0.9999816,0.9976999,0.95190024,0.99988353,0.99999684,0.9960439205169678
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00110.JPG,turmeric,diseased,clean_test,clean,0.99998575,0.99913144,0.96963125,0.9999728,0.9999871,0.9993255138397217
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00115.JPG,turmeric,diseased,clean_val,clean,0.999993,0.9999669,0.99901843,0.99999994,0.9999688,0.9997561573982239
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00118.JPG,turmeric,diseased,clean_val,clean,0.99997663,0.9999923,0.9987071,1.0,0.9999447,0.9998305439949036
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00122.JPG,turmeric,diseased,clean_val,clean,0.9999768,0.9999617,0.99461603,0.9999998,0.9994068,0.9999921917915344
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00134.JPG,turmeric,diseased,clean_test,clean,0.99999493,0.9999959,0.9977569,1.0,0.9999917,0.9805030822753906
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00138.JPG,turmeric,diseased,clean_val,clean,0.9999926,0.999974,0.99901277,1.0,0.99998426,0.9999857544898987
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00139.JPG,turmeric,diseased,clean_val,clean,0.99999666,0.9999923,0.99725294,1.0,0.99996376,0.9999639391899109
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00140.JPG,turmeric,diseased,clean_val,clean,0.9999946,0.99998766,0.99869925,1.0,0.99994373,0.9996201992034912
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00141.JPG,turmeric,diseased,clean_test,clean,0.99999744,0.9999802,0.99797463,0.99999994,0.99996346,0.9997677206993103
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00150.JPG,turmeric,diseased,clean_test,clean,0.99993724,0.99377674,0.9908094,0.9999419,0.9998898,0.9999961853027344
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00153.JPG,turmeric,diseased,clean_test,clean,0.9998744,0.9996839,0.9928024,0.99999774,0.99993724,0.9998956322669983
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00162.JPG,turmeric,diseased,clean_val,clean,0.9999582,0.9998467,0.9972995,0.9999996,0.99981576,0.9999656081199646
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00164.JPG,turmeric,diseased,clean_test,clean,0.9999742,0.99996215,0.99934715,1.0,0.999983,0.9999799728393555
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00166.JPG,turmeric,diseased,clean_val,clean,0.99996954,0.99993896,0.99726075,0.9999998,0.9999382,0.999866783618927
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00167.JPG,turmeric,diseased,clean_test,clean,0.99998707,0.9999606,0.9993267,1.0,0.9999089,0.9955046772956848
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00168.JPG,turmeric,diseased,clean_val,clean,0.999986,0.99993116,0.9996767,1.0,0.99991894,0.9802513718605042
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00170.JPG,turmeric,diseased,clean_val,clean,0.99997467,0.99990875,0.99763036,0.99999976,0.9999676,0.9999751448631287
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00178.JPG,turmeric,diseased,clean_test,clean,0.9999922,0.9999964,0.99646515,1.0,0.99979717,0.9988821148872375
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00180.JPG,turmeric,diseased,clean_test,clean,0.99996215,0.99996287,0.9981684,0.99999994,0.99999195,0.9967795014381409
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00182.JPG,turmeric,diseased,clean_val,clean,0.9997613,0.9976723,0.9948273,0.99998784,0.9992063,0.9967126846313477
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00183.JPG,turmeric,diseased,clean_val,clean,0.9999306,0.9957928,0.99401885,0.9999746,0.9995842,0.9992485642433167
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00189.JPG,turmeric,diseased,clean_test,clean,0.99999446,0.9999282,0.9987851,0.99999994,0.9998794,0.9999657273292542
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00192.JPG,turmeric,diseased,clean_test,clean,0.99998647,0.9998207,0.9988851,0.9999998,0.99997586,0.9996762275695801
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00195.JPG,turmeric,diseased,clean_test,clean,0.9999898,0.99884385,0.99723655,0.9999968,0.9997495,0.9999659061431885
+data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00197.JPG,turmeric,diseased,clean_test,clean,0.99998164,0.9998446,0.9982032,0.9999997,0.9999962,0.9977583289146423
+data/raw/blackgram/healthy/healthy/100h.jpg,blackgram,healthy,clean_val,clean,0.0038927693,0.00048653284,0.21786995,0.00013557606,0.00030002528,0.23229670524597168
+data/raw/blackgram/healthy/healthy/101h.jpg,blackgram,healthy,clean_val,clean,0.0007833441,0.0011551678,0.35699764,0.00064168376,0.0005870286,0.010539899580180645
+data/raw/blackgram/healthy/healthy/106h.jpg,blackgram,healthy,clean_test,clean,0.0038651228,0.0049339137,0.24761628,0.0016291882,0.00020247628,0.002625701017677784
+data/raw/blackgram/healthy/healthy/111h.jpg,blackgram,healthy,clean_val,clean,0.00014447172,0.0006100337,0.06541299,4.272131e-05,5.442362e-05,0.03947967290878296
+data/raw/blackgram/healthy/healthy/115h.jpg,blackgram,healthy,clean_test,clean,0.00018542011,0.00044796863,0.083198175,4.0668943e-05,0.001977388,0.06938206404447556
+data/raw/blackgram/healthy/healthy/117h.jpg,blackgram,healthy,clean_test,clean,0.0026816924,0.0013732612,0.13639648,0.00021714228,0.0012284413,0.0018132589757442474
+data/raw/blackgram/healthy/healthy/120h.jpg,blackgram,healthy,clean_test,clean,0.0011063019,0.0006471475,0.035019435,2.3499833e-05,9.053981e-05,0.022348254919052124
+data/raw/blackgram/healthy/healthy/121h.jpg,blackgram,healthy,clean_val,clean,0.0031182368,0.008901109,0.20438719,0.0023018562,0.00049065246,0.001808073720894754
+data/raw/blackgram/healthy/healthy/122h.jpg,blackgram,healthy,clean_val,clean,0.000946482,0.0037823718,0.08044689,0.00033204595,0.0003452756,0.03161220625042915
+data/raw/blackgram/healthy/healthy/131h.jpg,blackgram,healthy,clean_test,clean,0.001333336,0.0066329837,0.14374305,0.001119684,0.0005312999,0.0023371726274490356
+data/raw/blackgram/healthy/healthy/137h.jpg,blackgram,healthy,clean_test,clean,0.000843962,0.06761654,0.2951546,0.029472828,0.06265231,0.0012602509232237935
+data/raw/blackgram/healthy/healthy/144h.jpg,blackgram,healthy,clean_test,clean,0.005280324,0.022767954,0.52804804,0.025405394,0.037037246,0.09986696392297745
+data/raw/blackgram/healthy/healthy/147h.jpg,blackgram,healthy,clean_test,clean,0.0023820798,0.010993111,0.25094897,0.0037100613,0.0040147398,0.0510454960167408
+data/raw/blackgram/healthy/healthy/14h.jpg,blackgram,healthy,clean_test,clean,0.00082209904,0.02766707,0.077215336,0.0023753005,0.029157035,0.031678248196840286
+data/raw/blackgram/healthy/healthy/150h.jpg,blackgram,healthy,clean_val,clean,0.0038426518,0.0029932559,0.32903707,0.0014701209,3.5564917e-05,0.010816815309226513
+data/raw/blackgram/healthy/healthy/154h.jpg,blackgram,healthy,clean_val,clean,0.070334986,0.044149075,0.28275976,0.017883293,0.099130854,0.016969358548521996
+data/raw/blackgram/healthy/healthy/159h.jpg,blackgram,healthy,clean_test,clean,0.0041139484,0.07657849,0.41046938,0.054588597,0.031570356,0.0029628053307533264
+data/raw/blackgram/healthy/healthy/162h.jpg,blackgram,healthy,clean_val,clean,0.002296567,0.041577753,0.23836192,0.013394786,0.015291451,0.0031188593711704016
+data/raw/blackgram/healthy/healthy/163h.jpg,blackgram,healthy,clean_test,clean,0.0020603735,0.058530547,0.26119265,0.021506222,0.008577382,0.0026563245337456465
+data/raw/blackgram/healthy/healthy/164h.jpg,blackgram,healthy,clean_test,clean,0.00023724635,0.0010845562,0.1471666,0.00018732122,9.123847e-05,0.11719154566526413
+data/raw/blackgram/healthy/healthy/165h.jpg,blackgram,healthy,clean_val,clean,0.0011602001,0.009672118,0.6117178,0.015153566,0.031091465,0.016903532668948174
+data/raw/blackgram/healthy/healthy/171h.jpg,blackgram,healthy,clean_val,clean,0.019557575,0.044096332,0.20404425,0.0116874045,0.0825167,0.0017338303150609136
+data/raw/blackgram/healthy/healthy/172h.jpg,blackgram,healthy,clean_val,clean,0.042280078,0.040523566,0.43292153,0.03123613,0.11056255,0.009984057396650314
+data/raw/blackgram/healthy/healthy/17h.jpg,blackgram,healthy,clean_val,clean,0.0024438698,0.07018813,0.14572398,0.012712909,0.012226012,0.020879210904240608
+data/raw/blackgram/healthy/healthy/183h.jpg,blackgram,healthy,clean_val,clean,0.0018015305,0.012088518,0.6388543,0.021187227,0.0017162169,0.0007481290376745164
+data/raw/blackgram/healthy/healthy/184h.jpg,blackgram,healthy,clean_val,clean,0.037160262,0.0153507115,0.45106038,0.012648206,0.14180706,0.05292433500289917
+data/raw/blackgram/healthy/healthy/187h.jpg,blackgram,healthy,clean_test,clean,0.0017963052,0.067834206,0.68370414,0.13592024,0.006029691,0.15958447754383087
+data/raw/blackgram/healthy/healthy/188h.jpg,blackgram,healthy,clean_test,clean,0.0055810492,0.048181485,0.05587065,0.0029866141,0.0077866176,0.0818205252289772
+data/raw/blackgram/healthy/healthy/189h.jpg,blackgram,healthy,clean_test,clean,0.0019426863,0.007272315,0.13958906,0.0011870587,0.01371654,0.0002627332287374884
+data/raw/blackgram/healthy/healthy/18h.jpg,blackgram,healthy,clean_test,clean,0.028402703,0.09095931,0.3345926,0.047904156,0.033213302,0.042226675897836685
+data/raw/blackgram/healthy/healthy/190h.jpg,blackgram,healthy,clean_test,clean,0.034721743,0.03979542,0.16397078,0.008063034,0.00629813,0.0010475009912624955
+data/raw/blackgram/healthy/healthy/191h.jpg,blackgram,healthy,clean_val,clean,0.010545224,0.05066195,0.30107212,0.02247133,0.0011281944,0.0013594013871625066
+data/raw/blackgram/healthy/healthy/192h.jpg,blackgram,healthy,clean_val,clean,0.011737128,0.0069538555,0.19438379,0.0016867664,0.0053838477,0.004486889578402042
+data/raw/blackgram/healthy/healthy/200h.jpg,blackgram,healthy,clean_val,clean,0.026301002,0.06499811,0.18447018,0.0154809905,0.0085630985,0.00259805447421968
+data/raw/blackgram/healthy/healthy/202h.jpg,blackgram,healthy,clean_val,clean,0.026409945,0.03736354,0.024004294,0.0009537012,0.011809045,0.02252878062427044
+data/raw/blackgram/healthy/healthy/207h.jpg,blackgram,healthy,clean_val,clean,0.025648812,0.025214167,0.059089612,0.0016217857,0.012940333,0.09718183428049088
+data/raw/blackgram/healthy/healthy/209h.jpg,blackgram,healthy,clean_test,clean,0.0067441384,0.03393902,0.017441811,0.0006232428,0.009711118,0.0486542284488678
+data/raw/blackgram/healthy/healthy/210h.jpg,blackgram,healthy,clean_test,clean,0.004645904,0.007025226,0.037112657,0.0002726153,0.0050083157,0.046369124203920364
+data/raw/blackgram/healthy/healthy/212h.jpg,blackgram,healthy,clean_test,clean,0.019561427,0.004508058,0.09109122,0.00045363957,0.00703522,0.03233596310019493
+data/raw/blackgram/healthy/healthy/215h.jpg,blackgram,healthy,clean_val,clean,0.0023875355,0.04820154,0.12844808,0.007408341,0.003548319,0.21903030574321747
+data/raw/blackgram/healthy/healthy/216h.jpg,blackgram,healthy,clean_test,clean,0.0013976097,0.0019114773,0.118210815,0.0002566735,0.0015115871,0.00018811791960615665
+data/raw/blackgram/healthy/healthy/220h.jpg,blackgram,healthy,clean_test,clean,0.051184215,0.23606333,0.27219352,0.10359468,0.15361454,0.022343724966049194
+data/raw/blackgram/healthy/healthy/2h.jpg,blackgram,healthy,clean_test,clean,0.10559754,0.17433223,0.21098639,0.05344279,0.051233895,0.007333985064178705
+data/raw/blackgram/healthy/healthy/39h.jpg,blackgram,healthy,clean_val,clean,0.018714666,0.12156418,0.33264711,0.06452888,0.04355493,0.052015576511621475
+data/raw/blackgram/healthy/healthy/3h.jpg,blackgram,healthy,clean_val,clean,0.12015828,0.100579135,0.6209137,0.15480803,0.10842182,0.030869653448462486
+data/raw/blackgram/healthy/healthy/45h.jpg,blackgram,healthy,clean_val,clean,0.0064923046,0.05469489,0.2926265,0.023375835,0.010142074,0.0006436249241232872
+data/raw/blackgram/healthy/healthy/51h.jpg,blackgram,healthy,clean_val,clean,0.0033861836,0.02278442,0.310504,0.010390746,0.018949918,0.001475024502724409
+data/raw/blackgram/healthy/healthy/52h.jpg,blackgram,healthy,clean_val,clean,0.021423336,0.02981736,0.3237438,0.014499819,0.0035451343,0.0020941609982401133
+data/raw/blackgram/healthy/healthy/55h.jpg,blackgram,healthy,clean_val,clean,0.0010283192,0.0472491,0.14688487,0.008466251,0.033789046,0.35015860199928284
+data/raw/blackgram/healthy/healthy/56h.jpg,blackgram,healthy,clean_val,clean,0.0073943096,0.07448568,0.2674941,0.028550453,0.014447813,0.0191869605332613
+data/raw/blackgram/healthy/healthy/58h.jpg,blackgram,healthy,clean_val,clean,0.006888437,0.02621415,0.1009489,0.003013553,0.029522402,0.47349032759666443
+data/raw/blackgram/healthy/healthy/5h.jpg,blackgram,healthy,clean_val,clean,0.017252536,0.04524317,0.34270388,0.024111183,0.0073787253,0.19522236287593842
+data/raw/blackgram/healthy/healthy/60h.jpg,blackgram,healthy,clean_test,clean,0.031183632,0.0776607,0.0629864,0.005628081,0.061561543,0.6531478762626648
+data/raw/blackgram/healthy/healthy/66h.jpg,blackgram,healthy,clean_test,clean,0.006438919,0.0469363,0.12820353,0.0071901493,0.10866674,0.0004537013592198491
+data/raw/blackgram/healthy/healthy/68h.jpg,blackgram,healthy,clean_val,clean,0.05164695,0.07667764,0.12896295,0.012146086,0.019276686,0.0008774387533776462
+data/raw/blackgram/healthy/healthy/70h.jpg,blackgram,healthy,clean_test,clean,0.00018246571,0.01085622,0.23262616,0.0033161042,0.0021284851,0.006548356264829636
+data/raw/blackgram/healthy/healthy/78h.jpg,blackgram,healthy,clean_test,clean,0.0010288636,0.0490039,0.098747835,0.005614202,0.010754866,0.0012508047511801124
+data/raw/blackgram/healthy/healthy/79h.jpg,blackgram,healthy,clean_test,clean,0.06095441,0.048211295,0.10723616,0.006047536,0.0045083584,0.005554955918341875
+data/raw/blackgram/healthy/healthy/82h.jpg,blackgram,healthy,clean_val,clean,0.0013789574,0.009645053,0.074316055,0.0007812576,0.003864488,0.004681130405515432
+data/raw/blackgram/healthy/healthy/86h.jpg,blackgram,healthy,clean_test,clean,0.002681009,0.02465376,0.26253664,0.0089183245,0.0064685834,0.16917037963867188
+data/raw/blackgram/healthy/healthy/88h.jpg,blackgram,healthy,clean_val,clean,0.07857273,0.2906401,0.4524596,0.25293583,0.01588409,0.07235685735940933
+data/raw/blackgram/healthy/healthy/8h.jpg,blackgram,healthy,clean_test,clean,0.007483681,0.0025224248,0.10759506,0.00030479865,0.0014905938,0.06823255866765976
+data/raw/blackgram/healthy/healthy/92h.jpg,blackgram,healthy,clean_val,clean,0.009261417,0.26349443,0.13365991,0.052308835,0.023957703,0.00828338973224163
+data/raw/blackgram/healthy/healthy/93h.jpg,blackgram,healthy,clean_val,clean,0.12905493,0.091536924,0.11196386,0.012544512,0.031864878,0.6964498162269592
+data/raw/blackgram/healthy/healthy/97h.jpg,blackgram,healthy,clean_test,clean,0.0017270545,0.0004995068,0.16373609,9.7840115e-05,0.0008787966,0.055600013583898544
+data/raw/blackgram/healthy/healthy/99h.jpg,blackgram,healthy,clean_test,clean,0.0010604361,0.0008741319,0.13714932,0.0001390447,8.002655e-05,0.029910052195191383
+data/raw/blackgram/diseased/anthracnose/101a.jpg,blackgram,diseased,clean_test,clean,5.38826e-05,0.0002453526,0.02004994,5.0211615e-06,0.00021188073,0.9979953765869141
+data/raw/blackgram/diseased/anthracnose/105a.jpg,blackgram,diseased,clean_test,clean,2.360344e-05,3.1193096e-05,0.0053340695,1.6728362e-07,0.0039213174,0.9937012791633606
+data/raw/blackgram/diseased/anthracnose/108a.jpg,blackgram,diseased,clean_test,clean,1.28348665e-05,5.8511894e-05,0.004292942,2.5228587e-07,0.0006998124,0.9987730979919434
+data/raw/blackgram/diseased/anthracnose/115a.jpg,blackgram,diseased,clean_test,clean,2.9087067e-05,0.0013094941,0.012763392,1.6951577e-05,0.00051598996,0.9878261685371399
+data/raw/blackgram/diseased/anthracnose/117a.jpg,blackgram,diseased,clean_test,clean,0.00011111299,0.0029970407,0.029960943,9.283722e-05,0.004509336,0.9885175228118896
+data/raw/blackgram/diseased/anthracnose/118a.jpg,blackgram,diseased,clean_test,clean,0.00012845795,0.008230398,0.08516678,0.00077197456,0.003380863,0.9479069113731384
+data/raw/blackgram/diseased/anthracnose/11a.jpg,blackgram,diseased,clean_val,clean,0.0014573535,0.014370048,0.19524916,0.003524833,0.0040140636,0.9977232813835144
+data/raw/blackgram/diseased/anthracnose/120a.jpg,blackgram,diseased,clean_test,clean,0.00031498075,0.0096825855,0.026590222,0.0002670098,0.0033728678,0.9908325672149658
+data/raw/blackgram/diseased/anthracnose/122a.jpg,blackgram,diseased,clean_val,clean,0.000100811325,0.0009814501,0.026178882,2.6409192e-05,0.00087611313,0.9976117014884949
+data/raw/blackgram/diseased/anthracnose/123a.jpg,blackgram,diseased,clean_val,clean,0.00023030241,0.00022845466,0.024790399,5.808745e-06,0.000988232,0.9989913105964661
+data/raw/blackgram/diseased/anthracnose/125a.jpg,blackgram,diseased,clean_test,clean,0.00027663508,0.007377068,0.08635575,0.0007019542,0.0025989546,0.9960703253746033
+data/raw/blackgram/diseased/anthracnose/128a.jpg,blackgram,diseased,clean_test,clean,0.00016985337,0.0012009045,0.014440187,1.7616212e-05,0.0001204488,0.9934377074241638
+data/raw/blackgram/diseased/anthracnose/131a.jpg,blackgram,diseased,clean_val,clean,0.00013750394,0.0043531656,0.14703557,0.0007531199,0.0019038296,0.9837488532066345
+data/raw/blackgram/diseased/anthracnose/134a.jpg,blackgram,diseased,clean_test,clean,0.13000084,0.1344695,0.21848539,0.041625734,0.024520226,0.9786331653594971
+data/raw/blackgram/diseased/anthracnose/141a.jpg,blackgram,diseased,clean_val,clean,0.0002873381,0.03409509,0.11786116,0.0046940506,0.0018041527,0.9976155161857605
+data/raw/blackgram/diseased/anthracnose/149a.jpg,blackgram,diseased,clean_test,clean,0.0004796187,0.002829337,0.052339282,0.00015668308,0.010719811,0.9972146153450012
+data/raw/blackgram/diseased/anthracnose/151a.jpg,blackgram,diseased,clean_val,clean,0.0014633815,0.004150061,0.022998573,9.808977e-05,0.007833268,0.9507932662963867
+data/raw/blackgram/diseased/anthracnose/155a.jpg,blackgram,diseased,clean_test,clean,0.0009895841,0.07910541,0.18043682,0.01856104,0.00042568354,0.9988348484039307
+data/raw/blackgram/diseased/anthracnose/156a.jpg,blackgram,diseased,clean_test,clean,0.029822707,0.10336871,0.19752747,0.027594341,0.0017854669,0.9928470253944397
+data/raw/blackgram/diseased/anthracnose/160a.jpg,blackgram,diseased,clean_val,clean,0.0011539181,0.0034683864,0.040509664,0.00014692328,0.0007607799,0.9980164170265198
+data/raw/blackgram/diseased/anthracnose/163a.jpg,blackgram,diseased,clean_val,clean,0.00031473636,0.000900499,0.11479103,0.00011686538,0.004500993,0.9960417747497559
+data/raw/blackgram/diseased/anthracnose/168a.jpg,blackgram,diseased,clean_val,clean,0.0016720494,0.045597233,0.09983387,0.0052706837,0.004575303,0.9996192455291748
+data/raw/blackgram/diseased/anthracnose/170a.jpg,blackgram,diseased,clean_val,clean,5.4597855e-05,0.00023646156,0.09864921,2.588522e-05,0.00011191531,0.9976939558982849
+data/raw/blackgram/diseased/anthracnose/172a.jpg,blackgram,diseased,clean_test,clean,0.00022083521,0.0014542242,0.24001968,0.0004597357,0.0001375506,0.9838801026344299
+data/raw/blackgram/diseased/anthracnose/173a.jpg,blackgram,diseased,clean_val,clean,0.00023726623,0.0030592878,0.09622613,0.0003266197,0.00010315562,0.8267686367034912
+data/raw/blackgram/diseased/anthracnose/178a.jpg,blackgram,diseased,clean_val,clean,0.0003423194,0.0029224257,0.23193644,0.0008843052,8.288344e-05,0.9946069121360779
+data/raw/blackgram/diseased/anthracnose/183a.jpg,blackgram,diseased,clean_val,clean,0.0018331527,0.007252264,0.12389092,0.0010319713,0.005717947,0.9997245669364929
+data/raw/blackgram/diseased/anthracnose/184a.jpg,blackgram,diseased,clean_test,clean,0.027719922,0.024629151,0.06968724,0.0018879188,0.0034200323,0.9982597231864929
+data/raw/blackgram/diseased/anthracnose/190a.jpg,blackgram,diseased,clean_test,clean,0.004309718,0.009753236,0.1620597,0.0019012566,0.0014036669,0.9975191950798035
+data/raw/blackgram/diseased/anthracnose/197a.jpg,blackgram,diseased,clean_val,clean,0.033182148,0.05871492,0.07569635,0.0050824685,0.007644969,0.9962612986564636
+data/raw/blackgram/diseased/anthracnose/202a.jpg,blackgram,diseased,clean_test,clean,0.00020936728,0.008956154,0.24660277,0.0029493063,0.0015885012,0.993023693561554
+data/raw/blackgram/diseased/anthracnose/204a.jpg,blackgram,diseased,clean_val,clean,0.00036700963,0.030978048,0.25538176,0.010845282,0.010418744,0.9967679381370544
+data/raw/blackgram/diseased/anthracnose/205a.jpg,blackgram,diseased,clean_test,clean,0.000280569,0.005246947,0.066768765,0.00037723465,0.00045213042,0.9984431266784668
+data/raw/blackgram/diseased/anthracnose/206a.jpg,blackgram,diseased,clean_test,clean,0.070021264,0.079433545,0.15405007,0.015470163,0.031022858,0.9902985692024231
+data/raw/blackgram/diseased/anthracnose/207a.jpg,blackgram,diseased,clean_test,clean,0.00013462703,0.00061023235,0.11569725,7.988177e-05,0.00076500233,0.996154248714447
+data/raw/blackgram/diseased/anthracnose/214a.jpg,blackgram,diseased,clean_val,clean,0.0006594419,0.0022061826,0.03413147,7.812746e-05,0.0023915342,0.9998648762702942
+data/raw/blackgram/diseased/anthracnose/215a.jpg,blackgram,diseased,clean_val,clean,0.010294422,0.030232767,0.027284496,0.00087369716,0.006946981,0.9996747374534607
+data/raw/blackgram/diseased/anthracnose/225a.jpg,blackgram,diseased,clean_val,clean,0.000667687,0.01883173,0.14298688,0.00319203,0.0007193651,0.9969423413276672
+data/raw/blackgram/diseased/anthracnose/23a.jpg,blackgram,diseased,clean_val,clean,0.039407995,0.0565064,0.24065277,0.018627014,0.068557136,0.9899797439575195
+data/raw/blackgram/diseased/anthracnose/28a.jpg,blackgram,diseased,clean_test,clean,0.05018576,0.06153587,0.20347914,0.016474752,0.010974672,0.9990675449371338
+data/raw/blackgram/diseased/anthracnose/2a.jpg,blackgram,diseased,clean_val,clean,0.0038790146,0.031658046,0.32566097,0.015543167,0.007058794,0.774543285369873
+data/raw/blackgram/diseased/anthracnose/30a.jpg,blackgram,diseased,clean_test,clean,0.0056952634,0.060045674,0.17122369,0.013025887,0.0045987396,0.992119312286377
+data/raw/blackgram/diseased/anthracnose/39a.jpg,blackgram,diseased,clean_val,clean,0.064497516,0.051162574,0.1526148,0.009617876,0.017452689,0.9981575012207031
+data/raw/blackgram/diseased/anthracnose/41a.jpg,blackgram,diseased,clean_val,clean,0.11864116,0.13143669,0.09494009,0.01562599,0.0098674735,0.9948458075523376
+data/raw/blackgram/diseased/anthracnose/45a.jpg,blackgram,diseased,clean_val,clean,0.0071464223,0.018822964,0.20997977,0.0050730724,0.0072794706,0.9937981963157654
+data/raw/blackgram/diseased/anthracnose/49a.jpg,blackgram,diseased,clean_val,clean,0.0043200133,0.047322012,0.04210702,0.0021787495,0.0024948723,0.9947921633720398
+data/raw/blackgram/diseased/anthracnose/54a.jpg,blackgram,diseased,clean_test,clean,0.19464748,0.45816633,0.2849989,0.2520845,0.15915276,0.9797468185424805
+data/raw/blackgram/diseased/anthracnose/56a.jpg,blackgram,diseased,clean_val,clean,0.15870439,0.19832845,0.35178143,0.11836632,0.08812652,0.864292562007904
+data/raw/blackgram/diseased/anthracnose/60a.jpg,blackgram,diseased,clean_val,clean,0.09769245,0.059481096,0.22559868,0.018090615,0.0717794,0.9397565722465515
+data/raw/blackgram/diseased/anthracnose/64a.jpg,blackgram,diseased,clean_test,clean,0.046257935,0.106075265,0.16795994,0.023393456,0.069611624,0.9843587875366211
+data/raw/blackgram/diseased/anthracnose/66a.jpg,blackgram,diseased,clean_test,clean,0.038738966,0.013881385,0.19783142,0.0034596184,0.011206041,0.9934353828430176
+data/raw/blackgram/diseased/anthracnose/73a.jpg,blackgram,diseased,clean_val,clean,0.0025385697,0.034794193,0.13914329,0.005792887,0.009268287,0.998976469039917
+data/raw/blackgram/diseased/anthracnose/75a.jpg,blackgram,diseased,clean_val,clean,0.08997847,0.13835089,0.09092237,0.01580528,0.14304996,0.9919760823249817
+data/raw/blackgram/diseased/anthracnose/82a.jpg,blackgram,diseased,clean_val,clean,0.002187844,0.07247514,0.08707518,0.0073977243,0.009491988,0.939002513885498
+data/raw/blackgram/diseased/anthracnose/84a.jpg,blackgram,diseased,clean_val,clean,0.00060349307,0.0010834773,0.013286008,1.4604526e-05,0.0026821867,0.9310669898986816
+data/raw/blackgram/diseased/anthracnose/86a.jpg,blackgram,diseased,clean_test,clean,0.00037181377,0.002048262,0.009164322,1.8983068e-05,0.0018346648,0.9958398938179016
+data/raw/blackgram/diseased/anthracnose/87a.jpg,blackgram,diseased,clean_test,clean,0.04180165,0.006485488,0.073165774,0.0005150514,0.008725656,0.9921715259552002
+data/raw/blackgram/diseased/anthracnose/89a.jpg,blackgram,diseased,clean_test,clean,0.000252982,0.0010216335,0.010467487,1.0817994e-05,0.00020631686,0.9975414872169495
+data/raw/blackgram/diseased/anthracnose/91a.jpg,blackgram,diseased,clean_test,clean,0.00050991774,0.0027904112,0.014697154,4.1737567e-05,0.00029882064,0.9950994849205017
+data/raw/blackgram/diseased/anthracnose/98a.jpg,blackgram,diseased,clean_test,clean,0.00033192834,0.00012460351,0.006223332,7.8040176e-07,0.0021750994,0.9863214492797852
+data/raw/blackgram/diseased/anthracnose/9a.jpg,blackgram,diseased,clean_val,clean,0.0030079365,0.038164116,0.39753082,0.02551327,0.033933118,0.9944469928741455
+data/raw/blackgram/diseased/leaf_crinckle/109l.jpg,blackgram,diseased,clean_val,clean,0.06556135,0.07555453,0.227567,0.023512263,0.010124468,0.9956376552581787
+data/raw/blackgram/diseased/leaf_crinckle/115l.jpg,blackgram,diseased,clean_val,clean,0.0014506022,0.0077546397,0.7327654,0.020980034,0.00078136026,0.8880207538604736
+data/raw/blackgram/diseased/leaf_crinckle/121l.jpg,blackgram,diseased,clean_test,clean,0.0023003102,0.0031091333,0.13270524,0.00047698632,0.00047548042,0.9864147305488586
+data/raw/blackgram/diseased/leaf_crinckle/128l.jpg,blackgram,diseased,clean_val,clean,0.00843732,0.04539809,0.17589979,0.010048802,0.0065927072,0.9907891154289246
+data/raw/blackgram/diseased/leaf_crinckle/129l.jpg,blackgram,diseased,clean_test,clean,0.012715467,0.0478252,0.1795414,0.010871779,0.040749904,0.9970894455909729
+data/raw/blackgram/diseased/leaf_crinckle/130l.jpg,blackgram,diseased,clean_test,clean,0.02376014,0.05726092,0.21937546,0.016782714,0.014894252,0.9943682551383972
+data/raw/blackgram/diseased/leaf_crinckle/137l.jpg,blackgram,diseased,clean_val,clean,0.08736822,0.32585913,0.566968,0.38758317,0.15379757,0.7032051682472229
+data/raw/blackgram/diseased/leaf_crinckle/13l.jpg,blackgram,diseased,clean_val,clean,0.004432531,0.07110939,0.2361359,0.023118006,0.011262288,0.9986268877983093
+data/raw/blackgram/diseased/leaf_crinckle/140l.jpg,blackgram,diseased,clean_test,clean,0.1589012,0.26443753,0.6158115,0.36558083,0.03860117,0.8359190821647644
+data/raw/blackgram/diseased/leaf_crinckle/143l.jpg,blackgram,diseased,clean_val,clean,0.06113293,0.07004118,0.32773635,0.035417195,0.064718574,0.3777860105037689
+data/raw/blackgram/diseased/leaf_crinckle/145l.jpg,blackgram,diseased,clean_val,clean,0.00050777197,0.00071589154,0.81126326,0.003069929,0.00024975892,0.7007390856742859
+data/raw/blackgram/diseased/leaf_crinckle/149l.jpg,blackgram,diseased,clean_test,clean,0.04121935,0.022050131,0.43243796,0.016889136,0.020463131,0.9957571029663086
+data/raw/blackgram/diseased/leaf_crinckle/152l.jpg,blackgram,diseased,clean_test,clean,0.00059486233,0.004362627,0.43533045,0.0033667192,0.0023908878,0.9153757691383362
+data/raw/blackgram/diseased/leaf_crinckle/18l.jpg,blackgram,diseased,clean_val,clean,0.052697193,0.0351,0.45428148,0.029391728,0.037174284,0.9996423721313477
+data/raw/blackgram/diseased/leaf_crinckle/21l.jpg,blackgram,diseased,clean_test,clean,0.038652122,0.09333784,0.3899068,0.061731126,0.016937617,0.9988992810249329
+data/raw/blackgram/diseased/leaf_crinckle/22l.jpg,blackgram,diseased,clean_test,clean,0.010101835,0.013382991,0.5349111,0.015361271,0.0033919914,0.9787742495536804
+data/raw/blackgram/diseased/leaf_crinckle/24l.jpg,blackgram,diseased,clean_val,clean,0.004722426,0.0012578567,0.55790514,0.0015868396,8.585665e-05,0.9128320217132568
+data/raw/blackgram/diseased/leaf_crinckle/25l.jpg,blackgram,diseased,clean_test,clean,0.0014996926,0.00015791257,0.4295195,0.000118898315,0.00034856112,0.9933467507362366
+data/raw/blackgram/diseased/leaf_crinckle/26l.jpg,blackgram,diseased,clean_val,clean,0.009069989,0.000108728804,0.660492,0.00021150346,0.0006012129,0.9945958256721497
+data/raw/blackgram/diseased/leaf_crinckle/33l.jpg,blackgram,diseased,clean_test,clean,0.0024464827,0.002203544,0.54429555,0.0026307963,0.00017602606,0.9829576015472412
+data/raw/blackgram/diseased/leaf_crinckle/34l.jpg,blackgram,diseased,clean_test,clean,0.0012266139,0.0011241039,0.3884646,0.0007143555,0.00028104035,0.9879955649375916
+data/raw/blackgram/diseased/leaf_crinckle/36l.jpg,blackgram,diseased,clean_val,clean,0.0036890705,0.0044865706,0.5380116,0.0052210107,0.00022612438,0.8918201327323914
+data/raw/blackgram/diseased/leaf_crinckle/44l.jpg,blackgram,diseased,clean_test,clean,0.06404062,0.05405069,0.37382358,0.032986473,0.06922223,0.7044906616210938
+data/raw/blackgram/diseased/leaf_crinckle/46l.jpg,blackgram,diseased,clean_test,clean,0.008732152,0.013389298,0.58872324,0.019056063,0.054311283,0.9414383769035339
+data/raw/blackgram/diseased/leaf_crinckle/47l.jpg,blackgram,diseased,clean_val,clean,0.00040089685,0.00077612797,0.43078497,0.0005874887,0.00038829364,0.9971451759338379
+data/raw/blackgram/diseased/leaf_crinckle/49l.jpg,blackgram,diseased,clean_test,clean,0.0008344134,0.0063763736,0.34388608,0.0033521927,0.0014486703,0.8977617621421814
+data/raw/blackgram/diseased/leaf_crinckle/4l.jpg,blackgram,diseased,clean_val,clean,0.007528198,0.07772351,0.5345303,0.08823763,0.0292694,0.9912292957305908
+data/raw/blackgram/diseased/leaf_crinckle/54l.jpg,blackgram,diseased,clean_test,clean,0.04179207,0.0061013997,0.39616364,0.0040114103,0.0045362553,0.9902873039245605
+data/raw/blackgram/diseased/leaf_crinckle/55l.jpg,blackgram,diseased,clean_test,clean,0.0334867,0.029039383,0.3883622,0.018636243,0.0037438024,0.9979937672615051
+data/raw/blackgram/diseased/leaf_crinckle/56l.jpg,blackgram,diseased,clean_test,clean,0.001734217,0.003852725,0.7255688,0.01012211,0.0005707739,0.887886106967926
+data/raw/blackgram/diseased/leaf_crinckle/60l.jpg,blackgram,diseased,clean_val,clean,0.027248451,0.006621897,0.5300472,0.0074623413,0.0035707513,0.8131804466247559
+data/raw/blackgram/diseased/leaf_crinckle/66l.jpg,blackgram,diseased,clean_test,clean,0.00075970887,0.0109177865,0.69923306,0.025020141,0.005369078,0.9494428634643555
+data/raw/blackgram/diseased/leaf_crinckle/6l.jpg,blackgram,diseased,clean_val,clean,0.0030746341,0.010055165,0.2000715,0.002534022,0.0037117943,0.9682860374450684
+data/raw/blackgram/diseased/leaf_crinckle/76l.jpg,blackgram,diseased,clean_val,clean,0.18617238,0.19606577,0.25853568,0.078373045,0.17059252,0.4561876058578491
+data/raw/blackgram/diseased/leaf_crinckle/77l.jpg,blackgram,diseased,clean_test,clean,0.011321191,0.016110918,0.14772639,0.0028302332,0.0015379366,0.9889631271362305
+data/raw/blackgram/diseased/leaf_crinckle/79l.jpg,blackgram,diseased,clean_val,clean,0.0016501248,0.00520882,0.6943877,0.011757154,0.0002322464,0.8071494698524475
+data/raw/blackgram/diseased/leaf_crinckle/84l.jpg,blackgram,diseased,clean_test,clean,0.03859588,0.034476005,0.26840875,0.012930925,0.0003938879,0.9445436596870422
+data/raw/blackgram/diseased/leaf_crinckle/87l.jpg,blackgram,diseased,clean_val,clean,0.14771572,0.16293746,0.31529185,0.08226022,0.099079885,0.9844228625297546
+data/raw/blackgram/diseased/leaf_crinckle/88l.jpg,blackgram,diseased,clean_val,clean,0.0005085031,0.037718628,0.24057205,0.012264589,0.024961213,0.9823492169380188
+data/raw/blackgram/diseased/leaf_crinckle/89l.jpg,blackgram,diseased,clean_val,clean,0.0018419981,0.009183983,0.31444767,0.004233537,0.04813225,0.8502774834632874
+data/raw/blackgram/diseased/leaf_crinckle/90l.jpg,blackgram,diseased,clean_val,clean,0.004106561,0.008043841,0.30949524,0.003621452,0.056971766,0.9396672248840332
+data/raw/blackgram/diseased/leaf_crinckle/92l.jpg,blackgram,diseased,clean_test,clean,0.0026162346,0.0008386334,0.44635352,0.0006762218,0.0021847573,0.9921126961708069
+data/raw/blackgram/diseased/leaf_crinckle/99l.jpg,blackgram,diseased,clean_val,clean,0.0026438732,0.00032421947,0.7315598,0.0008830769,4.4943754e-06,0.9773997664451599
+data/raw/blackgram/diseased/leaf_crinckle/9l.jpg,blackgram,diseased,clean_val,clean,0.00036915144,0.00042146444,0.5931359,0.0006143021,1.0376585e-06,0.9917011260986328
+data/raw/blackgram/diseased/powdery_mildew/101p.jpg,blackgram,diseased,clean_test,clean,0.0036226034,0.06995161,0.06254383,0.004992888,0.0067395195,0.9966018199920654
+data/raw/blackgram/diseased/powdery_mildew/105p.jpg,blackgram,diseased,clean_test,clean,0.0040816427,0.082541056,0.0620543,0.0059169824,0.011130845,0.9977907538414001
+data/raw/blackgram/diseased/powdery_mildew/107p.jpg,blackgram,diseased,clean_test,clean,0.00065226556,0.050273135,0.09918075,0.0057943305,0.0017548121,0.9972658157348633
+data/raw/blackgram/diseased/powdery_mildew/108p.jpg,blackgram,diseased,clean_val,clean,4.7246616e-05,0.00052719313,0.04266173,2.3505074e-05,0.0007778879,0.9961357712745667
+data/raw/blackgram/diseased/powdery_mildew/110p.jpg,blackgram,diseased,clean_val,clean,0.00029429793,0.00066262484,0.03926714,2.710007e-05,0.0008237762,0.9733679890632629
+data/raw/blackgram/diseased/powdery_mildew/112p.jpg,blackgram,diseased,clean_test,clean,0.00012956063,0.00028037032,0.009915704,2.808691e-06,0.0008509531,0.9887065887451172
+data/raw/blackgram/diseased/powdery_mildew/113p.jpg,blackgram,diseased,clean_test,clean,0.00026355186,0.0002884964,0.0075581525,2.197735e-06,0.0007735148,0.9738507270812988
+data/raw/blackgram/diseased/powdery_mildew/114p.jpg,blackgram,diseased,clean_test,clean,9.3728304e-05,0.00025885305,0.02108928,5.578044e-06,0.00043804958,0.9989051818847656
+data/raw/blackgram/diseased/powdery_mildew/11p.jpg,blackgram,diseased,clean_test,clean,0.07126422,0.0990986,0.25898725,0.037021954,0.030939294,0.9952874779701233
+data/raw/blackgram/diseased/powdery_mildew/125p.jpg,blackgram,diseased,clean_test,clean,0.000612847,0.0018864631,0.12972575,0.00028165407,0.0037192602,0.6940738558769226
+data/raw/blackgram/diseased/powdery_mildew/126p.jpg,blackgram,diseased,clean_val,clean,0.0005024115,0.0424436,0.14743355,0.007606759,0.009014906,0.973121702671051
+data/raw/blackgram/diseased/powdery_mildew/127p.jpg,blackgram,diseased,clean_val,clean,0.002836919,0.041144405,0.11720466,0.0056646788,0.0068813623,0.9807725548744202
+data/raw/blackgram/diseased/powdery_mildew/133p.jpg,blackgram,diseased,clean_val,clean,0.0021111567,0.0027047992,0.051156085,0.00014620098,4.8467744e-05,0.9160363078117371
+data/raw/blackgram/diseased/powdery_mildew/135p.jpg,blackgram,diseased,clean_test,clean,0.00076794624,0.005649205,0.09192132,0.00057476555,0.021934472,0.9729642271995544
+data/raw/blackgram/diseased/powdery_mildew/13p.jpg,blackgram,diseased,clean_val,clean,0.007612837,0.008115019,0.3996547,0.005416929,0.024529232,0.9686727523803711
+data/raw/blackgram/diseased/powdery_mildew/140p.jpg,blackgram,diseased,clean_test,clean,0.00029640397,0.0025811095,0.025368735,6.735317e-05,0.0013931696,0.9922401309013367
+data/raw/blackgram/diseased/powdery_mildew/141p.jpg,blackgram,diseased,clean_val,clean,0.0029043455,0.0004968345,0.0874531,4.7635076e-05,0.0009731281,0.9992232918739319
+data/raw/blackgram/diseased/powdery_mildew/143p.jpg,blackgram,diseased,clean_val,clean,0.0017735402,0.013833118,0.09113297,0.0014045412,0.02812239,0.9960946440696716
+data/raw/blackgram/diseased/powdery_mildew/146p.jpg,blackgram,diseased,clean_test,clean,0.0016504884,0.003480367,0.08302865,0.00031613605,0.014379454,0.9807865619659424
+data/raw/blackgram/diseased/powdery_mildew/148p.jpg,blackgram,diseased,clean_test,clean,0.00032572946,0.00016856194,0.06234321,1.120916e-05,0.00033892205,0.9882664680480957
+data/raw/blackgram/diseased/powdery_mildew/155p.jpg,blackgram,diseased,clean_test,clean,0.055741258,0.037993677,0.2179796,0.010888705,0.0054961643,0.997065544128418
+data/raw/blackgram/diseased/powdery_mildew/157p.jpg,blackgram,diseased,clean_val,clean,0.10416684,0.11773369,0.21484418,0.035228424,0.008080229,0.995704174041748
+data/raw/blackgram/diseased/powdery_mildew/15p.jpg,blackgram,diseased,clean_test,clean,0.01469839,0.15610184,0.21491118,0.04819544,0.09016579,0.998239278793335
+data/raw/blackgram/diseased/powdery_mildew/165p.jpg,blackgram,diseased,clean_val,clean,0.12751794,0.056921683,0.2866688,0.02368158,0.026646463,0.9770342707633972
+data/raw/blackgram/diseased/powdery_mildew/168p.jpg,blackgram,diseased,clean_test,clean,0.10648562,0.13602786,0.27282465,0.055776015,0.08170797,0.9942552447319031
+data/raw/blackgram/diseased/powdery_mildew/170p.jpg,blackgram,diseased,clean_val,clean,0.0009880583,0.0041666427,0.20290855,0.0010639702,0.0014183974,0.9978405833244324
+data/raw/blackgram/diseased/powdery_mildew/176p.jpg,blackgram,diseased,clean_test,clean,0.008829001,0.064307116,0.081204705,0.0060375147,0.008155242,0.999758780002594
+data/raw/blackgram/diseased/powdery_mildew/17p.jpg,blackgram,diseased,clean_val,clean,0.008205925,0.07788903,0.1916235,0.019629907,0.074625,0.9868648648262024
+data/raw/blackgram/diseased/powdery_mildew/19p.jpg,blackgram,diseased,clean_test,clean,0.026045073,0.09924529,0.14245982,0.017974794,0.02094932,0.9839839339256287
+data/raw/blackgram/diseased/powdery_mildew/28p.jpg,blackgram,diseased,clean_val,clean,0.0005059242,0.025151094,0.26109868,0.009034339,0.0016267421,0.9498961567878723
+data/raw/blackgram/diseased/powdery_mildew/31p.jpg,blackgram,diseased,clean_test,clean,1.6848246e-05,0.0016804338,0.17512405,0.00035723482,0.00024544203,0.9521451592445374
+data/raw/blackgram/diseased/powdery_mildew/32p.jpg,blackgram,diseased,clean_val,clean,0.00011306008,0.006477704,0.36205742,0.0036866781,0.002661987,0.9356390833854675
+data/raw/blackgram/diseased/powdery_mildew/33p.jpg,blackgram,diseased,clean_test,clean,0.0011188289,0.013140191,0.23176223,0.0040008496,0.0010979221,0.9659050107002258
+data/raw/blackgram/diseased/powdery_mildew/34p.jpg,blackgram,diseased,clean_val,clean,0.0020615975,0.03491051,0.30677718,0.015755845,0.0010693638,0.9766172766685486
+data/raw/blackgram/diseased/powdery_mildew/36p.jpg,blackgram,diseased,clean_test,clean,0.048415888,0.115537055,0.12055169,0.017591257,0.015864251,0.997368574142456
+data/raw/blackgram/diseased/powdery_mildew/38p.jpg,blackgram,diseased,clean_test,clean,0.0015497685,0.075389385,0.038166944,0.0032250478,0.010387915,0.9634141325950623
+data/raw/blackgram/diseased/powdery_mildew/39p.jpg,blackgram,diseased,clean_test,clean,0.051564682,0.09009019,0.07565076,0.008038063,0.029330483,0.9849557280540466
+data/raw/blackgram/diseased/powdery_mildew/43p.jpg,blackgram,diseased,clean_test,clean,0.23363023,0.24345137,0.10445433,0.0361753,0.06339432,0.9668708443641663
+data/raw/blackgram/diseased/powdery_mildew/45p.jpg,blackgram,diseased,clean_test,clean,0.039694466,0.053991858,0.04679496,0.00279403,0.008790491,0.9958046078681946
+data/raw/blackgram/diseased/powdery_mildew/47p.jpg,blackgram,diseased,clean_val,clean,0.0017754777,0.041515894,0.10484308,0.0050474554,0.016142482,0.9981985092163086
+data/raw/blackgram/diseased/powdery_mildew/4p.jpg,blackgram,diseased,clean_test,clean,0.1678278,0.15981239,0.2352458,0.055276297,0.018241895,0.9841341376304626
+data/raw/blackgram/diseased/powdery_mildew/50p.jpg,blackgram,diseased,clean_test,clean,0.119482465,0.04746333,0.14393584,0.00830837,0.010951983,0.9842395782470703
+data/raw/blackgram/diseased/powdery_mildew/53p.jpg,blackgram,diseased,clean_val,clean,2.9104096e-05,6.80089e-05,0.0075105205,5.1468226e-07,0.00016359493,0.9843979477882385
+data/raw/blackgram/diseased/powdery_mildew/54p.jpg,blackgram,diseased,clean_val,clean,3.9070845e-05,0.0002786219,0.008222425,2.3105797e-06,0.0009733032,0.9768388867378235
+data/raw/blackgram/diseased/powdery_mildew/57p.jpg,blackgram,diseased,clean_test,clean,0.0002580583,0.00025003156,0.0035627156,8.9419916e-07,7.5517687e-06,0.9965159893035889
+data/raw/blackgram/diseased/powdery_mildew/59p.jpg,blackgram,diseased,clean_val,clean,0.000646015,0.0003093978,0.027310804,8.689768e-06,0.003667495,0.9827321171760559
+data/raw/blackgram/diseased/powdery_mildew/5p.jpg,blackgram,diseased,clean_val,clean,0.21169166,0.18639353,0.26606923,0.07668427,0.11095197,0.9589733481407166
+data/raw/blackgram/diseased/powdery_mildew/61p.jpg,blackgram,diseased,clean_val,clean,0.00028774142,0.0008256038,0.07087571,6.302699e-05,0.00021436035,0.9918826222419739
+data/raw/blackgram/diseased/powdery_mildew/62p.jpg,blackgram,diseased,clean_val,clean,0.0065742335,0.00011597077,0.003108051,3.6160858e-07,0.00017187647,0.9500966668128967
+data/raw/blackgram/diseased/powdery_mildew/64p.jpg,blackgram,diseased,clean_val,clean,0.0018182397,8.2711376e-05,0.02807721,2.3895839e-06,9.8886805e-05,0.9739424586296082
+data/raw/blackgram/diseased/powdery_mildew/65p.jpg,blackgram,diseased,clean_test,clean,0.002980888,0.00048626462,0.0982559,5.3007367e-05,0.00029946308,0.7765712738037109
+data/raw/blackgram/diseased/powdery_mildew/69p.jpg,blackgram,diseased,clean_val,clean,0.00011962652,0.0004930794,0.029446468,1.49671205e-05,0.003986891,0.9451558589935303
+data/raw/blackgram/diseased/powdery_mildew/77p.jpg,blackgram,diseased,clean_test,clean,0.0012254914,0.00017763178,0.018707363,3.3869626e-06,0.0006863866,0.9941766858100891
+data/raw/blackgram/diseased/powdery_mildew/78p.jpg,blackgram,diseased,clean_val,clean,0.00015056133,3.582239e-05,0.019860549,7.258939e-07,0.0006175263,0.9896472096443176
+data/raw/blackgram/diseased/powdery_mildew/79p.jpg,blackgram,diseased,clean_val,clean,9.32614e-05,0.00041060647,0.012688242,5.278968e-06,0.0028041175,0.9911286234855652
+data/raw/blackgram/diseased/powdery_mildew/80p.jpg,blackgram,diseased,clean_test,clean,0.00017931063,0.0022676487,0.0144555755,3.333546e-05,0.0021554176,0.9991239905357361
+data/raw/blackgram/diseased/powdery_mildew/82p.jpg,blackgram,diseased,clean_test,clean,1.6331673e-05,0.00010062257,0.00610489,6.181248e-07,0.0023420018,0.9500482678413391
+data/raw/blackgram/diseased/powdery_mildew/85p.jpg,blackgram,diseased,clean_val,clean,0.0057426095,0.0008968631,0.05407487,5.131357e-05,0.010171209,0.9874579310417175
+data/raw/blackgram/diseased/powdery_mildew/86p.jpg,blackgram,diseased,clean_test,clean,0.020081647,0.09596205,0.056505788,0.0063170516,0.0019168252,0.9985833168029785
+data/raw/blackgram/diseased/powdery_mildew/87p.jpg,blackgram,diseased,clean_test,clean,0.04301999,0.032420136,0.023183428,0.0007945979,0.013164209,0.9989131093025208
+data/raw/blackgram/diseased/powdery_mildew/8p.jpg,blackgram,diseased,clean_val,clean,0.00032738844,0.01726541,0.22383781,0.0050411164,0.00036032332,0.9916166663169861
+data/raw/blackgram/diseased/powdery_mildew/90p.jpg,blackgram,diseased,clean_val,clean,9.079377e-05,0.0032075841,0.041251916,0.0001384372,0.0040510967,0.9954338669776917
+data/raw/blackgram/diseased/powdery_mildew/96p.jpg,blackgram,diseased,clean_val,clean,0.06561402,0.078252956,0.036778796,0.0032311338,0.09129695,0.9953987002372742
+data/raw/blackgram/diseased/powdery_mildew/97p.jpg,blackgram,diseased,clean_test,clean,0.0025280952,0.030578418,0.03827075,0.0012536367,0.012467102,0.9935355186462402
+data/raw/blackgram/diseased/powdery_mildew/9p.jpg,blackgram,diseased,clean_val,clean,0.23488204,0.23100494,0.22901982,0.081923135,0.026589405,0.9974598288536072
+data/raw/blackgram/diseased/yellow_mosaic/102y.jpg,blackgram,diseased,clean_test,clean,0.050093763,0.031743407,0.73321366,0.082653895,0.0034748996,0.9970338940620422
+data/raw/blackgram/diseased/yellow_mosaic/104y.jpg,blackgram,diseased,clean_val,clean,0.1590097,0.038887247,0.58506,0.05397005,0.007390659,0.9976894855499268
+data/raw/blackgram/diseased/yellow_mosaic/105y.jpg,blackgram,diseased,clean_test,clean,0.06346928,0.033725392,0.561499,0.04278055,0.009733005,0.9965891242027283
+data/raw/blackgram/diseased/yellow_mosaic/107y.jpg,blackgram,diseased,clean_test,clean,0.068062,0.11244742,0.66856855,0.20354813,0.051668067,0.9961821436882019
+data/raw/blackgram/diseased/yellow_mosaic/108y.jpg,blackgram,diseased,clean_test,clean,0.0011977474,0.08288501,0.685786,0.16475208,0.0076098866,0.9989611506462097
+data/raw/blackgram/diseased/yellow_mosaic/114y.jpg,blackgram,diseased,clean_val,clean,0.005816301,0.016091863,0.7934418,0.059110273,1.8123648e-05,0.9926443696022034
+data/raw/blackgram/diseased/yellow_mosaic/116y.jpg,blackgram,diseased,clean_test,clean,0.0022795398,0.0040210783,0.8336978,0.019838138,0.00036137,0.9929029941558838
+data/raw/blackgram/diseased/yellow_mosaic/118y.jpg,blackgram,diseased,clean_test,clean,0.0012569427,0.0016036034,0.7316206,0.0043594656,0.0011613684,0.9633738994598389
+data/raw/blackgram/diseased/yellow_mosaic/120y.jpg,blackgram,diseased,clean_test,clean,0.00082768005,0.0035678844,0.8474781,0.019507587,0.0006789849,0.994196355342865
+data/raw/blackgram/diseased/yellow_mosaic/124y.jpg,blackgram,diseased,clean_test,clean,0.001631707,0.0020218093,0.92611426,0.024764664,0.0030370883,0.9540629386901855
+data/raw/blackgram/diseased/yellow_mosaic/128y.jpg,blackgram,diseased,clean_val,clean,0.005682818,0.09863113,0.7474917,0.24466923,0.005707859,0.06148119643330574
+data/raw/blackgram/diseased/yellow_mosaic/131y.jpg,blackgram,diseased,clean_val,clean,8.648634e-05,0.0003889998,0.4712814,0.00034675555,0.0005620537,0.9794184565544128
+data/raw/blackgram/diseased/yellow_mosaic/133y.jpg,blackgram,diseased,clean_test,clean,0.02409782,0.01685024,0.51884085,0.018145911,0.0668906,0.9883447289466858
+data/raw/blackgram/diseased/yellow_mosaic/135y.jpg,blackgram,diseased,clean_test,clean,0.043043185,0.058978237,0.54775244,0.070554405,0.16761336,0.9695518612861633
+data/raw/blackgram/diseased/yellow_mosaic/139y.jpg,blackgram,diseased,clean_val,clean,0.12246664,0.14796379,0.27684632,0.062337864,0.035373807,0.24242258071899414
+data/raw/blackgram/diseased/yellow_mosaic/142y.jpg,blackgram,diseased,clean_test,clean,0.0003064116,0.0724506,0.28482437,0.030169303,0.012551115,0.934593915939331
+data/raw/blackgram/diseased/yellow_mosaic/145y.jpg,blackgram,diseased,clean_val,clean,0.006260089,0.019752502,0.6337941,0.03369935,0.0010844296,0.27265486121177673
+data/raw/blackgram/diseased/yellow_mosaic/147y.jpg,blackgram,diseased,clean_val,clean,0.003383117,0.041675407,0.4858186,0.03946728,0.00833797,0.7041218280792236
+data/raw/blackgram/diseased/yellow_mosaic/149y.jpg,blackgram,diseased,clean_val,clean,0.0010695657,0.02101191,0.76252097,0.06447202,0.0011265847,0.9173395037651062
+data/raw/blackgram/diseased/yellow_mosaic/150y.jpg,blackgram,diseased,clean_val,clean,0.08469359,0.091060355,0.78679603,0.2699185,0.06489017,0.9217092394828796
+data/raw/blackgram/diseased/yellow_mosaic/153y.jpg,blackgram,diseased,clean_val,clean,0.012909651,0.13889542,0.83026475,0.44102824,0.039388202,0.9930922389030457
+data/raw/blackgram/diseased/yellow_mosaic/15y.jpg,blackgram,diseased,clean_val,clean,0.048752964,0.17274523,0.70392543,0.33176038,0.057893682,0.9895090460777283
+data/raw/blackgram/diseased/yellow_mosaic/161y.jpg,blackgram,diseased,clean_val,clean,0.00044597388,0.037321813,0.7571977,0.10786243,0.004871653,0.9380102753639221
+data/raw/blackgram/diseased/yellow_mosaic/16y.jpg,blackgram,diseased,clean_val,clean,0.09460508,0.09763663,0.5684989,0.12476778,0.047068637,0.9896347522735596
+data/raw/blackgram/diseased/yellow_mosaic/170y.jpg,blackgram,diseased,clean_test,clean,0.0047852835,0.044491284,0.82744,0.1825212,0.010467217,0.9831900000572205
+data/raw/blackgram/diseased/yellow_mosaic/175y.jpg,blackgram,diseased,clean_test,clean,0.0040920973,0.09025003,0.650075,0.15561588,0.0053686895,0.9913812279701233
+data/raw/blackgram/diseased/yellow_mosaic/177y.jpg,blackgram,diseased,clean_val,clean,0.0018081347,0.022805918,0.73774916,0.061608758,0.0014942402,0.992828905582428
+data/raw/blackgram/diseased/yellow_mosaic/179y.jpg,blackgram,diseased,clean_val,clean,0.00051781733,0.0013189752,0.6470603,0.0024154824,0.0003816694,0.9946556091308594
+data/raw/blackgram/diseased/yellow_mosaic/17y.jpg,blackgram,diseased,clean_test,clean,0.041799165,0.095151395,0.62036616,0.14664063,0.011842468,0.991100549697876
+data/raw/blackgram/diseased/yellow_mosaic/181y.jpg,blackgram,diseased,clean_test,clean,0.029607436,0.02310311,0.41260508,0.016340706,0.0077065513,0.9855584502220154
+data/raw/blackgram/diseased/yellow_mosaic/182y.jpg,blackgram,diseased,clean_val,clean,0.058852073,0.015288242,0.48381662,0.01434336,0.0046941913,0.98194819688797
+data/raw/blackgram/diseased/yellow_mosaic/184y.jpg,blackgram,diseased,clean_val,clean,3.93192e-05,0.00091509026,0.6085864,0.001422099,0.0073819463,0.9564732909202576
+data/raw/blackgram/diseased/yellow_mosaic/188y.jpg,blackgram,diseased,clean_val,clean,0.10497896,0.12336799,0.55200464,0.14777723,0.010636968,0.989030122756958
+data/raw/blackgram/diseased/yellow_mosaic/189y.jpg,blackgram,diseased,clean_val,clean,0.002143856,0.026798304,0.2970473,0.011502164,0.00020327861,0.9987853169441223
+data/raw/blackgram/diseased/yellow_mosaic/190y.jpg,blackgram,diseased,clean_val,clean,0.00229493,0.018926183,0.14931966,0.0033747668,0.00025705725,0.9949906468391418
+data/raw/blackgram/diseased/yellow_mosaic/194y.jpg,blackgram,diseased,clean_test,clean,0.08085549,0.073520824,0.39454874,0.049169872,0.043378595,0.9922733902931213
+data/raw/blackgram/diseased/yellow_mosaic/195y.jpg,blackgram,diseased,clean_test,clean,0.0027563015,0.03080256,0.6149845,0.048312016,0.021101644,0.9921520352363586
+data/raw/blackgram/diseased/yellow_mosaic/197y.jpg,blackgram,diseased,clean_test,clean,0.077731416,0.1437156,0.47370034,0.1312374,0.084188856,0.9672574996948242
+data/raw/blackgram/diseased/yellow_mosaic/203y.jpg,blackgram,diseased,clean_val,clean,0.0049352427,0.01603476,0.5303957,0.01807298,0.0010128665,0.8378329277038574
+data/raw/blackgram/diseased/yellow_mosaic/212y.jpg,blackgram,diseased,clean_val,clean,0.0014631407,0.032327227,0.6704853,0.06364919,0.015046173,0.9966273307800293
+data/raw/blackgram/diseased/yellow_mosaic/213y.jpg,blackgram,diseased,clean_test,clean,0.0026024343,0.04373192,0.80674154,0.16030169,0.0062685357,0.9620148539543152
+data/raw/blackgram/diseased/yellow_mosaic/215y.jpg,blackgram,diseased,clean_val,clean,0.01441561,0.026546944,0.66121805,0.05053619,0.00606666,0.9996218085289001
+data/raw/blackgram/diseased/yellow_mosaic/224y.jpg,blackgram,diseased,clean_val,clean,0.0056956173,0.04747819,0.7236955,0.11547722,0.006444814,0.838019847869873
+data/raw/blackgram/diseased/yellow_mosaic/25y.jpg,blackgram,diseased,clean_val,clean,0.12072541,0.08030514,0.46361625,0.07017521,0.029927887,0.9365592002868652
+data/raw/blackgram/diseased/yellow_mosaic/27y.jpg,blackgram,diseased,clean_test,clean,0.0011002938,0.02221375,0.6856482,0.04721276,0.013524202,0.9498626589775085
+data/raw/blackgram/diseased/yellow_mosaic/29y.jpg,blackgram,diseased,clean_test,clean,0.06920776,0.120848194,0.7171908,0.25848588,0.052905716,0.9924287796020508
+data/raw/blackgram/diseased/yellow_mosaic/37y.jpg,blackgram,diseased,clean_test,clean,0.0017554675,0.07159308,0.41502777,0.051872965,0.0016599365,0.9924926161766052
+data/raw/blackgram/diseased/yellow_mosaic/38y.jpg,blackgram,diseased,clean_val,clean,0.13377541,0.27101597,0.79176784,0.5856814,0.033982005,0.9915367960929871
+data/raw/blackgram/diseased/yellow_mosaic/40y.jpg,blackgram,diseased,clean_val,clean,0.17965321,0.2270503,0.62915814,0.33260304,0.030308105,0.9788206219673157
+data/raw/blackgram/diseased/yellow_mosaic/41y.jpg,blackgram,diseased,clean_test,clean,0.2034388,0.12338651,0.6596959,0.21436623,0.037186127,0.9866917133331299
+data/raw/blackgram/diseased/yellow_mosaic/44y.jpg,blackgram,diseased,clean_test,clean,0.001883471,0.07478265,0.5997104,0.108014524,0.020965401,0.9818713665008545
+data/raw/blackgram/diseased/yellow_mosaic/48y.jpg,blackgram,diseased,clean_test,clean,0.059101276,0.092276946,0.18813342,0.023014896,0.06267664,0.9230725765228271
+data/raw/blackgram/diseased/yellow_mosaic/51y.jpg,blackgram,diseased,clean_test,clean,0.06867917,0.12981135,0.113648996,0.018768545,0.101413935,0.9396232962608337
+data/raw/blackgram/diseased/yellow_mosaic/53y.jpg,blackgram,diseased,clean_val,clean,0.10884262,0.1825853,0.3806696,0.120719306,0.060054936,0.8710315227508545
+data/raw/blackgram/diseased/yellow_mosaic/56y.jpg,blackgram,diseased,clean_test,clean,0.07696047,0.09558793,0.6846753,0.18665452,0.016656144,0.9229788780212402
+data/raw/blackgram/diseased/yellow_mosaic/57y.jpg,blackgram,diseased,clean_val,clean,0.2877963,0.26826924,0.35169116,0.1658907,0.04264892,0.9634937644004822
+data/raw/blackgram/diseased/yellow_mosaic/65y.jpg,blackgram,diseased,clean_test,clean,0.00038305917,0.002734502,0.8708914,0.018160047,5.3660162e-05,0.9633278250694275
+data/raw/blackgram/diseased/yellow_mosaic/67y.jpg,blackgram,diseased,clean_test,clean,0.0007936756,0.0038977067,0.5463717,0.0046908464,0.0004035764,0.9360589385032654
+data/raw/blackgram/diseased/yellow_mosaic/72y.jpg,blackgram,diseased,clean_test,clean,0.0035351238,0.013326259,0.776644,0.04485673,0.0066125714,0.9872633814811707
+data/raw/blackgram/diseased/yellow_mosaic/75y.jpg,blackgram,diseased,clean_val,clean,0.013044046,0.019908892,0.6227725,0.03244749,0.0037383144,0.976104199886322
+data/raw/blackgram/diseased/yellow_mosaic/76y.jpg,blackgram,diseased,clean_val,clean,0.0015258193,0.028936796,0.6587266,0.054389834,0.019249527,0.9991450309753418
+data/raw/blackgram/diseased/yellow_mosaic/80y.jpg,blackgram,diseased,clean_test,clean,0.051073756,0.036404394,0.86244136,0.19150425,0.006912297,0.9922838807106018
+data/raw/blackgram/diseased/yellow_mosaic/87y.jpg,blackgram,diseased,clean_val,clean,0.12188264,0.2612831,0.6676397,0.41537684,0.07877579,0.9525537490844727
+data/raw/blackgram/diseased/yellow_mosaic/88y.jpg,blackgram,diseased,clean_test,clean,0.16992684,0.21570803,0.8968171,0.7050562,0.014409531,0.984311580657959
+data/raw/blackgram/diseased/yellow_mosaic/99y.jpg,blackgram,diseased,clean_val,clean,0.009175198,0.048224073,0.72443056,0.11754101,0.013216615,0.979780912399292
+data/raw/blackgram/diseased/yellow_mosaic/9y.jpg,blackgram,diseased,clean_test,clean,0.19351374,0.17114133,0.25717717,0.066716775,0.03175728,0.9941002726554871
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__54_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.9996179,0.99851865,0.99366826,0.9999906,0.996717,0.05131228640675545
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__124_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.9991269,0.9785492,0.9817071,0.9995917,0.9950528,0.06691742688417435
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__104_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.99937314,0.99598336,0.97942424,0.99991524,0.9990981,0.020978495478630066
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__78_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.99963087,0.92097706,0.92697734,0.9932862,0.9732094,0.06958568841218948
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__162_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.99986815,0.99260426,0.99666506,0.9999751,0.9994009,0.01893649436533451
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__155_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.9987406,0.99695945,0.98016375,0.99993825,0.9997053,0.0026977648958563805
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__150_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.99981767,0.9935911,0.98955303,0.99993193,0.9955874,0.20688216388225555
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__130_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.999721,0.99416155,0.9956601,0.9999744,0.99798995,0.19251668453216553
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__77_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.99964327,0.93747807,0.9290359,0.99493164,0.9708168,0.07145271450281143
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__122_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.99966383,0.9892566,0.99022275,0.9998928,0.9802947,0.17551445960998535
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__63_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.9996459,0.9719245,0.9883418,0.9996594,0.99946326,0.01293153315782547
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__96_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.99953127,0.9864821,0.9660749,0.99951905,0.99744964,0.043123338371515274
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__32_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.99981576,0.99628407,0.9943805,0.99997896,0.99990004,0.01609966717660427
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__119_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.999609,0.9992116,0.9905448,0.9999925,0.9998259,0.0034343013539910316
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__43_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.99983954,0.99726933,0.98065406,0.999946,0.99993557,0.004769331309944391
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__197_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.9995931,0.9671478,0.8801816,0.9953972,0.9923294,0.020159030333161354
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__106_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.9994262,0.99750024,0.98774475,0.9999689,0.99850345,0.01913781277835369
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__105_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.99889016,0.9886823,0.98956877,0.9998793,0.98918444,0.05048501491546631
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__12_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.99857455,0.9620364,0.97449476,0.99896824,0.99559516,0.015208885073661804
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__149_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.9997497,0.999366,0.9915809,0.9999946,0.9998533,0.02382894605398178
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__152_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.99981433,0.9968343,0.9886155,0.9999634,0.99975914,0.030160441994667053
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__23_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.9996528,0.9969606,0.9873071,0.99996084,0.9999216,0.0022476629819720984
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__46_jpg.jpg,turmeric,healthy,wild_test,mendeley:jtttfbx342,0.9995082,0.9704914,0.99359137,0.9998039,0.9976348,0.0021960593294352293
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__97_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.999635,0.990926,0.9868966,0.9998784,0.99969107,0.006945014465600252
+data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__36_jpg.jpg,turmeric,healthy,wild_val,mendeley:jtttfbx342,0.99926496,0.99536484,0.99257725,0.9999652,0.99988025,0.0038965533021837473
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__144_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.9999884,0.9998954,0.93104583,0.99999225,0.9987543,0.9963319897651672
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__5_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.99988014,0.998794,0.99720293,0.9999966,0.9986784,0.9388946890830994
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__34_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.99984545,0.9997749,0.97440815,0.99999404,0.9988987,0.9674530029296875
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__46_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.9997085,0.995852,0.98721236,0.99994606,0.99772686,0.8734084963798523
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__224_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.9996844,0.9983352,0.9771161,0.99996096,0.9996896,0.9682580828666687
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__196_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.999866,0.9978485,0.91917044,0.9998104,0.96942425,0.8987227082252502
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__15_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.9999637,0.99978906,0.98103255,0.99999595,0.9989782,0.9942419528961182
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__201_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.9997676,0.9988327,0.96753335,0.9999608,0.9989097,0.9692427515983582
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__234_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.9991069,0.99447775,0.93791085,0.99963254,0.9988653,0.9410519003868103
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__163_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.99982786,0.971293,0.94285804,0.998212,0.95829374,0.8478688597679138
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__71_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.9998944,0.9980795,0.9976762,0.9999955,0.9929932,0.8394882082939148
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__85_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.9985091,0.95399094,0.94605273,0.9972574,0.98985535,0.9426499009132385
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__10_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.999178,0.99978423,0.98680407,0.9999971,0.9853497,0.9910311698913574
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__6_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.9996254,0.99852246,0.9972539,0.99999595,0.99772316,0.9461800456047058
+data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__70_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.99970645,0.99911433,0.99899894,0.9999991,0.9989597,0.9521957039833069
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__135_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.98085016,0.42869544,0.82933074,0.78477544,0.83650535,0.7929145693778992
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__86_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.999551,0.9791505,0.9934198,0.999859,0.99857235,0.3147730529308319
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__22_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.9955161,0.8990137,0.96591383,0.99605167,0.98542356,0.8002319931983948
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__178_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.98993206,0.9916261,0.9992921,0.99999404,0.9962981,0.6839383244514465
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__163_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.98357576,0.8240714,0.9842844,0.99660295,0.8696969,0.8960791230201721
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__134_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.9993484,0.90862185,0.9572056,0.995524,0.9999067,0.5060031414031982
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__149_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.9926198,0.9325374,0.96434194,0.99733216,0.94448686,0.9462113380432129
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__177_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.99489516,0.9951156,0.9981814,0.99999106,0.9987454,0.6075940728187561
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__122_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.9996349,0.9045513,0.8173795,0.9769674,0.9921729,0.8854909539222717
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__12_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.96244806,0.91997415,0.9806351,0.99828523,0.98925537,0.9954533576965332
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__187_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.92486,0.5410802,0.86114264,0.87969077,0.83296126,0.8585562109947205
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__120_jpg.jpg,turmeric,diseased,wild_test,mendeley:jtttfbx342,0.9979779,0.7297519,0.8683238,0.9468278,0.9677396,0.8339737057685852
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__181_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.9559386,0.93546623,0.9896884,0.99928176,0.9836802,0.8151490688323975
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__179_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.98444754,0.96023065,0.9994183,0.9999759,0.9946553,0.6312238574028015
+data/wild/turmeric/diseased/jtttfbx342_leaf_spot_leaf_spot__64_jpg.jpg,turmeric,diseased,wild_val,mendeley:jtttfbx342,0.98241425,0.824799,0.991641,0.9982127,0.78403074,0.8502128720283508
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104120948_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.0007856588,0.00678275,0.12216703,0.0009494917,0.0003715871,0.03566979989409447
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_20241104_112954_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.0022557874,0.0061481693,0.43761674,0.004790712,0.00083560566,0.0066071865148842335
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241102_112601_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.00068126124,0.024719158,0.3421732,0.013012183,0.00014290713,0.04781867936253548
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_20241104_122139_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.008079697,0.019295603,0.25564665,0.006712068,9.580021e-05,0.5742384195327759
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241101_225933_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.001957655,0.06585383,0.16104423,0.013351642,0.0008025232,0.03320445492863655
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_20241104_115426_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.00069542724,0.017512014,0.24878244,0.0058682254,0.00032527442,0.4157344400882721
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241101_220627_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.0009980599,0.020608941,0.14849497,0.0036562278,0.0003156315,0.04410051926970482
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241101_225230_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.06057033,0.65785116,0.061177593,0.11134136,0.00040717013,0.02226865291595459
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104114030_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.007188916,0.015735775,0.32026908,0.0074764467,0.0013644701,0.0017545385053381324
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_20241104_114658_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.0037397842,0.008014997,0.41355884,0.0056655696,7.3368734e-05,0.027994677424430847
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_20241104_113130_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.0001647373,0.0014012655,0.16759805,0.00028245067,0.00016123935,0.1399972140789032
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104114745_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.001146555,0.0057477555,0.20384467,0.001477954,0.00046198966,0.013525019399821758
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241101_220451_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.00020805001,0.0047090948,0.1487272,0.0008259432,0.00018906659,0.06113480404019356
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_20241104_115618_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.008824031,0.0069716773,0.24414329,0.002262545,2.7566137e-05,0.15100544691085815
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104114920_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.0052580438,0.00935482,0.14021112,0.0015375867,0.0014852807,0.040077079087495804
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_20241104_120624_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.00029568872,0.0008883476,0.38261008,0.0005507146,0.00012106603,0.5508681535720825
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241101_225959_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.015482257,0.541584,0.34149668,0.37991467,7.509732e-05,0.08146685361862183
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104121512_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.00196142,0.015082945,0.40943742,0.010505614,0.00093547784,0.004500268492847681
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241102_112341_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.00082622963,0.022973249,0.16976427,0.0047849533,0.0016032927,0.001608524820767343
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241101_225351_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.0006359319,0.017797917,0.0437918,0.0008291793,1.2259745e-05,0.05878758057951927
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104112332_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.031861186,0.03381775,0.19288248,0.008295148,0.009087577,0.0024626904632896185
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241101_225652_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.0020163555,0.041039247,0.070389494,0.0032299838,0.00024081155,0.1108175739645958
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241101_224402_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.0010227362,0.023773333,0.07436323,0.0019525774,0.00022605465,0.13562966883182526
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104114432_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.041265845,0.22853304,0.64054054,0.3454948,0.009841465,0.001461477018892765
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104121002_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.00040792426,0.0015716056,0.30780825,0.0006994821,0.00064465246,0.10959141701459885
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_20241104_114815_jpg.jpg,blackgram,healthy,wild_test,mendeley:z55yrbmn2d,0.00029060245,0.0018506745,0.047089655,9.161534e-05,2.4930157e-05,0.1414252668619156
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104112739_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.008950989,0.03962643,0.4133946,0.0282563,0.0003807594,0.10634175688028336
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104115155_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.0024689138,0.104792796,0.5037389,0.10620413,0.00047673448,0.033011022955179214
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104112339_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.0006844203,0.027968565,0.41225335,0.01978273,4.1211722e-05,0.0028515085577964783
+data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG_20241102_112753_jpg.jpg,blackgram,healthy,wild_val,mendeley:z55yrbmn2d,0.009708504,0.20093302,0.7298456,0.40452796,0.0033756455,0.05345863476395607
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_135958_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0024451911,0.0038422942,0.51383936,0.004060161,0.12304453,0.6630551218986511
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_131313_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0031056106,0.0302008,0.14744507,0.0053568785,0.00019354327,0.9937283396720886
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_214702_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.007935177,0.007039368,0.42931953,0.0053049256,0.00075210957,0.671431839466095
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_130630_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.015994698,0.0016244253,0.058158103,0.00010046028,0.0015096694,0.9890024065971375
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_132002_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0037766695,0.008083354,0.27685052,0.0031101464,0.00077140884,0.9488386511802673
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_122717_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.15348199,0.26084605,0.15363106,0.060200993,0.49377668,0.8138751983642578
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_130812_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0027484398,0.005159179,0.2692442,0.0019070937,0.0014762009,0.9739313125610352
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_122058_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0066568055,0.01949501,0.38293588,0.012188311,0.0012631196,0.8103653788566589
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_131917_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.00036486983,0.0073076785,0.15228148,0.0013206456,0.00020141334,0.9958047866821289
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_195426_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.00028535724,0.00013781588,0.16360871,2.6961518e-05,0.00049449765,0.9487211108207703
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_131258_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.010121693,0.0069094202,0.1418273,0.0011485205,0.0040728073,0.9842987656593323
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_122930_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0015084147,0.002572755,0.055700514,0.00015212501,0.012115571,0.9243409037590027
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_130521_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0070792735,0.0006696582,0.06097899,4.3514116e-05,0.04636476,0.9934223294258118
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_215112_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0017419358,0.007181684,0.14675255,0.0012425882,0.0011329883,0.6718435287475586
+data/wild/blackgram/diseased/z55yrbmn2d_cercospora_leaf_spot_IMG_20241101_131913_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0006079872,0.00021091104,0.009746923,2.0764019e-06,0.00010765798,0.9915983080863953
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_20241104_154311_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0024626057,0.032139987,0.7895971,0.110810585,0.0043871994,0.14429569244384766
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_IMG_20241031_155956_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0007894635,0.015019089,0.19575173,0.0036976212,1.4565394e-05,0.9412002563476562
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_IMG20241104154503_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0011123121,0.00026191273,0.4218427,0.00019111374,0.00096924807,0.9665824770927429
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_IMG20241104152340_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.00417758,0.0010031859,0.07706982,8.3848696e-05,0.0010628566,0.863149106502533
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_IMG_20241031_155416_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.000989755,0.00039004287,0.17464061,8.25559e-05,0.009307686,0.9421805739402771
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_IMG20241104153612_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0022712548,0.005069852,0.035237238,0.0001860815,0.0013620512,0.944828450679779
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_20241104_153758_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0053848624,0.0048704147,0.20362182,0.001249822,0.0017241887,0.43968942761421204
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_20241104_154756_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.023790946,0.0245184,0.42832735,0.018484121,0.00018237992,0.8920015692710876
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_20241104_153724_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.00020020206,0.0012790164,0.5624185,0.0016433056,5.0570827e-05,0.861136257648468
+data/wild/blackgram/diseased/z55yrbmn2d_leaf_crinkle_20241104_154625_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.018865526,0.017870465,0.39901522,0.011936526,0.0015933526,0.35105839371681213
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241101_170024_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.00082820654,0.09514418,0.653186,0.16530025,0.0026366126,0.9769976735115051
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241101_143109_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.00023046136,0.017986009,0.7977955,0.06739325,7.780817e-05,0.9383831024169922
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241101_142339_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.00021675229,0.020053407,0.5763402,0.027084604,0.00021915633,0.9259698987007141
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_20241104_164339_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.00033053756,0.028947314,0.7499723,0.082078256,9.045295e-05,0.9740033745765686
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241101_170049_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0013627708,0.024610022,0.55716485,0.03076826,0.0003272918,0.9613680243492126
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241101_143639_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0020778577,0.054523557,0.9343901,0.4509365,0.14648734,0.8964612483978271
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG20241104163030_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,8.6565815e-05,0.029889932,0.80805665,0.11481689,0.0017975322,0.9291242957115173
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241101_143626_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,9.137392e-05,0.006943206,0.45604074,0.0058275363,0.00029252228,0.988267183303833
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG20241104162324_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.00011757016,0.00963221,0.47457016,0.008707966,3.373903e-05,0.9642040133476257
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG20241104161223_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0028078258,0.031262796,0.57235044,0.041403007,0.0009068418,0.9658374786376953
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_20241104_164028_1_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.0007869403,0.030835846,0.7199294,0.07560306,0.00017621259,0.9809567332267761
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_20241104_162919_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.00028466186,0.0017962853,0.25381228,0.0006117231,0.00015459994,0.9843384623527527
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241101_141358_jpg.jpg,blackgram,diseased,wild_test,mendeley:z55yrbmn2d,0.0015227994,0.0065944493,0.8812476,0.04694873,0.024731277,0.9835309982299805
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241031_122514_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.000102857746,0.012318879,0.78698486,0.044049956,0.00061578973,0.9690966606140137
+data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_20241104_162234_jpg.jpg,blackgram,diseased,wild_val,mendeley:z55yrbmn2d,0.00032889843,0.009680122,0.379881,0.0059523047,0.003053867,0.9273083806037903
+data/wild/turmeric/unknown/inat_17511323_26645419.jpg,turmeric,unknown,wild_test,inaturalist,0.93716514,0.8680864,0.75400263,0.9527644,0.77744776,
+data/wild/turmeric/unknown/inat_27542088_42863599.jpg,turmeric,unknown,wild_val,inaturalist,0.99973834,0.99625367,0.99731314,0.99998987,0.98528206,
+data/wild/turmeric/unknown/inat_28534577_44488062.jpg,turmeric,unknown,wild_val,inaturalist,0.99921983,0.9781211,0.9089174,0.9977635,0.9949537,
+data/wild/turmeric/unknown/inat_28850887_45001780.jpg,turmeric,unknown,wild_test,inaturalist,0.97399884,0.91757417,0.7938684,0.97720677,0.713777,
+data/wild/turmeric/unknown/inat_29621695_46239166.jpg,turmeric,unknown,wild_test,inaturalist,0.9999482,0.9949054,0.9812435,0.9999021,0.7359188,
+data/wild/turmeric/unknown/inat_29892675_46676936.jpg,turmeric,unknown,wild_val,inaturalist,0.99904376,0.98043025,0.9882027,0.99976176,0.9868373,
+data/wild/turmeric/unknown/inat_32748436_51386480.jpg,turmeric,unknown,wild_val,inaturalist,0.99995446,0.92884,0.90208226,0.9917526,0.72347504,
+data/wild/turmeric/unknown/inat_53215617_84626706.jpg,turmeric,unknown,wild_val,inaturalist,0.9993305,0.99112004,0.9683339,0.9997071,0.97321016,
+data/wild/turmeric/unknown/inat_61950850_99195536.jpg,turmeric,unknown,wild_test,inaturalist,0.9801248,0.8988898,0.8011936,0.9728465,0.61800075,
+data/wild/turmeric/unknown/inat_67128734_108380284.jpg,turmeric,unknown,wild_val,inaturalist,0.9995419,0.95839953,0.91029966,0.995741,0.79142344,
+data/wild/turmeric/unknown/inat_72190939_117655697.jpg,turmeric,unknown,wild_test,inaturalist,0.9721852,0.61939853,0.85672814,0.9068168,0.27913532,
+data/wild/turmeric/unknown/inat_88830381_146617024.jpg,turmeric,unknown,wild_test,inaturalist,0.99546534,0.9484928,0.82988197,0.98899066,0.9881127,
+data/wild/turmeric/unknown/inat_101774417_170005256.jpg,turmeric,unknown,wild_test,inaturalist,0.9637594,0.94806355,0.9155599,0.994973,0.9021831,
+data/wild/turmeric/unknown/inat_106685450_179264574.jpg,turmeric,unknown,wild_val,inaturalist,0.9419957,0.8583115,0.9182366,0.98551375,0.7774849,
+data/wild/turmeric/unknown/inat_107117276_180095725.jpg,turmeric,unknown,wild_test,inaturalist,0.8770912,0.4791707,0.58503395,0.5646628,0.4171019,
+data/wild/turmeric/unknown/inat_107455751_180733066.jpg,turmeric,unknown,wild_test,inaturalist,0.94004625,0.88863176,0.8067738,0.9708587,0.7528143,
+data/wild/blackgram/unknown/inat_55127005_87760702.jpg,blackgram,unknown,wild_val,inaturalist,0.008275658,0.15058403,0.0719646,0.013560735,0.08888584,
+data/wild/blackgram/unknown/inat_60211757_96255990.jpg,blackgram,unknown,wild_val,inaturalist,0.87029356,0.8213371,0.44416615,0.7860306,0.41663927,
+data/wild/blackgram/unknown/inat_136790416_233514934.jpg,blackgram,unknown,wild_test,inaturalist,0.13684286,0.16551854,0.10027134,0.021627165,0.031632777,
+data/wild/turmeric/unknown/commons_Close_up_of_a_young_turmeric_plant_with_fresh_green_leaves.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.7866636,0.7725366,0.69795406,0.8869806,0.62561315,
+data/wild/turmeric/unknown/commons_Curcuma_longa_leaves_.jpg,turmeric,unknown,wild_test,wikimedia_commons,0.9999254,0.99892235,0.99580014,0.99999547,0.9898683,
+data/wild/turmeric/unknown/commons_Curcuma_longa_Plant_Growing_in_Soil.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.9999372,0.99892426,0.98716396,0.999986,0.93863857,
+data/wild/turmeric/unknown/commons_Leaves_of_Turmeric_plant_in_West_Bengal.jpg,turmeric,unknown,wild_test,wikimedia_commons,0.7790124,0.8695206,0.82862973,0.9699002,0.8588248,
+data/wild/turmeric/unknown/commons_Starr_071024_0180_Curcuma_longa_leaves_Enchanting_Floral_Gar.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.9996458,0.98016393,0.9190527,0.9982207,0.99572366,
+data/wild/turmeric/unknown/commons_Starr_080117_2222_Curcuma_longa_leaves_Home_Depot_Nursery_Ka.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.99992096,0.9864632,0.9907549,0.99987197,0.98712325,
+data/wild/turmeric/unknown/commons_Starr_190610_6608_Curcuma_longa_leaves_with_morning_dew_Hawe.jpg,turmeric,unknown,wild_test,wikimedia_commons,0.9138729,0.73565185,0.96045506,0.9854206,0.8627212,
+data/wild/turmeric/unknown/commons_Starr_190610_6609_Curcuma_longa_leaves_with_morning_dew_Hawe.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.98293394,0.9180941,0.9405903,0.9943967,0.92437375,
+data/wild/turmeric/unknown/commons_Turmeric_Plant_with_Lush_Green_Foliage.jpg,turmeric,unknown,wild_test,wikimedia_commons,0.9997812,0.9946384,0.9727161,0.99984884,0.41761872,
+data/wild/turmeric/unknown/commons_Turmeric_leaves_1.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.9647124,0.96920395,0.82440746,0.9932777,0.41454738,
+data/wild/turmeric/unknown/commons_Turmeric_leaves_2.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.95819116,0.9796089,0.79002583,0.9944981,0.3516256,
+data/wild/turmeric/unknown/commons_Turmeric_leaves_3.jpg,turmeric,unknown,wild_test,wikimedia_commons,0.9995572,0.9982525,0.966716,0.99993974,0.8747789,
+data/wild/turmeric/unknown/commons_Turmeric_leaves_4.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.99924356,0.95898515,0.81395966,0.99031925,0.9087042,
+data/wild/turmeric/unknown/commons_Turmeric_leaves_5.jpg,turmeric,unknown,wild_test,wikimedia_commons,0.9606126,0.9885546,0.8212418,0.99748623,0.8888835,
+data/wild/turmeric/unknown/commons_Turmeric_leaves.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.87613046,0.8696492,0.70174336,0.9401093,0.93480575,
+data/wild/turmeric/unknown/commons_Turmeric_plants_images.jpg,turmeric,unknown,wild_test,wikimedia_commons,0.99997234,0.9995068,0.99314535,0.9999966,0.9924527,
+data/wild/turmeric/unknown/commons_Turmeric_leaves.jpg,turmeric,unknown,wild_val,wikimedia_commons,0.87613046,0.8696492,0.70174336,0.9401093,0.93480575,
+data/wild/turmeric/unknown/commons_Curcuma_longa_Nativeplants_Botanical_Garden.jpg,turmeric,unknown,wild_test,wikimedia_commons,0.99699837,0.8981788,0.8094634,0.97400916,0.61208826,
+data/wild/blackgram/unknown/commons_Black_Gram_Plant.jpg,blackgram,unknown,wild_test,wikimedia_commons,0.35497236,0.052717805,0.41973278,0.03869749,0.04408242,
+data/wild/blackgram/unknown/commons_Black_gram_plant.jpg,blackgram,unknown,wild_test,wikimedia_commons,0.35497236,0.052717805,0.41973278,0.03869749,0.04408242,
+data/wild/blackgram/unknown/commons_Larval_Host_Plant_Vigna_mungo_of_Euchrysops_cnejus_Fabricius.jpg,blackgram,unknown,wild_val,wikimedia_commons,0.54088986,0.41644034,0.0092210965,0.0065977885,0.50779235,
+tests/fixtures/regressions/turmeric_google_01.jpg,turmeric,diseased,regression,user_reported,0.9876103,0.88844603,0.98974586,0.99870086,0.9496994,0.21944426000118256

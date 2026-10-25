@@ -69,15 +69,15 @@ class RobustModel:
         return _load_cached()
 
     # -- crop -------------------------------------------------------------------------
-    def crop_prob_raw(self, im: Image.Image) -> float:
+    def crop_prob_raw(self, im: Image.Image, dev_str: str | None = None) -> float:
         """Uncalibrated P(turmeric) from the selected crop model (mean over TTA views + tiles)."""
         b = self.crop_bundle
         if b["backbone"] == "efficientnet_b0":
             return float(crop_cnn_probs(self.effnet, [im], self.cfg, dev=torch.device("cpu"))[0, 0])
-        e = embed(b["backbone"], tta_views(im, self.cfg, tiles=True))
-        p = b["clf"].predict_proba(e) if "zeroshot" != b["key"] else None
+        e = embed(b["backbone"], tta_views(im, self.cfg, tiles=True), dev_str=dev_str)
+        p = b["clf"].predict_proba(e) if b["key"] != "openclip_zeroshot" else None
         if "zeroshot" in b["key"]:
-            txt = clip_zero_shot_text(b["prompts"]["turmeric"] + b["prompts"]["blackgram"])
+            txt = _text_embeddings(tuple(b["prompts"]["turmeric"] + b["prompts"]["blackgram"]))
             nt = len(b["prompts"]["turmeric"])
             sims = 100 * e @ txt.T
             zl = np.stack([sims[:, :nt].mean(1), sims[:, nt:].mean(1)], 1)
@@ -86,15 +86,15 @@ class RobustModel:
             p = zp if p is None else p * zp / (p * zp).sum(1, keepdims=True)
         return float(p[:, 0].mean())
 
-    def ood_score(self, im: Image.Image) -> float:
-        e = embed(OOD_BACKBONE, [im])
+    def ood_score(self, im: Image.Image, dev_str: str | None = None) -> float:
+        e = embed(OOD_BACKBONE, [im], dev_str=dev_str)
         return float(knn_distance(e, self.ood_ref, self.cal["ood_k"])[0])
 
     # -- full prediction -----------------------------------------------------------------
-    def predict(self, im: Image.Image, crop: str | None = None) -> dict:
+    def predict(self, im: Image.Image, crop: str | None = None, dev_str: str | None = None) -> dict:
         c = self.cal
-        p_tu = float(sigmoid(logit(self.crop_prob_raw(im)) / c["T_crop"]))
-        ood = self.ood_score(im)
+        p_tu = float(sigmoid(logit(self.crop_prob_raw(im, dev_str)) / c["T_crop"]))
+        ood = self.ood_score(im, dev_str)
         cd = crop_decision(p_tu, ood, c, crop if crop in CROPS else None)
         z = predict_disease_logit(self.disease_model, [im], [cd["label"]], self.cfg, dev=torch.device("cpu"))[0]
         p_dis = float(sigmoid(z / c["T_disease"]))
@@ -104,6 +104,11 @@ class RobustModel:
                         "confidence": max(p_dis, 1 - p_dis), "under_crop": cd["label"]},
             "ood": {"ood_score": ood, "threshold": c["ood_threshold"], "flagged": ood > c["ood_threshold"]},
         }
+
+
+@lru_cache(maxsize=4)
+def _text_embeddings(prompts: tuple[str, ...]) -> np.ndarray:
+    return clip_zero_shot_text(list(prompts))
 
 
 @lru_cache(maxsize=1)

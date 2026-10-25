@@ -1,0 +1,8 @@
+{
+  "T_crop": 0.44181782045793416,
+  "T_disease": 0.6824044082866944,
+  "tau_crop": 0.5,
+  "ood_threshold": 0.34562939405441284,
+  "ood_k": 10,
+  "crop_key": "openclip_head_x_zeroshot"
+}
