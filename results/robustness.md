@@ -19,7 +19,7 @@ wild_test: 82 images (62 with a disease label).
 | Rule macro-F1, clean TEST | 0.839 | 0.845 |
 | SVM macro-F1, wild_test (labelled) | n/a | 0.903 |
 | Rule macro-F1, wild_test (labelled) | n/a | 0.772 |
-| CNN latency, CPU ms / image | 48.181 | 208.263 |
+| CNN latency, CPU ms / image | 48.181 | 211.778 |
 | API p50 latency, ms (full analysis) | n/a | 448.822 |
 
 ## Targets

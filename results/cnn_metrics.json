@@ -227,14 +227,14 @@
     "accelerator": {
       "device": "mps (embeddings) + cpu (disease CNN)",
       "n_images": 10,
-      "ms_median": 148.46943749580532,
-      "ms_mean": 148.8232831005007
+      "ms_median": 136.7727705219295,
+      "ms_mean": 131.15329560241662
     },
     "cpu": {
       "device": "cpu",
       "n_images": 10,
-      "ms_median": 208.26320847845636,
-      "ms_mean": 205.80587069271132
+      "ms_median": 211.7780414992012,
+      "ms_mean": 204.26515399012715
     }
   }
 }

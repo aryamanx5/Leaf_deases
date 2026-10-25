@@ -1,0 +1,920 @@
+{
+ "generated_at": "2026-10-25T05:27:11+00:00",
+ "dataset": {
+  "total": 1606,
+  "by_crop_label": {
+   "blackgram_diseased": 786,
+   "blackgram_healthy": 221,
+   "turmeric_diseased": 402,
+   "turmeric_healthy": 197
+  },
+  "by_class": {
+   "blackgram/anthracnose": 230,
+   "blackgram/healthy": 221,
+   "blackgram/leaf_crinckle": 152,
+   "blackgram/powdery_mildew": 180,
+   "blackgram/yellow_mosaic": 224,
+   "turmeric/dry_leaf": 203,
+   "turmeric/healthy_leaf": 197,
+   "turmeric/leaf_blotch": 199
+  },
+  "splits": {
+   "train": 1125,
+   "val": 242,
+   "test": 239
+  },
+  "clusters": 1548,
+  "multi_image_clusters": 50,
+  "wild_test": 82,
+  "wild_test_labelled": 62
+ },
+ "comparison": {
+  "clean": {
+   "rule_based": {
+    "accuracy": 0.8786610878661087,
+    "precision": 0.930635838150289,
+    "recall": 0.9044943820224719,
+    "f1": 0.9173789173789174,
+    "macro_f1": 0.844516230343002,
+    "healthy_recall": 0.8032786885245902,
+    "roc_auc": 0.9389390311291214,
+    "n": 239.0
+   },
+   "svm": {
+    "accuracy": 0.9748953974895398,
+    "precision": 0.9725274725274725,
+    "recall": 0.9943820224719101,
+    "f1": 0.9833333333333333,
+    "macro_f1": 0.9662429378531073,
+    "healthy_recall": 0.9180327868852459,
+    "roc_auc": 0.9977896481856695,
+    "n": 239.0
+   },
+   "cnn": {
+    "accuracy": 0.99581589958159,
+    "precision": 0.994413407821229,
+    "recall": 1.0,
+    "f1": 0.9971988795518207,
+    "macro_f1": 0.9944672083709517,
+    "healthy_recall": 0.9836065573770492,
+    "roc_auc": 1.0,
+    "n": 239.0
+   }
+  },
+  "clean_ms": {
+   "rule_based": 70.10158349294215,
+   "svm": 70.10158349294215,
+   "cnn": 208.26320847845636
+  },
+  "wild": {
+   "rule_based": {
+    "accuracy": 0.7741935483870968,
+    "precision": 1.0,
+    "recall": 0.6,
+    "f1": 0.75,
+    "macro_f1": 0.7720588235294117,
+    "healthy_recall": 1.0,
+    "roc_auc": 0.9216931216931218,
+    "n": 62
+   },
+   "svm": {
+    "accuracy": 0.9032258064516129,
+    "precision": 1.0,
+    "recall": 0.8285714285714286,
+    "f1": 0.90625,
+    "macro_f1": 0.903125,
+    "healthy_recall": 1.0,
+    "roc_auc": 0.9703703703703704,
+    "n": 62
+   },
+   "cnn": {
+    "accuracy": 0.9354838709677419,
+    "precision": 0.9696969696969697,
+    "recall": 0.9142857142857143,
+    "f1": 0.9411764705882353,
+    "macro_f1": 0.9348739495798319,
+    "healthy_recall": 0.9629629629629629,
+    "roc_auc": 0.9947089947089947,
+    "n": 62
+   }
+  },
+  "mcnemar_p": 0.0625,
+  "test_n": 239.0
+ },
+ "leakage": {
+  "clean": {
+   "svm": {
+    "accuracy": 0.9748953974895398,
+    "macro_f1": 0.9662429378531073,
+    "dup_share": 0.0
+   },
+   "cnn_head": {
+    "accuracy": 0.9874476987447699,
+    "macro_f1": 0.9835795259361044,
+    "dup_share": 0.0
+   }
+  },
+  "naive_random": {
+   "svm": {
+    "accuracy": 0.9626556016597511,
+    "macro_f1": 0.9508798152048373,
+    "dup_share": 0.05394190871369295
+   },
+   "cnn_head": {
+    "accuracy": 0.9875518672199171,
+    "macro_f1": 0.9836266050682791,
+    "dup_share": 0.05394190871369295
+   }
+  },
+  "augment_then_split": {
+   "svm": {
+    "accuracy": 0.9937759336099585,
+    "macro_f1": 0.9919201175662009,
+    "dup_share": 0.9491701244813278
+   },
+   "cnn_head": {
+    "accuracy": 0.9927385892116183,
+    "macro_f1": 0.9905612740881237,
+    "dup_share": 0.9491701244813278
+   }
+  }
+ },
+ "robustness": {
+  "before": {
+   "crop_acc_clean_test": 1.0,
+   "crop_acc_wild_test": 0.926829268292683,
+   "accepted_precision_wild_test": 0.926829268292683,
+   "coverage_wild_test": 1.0,
+   "abstention_wild_test": 0.0,
+   "crop_ece_wild_test": 0.058872013557248026,
+   "disease_f1_clean_test": 0.9887640449438202,
+   "disease_macro_f1_clean_test": 0.9779885798489593,
+   "disease_macro_f1_wild_test": 0.8870673952641166,
+   "svm_macro_f1_clean_test": 0.9346637506834335,
+   "rule_macro_f1_clean_test": 0.8387314439946019,
+   "svm_macro_f1_wild_test": null,
+   "rule_macro_f1_wild_test": null,
+   "latency_ms_cnn_cpu": 48.18129100021906,
+   "api_p50_ms": null
+  },
+  "after": {
+   "crop_acc_clean_test": 0.99581589958159,
+   "crop_acc_wild_test": 1.0,
+   "accepted_precision_wild_test": 1.0,
+   "coverage_wild_test": 0.8170731707317073,
+   "abstention_wild_test": 0.18292682926829273,
+   "crop_ece_wild_test": 0.015442082854638698,
+   "disease_f1_clean_test": 0.9971988795518207,
+   "disease_macro_f1_clean_test": 0.9944672083709517,
+   "disease_macro_f1_wild_test": 0.9348739495798319,
+   "svm_macro_f1_clean_test": 0.9662429378531073,
+   "rule_macro_f1_clean_test": 0.844516230343002,
+   "svm_macro_f1_wild_test": 0.903125,
+   "rule_macro_f1_wild_test": 0.7720588235294117,
+   "latency_ms_cnn_cpu": 211.7780414992012,
+   "api_p50_ms": 448.8223330117762
+  },
+  "targets": {
+   "wild_test_accepted_precision": {
+    "value": 1.0,
+    "target": 0.9,
+    "met": true
+   },
+   "regression_not_confident_blackgram": {
+    "value": "turmeric (confident)",
+    "met": true
+   },
+   "clean_disease_f1_drop": {
+    "value": -0.008434834608000541,
+    "target": 0.02,
+    "met": true
+   }
+  }
+ },
+ "calibration": {
+  "tau_crop": 0.5,
+  "ood_threshold": 0.34562939405441284
+ },
+ "showcase": {
+  "turmeric": {
+   "source": "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00009.JPG",
+   "crop": "turmeric",
+   "label": "diseased",
+   "media": {
+    "original": {
+     "webp": {
+      "640": "/media/showcase/turmeric/original-640.webp",
+      "1280": "/media/showcase/turmeric/original-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/turmeric/original-640.avif",
+      "1280": "/media/showcase/turmeric/original-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "denoised": {
+     "webp": {
+      "640": "/media/showcase/turmeric/denoised-640.webp",
+      "1280": "/media/showcase/turmeric/denoised-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/turmeric/denoised-640.avif",
+      "1280": "/media/showcase/turmeric/denoised-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "colour_space": {
+     "webp": {
+      "640": "/media/showcase/turmeric/lab_a-640.webp",
+      "1280": "/media/showcase/turmeric/lab_a-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/turmeric/lab_a-640.avif",
+      "1280": "/media/showcase/turmeric/lab_a-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "segmentation": {
+     "webp": {
+      "640": "/media/showcase/turmeric/distance-640.webp",
+      "1280": "/media/showcase/turmeric/distance-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/turmeric/distance-640.avif",
+      "1280": "/media/showcase/turmeric/distance-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "threshold": {
+     "webp": {
+      "640": "/media/showcase/turmeric/threshold-640.webp",
+      "1280": "/media/showcase/turmeric/threshold-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/turmeric/threshold-640.avif",
+      "1280": "/media/showcase/turmeric/threshold-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "morphology": {
+     "webp": {
+      "640": "/media/showcase/turmeric/leaf_mask-640.webp",
+      "1280": "/media/showcase/turmeric/leaf_mask-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/turmeric/leaf_mask-640.avif",
+      "1280": "/media/showcase/turmeric/leaf_mask-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "lesions": {
+     "webp": {
+      "640": "/media/showcase/turmeric/lesions-640.webp",
+      "1280": "/media/showcase/turmeric/lesions-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/turmeric/lesions-640.avif",
+      "1280": "/media/showcase/turmeric/lesions-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "segmented": {
+     "webp": {
+      "640": "/media/showcase/turmeric/segmented-640.webp",
+      "1280": "/media/showcase/turmeric/segmented-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/turmeric/segmented-640.avif",
+      "1280": "/media/showcase/turmeric/segmented-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "gradcam": {
+     "webp": {
+      "448": "/media/showcase/turmeric/gradcam-448.webp"
+     },
+     "avif": {
+      "448": "/media/showcase/turmeric/gradcam-448.avif"
+     },
+     "w": 448,
+     "h": 448
+    },
+    "cnn_input": {
+     "webp": {
+      "448": "/media/showcase/turmeric/cnn_input-448.webp"
+     },
+     "avif": {
+      "448": "/media/showcase/turmeric/cnn_input-448.avif"
+     },
+     "w": 448,
+     "h": 448
+    }
+   },
+   "params": {
+    "denoise": {
+     "median_ksize": 5,
+     "gaussian_ksize": 5,
+     "clahe_clip": 2.0
+    },
+    "colour_space": {
+     "a_star_min": -23.0,
+     "a_star_max": 22.0
+    },
+    "segmentation": {
+     "mode": "plain_bg_threshold",
+     "border_background_share": 0.7765709085153529
+    },
+    "threshold": {
+     "otsu_distance": 33.0
+    },
+    "morphology": {
+     "open_ksize": 9,
+     "close_ksize": 9,
+     "leaf_coverage": 0.4302215576171875
+    },
+    "lesions": {
+     "count": 5,
+     "affected_pct": 23.755985103741796,
+     "min_area_px": 22
+    }
+   },
+   "readouts": {
+    "affected_pct": 23.755985103741796,
+    "lesion_count": 5.0,
+    "glcm_contrast": 9.020287450459191,
+    "glcm_energy": 0.09120180437215673,
+    "glcm_homogeneity": 0.44804297462312187,
+    "lesion_circularity_mean": 0.25467358371242704,
+    "abn_colour_pct": 66.85139209079625,
+    "class_pct": {
+     "yellow": 17.96329136371697,
+     "brown": 4.696754743748892,
+     "dark": 1.0826387657386063,
+     "pale": 0.013300230537329313
+    }
+   },
+   "cnn": {
+    "tiles": {
+     "early": [
+      "/media/cnn/turmeric/early-00-160.webp",
+      "/media/cnn/turmeric/early-01-160.webp",
+      "/media/cnn/turmeric/early-02-160.webp",
+      "/media/cnn/turmeric/early-03-160.webp",
+      "/media/cnn/turmeric/early-04-160.webp",
+      "/media/cnn/turmeric/early-05-160.webp",
+      "/media/cnn/turmeric/early-06-160.webp",
+      "/media/cnn/turmeric/early-07-160.webp",
+      "/media/cnn/turmeric/early-08-160.webp",
+      "/media/cnn/turmeric/early-09-160.webp",
+      "/media/cnn/turmeric/early-10-160.webp",
+      "/media/cnn/turmeric/early-11-160.webp",
+      "/media/cnn/turmeric/early-12-160.webp",
+      "/media/cnn/turmeric/early-13-160.webp",
+      "/media/cnn/turmeric/early-14-160.webp",
+      "/media/cnn/turmeric/early-15-160.webp"
+     ],
+     "early_shape": [
+      24,
+      56,
+      56
+     ],
+     "late": [
+      "/media/cnn/turmeric/late-00-160.webp",
+      "/media/cnn/turmeric/late-01-160.webp",
+      "/media/cnn/turmeric/late-02-160.webp",
+      "/media/cnn/turmeric/late-03-160.webp",
+      "/media/cnn/turmeric/late-04-160.webp",
+      "/media/cnn/turmeric/late-05-160.webp",
+      "/media/cnn/turmeric/late-06-160.webp",
+      "/media/cnn/turmeric/late-07-160.webp",
+      "/media/cnn/turmeric/late-08-160.webp"
+     ],
+     "late_shape": [
+      96,
+      14,
+      14
+     ]
+    },
+    "p_crop": {
+     "turmeric": 0.9999999999970026,
+     "blackgram": 2.9973801218829976e-12
+    },
+    "crop_status": "confident",
+    "p_diseased_given_crop": 0.999996844359868,
+    "crop_pred": "turmeric"
+   }
+  },
+  "blackgram": {
+   "source": "data/raw/blackgram/diseased/anthracnose/115a.jpg",
+   "crop": "blackgram",
+   "label": "diseased",
+   "media": {
+    "original": {
+     "webp": {
+      "640": "/media/showcase/blackgram/original-640.webp",
+      "1280": "/media/showcase/blackgram/original-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/blackgram/original-640.avif",
+      "1280": "/media/showcase/blackgram/original-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "denoised": {
+     "webp": {
+      "640": "/media/showcase/blackgram/denoised-640.webp",
+      "1280": "/media/showcase/blackgram/denoised-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/blackgram/denoised-640.avif",
+      "1280": "/media/showcase/blackgram/denoised-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "colour_space": {
+     "webp": {
+      "640": "/media/showcase/blackgram/lab_a-640.webp",
+      "1280": "/media/showcase/blackgram/lab_a-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/blackgram/lab_a-640.avif",
+      "1280": "/media/showcase/blackgram/lab_a-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "segmentation": {
+     "webp": {
+      "640": "/media/showcase/blackgram/distance-640.webp",
+      "1280": "/media/showcase/blackgram/distance-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/blackgram/distance-640.avif",
+      "1280": "/media/showcase/blackgram/distance-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "threshold": {
+     "webp": {
+      "640": "/media/showcase/blackgram/threshold-640.webp",
+      "1280": "/media/showcase/blackgram/threshold-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/blackgram/threshold-640.avif",
+      "1280": "/media/showcase/blackgram/threshold-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "morphology": {
+     "webp": {
+      "640": "/media/showcase/blackgram/leaf_mask-640.webp",
+      "1280": "/media/showcase/blackgram/leaf_mask-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/blackgram/leaf_mask-640.avif",
+      "1280": "/media/showcase/blackgram/leaf_mask-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "lesions": {
+     "webp": {
+      "640": "/media/showcase/blackgram/lesions-640.webp",
+      "1280": "/media/showcase/blackgram/lesions-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/blackgram/lesions-640.avif",
+      "1280": "/media/showcase/blackgram/lesions-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "segmented": {
+     "webp": {
+      "640": "/media/showcase/blackgram/segmented-640.webp",
+      "1280": "/media/showcase/blackgram/segmented-1280.webp"
+     },
+     "avif": {
+      "640": "/media/showcase/blackgram/segmented-640.avif",
+      "1280": "/media/showcase/blackgram/segmented-1280.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "gradcam": {
+     "webp": {
+      "448": "/media/showcase/blackgram/gradcam-448.webp"
+     },
+     "avif": {
+      "448": "/media/showcase/blackgram/gradcam-448.avif"
+     },
+     "w": 448,
+     "h": 448
+    },
+    "cnn_input": {
+     "webp": {
+      "448": "/media/showcase/blackgram/cnn_input-448.webp"
+     },
+     "avif": {
+      "448": "/media/showcase/blackgram/cnn_input-448.avif"
+     },
+     "w": 448,
+     "h": 448
+    }
+   },
+   "params": {
+    "denoise": {
+     "median_ksize": 5,
+     "gaussian_ksize": 5,
+     "clahe_clip": 2.0
+    },
+    "colour_space": {
+     "a_star_min": -21.0,
+     "a_star_max": 14.0
+    },
+    "segmentation": {
+     "mode": "plain_bg_threshold",
+     "border_background_share": 0.7923393478949035
+    },
+    "threshold": {
+     "otsu_distance": 17.0
+    },
+    "morphology": {
+     "open_ksize": 9,
+     "close_ksize": 9,
+     "leaf_coverage": 0.5237464904785156
+    },
+    "lesions": {
+     "count": 96,
+     "affected_pct": 10.623684421363905,
+     "min_area_px": 27
+    }
+   },
+   "readouts": {
+    "affected_pct": 10.623684421363905,
+    "lesion_count": 96.0,
+    "glcm_contrast": 4.1588580624854,
+    "glcm_energy": 0.15659253296768583,
+    "glcm_homogeneity": 0.5838439975798302,
+    "lesion_circularity_mean": 0.7628669551617214,
+    "abn_colour_pct": 16.70247711166304,
+    "class_pct": {
+     "yellow": 0.0,
+     "brown": 1.9097285446877936,
+     "dark": 7.467024042768597,
+     "pale": 1.2469318339075144
+    }
+   },
+   "cnn": {
+    "tiles": {
+     "early": [
+      "/media/cnn/blackgram/early-00-160.webp",
+      "/media/cnn/blackgram/early-01-160.webp",
+      "/media/cnn/blackgram/early-02-160.webp",
+      "/media/cnn/blackgram/early-03-160.webp",
+      "/media/cnn/blackgram/early-04-160.webp",
+      "/media/cnn/blackgram/early-05-160.webp",
+      "/media/cnn/blackgram/early-06-160.webp",
+      "/media/cnn/blackgram/early-07-160.webp",
+      "/media/cnn/blackgram/early-08-160.webp",
+      "/media/cnn/blackgram/early-09-160.webp",
+      "/media/cnn/blackgram/early-10-160.webp",
+      "/media/cnn/blackgram/early-11-160.webp",
+      "/media/cnn/blackgram/early-12-160.webp",
+      "/media/cnn/blackgram/early-13-160.webp",
+      "/media/cnn/blackgram/early-14-160.webp",
+      "/media/cnn/blackgram/early-15-160.webp"
+     ],
+     "early_shape": [
+      24,
+      56,
+      56
+     ],
+     "late": [
+      "/media/cnn/blackgram/late-00-160.webp",
+      "/media/cnn/blackgram/late-01-160.webp",
+      "/media/cnn/blackgram/late-02-160.webp",
+      "/media/cnn/blackgram/late-03-160.webp",
+      "/media/cnn/blackgram/late-04-160.webp",
+      "/media/cnn/blackgram/late-05-160.webp",
+      "/media/cnn/blackgram/late-06-160.webp",
+      "/media/cnn/blackgram/late-07-160.webp",
+      "/media/cnn/blackgram/late-08-160.webp"
+     ],
+     "late_shape": [
+      96,
+      14,
+      14
+     ]
+    },
+    "p_crop": {
+     "turmeric": 1.5847948079549898e-11,
+     "blackgram": 0.999999999984152
+    },
+    "crop_status": "confident",
+    "p_diseased_given_crop": 0.9984565748517511,
+    "crop_pred": "blackgram"
+   }
+  }
+ },
+ "heal": {
+  "21x9": {
+   "variant": "21x9",
+   "width": 2520,
+   "height": 1080,
+   "leaf_px": 1196155,
+   "lesion_px": 286280,
+   "affected_pct_initial": 23.933353118951974,
+   "ssim_non_lesion": 0.9999812733017348,
+   "mask_scale": 0.5,
+   "files": {
+    "diseased": [
+     "leaves_diseased_21x9-1280.webp",
+     "leaves_diseased_21x9-1280.avif",
+     "leaves_diseased_21x9-2520.webp",
+     "leaves_diseased_21x9-2520.avif"
+    ],
+    "healed": [
+     "leaves_healed_21x9-1280.webp",
+     "leaves_healed_21x9-1280.avif",
+     "leaves_healed_21x9-2520.webp",
+     "leaves_healed_21x9-2520.avif"
+    ]
+   },
+   "sources": [
+    "data/raw/blackgram/diseased/anthracnose/111a.jpg",
+    "data/raw/blackgram/diseased/anthracnose/124a.jpg",
+    "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00031.JPG",
+    "data/raw/blackgram/diseased/yellow_mosaic/183y.jpg"
+   ],
+   "backdrop": "data/raw/blackgram/healthy/healthy/150h.jpg"
+  },
+  "9x16": {
+   "variant": "9x16",
+   "width": 1080,
+   "height": 1920,
+   "leaf_px": 705517,
+   "lesion_px": 160690,
+   "affected_pct_initial": 22.776205250901114,
+   "ssim_non_lesion": 0.9999940023891501,
+   "mask_scale": 0.5,
+   "files": {
+    "diseased": [
+     "leaves_diseased_9x16-720.webp",
+     "leaves_diseased_9x16-720.avif",
+     "leaves_diseased_9x16-1080.webp",
+     "leaves_diseased_9x16-1080.avif"
+    ],
+    "healed": [
+     "leaves_healed_9x16-720.webp",
+     "leaves_healed_9x16-720.avif",
+     "leaves_healed_9x16-1080.webp",
+     "leaves_healed_9x16-1080.avif"
+    ]
+   },
+   "sources": [
+    "data/raw/blackgram/diseased/anthracnose/111a.jpg",
+    "data/raw/blackgram/diseased/anthracnose/124a.jpg",
+    "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00031.JPG",
+    "data/raw/blackgram/diseased/yellow_mosaic/183y.jpg"
+   ],
+   "backdrop": "data/raw/blackgram/healthy/healthy/150h.jpg"
+  }
+ },
+ "crops": {
+  "turmeric": {
+   "healthy": {
+    "img": {
+     "webp": {
+      "480": "/media/crops/turmeric-healthy-480.webp",
+      "960": "/media/crops/turmeric-healthy-960.webp"
+     },
+     "avif": {
+      "480": "/media/crops/turmeric-healthy-480.avif",
+      "960": "/media/crops/turmeric-healthy-960.avif"
+     },
+     "w": 1000,
+     "h": 1000
+    },
+    "source": "data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00001.JPG",
+    "orig_class": "healthy_leaf"
+   },
+   "diseased": {
+    "img": {
+     "webp": {
+      "480": "/media/crops/turmeric-diseased-480.webp",
+      "960": "/media/crops/turmeric-diseased-960.webp"
+     },
+     "avif": {
+      "480": "/media/crops/turmeric-diseased-480.avif",
+      "960": "/media/crops/turmeric-diseased-960.avif"
+     },
+     "w": 1000,
+     "h": 1000
+    },
+    "source": "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00009.JPG",
+    "orig_class": "leaf_blotch"
+   }
+  },
+  "blackgram": {
+   "healthy": {
+    "img": {
+     "webp": {
+      "480": "/media/crops/blackgram-healthy-480.webp",
+      "960": "/media/crops/blackgram-healthy-960.webp"
+     },
+     "avif": {
+      "480": "/media/crops/blackgram-healthy-480.avif",
+      "960": "/media/crops/blackgram-healthy-960.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "source": "data/raw/blackgram/healthy/healthy/137h.jpg",
+    "orig_class": "healthy"
+   },
+   "diseased": {
+    "img": {
+     "webp": {
+      "480": "/media/crops/blackgram-diseased-480.webp",
+      "960": "/media/crops/blackgram-diseased-960.webp"
+     },
+     "avif": {
+      "480": "/media/crops/blackgram-diseased-480.avif",
+      "960": "/media/crops/blackgram-diseased-960.avif"
+     },
+     "w": 512,
+     "h": 512
+    },
+    "source": "data/raw/blackgram/diseased/yellow_mosaic/102y.jpg",
+    "orig_class": "yellow_mosaic"
+   }
+  }
+ },
+ "hero": {
+  "credit": {
+   "title": "File:Starr-190610-6608-Curcuma longa-leaves with morning dew-Hawea Pl Olinda-Maui (48301962546).jpg",
+   "url": "https://commons.wikimedia.org/wiki/File:Starr-190610-6608-Curcuma_longa-leaves_with_morning_dew-Hawea_Pl_Olinda-Maui_(48301962546).jpg",
+   "licence": "CC BY 2.0",
+   "author": "Forest and Kim Starr"
+  },
+  "image": {
+   "webp": {
+    "960": "/media/hero/leaf-960.webp",
+    "1600": "/media/hero/leaf-1600.webp",
+    "2400": "/media/hero/leaf-2400.webp"
+   },
+   "avif": {
+    "960": "/media/hero/leaf-960.avif",
+    "1600": "/media/hero/leaf-1600.avif",
+    "2400": "/media/hero/leaf-2400.avif"
+   },
+   "w": 3840,
+   "h": 5120
+  },
+  "outline": [
+   [
+    0.7057,
+    0.041
+   ],
+   [
+    0.6042,
+    0.0469
+   ],
+   [
+    0.5677,
+    0.084
+   ],
+   [
+    0.4948,
+    0.1055
+   ],
+   [
+    0.4062,
+    0.0918
+   ],
+   [
+    0.3281,
+    0.1641
+   ],
+   [
+    0.2969,
+    0.1602
+   ],
+   [
+    0.2526,
+    0.0742
+   ],
+   [
+    0.1979,
+    0.082
+   ],
+   [
+    0.1875,
+    0.1094
+   ],
+   [
+    0.1979,
+    0.2402
+   ],
+   [
+    0.1562,
+    0.2734
+   ],
+   [
+    0.1406,
+    0.3516
+   ],
+   [
+    0.1667,
+    0.3633
+   ],
+   [
+    0.224,
+    0.5371
+   ],
+   [
+    0.3073,
+    0.6738
+   ],
+   [
+    0.2969,
+    0.9121
+   ],
+   [
+    0.362,
+    0.9336
+   ],
+   [
+    0.3854,
+    0.9746
+   ],
+   [
+    0.5651,
+    0.9746
+   ],
+   [
+    0.638,
+    0.9473
+   ],
+   [
+    0.7578,
+    0.8574
+   ],
+   [
+    0.8776,
+    0.6699
+   ],
+   [
+    0.862,
+    0.4062
+   ],
+   [
+    0.7891,
+    0.2637
+   ],
+   [
+    0.7266,
+    0.0469
+   ]
+  ],
+  "anchors": {
+   "midrib": [
+    0.5242,
+    0.4998
+   ],
+   "venation": [
+    0.3679,
+    0.5095
+   ],
+   "outline": [
+    0.1406,
+    0.3516
+   ]
+  },
+  "stage1": {
+   "coverage": 0.504241943359375,
+   "lesion_count": 18,
+   "affected_pct": 37.98442574996469,
+   "method": "field_grabcut"
+  }
+ },
+ "example_card": [
+  "Crop: Turmeric (100%)",
+  "Prediction: Healthy",
+  "Affected Region: 8.7%",
+  "CNN Confidence: 88%"
+ ]
+}

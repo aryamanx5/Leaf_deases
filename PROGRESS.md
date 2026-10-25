@@ -168,7 +168,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-B07 | FastAPI service | DONE | P2 log B07 |
 | P2-B08 | Re-evaluate + robustness report | DONE | P2 log B08 |
 | P2-F00 | Web scaffold | DONE | P2 log F00 |
-| P2-F01 | Real content export | TODO | |
+| P2-F01 | Real content export | DONE | P2 log F01 |
 | P2-F02 | Healing-leaves assets | DONE | P2 log F02 |
 | P2-F03 | Shell: nav, smooth scroll, rail, routing | TODO | |
 | P2-F04 | 01 Hero | TODO | |
@@ -185,6 +185,11 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-V02 | Extend verify_all | TODO | |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-F01 Real content export
+- `python scripts/export_site_data.py` -> `wrote web/public/data/site.json (18 kB); media files: 216`: dataset counts, clean + wild comparison (rule/SVM/CNN), leakage ablation, robustness before/after + targets, calibration, latency; showcase TEST leaves (turmeric Leaf Blotch00009, black gram anthracnose 115a) with every REAL Stage 1 intermediate (original, denoised, Lab a*, colour distance, threshold, leaf mask, lesions, segmented) + params (median/Gaussian 5, CLAHE 2.0, Otsu distance, open/close, min lesion area) + readouts; 16 early (features[3]) + 9 late (features[13]) MobileNetV2 disease-CNN feature maps, Grad-CAM, calibrated P(crop) and P(diseased|crop); crop panels (healthy/diseased TEST photos); heal metadata; hero still (Starr, CC BY 2.0) with leaf outline + midrib/venation anchors from our Stage 1. WebP + AVIF at 640/1280 (+ hero 960/1600/2400).
+- Viewed the exported media sheet: intermediates and feature maps are real and legible. Note: Stage 1 reports 38% "affected" on the healthy, dew-covered hero leaf (dew highlights / yellow light) -> the hero shows only the outline and morphology callouts, no disease measurement.
+- web/src/content/citations.ts holds the four sourced statistics; all other numbers come from site.json.
 
 #### 2026-10-25 P2-B08 Re-evaluate + robustness report
 - `python scripts/evaluate_robust.py` -> results/robustness.json + robustness.md (before v1 / after Phase 2): crop accuracy clean TEST 1.000 / 0.996; wild_test 0.927 / 1.000; accepted-crop precision wild_test 0.927 / 1.000; coverage 1.000 / 0.817 (abstention 0.183, all OOD-flagged); crop ECE wild_test 0.059 / 0.015; disease F1 clean TEST 0.989 / 0.997; disease macro-F1 clean 0.978 / 0.994, wild_test 0.887 / 0.935; SVM clean macro-F1 0.935 / 0.966; rule 0.839 / 0.845; SVM wild 0.903, rule wild 0.772; CNN CPU latency 48 / 208 ms; API p50 449 ms.

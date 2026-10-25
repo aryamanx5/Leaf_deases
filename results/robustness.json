@@ -30,7 +30,7 @@
     "rule_macro_f1_clean_test": 0.844516230343002,
     "svm_macro_f1_wild_test": 0.903125,
     "rule_macro_f1_wild_test": 0.7720588235294117,
-    "latency_ms_cnn_cpu": 208.26320847845636,
+    "latency_ms_cnn_cpu": 211.7780414992012,
     "api_p50_ms": 448.8223330117762
   },
   "targets": {
@@ -80,6 +80,68 @@
   "n": {
     "wild_test": 82,
     "wild_test_labelled": 62
+  },
+  "comparison_wild_test": {
+    "rule_based": {
+      "n": 62,
+      "accuracy": 0.7741935483870968,
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75,
+      "macro_f1": 0.7720588235294117,
+      "healthy_recall": 1.0,
+      "confusion_matrix": [
+        [
+          27,
+          0
+        ],
+        [
+          14,
+          21
+        ]
+      ],
+      "roc_auc": 0.9216931216931218
+    },
+    "svm": {
+      "n": 62,
+      "accuracy": 0.9032258064516129,
+      "precision": 1.0,
+      "recall": 0.8285714285714286,
+      "f1": 0.90625,
+      "macro_f1": 0.903125,
+      "healthy_recall": 1.0,
+      "confusion_matrix": [
+        [
+          27,
+          0
+        ],
+        [
+          6,
+          29
+        ]
+      ],
+      "roc_auc": 0.9703703703703704
+    },
+    "cnn": {
+      "n": 62,
+      "accuracy": 0.9354838709677419,
+      "precision": 0.9696969696969697,
+      "recall": 0.9142857142857143,
+      "f1": 0.9411764705882353,
+      "macro_f1": 0.9348739495798319,
+      "healthy_recall": 0.9629629629629629,
+      "confusion_matrix": [
+        [
+          26,
+          1
+        ],
+        [
+          3,
+          32
+        ]
+      ],
+      "roc_auc": 0.9947089947089947
+    }
   },
   "wild_test_by_source": {
     "inaturalist": {
