@@ -22,3 +22,8 @@ playwright==1.64.1
 open_clip_torch==3.3.0
 timm==1.0.30
 ftfy==6.3.1
+fastapi==0.162.0
+httpx==0.28.1
+pydantic==2.14.1
+python-multipart==0.0.32
+uvicorn==0.54.0

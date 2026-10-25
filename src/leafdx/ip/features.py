@@ -119,11 +119,12 @@ def extract_features(pre: dict, seg: dict, les: dict, cfg: dict) -> dict[str, fl
     return dict(zip(FEATURE_NAMES, vec.tolist(), strict=True))
 
 
-def stage1(img: np.ndarray, cfg: dict, crop: str | None = None) -> dict:
-    """Full Stage 1 on one BGR image: pre-processing, segmentation, lesions, features."""
+def stage1(img: np.ndarray, cfg: dict, crop: str | None = None, roi: dict | None = None) -> dict:
+    """Full Stage 1 on one BGR image: pre-processing, segmentation, lesions, features.
+    roi: optional user click {"x", "y"} or {"box": (x, y, w, h)}, fractions of the image."""
     t0 = time.perf_counter()
     pre = preprocess(img, cfg)
-    seg = segment_leaf(pre, cfg)
+    seg = segment_leaf(pre, cfg, roi=roi)
     if seg["coverage"] < cfg["features"]["min_leaf_frac"]:
         seg["leaf_mask"] = np.ones_like(seg["leaf_mask"])
         seg["seg_failed"] = 1

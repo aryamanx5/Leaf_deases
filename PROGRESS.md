@@ -167,7 +167,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-B06 | Stage 1 for field images | DONE | P2 log B06 |
 | P2-B07 | FastAPI service | TODO | |
 | P2-B08 | Re-evaluate + robustness report | TODO | |
-| P2-F00 | Web scaffold | TODO | |
+| P2-F00 | Web scaffold | DONE | P2 log F00 |
 | P2-F01 | Real content export | TODO | |
 | P2-F02 | Healing-leaves assets | TODO | |
 | P2-F03 | Shell: nav, smooth scroll, rail, routing | TODO | |
@@ -185,6 +185,11 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-V02 | Extend verify_all | TODO | |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-F00 Web scaffold
+- web/: React 18.3.1 + TypeScript 5.9 (strict, noUncheckedIndexedAccess) + Vite 6.4 + Tailwind 3.4 + lucide-react, motion, GSAP 3.15, Lenis 1.3, react-router 6.30; ESLint 9 flat config + Prettier; Playwright 1.64 + @axe-core/playwright; Vite proxy /api -> 127.0.0.1:8000; alias @ -> src; tokens (Section 5.3) as CSS variables + Tailwind theme; Inter + Playfair Display italic + JetBrains Mono; Appendix A keyframes.
+- `npm run typecheck` / `npm run lint` clean; `npm run build` -> `index-*.js 161.26 kB (gzip 52.83 kB)`, built in 1.13 s; routes "/" and "/analyze" render.
+- web/src/content/citations.ts: the four Problem statistics traced to sources (Chopada & Rakholiya 2015 citing Panja et al. 2000; Vadivel et al. 2019 EJPB citing Nene 1972; Spices Board brochure (~80%, proposal states >75%); ANGRAU Blackgram Outlook 2022 (~29% of pulse area)).
 
 #### 2026-10-25 P2-B06 Stage 1 for field images
 - Segmentation: foliage mask (Excess-Green + Otsu OR green a* with saturation gate) always returned; plain mode now requires a SMOOTH background (median L* gradient of background ring <= 13; measured: training plain backgrounds median 2.6-3.8, p90 11.4; wild field scenes p10 12.6+) or a very uniform border (<= 5, studio wall); GrabCut collapse in field mode now falls back to a marker-controlled watershed (leaf marker = core disc at the centre or the user's click/box, background markers = non-foliage + colour-far pixels); user ROI (click or box) segments by watershed directly.

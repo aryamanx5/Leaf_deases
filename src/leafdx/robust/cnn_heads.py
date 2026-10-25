@@ -127,7 +127,7 @@ def train_disease_cnn(train, val_images, val_df, banks, cfg, ckpt, log=print):
     bce = nn.BCEWithLogitsLoss(reduction="none")
 
     def step(m, x, tgt, dev):
-        c, y, w = (t.to(dev) for t in tgt)
+        c, y, w = tgt[0].to(dev), tgt[1].to(dev), tgt[2].float().to(dev)  # MPS has no float64
         z = m(x).gather(1, c.view(-1, 1)).squeeze(1)
         return (bce(z, y.float()) * w.float()).mean()
 

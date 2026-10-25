@@ -167,7 +167,14 @@ def main() -> int:
     val_ims = [load_img(p) for p in val_df.path]
     ck = path("models", cfg) / "crop_cnn_effb0.pt"
     t0 = time.time()
-    model, info = train_crop_cnn(train, val_ims, val_df, banks, cfg, ck)
+    if "--reuse" in sys.argv and ck.exists():  # do not retrain an unchanged checkpoint
+        from leafdx.cnn.model import build_model
+
+        model, _ = build_model("efficientnet_b0", 2, pretrained=False)
+        model.load_state_dict(torch.load(ck, map_location="cpu"))
+        info = {"reused_checkpoint": ck.name}
+    else:
+        model, info = train_crop_cnn(train, val_ims, val_df, banks, cfg, ck)
     pe = crop_cnn_probs(model, [load_img(p) for p in ev.path], cfg)
     preds["efficientnet_b0_finetune"] = pe
     rows.append({"candidate": "efficientnet_b0 fine-tuned (B03 aug)", "backbone": "efficientnet_b0", "C": None,
@@ -175,8 +182,12 @@ def main() -> int:
                  "train_info": json.dumps(info)})
     print(rows[-1])
 
-    # CPU latency per image (TTA views incl. tiles), same images for every candidate
+    # CPU latency per image (TTA views incl. tiles), same images for every candidate,
+    # each model warmed up first so loading time is not counted
     lat_imgs = [load_img(p) for p in ev[m_val].path[: r["latency_images"]]]
+    embed("dinov2_vits14", lat_imgs[:1], dev_str="cpu")
+    embed("openclip_vitb32", lat_imgs[:1], dev_str="cpu")
+    crop_cnn_probs(model, lat_imgs[:1], cfg, dev=torch.device("cpu"))
     for row in rows:
         t0 = time.time()
         for im in lat_imgs:

@@ -185,6 +185,7 @@ cnn:
 pipeline:
   min_side: 64             # smaller images are rejected
   min_plant_fraction: 0.05 # share of leaf-coloured pixels below which the input is "not a leaf"
+  ood_reject_plant_fraction: 0.25   # OOD-flagged AND less leaf colour than this -> "not a leaf"
 
 wild:                      # out-of-distribution evaluation set (never used for training)
   root: data/wild

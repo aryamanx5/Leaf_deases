@@ -4,44 +4,4 @@
   warnings.warn("xFormers is not available (Attention)")
 /Users/aryamansingh/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
   warnings.warn("xFormers is not available (Block)")
-{'candidate': 'dinov2_vits14 + logistic head', 'backbone': 'dinov2_vits14', 'C': 10.0, 'clean_val_acc': 1.0, 'wild_val_acc': 0.9759036144578314, 'fit_s': 163.50451469421387}
-[{'candidate': 'openclip_vitb32 + logistic head', 'backbone': 'openclip_vitb32', 'C': 10.0, 'clean_val_acc': 1.0, 'wild_val_acc': 0.9759036144578314, 'fit_s': 153.18532586097717}, {'candidate': 'openclip_vitb32 zero-shot', 'backbone': 'openclip_vitb32', 'C': None, 'clean_val_acc': 0.8181818181818182, 'wild_val_acc': 0.8795180722891566, 'fit_s': 0.0}, {'candidate': 'openclip_vitb32 head x zero-shot prior', 'backbone': 'openclip_vitb32', 'C': 10.0, 'clean_val_acc': 0.9958677685950413, 'wild_val_acc': 0.9879518072289156, 'fit_s': 0.0}]
-Downloading: "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth" to /Users/aryamansingh/.cache/torch/hub/checkpoints/efficientnet_b0_rwightman-7f5810bc.pth
-  0%|          | 0.00/20.5M [00:00<?, ?B/s]  4%|▍         | 896k/20.5M [00:00<00:04, 4.18MB/s]  7%|▋         | 1.38M/20.5M [00:00<00:04, 4.18MB/s]  9%|▉         | 1.88M/20.5M [00:00<00:08, 2.20MB/s] 15%|█▌        | 3.12M/20.5M [00:00<00:04, 4.16MB/s] 18%|█▊        | 3.75M/20.5M [00:01<00:05, 3.48MB/s] 21%|██        | 4.25M/20.5M [00:01<00:04, 3.63MB/s] 23%|██▎       | 4.75M/20.5M [00:01<00:04, 3.75MB/s] 26%|██▋       | 5.38M/20.5M [00:01<00:03, 4.15MB/s] 29%|██▊       | 5.88M/20.5M [00:01<00:03, 4.08MB/s] 31%|███       | 6.38M/20.5M [00:01<00:04, 3.62MB/s] 34%|███▍      | 7.00M/20.5M [00:01<00:03, 3.99MB/s] 37%|███▋      | 7.50M/20.5M [00:02<00:03, 3.95MB/s] 39%|███▉      | 8.00M/20.5M [00:02<00:03, 3.37MB/s] 42%|████▏     | 8.50M/20.5M [00:02<00:03, 3.75MB/s] 44%|████▍     | 9.00M/20.5M [00:02<00:02, 4.07MB/s] 46%|████▋     | 9.50M/20.5M [00:02<00:02, 3.96MB/s] 49%|████▉     | 10.0M/20.5M [00:02<00:03, 3.45MB/s] 52%|█████▏    | 10.6M/20.5M [00:02<00:02, 4.01MB/s] 54%|█████▍    | 11.1M/20.5M [00:03<00:02, 3.97MB/s] 57%|█████▋    | 11.6M/20.5M [00:03<00:02, 3.92MB/s] 59%|█████▉    | 12.1M/20.5M [00:03<00:02, 3.44MB/s] 62%|██████▏   | 12.6M/20.5M [00:03<00:02, 3.75MB/s] 64%|██████▍   | 13.1M/20.5M [00:03<00:01, 4.08MB/s] 67%|██████▋   | 13.6M/20.5M [00:03<00:01, 4.00MB/s] 69%|██████▉   | 14.1M/20.5M [00:03<00:01, 3.69MB/s] 72%|███████▏  | 14.6M/20.5M [00:04<00:01, 3.91MB/s] 74%|███████▍  | 15.1M/20.5M [00:04<00:01, 3.89MB/s] 76%|███████▋  | 15.6M/20.5M [00:04<00:01, 3.31MB/s] 79%|███████▉  | 16.1M/20.5M [00:04<00:01, 3.53MB/s] 82%|████████▏ | 16.8M/20.5M [00:04<00:00, 4.04MB/s] 84%|████████▍ | 17.2M/20.5M [00:04<00:00, 4.03MB/s] 87%|████████▋ | 17.8M/20.5M [00:04<00:00, 3.48MB/s] 90%|████████▉ | 18.4M/20.5M [00:05<00:00, 4.03MB/s] 92%|█████████▏| 18.9M/20.5M [00:05<00:00, 3.96MB/s] 95%|█████████▍| 19.4M/20.5M [00:05<00:00, 3.41MB/s] 97%|█████████▋| 19.8M/20.5M [00:05<00:00, 3.51MB/s] 99%|█████████▉| 20.2M/20.5M [00:05<00:00, 3.88MB/s]100%|██████████| 20.5M/20.5M [00:05<00:00, 3.76MB/s]
-  epoch 1 loss 0.370 val 0.9875 (14s) *
-  epoch 2 loss 0.188 val 0.9958 (10s) *
-  epoch 3 loss 0.047 val 0.9917 (17s)
-  epoch 4 loss 0.039 val 0.9917 (13s)
-  epoch 5 loss 0.034 val 1.0000 (14s) *
-  epoch 6 loss 0.022 val 1.0000 (16s)
-  epoch 7 loss 0.025 val 1.0000 (16s)
-  epoch 8 loss 0.012 val 1.0000 (14s)
-{'candidate': 'efficientnet_b0 fine-tuned (B03 aug)', 'backbone': 'efficientnet_b0', 'C': None, 'clean_val_acc': 1.0, 'wild_val_acc': 0.9879518072289156, 'fit_s': 212.7873158454895, 'train_info': '{"score": 0.9999972575500142, "epoch": 5, "epochs_run": 8, "minutes": 1.9057415167490641, "device": "mps"}'}
-                                candidate         backbone     C  clean_val_acc  wild_val_acc     fit_s  cpu_ms_per_image  selected
-0           dinov2_vits14 + logistic head    dinov2_vits14  10.0         1.0000        0.9759  163.5045          239.5559     False
-1         openclip_vitb32 + logistic head  openclip_vitb32  10.0         1.0000        0.9759  153.1853          235.3998     False
-2               openclip_vitb32 zero-shot  openclip_vitb32   NaN         0.8182        0.8795    0.0000           69.7637     False
-3  openclip_vitb32 head x zero-shot prior  openclip_vitb32  10.0         0.9959        0.9880    0.0000           71.5092      True
-4    efficientnet_b0 fine-tuned (B03 aug)  efficientnet_b0   NaN         1.0000        0.9880  212.7873          252.4212     False
-selected: openclip_vitb32 head x zero-shot prior
-Traceback (most recent call last):
-  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/scripts/train_robust.py", line 263, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/scripts/train_robust.py", line 211, in main
-    dmodel, dinfo = train_disease_cnn(train, val_ims, val_df, banks, cfg, dck)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/src/leafdx/robust/cnn_heads.py", line 138, in train_disease_cnn
-    info = _fit(model, ds, {**r, "seed": cfg["seed"]}, step, val, ckpt, log)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/src/leafdx/robust/cnn_heads.py", line 60, in _fit
-    loss = step_fn(model, x.to(dev), tgt, dev)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/src/leafdx/robust/cnn_heads.py", line 130, in step
-    c, y, w = (t.to(dev) for t in tgt)
-    ^^^^^^^
-  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/src/leafdx/robust/cnn_heads.py", line 130, in <genexpr>
-    c, y, w = (t.to(dev) for t in tgt)
-               ^^^^^^^^^
-TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.
-exit 1
+{'candidate': 'dinov2_vits14 + logistic head', 'backbone': 'dinov2_vits14', 'C': 10.0, 'clean_val_acc': 1.0, 'wild_val_acc': 0.9759036144578314, 'fit_s': 208.6306779384613}
