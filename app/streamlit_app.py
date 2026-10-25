@@ -15,7 +15,8 @@ import pandas as pd  # noqa: E402
 import streamlit as st  # noqa: E402
 
 from leafdx.config import load_config, path  # noqa: E402
-from leafdx.pipeline import CROP_NAMES, InvalidImageError, NotALeafError, analyze, result_card  # noqa: E402
+from leafdx.pipeline import CROP_NAMES, InvalidImageError, NotALeafError  # noqa: E402
+from leafdx.service import analyze_image, result_card  # noqa: E402
 
 st.set_page_config(page_title="Leaf disease: image processing vs CNN", layout="wide")
 CFG = load_config()
@@ -25,9 +26,9 @@ FIGS = path("figures", CFG)
 
 @st.cache_resource
 def warm_models():
-    from leafdx.pipeline import _models
+    from leafdx.robust.infer import RobustModel
 
-    return _models()
+    return RobustModel.load()
 
 
 @st.cache_data
@@ -41,7 +42,7 @@ def sample_images() -> pd.DataFrame:
 
 @st.cache_data(show_spinner="Analysing leaf ...")
 def run_analysis(data: bytes, crop: str | None):
-    return analyze(data, crop)
+    return analyze_image(data, crop)
 
 
 def badge(ok: bool) -> str:
@@ -69,8 +70,10 @@ with tab_an:
             choice = st.selectbox("Sample image", samples.label_txt, index=0)
             p = samples.loc[samples.label_txt == choice, "path"].iloc[0]
             data, name = (ROOT / p).read_bytes(), p
-        crop_opt = st.selectbox("Crop", ["auto (CNN decides)", "Turmeric", "Black Gram"])
+        crop_opt = st.selectbox("Crop", ["auto (model decides)", "Turmeric", "Black Gram"])
         crop = {"Turmeric": "turmeric", "Black Gram": "blackgram"}.get(crop_opt)
+        if st.session_state.get("crop_override") and st.session_state.get("override_for") == name:
+            crop = st.session_state["crop_override"]
 
     if data is None:
         right.info("Upload a leaf photo or pick a sample.")
@@ -84,34 +87,45 @@ with tab_an:
         if res is not None:
             with right:
                 st.subheader("Result")
-                st.code(result_card(res), language=None)
-                st.caption(f"Crop {'given by user' if res['crop_source'] == 'user' else 'identified by the CNN'}; "
-                           f"prediction: {res['prediction_basis']}.")
+                st.code("\n".join(result_card(res)), language=None)
+                c = res["crop"]
+                if c["status"] == "uncertain":
+                    st.warning("The crop model is unsure (low confidence or an unusual photo). Which crop is it?")
+                    b1, b2 = st.columns(2)
+                    for col, (lab, key) in zip((b1, b2), (("It's turmeric", "turmeric"), ("It's black gram", "blackgram")),
+                                               strict=True):
+                        if col.button(lab):
+                            st.session_state["crop_override"], st.session_state["override_for"] = key, name
+                            st.rerun()
+                st.caption(f"Crop {'given by user' if c['source'] == 'user' else 'predicted by the crop model'} "
+                           f"({c['status']}); disease computed for that crop. OOD score {res['ood']['ood_score']:.3f}"
+                           f"{' (unusual photo)' if res['ood']['flagged'] else ''}.")
             st.markdown("#### Visual evidence: Original -> Segmented Leaf -> Detected Abnormal Regions")
             c1, c2, c3, c4 = st.columns(4)
             c1.image(res["images"]["original"], caption="Original image", width="stretch")
             c2.image(res["images"]["segmented_leaf"], caption="Segmented leaf", width="stretch")
-            c3.image(res["images"]["abnormal_regions_overlay"],
-                     caption=f"Detected abnormal regions ({res['affected_region_pct']:.1f}% of leaf, "
-                             f"{res['lesion_count']} regions)", width="stretch")
-            c4.image(res["images"]["gradcam"], caption="CNN Grad-CAM (where the CNN looks)", width="stretch")
+            m = res["measurements"]
+            c3.image(res["images"]["abnormal_regions"],
+                     caption=f"Detected abnormal regions ({m['affected_region_pct']:.1f}% of leaf, "
+                             f"{m['lesion_count']} regions)", width="stretch")
+            c4.image(res["images"]["gradcam"], caption="CNN Grad-CAM (where the disease CNN looks)", width="stretch")
             st.caption("Overlay colours: yellow = chlorosis/yellowing, orange-red = brown necrosis, "
                        "magenta = dark tissue, blue = pale (mildew-like); green line = leaf outline.")
 
+            by = res["disease"]["by"]
             st.markdown(f"#### Image processing vs CNN {badge(res['agreement'])}")
             a, b = st.columns(2)
-            ip = res["ip_prediction"]
-            a.markdown(f"**Image Processing says {ip['svm']}** (SVM)  \n"
-                       f"Rule-based score {ip['rule_score']:.2f} vs threshold {ip['rule_threshold']:.2f} "
-                       f"-> **{ip['rule']}**")
-            a.dataframe(pd.DataFrame({"component (0-1)": ip["rule_components"]}).round(3), width="stretch")
-            b.markdown(f"**CNN says {res['cnn_prediction']}** (confidence {res['cnn_confidence']:.0%})")
-            b.dataframe(pd.DataFrame({"probability": res["cnn_class_probabilities"]}).round(3), width="stretch")
+            a.markdown(f"**Image Processing says {by['svm']['label'].capitalize()}** (SVM, P(diseased) "
+                       f"{by['svm']['prob']:.0%})  \nRule-based score {by['rule']['score']:.2f} vs threshold "
+                       f"{by['rule']['threshold']:.2f} -> **{by['rule']['label'].capitalize()}**")
+            a.dataframe(pd.DataFrame({"component (0-1)": by["rule"]["components"]}).round(3), width="stretch")
+            b.markdown(f"**CNN says {by['cnn']['label'].capitalize()}** (P(diseased | {CROP_NAMES[c['label']]}) "
+                       f"{by['cnn']['prob']:.0%})")
+            b.dataframe(pd.DataFrame({"P(crop)": c["probs"]}).round(3), width="stretch")
             with st.expander("Stage 1 measurements"):
+                st.write({k: (round(v, 3) if isinstance(v, float) else v) for k, v in m.items()})
                 st.write({"abnormal colour % of leaf": {k: round(v, 2) for k, v in res["abnormal_colour_pct"].items()},
-                          "segmentation method": res["segmentation_method"],
-                          "Stage 1 time (ms)": round(res["stage1_ms"], 1)})
-                st.dataframe(pd.Series(res["features"], name="value").round(4), width="stretch")
+                          "timings (ms)": {k: round(v, 1) for k, v in res["timings_ms"].items()}})
 
 with tab_res:
     md = RESULTS / "comparison.md"

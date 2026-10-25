@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import os
 
 import torch
 from torch import nn
@@ -12,6 +13,9 @@ log = logging.getLogger(__name__)
 
 
 def device() -> torch.device:
+    forced = os.environ.get("LEAFDX_DEVICE")  # e.g. "cpu" for latency measurements
+    if forced:
+        return torch.device(forced)
     if torch.cuda.is_available():
         return torch.device("cuda")
     if torch.backends.mps.is_available():

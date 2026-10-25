@@ -165,7 +165,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-B04 | Hierarchical crop + disease models | DONE | P2 log B04 |
 | P2-B05 | Calibration, abstention, OOD | DONE | P2 log B05 |
 | P2-B06 | Stage 1 for field images | DONE | P2 log B06 |
-| P2-B07 | FastAPI service | TODO | |
+| P2-B07 | FastAPI service | DONE | P2 log B07 |
 | P2-B08 | Re-evaluate + robustness report | TODO | |
 | P2-F00 | Web scaffold | DONE | P2 log F00 |
 | P2-F01 | Real content export | TODO | |
@@ -185,6 +185,13 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-V02 | Extend verify_all | TODO | |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-B07 FastAPI service
+- api/main.py (+ api/schemas.py, pydantic, schema_version "1") over src/leafdx/service.py: GET /api/health, GET /api/meta, POST /api/analyze (multipart file, crop=auto|turmeric|blackgram, roi_x/roi_y or roi_box); 10 MB limit, content-type + decode validation, EXIF orientation, CORS for Vite (5173/4173), structured error JSON (400 invalid_image/bad_crop/bad_roi, 413 too_large, 415 unsupported_type, 422 not_a_plant, 500 internal_error); images as data:image/webp;base64 <= 768 px.
+- `pytest tests/test_api.py` -> `6 passed` (health/meta; auto crop; user-selected crop + ROI click -> user_roi_watershed; uncertain path (tau forced above 1); non-image / corrupt / bad crop / oversize / bad roi; not-a-plant).
+- `python scripts/api_latency.py` (12 TEST images, warm): p50 449 ms (MPS for embeddings), CPU-only (LEAFDX_DEVICE=cpu) p50 599 ms; server stages p50: crop+OOD+disease 139 ms, Stage 1 58 ms, IP decision 7 ms, Grad-CAM 191 ms (results/api_latency.json).
+- Streamlit app moved to the hierarchical output (crop status, "It's turmeric / It's black gram" re-run on uncertain, no 4-class table); `pytest tests/test_app.py` -> `1 passed`.
+- IP decisions retrained on the new Stage 1 features first (features re-extracted, 111 s): SVM test macro-F1 0.966 (v1 0.935), rule 0.845 (v1 0.839); SVM now stores Platt scaling fitted on VAL.
 
 #### 2026-10-25 P2-B05 Calibration, abstention, OOD
 - `python scripts/calibrate.py` -> results/calibration.json + models/calibration.json: T_crop 0.442, T_disease 0.682 (both < 1: TTA averaging made raw probabilities under-confident); OOD = DINOv2 kNN (k=10) cosine distance, threshold 0.346 (99th pct of clean VAL); tau_crop 0.500 (accepted precision on wild_val is already 1.000 at every tau, so abstention comes from the OOD gate).
@@ -248,4 +255,4 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 ## NEXT (Phase 2)
 
-P2-B07: run tests/test_api.py against the FastAPI app, record p50 latency; then P2-B08 (re-extract features, retrain IP with Platt, evaluate_robust, robustness report).
+P2-B08: scripts/evaluate_robust.py -> robustness.json/md (before vs after), v2 cnn_predictions/cnn_metrics, remove xfail, re-run comparison + report, make test.
