@@ -4,10 +4,8 @@ from __future__ import annotations
 
 import json
 import sys
-from pathlib import Path
 
 import cv2
-import numpy as np
 
 from leafdx.config import ROOT, load_config, path
 from leafdx.pipeline import analyze

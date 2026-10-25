@@ -159,7 +159,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | ID | Task | Status | Evidence |
 |----|------|--------|----------|
 | P2-B00 | Reproduce the bug | DONE | P2 log B00 |
-| P2-B01 | Wild / OOD evaluation set | TODO | |
+| P2-B01 | Wild / OOD evaluation set | DONE | P2 log B01 |
 | P2-B02 | Diagnose | TODO | |
 | P2-B03 | Background-swap + robust augmentation | TODO | |
 | P2-B04 | Hierarchical crop + disease models | TODO | |
@@ -186,6 +186,11 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 ### Phase 2 evidence log (newest first)
 
+#### 2026-10-25 P2-B01 Wild / OOD evaluation set
+- `python scripts/build_wild_set.py` -> kept 165 (turmeric 89, black gram 76): Mendeley jtttfbx342 turmeric (Bangladesh, CC BY 4.0) 55 originals, Mendeley z55yrbmn2d black gram (Bangladesh, CC BY 4.0) 70 originals, iNaturalist 44 (CC0/CC-BY/CC-BY-SA), Wikimedia Commons 25; 29 excluded after visual vetting (flowers/rhizomes/no leaf visible); `near-duplicates of training images dropped: 0`; 0 clusters span wild_val/wild_test; SOURCES.csv has url, author, licence for every file.
+- Split (val/test): bg diseased 20/20, bg healthy 15/15, bg unknown 3/3, tu diseased 15/15, tu healthy 13/12, tu unknown 17/17.
+- Viewed contact sheets: the two Mendeley sets are single leaves on WHITE (black gram cut out on white, turmeric on white paper) -> a direct test of a "white background = turmeric" shortcut. Field scenes are the iNaturalist/Commons images (turmeric 34, black gram 6, disease unlabelled).
+
 #### 2026-10-25 P2-B00 Reproduce the bug
 - User image found in ~/Downloads ("images (1).jpeg", in-field turmeric with brown speckles), copied to data/wild/user_reported/turmeric_google_01.jpg and tests/fixtures/regressions/ (gitignored: Google image, test-only).
 - `python scripts/bug_repro.py before` -> 4-class probs turmeric_healthy 0.030, turmeric_diseased 0.241, blackgram_healthy 0.021, blackgram_diseased 0.709; CNN Diseased (0.949); affected 5.7%, 1 lesion; rule 0.153 vs 0.110 -> Diseased; SVM Diseased. Saved results/bug_repro_before.json + figures/bug_repro_before.png (viewed: segmented leaf is a small central blob; one lesion outlined while dozens of specks are visible; Grad-CAM on the speckled blade).
@@ -195,6 +200,8 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 - Appendix B (hero prompt) is empty -> Section 8 fallback hero.
 
+- Wild set sources: iNaturalist has only 4 CC-licensed Vigna mungo observations, so two independent CC BY 4.0 Mendeley datasets (Bangladesh) supply labelled cross-dataset images; iNaturalist + Commons supply field scenes labelled "unknown". Images fetched from a remote zip by HTTP range (data.HttpRangeFile) to avoid a 1.4 GB download. Downloaded images are gitignored; `scripts/build_wild_set.py` rebuilds them.
+
 ## NEXT (Phase 2)
 
-P2-B01: build data/wild from openly licensed (CC0/CC-BY/CC-BY-SA) field photos via iNaturalist + Wikimedia Commons APIs, dedupe against training data, 50/50 grouped split.
+P2-B02: scripts/diagnose.py -> results/diagnosis.md (crop confusion clean/wild, background-only and leaf-only probes, crop Grad-CAM, capture statistics, reliability + ECE).

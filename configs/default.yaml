@@ -171,3 +171,65 @@ cnn:
 pipeline:
   min_side: 64             # smaller images are rejected
   min_plant_fraction: 0.05 # share of leaf-coloured pixels below which the input is "not a leaf"
+
+wild:                      # out-of-distribution evaluation set (never used for training)
+  root: data/wild
+  max_side: 1600           # downloaded images are stored downscaled to this
+  sample_seed: 42
+  mendeley:
+    - crop: turmeric
+      id: jtttfbx342       # Bangladesh smartphone field photos, CC BY 4.0
+      version: 2
+      citation: "Image Dataset for Turmeric Plant Leaf Disease Detection, Mendeley Data, doi:10.17632/jtttfbx342.2"
+      licence: CC BY 4.0
+      classes: {healthy: [healthy, 25], blotch: [diseased, 15], leaf_spot: [diseased, 15]}   # originals only (no aug_*)
+    - crop: blackgram
+      id: z55yrbmn2d       # Bangladesh black gram field photos, CC BY 4.0
+      version: 3
+      citation: "Image Dataset for Disease Detection in Black Gram (Vigna mungo) Leaves, Mendeley Data, doi:10.17632/z55yrbmn2d.3"
+      licence: CC BY 4.0
+      classes: {healthy: [healthy, 30], cercospora leaf spot: [diseased, 15], leaf crinkle: [diseased, 10], yellow mosaic: [diseased, 15]}
+  inaturalist:             # field scenes; labels "unknown" (disease not verifiable from the record)
+    licences: [cc0, cc-by, cc-by-sa]
+    taxa: {turmeric: Curcuma longa, blackgram: Vigna mungo}
+    max_per_crop: 40
+  commons:                 # Wikimedia Commons search, openly licensed only (no NC/ND), label "unknown"
+    turmeric:
+      queries: ["Curcuma longa leaves", "turmeric plant", "turmeric field", "turmeric farm"]
+      include: "(?i)(leaves|leaf|plant|field|farm)"
+      exclude: "(?i)(inflorescence|flower|powder|rhizome|root|onion|patoli|dal|cuisine)"
+    blackgram:
+      queries: ["black gram plant", "Vigna mungo plant", "urad dal plant", "black gram field"]
+      include: "(?i)(plant|field|leaf|leaves)"
+      exclude: "(?i)(gruel|bag|dosa|seed|caterp|instar|radiata|sweet|cicer|dal phaseolus)"
+    max_per_crop: 20
+  exclude:                 # visual vetting before any evaluation: not a leaf photo
+    - {path: data/wild/turmeric/unknown/commons_Curcuma_sp_Nativeplants_Botanical_Garden_87289_.jpg, reason: "flower is the subject (Curcuma sp.)"}
+    - {path: data/wild/turmeric/unknown/commons_Curcuma_sp_Nativeplants_Botanical_Garden.jpg, reason: "flower is the subject (Curcuma sp.)"}
+    - {path: data/wild/blackgram/unknown/commons_Black_gram_field_Maravanthe.jpg, reason: "distant field, no leaf discernible"}
+    - {path: data/wild/blackgram/unknown/commons_Urad_dal_plant.jpg, reason: "dry field, no leaf discernible"}
+    - {path: data/wild/turmeric/unknown/inat_2712346_3056556.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_9831881_13463052.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_14454467_21515279.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_15006457_22387891.jpg, reason: "rhizome slices, not a leaf"}
+    - {path: data/wild/turmeric/unknown/inat_15880100_23747562.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_20179893_31142499.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_25983655_40306598.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_29688806_46346864.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_30744251_48049191.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_40747879_64592926.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_41153877_65261594.jpg, reason: "rhizomes, not a leaf"}
+    - {path: data/wild/turmeric/unknown/inat_42412144_67339679.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_42897202_68112075.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_62768139_100627331.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_67672364_109394966.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_68327092_110607418.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_89603908_147988762.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_91383597_151147388.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_92895470_153883908.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_95720864_158942877.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_100768608_168216099.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_102923357_172151897.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_105434151_176902664.jpg, reason: "flower is the subject"}
+    - {path: data/wild/turmeric/unknown/inat_105789377_177580054.jpg, reason: "flower is the subject"}
+    - {path: data/wild/blackgram/unknown/inat_60946013_97482460.jpg, reason: "flower is the subject"}

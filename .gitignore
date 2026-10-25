@@ -20,3 +20,5 @@ web/node_modules/
 web/dist/
 web/test-results/
 web/playwright-report/
+data/wild/turmeric/
+data/wild/blackgram/

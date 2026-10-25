@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import re
 import shutil
 import zipfile
@@ -131,3 +132,55 @@ def build_inventory(raw_root: Path, crops: list[str], labels: list[str], rel_to:
                     }
                 )
     return pd.DataFrame(rows, columns=["crop", "label", "orig_class", "path", "width", "height", "readable"])
+
+
+class HttpRangeFile(io.RawIOBase):
+    """Seekable read-only file over HTTP range requests, so zipfile can extract single
+    members from a large remote archive without downloading all of it."""
+
+    def __init__(self, url: str, block: int = 1 << 20):
+        r = requests.head(url, allow_redirects=True, timeout=60)
+        self.url = r.url
+        self.size = int(r.headers["Content-Length"])
+        self.pos, self.block, self._cache = 0, block, {}
+
+    def seekable(self) -> bool:
+        return True
+
+    def readable(self) -> bool:
+        return True
+
+    def tell(self) -> int:
+        return self.pos
+
+    def seek(self, offset: int, whence: int = 0) -> int:
+        self.pos = {0: offset, 1: self.pos + offset, 2: self.size + offset}[whence]
+        return self.pos
+
+    def _get_block(self, i: int) -> bytes:
+        if i not in self._cache:
+            lo, hi = i * self.block, min((i + 1) * self.block, self.size) - 1
+            r = requests.get(self.url, headers={"Range": f"bytes={lo}-{hi}"}, timeout=120)
+            r.raise_for_status()
+            if len(self._cache) > 64:
+                self._cache.clear()
+            self._cache[i] = r.content
+        return self._cache[i]
+
+    def read(self, n: int = -1) -> bytes:
+        if n < 0:
+            n = self.size - self.pos
+        n = max(0, min(n, self.size - self.pos))
+        out = bytearray()
+        while n > 0:
+            i, off = divmod(self.pos, self.block)
+            chunk = self._get_block(i)[off:off + n]
+            out += chunk
+            self.pos += len(chunk)
+            n -= len(chunk)
+        return bytes(out)
+
+    def readinto(self, b) -> int:
+        data = self.read(len(b))
+        b[: len(data)] = data
+        return len(data)

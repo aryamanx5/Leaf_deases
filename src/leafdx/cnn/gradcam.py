@@ -14,8 +14,10 @@ from leafdx.config import ROOT, path
 from leafdx.viz import contact_sheet
 
 
-def gradcam(model: torch.nn.Module, x: torch.Tensor, class_idx: int | None = None) -> tuple[np.ndarray, np.ndarray]:
-    """Return (heatmap in [0,1] at input resolution, softmax probabilities) for one image."""
+def gradcam(model: torch.nn.Module, x: torch.Tensor, class_idx: int | None = None,
+            target=None) -> tuple[np.ndarray, np.ndarray]:
+    """Return (heatmap in [0,1] at input resolution, softmax probabilities) for one image.
+    `target(logits) -> scalar` overrides the class score (e.g. a crop's summed logits)."""
     model.eval()
     acts, grads = {}, {}
     layer = gradcam_layer(model)
@@ -27,7 +29,7 @@ def gradcam(model: torch.nn.Module, x: torch.Tensor, class_idx: int | None = Non
         probs = torch.softmax(logits, 1)[0].detach().numpy()
         idx = int(probs.argmax()) if class_idx is None else class_idx
         model.zero_grad()
-        logits[0, idx].backward()
+        (target(logits[0]) if target is not None else logits[0, idx]).backward()
         w = grads["g"].mean(dim=(2, 3), keepdim=True)
         cam = torch.relu((w * acts["a"]).sum(1))[0].detach().numpy()
     finally:
