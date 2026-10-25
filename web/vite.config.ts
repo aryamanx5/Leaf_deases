@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  // GitHub Pages serves a project site from /<repo>/; the workflow sets VITE_BASE (default: served from the root).
+  base: process.env.VITE_BASE || '/',
   plugins: [react()],
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   server: {

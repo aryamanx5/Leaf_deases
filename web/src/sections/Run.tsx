@@ -2,6 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DEPLOYED_APP_URL } from '@/content/brand';
+import { asset } from '@/lib/asset';
 import { pctRaw } from '@/lib/format';
 import { useReducedMotion } from '@/lib/motion';
 import type { Heal, Site } from '@/lib/site';
@@ -28,7 +29,7 @@ function pickFile(files: string[], wantW: number) {
   const webp = files.filter((f) => f.endsWith('.webp'));
   const ws = webp.map((f) => Number(f.match(/-(\d+)\.webp$/)?.[1] ?? 0));
   const i = ws.findIndex((w) => w >= wantW);
-  return `/media/heal/${webp[i >= 0 ? i : webp.length - 1]}`;
+  return asset(`/media/heal/${webp[i >= 0 ? i : webp.length - 1]}`);
 }
 
 /** Lesion pixel sample (mask space, 0..1 coords) for the live meter. */
@@ -92,7 +93,7 @@ export default function Run({ site }: { site: Site }) {
         const [dis, hea, lesion] = await Promise.all([
           loadImg(pickFile(heal.files.diseased, want)),
           loadImg(pickFile(heal.files.healed, want)),
-          lesionSample(`/media/heal/lesion_mask_${variant}.png`),
+          lesionSample(asset(`/media/heal/lesion_mask_${variant}.png`)),
         ]);
         if (alive) setAssets({ dis, hea, lesion });
       },

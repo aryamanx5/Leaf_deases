@@ -1,20 +1,21 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Picture from '@/components/Picture';
 import { BRAND_NAME } from '@/content/brand';
+import { asset } from '@/lib/asset';
 import type { Sources } from '@/lib/site';
 import { ScrollTrigger } from '@/lib/smooth';
 import { useReducedMotion } from '@/lib/motion';
 
 /** The grower in the greenhouse: a real photo (poster, LCP, reduced-motion) and a 10 s loop of the same scene. */
 const POSTER: Sources = {
-  webp: { 960: '/media/hero/farmer-960.webp', 1356: '/media/hero/farmer-1356.webp' },
-  avif: { 960: '/media/hero/farmer-960.avif', 1356: '/media/hero/farmer-1356.avif' },
+  webp: { 960: asset('/media/hero/farmer-960.webp'), 1356: asset('/media/hero/farmer-1356.webp') },
+  avif: { 960: asset('/media/hero/farmer-960.avif'), 1356: asset('/media/hero/farmer-1356.avif') },
   w: 1356,
   h: 1528,
 };
 // re-encoded from farmer.mp4 with a keyframe every 6 frames, so seeking for the scroll-scrub stays smooth;
 // 1530 is a 1.5x Lanczos + unsharp-mask upscale for large / high-density frames
-const VIDEO = { sharp: '/media/hero/farmer-1530.mp4', full: '/media/hero/farmer-1020.mp4', light: '/media/hero/farmer-480.mp4' };
+const VIDEO = { sharp: asset('/media/hero/farmer-1530.mp4'), full: asset('/media/hero/farmer-1020.mp4'), light: asset('/media/hero/farmer-480.mp4') };
 const AR = 1020 / 1150; // width / height of the media
 const SIDE_AR = 0.96; // the side-layout frame is a little wider than the media: a bigger frame, cover-cropped
 // only by a few percent of foreground and glass (object-position keeps face, hands and leaves in)
@@ -217,7 +218,7 @@ export default function Hero() {
       <div ref={stageRef} className="sticky top-0 h-[100dvh] w-full overflow-hidden bg-ink">
         {/* ambient: the same photo, tiny, pre-blurred and darkened, so the stage still reads full-bleed */}
         <div className="absolute inset-0" style={{ filter: exitFilter }} aria-hidden="true">
-          <img src="/media/hero/farmer-ambient.webp" alt="" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-80" />
+          <img src={asset('/media/hero/farmer-ambient.webp')} alt="" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-80" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_58%_45%,rgba(10,14,11,0.45)_0%,rgba(10,14,11,0.82)_70%)]" />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,14,11,0.7)_0%,rgba(10,14,11,0)_14%,rgba(10,14,11,0)_72%,rgba(10,14,11,0.9)_100%)]" />

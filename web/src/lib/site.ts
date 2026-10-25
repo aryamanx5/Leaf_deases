@@ -1,5 +1,6 @@
 /** Typed access to /data/site.json (exported by scripts/export_site_data.py). */
 import { useEffect, useState } from 'react';
+import { asset, withBase } from '@/lib/asset';
 
 export type Sources = { webp: Record<string, string>; avif: Record<string, string>; w: number; h: number };
 export type Method = 'rule_based' | 'svm' | 'cnn';
@@ -118,9 +119,9 @@ export type Site = {
 
 let cache: Promise<Site> | null = null;
 export function loadSite(): Promise<Site> {
-  cache ??= fetch('/data/site.json').then((r) => {
+  cache ??= fetch(asset('/data/site.json')).then((r) => {
     if (!r.ok) throw new Error(`site.json ${r.status}`);
-    return r.json() as Promise<Site>;
+    return r.json().then((j) => withBase(j as Site));
   });
   return cache;
 }

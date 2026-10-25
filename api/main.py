@@ -13,6 +13,7 @@ from __future__ import annotations
 import base64
 import io
 import json
+import os
 import time
 from typing import Annotated
 
@@ -33,9 +34,11 @@ MAX_SIDE = 768
 OK_TYPES = {"image/jpeg", "image/png", "image/webp", "image/bmp", "image/tiff", "application/octet-stream"}
 
 app = FastAPI(title="leafdx API", version="2.0")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5180", "http://127.0.0.1:5180",
-                                                  "http://localhost:4180", "http://127.0.0.1:4180"],
-                   allow_methods=["GET", "POST"], allow_headers=["*"])
+# Extra browser origins (e.g. the GitHub Pages site) come from CORS_ORIGINS, comma separated; origins have no path.
+CORS_ORIGINS = ["http://localhost:5180", "http://127.0.0.1:5180", "http://localhost:4180", "http://127.0.0.1:4180",
+                "https://aryamanx5.github.io",
+                *[o.strip().rstrip("/") for o in os.environ.get("CORS_ORIGINS", "").split(",") if o.strip()]]
+app.add_middleware(CORSMiddleware, allow_origins=CORS_ORIGINS, allow_methods=["GET", "POST"], allow_headers=["*"])
 _LAT: list[float] = []
 
 
