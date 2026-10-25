@@ -109,11 +109,19 @@ make site-data     # regenerate web/public/data/site.json + web/public/media fro
   `VITE_DEPLOYED_APP_URL` (the "go to the deployed app" button, hidden when empty), `VITE_GITHUB_URL`.
 * Lighthouse (desktop) and axe results are recorded in `results/web_quality.json` and `PROGRESS.md`.
 
-**From a fresh clone:** `make setup`, `make data`, `make all`, `make wild`, `make robust`, `make site-data`,
-`make dev`. Model weights (`models/*.pt`) are not committed, so `/analyze` needs `make all` and `make robust` to
-have run. Tested on a fresh clone: `make setup` (clean venv) and `make web-build` (clean `npm ci`) succeed, and the
-API loads its models. The full download-and-train chain was run in the development checkout, not repeated
-in the fresh clone.
+**Quick start from a fresh clone** (the trained models in `models/` and the 28 sample photos are committed, so
+no data download or training is needed to try the site): `make setup` then `make dev`, and open
+http://localhost:5180. Needs Python 3.11, Node and `make` (macOS/Linux; on Windows use WSL). The first analysis
+downloads the DINOv2 and OpenCLIP backbones (about 700 MB, needs internet) and takes a few seconds longer.
+
+**Rebuilding everything** (re-download the datasets and retrain): `make setup`, `make data`, `make all`,
+`make wild`, `make robust`, `make site-data`, `make dev`. Tested on a fresh clone: `make setup` (clean venv) and
+`make web-build` (clean `npm ci`) succeed, and the API loads its models. The full download-and-train chain was
+run in the development checkout, not repeated in the fresh clone.
+
+**Online:** the landing page is on GitHub Pages and its "Run the model" buttons open the older Streamlit demo
+(`app/streamlit_app.py`, same models, simpler interface), because the React `/analyze` page needs the FastAPI
+backend (about 2 GB RAM) and no free host was available. `Dockerfile` builds that backend for any Docker host.
 
 ## Repository map
 
