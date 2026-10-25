@@ -15,6 +15,13 @@ Both then:
     4. morphology    - opening + closing to clean the mask
     5. component     - keep the dominant component (size x centrality), fill holes
                        (lesions inside the leaf belong to the leaf)
+* single leaf in foliage (P2-B06), used when the steps above collapse (the leaf runs off
+  the frame among other leaves, so the "border = background" prior is wrong) or when the
+  user clicks / boxes the leaf: marker-controlled watershed on the Lab colour gradient.
+  Leaf marker = a core disc at the click point (default: image centre); background
+  markers = non-foliage pixels (Excess-Green + Otsu, a*, saturation gate) and pixels far
+  in colour from the core. The leaf grows until it meets strong edges.
+The foliage mask (all plant tissue) is always returned for display.
 """
 
 from __future__ import annotations
@@ -22,6 +29,7 @@ from __future__ import annotations
 import cv2
 import numpy as np
 from scipy import ndimage as ndi
+from skimage.segmentation import watershed
 
 
 def otsu_threshold(values: np.ndarray) -> float:
@@ -150,19 +158,84 @@ def _finish(raw: np.ndarray, open_k: int, s: dict, centre_weight: float) -> tupl
     return cleaned, dominant_component(cleaned, centre_weight)
 
 
-def segment_leaf(pre: dict[str, np.ndarray], cfg: dict) -> dict:
-    """Leaf mask plus intermediates. `pre` is the output of preprocess()."""
+def border_texture(pre: dict, ring: np.ndarray, bg_ring: np.ndarray) -> dict:
+    """Median L* gradient on the border ring and on its background-candidate pixels."""
+    L = cv2.GaussianBlur(pre["lab"][..., 0].astype(np.float32), (0, 0), 1.0)
+    g = np.hypot(cv2.Sobel(L, cv2.CV_32F, 1, 0), cv2.Sobel(L, cv2.CV_32F, 0, 1))
+    return {"ring": float(np.median(g[ring])), "bg": float(np.median(g[bg_ring])) if bg_ring.any() else float("inf")}
+
+
+def foliage_mask(pre: dict, s: dict) -> np.ndarray:
+    """All plant tissue: Excess-Green (2g-r-b on chromatic coordinates) with Otsu, OR a
+    green a* with enough saturation; cleaned with morphology."""
+    b, g, r = (pre["filtered"][..., i].astype(np.float32) for i in range(3))
+    tot = b + g + r + 1e-6
+    exg = np.clip(((2 * g - r - b) / tot + 1) * 127.5, 0, 255).astype(np.uint8)
+    green_a = (pre["lab"][..., 1].astype(np.int16) < 128 - s["foliage_a_margin"]) & (pre["hsv"][..., 1] > s["foliage_sat_min"])
+    m = (exg > otsu_threshold(exg)) | green_a
+    return clean_mask(m.astype(np.uint8), s["open_ksize"], s["close_ksize"])
+
+
+def watershed_leaf(pre: dict, s: dict, seed_xy: tuple[float, float] | None = None,
+                   box: tuple[float, float, float, float] | None = None, foliage: np.ndarray | None = None) -> np.ndarray:
+    """Single leaf among foliage by marker-controlled watershed (see module docstring).
+    seed_xy / box are fractions of width/height (a user click or box)."""
+    img = pre["filtered"]
+    h, w = img.shape[:2]
+    lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB).astype(np.float32)
+    sm = cv2.GaussianBlur(lab, (0, 0), max(1.5, s["ws_sigma_frac"] * max(h, w)))
+    grad = np.sqrt(sum(cv2.Sobel(sm[..., c], cv2.CV_32F, 1, 0) ** 2 + cv2.Sobel(sm[..., c], cv2.CV_32F, 0, 1) ** 2
+                       for c in range(3)))
+    if box is not None:
+        bx, by, bw, bh = box
+        seed_xy = (bx + bw / 2, by + bh / 2)
+    cx, cy = seed_xy if seed_xy is not None else (0.5, 0.5)
+    yy, xx = np.ogrid[:h, :w]
+    r = s["ws_core_frac"] * min(h, w)
+    core = ((yy - cy * h) ** 2 + (xx - cx * w) ** 2) <= r * r
+    ref = np.median(sm[core], axis=0)
+    dist = np.sqrt(((sm - ref) ** 2).sum(-1))
+    far = dist > s["ws_far_factor"] * max(otsu_threshold(dist), s["ws_dist_min"])
+    fol = foliage_mask(pre, s) if foliage is None else foliage
+    markers = np.zeros((h, w), np.int32)
+    markers[far | (fol == 0)] = 2
+    if box is not None:
+        outside = np.ones((h, w), bool)
+        outside[int(by * h):int((by + bh) * h), int(bx * w):int((bx + bw) * w)] = False
+        markers[outside] = 2
+    markers[core] = 1
+    m = (watershed(grad, markers) == 1).astype(np.uint8)
+    return dominant_component(clean_mask(m, s["open_ksize"], s["close_ksize"]), 1.0)
+
+
+def segment_leaf(pre: dict[str, np.ndarray], cfg: dict, roi: dict | None = None) -> dict:
+    """Leaf mask plus intermediates. `pre` is the output of preprocess().
+    roi: optional {"x", "y"} click or {"box": (x, y, w, h)} in fractions of the image."""
     s = cfg["segment"]
+    foliage = foliage_mask(pre, s)
+    if roi:
+        leaf = watershed_leaf(pre, s, seed_xy=(roi["x"], roi["y"]) if "x" in roi else None,
+                              box=roi.get("box"), foliage=foliage)
+        out = _result(pre, leaf, leaf, leaf, "user_roi_watershed", float("nan"), float("nan"))
+        out["colour_mask"] = clean_mask(plant_colour_mask(pre["hsv"], s), s["open_ksize"], 0)
+        out["foliage_mask"] = foliage
+        return out
     colour = clean_mask(plant_colour_mask(pre["hsv"], s), s["open_ksize"], 0)
     ring = border_ring(colour.shape, s["ring_frac"])
     # background candidates: non-plant colour AND reasonably bright (paper, card, cloth);
     # dark non-plant pixels at the border are usually necrotic leaf, not background
     bg_ring = ring & (colour == 0) & (pre["hsv"][..., 2] >= s["bg_val_min"])
     plain_frac = float(bg_ring.sum() / ring.sum())
+    # P2-B06: a plain background is also SMOOTH (paper, card, cloth); bright soil, rock and
+    # foliage are textured. A very uniform border counts as plain whatever its colour.
+    tex = border_texture(pre, ring, bg_ring)
+    smooth_bg = plain_frac >= s["plain_bg_min_frac"] and tex["bg"] <= s["plain_tex_max"]
+    uniform_ring = tex["ring"] <= s["uniform_ring_tex_max"]
 
-    if plain_frac >= s["plain_bg_min_frac"]:
+    if smooth_bg or uniform_ring:
         method = "plain_bg_threshold"
-        dist = background_distance(pre["lab"], pre["lab"][bg_ring], s, cfg["seed"])
+        bg_px = pre["lab"][bg_ring] if smooth_bg else pre["lab"][ring]
+        dist = background_distance(pre["lab"], bg_px, s, cfg["seed"])
         raw, thr = threshold_distance(dist, s)
         centre_weight = s["plain_centre_weight"]
         cleaned, leaf = _finish(raw, s["plain_open_ksize"], s, centre_weight)
@@ -181,19 +254,33 @@ def segment_leaf(pre: dict[str, np.ndarray], cfg: dict) -> dict:
                 best = (score, r, c, lf, "field_grabcut" + ("_core" if core_seeding else ""))
         _, raw, cleaned, leaf, method = best
 
-    # GrabCut occasionally collapses onto the definite-foreground core. Fall back to
-    # the cleaned colour mask in that case.
-    if leaf.mean() < s["fallback_min_coverage"]:
+    # GrabCut occasionally collapses onto the definite-foreground core, typically when the
+    # leaf runs off the frame among other leaves. Try the foliage watershed, then the
+    # cleaned colour mask.
+    field = method.startswith("field")
+    if field and leaf.mean() < s["fallback_min_coverage"]:
+        alt = watershed_leaf(pre, s, foliage=foliage)
+        if leaf.mean() < alt.mean() <= s["fallback_max_coverage"]:
+            leaf, method = alt, method + "+foliage_watershed"
+    # (a plain backdrop chosen only for its uniformity may itself be plant-coloured, so the
+    # colour fallback is not used there; a small plant on a wall is a small mask, not a collapse)
+    if (field or smooth_bg) and leaf.mean() < s["fallback_min_coverage"]:
         alt = dominant_component(clean_mask(colour, s["open_ksize"], s["close_ksize"]), centre_weight)
         if leaf.mean() < alt.mean() <= s["fallback_max_coverage"]:
             leaf, method = alt, method + "+colour_fallback"
+    out = _result(pre, leaf, raw, cleaned, method, plain_frac, thr)
+    out["colour_mask"] = colour
+    out["foliage_mask"] = foliage
+    return out
+
+
+def _result(pre, leaf, raw, cleaned, method, plain_frac, thr) -> dict:
     leaf_rgb = pre["filtered"].copy()
     leaf_rgb[leaf == 0] = 0
     n_comp = cv2.connectedComponents(cleaned)[0] - 1
     fg = int(cleaned.sum())
     dominant_share = float(min(1.0, (leaf & cleaned).sum() / fg)) if fg else 0.0
     return {
-        "colour_mask": colour,
         "raw_mask": raw,
         "leaf_mask": leaf,
         "segmented": leaf_rgb,

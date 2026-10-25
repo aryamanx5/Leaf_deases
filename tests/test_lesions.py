@@ -54,3 +54,22 @@ def test_min_area_filter_and_shape_stats():
     keep, les = connected_lesions(m, min_area=25)
     assert len(les) == 1 and les[0]["area"] == 400
     assert 0.6 < les[0]["circularity"] < 0.9   # square ~0.785
+
+
+def test_sixty_small_speckles_area_recall_and_count():
+    """P2-B06: 60 small brown speckles on a leaf (SYNTHETIC)."""
+    import numpy as np
+
+    rng = np.random.default_rng(5)
+    pts = []
+    while len(pts) < 60:
+        c = rng.uniform(0.2, 0.8, 2)
+        if all(np.hypot(*(c - q)) > 0.07 for q in pts):
+            pts.append(c)
+    lesions = [{"centre": tuple(c), "radius": float(rng.uniform(2.5, 4.0)), "colour": "brown"} for c in pts]
+    img, leaf, truth = make_leaf("paper", size=400, lesions=lesions, seed=9)
+    _, res = _run(img)
+    recall = (res["lesion_mask"].astype(bool) & truth.astype(bool)).sum() / truth.sum()
+    n_true = int(__import__("cv2").connectedComponents(truth)[0] - 1)
+    assert recall >= 0.85, recall
+    assert abs(res["lesion_count"] - n_true) <= 0.2 * n_true, (res["lesion_count"], n_true)

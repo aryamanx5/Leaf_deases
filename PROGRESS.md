@@ -164,7 +164,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-B03 | Background-swap + robust augmentation | DONE | P2 log B03 |
 | P2-B04 | Hierarchical crop + disease models | TODO | |
 | P2-B05 | Calibration, abstention, OOD | TODO | |
-| P2-B06 | Stage 1 for field images | TODO | |
+| P2-B06 | Stage 1 for field images | DONE | P2 log B06 |
 | P2-B07 | FastAPI service | TODO | |
 | P2-B08 | Re-evaluate + robustness report | TODO | |
 | P2-F00 | Web scaffold | TODO | |
@@ -185,6 +185,14 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-V02 | Extend verify_all | TODO | |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-B06 Stage 1 for field images
+- Segmentation: foliage mask (Excess-Green + Otsu OR green a* with saturation gate) always returned; plain mode now requires a SMOOTH background (median L* gradient of background ring <= 13; measured: training plain backgrounds median 2.6-3.8, p90 11.4; wild field scenes p10 12.6+) or a very uniform border (<= 5, studio wall); GrabCut collapse in field mode now falls back to a marker-controlled watershed (leaf marker = core disc at the centre or the user's click/box, background markers = non-foliage + colour-far pixels); user ROI (click or box) segments by watershed directly.
+- Lesions: black/white top-hat specks at 1x + 0.5x on a lightly smoothed image (the 5x5 median of pre-processing erased few-pixel specks), adaptive min area max(8 px, 0.0002 x leaf), opening 2 / closing 3.
+- `pytest tests/test_lesions.py -k sixty` -> 60 painted speckles (54 distinct after overlap): area recall 0.859, count 52 vs 54; v1 segmentation/lesion/feature tests pass (`26 passed`).
+- `python scripts/field_seg_figure.py` -> results/figures/field_segmentation.png (20 wild field scenes: original | foliage | chosen leaf | lesions), viewed in two halves: main leaf/plant chosen in 16/20. Misses: #0 soil enclosed between leaves kept, #7 house wall + sky make a smooth "plain" border (whole frame), #9 colour fallback covers the frame, #12 watershed region mixes leaves and background.
+- Bug image Stage 1: before 1 lesion / 5.7% on a central blob; after `field_grabcut+foliage_watershed`, coverage 0.596 (main leaf + part of a neighbour), 36 lesions, 8.7% affected.
+- Side effect on training data (ip_figures --stage lesions, 60/stratum): mean affected healthy bg 2.46 -> 3.93, healthy tu 1.30 -> 2.72, diseased bg 16.42 -> 19.15, tu 62.84 -> 64.30; mean lesion count on healthy black gram 2.97 -> 11.73 (speck detector also fires on leaf texture). Decision features are re-learned in P2-B08.
 
 #### 2026-10-25 P2-B03 Background-swap + robust augmentation
 - `python scripts/augment_preview.py` -> `banks: 1125 leaf cut-outs (turmeric 420, black gram 705), 1125 backgrounds` (TRAIN only, cached npz keyed on config + paths); results/figures/augment_samples.png viewed: turmeric leaves on soil / procedural foliage / inpainted black gram field backgrounds, black gram leaves on white paper and grey, same-crop collages, blur/JPEG/jitter visible.
@@ -213,6 +221,8 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 - Diagnosis probe added beyond the spec: "background with leaf bounding box hidden", because the spec's mean-colour fill keeps the leaf silhouette (shape leaks crop). Verdict for (a) uses the stricter probe.
 
+- P2-B06: a superpixel (SLIC + RAG boundary merge) approach was tried first and rejected after viewing: it fragmented field scenes and was worse than v1 GrabCut on soil backgrounds. The final change is targeted: v1 behaviour is kept unless the background is textured (mode switch) or GrabCut collapses (watershed fallback).
+
 ## NEXT (Phase 2)
 
-P2-B04: crop model selection (DINOv2 ViT-S/14, OpenCLIP ViT-B/32, EfficientNet-B0) on wild_val + crop-conditioned disease CNN, TTA + tiles, results/crop_model_selection.csv, models/MODEL_CARD.md.
+Finish P2-B04 (training running), then P2-B05 calibration/abstention/OOD.

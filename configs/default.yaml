@@ -91,6 +91,16 @@ segment:
   close_ksize: 9
   fallback_min_coverage: 0.08   # below this GrabCut is assumed to have collapsed
   fallback_max_coverage: 0.95   # a colour fallback covering the whole frame is not a leaf
+  # P2-B06 single leaf among foliage (marker-controlled watershed)
+  foliage_a_margin: 4           # a* below 128 - this is "green"
+  foliage_sat_min: 40
+  ws_sigma_frac: 0.008          # gradient smoothing relative to the image size
+  ws_core_frac: 0.06            # leaf marker radius (fraction of the short side)
+  ws_far_factor: 1.3            # background marker: colour distance > factor x max(Otsu, min)
+  ws_dist_min: 18
+  plain_tex_max: 13             # plain mode needs a smooth background (median L* gradient); measured:
+                                # training plain backgrounds median 2.6-3.8 (p90 11.4), wild field 12.6+ (p10)
+  uniform_ring_tex_max: 5       # a border this uniform is a plain backdrop even if plant-coloured (studio wall)
   solidity_margin: 0.03         # core-seeded GrabCut must beat loose seeding by this much
   quality: {min_dominant_share: 0.8, min_coverage: 0.05, max_coverage: 0.95}
 lesions:
@@ -119,10 +129,14 @@ lesions:
     hyst_l_weight: 0.5       # hysteresis: relaxed mask = Lab distance from reference green ...
     hyst_dist_min: 38        # ... above max(Otsu, this floor), kept only where touching a seed (train grid: AUC flat 22-999, 38 limits healthy inflation)
     edge_margin: 3           # px of leaf outline ignored
-    open_ksize: 3
-    close_ksize: 5
-    min_lesion_px: 25
-    min_lesion_frac: 0.0005
+    open_ksize: 2            # P2-B06: smaller opening keeps small specks (v1: 3)
+    close_ksize: 3           # (v1: 5) less merging of neighbouring specks
+    min_lesion_px: 8         # adaptive min area = max(8 px, 0.0002 x leaf area) (v1: 25 px, 0.0005)
+    min_lesion_frac: 0.0002
+    speck_ksize: 9           # top-hat structuring element (px at 1x; covers 2x at 0.5x)
+    speck_scales: [1.0, 0.5]
+    speck_dark_delta: 18     # black top-hat depth in L* levels for a dark speck
+    speck_bright_delta: 22   # white top-hat height for a bright (pale) speck
   per_crop:
     turmeric:
       green_hue_min: 32
@@ -253,3 +267,28 @@ augment:                   # P2-B03 background-swap + robust augmentation (TRAIN
   p_jpeg: 0.5
   jpeg_q: [40, 95]
   p_erase: 0.25
+
+robust:                    # P2-B04 hierarchical crop + disease models
+  train_views_per_image: 8 # background-swap views per TRAIN image for frozen-backbone heads
+  crop_candidates: [dinov2_vits14, openclip_vitb32]
+  head_C: [0.1, 1.0, 10.0] # logistic-regression C, chosen on clean VAL log-loss
+  clip_prompts:
+    turmeric: ["a photo of a turmeric leaf", "a photo of turmeric plant leaves", "a photo of a Curcuma longa leaf"]
+    blackgram: ["a photo of a black gram leaf", "a photo of black gram (urad) plant leaves", "a photo of a Vigna mungo leaf"]
+  crop_cnn:
+    arch: efficientnet_b0
+    batch_size: 32
+    patience: 3
+    time_budget_min: 12
+    stages:
+      - {epochs: 2, lr: 0.001, unfreeze_last_blocks: 0}
+      - {epochs: 8, lr: 0.0002, unfreeze_last_blocks: 3}
+  disease_cnn:
+    arch: mobilenet_v2
+    batch_size: 32
+    patience: 5
+    time_budget_min: 20
+    stages:
+      - {epochs: 4, lr: 0.001, unfreeze_last_blocks: 0}
+      - {epochs: 22, lr: 0.0002, unfreeze_last_blocks: 4}
+  latency_images: 10

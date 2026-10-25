@@ -7,6 +7,9 @@
      brown   - orange/brown/red-purple hue (necrosis, anthracnose spots, dry tissue)
      dark    - much darker than the leaf with a non-green hue (necrotic centres)
      pale    - low chroma and brighter than the leaf (powdery mildew)
+2b. Small specks (P2-B06): black / white top-hat on L* at two scales (1x, 0.5x) finds
+   small dark / bright spots that the colour rules alone miss; dark specks must be
+   non-green, bright specks low-chroma. They join the brown/dark and pale classes.
 3. Hysteresis: the class masks are strong seeds; a relaxed mask (Lab colour distance
    from the reference green above max(Otsu, floor)) is kept where it connects to a
    seed, so lesions extend to their soft edges without creating new regions.
@@ -77,6 +80,34 @@ def abnormal_masks(hsv: np.ndarray, lab: np.ndarray, leaf: np.ndarray, ref: dict
     dark = m & (v < dark_thr) & ((h < yellow_max) | (h >= p["red_hue_min"]) | (s < p["dark_sat_max"]))
     pale = m & (chroma < p["pale_chroma_ratio"] * ref["C"]) & (L > ref["L"] + p["pale_l_gain"]) & (L < p["pale_l_max"])
     return {"yellow": yellow, "brown": brown & ~dark, "dark": dark, "pale": pale & ~(yellow | brown | dark)}
+
+
+def speck_masks(pre: dict, inner: np.ndarray, ref: dict, p: dict) -> tuple[np.ndarray, np.ndarray]:
+    """Dark and bright specks from multi-scale top-hats of L*, gated by colour. Uses a lightly
+    smoothed copy of the resized image: the median filter of pre-processing erases specks
+    only a few pixels wide."""
+    light = cv2.GaussianBlur(pre["resized"], (3, 3), 0)
+    lab, hsv = cv2.cvtColor(light, cv2.COLOR_BGR2LAB), cv2.cvtColor(light, cv2.COLOR_BGR2HSV)
+    L = lab[..., 0]
+    h, w = L.shape
+    k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (p["speck_ksize"], p["speck_ksize"]))
+    dark = np.zeros((h, w), bool)
+    bright = np.zeros((h, w), bool)
+    for sc in p["speck_scales"]:
+        Ls = L if sc == 1 else cv2.resize(L, (max(1, int(w * sc)), max(1, int(h * sc))), interpolation=cv2.INTER_AREA)
+        bh = cv2.morphologyEx(Ls, cv2.MORPH_BLACKHAT, k)
+        th = cv2.morphologyEx(Ls, cv2.MORPH_TOPHAT, k)
+        if sc != 1:
+            bh = cv2.resize(bh, (w, h), interpolation=cv2.INTER_LINEAR)
+            th = cv2.resize(th, (w, h), interpolation=cv2.INTER_LINEAR)
+        dark |= bh > p["speck_dark_delta"]
+        bright |= th > p["speck_bright_delta"]
+    hue, sat = hsv[..., 0].astype(np.float32), hsv[..., 1].astype(np.float32)
+    ab = lab[..., 1:].astype(np.float32) - 128
+    chroma = np.hypot(ab[..., 0], ab[..., 1])
+    non_green = (hue < ref["h"] - p["yellow_hue_gap"]) | (hue >= p["red_hue_min"]) | (sat < p["dark_sat_max"])
+    inside = inner.astype(bool)
+    return dark & non_green & inside, bright & (chroma < p["pale_chroma_ratio"] * ref["C"]) & inside
 
 
 def colour_distance(lab: np.ndarray, ref: dict, l_weight: float) -> np.ndarray:
@@ -156,6 +187,12 @@ def detect_lesions(pre: dict, leaf: np.ndarray, cfg: dict, crop: str | None = No
     # erode the leaf a little so its outline (soft edge, shadow) is not read as lesion
     k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (p["edge_margin"] * 2 + 1,) * 2)
     inner = cv2.erode(leaf, k)
+    sd, sb = speck_masks(pre, inner, ref, p)
+    hue = pre["hsv"][..., 0]
+    brownish = (hue < p["brown_hue_max"]) | (hue >= p["red_hue_min"])
+    raw["brown"] = raw["brown"] | (sd & brownish & ~raw["dark"])
+    raw["dark"] = raw["dark"] | (sd & ~brownish)
+    raw["pale"] = raw["pale"] | (sb & ~(raw["yellow"] | raw["brown"] | raw["dark"]))
     union = np.zeros_like(leaf)
     for name in CLASSES:
         union |= raw[name].astype(np.uint8)
@@ -164,7 +201,7 @@ def detect_lesions(pre: dict, leaf: np.ndarray, cfg: dict, crop: str | None = No
     weak_thr = max(otsu_threshold(dist[inside]) if inside.any() else 0.0, p["hyst_dist_min"])
     grown = hysteresis(union.astype(bool) & inside, (dist > weak_thr) & inside)
     cleaned = clean_lesion_mask(grown, leaf, p)
-    min_area = max(p["min_lesion_px"], int(p["min_lesion_frac"] * leaf_area))
+    min_area = max(p["min_lesion_px"], int(p["min_lesion_frac"] * leaf_area))  # adaptive: max(8 px, 0.0002 x leaf)
     mask, lesions = connected_lesions(cleaned, min_area)
     # pixels added by hysteresis take the class of the nearest seed class pixel
     per_class = _assign_classes(raw, mask)

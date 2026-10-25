@@ -49,3 +49,12 @@ def test_paste_clips_at_borders():
     canvas = np.zeros((100, 100, 3), np.uint8)
     paste(canvas, _rgba((255, 255, 255)), 0.8, 30, 0.95, 0.95)
     assert canvas.any() and canvas.shape == (100, 100, 3)
+
+
+def test_cached_banks_reload_as_uint8_images():
+    from leafdx.config import path
+
+    s = pd.read_csv(path("splits", CFG))
+    banks = build_banks(s[s.split == "train"], CFG)
+    assert banks["backgrounds"][0].dtype == np.uint8 and banks["backgrounds"][0].ndim == 3
+    assert banks["items"][0]["rgba"].dtype == np.uint8

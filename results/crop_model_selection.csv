@@ -1,0 +1,6 @@
+candidate,backbone,C,clean_val_acc,wild_val_acc,fit_s,cpu_ms_per_image,train_info,selected
+dinov2_vits14 + logistic head,dinov2_vits14,10.0,1.0,0.9759036144578314,163.50451469421387,239.55588340759277,,False
+openclip_vitb32 + logistic head,openclip_vitb32,10.0,1.0,0.9759036144578314,153.18532586097717,235.39977073669434,,False
+openclip_vitb32 zero-shot,openclip_vitb32,,0.8181818181818182,0.8795180722891566,0.0,69.76370811462402,,False
+openclip_vitb32 head x zero-shot prior,openclip_vitb32,10.0,0.9958677685950413,0.9879518072289156,0.0,71.50919437408447,,True
+efficientnet_b0 fine-tuned (B03 aug),efficientnet_b0,,1.0,0.9879518072289156,212.7873158454895,252.4212121963501,"{""score"": 0.9999972575500142, ""epoch"": 5, ""epochs_run"": 8, ""minutes"": 1.9057415167490641, ""device"": ""mps""}",False

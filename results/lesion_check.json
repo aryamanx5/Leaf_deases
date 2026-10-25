@@ -1,95 +1,95 @@
 {
   "n_images": 240,
   "mean_affected_pct": {
-    "healthy": 1.8793749596426268,
-    "diseased": 39.62938915292229
+    "healthy": 3.323296021022147,
+    "diseased": 41.72147850917127
   },
   "by_crop_label": {
     "blackgram_diseased": {
-      "mean": 16.42,
-      "median": 6.69,
+      "mean": 19.15,
+      "median": 8.65,
       "count": 60.0
     },
     "blackgram_healthy": {
-      "mean": 2.46,
-      "median": 0.08,
+      "mean": 3.93,
+      "median": 0.86,
       "count": 60.0
     },
     "turmeric_diseased": {
-      "mean": 62.84,
-      "median": 72.12,
+      "mean": 64.3,
+      "median": 74.06,
       "count": 60.0
     },
     "turmeric_healthy": {
-      "mean": 1.3,
-      "median": 0.0,
+      "mean": 2.72,
+      "median": 0.75,
       "count": 60.0
     }
   },
   "by_orig_class": {
     "anthracnose": {
-      "affected_pct": 8.55,
-      "lesion_count": 23.35,
-      "yellow": 5.28,
-      "brown": 2.9,
-      "dark": 0.28,
-      "pale": 0.08
+      "affected_pct": 10.93,
+      "lesion_count": 57.2,
+      "yellow": 5.5,
+      "brown": 3.01,
+      "dark": 1.87,
+      "pale": 0.54
     },
     "dry_leaf": {
-      "affected_pct": 78.99,
-      "lesion_count": 3.31,
-      "yellow": 26.13,
-      "brown": 28.44,
-      "dark": 23.82,
+      "affected_pct": 81.05,
+      "lesion_count": 5.03,
+      "yellow": 25.1,
+      "brown": 27.91,
+      "dark": 27.44,
       "pale": 0.6
     },
     "healthy": {
-      "affected_pct": 2.46,
-      "lesion_count": 2.97,
+      "affected_pct": 3.93,
+      "lesion_count": 11.73,
       "yellow": 0.16,
-      "brown": 0.05,
-      "dark": 0.23,
-      "pale": 2.03
+      "brown": 0.06,
+      "dark": 1.69,
+      "pale": 2.02
     },
     "healthy_leaf": {
-      "affected_pct": 1.3,
-      "lesion_count": 0.52,
-      "yellow": 0.87,
+      "affected_pct": 2.72,
+      "lesion_count": 1.52,
+      "yellow": 0.82,
       "brown": 0.01,
-      "dark": 0.24,
-      "pale": 0.18
+      "dark": 0.28,
+      "pale": 1.61
     },
     "leaf_blotch": {
-      "affected_pct": 40.22,
-      "lesion_count": 2.68,
-      "yellow": 35.32,
-      "brown": 3.21,
-      "dark": 1.32,
-      "pale": 0.37
+      "affected_pct": 40.85,
+      "lesion_count": 4.2,
+      "yellow": 31.06,
+      "brown": 3.15,
+      "dark": 5.1,
+      "pale": 1.54
     },
     "leaf_crinckle": {
-      "affected_pct": 8.15,
-      "lesion_count": 7.7,
-      "yellow": 1.07,
-      "brown": 0.19,
-      "dark": 6.06,
-      "pale": 0.82
+      "affected_pct": 9.91,
+      "lesion_count": 22.5,
+      "yellow": 1.03,
+      "brown": 0.2,
+      "dark": 6.63,
+      "pale": 2.04
     },
     "powdery_mildew": {
-      "affected_pct": 5.72,
-      "lesion_count": 15.45,
-      "yellow": 0.53,
-      "brown": 0.27,
-      "dark": 0.05,
-      "pale": 4.88
+      "affected_pct": 13.4,
+      "lesion_count": 42.91,
+      "yellow": 0.59,
+      "brown": 0.57,
+      "dark": 5.89,
+      "pale": 6.35
     },
     "yellow_mosaic": {
-      "affected_pct": 35.25,
-      "lesion_count": 18.37,
+      "affected_pct": 35.98,
+      "lesion_count": 33.68,
       "yellow": 34.61,
       "brown": 0.34,
-      "dark": 0.02,
-      "pale": 0.28
+      "dark": 0.58,
+      "pale": 0.45
     }
   }
 }

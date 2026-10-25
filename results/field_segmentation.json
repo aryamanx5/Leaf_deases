@@ -1,0 +1,122 @@
+[
+ {
+  "i": 0,
+  "path": "data/wild/turmeric/unknown/commons_Close_up_of_a_young_turmeric_plant_with_fresh_green_leaves.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.21889241536458334
+ },
+ {
+  "i": 1,
+  "path": "data/wild/blackgram/unknown/inat_55127005_87760702.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.09471299913194445
+ },
+ {
+  "i": 2,
+  "path": "data/wild/turmeric/unknown/inat_107455751_180733066.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.2652079264322917
+ },
+ {
+  "i": 3,
+  "path": "data/wild/turmeric/unknown/commons_Starr_190610_6609_Curcuma_longa_leaves_with_morning_dew_Hawe.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.3813069661458333
+ },
+ {
+  "i": 4,
+  "path": "data/wild/turmeric/unknown/inat_29621695_46239166.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.266754150390625
+ },
+ {
+  "i": 5,
+  "path": "data/wild/turmeric/unknown/inat_101774417_170005256.jpg",
+  "method": "field_grabcut_core",
+  "coverage": 0.24521382649739584
+ },
+ {
+  "i": 6,
+  "path": "data/wild/blackgram/unknown/commons_Black_Gram_Plant.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.4628346761067708
+ },
+ {
+  "i": 7,
+  "path": "data/wild/turmeric/unknown/commons_Turmeric_Plant_with_Lush_Green_Foliage.jpg",
+  "method": "plain_bg_threshold",
+  "coverage": 0.8582661946614584
+ },
+ {
+  "i": 8,
+  "path": "data/wild/blackgram/unknown/commons_Larval_Host_Plant_Vigna_mungo_of_Euchrysops_cnejus_Fabricius.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.23341789093625498
+ },
+ {
+  "i": 9,
+  "path": "data/wild/turmeric/unknown/inat_32748436_51386480.jpg",
+  "method": "field_grabcut+colour_fallback",
+  "coverage": 0.795074462890625
+ },
+ {
+  "i": 10,
+  "path": "data/wild/turmeric/unknown/commons_Starr_190610_6608_Curcuma_longa_leaves_with_morning_dew_Hawe.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.5042572021484375
+ },
+ {
+  "i": 11,
+  "path": "data/wild/turmeric/unknown/inat_67128734_108380284.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.3646596272786458
+ },
+ {
+  "i": 12,
+  "path": "data/wild/turmeric/unknown/inat_106685450_179264574.jpg",
+  "method": "field_grabcut+foliage_watershed",
+  "coverage": 0.4112510813148789
+ },
+ {
+  "i": 13,
+  "path": "data/wild/turmeric/unknown/commons_Turmeric_leaves_4.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.2612733004385965
+ },
+ {
+  "i": 14,
+  "path": "data/wild/turmeric/unknown/commons_Turmeric_plants_images.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.19967935090702948
+ },
+ {
+  "i": 15,
+  "path": "data/wild/turmeric/unknown/inat_61950850_99195536.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.3336079915364583
+ },
+ {
+  "i": 16,
+  "path": "data/wild/blackgram/unknown/inat_60211757_96255990.jpg",
+  "method": "field_grabcut_core",
+  "coverage": 0.08734237938596491
+ },
+ {
+  "i": 17,
+  "path": "data/wild/turmeric/unknown/commons_Starr_080117_2222_Curcuma_longa_leaves_Home_Depot_Nursery_Ka.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.39697265625
+ },
+ {
+  "i": 18,
+  "path": "data/wild/turmeric/unknown/inat_17511323_26645419.jpg",
+  "method": "field_grabcut",
+  "coverage": 0.3094482421875
+ },
+ {
+  "i": 19,
+  "path": "data/wild/turmeric/unknown/commons_Turmeric_leaves.jpg",
+  "method": "plain_bg_threshold",
+  "coverage": 0.0220184326171875
+ }
+]

@@ -76,7 +76,8 @@ def build_banks(train_df: pd.DataFrame, cfg: dict) -> dict:
     cache = path("cache", cfg) / f"augbank_{key}.npz"
     if cache.exists():
         z = np.load(cache, allow_pickle=True)
-        items, backgrounds = list(z["items"]), list(z["backgrounds"])
+        items = list(z["items"])
+        backgrounds = [np.asarray(b, dtype=np.uint8) for b in z["backgrounds"]]
     else:
         out = Parallel(n_jobs=-1)(delayed(_cutout)(p, cfg) for p in train_df.path)
         items, backgrounds = [], []
@@ -84,7 +85,7 @@ def build_banks(train_df: pd.DataFrame, cfg: dict) -> dict:
             if o is not None:
                 items.append({"path": r.path, "crop": r.crop, "label": r.label, "rgba": o[0]})
                 backgrounds.append(o[1])
-        np.savez(cache, items=np.array(items, dtype=object), backgrounds=np.array(backgrounds, dtype=object))
+        np.savez(cache, items=np.array(items, dtype=object), backgrounds=np.stack(backgrounds).astype(np.uint8))
     by_crop = {c: [i for i, it in enumerate(items) if it["crop"] == c] for c in ("turmeric", "blackgram")}
     return {"items": items, "by_crop": by_crop, "backgrounds": backgrounds,
             "index": {it["path"]: i for i, it in enumerate(items)}}
