@@ -1,0 +1,220 @@
+{
+  "n": {
+    "clean_test": 239,
+    "wild_val": 83,
+    "wild_test": 82
+  },
+  "crop": {
+    "clean_test": {
+      "accuracy": 1.0,
+      "confusion": {
+        "turmeric": {
+          "turmeric": 89,
+          "blackgram": 0
+        },
+        "blackgram": {
+          "turmeric": 0,
+          "blackgram": 150
+        }
+      },
+      "mean_conf_wrong": null,
+      "share_wrong_conf_ge_0.9": null,
+      "majority_baseline": 0.6276150627615062
+    },
+    "wild_val": {
+      "accuracy": 0.9156626506024096,
+      "confusion": {
+        "turmeric": {
+          "turmeric": 38,
+          "blackgram": 7
+        },
+        "blackgram": {
+          "turmeric": 0,
+          "blackgram": 38
+        }
+      },
+      "mean_conf_wrong": 0.7190761566162109,
+      "share_wrong_conf_ge_0.9": 0.0,
+      "majority_baseline": 0.5421686746987951
+    },
+    "wild_test": {
+      "accuracy": 0.926829268292683,
+      "confusion": {
+        "turmeric": {
+          "turmeric": 38,
+          "blackgram": 6
+        },
+        "blackgram": {
+          "turmeric": 0,
+          "blackgram": 38
+        }
+      },
+      "mean_conf_wrong": 0.7897823452949524,
+      "share_wrong_conf_ge_0.9": 0.3333333333333333,
+      "majority_baseline": 0.5365853658536586
+    },
+    "wild_by_source": {
+      "blackgram|inaturalist": {
+        "n": 3,
+        "accuracy": 1.0
+      },
+      "blackgram|mendeley:z55yrbmn2d": {
+        "n": 70,
+        "accuracy": 1.0
+      },
+      "blackgram|wikimedia_commons": {
+        "n": 3,
+        "accuracy": 1.0
+      },
+      "turmeric|inaturalist": {
+        "n": 16,
+        "accuracy": 0.5
+      },
+      "turmeric|mendeley:jtttfbx342": {
+        "n": 55,
+        "accuracy": 1.0
+      },
+      "turmeric|wikimedia_commons": {
+        "n": 18,
+        "accuracy": 0.7222222222222222
+      }
+    },
+    "wild_by_label": {
+      "blackgram|diseased": {
+        "n": 40,
+        "accuracy": 1.0
+      },
+      "blackgram|healthy": {
+        "n": 30,
+        "accuracy": 1.0
+      },
+      "turmeric|diseased": {
+        "n": 30,
+        "accuracy": 1.0
+      },
+      "turmeric|healthy": {
+        "n": 25,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "probe": {
+    "original": 1.0,
+    "background_only": 0.9539748953974896,
+    "leaf_only": 1.0,
+    "background_box_only": 0.8410041841004184,
+    "majority_baseline": 0.6276150627615062,
+    "median_leaf_coverage": 0.3804969787597656
+  },
+  "capture": {
+    "train_blackgram|blackgram": {
+      "n": 1007.0,
+      "width": 512.0,
+      "height": 512.0,
+      "aspect": 1.0,
+      "brightness": 133.319,
+      "border_L": 131.846,
+      "border_chroma": 23.723,
+      "neutral_bright_border": 0.215,
+      "jpeg_q": 94.021
+    },
+    "train_turmeric|turmeric": {
+      "n": 599.0,
+      "width": 1000.0,
+      "height": 1000.0,
+      "aspect": 1.0,
+      "brightness": 185.257,
+      "border_L": 199.545,
+      "border_chroma": 17.974,
+      "neutral_bright_border": 0.626,
+      "jpeg_q": 90.022
+    },
+    "wild_inaturalist|blackgram": {
+      "n": 3.0,
+      "width": 1024.0,
+      "height": 768.0,
+      "aspect": 1.333,
+      "brightness": 122.642,
+      "border_L": 119.764,
+      "border_chroma": 24.329,
+      "neutral_bright_border": 0.062,
+      "jpeg_q": 91.974
+    },
+    "wild_inaturalist|turmeric": {
+      "n": 16.0,
+      "width": 768.0,
+      "height": 1024.0,
+      "aspect": 0.75,
+      "brightness": 132.643,
+      "border_L": 120.66,
+      "border_chroma": 24.77,
+      "neutral_bright_border": 0.08,
+      "jpeg_q": 91.974
+    },
+    "wild_mendeley|blackgram": {
+      "n": 70.0,
+      "width": 1200.0,
+      "height": 1600.0,
+      "aspect": 0.75,
+      "brightness": 217.765,
+      "border_L": 254.654,
+      "border_chroma": 0.104,
+      "neutral_bright_border": 0.998,
+      "jpeg_q": 91.974
+    },
+    "wild_mendeley|turmeric": {
+      "n": 55.0,
+      "width": 1200.0,
+      "height": 1600.0,
+      "aspect": 0.75,
+      "brightness": 188.406,
+      "border_L": 206.248,
+      "border_chroma": 3.429,
+      "neutral_bright_border": 0.957,
+      "jpeg_q": 91.974
+    },
+    "wild_wikimedia_commons|blackgram": {
+      "n": 3.0,
+      "width": 1280.0,
+      "height": 960.0,
+      "aspect": 1.333,
+      "brightness": 120.865,
+      "border_L": 132.387,
+      "border_chroma": 21.311,
+      "neutral_bright_border": 0.181,
+      "jpeg_q": 91.974
+    },
+    "wild_wikimedia_commons|turmeric": {
+      "n": 18.0,
+      "width": 1200.0,
+      "height": 1543.5,
+      "aspect": 0.805,
+      "brightness": 137.122,
+      "border_L": 123.39,
+      "border_chroma": 32.278,
+      "neutral_bright_border": 0.037,
+      "jpeg_q": 91.974
+    }
+  },
+  "ece": {
+    "crop_clean_test": 0.004082051281150914,
+    "disease_clean_test": 0.013063512337257673,
+    "crop_wild_val": 0.07815262711191752,
+    "disease_wild_val": 0.07040077258670141
+  },
+  "disease_acc": {
+    "clean_test": 0.9874476987447699,
+    "wild_val": 0.9682539682539683
+  },
+  "stage1_field": {
+    "n": 40,
+    "median_coverage": 0.2638231244003564,
+    "share_coverage_lt_0.15": 0.175,
+    "clean_test_median_coverage": 0.3804969787597656
+  },
+  "bug_image": {
+    "p_blackgram": 0.7296450734138489,
+    "affected_pct": 5.67208271787297,
+    "lesion_count": 1
+  }
+}

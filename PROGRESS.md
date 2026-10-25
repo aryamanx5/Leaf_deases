@@ -160,7 +160,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 |----|------|--------|----------|
 | P2-B00 | Reproduce the bug | DONE | P2 log B00 |
 | P2-B01 | Wild / OOD evaluation set | DONE | P2 log B01 |
-| P2-B02 | Diagnose | TODO | |
+| P2-B02 | Diagnose | DONE | P2 log B02 |
 | P2-B03 | Background-swap + robust augmentation | TODO | |
 | P2-B04 | Hierarchical crop + disease models | TODO | |
 | P2-B05 | Calibration, abstention, OOD | TODO | |
@@ -186,6 +186,11 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 ### Phase 2 evidence log (newest first)
 
+#### 2026-10-25 P2-B02 Diagnose
+- `python scripts/diagnose.py` -> results/diagnosis.md + diagnosis.json. v1 crop accuracy: clean TEST 1.000, wild_val 0.916, wild_test 0.927; ALL wild crop errors are turmeric field scenes (iNaturalist 0.500, Commons 0.722); turmeric on white 1.000 (n=55), black gram on white 1.000 (n=70).
+- Probes (clean TEST): background-only (mean-colour silhouette) 0.954, background with leaf box hidden 0.841, leaf-only 1.000, majority 0.628 -> (a) shortcut CONFIRMED (foliage surroundings read as black gram). (b) inconclusive (no crop errors on labelled wild images). (c) PARTLY: crop ECE 0.004 clean -> 0.078 wild_val, wrong crop calls mean confidence 0.754, no abstention. (d) PARTLY: field-scene median leaf coverage 0.264 vs 0.380 clean, 17.5% under 0.15.
+- Viewed figures: diag_crop_gradcam.png (on turmeric field scenes predicted black gram 85% / 69%, the crop Grad-CAM sits on grass and leaf litter, not the plant; on leaves on white it sits on the leaf), diag_probes.png, diag_reliability.png.
+
 #### 2026-10-25 P2-B01 Wild / OOD evaluation set
 - `python scripts/build_wild_set.py` -> kept 165 (turmeric 89, black gram 76): Mendeley jtttfbx342 turmeric (Bangladesh, CC BY 4.0) 55 originals, Mendeley z55yrbmn2d black gram (Bangladesh, CC BY 4.0) 70 originals, iNaturalist 44 (CC0/CC-BY/CC-BY-SA), Wikimedia Commons 25; 29 excluded after visual vetting (flowers/rhizomes/no leaf visible); `near-duplicates of training images dropped: 0`; 0 clusters span wild_val/wild_test; SOURCES.csv has url, author, licence for every file.
 - Split (val/test): bg diseased 20/20, bg healthy 15/15, bg unknown 3/3, tu diseased 15/15, tu healthy 13/12, tu unknown 17/17.
@@ -202,6 +207,8 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 - Wild set sources: iNaturalist has only 4 CC-licensed Vigna mungo observations, so two independent CC BY 4.0 Mendeley datasets (Bangladesh) supply labelled cross-dataset images; iNaturalist + Commons supply field scenes labelled "unknown". Images fetched from a remote zip by HTTP range (data.HttpRangeFile) to avoid a 1.4 GB download. Downloaded images are gitignored; `scripts/build_wild_set.py` rebuilds them.
 
+- Diagnosis probe added beyond the spec: "background with leaf bounding box hidden", because the spec's mean-colour fill keeps the leaf silhouette (shape leaks crop). Verdict for (a) uses the stricter probe.
+
 ## NEXT (Phase 2)
 
-P2-B02: scripts/diagnose.py -> results/diagnosis.md (crop confusion clean/wild, background-only and leaf-only probes, crop Grad-CAM, capture statistics, reliability + ECE).
+P2-B03: background-swap compositing augmentation (train masks only) + robust transforms, contact sheet of 32 samples, unit test that masks come only from TRAIN.
