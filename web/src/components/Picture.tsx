@@ -28,7 +28,7 @@ export default function Picture({ src, alt, sizes = '100vw', className, eager, s
         height={src.h}
         loading={eager ? 'eager' : 'lazy'}
         decoding="async"
-        fetchPriority={eager ? 'high' : 'auto'}
+        {...{ fetchpriority: eager ? 'high' : 'auto' }} /* React 18 only forwards the lowercase attribute */
         className={className}
         style={style}
       />

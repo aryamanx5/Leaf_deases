@@ -111,6 +111,7 @@ export default function Run({ site }: { site: Site }) {
     const canvas = canvasRef.current;
     if (!sec || !canvas || !assets || reduced) return;
     const ctx = canvas.getContext('2d')!;
+    canvas.dataset.healed = assets.hea.currentSrc || assets.hea.src;
     const mask = document.createElement('canvas');
     const mctx = mask.getContext('2d', { willReadFrequently: true })!;
     const layer = document.createElement('canvas');
@@ -128,6 +129,7 @@ export default function Run({ site }: { site: Site }) {
       mask.height = Math.round(H * 0.5);
       R = Math.max(140, Math.min(0.17 * Math.min(W, H) * 1.6, 260));
       fit = coverFit(W, H, assets.dis.naturalWidth, assets.dis.naturalHeight);
+      canvas.dataset.r = String(R); // read by the e2e healing test
     };
     resize();
     const ro = new ResizeObserver(resize);
