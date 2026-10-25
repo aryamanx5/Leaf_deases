@@ -20,6 +20,7 @@ export default function Nav() {
   const onLanding = pathname === '/';
   const active = useActiveSection();
   const current = onLanding ? (GROUP[active] ?? active) : null;
+  const light = onLanding && active === 'results';
   const [open, setOpen] = useState(false);
   useEffect(() => setOpen(false), [pathname]);
 
@@ -32,12 +33,12 @@ export default function Nav() {
   };
 
   return (
-    <nav aria-label="Primary" className="fixed left-0 right-0 top-0 z-[100] flex items-center justify-between p-4 sm:p-5">
-      <Link to="/" className="flex items-center gap-2.5 rounded-full pr-2" aria-label={`${BRAND_NAME}, home`}>
+    <nav aria-label="Primary" className={`fixed left-0 right-0 top-0 z-[100] flex items-center justify-between p-4 sm:p-5 max-md:bg-gradient-to-b max-md:to-transparent ${light ? 'max-md:from-paper/95' : 'max-md:from-ink/90'}`}>
+      <Link to="/" className={`flex items-center gap-2.5 rounded-full pr-2 transition-colors duration-500 ${light ? 'text-ink' : 'text-white'}`} aria-label={`${BRAND_NAME}, home`}>
         <Logo />
-        <span className="font-playfair text-2xl italic text-white">{BRAND_NAME}</span>
+        <span className="font-playfair text-2xl italic">{BRAND_NAME}</span>
       </Link>
-      <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-white/30 bg-white/20 px-2 py-2 backdrop-blur-md md:flex">
+      <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-white/20 bg-ink/45 px-2 py-2 backdrop-blur-md md:flex">
         {ITEMS.map((it) => (
           <a
             key={it.id}
@@ -60,7 +61,7 @@ export default function Nav() {
       </Link>
       <button
         type="button"
-        className="rounded-full p-2 text-white md:hidden"
+        className={`rounded-full p-2 md:hidden ${light ? 'text-ink' : 'text-white'}`}
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}

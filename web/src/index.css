@@ -4,6 +4,11 @@
 
 :root {
   --ink: #0a0e0b;
+  --ink-rgb: 10 14 11;
+  --soil-rgb: 18 26 21;
+  --paper-rgb: 236 232 223;
+  --leaf-rgb: 141 184 107;
+  --turmeric-rgb: 232 112 42;
   --soil: #121a15;
   --line: rgba(232, 240, 228, 0.12);
   --paper: #ece8df;

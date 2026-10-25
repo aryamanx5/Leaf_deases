@@ -247,7 +247,10 @@ export default function Run({ site }: { site: Site }) {
       lastMove = performance.now();
       ghost = null; // real input cancels the ghost
       const c = cursorRef.current;
-      if (c) c.style.transform = `translate3d(${mouse.x - 14}px, ${mouse.y - 14}px, 0)`;
+      if (c) {
+        c.style.transform = `translate3d(${mouse.x - 14}px, ${mouse.y - 14}px, 0)`;
+        c.dataset.seen = '1'; // hidden until the pointer first enters
+      }
     };
     const onTouch = (e: TouchEvent) => {
       const t = e.touches[0];
@@ -306,6 +309,7 @@ export default function Run({ site }: { site: Site }) {
         )}
       </div>
 
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-1/3 bg-gradient-to-t from-black/85 to-transparent" />
       <div className="pointer-events-none absolute left-0 right-0 top-[14%] z-50 flex flex-col items-center px-5 text-center">
         <h2 id="run-title" className="leading-[0.95] text-white">
           <span className="hero-anim hero-reveal block font-playfair text-5xl font-normal italic sm:text-7xl md:text-8xl"
@@ -362,8 +366,8 @@ export default function Run({ site }: { site: Site }) {
 
       {!reduced && (
         <div ref={cursorRef} aria-hidden="true"
-             className="pointer-events-none absolute left-0 top-0 z-[60] h-7 w-7 rounded-full border border-white/70 transition-opacity duration-200"
-             style={{ opacity: overUI ? 0 : 1 }}>
+             className="pointer-events-none absolute left-0 top-0 z-[60] h-7 w-7 rounded-full border border-white/70 opacity-0 transition-opacity duration-200 data-[seen]:opacity-100 [@media(pointer:coarse)]:hidden"
+             style={{ opacity: overUI ? 0 : undefined }}>
           <span className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white transition-transform duration-150"
                 style={{ transform: `translate(-50%,-50%) scale(${down ? 0.8 : 1})` }} />
         </div>

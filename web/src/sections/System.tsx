@@ -101,8 +101,21 @@ export default function System({ site }: { site: Site }) {
         <h2 id="system-title" className="mb-14 max-w-[760px] text-4xl font-normal leading-[1.05] tracking-[-0.04em] lg:text-[52px]">
           One leaf, two readings, <span className="font-playfair italic">one answer you can check.</span>
         </h2>
-        <div ref={ref} className="overflow-x-auto">
-          <svg viewBox="0 0 1000 420" className="w-full min-w-[640px]" role="img"
+        <ol className="grid gap-3 md:hidden" aria-label="Final system">
+          <li className="justify-self-start rounded-full border border-paper px-4 py-2 text-[15px]">Leaf image</li>
+          <li className="grid grid-cols-2 gap-3">
+            {[['Image processing', 'Regions + features', 'SVM', 'border-leaf'], ['CNN', 'Learned features', 'Classifier', 'border-turmeric']].map(([a, b, c, tone]) => (
+              <ol key={a} className={`grid gap-2 border-l pl-3 ${tone}`}>
+                {[a, b, c].map((t) => (
+                  <li key={t} className={`rounded-full border px-3 py-1.5 text-[13px] ${tone}`}>{t}</li>
+                ))}
+              </ol>
+            ))}
+          </li>
+          <li className="justify-self-end rounded-full border border-paper px-4 py-2 text-[15px]">Healthy / Diseased</li>
+        </ol>
+        <div ref={ref} className="hidden md:block">
+          <svg viewBox="0 0 1030 420" className="w-full" role="img"
                aria-label="Final system: the leaf image goes through image processing to regions and features and an SVM, and through a CNN to learned features and a classifier; both give healthy or diseased.">
             {PATHS.map((d, i) => (
               <g key={i}>

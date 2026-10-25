@@ -3,13 +3,15 @@ import { fix, int, METHOD_NAME, pct } from '@/lib/format';
 import { useInView } from '@/lib/motion';
 import type { Method, Site } from '@/lib/site';
 
+// the last flag marks columns kept on narrow screens
 const COLS = [
-  ['accuracy', 'Accuracy'],
-  ['precision', 'Precision'],
-  ['recall', 'Recall'],
-  ['f1', 'F1'],
-  ['macro_f1', 'Macro-F1'],
+  ['accuracy', 'Accuracy', true],
+  ['precision', 'Precision', false],
+  ['recall', 'Recall', false],
+  ['f1', 'F1', false],
+  ['macro_f1', 'Macro-F1', true],
 ] as const;
+const cell = (keep: boolean) => (keep ? '' : 'hidden md:table-cell');
 const METHODS: Method[] = ['rule_based', 'svm', 'cnn'];
 
 /** Short, honest takeaway composed from the exported numbers only. */
@@ -19,7 +21,7 @@ function takeaway(site: Site, view: 'clean' | 'wild'): string[] {
   const [best, second] = order as [Method, Method, Method];
   const out = [
     `${METHOD_NAME[best]} leads on ${view === 'clean' ? 'the clean test set' : 'field photos from other sources'} ` +
-      `(macro-F1 ${fix(m[best].macro_f1)}), ahead of ${METHOD_NAME[second].toLowerCase()} (${fix(m[second].macro_f1)}).`,
+      `(macro-F1 ${fix(m[best].macro_f1)}), ahead of ${METHOD_NAME[second]} (${fix(m[second].macro_f1)}).`,
   ];
   if (view === 'clean') {
     const p = site.comparison.mcnemar_p;
@@ -67,23 +69,23 @@ export default function Results({ site }: { site: Site }) {
         </div>
 
         <div ref={ref} className="mt-6 overflow-x-auto">
-          <table className="w-full min-w-[720px] border-collapse text-left">
+          <table className="w-full border-collapse text-left md:min-w-[720px]">
             <caption className="sr-only">Healthy vs diseased performance per method</caption>
             <thead>
               <tr className="border-b border-ink/20">
                 <th scope="col" className="caption py-3 pr-4 text-[11px] font-normal text-ink/55">Method</th>
-                {COLS.map(([, l]) => (
-                  <th key={l} scope="col" className="caption py-3 pr-4 text-[11px] font-normal text-ink/55">{l}</th>
+                {COLS.map(([, l, keep]) => (
+                  <th key={l} scope="col" className={`caption py-3 pr-4 text-[11px] font-normal text-ink/55 ${cell(keep)}`}>{l}</th>
                 ))}
-                <th scope="col" className="caption py-3 text-[11px] font-normal text-ink/55">ms / image (CPU)</th>
+                <th scope="col" className="caption py-3 text-[11px] font-normal text-ink/55">ms / image<span className="hidden md:inline"> (CPU)</span></th>
               </tr>
             </thead>
             <tbody>
               {METHODS.map((k, r) => (
                 <tr key={k} className="border-b border-ink/10">
-                  <th scope="row" className="py-5 pr-4 text-[17px] font-normal">{METHOD_NAME[k]}</th>
-                  {COLS.map(([c], j) => (
-                    <td key={c} className="py-5 pr-4 align-top">
+                  <th scope="row" className="py-5 pr-4 text-[15px] font-normal md:text-[17px]">{METHOD_NAME[k]}</th>
+                  {COLS.map(([c, , keep], j) => (
+                    <td key={c} className={`py-5 pr-4 align-top ${cell(keep)}`}>
                       <span className="mono text-[17px]">{fix(m[k][c])}</span>
                       <span className="mt-2 block h-[3px] w-full max-w-[120px] bg-ink/10">
                         <span className="block h-full origin-left bg-ink transition-transform duration-1000 ease-out"

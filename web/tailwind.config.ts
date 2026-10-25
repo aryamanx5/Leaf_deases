@@ -5,14 +5,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: 'var(--ink)',
-        soil: 'var(--soil)',
+        ink: 'rgb(var(--ink-rgb) / <alpha-value>)',
+        soil: 'rgb(var(--soil-rgb) / <alpha-value>)',
         line: 'var(--line)',
-        paper: 'var(--paper)',
+        paper: 'rgb(var(--paper-rgb) / <alpha-value>)',
         text: 'var(--text)',
         muted: 'var(--muted)',
-        leaf: 'var(--leaf)',
-        turmeric: { DEFAULT: 'var(--turmeric)', hover: 'var(--turmeric-hover)' },
+        leaf: 'rgb(var(--leaf-rgb) / <alpha-value>)',
+        turmeric: { DEFAULT: 'rgb(var(--turmeric-rgb) / <alpha-value>)', hover: 'var(--turmeric-hover)' },
         chlorosis: 'var(--chlorosis)',
         necrosis: 'var(--necrosis)',
         'dark-tissue': 'var(--dark-tissue)',
