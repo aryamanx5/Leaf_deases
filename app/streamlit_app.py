@@ -5,6 +5,7 @@ Run:  streamlit run app/streamlit_app.py
 
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -31,11 +32,22 @@ def warm_models():
     return RobustModel.load()
 
 
+SITE_DIR = ROOT / "web" / "public"  # the web app ships 28 held-out test photos (data/raw is not in the repository)
+
+
 @st.cache_data
 def sample_images() -> pd.DataFrame:
-    """Two TEST images per crop x state (deterministic), for users without their own photo."""
-    s = pd.read_csv(path("splits", CFG))
-    pick = s[s.split == "test"].groupby("stratum").sample(2, random_state=CFG["seed"])
+    """Held-out TEST photos for users without their own: web/public/data/site.json when present, else splits.csv."""
+    site = SITE_DIR / "data" / "site.json"
+    if site.exists():
+        rows = [{"path": s["src"].lstrip("/"), "crop": s["crop"], "orig_class": s["orig_class"]}
+                for s in json.loads(site.read_text())["samples"]]
+        pick = pd.DataFrame(rows)
+        pick["root"] = str(SITE_DIR)
+    else:
+        s = pd.read_csv(path("splits", CFG))
+        pick = s[s.split == "test"].groupby("stratum").sample(2, random_state=CFG["seed"])[["path", "crop", "orig_class"]]
+        pick["root"] = str(ROOT)
     pick["label_txt"] = pick.apply(lambda r: f"{CROP_NAMES[r.crop]} - {r.orig_class.replace('_', ' ')} ({r.path.split('/')[-1]})", axis=1)
     return pick.reset_index(drop=True)
 
@@ -68,8 +80,8 @@ with tab_an:
         else:
             samples = sample_images()
             choice = st.selectbox("Sample image", samples.label_txt, index=0)
-            p = samples.loc[samples.label_txt == choice, "path"].iloc[0]
-            data, name = (ROOT / p).read_bytes(), p
+            row = samples.loc[samples.label_txt == choice].iloc[0]
+            data, name = (Path(row.root) / row.path).read_bytes(), row.path
         crop_opt = st.selectbox("Crop", ["auto (model decides)", "Turmeric", "Black Gram"])
         crop = {"Turmeric": "turmeric", "Black Gram": "blackgram"}.get(crop_opt)
         if st.session_state.get("crop_override") and st.session_state.get("override_for") == name:

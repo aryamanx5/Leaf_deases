@@ -1,0 +1,20 @@
+# Dependencies for the Streamlit demo on Streamlit Community Cloud (uses the file next to the entry point).
+# Same pins as the repo's requirements.txt, minus training/test tools; CPU-only torch keeps the install small.
+# Choose Python 3.11 or 3.12 in the app's Advanced settings.
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit==1.66.1
+numpy==2.4.6
+scipy==1.17.1
+opencv-python-headless==5.0.0.93
+scikit-image==0.26.0
+scikit-learn==1.9.1
+pandas==3.1.0
+joblib==1.6.0
+pillow==13.0.0
+PyYAML==6.0.3
+matplotlib==3.11.2
+torch==2.14.1
+torchvision==0.29.1
+open_clip_torch==3.3.0
+timm==1.0.30
+ftfy==6.3.1
