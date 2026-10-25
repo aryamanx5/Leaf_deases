@@ -170,21 +170,49 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-F00 | Web scaffold | DONE | P2 log F00 |
 | P2-F01 | Real content export | DONE | P2 log F01 |
 | P2-F02 | Healing-leaves assets | DONE | P2 log F02 |
-| P2-F03 | Shell: nav, smooth scroll, rail, routing | TODO | |
-| P2-F04 | 01 Hero | TODO | |
-| P2-F05 | 02 Problem | TODO | |
-| P2-F06 | 03 Crops | TODO | |
-| P2-F07 | 04 Stage 1 scrollytelling | TODO | |
-| P2-F08 | 05 CNN | TODO | |
-| P2-F09 | 06 Results | TODO | |
-| P2-F10 | 07 System diagram | TODO | |
-| P2-F11 | 08 Healing leaves + CTAs | TODO | |
-| P2-F12 | /analyze page | TODO | |
-| P2-F13 | Responsiveness, a11y, performance | TODO | |
-| P2-V01 | One-command dev + build | TODO | |
-| P2-V02 | Extend verify_all | TODO | |
+| P2-F03 | Shell: nav, smooth scroll, rail, routing | DONE | P2 log F03..F11 |
+| P2-F04 | 01 Hero | DONE-WITH-CAVEAT | P2 log F03..F11, BLOCKERS.md |
+| P2-F05 | 02 Problem | DONE | P2 log F03..F11 |
+| P2-F06 | 03 Crops | DONE | P2 log F03..F11 |
+| P2-F07 | 04 Stage 1 scrollytelling | DONE | P2 log F03..F11 |
+| P2-F08 | 05 CNN | DONE | P2 log F03..F11 |
+| P2-F09 | 06 Results | DONE | P2 log F03..F11 |
+| P2-F10 | 07 System diagram | DONE | P2 log F03..F11 |
+| P2-F11 | 08 Healing leaves + CTAs | DONE | P2 log F03..F11 |
+| P2-F12 | /analyze page | DONE | P2 log F12 |
+| P2-F13 | Responsiveness, a11y, performance | DONE | P2 log F13 |
+| P2-V01 | One-command dev + build | DONE | P2 log V01 |
+| P2-V02 | Extend verify_all | DONE | P2 log V02 |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-V02 Extend verify_all
+- scripts/verify_all.py adds: regression test (tests/test_regressions.py) as its own line; robustness targets (missed targets reported as WARN, not failure); Phase 2 artefacts; site.json freshness (generated_at newer than every results file export_site_data reads); no hard-coded metrics in web/src/sections, pages, components (decimals / percentages in copy, ignoring className, SVG attributes, ScrollTrigger positions, inline style writes; a planted "0.994 and 97.5%" is caught); web typecheck, lint, build; Playwright suite (analyze, healing, axe, reduced motion, scroll long tasks) against a temporary API (:8019) + vite preview of the build (:4189), so a running `make dev` is not disturbed. `--no-web` skips the web checks.
+- `python scripts/verify_all.py` -> 15/15 PASS, OVERALL: PASS (66 tests; 545 report numbers re-read; regression 1 passed; targets 3/3 met; E2E 9 passed).
+
+#### 2026-10-25 P2-V01 One-command dev + build
+- Makefile: `dev` (API :8010 + Vite :5180, `trap 'kill 0'` stops both), `web-build`, `web-preview` (:4180), `api`, `e2e`, `web-install`, plus `wild`, `robust`, `site-data` for the Phase 2 pipeline. `web/.env.example` documents VITE_API_BASE, VITE_DEPLOYED_APP_URL (button hidden when empty), VITE_GITHUB_URL. README sections "Phase 2: field photos, calibrated crop, API" and "Web app"; repository map updated; hero caveat under Limitations.
+- `make dev` run as a background task: `/api/health` ok directly and through the Vite proxy; `e2e/analyze.spec.ts` 4 passed against it; stopping the task freed both ports.
+- Fresh clone (scratchpad): `make web-build` with a clean `npm ci` builds (dist contains site.json, media, samples); `make setup` creates a clean venv in 29 s; with weights copied in, the API test module loads the models (the 4 tests that read dataset images need `make data`). The full download + training chain was not repeated in the clone (stated in README).
+
+#### 2026-10-25 P2-F13 Responsiveness, accessibility, performance
+- Lighthouse 12.8.2 desktop preset on the production build (vite preview), recorded in results/web_quality.json: landing Performance 97 / Accessibility 100 / Best Practices 100, LCP 1.17 s, CLS 0.0003, TBT 0 ms; /analyze 99 / 100 / 100, LCP 0.90 s, CLS 0.0435.
+- First run gave landing Accessibility 93: Counter used aria-label on a span (now sr-only text) and the Problem reveal started words at 15% opacity (floor raised to 40%, >= 3:1 for large text). axe then flagged contrast on the light Results captions (ink/55 -> ink/70), the nav pill over the light section (darker pill there), white text on the turmeric CTA (3.0:1 -> filled CTAs use --cta #bf5417, 4.6:1; --turmeric unchanged elsewhere) and the necrosis-coloured "Main diseases" label (that token is for overlays only).
+- e2e/a11y.spec.ts: axe (wcag2a/aa, 21a/aa) at the end of every landing section and on /analyze idle + with a result -> 0 serious/critical. Reduced motion: no scroll-scrubbed tracks, no pinning sticky, healing section is a before/after slider that moves the meter (screenshot viewed).
+- e2e/perf.spec.ts: wheel-scrolling the whole landing page (15,358 px) on the production build -> 0 long tasks (> 50 ms).
+- Already in place and re-checked: srcset AVIF/WebP, below-fold lazy, canvas DPR capped at 2, healing rAF paused off-screen / tab hidden (IntersectionObserver + visibilitychange), accent focus ring, alt text on every image.
+
+#### 2026-10-25 P2-F12 /analyze page
+- Drop zone (drag/drop, paste, picker) + 4 TEST-set sample chips exported by export_site_data.py (turmeric leaf_blotch + healthy_leaf, black gram powdery_mildew + anthracnose; not the showcase leaves). Crop control Auto / Turmeric / Black gram; "Point at the leaf" sends roi_x/roi_y.
+- While waiting: scanning line over the photo and the 8 steps highlighted in turn; nothing marked done until the response arrives, then "Done in X s on the server" from timings_ms.
+- 4-line card in the service.result_card format; uncertain crop -> "Unsure — Turmeric x% / Black gram y%" + "It's turmeric / It's black gram" re-run buttons; user-selected crop labelled. Image processing vs CNN panel (AGREE/DISAGREE, rule score vs threshold + component bars, SVM and CNN P(diseased)); evidence strip with the exact overlay colours of overlay_lesions as legend; lightbox (portal, zoom/pan, Esc, before/after slider Original vs Abnormal regions); measurements table; JSON report download (images omitted); error states not_a_plant / too_large (checked client-side too) / offline with Retry.
+- e2e/analyze.spec.ts: upload -> 4-line card (desktop + mobile), lightbox, sample chip + crop override -> "selected by you", grey PNG -> not-a-plant error with Retry. Desktop, mobile and lightbox screenshots viewed; lightbox initially rendered under the fixed nav (route wrapper stacking context) -> portal.
+
+#### 2026-10-25 P2-F03..F11 Landing sections
+- Screenshot matrix: 8 sections x 1440x900 / 1280x800 / 390x844 x scroll positions 0.05 / 0.5 / 0.95 (72 shots, viewed as one contact sheet per viewport plus full-size checks of the hero end state and pipeline).
+- Fixes from viewing: Tailwind colours were plain var() so every /opacity class (bg-ink/90, bg-white/10 tracks, borders) silently did nothing -> RGB-triplet tokens with <alpha-value>; nav + rail turn ink-coloured over the light Results section; mobile nav backdrop; Results table keeps Accuracy / Macro-F1 / ms on phones; System diagram gets a stacked mobile layout (SVG was cropped) and a wider viewBox (output node clipped); "ahead of svm on ip features" casing; Run: ghost cursor hidden on touch and until the pointer enters, scrim behind the mobile caption; pinned Pipeline compacted for short viewports (readouts were cut off at 1280x800); rail label backing; fetchpriority attribute warning.
+- e2e/heal.spec.ts (spec 7.3): stroke over the densest lesion spot -> mean abs diff to the healed image 11.94 -> 0.00 (> 50% drop); a lesion-bearing spot > 2R away unchanged (diff to diseased 0.00); after 4 s parked on a clean spot the healed region decays (diff to diseased 11.94 -> 1.96); meter 23.9% -> 19.6% -> 22.1%. Mid-heal screenshot viewed (natural, no smear).
+- F04 hero is DONE-WITH-CAVEAT (no openly licensed footage, ffmpeg absent): see BLOCKERS.md.
 
 #### 2026-10-25 P2-F01 Real content export
 - `python scripts/export_site_data.py` -> `wrote web/public/data/site.json (18 kB); media files: 216`: dataset counts, clean + wild comparison (rule/SVM/CNN), leakage ablation, robustness before/after + targets, calibration, latency; showcase TEST leaves (turmeric Leaf Blotch00009, black gram anthracnose 115a) with every REAL Stage 1 intermediate (original, denoised, Lab a*, colour distance, threshold, leaf mask, lesions, segmented) + params (median/Gaussian 5, CLAHE 2.0, Otsu distance, open/close, min lesion area) + readouts; 16 early (features[3]) + 9 late (features[13]) MobileNetV2 disease-CNN feature maps, Grad-CAM, calibrated P(crop) and P(diseased|crop); crop panels (healthy/diseased TEST photos); heal metadata; hero still (Starr, CC BY 2.0) with leaf outline + midrib/venation anchors from our Stage 1. WebP + AVIF at 640/1280 (+ hero 960/1600/2400).
@@ -269,4 +297,4 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 ## NEXT (Phase 2)
 
-Landing sections F03-F11 are written (web/src/sections/*: Hero, Problem, Crops, Pipeline, Cnn, Results, System, Run, Footer + Nav, SectionRail) and render on http://localhost:5180 (API on :8010; ports 5173/8000 belong to other local projects). First desktop screenshots viewed for Hero, Problem, Crops, Pipeline; fixes applied (nav active-section retry, hero outline in image-pixel units + label backing + headline dimming, crop panel aspect, pipeline compaction) but NOT yet re-viewed. Next: view test-results/shots/desktop-*.png (field, crops, pipeline, cnn, results), then system/run + mobile shots, healing Playwright test (7.3), then F12 /analyze page (not started), F13 Lighthouse/axe, V01 make dev/web-build + README "Web app", V02 extend verify_all. Hero footage blocker (no openly licensed footage of a woman inspecting turmeric leaves; ffmpeg not installed) still to be written to BLOCKERS.md.
+All Phase 2 tasks are DONE (P2-F04 DONE-WITH-CAVEAT, see BLOCKERS.md) and `python scripts/verify_all.py` exits 0. Possible follow-ups (out of scope): hero footage + frame scrubber once a licensed clip and ffmpeg are available; a hosted deployment (set VITE_DEPLOYED_APP_URL); cross-region test data.

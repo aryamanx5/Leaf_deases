@@ -22,7 +22,7 @@ export default function SectionRail() {
                 className="group flex items-center gap-3 py-0.5"
               >
                 <span
-                  className={`mono text-[11px] uppercase tracking-[0.08em] transition-opacity duration-500 ${
+                  className={`mono rounded-full px-2 py-0.5 text-[11px] uppercase tracking-[0.08em] transition-opacity duration-500 ${light ? 'bg-paper/85' : 'bg-ink/75'} ${
                     on ? `${light ? 'text-ink' : 'text-text'} opacity-100` : 'text-muted opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100'
                   }`}
                 >

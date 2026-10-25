@@ -7,7 +7,8 @@ A research prototype that takes a photo of a turmeric or black gram (urad) leaf 
   leaf segmentation (HSV/Lab colour thresholds, Otsu, GrabCut, morphology), abnormal-region detection
   (yellow / brown / dark / pale tissue relative to the leaf's own green), connected-component lesion analysis,
   colour + GLCM texture + shape features, then (a) a transparent rule-based score and (b) an SVM.
-* **Stage 2, CNN.** MobileNetV2 transfer learning with a 4-class head (crop x state), which also identifies the crop.
+* **Stage 2, CNN.** MobileNetV2 transfer learning. Phase 1 used one 4-class head (crop x state); Phase 2 replaced it
+  with a separate, calibrated crop model that can answer "unsure", and a crop-conditioned disease CNN (see below).
 
 The two are compared on an identical, leakage-free test split.
 
@@ -68,6 +69,52 @@ res = analyze("leaf.jpg", crop=None)   # crop: "turmeric", "blackgram" or None (
 print(result_card(res))
 ```
 
+## Phase 2: field photos, calibrated crop, API
+
+Phase 1's CNN called a turmeric photo from the web "black gram" with high confidence: every training turmeric
+leaf lies on white paper, so the network had partly learned the background. Phase 2 fixed this without training on
+any web photo:
+
+* `make wild`: an openly licensed field-photo set (`data/wild/`, licences in `SOURCES.csv`), used only for
+  validation and the final robustness test, never for training.
+* `make robust`: diagnosis (`results/diagnosis.md`), background-swap augmentation, a crop model (OpenCLIP features +
+  zero-shot prior) with temperature scaling, an out-of-distribution check and an "unsure" answer, a crop-conditioned
+  disease CNN, and the before/after report `results/robustness.md`. Model details: `models/MODEL_CARD.md`.
+* Stage 1 now handles field scenes (foliage mask, watershed fallback, optional click on the leaf).
+* `make api`: FastAPI on `http://127.0.0.1:8010` with `GET /api/health`, `GET /api/meta` and
+  `POST /api/analyze` (multipart `file`, optional `crop` = auto | turmeric | blackgram, optional `roi_x`/`roi_y`
+  in 0-1). Responses follow the versioned schema in `api/schemas.py`; errors are `{"error": {"code", "message"}}`
+  (`not_a_plant`, `too_large`, `unsupported_type`, `invalid_image`, `bad_crop`, `bad_roi`).
+
+## Web app
+
+`web/` is the project site, **Patra**: a scroll-story landing page (React 18 + TypeScript + Vite + Tailwind, GSAP
+ScrollTrigger + Lenis) and an `/analyze` page that calls the API.
+
+```bash
+make dev           # API on :8010 + Vite on http://localhost:5180 (proxies /api); Ctrl-C stops both
+make web-build     # typecheck + production bundle in web/dist
+make web-preview   # serve web/dist on http://localhost:4180 (run `make api` alongside for /analyze)
+make e2e           # Playwright: /analyze upload, healing interaction, axe, reduced motion, scroll long tasks
+make site-data     # regenerate web/public/data/site.json + web/public/media from results/ and models/
+```
+
+* Every number on the site is read from `web/public/data/site.json`, which `scripts/export_site_data.py` builds
+  from `results/` (cited background statistics live in `web/src/content/citations.ts` with their sources).
+  `scripts/verify_all.py` fails if site.json is older than the results it reads or if a section component
+  contains a hard-coded metric.
+* Images are real pipeline outputs for test-set leaves; the closing "healing leaves" section inpaints the lesions
+  found by our own Stage 1 mask (a visualisation, labelled as such on the page).
+* Optional settings in `web/.env.local` (see `web/.env.example`): `VITE_API_BASE` (API origin when not proxied),
+  `VITE_DEPLOYED_APP_URL` (the "go to the deployed app" button, hidden when empty), `VITE_GITHUB_URL`.
+* Lighthouse (desktop) and axe results are recorded in `results/web_quality.json` and `PROGRESS.md`.
+
+**From a fresh clone:** `make setup`, `make data`, `make all`, `make wild`, `make robust`, `make site-data`,
+`make dev`. Model weights (`models/*.pt`) are not committed, so `/analyze` needs `make all` and `make robust` to
+have run. Tested on a fresh clone: `make setup` (clean venv) and `make web-build` (clean `npm ci`) succeed, and the
+API loads its models. The full download-and-train chain was run in the development checkout, not repeated
+in the fresh clone.
+
 ## Repository map
 
 ```
@@ -79,15 +126,20 @@ src/leafdx/
   ip/lesions.py           abnormal-region detection, morphology, connected components
   ip/features.py          57-feature vector (colour, GLCM, edges, lesion shape) + stage1()
   ip/decide.py            rule-based score and SVM
-  cnn/                    dataset (train-only augmentation), model, train, evaluate, gradcam
+  cnn/                    dataset (train-only augmentation), model, train, evaluate, gradcam,
+                          augment.py (background swap)
+  robust/                 crop model, crop-conditioned disease CNN, calibration, OOD, inference
+  service.py              analyze_image() behind the API
   compare.py ablation.py  method comparison, McNemar, bootstrap CIs, leakage ablation
   pipeline.py             analyze(image, crop) for the app
   viz.py metrics.py       figures, shared metrics
 scripts/                  thin entry points (one per Makefile target) + verify_all.py
 app/streamlit_app.py      demo
+api/                      FastAPI service (main.py) and response schema (schemas.py)
+web/                      Patra site: src/sections (landing), src/pages/Analyze.tsx, e2e/ (Playwright)
 tests/                    pytest (synthetic test images live in tests/synthetic.py)
 results/                  generated metrics, figures, comparison.md, REPORT.md
-models/                   generated ip_rule.joblib, ip_svm.joblib, cnn_best.pt
+models/                   generated IP models, CNN weights, crop model, calibration, MODEL_CARD.md
 PROGRESS.md               task log with evidence for every step
 ```
 
@@ -103,4 +155,6 @@ PROGRESS.md               task log with evidence for every step
   weakest classes of each method are listed (from measured numbers) in the report's limitations and per-class table.
 * Disease-type classification is out of scope (future work).
 
-No known caveats are open in `BLOCKERS.md` (the file is absent when nothing is blocked).
+* Web hero (DONE-WITH-CAVEAT): the spec asks for scroll-scrubbed footage of an agronomist inspecting a turmeric leaf.
+  None was obtainable under an open licence (and ffmpeg is not installed), so the hero uses a CC BY still with a
+  slow zoom. Details and how to lift it: `BLOCKERS.md`.

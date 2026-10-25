@@ -72,11 +72,11 @@ function Readouts({ s }: { s: Showcase }) {
     ['circularity (mean)', fix(r.lesion_circularity_mean, 2)],
   ];
   return (
-    <dl className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
+    <dl className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 [@media(max-height:860px)]:gap-y-2">
       {items.map(([k, v]) => (
         <div key={k}>
           <dt className="caption text-[10px] text-muted">{k}</dt>
-          <dd className="mono text-xl text-text">
+          <dd className="mono text-xl text-text [@media(max-height:860px)]:text-base">
             <Counter value={v} duration={900} />
           </dd>
         </div>
@@ -174,7 +174,7 @@ export default function Pipeline({ site }: { site: Site }) {
                 {STEPS.map((st, i) => {
                   const on = i === active;
                   return (
-                    <li key={i} className={`border-t hairline py-2.5 transition-colors duration-500 ${on ? '' : 'text-muted'}`}>
+                    <li key={i} className={`border-t hairline py-2.5 transition-colors [@media(max-height:860px)]:py-1.5 duration-500 ${on ? '' : 'text-muted'}`}>
                       <div className="flex items-baseline gap-4">
                         <span className={`mono text-[12px] ${on ? 'text-leaf' : ''}`}>{String(i + 1).padStart(2, '0')}</span>
                         <h3 className={`text-[19px] tracking-[-0.02em] ${on ? 'text-text' : ''}`}>{st.title}</h3>
@@ -182,9 +182,9 @@ export default function Pipeline({ site }: { site: Site }) {
                       <div className="grid transition-[grid-template-rows,opacity] duration-700 ease-out"
                            style={{ gridTemplateRows: on ? '1fr' : '0fr', opacity: on ? 1 : 0 }}>
                         <div className="overflow-hidden pl-9">
-                          <p className="pt-2 text-[15px] leading-relaxed text-muted">{st.body}</p>
+                          <p className="pt-2 text-[15px] leading-relaxed text-muted [@media(max-height:860px)]:pt-1 [@media(max-height:860px)]:text-[14px]">{st.body}</p>
                           <p className="mono pt-2 text-[13px] text-leaf">{st.param(s)}</p>
-                          {on && i === STEPS.length - 1 && <div className="pt-4"><Readouts s={s} /></div>}
+                          {on && i === STEPS.length - 1 && <div className="pt-4 [@media(max-height:860px)]:pt-2"><Readouts s={s} /></div>}
                         </div>
                       </div>
                     </li>

@@ -3,16 +3,24 @@
   --quick : lint + unit tests (no app/pipeline tests) + split leakage check
   (full)  : lint, all tests (incl. pipeline + Streamlit AppTest), split leakage, required
             artefacts, REPORT.md numbers re-read from their sources, comparison.md numbers
-            present in comparison.csv.
+            present in comparison.csv; Phase 2: regression test, robustness targets (warn only),
+            Phase 2 artefacts, site.json freshness, no hard-coded metrics in the web copy,
+            web typecheck/lint/build, Playwright E2E (incl. healing interaction) against a
+            temporary API + production build.
+  --no-web : skip the web build and E2E checks (Python-only machines)
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
+import time
+import urllib.request
+from datetime import datetime
 
 import pandas as pd
 
@@ -28,6 +36,18 @@ ARTEFACTS = [
     "results/figures/roc_pr_curves.png", "results/figures/errors_gallery.png",
     "results/figures/disagreements_gallery.png",
 ]
+P2_ARTEFACTS = [
+    "results/diagnosis.md", "results/robustness.md", "results/robustness.json", "results/calibration.json",
+    "results/crop_model_selection.csv", "results/api_latency.json", "results/web_quality.json",
+    "models/MODEL_CARD.md", "models/crop_model.joblib", "models/disease_cnn.pt", "models/calibration.json",
+    "models/ood_reference.npy", "api/main.py", "api/schemas.py", "web/public/data/site.json",
+]
+# results files that scripts/export_site_data.py reads: site.json must be newer than all of them
+SITE_SOURCES = ["results/comparison.csv", "results/robustness.json", "results/calibration.json",
+                "data/processed/splits.csv", "data/processed/split_meta.json", "web/public/media/heal/heal_21x9.json",
+                "web/public/media/heal/heal_9x16.json"]
+WEB_COPY_DIRS = ["web/src/sections", "web/src/pages", "web/src/components"]
+API_PORT, PREVIEW_PORT = 8019, 4189  # private ports so a running `make dev` is not disturbed
 NUM = re.compile(r"(?<![\w./])-?\d+(?:\.\d+)?%?(?![\w])")
 
 
@@ -116,9 +136,98 @@ def check_comparison_md() -> tuple[bool, str]:
     return not bad, "all numbers found in comparison.csv" if not bad else f"not in csv: {bad[:10]}"
 
 
+def check_p2_artefacts() -> tuple[bool, str]:
+    missing = [a for a in P2_ARTEFACTS if not (ROOT / a).exists()]
+    return not missing, "all present" if not missing else f"missing: {missing}"
+
+
+def check_targets() -> tuple[bool, str]:
+    """Robustness targets: a missed target is reported (WARN) but does not fail, as long as it is reported."""
+    t = json.loads((ROOT / "results/robustness.json").read_text())["targets"]
+    missed = [k for k, v in t.items() if not v["met"]]
+    return True, f"{len(t) - len(missed)}/{len(t)} met" + (f"; WARN missed (reported in robustness.md): {missed}" if missed else "")
+
+
+def check_site_fresh() -> tuple[bool, str]:
+    site = ROOT / "web/public/data/site.json"
+    gen = datetime.fromisoformat(json.loads(site.read_text())["generated_at"]).timestamp()
+    stale = [s for s in SITE_SOURCES if (ROOT / s).stat().st_mtime > gen + 1]
+    return not stale, "site.json newer than its sources" if not stale else f"re-run make site-data; newer: {stale}"
+
+
+# a hard-coded metric = a decimal or a percentage written into page copy instead of read from site.json / the API
+METRIC = re.compile(r"(?<![\w.#-])\d+\.\d+%?(?![\w])|(?<![\w.#-])\d+(?:\.\d+)?%")
+CSS_HINT = re.compile(r"calc\(|clamp\(|scale|translate|rgba?\(|cubic-bezier|inset\(|var\(--|px|vh|vw|deg|ms\b|s ease")
+LITERAL = re.compile(r"'([^'\n]*)'|\"([^\"\n]*)\"|`([^`]*)`|>([^<>{}]+)<")
+# layout contexts, not copy: SVG/presentation attributes, ScrollTrigger positions, inline style writes, doc comments
+LAYOUT_ATTR = re.compile(r"\b(d|viewBox|points|stroke\w*|fill\w*|opacity|x\d?|y\d?|r|width|height)=$")
+LAYOUT_LINE = re.compile(r"^\s*(/\*|\*)|\.style\.|setProperty\(")
+TRIGGER_POS = re.compile(r"^(top|bottom|center)\b")
+
+
+def check_no_hardcoded_metrics() -> tuple[bool, str]:
+    hits = []
+    for d in WEB_COPY_DIRS:
+        for f in sorted((ROOT / d).rglob("*.tsx")):
+            for i, line in enumerate(f.read_text().splitlines(), 1):
+                code = line.split("//")[0] if not line.strip().startswith("{/*") else ""
+                if LAYOUT_LINE.search(code):
+                    continue
+                for m in LITERAL.finditer(code):
+                    text = next(g for g in m.groups() if g is not None)
+                    before = code[max(0, m.start() - 16):m.start()]
+                    if ("className" in before or LAYOUT_ATTR.search(before) or CSS_HINT.search(text)
+                            or TRIGGER_POS.match(text)):
+                        continue
+                    if METRIC.search(text):
+                        hits.append(f"{f.relative_to(ROOT)}:{i}: {text.strip()[:60]}")
+    return not hits, "none in sections/pages/components" if not hits else f"{len(hits)}: {hits[:6]}"
+
+
+def run_web(cmd: list[str], env: dict | None = None) -> tuple[bool, str]:
+    p = subprocess.run(cmd, cwd=ROOT / "web", capture_output=True, text=True, env={**os.environ, **(env or {})})
+    lines = [x for x in (p.stdout + p.stderr).strip().splitlines() if x.strip()]
+    return p.returncode == 0, (lines[-1].strip() if lines else "")
+
+
+def _wait(url: str, secs: float) -> bool:
+    end = time.time() + secs
+    while time.time() < end:
+        try:
+            with urllib.request.urlopen(url, timeout=2) as r:
+                if r.status == 200:
+                    return True
+        except OSError:
+            time.sleep(0.5)
+    return False
+
+
+def check_e2e() -> tuple[bool, str]:
+    """Playwright suite against a temporary API + `vite preview` of the production build (needs web-build first)."""
+    env = {**os.environ, "PYTHONPATH": f"{ROOT / 'src'}:{ROOT}"}
+    api = subprocess.Popen([str(ROOT / ".venv/bin/uvicorn"), "api.main:app", "--host", "127.0.0.1", "--port", str(API_PORT)],
+                           cwd=ROOT, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    web = subprocess.Popen(["npx", "vite", "preview", "--port", str(PREVIEW_PORT), "--strictPort"], cwd=ROOT / "web",
+                           env={**os.environ, "VITE_API_PROXY": f"http://127.0.0.1:{API_PORT}"},
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        base = f"http://localhost:{PREVIEW_PORT}"
+        if not (_wait(f"http://127.0.0.1:{API_PORT}/api/health", 90) and _wait(f"{base}/api/health", 30)):
+            return False, "API or preview server did not start"
+        return run_web(["npx", "playwright", "test"], {"E2E_BASE_URL": base, "PERF_URL": base + "/"})
+    finally:
+        for proc in (web, api):
+            proc.terminate()
+            try:
+                proc.wait(timeout=10)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--quick", action="store_true")
+    ap.add_argument("--no-web", action="store_true")
     args = ap.parse_args()
     py = str(ROOT / ".venv/bin/python")
     checks = [("lint (ruff)", lambda: run([str(ROOT / ".venv/bin/ruff"), "check", "."]))]
@@ -130,7 +239,15 @@ def main() -> int:
     checks.append(("split leakage", check_split))
     if not args.quick:
         checks += [("artefacts", check_artefacts), ("REPORT.md numbers vs sources", check_report),
-                   ("comparison.md numbers in comparison.csv", check_comparison_md)]
+                   ("comparison.md numbers in comparison.csv", check_comparison_md),
+                   ("regression: user-reported turmeric image", lambda: run([py, "-m", "pytest", "-q", "-rs", "tests/test_regressions.py"])),
+                   ("robustness targets", check_targets), ("Phase 2 artefacts", check_p2_artefacts),
+                   ("site.json fresh vs results", check_site_fresh), ("no hard-coded metrics in web copy", check_no_hardcoded_metrics)]
+        if not args.no_web:
+            checks += [("web typecheck", lambda: run_web(["npm", "run", "-s", "typecheck"])),
+                       ("web lint", lambda: run_web(["npm", "run", "-s", "lint"])),
+                       ("web build", lambda: run_web(["npm", "run", "-s", "build"])),
+                       ("web E2E (analyze, healing, axe, reduced motion, long tasks)", check_e2e)]
     results = []
     for name, fn in checks:
         try:
