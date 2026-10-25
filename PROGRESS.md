@@ -169,7 +169,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-B08 | Re-evaluate + robustness report | TODO | |
 | P2-F00 | Web scaffold | DONE | P2 log F00 |
 | P2-F01 | Real content export | TODO | |
-| P2-F02 | Healing-leaves assets | TODO | |
+| P2-F02 | Healing-leaves assets | DONE | P2 log F02 |
 | P2-F03 | Shell: nav, smooth scroll, rail, routing | TODO | |
 | P2-F04 | 01 Hero | TODO | |
 | P2-F05 | 02 Problem | TODO | |
@@ -185,6 +185,12 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-V02 | Extend verify_all | TODO | |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-F02 Healing-leaves assets
+- `python scripts/make_heal_assets.py` -> `21x9: affected 23.9% SSIM(non-lesion) 1.0000`, `9x16: affected 22.8% SSIM(non-lesion) 1.0000` (0.99998); web/public/media/heal/: diseased + healed WebP/AVIF (1280/2520 and 720/1080 widths, 36-146 kB), lesion + leaf masks at half resolution, heal_<variant>.json with affected_pct_initial.
+- Leaves (TRAIN/VAL only): black gram anthracnose 111a + 124a, turmeric leaf blotch 00031, black gram yellow mosaic 183y; cut out with our Stage 1 leaf mask on a darkened, blurred field backdrop (healthy 150h).
+- Healing recipe (spec): necrotic (brown/dark) -> Telea inpainting on a leaf-extended image (no background sampling) + borrowed surface grain; large lesions (>(60 px)^2 at processing scale) cloned along the leaf's principal (vein) axis with low-frequency brightness matched; chlorotic/pale -> a*/b* moved to the leaf's healthy median with lightness lifted 60% (veins kept); feathered blend.
+- Preview results/figures/heal_preview.jpg viewed after each of 5 iterations: v1 pulled white paper into edge lesions and smeared large blotches (rejected); final: spots lift away naturally on the anthracnose leaves, the turmeric tip regrows veins. Caveats: at full zoom the turmeric tip shows faint repetition from the clone shifts; the yellow-mosaic leaf changes little because our mask finds only part of its pale patches (by design only detected lesions heal).
 
 #### 2026-10-25 P2-F00 Web scaffold
 - web/: React 18.3.1 + TypeScript 5.9 (strict, noUncheckedIndexedAccess) + Vite 6.4 + Tailwind 3.4 + lucide-react, motion, GSAP 3.15, Lenis 1.3, react-router 6.30; ESLint 9 flat config + Prettier; Playwright 1.64 + @axe-core/playwright; Vite proxy /api -> 127.0.0.1:8000; alias @ -> src; tokens (Section 5.3) as CSS variables + Tailwind theme; Inter + Playfair Display italic + JetBrains Mono; Appendix A keyframes.

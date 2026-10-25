@@ -5,3 +5,32 @@
 /Users/aryamansingh/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
   warnings.warn("xFormers is not available (Block)")
 {'candidate': 'dinov2_vits14 + logistic head', 'backbone': 'dinov2_vits14', 'C': 10.0, 'clean_val_acc': 1.0, 'wild_val_acc': 0.9759036144578314, 'fit_s': 208.6306779384613}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[{'candidate': 'openclip_vitb32 + logistic head', 'backbone': 'openclip_vitb32', 'C': 10.0, 'clean_val_acc': 1.0, 'wild_val_acc': 0.9759036144578314, 'fit_s': 161.08161997795105}, {'candidate': 'openclip_vitb32 zero-shot', 'backbone': 'openclip_vitb32', 'C': None, 'clean_val_acc': 0.8181818181818182, 'wild_val_acc': 0.8795180722891566, 'fit_s': 0.0}, {'candidate': 'openclip_vitb32 head x zero-shot prior', 'backbone': 'openclip_vitb32', 'C': 10.0, 'clean_val_acc': 0.9958677685950413, 'wild_val_acc': 0.9879518072289156, 'fit_s': 0.0}]
+  epoch 1 loss 0.363 val 0.9957 (18s) *
+  epoch 2 loss 0.186 val 0.9999 (20s) *
+  epoch 3 loss 0.057 val 1.0000 (24s)
+  epoch 4 loss 0.038 val 0.9959 (28s)
+  epoch 5 loss 0.025 val 1.0000 (28s) *
+  epoch 6 loss 0.016 val 1.0000 (32s)
+  epoch 7 loss 0.012 val 1.0000 (24s)
+  epoch 8 loss 0.014 val 1.0000 (31s)
+{'candidate': 'efficientnet_b0 fine-tuned (B03 aug)', 'backbone': 'efficientnet_b0', 'C': None, 'clean_val_acc': 1.0, 'wild_val_acc': 0.963855421686747, 'fit_s': 317.9506928920746, 'train_info': '{"score": 0.9999983345228247, "epoch": 5, "epochs_run": 8, "minutes": 3.396757447719574, "device": "mps"}'}
+                                candidate         backbone     C  clean_val_acc  wild_val_acc     fit_s  cpu_ms_per_image  selected
+0           dinov2_vits14 + logistic head    dinov2_vits14  10.0         1.0000        0.9759  208.6307          153.9087     False
+1         openclip_vitb32 + logistic head  openclip_vitb32  10.0         1.0000        0.9759  161.0816          117.4496     False
+2               openclip_vitb32 zero-shot  openclip_vitb32   NaN         0.8182        0.8795    0.0000          120.1656     False
+3  openclip_vitb32 head x zero-shot prior  openclip_vitb32  10.0         0.9959        0.9880    0.0000          112.8093      True
+4    efficientnet_b0 fine-tuned (B03 aug)  efficientnet_b0   NaN         1.0000        0.9639  317.9507          419.8297     False
+selected: openclip_vitb32 head x zero-shot prior
+  epoch 1 loss 0.624 val 0.8244 (15s) *
+  epoch 2 loss 0.497 val 0.8648 (15s) *
+  epoch 3 loss 0.453 val 0.8444 (12s)
+  epoch 4 loss 0.427 val 0.8476 (14s)
+  epoch 5 loss 0.328 val 0.8762 (20s) *
+  epoch 6 loss 0.209 val 0.9209 (14s) *
+  epoch 7 loss 0.180 val 0.9542 (12s) *
+  epoch 8 loss 0.176 val 0.9587 (14s) *
+  epoch 9 loss 0.164 val 0.9489 (16s)
+  epoch 10 loss 0.174 val 0.9256 (14s)
