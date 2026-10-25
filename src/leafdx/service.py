@@ -151,7 +151,54 @@ def analyze_image(data: bytes, crop: str | None = None, roi: dict | None = None,
     }
     t["total"] = sum(t.values())
     out["timings_ms"] = t
+    out["trace"] = run_trace(cfg, im, pf, crop, roi, s1, ip, svm_prob, pred, t)
+    out["result_card"] = result_card(out)
     return out
+
+
+def _num(x):
+    """JSON-safe number: NaN (e.g. no threshold on a field photo) becomes None."""
+    return None if x is None or (isinstance(x, float) and np.isnan(x)) else x
+
+
+def run_trace(cfg: dict, im: Image.Image, pf: float, crop: str | None, roi: dict | None, s1: dict, ip: dict,
+              svm_prob: float, pred: dict, t: dict) -> dict:
+    """What each stage did on THIS photo: the values it used or produced and its time. Stage ids match
+    GET /api/code, so the web app can show the code next to the numbers."""
+    p, pre, seg, les, f, ms = cfg["preprocess"], s1["pre"], s1["seg"], s1["lesions"], s1["features"], s1["ms_steps"]
+    h, w = pre["resized"].shape[:2]
+    d, ood = pred["disease"], pred["ood"]
+    return {
+        "input": {"width": im.size[0], "height": im.size[1], "analysed_width": w, "analysed_height": h,
+                  "crop_given": crop if crop in ("turmeric", "blackgram") else "auto",
+                  "roi": None if roi is None else {k: (list(v) if isinstance(v, tuple) else v) for k, v in roi.items()},
+                  "plant_colour_fraction": pf},
+        "stages": [
+            {"id": "denoise", "ms": ms["preprocess"],
+             "values": {"max_side_px": p["max_side"], "median_ksize": p["median_ksize"], "gaussian_ksize": p["gaussian_ksize"]}},
+            {"id": "colour", "ms": None,  # inside preprocess, timed with denoise
+             "values": {"clahe_clip": p["clahe_clip"], "clahe_tile": p["clahe_tile"], "spaces": "HSV, Lab"}},
+            {"id": "segment", "ms": ms["segment"],
+             "values": {"method": seg["method"], "border_background_share": _num(seg["plain_bg_frac"]),
+                        "distance_threshold": _num(seg["dist_threshold"]), "leaf_coverage_pct": 100.0 * seg["coverage"],
+                        "fallback_whole_image": bool(seg.get("seg_failed", 0))}},
+            {"id": "lesions", "ms": ms["lesions"],
+             "values": {"leaf_area_px": les["leaf_area"], "min_lesion_px": les["min_area"], "lesion_count": les["lesion_count"],
+                        "affected_pct": les["affected_pct"]}},
+            {"id": "measure", "ms": ms["features"],
+             "values": {"n_features": len(f), "abn_colour_pct": 100.0 * (1.0 - f["green_frac"]),
+                        "glcm_contrast": f["glcm_contrast"], "glcm_homogeneity": f["glcm_homogeneity"]}},
+            {"id": "ip_decision", "ms": t["ip_decision"],
+             "values": {"rule_score": ip["rule_score"], "rule_threshold": ip["rule_threshold"], "rule_label": LABEL[ip["rule_pred"]],
+                        "svm_margin": ip["svm_score"], "svm_prob_diseased": svm_prob, "svm_label": LABEL[ip["svm_pred"]]}},
+            {"id": "cnn", "ms": t["cnn"],
+             "values": {"p_turmeric": pred["crop"]["probs"]["turmeric"], "crop_status": pred["crop"]["status"],
+                        "p_diseased": d["prob"], "cnn_label": d["label"], "ood_score": ood["ood_score"],
+                        "ood_threshold": ood["threshold"]}},
+            {"id": "compare", "ms": None,
+             "values": {"svm_label": LABEL[ip["svm_pred"]], "cnn_label": d["label"], "agreement": LABEL[ip["svm_pred"]] == d["label"]}},
+        ],
+    }
 
 
 def result_card(res: dict) -> list[str]:

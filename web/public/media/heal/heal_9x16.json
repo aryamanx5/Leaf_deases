@@ -3,9 +3,9 @@
  "width": 1080,
  "height": 1920,
  "leaf_px": 705517,
- "lesion_px": 160690,
- "affected_pct_initial": 22.776205250901114,
- "ssim_non_lesion": 0.9999940023891501,
+ "lesion_px": 247179,
+ "affected_pct_initial": 35.03515861417939,
+ "ssim_non_lesion": 0.9999894891630153,
  "mask_scale": 0.5,
  "files": {
   "diseased": [

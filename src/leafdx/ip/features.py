@@ -123,12 +123,20 @@ def stage1(img: np.ndarray, cfg: dict, crop: str | None = None, roi: dict | None
     """Full Stage 1 on one BGR image: pre-processing, segmentation, lesions, features.
     roi: optional user click {"x", "y"} or {"box": (x, y, w, h)}, fractions of the image."""
     t0 = time.perf_counter()
+    ms = {}  # per step, for the web app's "how this was calculated" panel
     pre = preprocess(img, cfg)
+    ms["preprocess"] = 1000.0 * (time.perf_counter() - t0)
+    t = time.perf_counter()
     seg = segment_leaf(pre, cfg, roi=roi)
     if seg["coverage"] < cfg["features"]["min_leaf_frac"]:
         seg["leaf_mask"] = np.ones_like(seg["leaf_mask"])
         seg["seg_failed"] = 1
+    ms["segment"] = 1000.0 * (time.perf_counter() - t)
+    t = time.perf_counter()
     les = detect_lesions(pre, seg["leaf_mask"], cfg, crop)
+    ms["lesions"] = 1000.0 * (time.perf_counter() - t)
+    t = time.perf_counter()
     feats = extract_features(pre, seg, les, cfg)
+    ms["features"] = 1000.0 * (time.perf_counter() - t)
     return {"pre": pre, "seg": seg, "lesions": les, "features": feats,
-            "ms": 1000.0 * (time.perf_counter() - t0)}
+            "ms": 1000.0 * (time.perf_counter() - t0), "ms_steps": ms}

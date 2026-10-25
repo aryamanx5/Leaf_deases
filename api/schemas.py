@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
@@ -65,6 +65,17 @@ class OOD(BaseModel):
     flagged: bool
 
 
+class StageTrace(BaseModel):
+    id: str  # matches GET /api/code stage ids
+    ms: float | None
+    values: dict[str, Any]
+
+
+class Trace(BaseModel):
+    input: dict[str, Any]
+    stages: list[StageTrace]
+
+
 class AnalyzeResponse(BaseModel):
     schema_version: str = SCHEMA_VERSION
     request_id: str
@@ -77,6 +88,9 @@ class AnalyzeResponse(BaseModel):
     images: Images
     ood: OOD
     timings_ms: dict[str, float]
+    # optional additions (schema v1 stays compatible): per-stage trace and the plain-text result card
+    trace: Trace | None = None
+    result_card: list[str] | None = None
 
 
 class ErrorBody(BaseModel):

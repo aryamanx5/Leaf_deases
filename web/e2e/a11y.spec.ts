@@ -8,6 +8,10 @@ const SECTIONS = ['field', 'problem', 'crops', 'pipeline', 'cnn', 'results', 'sy
 const site = JSON.parse(readFileSync(new URL('../public/data/site.json', import.meta.url), 'utf8')) as { samples: { src: string }[] };
 
 async function serious(page: Page) {
+  // let entrance animations (e.g. the /analyze result fade-up) finish: axe measures contrast at the current opacity.
+  // Infinite ones (scan line, shimmer, scroll cue) are ignored.
+  await page.waitForFunction(() =>
+    document.getAnimations().every((a) => a.playState !== 'running' || a.effect?.getComputedTiming().endTime === Infinity));
   const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
   return r.violations
     .filter((v) => v.impact === 'serious' || v.impact === 'critical')
@@ -36,8 +40,11 @@ test('/analyze: no serious axe violations, idle and with a result', async ({ pag
   await page.waitForTimeout(600);
   expect(await serious(page)).toEqual([]);
   await page.getByTestId('file-input').setInputFiles(new URL(`../public${site.samples[0]!.src}`, import.meta.url).pathname);
-  await expect(page.getByTestId('result-card')).toBeVisible({ timeout: 60_000 });
-  expect(await serious(page)).toEqual([]);
+  await expect(page.getByTestId('verdict')).toBeVisible({ timeout: 60_000 });
+  expect(await serious(page)).toEqual([]); // Simple view
+  await page.getByRole('radio', { name: 'Detailed' }).click();
+  await expect(page.getByTestId('result-card')).toBeVisible();
+  expect(await serious(page)).toEqual([]); // Detailed view
 });
 
 test('reduced motion: nothing pinned, healing becomes a before/after slider', async ({ browser }) => {

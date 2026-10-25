@@ -182,8 +182,8 @@ def hero(cfg: dict) -> dict:
     return out
 
 
-def crop_panels(cfg: dict) -> dict:
-    """One healthy and one diseased TEST photo per crop (real dataset images) for the Crops section."""
+def crop_panel_picks(cfg: dict) -> dict:
+    """(crop, label) -> (orig_class, path): one healthy and one diseased TEST photo per crop for the Crops section."""
     f = pd.read_csv(path("features", cfg))
     out = {}
     picks = {("turmeric", "healthy"): "healthy_leaf", ("turmeric", "diseased"): "leaf_blotch",
@@ -193,32 +193,100 @@ def crop_panels(cfg: dict) -> dict:
                                                                                  else f.bg_mode == "plain")]
         if lab == "diseased":
             c = c[c.affected_pct.between(10, 45)]
-        p = c.sort_values("path").iloc[0].path
+        out[(crop, lab)] = (cls, c.sort_values("path").iloc[0].path)
+    return out
+
+
+def crop_panels(cfg: dict) -> dict:
+    """One healthy and one diseased TEST photo per crop (real dataset images) for the Crops section."""
+    out = {}
+    for (crop, lab), (cls, p) in crop_panel_picks(cfg).items():
         out.setdefault(crop, {})[lab] = {"img": save_img(cv2.imread(str(ROOT / p)), f"crops/{crop}-{lab}", widths=(480, 960)),
                                          "source": p, "orig_class": cls}
     return out
 
 
-def samples(cfg: dict) -> list[dict]:
-    """Sample-image chips for /analyze: 2 turmeric + 2 black gram TEST photos, not used elsewhere on the site."""
+SAMPLES_PER_CLASS = 3
+WILD_SAMPLES = (("turmeric", "healthy"), ("turmeric", "blotch"), ("blackgram", "healthy"), ("blackgram", "yellow_mosaic"))
+
+
+def sample_picks(cfg: dict) -> list[dict]:
+    """Gallery photos for /analyze: SAMPLES_PER_CLASS per class from the TEST split only, plus a few labelled
+    wild_test field photos. Deterministic (sorted, fixed seed), at most one photo per cluster, plain and field
+    backgrounds mixed where the class has both, and no photo already shown on the landing page."""
+    rng = np.random.default_rng(cfg["seed"])
     f = pd.read_csv(path("features", cfg))
-    used = {v for v in pick_showcase(cfg).values()}
-    picks = [("turmeric", "leaf_blotch", "plain"), ("turmeric", "healthy_leaf", "plain"),
-             ("blackgram", "powdery_mildew", "field"), ("blackgram", "anthracnose", "plain")]
+    used = set(pick_showcase(cfg).values()) | {p for _, p in crop_panel_picks(cfg).values()}
+    t = f[(f.split == "test") & ~f.path.isin(used)].sort_values("path")
     out = []
-    for crop, cls, bg in picks:
-        c = f[(f.split == "test") & (f.crop == crop) & (f.orig_class == cls) & (f.bg_mode == bg) & ~f.path.isin(used)]
-        p = c.sort_values("path").iloc[len(c) // 2].path
-        im = Image.open(ROOT / p).convert("RGB")
+    for (crop, cls), c in t.groupby(["crop", "orig_class"], sort=True):
+        c = c.drop_duplicates("cluster_id")
+        modes = sorted(c.bg_mode.unique())  # ["field", "plain"] or ["plain"]
+        chosen: list = []
+        for i in range(SAMPLES_PER_CLASS):  # alternate background modes, field first
+            pool = c[(c.bg_mode == modes[i % len(modes)]) & ~c.path.isin(chosen)]
+            if pool.empty:
+                pool = c[~c.path.isin(chosen)]
+            chosen.append(pool.path.iloc[int(rng.integers(len(pool)))])
+        for n, p in enumerate(chosen, 1):
+            row = c[c.path == p].iloc[0]
+            out.append({"id": f"{crop}-{cls}-{n}", "crop": crop, "orig_class": cls, "label": row.label, "path": p,
+                        "bg": row.bg_mode, "set": "test"})
+    w = pd.read_csv(ROOT / cfg["wild"]["root"] / "splits.csv").merge(
+        pd.read_csv(ROOT / cfg["wild"]["root"] / "SOURCES.csv")[["path", "excluded", "dup_of_train", "licence", "notes"]],
+        on="path", how="left")
+    w = w[(w.split == "wild_test") & w.source.str.startswith("mendeley") & w.excluded.isna() & ~w.dup_of_train.astype(bool)]
+    for crop, cls in WILD_SAMPLES:
+        c = w[(w.crop == crop) & (w.orig_class == cls)].sort_values("path").drop_duplicates("cluster_id")
+        row = c.iloc[int(rng.integers(len(c)))]
+        out.append({"id": f"wild-{crop}-{cls}", "crop": crop, "orig_class": cls, "label": row.label, "path": row.path,
+                    "bg": "field", "set": "wild_test", "credit": f"{row.notes} ({row.licence})"})
+    return out
+
+
+def samples(cfg: dict) -> list[dict]:
+    """Sample gallery for /analyze (see sample_picks). Writes <id>.jpg (<=1024 px) and <id>-thumb.webp (<=160 px)."""
+    d = MEDIA / "samples"
+    d.mkdir(parents=True, exist_ok=True)
+    out = []
+    for s in sample_picks(cfg):
+        sid = s["id"]
+        im = Image.open(ROOT / s["path"]).convert("RGB")
         im.thumbnail((1024, 1024))
-        sid = f"{crop}-{cls}"
-        (MEDIA / "samples").mkdir(parents=True, exist_ok=True)
-        im.save(MEDIA / f"samples/{sid}.jpg", quality=88)
+        im.save(d / f"{sid}.jpg", quality=88)
         th = im.copy()
         th.thumbnail((160, 160))
-        th.save(MEDIA / f"samples/{sid}-thumb.webp", quality=80)
-        out.append({"id": sid, "crop": crop, "orig_class": cls, "label": "healthy" if "healthy" in cls else "diseased",
-                    "src": f"/media/samples/{sid}.jpg", "thumb": f"/media/samples/{sid}-thumb.webp", "source": p})
+        th.save(d / f"{sid}-thumb.webp", quality=80)
+        out.append({"id": sid, "crop": s["crop"], "orig_class": s["orig_class"], "label": s["label"],
+                    "src": f"/media/samples/{sid}.jpg", "thumb": f"/media/samples/{sid}-thumb.webp", "source": s["path"],
+                    "bg": s["bg"], "set": s["set"]} | ({"credit": s["credit"]} if "credit" in s else {}))
+    keep = {f"{s['id']}.jpg" for s in out} | {f"{s['id']}-thumb.webp" for s in out}
+    for stale in d.iterdir():  # previous generations of this gallery
+        if stale.name not in keep:
+            stale.unlink()
+    return out
+
+
+CONF_HIGH, CONF_LOW = 0.9, 0.7  # CNN confidence cut-offs for the /analyze verdict (mirrored by web/src/lib/verdict.ts)
+
+
+def confidence_levels(cfg: dict) -> dict:
+    """How often each verdict confidence level (High / Medium / Low, as web/src/lib/verdict.ts assigns it) was right
+    on the held-out clean validation + test photos, using the calibrated CNN and the SVM agreement."""
+    res = path("results", cfg)
+    cal = json.loads((res / "calibration.json").read_text())
+    d = pd.read_csv(res / "robust_preds_calibrated.csv")
+    d = d[d.set.isin(["clean_val", "clean_test"]) & d.label.isin(["healthy", "diseased"])].copy()
+    p = 1 / (1 + np.exp(-d.z_disease / cal["T_disease"]))
+    d["pred"], d["conf"], d["right"] = (p >= 0.5).astype(int), np.maximum(p, 1 - p), (p >= 0.5) == (d.label == "diseased")
+    d = d.merge(pd.read_csv(res / "ip_predictions.csv")[["path", "svm_pred"]], on="path")
+    agree = d.svm_pred == d.pred
+    flagged = d.ood_score > cal["ood"]["threshold"]
+    low = (d.conf < CONF_LOW) | (~agree & (d.conf < CONF_HIGH))
+    high = ~low & (d.conf >= CONF_HIGH) & agree & ~flagged
+    out = {"high_min_conf": CONF_HIGH, "low_below_conf": CONF_LOW, "n": int(len(d)), "set": "clean validation + test"}
+    for name, sel in (("high", high), ("medium", ~low & ~high), ("low", low)):
+        out[name] = {"right": int(d.right[sel].sum()), "n": int(sel.sum())}
     return out
 
 
@@ -268,6 +336,7 @@ def main() -> int:
         "leakage": leak,
         "robustness": {"before": rob["before"], "after": rob["after"], "targets": rob["targets"]},
         "calibration": {"tau_crop": cal["tau_crop"], "ood_threshold": cal["ood"]["threshold"]},
+        "confidence_levels": confidence_levels(load_config()),
         "showcase": showcase,
         "heal": heal,
         "crops": crop_panels(cfg),

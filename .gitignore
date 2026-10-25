@@ -8,7 +8,6 @@ data/raw/**
 !data/raw/**/.gitkeep
 data/downloads/
 data/processed/cache/
-models/*.pt
 loop.log
 .DS_Store
 # user-supplied web images (copyright of their owners): test-only, never committed
@@ -23,3 +22,4 @@ web/playwright-report/
 data/wild/turmeric/
 data/wild/blackgram/
 web/.env.local
+models/cnn_smoke.pt

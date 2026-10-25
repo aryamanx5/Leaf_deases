@@ -45,6 +45,12 @@ def test_analyze_auto_crop(client):
     assert set(j["disease"]["by"]) == {"cnn", "svm", "rule"}
     assert j["images"]["original"].startswith("data:image/webp;base64,")
     assert j["measurements"]["lesion_count"] >= 0 and j["timings_ms"]["total"] > 0
+    # per-stage trace (ids match GET /api/code) and the plain-text result card
+    code_stages = client.get("/api/code").json()["stages"]
+    assert [st["id"] for st in j["trace"]["stages"]] == [c for c in code_stages if c != "card"]
+    assert j["trace"]["input"]["filename"] == "leaf.jpg" and j["trace"]["input"]["crop_given"] == "auto"
+    assert j["trace"]["stages"][3]["values"]["lesion_count"] == j["measurements"]["lesion_count"]
+    assert len(j["result_card"]) == 4 and j["result_card"][1].startswith("Prediction: ")
 
 
 def test_user_selected_crop(client):

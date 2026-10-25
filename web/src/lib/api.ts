@@ -34,7 +34,18 @@ export type AnalyzeResponse = {
   images: { original: string; segmented_leaf: string; abnormal_regions: string; gradcam: string | null };
   ood: { is_plant: boolean; ood_score: number; flagged: boolean };
   timings_ms: Record<string, number>;
+  /** What each stage did on this photo (optional addition to schema v1). Stage ids match GET /api/code. */
+  trace?: {
+    input: { filename?: string; width: number; height: number; analysed_width: number; analysed_height: number;
+             crop_given: CropChoice; roi: Record<string, number | number[]> | null; plant_colour_fraction: number };
+    stages: { id: string; ms: number | null; values: Record<string, number | string | boolean | null> }[];
+  };
+  /** The plain-text result card (leafdx.service.result_card), as the old Streamlit app showed it. */
+  result_card?: string[];
 };
+
+/** One whitelisted pipeline function from GET /api/code. */
+export type CodeItem = { stage: string; name: string; file: string; start_line: number; end_line: number; source: string };
 
 export type ApiErrorCode = 'offline' | 'too_large' | 'not_a_plant' | 'unsupported_type' | 'invalid_image' | 'bad_roi' | 'bad_crop' | 'internal';
 export class ApiError extends Error {
@@ -45,10 +56,11 @@ export class ApiError extends Error {
 
 export const MAX_UPLOAD_BYTES = 10 * 1024 * 1024; // mirrors api/main.py MAX_BYTES
 
-export async function analyze(file: Blob, crop: CropChoice, roi: { x: number; y: number } | null, signal?: AbortSignal): Promise<AnalyzeResponse> {
+export async function analyze(file: Blob, crop: CropChoice, roi: { x: number; y: number } | null, signal?: AbortSignal,
+                              name?: string): Promise<AnalyzeResponse> {
   if (file.size > MAX_UPLOAD_BYTES) throw new ApiError('too_large', 'This image is larger than 10 MB. Please upload a smaller photo.');
   const body = new FormData();
-  body.append('file', file, (file as File).name ?? 'upload.jpg');
+  body.append('file', file, name ?? (file as File).name ?? 'upload.jpg');
   body.append('crop', crop);
   if (roi) {
     body.append('roi_x', roi.x.toFixed(4));
@@ -75,4 +87,20 @@ export async function health(): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+let codeCache: Promise<CodeItem[]> | null = null;
+/** Source of every pipeline stage (read-only, cached for the session). */
+export function fetchCode(): Promise<CodeItem[]> {
+  codeCache ??= fetch(`${API_BASE}/api/code`)
+    .then((r) => {
+      if (!r.ok) throw new ApiError('offline', `code ${r.status}`);
+      return r.json() as Promise<{ items: CodeItem[] }>;
+    })
+    .then((j) => j.items)
+    .catch((e: unknown) => {
+      codeCache = null; // let the next attempt retry
+      throw e;
+    });
+  return codeCache;
 }

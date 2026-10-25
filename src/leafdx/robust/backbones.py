@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -19,7 +20,11 @@ def load_backbone(name: str, dev_str: str | None = None):
     """(model, preprocess, embed_fn, device) for a frozen backbone (best device unless given)."""
     dev = torch.device(dev_str) if dev_str else device()
     if name == "dinov2_vits14":
-        m = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14", verbose=False)
+        hub = Path(torch.hub.get_dir()) / "facebookresearch_dinov2_main"
+        if hub.is_dir():  # cached copy: skip the GitHub lookup torch.hub does on every load
+            m = torch.hub.load(str(hub), "dinov2_vits14", source="local", verbose=False)
+        else:
+            m = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14", verbose=False)
         tf = T.Compose([T.Resize((224, 224)), T.ToTensor(), T.Normalize(IMNET_MEAN, IMNET_STD)])
         fn = m
     elif name == "openclip_vitb32":

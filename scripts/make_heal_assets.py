@@ -59,6 +59,25 @@ def leaf_layers(p: str, crop: str, cfg: dict) -> dict:
     cm = les["class_masks"]
     necrotic = dil(up(cm["brown"] | cm["dark"]) & leaf)
     chlorotic = dil(up(cm["yellow"] | cm["pale"]) & leaf) & ~necrotic
+    # Visible damage the lesion detector leaves out (tiny specks, the brown halo around a spot): leaf pixels
+    # clearly off this leaf's own healthy colour nearby. Without this the "healed" leaf keeps faint brown
+    # spots. Compared with a local reference (healthy tissue, heavily blurred) so lighting gradients pass.
+    lab = cv2.cvtColor(cv2.GaussianBlur(img, (0, 0), 1.0 * s), cv2.COLOR_BGR2LAB).astype(np.float32)
+    ok = (leaf & ~necrotic & ~chlorotic).astype(np.float32)
+    w = np.maximum(cv2.GaussianBlur(ok, (0, 0), 25 * s), 1e-3)
+    ref = np.stack([cv2.GaussianBlur(lab[..., c] * ok, (0, 0), 25 * s) / w for c in range(3)], -1)
+    dL, da, db = (lab[..., c] - ref[..., c] for c in range(3))
+    inner = cv2.erode(leaf.astype(np.uint8), cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * k + 1,) * 2)).astype(bool)
+    speck = lambda m: cv2.morphologyEx(m.astype(np.uint8), cv2.MORPH_OPEN, np.ones((3, 3), np.uint8)).astype(bool)  # noqa: E731
+    brownish = speck(inner & ((da > 7) | ((dL < -24) & (da > 0))))  # dark AND not greener: green tissue is never damage
+    yellowish = speck(inner & ~brownish & (db > 12) & (dL > -12))
+    # mosaic leaves are mostly yellow, so also compare with the leaf's greenest tissue
+    if ok.any():
+        green = ok.astype(bool) & (lab[..., 1] < np.percentile(lab[..., 1][ok.astype(bool)], 35))
+        g = np.median(lab[green], axis=0) if green.any() else ref.reshape(-1, 3).mean(0)
+        yellowish |= speck(inner & ~brownish & (lab[..., 2] - g[2] > 10) & (lab[..., 0] - g[0] > 4))
+    necrotic |= dil(brownish)
+    chlorotic = (chlorotic | dil(yellowish)) & ~necrotic
     healed = heal(img, leaf, necrotic, chlorotic, s)
     alpha = cv2.GaussianBlur(leaf.astype(np.float32), (0, 0), 1.2 * s)
     return {"rgb": img, "healed": healed, "alpha": alpha, "lesion": necrotic | chlorotic, "leaf": leaf}
@@ -113,12 +132,12 @@ def heal(img: np.ndarray, leaf: np.ndarray, necrotic: np.ndarray, chlorotic: np.
     med = np.median(lab[healthy], axis=0) if healthy.any() else lab[leaf].mean(0)
     out = lab.copy()
     # chlorosis / pale tissue: move a*, b* to the leaf's healthy median (keep a little local
-    # variation) and lift L only part of the way, so veins and surface texture survive
+    # variation) and lift L most of the way (low frequencies only), so veins and surface texture survive
     for c in (1, 2):
         local = cv2.GaussianBlur(lab[..., c], (0, 0), 3 * s)
-        out[..., c] = np.where(chlorotic, med[c] + 0.35 * (lab[..., c] - local), lab[..., c])
+        out[..., c] = np.where(chlorotic, med[c] + 0.2 * (lab[..., c] - local), lab[..., c])
     lowL = cv2.GaussianBlur(lab[..., 0], (0, 0), 4 * s)
-    out[..., 0] = np.where(chlorotic, lab[..., 0] + 0.6 * (med[0] - lowL), lab[..., 0])
+    out[..., 0] = np.where(chlorotic, lab[..., 0] + 0.9 * (med[0] - lowL), lab[..., 0])
     rgb = cv2.cvtColor(np.clip(out, 0, 255).astype(np.uint8), cv2.COLOR_LAB2BGR)
     # necrosis: Telea inpainting from healthy leaf only (background replaced by leaf extension)
     if necrotic.any():

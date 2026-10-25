@@ -3,6 +3,7 @@
   GET  /api/health   -> {status, model_versions}
   GET  /api/meta     -> metrics summary read from results/*.json
   POST /api/analyze  -> multipart file + crop=auto|turmeric|blackgram + optional roi_x, roi_y or roi_box
+  GET  /api/code     -> source of the whitelisted pipeline functions (optional ?stage=<id>)
 
 Run: uvicorn api.main:app --port 8000   (from the repo root, PYTHONPATH=src)
 """
@@ -21,6 +22,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from PIL import Image
 
+from api.code import STAGE_IDS, code_items
 from api.schemas import AnalyzeResponse, ErrorResponse
 from leafdx.config import ROOT, load_config, path
 from leafdx.pipeline import InvalidImageError, NotALeafError
@@ -79,6 +81,14 @@ def meta() -> dict:
     return out
 
 
+@app.get("/api/code")
+def code(stage: str | None = None):
+    """Read-only: the real source of each pipeline stage, from a fixed whitelist (api/code.py)."""
+    if stage is not None and stage not in STAGE_IDS:
+        return err(404, "unknown_stage", f"stage must be one of {', '.join(STAGE_IDS)}")
+    return {"stages": list(STAGE_IDS), "items": [i for i in code_items() if stage is None or i["stage"] == stage]}
+
+
 @app.post("/api/analyze", response_model=AnalyzeResponse, responses={400: {"model": ErrorResponse},
                                                                      413: {"model": ErrorResponse},
                                                                      415: {"model": ErrorResponse},
@@ -114,6 +124,7 @@ async def analyze(file: Annotated[UploadFile, File()], crop: Annotated[str, Form
         return err(422, "not_a_plant", str(e))
     _LAT.append(1000 * (time.perf_counter() - t0))
     res["images"] = {k: to_webp_data_url(v) for k, v in res["images"].items()}
+    res["trace"]["input"]["filename"] = (file.filename or "upload")[:120]  # echoed back only, never stored
     res.pop("features", None)
     return AnalyzeResponse(**res)
 

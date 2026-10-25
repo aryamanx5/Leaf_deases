@@ -1,0 +1,16 @@
+.git
+.venv
+.claude
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+data
+web
+app
+tests
+scripts
+models/cnn_smoke.pt
+results/figures
+*.log
+.DS_Store

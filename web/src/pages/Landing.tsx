@@ -32,7 +32,7 @@ export default function Landing() {
     <>
       <SectionRail />
       <main id="top">
-        <Hero site={site} />
+        <Hero />
         <Problem />
         <Crops site={site} />
         <Pipeline site={site} />
@@ -41,7 +41,7 @@ export default function Landing() {
         <System site={site} />
         <Run site={site} />
       </main>
-      <Footer site={site} />
+      <Footer />
     </>
   );
 }

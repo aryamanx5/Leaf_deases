@@ -61,6 +61,10 @@ export type Sample = {
   src: string;
   thumb: string;
   source: string;
+  /** Optional (T4 gallery): background of the photo, which split it came from, and attribution for wild photos. */
+  bg?: 'plain' | 'field';
+  set?: 'test' | 'wild_test';
+  credit?: string;
 };
 export type Site = {
   generated_at: string;
@@ -100,6 +104,16 @@ export type Site = {
   };
   example_card: string[] | null;
   samples: Sample[];
+  /** How often each verdict confidence level was right on held-out photos (scripts/export_site_data.py). */
+  confidence_levels: {
+    high_min_conf: number;
+    low_below_conf: number;
+    n: number;
+    set: string;
+    high: { right: number; n: number };
+    medium: { right: number; n: number };
+    low: { right: number; n: number };
+  };
 };
 
 let cache: Promise<Site> | null = null;

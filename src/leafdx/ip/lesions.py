@@ -215,6 +215,7 @@ def detect_lesions(pre: dict, leaf: np.ndarray, cfg: dict, crop: str | None = No
         "class_pct": {n: 100.0 * float(per_class[n].sum() / leaf_area) if leaf_area else 0.0 for n in CLASSES},
         "lesion_count": len(lesions),
         "leaf_area": leaf_area,
+        "min_area": min_area,
     }
 
 

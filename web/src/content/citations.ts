@@ -64,5 +64,14 @@ export const datasetCredits = [
     name: 'Field-photo evaluation set',
     by: 'Mendeley (CC BY 4.0), iNaturalist and Wikimedia Commons contributors (CC0 / CC BY / CC BY-SA)',
     url: null,
+    // where the field photos came from (configs/default.yaml "wild"; per-photo sources in data/wild/SOURCES.csv)
+    links: [
+      { label: 'Turmeric field photos (Mendeley)', url: 'https://doi.org/10.17632/jtttfbx342.2' },
+      { label: 'Black gram field photos (Mendeley)', url: 'https://doi.org/10.17632/z55yrbmn2d.3' },
+      { label: 'iNaturalist: turmeric', url: 'https://www.inaturalist.org/observations?taxon_name=Curcuma%20longa' },
+      { label: 'iNaturalist: black gram', url: 'https://www.inaturalist.org/observations?taxon_name=Vigna%20mungo' },
+      { label: 'Wikimedia Commons: turmeric', url: 'https://commons.wikimedia.org/wiki/Category:Curcuma_longa' },
+      { label: 'Wikimedia Commons: black gram', url: 'https://commons.wikimedia.org/wiki/Category:Vigna_mungo' },
+    ],
   },
-];
+] as { name: string; by: string; url: string | null; links?: { label: string; url: string }[] }[];

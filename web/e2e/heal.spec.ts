@@ -98,8 +98,11 @@ test('healing follows the pointer, stays local, decays back; meter tracks it', a
     const inner = cells.filter((q) => q.x > R && q.x < W - R);
     const P = [...inner].sort((a, b) => b.dens - a.dens)[0]!;
     const far = inner.filter((q) => Math.hypot(q.x - P.x, q.y - P.y) > 2 * R + R / 3 + R / 4 + 10).sort((a, b) => b.dens - a.dens)[0]!;
-    const Q = cells.filter((q) => Math.hypot(q.x - P.x, q.y - P.y) > 2 * R)
-      .sort((a, b) => a.wide - b.wide)[0]!;
+    // Q: the cleanest spot anywhere on the canvas (the healing mask now also covers spot halos, so the middle
+    // band can be lesion-bearing everywhere; the backdrop near the top and bottom edges is clean)
+    const all: typeof cells = [];
+    for (let y = Math.round(R / 2); y < H - R / 2; y += 30) for (let x = 60; x < W - 60; x += 30) all.push({ x, y, dens: 0, wide: density(x, y, Math.round(R)) });
+    const Q = all.filter((q) => Math.hypot(q.x - P.x, q.y - P.y) > 2 * R).sort((a, b) => a.wide - b.wide)[0]!;
     const abs = (p: { x: number; y: number }) => ({ x: p.x + sec.left, y: p.y + sec.top });
     return { P: abs(P), F: abs(far), Q: abs(Q), dens: [P.dens, far.dens, Q.wide] };
   }, R);

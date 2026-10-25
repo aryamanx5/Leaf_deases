@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T09:05:37+00:00",
+ "generated_at": "2026-10-25T15:46:31+00:00",
  "dataset": {
   "total": 1606,
   "by_crop_label": {
@@ -194,6 +194,24 @@
  "calibration": {
   "tau_crop": 0.5,
   "ood_threshold": 0.34562939405441284
+ },
+ "confidence_levels": {
+  "high_min_conf": 0.9,
+  "low_below_conf": 0.7,
+  "n": 481,
+  "set": "clean validation + test",
+  "high": {
+   "right": 453,
+   "n": 453
+  },
+  "medium": {
+   "right": 20,
+   "n": 23
+  },
+  "low": {
+   "right": 1,
+   "n": 5
+  }
  },
  "showcase": {
   "turmeric": {
@@ -635,9 +653,9 @@
    "width": 2520,
    "height": 1080,
    "leaf_px": 1196155,
-   "lesion_px": 286280,
-   "affected_pct_initial": 23.933353118951974,
-   "ssim_non_lesion": 0.9999812733017348,
+   "lesion_px": 437347,
+   "affected_pct_initial": 36.562736434659385,
+   "ssim_non_lesion": 0.9999694604455522,
    "mask_scale": 0.5,
    "files": {
     "diseased": [
@@ -666,9 +684,9 @@
    "width": 1080,
    "height": 1920,
    "leaf_px": 705517,
-   "lesion_px": 160690,
-   "affected_pct_initial": 22.776205250901114,
-   "ssim_non_lesion": 0.9999940023891501,
+   "lesion_px": 247179,
+   "affected_pct_initial": 35.03515861417939,
+   "ssim_non_lesion": 0.9999894891630153,
    "mask_scale": 0.5,
    "files": {
     "diseased": [
@@ -765,40 +783,316 @@
  },
  "samples": [
   {
-   "id": "turmeric-leaf_blotch",
-   "crop": "turmeric",
-   "orig_class": "leaf_blotch",
-   "label": "diseased",
-   "src": "/media/samples/turmeric-leaf_blotch.jpg",
-   "thumb": "/media/samples/turmeric-leaf_blotch-thumb.webp",
-   "source": "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00086.JPG"
-  },
-  {
-   "id": "turmeric-healthy_leaf",
-   "crop": "turmeric",
-   "orig_class": "healthy_leaf",
-   "label": "healthy",
-   "src": "/media/samples/turmeric-healthy_leaf.jpg",
-   "thumb": "/media/samples/turmeric-healthy_leaf-thumb.webp",
-   "source": "data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00107.JPG"
-  },
-  {
-   "id": "blackgram-powdery_mildew",
-   "crop": "blackgram",
-   "orig_class": "powdery_mildew",
-   "label": "diseased",
-   "src": "/media/samples/blackgram-powdery_mildew.jpg",
-   "thumb": "/media/samples/blackgram-powdery_mildew-thumb.webp",
-   "source": "data/raw/blackgram/diseased/powdery_mildew/31p.jpg"
-  },
-  {
-   "id": "blackgram-anthracnose",
+   "id": "blackgram-anthracnose-1",
    "crop": "blackgram",
    "orig_class": "anthracnose",
    "label": "diseased",
-   "src": "/media/samples/blackgram-anthracnose.jpg",
-   "thumb": "/media/samples/blackgram-anthracnose-thumb.webp",
-   "source": "data/raw/blackgram/diseased/anthracnose/125a.jpg"
+   "src": "/media/samples/blackgram-anthracnose-1.jpg",
+   "thumb": "/media/samples/blackgram-anthracnose-1-thumb.webp",
+   "source": "data/raw/blackgram/diseased/anthracnose/149a.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-anthracnose-2",
+   "crop": "blackgram",
+   "orig_class": "anthracnose",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-anthracnose-2.jpg",
+   "thumb": "/media/samples/blackgram-anthracnose-2-thumb.webp",
+   "source": "data/raw/blackgram/diseased/anthracnose/172a.jpg",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-anthracnose-3",
+   "crop": "blackgram",
+   "orig_class": "anthracnose",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-anthracnose-3.jpg",
+   "thumb": "/media/samples/blackgram-anthracnose-3-thumb.webp",
+   "source": "data/raw/blackgram/diseased/anthracnose/30a.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-healthy-1",
+   "crop": "blackgram",
+   "orig_class": "healthy",
+   "label": "healthy",
+   "src": "/media/samples/blackgram-healthy-1.jpg",
+   "thumb": "/media/samples/blackgram-healthy-1-thumb.webp",
+   "source": "data/raw/blackgram/healthy/healthy/210h.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-healthy-2",
+   "crop": "blackgram",
+   "orig_class": "healthy",
+   "label": "healthy",
+   "src": "/media/samples/blackgram-healthy-2.jpg",
+   "thumb": "/media/samples/blackgram-healthy-2-thumb.webp",
+   "source": "data/raw/blackgram/healthy/healthy/120h.jpg",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-healthy-3",
+   "crop": "blackgram",
+   "orig_class": "healthy",
+   "label": "healthy",
+   "src": "/media/samples/blackgram-healthy-3.jpg",
+   "thumb": "/media/samples/blackgram-healthy-3-thumb.webp",
+   "source": "data/raw/blackgram/healthy/healthy/79h.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-leaf_crinckle-1",
+   "crop": "blackgram",
+   "orig_class": "leaf_crinckle",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-leaf_crinckle-1.jpg",
+   "thumb": "/media/samples/blackgram-leaf_crinckle-1-thumb.webp",
+   "source": "data/raw/blackgram/diseased/leaf_crinckle/129l.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-leaf_crinckle-2",
+   "crop": "blackgram",
+   "orig_class": "leaf_crinckle",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-leaf_crinckle-2.jpg",
+   "thumb": "/media/samples/blackgram-leaf_crinckle-2-thumb.webp",
+   "source": "data/raw/blackgram/diseased/leaf_crinckle/34l.jpg",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-leaf_crinckle-3",
+   "crop": "blackgram",
+   "orig_class": "leaf_crinckle",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-leaf_crinckle-3.jpg",
+   "thumb": "/media/samples/blackgram-leaf_crinckle-3-thumb.webp",
+   "source": "data/raw/blackgram/diseased/leaf_crinckle/152l.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-powdery_mildew-1",
+   "crop": "blackgram",
+   "orig_class": "powdery_mildew",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-powdery_mildew-1.jpg",
+   "thumb": "/media/samples/blackgram-powdery_mildew-1-thumb.webp",
+   "source": "data/raw/blackgram/diseased/powdery_mildew/107p.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-powdery_mildew-2",
+   "crop": "blackgram",
+   "orig_class": "powdery_mildew",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-powdery_mildew-2.jpg",
+   "thumb": "/media/samples/blackgram-powdery_mildew-2-thumb.webp",
+   "source": "data/raw/blackgram/diseased/powdery_mildew/57p.jpg",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-powdery_mildew-3",
+   "crop": "blackgram",
+   "orig_class": "powdery_mildew",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-powdery_mildew-3.jpg",
+   "thumb": "/media/samples/blackgram-powdery_mildew-3-thumb.webp",
+   "source": "data/raw/blackgram/diseased/powdery_mildew/97p.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-yellow_mosaic-1",
+   "crop": "blackgram",
+   "orig_class": "yellow_mosaic",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-yellow_mosaic-1.jpg",
+   "thumb": "/media/samples/blackgram-yellow_mosaic-1-thumb.webp",
+   "source": "data/raw/blackgram/diseased/yellow_mosaic/48y.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-yellow_mosaic-2",
+   "crop": "blackgram",
+   "orig_class": "yellow_mosaic",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-yellow_mosaic-2.jpg",
+   "thumb": "/media/samples/blackgram-yellow_mosaic-2-thumb.webp",
+   "source": "data/raw/blackgram/diseased/yellow_mosaic/65y.jpg",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "blackgram-yellow_mosaic-3",
+   "crop": "blackgram",
+   "orig_class": "yellow_mosaic",
+   "label": "diseased",
+   "src": "/media/samples/blackgram-yellow_mosaic-3.jpg",
+   "thumb": "/media/samples/blackgram-yellow_mosaic-3-thumb.webp",
+   "source": "data/raw/blackgram/diseased/yellow_mosaic/44y.jpg",
+   "bg": "field",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-dry_leaf-1",
+   "crop": "turmeric",
+   "orig_class": "dry_leaf",
+   "label": "diseased",
+   "src": "/media/samples/turmeric-dry_leaf-1.jpg",
+   "thumb": "/media/samples/turmeric-dry_leaf-1-thumb.webp",
+   "source": "data/raw/turmeric/diseased/dry_leaf/Dry Leaf00162.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-dry_leaf-2",
+   "crop": "turmeric",
+   "orig_class": "dry_leaf",
+   "label": "diseased",
+   "src": "/media/samples/turmeric-dry_leaf-2.jpg",
+   "thumb": "/media/samples/turmeric-dry_leaf-2-thumb.webp",
+   "source": "data/raw/turmeric/diseased/dry_leaf/Dry Leaf00099.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-dry_leaf-3",
+   "crop": "turmeric",
+   "orig_class": "dry_leaf",
+   "label": "diseased",
+   "src": "/media/samples/turmeric-dry_leaf-3.jpg",
+   "thumb": "/media/samples/turmeric-dry_leaf-3-thumb.webp",
+   "source": "data/raw/turmeric/diseased/dry_leaf/Dry Leaf00018.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-healthy_leaf-1",
+   "crop": "turmeric",
+   "orig_class": "healthy_leaf",
+   "label": "healthy",
+   "src": "/media/samples/turmeric-healthy_leaf-1.jpg",
+   "thumb": "/media/samples/turmeric-healthy_leaf-1-thumb.webp",
+   "source": "data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00166.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-healthy_leaf-2",
+   "crop": "turmeric",
+   "orig_class": "healthy_leaf",
+   "label": "healthy",
+   "src": "/media/samples/turmeric-healthy_leaf-2.jpg",
+   "thumb": "/media/samples/turmeric-healthy_leaf-2-thumb.webp",
+   "source": "data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00098.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-healthy_leaf-3",
+   "crop": "turmeric",
+   "orig_class": "healthy_leaf",
+   "label": "healthy",
+   "src": "/media/samples/turmeric-healthy_leaf-3.jpg",
+   "thumb": "/media/samples/turmeric-healthy_leaf-3-thumb.webp",
+   "source": "data/raw/turmeric/healthy/healthy_leaf/Healthy Leaf00110.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-leaf_blotch-1",
+   "crop": "turmeric",
+   "orig_class": "leaf_blotch",
+   "label": "diseased",
+   "src": "/media/samples/turmeric-leaf_blotch-1.jpg",
+   "thumb": "/media/samples/turmeric-leaf_blotch-1-thumb.webp",
+   "source": "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00074.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-leaf_blotch-2",
+   "crop": "turmeric",
+   "orig_class": "leaf_blotch",
+   "label": "diseased",
+   "src": "/media/samples/turmeric-leaf_blotch-2.jpg",
+   "thumb": "/media/samples/turmeric-leaf_blotch-2-thumb.webp",
+   "source": "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00050.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "turmeric-leaf_blotch-3",
+   "crop": "turmeric",
+   "orig_class": "leaf_blotch",
+   "label": "diseased",
+   "src": "/media/samples/turmeric-leaf_blotch-3.jpg",
+   "thumb": "/media/samples/turmeric-leaf_blotch-3-thumb.webp",
+   "source": "data/raw/turmeric/diseased/leaf_blotch/Leaf Blotch00192.JPG",
+   "bg": "plain",
+   "set": "test"
+  },
+  {
+   "id": "wild-turmeric-healthy",
+   "crop": "turmeric",
+   "orig_class": "healthy",
+   "label": "healthy",
+   "src": "/media/samples/wild-turmeric-healthy.jpg",
+   "thumb": "/media/samples/wild-turmeric-healthy-thumb.webp",
+   "source": "data/wild/turmeric/healthy/jtttfbx342_healthy_healthy__46_jpg.jpg",
+   "bg": "field",
+   "set": "wild_test",
+   "credit": "Image Dataset for Turmeric Plant Leaf Disease Detection, Mendeley Data, doi:10.17632/jtttfbx342.2 (CC BY 4.0)"
+  },
+  {
+   "id": "wild-turmeric-blotch",
+   "crop": "turmeric",
+   "orig_class": "blotch",
+   "label": "diseased",
+   "src": "/media/samples/wild-turmeric-blotch.jpg",
+   "thumb": "/media/samples/wild-turmeric-blotch-thumb.webp",
+   "source": "data/wild/turmeric/diseased/jtttfbx342_blotch_blotch__6_jpg.jpg",
+   "bg": "field",
+   "set": "wild_test",
+   "credit": "Image Dataset for Turmeric Plant Leaf Disease Detection, Mendeley Data, doi:10.17632/jtttfbx342.2 (CC BY 4.0)"
+  },
+  {
+   "id": "wild-blackgram-healthy",
+   "crop": "blackgram",
+   "orig_class": "healthy",
+   "label": "healthy",
+   "src": "/media/samples/wild-blackgram-healthy.jpg",
+   "thumb": "/media/samples/wild-blackgram-healthy-thumb.webp",
+   "source": "data/wild/blackgram/healthy/z55yrbmn2d_healthy_IMG20241104114920_jpg.jpg",
+   "bg": "field",
+   "set": "wild_test",
+   "credit": "Image Dataset for Disease Detection in Black Gram (Vigna mungo) Leaves, Mendeley Data, doi:10.17632/z55yrbmn2d.3 (CC BY 4.0)"
+  },
+  {
+   "id": "wild-blackgram-yellow_mosaic",
+   "crop": "blackgram",
+   "orig_class": "yellow_mosaic",
+   "label": "diseased",
+   "src": "/media/samples/wild-blackgram-yellow_mosaic.jpg",
+   "thumb": "/media/samples/wild-blackgram-yellow_mosaic-thumb.webp",
+   "source": "data/wild/blackgram/diseased/z55yrbmn2d_yellow_mosaic_IMG_20241101_143639_jpg.jpg",
+   "bg": "field",
+   "set": "wild_test",
+   "credit": "Image Dataset for Disease Detection in Black Gram (Vigna mungo) Leaves, Mendeley Data, doi:10.17632/z55yrbmn2d.3 (CC BY 4.0)"
   }
  ],
  "hero": {
