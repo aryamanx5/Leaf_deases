@@ -2,7 +2,8 @@ PY ?= .venv/bin/python
 PIP ?= .venv/bin/pip
 export PYTHONPATH := src
 
-.PHONY: setup data splits features train-ip train-cnn compare report app test lint verify all
+.PHONY: setup data splits features train-ip train-cnn compare report app test lint verify all \
+	wild robust site-data api web-install dev web-build web-preview e2e
 
 setup:
 	test -d .venv || python3.11 -m venv .venv
@@ -44,3 +45,39 @@ verify:
 	$(PY) scripts/verify_all.py
 
 all: data splits features train-ip train-cnn compare report
+
+# ---- Phase 2: robust models, API, web ----------------------------------------------------------
+API_PORT ?= 8010
+
+wild:            # openly licensed field photos (test/val only, never trained on)
+	$(PY) scripts/build_wild_set.py
+
+robust:          # diagnosis -> hierarchical crop + disease models -> calibration/OOD -> evaluation
+	$(PY) scripts/diagnose.py
+	$(PY) scripts/train_robust.py
+	$(PY) scripts/calibrate.py
+	$(PY) scripts/evaluate_robust.py
+
+site-data:       # every number and image the website shows (web/public/data, web/public/media)
+	$(PY) scripts/make_heal_assets.py
+	$(PY) scripts/export_site_data.py
+
+api:
+	PORT=$(API_PORT) scripts/run_api.sh
+
+web-install:
+	cd web && npm ci
+
+dev:             # FastAPI on :$(API_PORT) + Vite on :5180 (proxies /api); Ctrl-C stops both
+	@test -d web/node_modules || $(MAKE) web-install
+	@trap 'kill 0' INT TERM EXIT; PORT=$(API_PORT) scripts/run_api.sh & cd web && npm run dev
+
+web-build:       # typecheck + production bundle in web/dist
+	@test -d web/node_modules || $(MAKE) web-install
+	cd web && npm run build
+
+web-preview:     # serve web/dist on :4180 (needs `make api` for /analyze)
+	cd web && npm run preview -- --port 4180
+
+e2e:             # Playwright against `make dev` (API + Vite must be running)
+	cd web && npx playwright test

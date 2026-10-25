@@ -22,3 +22,4 @@ web/test-results/
 web/playwright-report/
 data/wild/turmeric/
 data/wild/blackgram/
+web/.env.local
