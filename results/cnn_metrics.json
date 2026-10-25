@@ -1,7 +1,7 @@
 {
   "checkpoint": {
-    "arch": "mobilenet_v2",
-    "epoch": 15,
+    "arch": "crop: openclip_vitb32 head x zero-shot prior; disease: mobilenet_v2 (one diseased logit per crop)",
+    "epoch": 11,
     "image_size": 224,
     "pretrained": true
   },
@@ -9,44 +9,44 @@
     "binary": {
       "overall": {
         "n": 242,
-        "accuracy": 0.9917355371900827,
-        "precision": 1.0,
-        "recall": 0.9887640449438202,
-        "f1": 0.9943502824858758,
-        "macro_f1": 0.9894828335506303,
-        "healthy_recall": 1.0,
+        "accuracy": 0.9752066115702479,
+        "precision": 0.9942528735632183,
+        "recall": 0.9719101123595506,
+        "f1": 0.9829545454545454,
+        "macro_f1": 0.96875,
+        "healthy_recall": 0.984375,
         "confusion_matrix": [
           [
-            64,
-            0
+            63,
+            1
           ],
           [
-            2,
-            176
+            5,
+            173
           ]
         ],
-        "roc_auc": 0.9993855337078652
+        "roc_auc": 0.9981566011235955
       },
       "per_crop": {
         "blackgram": {
           "n": 152,
-          "accuracy": 0.9868421052631579,
-          "precision": 1.0,
-          "recall": 0.9830508474576272,
-          "f1": 0.9914529914529915,
-          "macro_f1": 0.9814407814407815,
-          "healthy_recall": 1.0,
+          "accuracy": 0.9605263157894737,
+          "precision": 0.9912280701754386,
+          "recall": 0.9576271186440678,
+          "f1": 0.9741379310344828,
+          "macro_f1": 0.9454022988505747,
+          "healthy_recall": 0.9705882352941176,
           "confusion_matrix": [
             [
-              34,
-              0
+              33,
+              1
             ],
             [
-              2,
-              116
+              5,
+              113
             ]
           ],
-          "roc_auc": 0.9985044865403788
+          "roc_auc": 0.9952642073778665
         },
         "turmeric": {
           "n": 90,
@@ -71,8 +71,8 @@
       }
     },
     "four_class": {
-      "accuracy": 0.987603305785124,
-      "macro_f1": 0.9875721430344918,
+      "accuracy": 0.9710743801652892,
+      "macro_f1": 0.9695247933884298,
       "confusion_matrix": [
         [
           30,
@@ -89,14 +89,14 @@
         [
           0,
           0,
-          34,
-          0
+          33,
+          1
         ],
         [
           0,
           1,
-          2,
-          115
+          5,
+          112
         ]
       ],
       "classes": [
@@ -108,54 +108,54 @@
       "crop_accuracy": 0.9958677685950413
     },
     "confidence": {
-      "mean_conf_correct": 0.9898426532745361,
-      "mean_conf_wrong": 0.9625652432441711,
-      "median_conf": 0.999567985534668,
-      "share_conf_ge_0.9": 0.9834710743801653
+      "mean_conf_correct": 0.9898798579371336,
+      "mean_conf_wrong": 0.7882464669828345,
+      "median_conf": 0.999736810774696,
+      "share_conf_ge_0.9": 0.9586776859504132
     }
   },
   "test": {
     "binary": {
       "overall": {
         "n": 239,
-        "accuracy": 0.9832635983263598,
-        "precision": 0.9887640449438202,
-        "recall": 0.9887640449438202,
-        "f1": 0.9887640449438202,
-        "macro_f1": 0.9779885798489593,
-        "healthy_recall": 0.9672131147540983,
+        "accuracy": 0.99581589958159,
+        "precision": 0.994413407821229,
+        "recall": 1.0,
+        "f1": 0.9971988795518207,
+        "macro_f1": 0.9944672083709517,
+        "healthy_recall": 0.9836065573770492,
         "confusion_matrix": [
           [
-            59,
-            2
+            60,
+            1
           ],
           [
-            2,
-            176
+            0,
+            178
           ]
         ],
-        "roc_auc": 0.9990790200773623
+        "roc_auc": 1.0
       },
       "per_crop": {
         "blackgram": {
           "n": 150,
-          "accuracy": 0.9733333333333334,
-          "precision": 0.9830508474576272,
-          "recall": 0.9830508474576272,
-          "f1": 0.9830508474576272,
-          "macro_f1": 0.9602754237288136,
-          "healthy_recall": 0.9375,
+          "accuracy": 0.9933333333333333,
+          "precision": 0.9915966386554622,
+          "recall": 1.0,
+          "f1": 0.9957805907172996,
+          "macro_f1": 0.9899537874221418,
+          "healthy_recall": 0.96875,
           "confusion_matrix": [
             [
-              30,
-              2
+              31,
+              1
             ],
             [
-              2,
-              116
+              0,
+              118
             ]
           ],
-          "roc_auc": 0.9976165254237288
+          "roc_auc": 1.0
         },
         "turmeric": {
           "n": 89,
@@ -180,8 +180,8 @@
       }
     },
     "four_class": {
-      "accuracy": 0.9832635983263598,
-      "macro_f1": 0.9801377118644068,
+      "accuracy": 0.9916317991631799,
+      "macro_f1": 0.99184698626147,
       "confusion_matrix": [
         [
           29,
@@ -198,14 +198,14 @@
         [
           0,
           0,
-          30,
-          2
+          31,
+          1
         ],
         [
           0,
+          1,
           0,
-          2,
-          116
+          117
         ]
       ],
       "classes": [
@@ -214,27 +214,27 @@
         "blackgram_healthy",
         "blackgram_diseased"
       ],
-      "crop_accuracy": 1.0
+      "crop_accuracy": 0.99581589958159
     },
     "confidence": {
-      "mean_conf_correct": 0.9930475950241089,
-      "mean_conf_wrong": 0.8178677558898926,
-      "median_conf": 0.9997020363807678,
-      "share_conf_ge_0.9": 0.9707112970711297
+      "mean_conf_correct": 0.9947350357170028,
+      "mean_conf_wrong": 0.7605162828505584,
+      "median_conf": 0.9997772296424952,
+      "share_conf_ge_0.9": 0.9874476987447699
     }
   },
   "inference_time": {
     "accelerator": {
-      "device": "mps",
-      "n_images": 40,
-      "ms_median": 35.76733299996704,
-      "ms_mean": 36.567385455418844
+      "device": "mps (embeddings) + cpu (disease CNN)",
+      "n_images": 10,
+      "ms_median": 148.46943749580532,
+      "ms_mean": 148.8232831005007
     },
     "cpu": {
       "device": "cpu",
-      "n_images": 40,
-      "ms_median": 48.18129100021906,
-      "ms_mean": 48.1387853535125
+      "n_images": 10,
+      "ms_median": 208.26320847845636,
+      "ms_mean": 205.80587069271132
     }
   }
 }

@@ -129,13 +129,15 @@ def methods_section() -> list[str]:
         "circularity / mean and max size, leaf solidity. Decisions: (a) a fixed-weight rule score over affected-%, "
         "lesion count, abnormal-colour % and GLCM contrast with a per-crop threshold chosen on VAL; (b) an RBF SVM "
         "tuned by grouped cross-validation on TRAIN.", "",
-        f"**Stage 2 - CNN.** {R.js(CNM)['checkpoint']['arch']} pretrained on ImageNet, new 4-class head "
-        "(turmeric/black gram x healthy/diseased), train-only augmentation, class-weighted cross-entropy, AdamW, "
-        "head-only stage then fine-tuning of the last blocks, early stopping on VAL macro-F1. "
-        f"Epochs run: {R.num(info, 'epochs_run', fmt='d')}; best epoch {R.num(info, 'best', 'epoch', fmt='d')} "
+        f"**Stage 2 - CNN (hierarchical, Phase 2).** Crop: {R.js('results/robust_train.json')['crop_selected']} "
+        "(selected on wild_val among DINOv2, OpenCLIP and EfficientNet-B0 candidates; see models/MODEL_CARD.md). "
+        f"Disease: {CFG['robust']['disease_cnn']['arch']} with one diseased/healthy logit per crop, trained with "
+        "background-swap augmentation (leaves composited onto backgrounds of either crop) so the photo style carries "
+        "no crop information. Both are temperature-calibrated; an out-of-distribution score (DINOv2 nearest-neighbour "
+        "distance) routes unusual photos to 'uncertain'. "
+        f"Disease CNN epochs run: {R.num(info, 'epochs_run', fmt='d')}; best epoch {R.num(info, 'best', 'epoch', fmt='d')} "
         f"(VAL macro-F1 {R.num(info, 'best', 'macro_f1_bin')}); training time {R.num(info, 'minutes', fmt='.1f')} min "
-        f"on `{R.js(info)['device']}`. P(diseased) = sum of the two diseased-class probabilities.", "",
-        "![CNN training](figures/cnn_training.png)", ""]
+        f"on `{R.js(info)['device']}`. The v1 4-class MobileNetV2 is kept for the before/after comparison.", ""]
 
 
 def stage1_checks() -> list[str]:
@@ -236,6 +238,30 @@ def weakest_classes() -> str:
     return "Weakest TEST classes by accuracy - " + "; ".join(parts) + "."
 
 
+def robustness_section() -> list[str]:
+    RB = "results/robustness.json"
+    rows = [("Crop accuracy, clean TEST", "crop_acc_clean_test"), ("Crop accuracy, wild_test", "crop_acc_wild_test"),
+            ("Accepted-crop precision, wild_test", "accepted_precision_wild_test"),
+            ("Coverage, wild_test", "coverage_wild_test"), ("Crop ECE, wild_test", "crop_ece_wild_test"),
+            ("Disease macro-F1, clean TEST", "disease_macro_f1_clean_test"),
+            ("Disease macro-F1, wild_test (labelled)", "disease_macro_f1_wild_test"),
+            ("SVM macro-F1, clean TEST", "svm_macro_f1_clean_test"), ("Rule macro-F1, clean TEST", "rule_macro_f1_clean_test")]
+    out = ["## Robustness: before (v1) vs after (Phase 2)", "",
+           "A user reported a turmeric field photo that v1 called black gram with high confidence. Diagnosis "
+           "(`results/diagnosis.md`) found a capture-style shortcut: turmeric was always photographed on white paper and "
+           "black gram mostly in the field. Phase 2 separates crop and disease, swaps backgrounds during training, "
+           "calibrates confidence and abstains on unusual photos. wild_test = openly licensed photos from other sources "
+           f"({R.num(RB, 'n', 'wild_test', fmt='d')} images, {R.num(RB, 'n', 'wild_test_labelled', fmt='d')} with a disease label).", "",
+           "| Metric | Before (v1) | After (Phase 2) |", "|---|---|---|"]
+    for name, k in rows:
+        out.append(f"| {name} | {R.num(RB, 'before', k)} | {R.num(RB, 'after', k)} |")
+    out += ["", f"On the reported photo the crop is now turmeric with calibrated probability "
+            f"{R.num(RB, 'regression', 'after', 'p_turmeric')}; Stage 1 finds {R.num(RB, 'regression', 'after', 'lesion_count', fmt='d')} "
+            f"lesion regions instead of {R.num(RB, 'regression', 'before', 'lesion_count', fmt='d')}. "
+            "Details: `results/robustness.md`.", "", "![after](figures/bug_repro_after.png)", ""]
+    return out
+
+
 def limitations_section() -> list[str]:
     return [
         "## Limitations", "",
@@ -252,6 +278,9 @@ def limitations_section() -> list[str]:
         "statistics of the whole leaf.",
         "- Segmentation of field photos can include neighbouring foliage or miss part of a two-tone leaf.",
         "- The CNN was trained once (one seed) with a time budget; no architecture search.",
+        f"- Phase 2 abstains: {R.num('results/robustness.json', 'after', 'abstention_wild_test', fmt='.1%')} of wild_test "
+        "photos are routed to 'uncertain' (the user is asked for the crop), and the full analysis is slower than v1.",
+        "- Disease labels exist only for wild images of single leaves on white; field scenes are disease-unlabelled.",
         "", "## Future work", "",
         "- Specific-disease classification (e.g. turmeric leaf spot / blotch, black gram yellow mosaic) instead of "
         "healthy vs diseased.",
@@ -270,7 +299,7 @@ def build() -> tuple[str, list[dict]]:
              "characteristics in turmeric and black gram leaves, and how does their performance compare with a "
              "CNN-based approach?", ""]
     lines += dataset_section() + methods_section() + stage1_checks() + results_section()
-    lines += comparison_section() + limitations_section()
+    lines += comparison_section() + robustness_section() + limitations_section()
     return "\n".join(lines), R.records
 
 

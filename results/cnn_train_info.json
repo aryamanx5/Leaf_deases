@@ -1,13 +1,10 @@
 {
   "best": {
-    "epoch": 15,
-    "acc4": 0.987603305785124,
-    "macro_f1_4": 0.9875721430344918,
-    "acc_bin": 0.9917355371900827,
-    "macro_f1_bin": 0.9894828335506303
+    "epoch": 11,
+    "macro_f1_bin": 0.9637127005548058
   },
-  "epochs_run": 20,
-  "minutes": 5.553176911671956,
+  "epochs_run": 16,
+  "minutes": 3.6351540168126424,
   "device": "mps",
   "pretrained_weights": true
 }

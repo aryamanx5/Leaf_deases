@@ -166,7 +166,7 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-B05 | Calibration, abstention, OOD | DONE | P2 log B05 |
 | P2-B06 | Stage 1 for field images | DONE | P2 log B06 |
 | P2-B07 | FastAPI service | DONE | P2 log B07 |
-| P2-B08 | Re-evaluate + robustness report | TODO | |
+| P2-B08 | Re-evaluate + robustness report | DONE | P2 log B08 |
 | P2-F00 | Web scaffold | DONE | P2 log F00 |
 | P2-F01 | Real content export | TODO | |
 | P2-F02 | Healing-leaves assets | DONE | P2 log F02 |
@@ -185,6 +185,13 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 | P2-V02 | Extend verify_all | TODO | |
 
 ### Phase 2 evidence log (newest first)
+
+#### 2026-10-25 P2-B08 Re-evaluate + robustness report
+- `python scripts/evaluate_robust.py` -> results/robustness.json + robustness.md (before v1 / after Phase 2): crop accuracy clean TEST 1.000 / 0.996; wild_test 0.927 / 1.000; accepted-crop precision wild_test 0.927 / 1.000; coverage 1.000 / 0.817 (abstention 0.183, all OOD-flagged); crop ECE wild_test 0.059 / 0.015; disease F1 clean TEST 0.989 / 0.997; disease macro-F1 clean 0.978 / 0.994, wild_test 0.887 / 0.935; SVM clean macro-F1 0.935 / 0.966; rule 0.839 / 0.845; SVM wild 0.903, rule wild 0.772; CNN CPU latency 48 / 208 ms; API p50 449 ms.
+- TARGETS: wild_test accepted precision 1.000 >= 0.90 (met); regression image -> turmeric (confident), not black gram (met); clean-TEST disease F1 drop -0.008 <= 0.02 (met).
+- Regression image after: crop turmeric P=1.000; Stage 1 36 lesion regions, 8.7% affected; SVM + rule diseased; disease CNN healthy (P(diseased) 0.117) -> methods disagree, shown with a DISAGREE badge; nothing tuned on this image. results/figures/bug_repro_after.png viewed (main leaf segmented, specks outlined).
+- tests/test_regressions.py xfail removed -> passes. v2 CNN files written in v1 formats (results/cnn_predictions.csv, cnn_metrics.json, cnn_train_info.json; v1 originals in results/v1_snapshot/). Comparison re-run (CNN 0.994, SVM 0.966, rule 0.845 macro-F1; McNemar p 0.0625) and REPORT regenerated with a robustness section.
+- `make test` -> `66 passed`; `python scripts/verify_all.py` (end of Phase A) -> OVERALL: PASS (545 report numbers re-read).
 
 #### 2026-10-25 P2-B07 FastAPI service
 - api/main.py (+ api/schemas.py, pydantic, schema_version "1") over src/leafdx/service.py: GET /api/health, GET /api/meta, POST /api/analyze (multipart file, crop=auto|turmeric|blackgram, roi_x/roi_y or roi_box); 10 MB limit, content-type + decode validation, EXIF orientation, CORS for Vite (5173/4173), structured error JSON (400 invalid_image/bad_crop/bad_roi, 413 too_large, 415 unsupported_type, 422 not_a_plant, 500 internal_error); images as data:image/webp;base64 <= 768 px.
@@ -253,6 +260,8 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 - P2-B06: a superpixel (SLIC + RAG boundary merge) approach was tried first and rejected after viewing: it fragmented field scenes and was worse than v1 GrabCut on soil backgrounds. The final change is targeted: v1 behaviour is kept unless the background is textured (mode switch) or GrabCut collapses (watershed fallback).
 
+- Phase 2 "current system" = Phase 2 Stage 1 + retrained rule/SVM + hierarchical CNN. comparison.csv / REPORT.md describe it; the v1 study's files are preserved verbatim in results/v1_snapshot/ (from commit 0aacce8) and feed the "before" column of robustness.md.
+
 ## NEXT (Phase 2)
 
-P2-B08: scripts/evaluate_robust.py -> robustness.json/md (before vs after), v2 cnn_predictions/cnn_metrics, remove xfail, re-run comparison + report, make test.
+P2-F01: run scripts/export_site_data.py, then build landing sections F03-F11 and view screenshots.

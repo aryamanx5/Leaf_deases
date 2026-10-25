@@ -474,8 +474,8 @@
   }
  },
  {
-  "text": "67",
-  "value": 67.0,
+  "text": "91",
+  "value": 91.0,
   "fmt": "d",
   "source": {
    "file": "data/processed/features.csv",
@@ -499,8 +499,8 @@
   }
  },
  {
-  "text": "203",
-  "value": 203.0,
+  "text": "186",
+  "value": 186.0,
   "fmt": "d",
   "source": {
    "file": "data/processed/features.csv",
@@ -574,8 +574,8 @@
   }
  },
  {
-  "text": "20",
-  "value": 20.0,
+  "text": "16",
+  "value": 16.0,
   "fmt": "d",
   "source": {
    "file": "results/cnn_train_info.json",
@@ -585,8 +585,8 @@
   }
  },
  {
-  "text": "15",
-  "value": 15.0,
+  "text": "11",
+  "value": 11.0,
   "fmt": "d",
   "source": {
    "file": "results/cnn_train_info.json",
@@ -597,8 +597,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9894828335506303,
+  "text": "0.964",
+  "value": 0.9637127005548058,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_train_info.json",
@@ -609,8 +609,8 @@
   }
  },
  {
-  "text": "5.6",
-  "value": 5.553176911671956,
+  "text": "3.6",
+  "value": 3.6351540168126424,
   "fmt": ".1f",
   "source": {
    "file": "results/cnn_train_info.json",
@@ -679,8 +679,8 @@
   }
  },
  {
-  "text": "1.88",
-  "value": 1.8793749596426268,
+  "text": "3.32",
+  "value": 3.323296021022147,
   "fmt": ".2f",
   "source": {
    "file": "results/lesion_check.json",
@@ -691,8 +691,8 @@
   }
  },
  {
-  "text": "39.63",
-  "value": 39.62938915292229,
+  "text": "41.72",
+  "value": 41.72147850917127,
   "fmt": ".2f",
   "source": {
    "file": "results/lesion_check.json",
@@ -717,8 +717,8 @@
   }
  },
  {
-  "text": "0.913",
-  "value": 0.9132231404958677,
+  "text": "0.888",
+  "value": 0.8884297520661157,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -731,8 +731,8 @@
   }
  },
  {
-  "text": "0.915",
-  "value": 0.9153439153439153,
+  "text": "0.927",
+  "value": 0.9265536723163842,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -745,8 +745,8 @@
   }
  },
  {
-  "text": "0.972",
-  "value": 0.9719101123595506,
+  "text": "0.921",
+  "value": 0.9213483146067416,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -759,8 +759,8 @@
   }
  },
  {
-  "text": "0.943",
-  "value": 0.9427792915531336,
+  "text": "0.924",
+  "value": 0.923943661971831,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -773,8 +773,8 @@
   }
  },
  {
-  "text": "0.882",
-  "value": 0.8816460560329771,
+  "text": "0.857",
+  "value": 0.8573206681952178,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -787,8 +787,8 @@
   }
  },
  {
-  "text": "0.914",
-  "value": 0.9137113764044944,
+  "text": "0.905",
+  "value": 0.9051966292134831,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -816,8 +816,8 @@
   }
  },
  {
-  "text": "0.895",
-  "value": 0.8947368421052632,
+  "text": "0.868",
+  "value": 0.868421052631579,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -831,8 +831,8 @@
   }
  },
  {
-  "text": "0.905",
-  "value": 0.9047619047619048,
+  "text": "0.938",
+  "value": 0.9375,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -846,8 +846,8 @@
   }
  },
  {
-  "text": "0.966",
-  "value": 0.9661016949152542,
+  "text": "0.890",
+  "value": 0.8898305084745762,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -861,8 +861,8 @@
   }
  },
  {
-  "text": "0.934",
-  "value": 0.9344262295081968,
+  "text": "0.913",
+  "value": 0.9130434782608695,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -876,8 +876,8 @@
   }
  },
  {
-  "text": "0.834",
-  "value": 0.833879781420765,
+  "text": "0.821",
+  "value": 0.8213866039952996,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -891,8 +891,8 @@
   }
  },
  {
-  "text": "0.893",
-  "value": 0.8933200398803589,
+  "text": "0.876",
+  "value": 0.8761216350947159,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -921,8 +921,8 @@
   }
  },
  {
-  "text": "0.944",
-  "value": 0.9444444444444444,
+  "text": "0.922",
+  "value": 0.9222222222222223,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -936,8 +936,8 @@
   }
  },
  {
-  "text": "0.937",
-  "value": 0.9365079365079365,
+  "text": "0.908",
+  "value": 0.9076923076923077,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -966,8 +966,8 @@
   }
  },
  {
-  "text": "0.959",
-  "value": 0.959349593495935,
+  "text": "0.944",
+  "value": 0.944,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -981,8 +981,8 @@
   }
  },
  {
-  "text": "0.936",
-  "value": 0.9358151476251604,
+  "text": "0.908",
+  "value": 0.9083636363636363,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -996,8 +996,8 @@
   }
  },
  {
-  "text": "0.975",
-  "value": 0.9750000000000001,
+  "text": "0.967",
+  "value": 0.9666666666666666,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1025,8 +1025,8 @@
   }
  },
  {
-  "text": "0.883",
-  "value": 0.8828451882845189,
+  "text": "0.879",
+  "value": 0.8786610878661087,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1039,8 +1039,8 @@
   }
  },
  {
-  "text": "0.903",
-  "value": 0.9032258064516129,
+  "text": "0.931",
+  "value": 0.930635838150289,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1053,8 +1053,8 @@
   }
  },
  {
-  "text": "0.944",
-  "value": 0.9438202247191011,
+  "text": "0.904",
+  "value": 0.9044943820224719,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1067,8 +1067,8 @@
   }
  },
  {
-  "text": "0.923",
-  "value": 0.9230769230769231,
+  "text": "0.917",
+  "value": 0.9173789173789174,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1081,8 +1081,8 @@
   }
  },
  {
-  "text": "0.839",
-  "value": 0.8387314439946019,
+  "text": "0.845",
+  "value": 0.844516230343002,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1095,8 +1095,8 @@
   }
  },
  {
-  "text": "0.924",
-  "value": 0.9242033523669183,
+  "text": "0.939",
+  "value": 0.9389390311291214,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1124,8 +1124,8 @@
   }
  },
  {
-  "text": "0.840",
-  "value": 0.84,
+  "text": "0.820",
+  "value": 0.82,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1139,8 +1139,8 @@
   }
  },
  {
-  "text": "0.873",
-  "value": 0.873015873015873,
+  "text": "0.903",
+  "value": 0.9026548672566371,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1154,8 +1154,8 @@
   }
  },
  {
-  "text": "0.932",
-  "value": 0.9322033898305084,
+  "text": "0.864",
+  "value": 0.864406779661017,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1169,8 +1169,8 @@
   }
  },
  {
-  "text": "0.902",
-  "value": 0.9016393442622951,
+  "text": "0.883",
+  "value": 0.8831168831168831,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1184,8 +1184,8 @@
   }
  },
  {
-  "text": "0.737",
-  "value": 0.7365339578454333,
+  "text": "0.746",
+  "value": 0.745906267645398,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1199,8 +1199,8 @@
   }
  },
  {
-  "text": "0.864",
-  "value": 0.8638771186440678,
+  "text": "0.879",
+  "value": 0.8789724576271186,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1229,8 +1229,8 @@
   }
  },
  {
-  "text": "0.955",
-  "value": 0.9550561797752809,
+  "text": "0.978",
+  "value": 0.9775280898876404,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1244,8 +1244,8 @@
   }
  },
  {
-  "text": "0.967",
-  "value": 0.9666666666666667,
+  "text": "0.983",
+  "value": 0.9833333333333333,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1259,8 +1259,8 @@
   }
  },
  {
-  "text": "0.967",
-  "value": 0.9666666666666667,
+  "text": "0.983",
+  "value": 0.9833333333333333,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1274,8 +1274,8 @@
   }
  },
  {
-  "text": "0.967",
-  "value": 0.9666666666666667,
+  "text": "0.983",
+  "value": 0.9833333333333333,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1289,8 +1289,8 @@
   }
  },
  {
-  "text": "0.949",
-  "value": 0.9488505747126437,
+  "text": "0.974",
+  "value": 0.9744252873563218,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1304,8 +1304,8 @@
   }
  },
  {
-  "text": "0.998",
-  "value": 0.9977011494252873,
+  "text": "0.997",
+  "value": 0.9971264367816092,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1333,8 +1333,8 @@
   }
  },
  {
-  "text": "0.955",
-  "value": 0.9545454545454546,
+  "text": "0.963",
+  "value": 0.9628099173553719,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1348,7 +1348,7 @@
  },
  {
   "text": "0.972",
-  "value": 0.9717514124293786,
+  "value": 0.9720670391061452,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1361,8 +1361,8 @@
   }
  },
  {
-  "text": "0.966",
-  "value": 0.9662921348314607,
+  "text": "0.978",
+  "value": 0.9775280898876404,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1375,8 +1375,8 @@
   }
  },
  {
-  "text": "0.969",
-  "value": 0.9690140845070423,
+  "text": "0.975",
+  "value": 0.9747899159663865,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1389,8 +1389,8 @@
   }
  },
  {
-  "text": "0.942",
-  "value": 0.9418713833387924,
+  "text": "0.952",
+  "value": 0.9519618871170515,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1403,8 +1403,8 @@
   }
  },
  {
-  "text": "0.986",
-  "value": 0.9857794943820224,
+  "text": "0.991",
+  "value": 0.9913974719101124,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1432,8 +1432,8 @@
   }
  },
  {
-  "text": "0.928",
-  "value": 0.9276315789473685,
+  "text": "0.941",
+  "value": 0.9407894736842105,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1447,8 +1447,8 @@
   }
  },
  {
-  "text": "0.957",
-  "value": 0.9572649572649573,
+  "text": "0.958",
+  "value": 0.957983193277311,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1462,8 +1462,8 @@
   }
  },
  {
-  "text": "0.949",
-  "value": 0.9491525423728814,
+  "text": "0.966",
+  "value": 0.9661016949152542,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1477,8 +1477,8 @@
   }
  },
  {
-  "text": "0.953",
-  "value": 0.9531914893617022,
+  "text": "0.962",
+  "value": 0.9620253164556962,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1492,8 +1492,8 @@
   }
  },
  {
-  "text": "0.897",
-  "value": 0.8968855997533148,
+  "text": "0.914",
+  "value": 0.9138484791233705,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1507,8 +1507,8 @@
   }
  },
  {
-  "text": "0.965",
-  "value": 0.964606181455633,
+  "text": "0.980",
+  "value": 0.9795613160518445,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1641,8 +1641,8 @@
   }
  },
  {
-  "text": "0.950",
-  "value": 0.9497907949790795,
+  "text": "0.975",
+  "value": 0.9748953974895398,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1655,8 +1655,8 @@
   }
  },
  {
-  "text": "0.972",
-  "value": 0.9715909090909091,
+  "text": "0.973",
+  "value": 0.9725274725274725,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1669,8 +1669,8 @@
   }
  },
  {
-  "text": "0.961",
-  "value": 0.9606741573033708,
+  "text": "0.994",
+  "value": 0.9943820224719101,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1683,8 +1683,8 @@
   }
  },
  {
-  "text": "0.966",
-  "value": 0.9661016949152542,
+  "text": "0.983",
+  "value": 0.9833333333333333,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1697,8 +1697,8 @@
   }
  },
  {
-  "text": "0.935",
-  "value": 0.9346637506834335,
+  "text": "0.966",
+  "value": 0.9662429378531073,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1711,8 +1711,8 @@
   }
  },
  {
-  "text": "0.981",
-  "value": 0.9807515196168723,
+  "text": "0.998",
+  "value": 0.9977896481856695,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1740,8 +1740,8 @@
   }
  },
  {
-  "text": "0.940",
-  "value": 0.94,
+  "text": "0.960",
+  "value": 0.96,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1755,8 +1755,8 @@
   }
  },
  {
-  "text": "0.958",
-  "value": 0.957983193277311,
+  "text": "0.959",
+  "value": 0.9590163934426229,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1770,8 +1770,8 @@
   }
  },
  {
-  "text": "0.966",
-  "value": 0.9661016949152542,
+  "text": "0.992",
+  "value": 0.9915254237288136,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1785,8 +1785,8 @@
   }
  },
  {
-  "text": "0.962",
-  "value": 0.9620253164556962,
+  "text": "0.975",
+  "value": 0.975,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1800,8 +1800,8 @@
   }
  },
  {
-  "text": "0.910",
-  "value": 0.9095840867992766,
+  "text": "0.938",
+  "value": 0.9375,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1815,8 +1815,8 @@
   }
  },
  {
-  "text": "0.963",
-  "value": 0.9631885593220338,
+  "text": "0.995",
+  "value": 0.9954978813559322,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1845,8 +1845,8 @@
   }
  },
  {
-  "text": "0.966",
-  "value": 0.9662921348314607,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1875,8 +1875,8 @@
   }
  },
  {
-  "text": "0.950",
-  "value": 0.95,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1890,8 +1890,8 @@
   }
  },
  {
-  "text": "0.974",
-  "value": 0.9743589743589743,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1905,8 +1905,8 @@
   }
  },
  {
-  "text": "0.963",
-  "value": 0.9625893232450609,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1935,8 +1935,8 @@
   }
  },
  {
-  "text": "30",
-  "value": 30.0,
+  "text": "10",
+  "value": 10.0,
   "fmt": "g",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1948,8 +1948,8 @@
   }
  },
  {
-  "text": "0.01",
-  "value": 0.01,
+  "text": "0.03",
+  "value": 0.03,
   "fmt": "g",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1961,8 +1961,8 @@
   }
  },
  {
-  "text": "0.934",
-  "value": 0.9337733965903091,
+  "text": "0.948",
+  "value": 0.948070935095852,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -1973,8 +1973,8 @@
   }
  },
  {
-  "text": "0.110",
-  "value": 0.11,
+  "text": "0.215",
+  "value": 0.215,
   "fmt": ".3f",
   "source": {
    "file": "results/ip_metrics.json",
@@ -2013,8 +2013,8 @@
   }
  },
  {
-  "text": "0.992",
-  "value": 0.9917355371900827,
+  "text": "0.975",
+  "value": 0.9752066115702479,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2027,8 +2027,8 @@
   }
  },
  {
-  "text": "1.000",
-  "value": 1.0,
+  "text": "0.994",
+  "value": 0.9942528735632183,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2041,8 +2041,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9887640449438202,
+  "text": "0.972",
+  "value": 0.9719101123595506,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2055,8 +2055,8 @@
   }
  },
  {
-  "text": "0.994",
-  "value": 0.9943502824858758,
+  "text": "0.983",
+  "value": 0.9829545454545454,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2069,8 +2069,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9894828335506303,
+  "text": "0.969",
+  "value": 0.96875,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2083,8 +2083,8 @@
   }
  },
  {
-  "text": "0.999",
-  "value": 0.9993855337078652,
+  "text": "0.998",
+  "value": 0.9981566011235955,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2112,8 +2112,8 @@
   }
  },
  {
-  "text": "0.987",
-  "value": 0.9868421052631579,
+  "text": "0.961",
+  "value": 0.9605263157894737,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2127,8 +2127,8 @@
   }
  },
  {
-  "text": "1.000",
-  "value": 1.0,
+  "text": "0.991",
+  "value": 0.9912280701754386,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2142,8 +2142,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9830508474576272,
+  "text": "0.958",
+  "value": 0.9576271186440678,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2157,8 +2157,8 @@
   }
  },
  {
-  "text": "0.991",
-  "value": 0.9914529914529915,
+  "text": "0.974",
+  "value": 0.9741379310344828,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2172,8 +2172,8 @@
   }
  },
  {
-  "text": "0.981",
-  "value": 0.9814407814407815,
+  "text": "0.945",
+  "value": 0.9454022988505747,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2187,8 +2187,8 @@
   }
  },
  {
-  "text": "0.999",
-  "value": 0.9985044865403788,
+  "text": "0.995",
+  "value": 0.9952642073778665,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2321,8 +2321,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9832635983263598,
+  "text": "0.996",
+  "value": 0.99581589958159,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2335,8 +2335,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9887640449438202,
+  "text": "0.994",
+  "value": 0.994413407821229,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2349,8 +2349,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9887640449438202,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2363,8 +2363,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9887640449438202,
+  "text": "0.997",
+  "value": 0.9971988795518207,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2377,8 +2377,8 @@
   }
  },
  {
-  "text": "0.978",
-  "value": 0.9779885798489593,
+  "text": "0.994",
+  "value": 0.9944672083709517,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2391,8 +2391,8 @@
   }
  },
  {
-  "text": "0.999",
-  "value": 0.9990790200773623,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2420,8 +2420,8 @@
   }
  },
  {
-  "text": "0.973",
-  "value": 0.9733333333333334,
+  "text": "0.993",
+  "value": 0.9933333333333333,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2435,8 +2435,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9830508474576272,
+  "text": "0.992",
+  "value": 0.9915966386554622,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2450,8 +2450,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9830508474576272,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2465,8 +2465,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9830508474576272,
+  "text": "0.996",
+  "value": 0.9957805907172996,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2480,8 +2480,8 @@
   }
  },
  {
-  "text": "0.960",
-  "value": 0.9602754237288136,
+  "text": "0.990",
+  "value": 0.9899537874221418,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2495,8 +2495,8 @@
   }
  },
  {
-  "text": "0.998",
-  "value": 0.9976165254237288,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2615,8 +2615,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9832635983263598,
+  "text": "0.992",
+  "value": 0.9916317991631799,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2628,8 +2628,8 @@
   }
  },
  {
-  "text": "0.980",
-  "value": 0.9801377118644068,
+  "text": "0.992",
+  "value": 0.99184698626147,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2641,8 +2641,8 @@
   }
  },
  {
-  "text": "1.000",
-  "value": 1.0,
+  "text": "0.996",
+  "value": 0.99581589958159,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2654,8 +2654,8 @@
   }
  },
  {
-  "text": "0.993",
-  "value": 0.9930475950241089,
+  "text": "0.995",
+  "value": 0.9947350357170028,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2667,8 +2667,8 @@
   }
  },
  {
-  "text": "0.818",
-  "value": 0.8178677558898926,
+  "text": "0.761",
+  "value": 0.7605162828505584,
   "fmt": ".3f",
   "source": {
    "file": "results/cnn_metrics.json",
@@ -2708,8 +2708,8 @@
   }
  },
  {
-  "text": "0.883",
-  "value": 0.8828451882845189,
+  "text": "0.879",
+  "value": 0.8786610878661087,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2722,8 +2722,8 @@
   }
  },
  {
-  "text": "0.903",
-  "value": 0.9032258064516129,
+  "text": "0.931",
+  "value": 0.930635838150289,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2736,8 +2736,8 @@
   }
  },
  {
-  "text": "0.944",
-  "value": 0.9438202247191011,
+  "text": "0.904",
+  "value": 0.9044943820224719,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2750,8 +2750,8 @@
   }
  },
  {
-  "text": "0.839",
-  "value": 0.8387314439946019,
+  "text": "0.845",
+  "value": 0.844516230343002,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2764,8 +2764,8 @@
   }
  },
  {
-  "text": "0.705",
-  "value": 0.7049180327868853,
+  "text": "0.803",
+  "value": 0.8032786885245902,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2778,8 +2778,8 @@
   }
  },
  {
-  "text": "0.924",
-  "value": 0.9242033523669183,
+  "text": "0.939",
+  "value": 0.9389390311291214,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2792,22 +2792,8 @@
   }
  },
  {
-  "text": "0.971",
-  "value": 0.9706994702016853,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "rule_based",
-    "scope": "overall",
-    "metric": "pr_auc"
-   }
-  }
- },
- {
-  "text": "0.780",
-  "value": 0.7801061031696422,
+  "text": "0.789",
+  "value": 0.7885833461305037,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2820,8 +2806,8 @@
   }
  },
  {
-  "text": "0.892",
-  "value": 0.8922323747159274,
+  "text": "0.895",
+  "value": 0.8953572644914685,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2834,8 +2820,8 @@
   }
  },
  {
-  "text": "43",
-  "value": 43.0,
+  "text": "49",
+  "value": 49.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2848,8 +2834,8 @@
   }
  },
  {
-  "text": "43",
-  "value": 43.0,
+  "text": "49",
+  "value": 49.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -2858,62 +2844,6 @@
     "method": "rule_based",
     "scope": "overall",
     "metric": "tn"
-   }
-  }
- },
- {
-  "text": "18",
-  "value": 18.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "overall",
-    "metric": "fp"
-   }
-  }
- },
- {
-  "text": "18",
-  "value": 18.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "overall",
-    "metric": "fp"
-   }
-  }
- },
- {
-  "text": "10",
-  "value": 10.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "overall",
-    "metric": "fn"
-   }
-  }
- },
- {
-  "text": "10",
-  "value": 10.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "overall",
-    "metric": "fn"
    }
   }
  },
@@ -2946,8 +2876,8 @@
   }
  },
  {
-  "text": "0.950",
-  "value": 0.9497907949790795,
+  "text": "0.975",
+  "value": 0.9748953974895398,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2960,8 +2890,8 @@
   }
  },
  {
-  "text": "0.972",
-  "value": 0.9715909090909091,
+  "text": "0.973",
+  "value": 0.9725274725274725,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2974,8 +2904,8 @@
   }
  },
  {
-  "text": "0.961",
-  "value": 0.9606741573033708,
+  "text": "0.994",
+  "value": 0.9943820224719101,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -2988,8 +2918,8 @@
   }
  },
  {
-  "text": "0.966",
-  "value": 0.9661016949152542,
+  "text": "0.983",
+  "value": 0.9833333333333333,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3002,8 +2932,8 @@
   }
  },
  {
-  "text": "0.935",
-  "value": 0.9346637506834335,
+  "text": "0.966",
+  "value": 0.9662429378531073,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3030,8 +2960,8 @@
   }
  },
  {
-  "text": "0.981",
-  "value": 0.9807515196168723,
+  "text": "0.998",
+  "value": 0.9977896481856695,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3044,22 +2974,8 @@
   }
  },
  {
-  "text": "0.993",
-  "value": 0.9928625607871282,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "svm",
-    "scope": "overall",
-    "metric": "pr_auc"
-   }
-  }
- },
- {
-  "text": "0.896",
-  "value": 0.8962542967960366,
+  "text": "0.938",
+  "value": 0.9379360600899442,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3072,8 +2988,8 @@
   }
  },
  {
-  "text": "0.968",
-  "value": 0.9679910714285714,
+  "text": "0.989",
+  "value": 0.9891134240603726,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3086,6 +3002,34 @@
   }
  },
  {
+  "text": "56",
+  "value": 56.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "56",
+  "value": 56.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "svm",
+    "scope": "overall",
+    "metric": "tn"
+   }
+  }
+ },
+ {
   "text": "5",
   "value": 5.0,
   "fmt": "compare.fmt",
@@ -3114,8 +3058,8 @@
   }
  },
  {
-  "text": "7",
-  "value": 7.0,
+  "text": "1",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3128,8 +3072,8 @@
   }
  },
  {
-  "text": "7",
-  "value": 7.0,
+  "text": "1",
+  "value": 1.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -3170,8 +3114,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9832635983263598,
+  "text": "0.996",
+  "value": 0.99581589958159,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3184,8 +3128,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9887640449438202,
+  "text": "0.994",
+  "value": 0.994413407821229,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3198,8 +3142,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9887640449438202,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3212,8 +3156,22 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9887640449438202,
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.997",
+  "value": 0.9971988795518207,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3226,8 +3184,8 @@
   }
  },
  {
-  "text": "0.978",
-  "value": 0.9779885798489593,
+  "text": "0.994",
+  "value": 0.9944672083709517,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3240,8 +3198,8 @@
   }
  },
  {
-  "text": "0.967",
-  "value": 0.9672131147540983,
+  "text": "0.984",
+  "value": 0.9836065573770492,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3254,9 +3212,23 @@
   }
  },
  {
-  "text": "0.999",
-  "value": 0.9990790200773623,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
    "query": {
@@ -3269,7 +3241,7 @@
  },
  {
   "text": "1.000",
-  "value": 0.999684680025944,
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3282,8 +3254,22 @@
   }
  },
  {
-  "text": "0.954",
-  "value": 0.9544563175202391,
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "pr_auc"
+   }
+  }
+ },
+ {
+  "text": "0.982",
+  "value": 0.982399293025996,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3296,8 +3282,8 @@
   }
  },
  {
-  "text": "0.995",
-  "value": 0.9946938652485583,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3310,8 +3296,50 @@
   }
  },
  {
-  "text": "2",
-  "value": 2.0,
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "60",
+  "value": 60.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "60",
+  "value": 60.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "overall",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3324,8 +3352,8 @@
   }
  },
  {
-  "text": "2",
-  "value": 2.0,
+  "text": "1",
+  "value": 1.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -3338,8 +3366,8 @@
   }
  },
  {
-  "text": "2",
-  "value": 2.0,
+  "text": "0",
+  "value": 0.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3352,8 +3380,8 @@
   }
  },
  {
-  "text": "2",
-  "value": 2.0,
+  "text": "0",
+  "value": 0.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -3394,8 +3422,8 @@
   }
  },
  {
-  "text": "0.840",
-  "value": 0.84,
+  "text": "0.820",
+  "value": 0.82,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3408,8 +3436,8 @@
   }
  },
  {
-  "text": "0.873",
-  "value": 0.873015873015873,
+  "text": "0.903",
+  "value": 0.9026548672566371,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3422,8 +3450,8 @@
   }
  },
  {
-  "text": "0.932",
-  "value": 0.9322033898305084,
+  "text": "0.864",
+  "value": 0.864406779661017,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3436,8 +3464,8 @@
   }
  },
  {
-  "text": "0.737",
-  "value": 0.7365339578454333,
+  "text": "0.746",
+  "value": 0.745906267645398,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3450,8 +3478,8 @@
   }
  },
  {
-  "text": "0.500",
-  "value": 0.5,
+  "text": "0.656",
+  "value": 0.65625,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3464,8 +3492,8 @@
   }
  },
  {
-  "text": "0.864",
-  "value": 0.8638771186440678,
+  "text": "0.879",
+  "value": 0.8789724576271186,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3478,8 +3506,8 @@
   }
  },
  {
-  "text": "0.954",
-  "value": 0.9535950805015118,
+  "text": "0.959",
+  "value": 0.9591688680917684,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3492,8 +3520,8 @@
   }
  },
  {
-  "text": "0.641",
-  "value": 0.640534063676823,
+  "text": "0.656",
+  "value": 0.6562530640258849,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3506,8 +3534,8 @@
   }
  },
  {
-  "text": "0.824",
-  "value": 0.8237926398989276,
+  "text": "0.821",
+  "value": 0.8211944521373064,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3520,8 +3548,8 @@
   }
  },
  {
-  "text": "8",
-  "value": 8.0,
+  "text": "21",
+  "value": 21.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3529,13 +3557,13 @@
     "section": "confusion",
     "method": "rule_based",
     "scope": "blackgram",
-    "metric": "fn"
+    "metric": "tn"
    }
   }
  },
  {
-  "text": "8",
-  "value": 8.0,
+  "text": "21",
+  "value": 21.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -3543,7 +3571,7 @@
     "section": "confusion",
     "method": "rule_based",
     "scope": "blackgram",
-    "metric": "fn"
+    "metric": "tn"
    }
   }
  },
@@ -3576,8 +3604,8 @@
   }
  },
  {
-  "text": "0.940",
-  "value": 0.94,
+  "text": "0.960",
+  "value": 0.96,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3590,8 +3618,8 @@
   }
  },
  {
-  "text": "0.958",
-  "value": 0.957983193277311,
+  "text": "0.959",
+  "value": 0.9590163934426229,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3604,8 +3632,8 @@
   }
  },
  {
-  "text": "0.966",
-  "value": 0.9661016949152542,
+  "text": "0.992",
+  "value": 0.9915254237288136,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3618,8 +3646,8 @@
   }
  },
  {
-  "text": "0.962",
-  "value": 0.9620253164556962,
+  "text": "0.975",
+  "value": 0.975,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3632,8 +3660,8 @@
   }
  },
  {
-  "text": "0.910",
-  "value": 0.9095840867992766,
+  "text": "0.938",
+  "value": 0.9375,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3660,8 +3688,8 @@
   }
  },
  {
-  "text": "0.963",
-  "value": 0.9631885593220338,
+  "text": "0.995",
+  "value": 0.9954978813559322,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3674,22 +3702,8 @@
   }
  },
  {
-  "text": "0.989",
-  "value": 0.9890516105650126,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "svm",
-    "scope": "blackgram",
-    "metric": "pr_auc"
-   }
-  }
- },
- {
-  "text": "0.842",
-  "value": 0.8417610239819959,
+  "text": "0.882",
+  "value": 0.8823529411764706,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3702,8 +3716,8 @@
   }
  },
  {
-  "text": "0.962",
-  "value": 0.9619722633136725,
+  "text": "0.981",
+  "value": 0.9805852003810929,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3744,8 +3758,8 @@
   }
  },
  {
-  "text": "4",
-  "value": 4.0,
+  "text": "1",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3758,8 +3772,8 @@
   }
  },
  {
-  "text": "4",
-  "value": 4.0,
+  "text": "1",
+  "value": 1.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -3800,8 +3814,8 @@
   }
  },
  {
-  "text": "0.973",
-  "value": 0.9733333333333334,
+  "text": "0.993",
+  "value": 0.9933333333333333,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3814,8 +3828,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9830508474576272,
+  "text": "0.992",
+  "value": 0.9915966386554622,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3828,8 +3842,8 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9830508474576272,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -3842,450 +3856,114 @@
   }
  },
  {
-  "text": "0.983",
-  "value": 0.9830508474576272,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "f1"
-   }
-  }
- },
- {
-  "text": "0.960",
-  "value": 0.9602754237288136,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "macro_f1"
-   }
-  }
- },
- {
-  "text": "0.938",
-  "value": 0.9375,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "healthy_recall"
-   }
-  }
- },
- {
-  "text": "0.998",
-  "value": 0.9976165254237288,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "roc_auc"
-   }
-  }
- },
- {
-  "text": "0.999",
-  "value": 0.9993570711399127,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "pr_auc"
-   }
-  }
- },
- {
-  "text": "0.917",
-  "value": 0.9166666666666667,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "macro_f1_ci_low"
-   }
-  }
- },
- {
-  "text": "0.991",
-  "value": 0.9905937515074396,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "macro_f1_ci_high"
-   }
-  }
- },
- {
-  "text": "2",
-  "value": 2.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "fp"
-   }
-  }
- },
- {
-  "text": "2",
-  "value": 2.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "fp"
-   }
-  }
- },
- {
-  "text": "2",
-  "value": 2.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "fn"
-   }
-  }
- },
- {
-  "text": "2",
-  "value": 2.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "cnn",
-    "scope": "blackgram",
-    "metric": "fn"
-   }
-  }
- },
- {
-  "text": "89",
-  "value": 89.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "89",
-  "value": 89.0,
+  "text": "1",
+  "value": 1.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "0.955",
-  "value": 0.9550561797752809,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "accuracy"
-   }
-  }
- },
- {
-  "text": "0.967",
-  "value": 0.9666666666666667,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "precision"
-   }
-  }
- },
- {
-  "text": "0.967",
-  "value": 0.9666666666666667,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
+    "method": "cnn",
+    "scope": "blackgram",
     "metric": "recall"
    }
   }
  },
  {
-  "text": "0.967",
-  "value": 0.9666666666666667,
+  "text": "0.996",
+  "value": 0.9957805907172996,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
+    "method": "cnn",
+    "scope": "blackgram",
     "metric": "f1"
    }
   }
  },
  {
-  "text": "0.949",
-  "value": 0.9488505747126437,
+  "text": "0.990",
+  "value": 0.9899537874221418,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
+    "method": "cnn",
+    "scope": "blackgram",
     "metric": "macro_f1"
    }
   }
  },
  {
-  "text": "0.931",
-  "value": 0.9310344827586207,
+  "text": "0.969",
+  "value": 0.96875,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
+    "method": "cnn",
+    "scope": "blackgram",
     "metric": "healthy_recall"
    }
   }
  },
  {
-  "text": "0.998",
-  "value": 0.9977011494252873,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
+    "method": "cnn",
+    "scope": "blackgram",
     "metric": "roc_auc"
    }
   }
  },
  {
-  "text": "0.999",
-  "value": 0.9989159175039661,
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 0.9999999999999999,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
+    "method": "cnn",
+    "scope": "blackgram",
     "metric": "pr_auc"
-   }
-  }
- },
- {
-  "text": "0.896",
-  "value": 0.8958504684650694,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "macro_f1_ci_low"
-   }
-  }
- },
- {
-  "text": "0.988",
-  "value": 0.9880328089283312,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "macro_f1_ci_high"
-   }
-  }
- },
- {
-  "text": "2",
-  "value": 2.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "fp"
-   }
-  }
- },
- {
-  "text": "2",
-  "value": 2.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "fp"
-   }
-  }
- },
- {
-  "text": "2",
-  "value": 2.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "fn"
-   }
-  }
- },
- {
-  "text": "2",
-  "value": 2.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "fn"
-   }
-  }
- },
- {
-  "text": "58",
-  "value": 58.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "tp"
-   }
-  }
- },
- {
-  "text": "58",
-  "value": 58.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "confusion",
-    "method": "rule_based",
-    "scope": "turmeric",
-    "metric": "tp"
-   }
-  }
- },
- {
-  "text": "89",
-  "value": 89.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "svm",
-    "scope": "turmeric",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "89",
-  "value": 89.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "svm",
-    "scope": "turmeric",
-    "metric": "n"
    }
   }
  },
  {
   "text": "0.966",
-  "value": 0.9662921348314607,
+  "value": 0.9656183568795287,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "svm",
-    "scope": "turmeric",
-    "metric": "accuracy"
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_low"
    }
   }
  },
@@ -4297,9 +3975,9 @@
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "svm",
-    "scope": "turmeric",
-    "metric": "precision"
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_high"
    }
   }
  },
@@ -4311,29 +3989,491 @@
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "svm",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "31",
+  "value": 31.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "31",
+  "value": 31.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "0",
+  "value": 0.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "cnn",
+    "scope": "blackgram",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.978",
+  "value": 0.9775280898876404,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9833333333333333,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
     "scope": "turmeric",
     "metric": "precision"
    }
   }
  },
  {
-  "text": "0.950",
-  "value": 0.95,
+  "text": "0.983",
+  "value": 0.9833333333333333,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "metrics",
-    "method": "svm",
+    "method": "rule_based",
     "scope": "turmeric",
     "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "0.983",
+  "value": 0.9833333333333333,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "f1"
    }
   }
  },
  {
   "text": "0.974",
-  "value": 0.9743589743589743,
+  "value": 0.9744252873563218,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9655172413793104,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "healthy_recall"
+   }
+  }
+ },
+ {
+  "text": "0.997",
+  "value": 0.9971264367816092,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "roc_auc"
+   }
+  }
+ },
+ {
+  "text": "0.934",
+  "value": 0.934220251293422,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_high"
+   }
+  }
+ },
+ {
+  "text": "28",
+  "value": 28.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "28",
+  "value": 28.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "tn"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "fp"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "fn"
+   }
+  }
+ },
+ {
+  "text": "59",
+  "value": 59.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "tp"
+   }
+  }
+ },
+ {
+  "text": "59",
+  "value": 59.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "confusion",
+    "method": "rule_based",
+    "scope": "turmeric",
+    "metric": "tp"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "89",
+  "value": 89.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "precision"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "recall"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -4346,9 +4486,37 @@
   }
  },
  {
-  "text": "0.963",
-  "value": 0.9625893232450609,
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "f1"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "macro_f1"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
    "query": {
@@ -4444,9 +4612,23 @@
   }
  },
  {
-  "text": "0.915",
-  "value": 0.9151614618788292,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "metrics",
+    "method": "svm",
+    "scope": "turmeric",
+    "metric": "macro_f1_ci_low"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
    "query": {
@@ -4514,8 +4696,8 @@
   }
  },
  {
-  "text": "3",
-  "value": 3.0,
+  "text": "0",
+  "value": 0.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -4528,8 +4710,8 @@
   }
  },
  {
-  "text": "3",
-  "value": 3.0,
+  "text": "0",
+  "value": 0.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -4542,8 +4724,8 @@
   }
  },
  {
-  "text": "57",
-  "value": 57.0,
+  "text": "60",
+  "value": 60.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -4556,8 +4738,8 @@
   }
  },
  {
-  "text": "57",
-  "value": 57.0,
+  "text": "60",
+  "value": 60.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -4962,8 +5144,8 @@
   }
  },
  {
-  "text": "119.6",
-  "value": 119.61304198484868,
+  "text": "70.1",
+  "value": 70.10158349294215,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -4976,8 +5158,8 @@
   }
  },
  {
-  "text": "119.6",
-  "value": 119.61304198484868,
+  "text": "70.1",
+  "value": 70.10158349294215,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -4990,8 +5172,8 @@
   }
  },
  {
-  "text": "48.2",
-  "value": 48.18129100021906,
+  "text": "208.3",
+  "value": 208.26320847845636,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5004,8 +5186,8 @@
   }
  },
  {
-  "text": "35.8",
-  "value": 35.76733299996704,
+  "text": "148.5",
+  "value": 148.46943749580532,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5025,6 +5207,34 @@
    "file": "results/comparison.csv",
    "query": {
     "section": "per_class",
+    "method": "svm",
+    "scope": "anthracnose",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "anthracnose",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
     "method": "cnn",
     "scope": "anthracnose",
     "metric": "accuracy"
@@ -5074,6 +5284,34 @@
   }
  },
  {
+  "text": "25",
+  "value": 25.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "dry_leaf",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "25",
+  "value": 25.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "dry_leaf",
+    "metric": "n"
+   }
+  }
+ },
+ {
   "text": "1.000",
   "value": 1.0,
   "fmt": "compare.fmt",
@@ -5098,6 +5336,34 @@
     "method": "svm",
     "scope": "dry_leaf",
     "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "25",
+  "value": 25.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "dry_leaf",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "25",
+  "value": 25.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "dry_leaf",
+    "metric": "n"
    }
   }
  },
@@ -5130,8 +5396,36 @@
   }
  },
  {
-  "text": "0.500",
-  "value": 0.5,
+  "text": "25",
+  "value": 25.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "dry_leaf",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "25",
+  "value": 25.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "dry_leaf",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "0.656",
+  "value": 0.65625,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5214,8 +5508,8 @@
   }
  },
  {
-  "text": "0.938",
-  "value": 0.9375,
+  "text": "0.969",
+  "value": 0.96875,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5256,8 +5550,8 @@
   }
  },
  {
-  "text": "0.931",
-  "value": 0.9310344827586207,
+  "text": "0.966",
+  "value": 0.9655172413793104,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5326,36 +5620,8 @@
   }
  },
  {
-  "text": "35",
-  "value": 35.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "per_class",
-    "method": "rule_based",
-    "scope": "leaf_blotch",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "35",
-  "value": 35.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "per_class",
-    "method": "rule_based",
-    "scope": "leaf_blotch",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "35",
-  "value": 35.0,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5363,13 +5629,13 @@
     "section": "per_class",
     "method": "svm",
     "scope": "leaf_blotch",
-    "metric": "n"
+    "metric": "accuracy"
    }
   }
  },
  {
-  "text": "35",
-  "value": 35.0,
+  "text": "1",
+  "value": 1.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -5377,7 +5643,7 @@
     "section": "per_class",
     "method": "svm",
     "scope": "leaf_blotch",
-    "metric": "n"
+    "metric": "accuracy"
    }
   }
  },
@@ -5410,29 +5676,29 @@
   }
  },
  {
-  "text": "35",
-  "value": 35.0,
+  "text": "21",
+  "value": 21.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "per_class",
-    "method": "cnn",
-    "scope": "leaf_blotch",
+    "method": "rule_based",
+    "scope": "leaf_crinckle",
     "metric": "n"
    }
   }
  },
  {
-  "text": "35",
-  "value": 35.0,
+  "text": "21",
+  "value": 21.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "per_class",
-    "method": "cnn",
-    "scope": "leaf_blotch",
+    "method": "rule_based",
+    "scope": "leaf_crinckle",
     "metric": "n"
    }
   }
@@ -5466,6 +5732,34 @@
   }
  },
  {
+  "text": "21",
+  "value": 21.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_crinckle",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "21",
+  "value": 21.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "leaf_crinckle",
+    "metric": "n"
+   }
+  }
+ },
+ {
   "text": "1.000",
   "value": 1.0,
   "fmt": "compare.fmt",
@@ -5494,6 +5788,90 @@
   }
  },
  {
+  "text": "21",
+  "value": 21.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_crinckle",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "21",
+  "value": 21.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "cnn",
+    "scope": "leaf_crinckle",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "rule_based",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
+  "text": "34",
+  "value": 34.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "powdery_mildew",
+    "metric": "n"
+   }
+  }
+ },
+ {
   "text": "1.000",
   "value": 1.0,
   "fmt": "compare.fmt",
@@ -5501,7 +5879,7 @@
    "file": "results/comparison.csv",
    "query": {
     "section": "per_class",
-    "method": "rule_based",
+    "method": "cnn",
     "scope": "powdery_mildew",
     "metric": "accuracy"
    }
@@ -5511,90 +5889,6 @@
   "text": "1",
   "value": 1.0,
   "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "per_class",
-    "method": "rule_based",
-    "scope": "powdery_mildew",
-    "metric": "accuracy"
-   }
-  }
- },
- {
-  "text": "34",
-  "value": 34.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "per_class",
-    "method": "rule_based",
-    "scope": "powdery_mildew",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "34",
-  "value": 34.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "per_class",
-    "method": "rule_based",
-    "scope": "powdery_mildew",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "0.971",
-  "value": 0.9705882352941176,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "per_class",
-    "method": "svm",
-    "scope": "powdery_mildew",
-    "metric": "accuracy"
-   }
-  }
- },
- {
-  "text": "34",
-  "value": 34.0,
-  "fmt": "compare.fmt",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "per_class",
-    "method": "svm",
-    "scope": "powdery_mildew",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "34",
-  "value": 34.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "per_class",
-    "method": "svm",
-    "scope": "powdery_mildew",
-    "metric": "n"
-   }
-  }
- },
- {
-  "text": "0.941",
-  "value": 0.9411764705882353,
-  "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
    "query": {
@@ -5669,6 +5963,34 @@
    "file": "results/comparison.csv",
    "query": {
     "section": "per_class",
+    "method": "svm",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
+    "method": "svm",
+    "scope": "yellow_mosaic",
+    "metric": "accuracy"
+   }
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "per_class",
     "method": "cnn",
     "scope": "yellow_mosaic",
     "metric": "accuracy"
@@ -5690,8 +6012,8 @@
   }
  },
  {
-  "text": "3",
-  "value": 3.0,
+  "text": "0",
+  "value": 0.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5704,8 +6026,8 @@
   }
  },
  {
-  "text": "3",
-  "value": 3.0,
+  "text": "0",
+  "value": 0.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -5718,8 +6040,8 @@
   }
  },
  {
-  "text": "11",
-  "value": 11.0,
+  "text": "5",
+  "value": 5.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5732,8 +6054,8 @@
   }
  },
  {
-  "text": "11",
-  "value": 11.0,
+  "text": "5",
+  "value": 5.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -5746,8 +6068,8 @@
   }
  },
  {
-  "text": "0.0574",
-  "value": 0.057373046875,
+  "text": "0.0625",
+  "value": 0.0625,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5760,8 +6082,8 @@
   }
  },
  {
-  "text": "2",
-  "value": 2.0,
+  "text": "0",
+  "value": 0.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5774,8 +6096,8 @@
   }
  },
  {
-  "text": "2",
-  "value": 2.0,
+  "text": "0",
+  "value": 0.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -5788,8 +6110,36 @@
   }
  },
  {
-  "text": "4",
-  "value": 4.0,
+  "text": "28",
+  "value": 28.0,
+  "fmt": "compare.fmt",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "rule_based_vs_cnn",
+    "scope": "overall",
+    "metric": "a_wrong_b_right"
+   }
+  }
+ },
+ {
+  "text": "28",
+  "value": 28.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/comparison.csv",
+   "query": {
+    "section": "mcnemar",
+    "method": "rule_based_vs_cnn",
+    "scope": "overall",
+    "metric": "a_wrong_b_right"
+   }
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5802,8 +6152,8 @@
   }
  },
  {
-  "text": "4",
-  "value": 4.0,
+  "text": "1",
+  "value": 1.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -5816,8 +6166,8 @@
   }
  },
  {
-  "text": "0.941",
-  "value": 0.9414225941422594,
+  "text": "0.979",
+  "value": 0.9790794979079498,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5831,7 +6181,7 @@
  },
  {
   "text": "0.996",
-  "value": 0.9955555555555555,
+  "value": 0.9957264957264957,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5844,8 +6194,8 @@
   }
  },
  {
-  "text": "14",
-  "value": 14.0,
+  "text": "5",
+  "value": 5.0,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5858,8 +6208,8 @@
   }
  },
  {
-  "text": "14",
-  "value": 14.0,
+  "text": "5",
+  "value": 5.0,
   "fmt": "d",
   "source": {
    "file": "results/comparison.csv",
@@ -5872,8 +6222,8 @@
   }
  },
  {
-  "text": "1.000",
-  "value": 1.0,
+  "text": "0.996",
+  "value": 0.99581589958159,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5886,22 +6236,8 @@
   }
  },
  {
-  "text": "1",
-  "value": 1.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "metrics",
-    "method": "cnn",
-    "scope": "overall",
-    "metric": "crop_accuracy"
-   }
-  }
- },
- {
-  "text": "0.950",
-  "value": 0.9497907949790795,
+  "text": "0.975",
+  "value": 0.9748953974895398,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -5914,8 +6250,8 @@
   }
  },
  {
-  "text": "0.935",
-  "value": 0.9346637506834335,
+  "text": "0.966",
+  "value": 0.9662429378531073,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -6152,8 +6488,8 @@
   }
  },
  {
-  "text": "0.946",
-  "value": 0.946058091286307,
+  "text": "0.963",
+  "value": 0.9626556016597511,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -6166,8 +6502,8 @@
   }
  },
  {
-  "text": "0.931",
-  "value": 0.9311988053670641,
+  "text": "0.951",
+  "value": 0.9508798152048373,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -6194,8 +6530,8 @@
   }
  },
  {
-  "text": "-0.003",
-  "value": -0.0034649453163694277,
+  "text": "-0.015",
+  "value": -0.01536312264827,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -6278,8 +6614,8 @@
   }
  },
  {
-  "text": "0.979",
-  "value": 0.979253112033195,
+  "text": "0.994",
+  "value": 0.9937759336099585,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -6292,8 +6628,8 @@
   }
  },
  {
-  "text": "0.974",
-  "value": 0.9735380020642554,
+  "text": "0.992",
+  "value": 0.9919201175662009,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -6320,8 +6656,8 @@
   }
  },
  {
-  "text": "0.039",
-  "value": 0.0388742513808219,
+  "text": "0.026",
+  "value": 0.02567717971309358,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -6390,8 +6726,8 @@
   }
  },
  {
-  "text": "0.043",
-  "value": 0.04332482916552571,
+  "text": "0.028",
+  "value": 0.028224270517844374,
   "fmt": "compare.fmt",
   "source": {
    "file": "results/comparison.csv",
@@ -6432,20 +6768,6 @@
   }
  },
  {
-  "text": "42",
-  "value": 42.0,
-  "fmt": "d",
-  "source": {
-   "file": "results/comparison.csv",
-   "query": {
-    "section": "settings",
-    "method": "all",
-    "scope": "overall",
-    "metric": "seed"
-   }
-  }
- },
- {
   "text": "30",
   "value": 30.0,
   "fmt": ".0f",
@@ -6460,8 +6782,8 @@
   }
  },
  {
-  "text": "0.867",
-  "value": 0.8666666666666667,
+  "text": "0.767",
+  "value": 0.7666666666666667,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6474,8 +6796,8 @@
   }
  },
  {
-  "text": "0.933",
-  "value": 0.9333333333333333,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6572,8 +6894,8 @@
   }
  },
  {
-  "text": "0.500",
-  "value": 0.5,
+  "text": "0.656",
+  "value": 0.65625,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6600,8 +6922,8 @@
   }
  },
  {
-  "text": "0.938",
-  "value": 0.9375,
+  "text": "0.969",
+  "value": 0.96875,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6628,8 +6950,8 @@
   }
  },
  {
-  "text": "0.931",
-  "value": 0.9310344827586207,
+  "text": "0.966",
+  "value": 0.9655172413793104,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6684,8 +7006,8 @@
   }
  },
  {
-  "text": "0.943",
-  "value": 0.9428571428571428,
+  "text": "0.971",
+  "value": 0.9714285714285714,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6698,8 +7020,8 @@
   }
  },
  {
-  "text": "0.914",
-  "value": 0.9142857142857143,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6740,8 +7062,8 @@
   }
  },
  {
-  "text": "0.810",
-  "value": 0.8095238095238095,
+  "text": "0.857",
+  "value": 0.8571428571428571,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6796,8 +7118,8 @@
   }
  },
  {
-  "text": "1.000",
-  "value": 1.0,
+  "text": "0.824",
+  "value": 0.8235294117647058,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6824,8 +7146,8 @@
   }
  },
  {
-  "text": "0.941",
-  "value": 0.9411764705882353,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6866,8 +7188,8 @@
   }
  },
  {
-  "text": "0.970",
-  "value": 0.9696969696969697,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6894,6 +7216,285 @@
   }
  },
  {
+  "text": "82",
+  "value": 82.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "n",
+    "wild_test"
+   ]
+  }
+ },
+ {
+  "text": "62",
+  "value": 62.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "n",
+    "wild_test_labelled"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "crop_acc_clean_test"
+   ]
+  }
+ },
+ {
+  "text": "0.996",
+  "value": 0.99581589958159,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "crop_acc_clean_test"
+   ]
+  }
+ },
+ {
+  "text": "0.927",
+  "value": 0.926829268292683,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "crop_acc_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "crop_acc_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "0.927",
+  "value": 0.926829268292683,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "accepted_precision_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "accepted_precision_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 1.0,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "coverage_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "0.817",
+  "value": 0.8170731707317073,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "coverage_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "0.059",
+  "value": 0.058872013557248026,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "crop_ece_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "0.015",
+  "value": 0.015442082854638698,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "crop_ece_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "0.978",
+  "value": 0.9779885798489593,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "disease_macro_f1_clean_test"
+   ]
+  }
+ },
+ {
+  "text": "0.994",
+  "value": 0.9944672083709517,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "disease_macro_f1_clean_test"
+   ]
+  }
+ },
+ {
+  "text": "0.887",
+  "value": 0.8870673952641166,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "disease_macro_f1_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "0.935",
+  "value": 0.9348739495798319,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "disease_macro_f1_wild_test"
+   ]
+  }
+ },
+ {
+  "text": "0.935",
+  "value": 0.9346637506834335,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "svm_macro_f1_clean_test"
+   ]
+  }
+ },
+ {
+  "text": "0.966",
+  "value": 0.9662429378531073,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "svm_macro_f1_clean_test"
+   ]
+  }
+ },
+ {
+  "text": "0.839",
+  "value": 0.8387314439946019,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "before",
+    "rule_macro_f1_clean_test"
+   ]
+  }
+ },
+ {
+  "text": "0.845",
+  "value": 0.844516230343002,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "rule_macro_f1_clean_test"
+   ]
+  }
+ },
+ {
+  "text": "1.000",
+  "value": 0.9999996437924911,
+  "fmt": ".3f",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "regression",
+    "after",
+    "p_turmeric"
+   ]
+  }
+ },
+ {
+  "text": "36",
+  "value": 36.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "regression",
+    "after",
+    "lesion_count"
+   ]
+  }
+ },
+ {
+  "text": "1",
+  "value": 1.0,
+  "fmt": "d",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "regression",
+    "before",
+    "lesion_count"
+   ]
+  }
+ },
+ {
   "text": "0.844",
   "value": 0.84375,
   "fmt": ".3f",
@@ -6908,22 +7509,22 @@
   }
  },
  {
-  "text": "0.914",
-  "value": 0.9142857142857143,
+  "text": "0.971",
+  "value": 0.9705882352941176,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "per_class",
     "method": "svm",
-    "scope": "leaf_blotch",
+    "scope": "powdery_mildew",
     "metric": "accuracy"
    }
   }
  },
  {
-  "text": "0.938",
-  "value": 0.9375,
+  "text": "0.969",
+  "value": 0.96875,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
@@ -6936,17 +7537,29 @@
   }
  },
  {
-  "text": "0.941",
-  "value": 0.9411764705882353,
+  "text": "1.000",
+  "value": 1.0,
   "fmt": ".3f",
   "source": {
    "file": "results/comparison.csv",
    "query": {
     "section": "per_class",
     "method": "cnn",
-    "scope": "powdery_mildew",
+    "scope": "anthracnose",
     "metric": "accuracy"
    }
+  }
+ },
+ {
+  "text": "18.3%",
+  "value": 0.18292682926829273,
+  "fmt": ".1%",
+  "source": {
+   "file": "results/robustness.json",
+   "keys": [
+    "after",
+    "abstention_wild_test"
+   ]
   }
  }
 ]

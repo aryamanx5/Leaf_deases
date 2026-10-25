@@ -1,0 +1,106 @@
+{
+  "before": {
+    "crop_acc_clean_test": 1.0,
+    "crop_acc_wild_test": 0.926829268292683,
+    "accepted_precision_wild_test": 0.926829268292683,
+    "coverage_wild_test": 1.0,
+    "abstention_wild_test": 0.0,
+    "crop_ece_wild_test": 0.058872013557248026,
+    "disease_f1_clean_test": 0.9887640449438202,
+    "disease_macro_f1_clean_test": 0.9779885798489593,
+    "disease_macro_f1_wild_test": 0.8870673952641166,
+    "svm_macro_f1_clean_test": 0.9346637506834335,
+    "rule_macro_f1_clean_test": 0.8387314439946019,
+    "svm_macro_f1_wild_test": null,
+    "rule_macro_f1_wild_test": null,
+    "latency_ms_cnn_cpu": 48.18129100021906,
+    "api_p50_ms": null
+  },
+  "after": {
+    "crop_acc_clean_test": 0.99581589958159,
+    "crop_acc_wild_test": 1.0,
+    "accepted_precision_wild_test": 1.0,
+    "coverage_wild_test": 0.8170731707317073,
+    "abstention_wild_test": 0.18292682926829273,
+    "crop_ece_wild_test": 0.015442082854638698,
+    "disease_f1_clean_test": 0.9971988795518207,
+    "disease_macro_f1_clean_test": 0.9944672083709517,
+    "disease_macro_f1_wild_test": 0.9348739495798319,
+    "svm_macro_f1_clean_test": 0.9662429378531073,
+    "rule_macro_f1_clean_test": 0.844516230343002,
+    "svm_macro_f1_wild_test": 0.903125,
+    "rule_macro_f1_wild_test": 0.7720588235294117,
+    "latency_ms_cnn_cpu": 208.26320847845636,
+    "api_p50_ms": 448.8223330117762
+  },
+  "targets": {
+    "wild_test_accepted_precision": {
+      "value": 1.0,
+      "target": 0.9,
+      "met": true
+    },
+    "regression_not_confident_blackgram": {
+      "value": "turmeric (confident)",
+      "met": true
+    },
+    "clean_disease_f1_drop": {
+      "value": -0.008434834608000541,
+      "target": 0.02,
+      "met": true
+    }
+  },
+  "regression": {
+    "before": {
+      "crop": "blackgram",
+      "p_blackgram": 0.7296450734138489,
+      "status": "no abstention",
+      "cnn_disease": "Diseased",
+      "affected_pct": 5.67208271787297,
+      "lesion_count": 1,
+      "svm": "Diseased"
+    },
+    "after": {
+      "crop": "turmeric",
+      "p_turmeric": 0.9999996437924911,
+      "status": "confident",
+      "cnn_disease": "healthy",
+      "p_diseased": 0.11717398020796264,
+      "svm": "diseased",
+      "rule": "diseased",
+      "affected_pct": 8.718172136702488,
+      "lesion_count": 36,
+      "card": [
+        "Crop: Turmeric (100%)",
+        "Prediction: Healthy",
+        "Affected Region: 8.7%",
+        "CNN Confidence: 88%"
+      ]
+    }
+  },
+  "n": {
+    "wild_test": 82,
+    "wild_test_labelled": 62
+  },
+  "wild_test_by_source": {
+    "inaturalist": {
+      "n": 10,
+      "crop_acc": 1.0,
+      "coverage": 0.4
+    },
+    "mendeley:jtttfbx342": {
+      "n": 27,
+      "crop_acc": 1.0,
+      "coverage": 0.8888888888888888
+    },
+    "mendeley:z55yrbmn2d": {
+      "n": 35,
+      "crop_acc": 1.0,
+      "coverage": 0.9714285714285714
+    },
+    "wikimedia_commons": {
+      "n": 10,
+      "crop_acc": 1.0,
+      "coverage": 0.5
+    }
+  }
+}

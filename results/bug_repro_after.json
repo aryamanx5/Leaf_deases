@@ -1,0 +1,69 @@
+{
+  "request_id": "7001584a9e72",
+  "model_version": "07b8a7832e",
+  "crop": {
+    "label": "turmeric",
+    "confidence": 0.9999996437924911,
+    "probs": {
+      "turmeric": 0.9999996437924911,
+      "blackgram": 3.5620750893361475e-07
+    },
+    "status": "confident",
+    "source": "model"
+  },
+  "disease": {
+    "label": "healthy",
+    "confidence": 0.8828260197920373,
+    "by": {
+      "cnn": {
+        "label": "healthy",
+        "prob": 0.11717398020796264
+      },
+      "svm": {
+        "label": "diseased",
+        "prob": 0.9996892419101705
+      },
+      "rule": {
+        "label": "diseased",
+        "score": 0.34686847823310474,
+        "threshold": 0.23500000000000001,
+        "components": {
+          "affected_pct": 0.09192455919842155,
+          "log_lesion_count": 1.0,
+          "abn_colour_pct": 0.20465247702104133,
+          "glcm_contrast": 0.09089687671295608
+        }
+      }
+    }
+  },
+  "agreement": false,
+  "measurements": {
+    "affected_region_pct": 8.718172136702488,
+    "lesion_count": 36,
+    "abn_colour_pct": 20.360151031077546,
+    "glcm_contrast": 5.28113623806292,
+    "glcm_energy": 0.12102287143597663,
+    "glcm_homogeneity": 0.550392876674609,
+    "mean_lesion_area_px": 100.05555555555556,
+    "segmentation_mode": "field_grabcut+foliage_watershed"
+  },
+  "abnormal_colour_pct": {
+    "yellow": 6.3002226740245915,
+    "brown": 0.8326072223835803,
+    "dark": 0.8447090715461323,
+    "pale": 0.7406331687481847
+  },
+  "ood": {
+    "is_plant": true,
+    "ood_score": 0.2552115321159363,
+    "flagged": false
+  },
+  "timings_ms": {
+    "decode": 4.608082992490381,
+    "cnn": 324.1590419784188,
+    "stage1": 947.7210419718176,
+    "ip_decision": 6.741249992046505,
+    "gradcam": 192.83549999818206,
+    "total": 1476.0649169329554
+  }
+}

@@ -40,7 +40,7 @@ from leafdx.ip.features import FEATURE_NAMES, stage1  # noqa: E402
 from leafdx.ip.lesions import overlay_lesions  # noqa: E402
 from leafdx.viz import contact_sheet  # noqa: E402
 
-NAMES = {"rule_based": "Rule-based (IP)", "svm": "SVM (IP features)", "cnn": "CNN (MobileNetV2)"}
+NAMES = {"rule_based": "Rule-based (IP)", "svm": "SVM (IP features)", "cnn": "CNN (disease MobileNetV2)"}
 COLOURS = {"rule_based": "#8c6d31", "svm": "#2b7bba", "cnn": "#c0392b"}
 ALPHA = 0.05
 N_BOOT = 1000
@@ -245,7 +245,7 @@ def render_md(tab, abl, class_crop: dict) -> str:
         s_lo, s_hi = V("metrics", "svm", crop, "macro_f1_ci_low"), V("metrics", "svm", crop, "macro_f1_ci_high")
         c_lo, c_hi = V("metrics", "cnn", crop, "macro_f1_ci_low"), V("metrics", "cnn", crop, "macro_f1_ci_high")
         overlap = s_lo <= c_hi and c_lo <= s_hi
-        rel = "is higher than" if s > c else "is lower than"
+        rel = "is higher than" if s > c else ("is lower than" if s < c else "equals")
         findings.append(f"**{CROP_TXT[crop]}:** the SVM on hand-designed features (macro-F1 {G('metrics', 'svm', crop, 'macro_f1')}, "
                         f"healthy recall {G('metrics', 'svm', crop, 'healthy_recall')}) {rel} the CNN "
                         f"({G('metrics', 'cnn', crop, 'macro_f1')}, healthy recall {G('metrics', 'cnn', crop, 'healthy_recall')})"
@@ -257,9 +257,12 @@ def render_md(tab, abl, class_crop: dict) -> str:
     best_ip = min(gaps, key=gaps.get)
     findings.append(f"**By original class**, the largest CNN advantage over the SVM is on *{class_txt[worst]}* "
                  f"(CNN {G('per_class', 'cnn', worst, 'accuracy')} vs SVM {G('per_class', 'svm', worst, 'accuracy')}, "
-                 f"n = {G('per_class', 'svm', worst, 'n')}); the SVM fares best relative to the CNN on *{class_txt[best_ip]}* "
-                 f"(SVM {G('per_class', 'svm', best_ip, 'accuracy')} vs CNN {G('per_class', 'cnn', best_ip, 'accuracy')}, "
-                 f"n = {G('per_class', 'svm', best_ip, 'n')}).")
+                 f"n = {G('per_class', 'svm', worst, 'n')}); "
+                 + (f"the SVM fares best relative to the CNN on *{class_txt[best_ip]}* "
+                    f"(SVM {G('per_class', 'svm', best_ip, 'accuracy')} vs CNN {G('per_class', 'cnn', best_ip, 'accuracy')}, "
+                    f"n = {G('per_class', 'svm', best_ip, 'n')})." if gaps[best_ip] < 0 else
+                    "the SVM does not beat the CNN on any original class (it ties on "
+                    + ", ".join(f"*{class_txt[k]}*" for k, v in gaps.items() if v == 0) + ")."))
     findings.append(f"**Rule-based score vs SVM:** the transparent four-measurement rule reaches macro-F1 "
                  f"{G('metrics', 'rule_based', 'overall', 'macro_f1')} (healthy recall {G('metrics', 'rule_based', 'overall', 'healthy_recall')}) "
                  f"against {G('metrics', 'svm', 'overall', 'macro_f1')} (healthy recall {G('metrics', 'svm', 'overall', 'healthy_recall')}) "
@@ -273,7 +276,7 @@ def render_md(tab, abl, class_crop: dict) -> str:
                  f"right {G('agreement', 'svm_vs_cnn', 'overall', 'accuracy_when_agree')} of the time; the "
                  f"{G('agreement', 'svm_vs_cnn', 'overall', 'n_disagree')} disagreements are shown with both kinds of evidence in "
                  "`figures/disagreements_gallery.png`.")
-    findings.append(f"**Crop identification:** the 4-class CNN also names the crop correctly on "
+    findings.append(f"**Crop identification:** the crop model names the crop correctly on "
                  f"{G('metrics', 'cnn', 'overall', 'crop_accuracy')} of TEST images.")
     lines += [f"{i}. {t}" for i, t in enumerate(findings, start=1)]
     # ablation
