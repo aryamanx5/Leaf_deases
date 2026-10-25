@@ -16,15 +16,28 @@ export type SectionId = (typeof SECTIONS)[number]['id'];
 export function useActiveSection(): SectionId {
   const [active, setActive] = useState<SectionId>('field');
   useEffect(() => {
-    const els = SECTIONS.map((s) => document.getElementById(s.id)).filter(Boolean) as HTMLElement[];
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) if (e.isIntersecting) setActive(e.target.id as SectionId);
-      },
-      { rootMargin: '-50% 0px -50% 0px', threshold: 0 },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    let io: IntersectionObserver | null = null;
+    let tries = 0;
+    let timer = 0;
+    const attach = () => {
+      const els = SECTIONS.map((s) => document.getElementById(s.id)).filter(Boolean) as HTMLElement[];
+      if (els.length < SECTIONS.length && tries++ < 40) {
+        timer = window.setTimeout(attach, 250); // sections mount after site.json loads
+        return;
+      }
+      io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) if (e.isIntersecting) setActive(e.target.id as SectionId);
+        },
+        { rootMargin: '-50% 0px -50% 0px', threshold: 0 },
+      );
+      els.forEach((el) => io!.observe(el));
+    };
+    attach();
+    return () => {
+      window.clearTimeout(timer);
+      io?.disconnect();
+    };
   }, []);
   return active;
 }

@@ -58,8 +58,7 @@ export default function Hero({ site }: { site: Site }) {
     return () => st.kill();
   }, [reduced]);
 
-  const outline = h.outline.map(([x, y]) => `${x},${y}`).join(' ');
-  const zoom = `calc(1 + 0.35 * ${clampExpr(0.25, 0.45)})`;
+    const zoom = `calc(1 + 0.35 * ${clampExpr(0.25, 0.45)})`;
   const late = clampExpr(0.7, 0.2);
   const callout = (key: 'midrib' | 'venation' | 'outline', label: string, dx: number, dy: number, delay: number) => {
     const [x, y] = h.anchors[key];
@@ -78,7 +77,7 @@ export default function Hero({ site }: { site: Site }) {
           <line x1="0" y1="0" x2={dx} y2={dy} stroke="var(--paper)" strokeWidth="1" strokeOpacity="0.7" />
         </svg>
         <span
-          className="caption absolute whitespace-nowrap text-[11px] text-paper"
+          className="caption absolute whitespace-nowrap rounded-full bg-ink/75 px-2.5 py-1 text-[11px] text-paper"
           style={{ left: dx + (dx >= 0 ? 8 : -8), top: dy - 8, transform: dx < 0 ? 'translateX(-100%)' : undefined,
                    scale: `calc(1 / ${zoom})`, transformOrigin: dx < 0 ? 'right center' : 'left center' }}
         >
@@ -125,13 +124,13 @@ export default function Hero({ site }: { site: Site }) {
               >
                 <Picture src={h.image} alt="" sizes="100vw" className="absolute inset-0 h-full w-full" />
               </div>
-              <svg viewBox="0 0 1 1" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
-                <polygon
-                  points={outline}
+              <svg viewBox={`0 0 ${h.image.w} ${h.image.h}`} className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
+                <path
+                  d={`M${h.outline.map(([x, y]) => `${x * h.image.w},${y * h.image.h}`).join(' L')} Z`}
                   fill="none"
                   stroke="var(--leaf)"
-                  strokeWidth="2.5"
-                  vectorEffect="non-scaling-stroke"
+                  strokeWidth={h.image.w * 0.0028}
+                  strokeLinejoin="round"
                   pathLength={1}
                   style={{ strokeDasharray: 1, strokeDashoffset: `calc(1 - ${late})` }}
                 />
@@ -146,7 +145,7 @@ export default function Hero({ site }: { site: Site }) {
 
         <div
           className="pointer-events-none absolute left-0 right-0 top-[16%] flex flex-col items-center px-5 text-center"
-          style={{ opacity: `calc(1 - ${clampExpr(0.62, 0.14)})` }}
+          style={{ opacity: `calc(1 - 0.7 * ${clampExpr(0.22, 0.12)} - 0.3 * ${clampExpr(0.7, 0.1)})` }}
         >
           <p className="caption hero-anim hero-fade mb-6 text-[11px] text-white/70 sm:text-[12px]" style={{ animationDelay: '0.1s' }}>
             Turmeric · Black gram · Image processing + CNN

@@ -269,4 +269,4 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 
 ## NEXT (Phase 2)
 
-P2-F01: run scripts/export_site_data.py, then build landing sections F03-F11 and view screenshots.
+Landing sections F03-F11 are written (web/src/sections/*: Hero, Problem, Crops, Pipeline, Cnn, Results, System, Run, Footer + Nav, SectionRail) and render on http://localhost:5180 (API on :8010; ports 5173/8000 belong to other local projects). First desktop screenshots viewed for Hero, Problem, Crops, Pipeline; fixes applied (nav active-section retry, hero outline in image-pixel units + label backing + headline dimming, crop panel aspect, pipeline compaction) but NOT yet re-viewed. Next: view test-results/shots/desktop-*.png (field, crops, pipeline, cnn, results), then system/run + mobile shots, healing Playwright test (7.3), then F12 /analyze page (not started), F13 Lighthouse/axe, V01 make dev/web-build + README "Web app", V02 extend verify_all. Hero footage blocker (no openly licensed footage of a woman inspecting turmeric leaves; ffmpeg not installed) still to be written to BLOCKERS.md.

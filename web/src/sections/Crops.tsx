@@ -43,7 +43,7 @@ function Panel({ site, crop, index }: { site: Site; crop: 'turmeric' | 'blackgra
     <article className="flex flex-col gap-6" aria-labelledby={`crop-${crop}`}>
       <div
         ref={ref}
-        className="group relative aspect-[4/5] overflow-hidden rounded-[6px] bg-soil"
+        className="group relative aspect-square max-h-[78vh] overflow-hidden rounded-[6px] bg-soil"
         style={{ ['--r' as string]: reduced ? 1 : 0, clipPath: `inset(calc((1 - var(--r)) * 100%) 0 0 0)` }}
       >
         {(['healthy', 'diseased'] as const).map((k) => (
@@ -57,7 +57,7 @@ function Panel({ site, crop, index }: { site: Site; crop: 'turmeric' | 'blackgra
           />
         ))}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/80 to-transparent" />
-        <div role="group" aria-label="Show leaf state" className="absolute bottom-4 left-4 flex rounded-full border border-white/25 bg-ink/60 p-1">
+        <div role="group" aria-label="Show leaf state" className="absolute bottom-4 left-4 flex rounded-full border border-white/20 bg-ink/90 p-1">
           {(['healthy', 'diseased'] as const).map((k) => (
             <button
               key={k}
@@ -72,7 +72,7 @@ function Panel({ site, crop, index }: { site: Site; crop: 'turmeric' | 'blackgra
             </button>
           ))}
         </div>
-        <span className="caption absolute right-4 top-4 text-[11px] text-white/70">0{index + 1}</span>
+        <span className="caption absolute right-4 top-4 rounded-full bg-ink/80 px-2.5 py-1 text-[11px] text-white/80">0{index + 1}</span>
       </div>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-[1fr_1fr]">
         <div>
