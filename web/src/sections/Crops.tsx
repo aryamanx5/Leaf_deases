@@ -90,7 +90,7 @@ function Panel({ site, crop, index }: { site: Site; crop: 'turmeric' | 'blackgra
             <dd className="text-text/85">{info.traits.join(' · ')}</dd>
           </div>
           <div>
-            <dt className="caption text-[11px] text-necrosis">Main diseases</dt>
+            <dt className="caption text-[11px] text-turmeric">Main diseases</dt>
             <dd className="text-text/85">{info.diseases.join(' · ')}</dd>
           </div>
         </dl>

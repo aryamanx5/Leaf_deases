@@ -13,6 +13,7 @@ export default {
         muted: 'var(--muted)',
         leaf: 'rgb(var(--leaf-rgb) / <alpha-value>)',
         turmeric: { DEFAULT: 'rgb(var(--turmeric-rgb) / <alpha-value>)', hover: 'var(--turmeric-hover)' },
+        cta: { DEFAULT: 'var(--cta)', hover: 'var(--cta-hover)' },
         chlorosis: 'var(--chlorosis)',
         necrosis: 'var(--necrosis)',
         'dark-tissue': 'var(--dark-tissue)',

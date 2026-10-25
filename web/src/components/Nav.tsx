@@ -38,7 +38,7 @@ export default function Nav() {
         <Logo />
         <span className="font-playfair text-2xl italic">{BRAND_NAME}</span>
       </Link>
-      <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-white/20 bg-ink/45 px-2 py-2 backdrop-blur-md md:flex">
+      <div className={`absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-white/20 px-2 py-2 backdrop-blur-md transition-colors duration-500 md:flex ${light ? 'bg-ink/85' : 'bg-ink/45'}`}>
         {ITEMS.map((it) => (
           <a
             key={it.id}
@@ -76,7 +76,7 @@ export default function Nav() {
               {it.label}
             </a>
           ))}
-          <Link to="/analyze" className="mt-1 block rounded-xl bg-turmeric px-4 py-3 text-center font-medium text-white">
+          <Link to="/analyze" className="mt-1 block rounded-xl bg-cta px-4 py-3 text-center font-medium text-white">
             Run the model
           </Link>
         </div>

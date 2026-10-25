@@ -51,7 +51,7 @@ export default function Results({ site }: { site: Site }) {
   return (
     <section id="results" aria-labelledby="results-title" className="section-pad bg-paper text-ink">
       <div className="container-grid">
-        <p className="caption mb-6 text-ink/55">06 / Results</p>
+        <p className="caption mb-6 text-ink/70">06 / Results</p>
         <h2 id="results-title" className="max-w-[1080px] font-playfair text-[34px] italic leading-[1.12] tracking-[-0.03em] sm:text-5xl lg:text-[60px]">
           Can conventional image processing identify disease in turmeric and black gram leaves, and how does it compare with a CNN?
         </h2>
@@ -60,12 +60,12 @@ export default function Results({ site }: { site: Site }) {
           <div role="group" aria-label="Test set" className="inline-flex rounded-full border border-ink/20 p-1">
             {(['clean', 'wild'] as const).map((v) => (
               <button key={v} type="button" aria-pressed={view === v} onClick={() => setView(v)}
-                      className={`mono rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.08em] ${view === v ? 'bg-ink text-paper' : 'text-ink/65 hover:text-ink'}`}>
+                      className={`mono rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.08em] ${view === v ? 'bg-ink text-paper' : 'text-ink/75 hover:text-ink'}`}>
                 {v === 'clean' ? 'Clean test' : 'Field photos (wild)'}
               </button>
             ))}
           </div>
-          <p className="mono text-[12px] text-ink/60">n = {int(n)} images · leakage-free split</p>
+          <p className="mono text-[12px] text-ink/70">n = {int(n)} images · leakage-free split</p>
         </div>
 
         <div ref={ref} className="mt-6 overflow-x-auto">
@@ -73,11 +73,11 @@ export default function Results({ site }: { site: Site }) {
             <caption className="sr-only">Healthy vs diseased performance per method</caption>
             <thead>
               <tr className="border-b border-ink/20">
-                <th scope="col" className="caption py-3 pr-4 text-[11px] font-normal text-ink/55">Method</th>
+                <th scope="col" className="caption py-3 pr-4 text-[11px] font-normal text-ink/70">Method</th>
                 {COLS.map(([, l, keep]) => (
-                  <th key={l} scope="col" className={`caption py-3 pr-4 text-[11px] font-normal text-ink/55 ${cell(keep)}`}>{l}</th>
+                  <th key={l} scope="col" className={`caption py-3 pr-4 text-[11px] font-normal text-ink/70 ${cell(keep)}`}>{l}</th>
                 ))}
-                <th scope="col" className="caption py-3 text-[11px] font-normal text-ink/55">ms / image<span className="hidden md:inline"> (CPU)</span></th>
+                <th scope="col" className="caption py-3 text-[11px] font-normal text-ink/70">ms / image<span className="hidden md:inline"> (CPU)</span></th>
               </tr>
             </thead>
             <tbody>
@@ -102,7 +102,7 @@ export default function Results({ site }: { site: Site }) {
 
         <div className="mt-16 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="caption mb-4 text-[11px] text-ink/55">What the numbers say</p>
+            <p className="caption mb-4 text-[11px] text-ink/70">What the numbers say</p>
             <ul className="grid gap-3 text-[17px] leading-relaxed">
               {takeaway(site, view).map((t) => (
                 <li key={t} className="border-l-2 border-ink/20 pl-4">{t}</li>
@@ -110,7 +110,7 @@ export default function Results({ site }: { site: Site }) {
             </ul>
           </div>
           <aside className="rounded-[6px] border border-ink/15 p-6 lg:col-span-5" aria-labelledby="leak-title">
-            <p id="leak-title" className="caption text-[11px] text-ink/55">Leakage ablation · SVM accuracy</p>
+            <p id="leak-title" className="caption text-[11px] text-ink/70">Leakage ablation · SVM accuracy</p>
             <p className="mt-4 text-[17px] leading-relaxed">
               Augmented copies split at random: <span className="mono">{pct(lk.augment_then_split.svm.accuracy)}</span>
               {' → '}leakage-free: <span className="mono">{pct(lk.clean.svm.accuracy)}</span>.

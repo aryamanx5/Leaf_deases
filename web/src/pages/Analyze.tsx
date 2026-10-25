@@ -121,7 +121,7 @@ export default function Analyze() {
                 </p>
                 {picked && state.e.code !== 'too_large' && (
                   <button type="button" onClick={() => run(picked, crop, roi)}
-                          className="mt-4 inline-flex items-center gap-2 rounded-full bg-turmeric px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-turmeric-hover">
+                          className="mt-4 inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-cta-hover">
                     <RotateCcw size={15} aria-hidden="true" /> Retry
                   </button>
                 )}

@@ -1,0 +1,22 @@
+{
+ "tool": "lighthouse 12.8.2, --preset=desktop, production build (vite preview)",
+ "measured_at": "2026-10-25T09:16:17+00:00",
+ "pages": {
+  "landing": {
+   "performance": 97,
+   "accessibility": 100,
+   "best-practices": 100,
+   "lcp_s": 1.17,
+   "cls": 0.0003,
+   "tbt_ms": 0
+  },
+  "analyze": {
+   "performance": 99,
+   "accessibility": 100,
+   "best-practices": 100,
+   "lcp_s": 0.9,
+   "cls": 0.0435,
+   "tbt_ms": 0
+  }
+ }
+}

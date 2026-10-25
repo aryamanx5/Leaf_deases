@@ -354,7 +354,7 @@ export default function Run({ site }: { site: Site }) {
         )}
         <div className="flex flex-wrap gap-3">
           <Link to="/analyze"
-                className="cursor-pointer rounded-full bg-[#e8702a] px-7 py-3 text-sm font-medium text-white transition-all hover:scale-[1.03] hover:bg-[#d2611f] hover:shadow-lg hover:shadow-[#e8702a]/30 active:scale-95">
+                className="cursor-pointer rounded-full bg-cta px-7 py-3 text-sm font-medium text-white transition-all hover:scale-[1.03] hover:bg-cta-hover hover:shadow-lg hover:shadow-black/30 active:scale-95">
             Run the model
           </Link>
           {DEPLOYED_APP_URL && (

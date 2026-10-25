@@ -36,7 +36,7 @@ export default function Problem() {
             <p className="caption mb-8 text-muted">02 / Problem</p>
             <h2 id="problem-title" className="max-w-[1100px] text-[34px] font-normal leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-[64px]">
               {words.map((w, i) => (
-                <span key={i} style={{ opacity: `clamp(0.15, calc(var(--p) * ${words.length + 4} - ${i}), 1)` }}>
+                <span key={i} style={{ opacity: `clamp(0.4, calc(var(--p) * ${words.length + 4} - ${i}), 1)` }}>
                   {w}{' '}
                 </span>
               ))}

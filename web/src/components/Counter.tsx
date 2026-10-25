@@ -27,7 +27,8 @@ export default function Counter({ value, duration = 1200, className }: { value: 
     return (Number(m) * t).toFixed(dec);
   });
   return (
-    <span ref={ref} className={className} aria-label={value}>
+    <span ref={ref} className={className}>
+      <span className="sr-only">{value}</span>
       <span aria-hidden="true">{text}</span>
     </span>
   );

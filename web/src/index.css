@@ -17,6 +17,9 @@
   --leaf: #8db86b;
   --turmeric: #e8702a;
   --turmeric-hover: #d2611f;
+  /* filled CTAs with white text: turmeric darkened to reach WCAG AA (4.6:1) */
+  --cta: #bf5417;
+  --cta-hover: #a84912;
   --chlorosis: #f2c14e;
   --necrosis: #b5532c;
   --dark-tissue: #c2457a;
