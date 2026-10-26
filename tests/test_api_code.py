@@ -31,7 +31,7 @@ def test_code_returns_every_stage_with_real_line_numbers(client):
 def test_code_filters_by_stage(client):
     r = client.get("/api/code", params={"stage": "segment"})
     assert r.status_code == 200
-    assert [i["name"] for i in r.json()["items"]] == ["segment_leaf"]
+    assert [i["name"] for i in r.json()["items"]] == ["otsu_threshold", "threshold_distance", "segment_leaf"]
 
 
 @pytest.mark.parametrize("stage", ["../../api/main", "/etc/passwd", "src/leafdx/config.py", "load_config", "", "SEGMENT"])

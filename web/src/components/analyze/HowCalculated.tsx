@@ -30,7 +30,7 @@ const STAGES: Record<string, { title: string; short: string; text: string; noTim
   segment: {
     title: 'Cut the leaf out (segmentation)',
     short: 'Cut out the leaf',
-    text: 'The leaf is separated from what is behind it: on a plain backdrop by how far each pixel’s colour is from the backdrop, in a busy field photo with GrabCut.',
+    text: 'The leaf is separated from what is behind it: on a plain backdrop by how far each pixel’s colour is from the backdrop, in a busy field photo with GrabCut. The first two code blocks are the Otsu threshold, which picks the cut-off between leaf and backdrop automatically.',
     rows: (v) => [['method', segMethod(String(v.method))],
                   ...(v.border_background_share != null ? [['border that is backdrop', pct(Number(v.border_background_share), 0)] as Row] : []),
                   ...(v.distance_threshold != null ? [['colour-distance threshold (Otsu)', fix(Number(v.distance_threshold), 1)] as Row] : []),

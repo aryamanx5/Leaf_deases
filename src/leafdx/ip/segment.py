@@ -33,6 +33,12 @@ from skimage.segmentation import watershed
 
 
 def otsu_threshold(values: np.ndarray) -> float:
+    """Otsu's method: pick the cut-off T that splits the values into the two best-separated groups.
+
+    It builds the histogram, tries every T from 0 to 255 and keeps the one with the largest
+    between-class variance, w0 * w1 * (mean0 - mean1)^2: both groups large, their averages far apart.
+    No fixed number is needed, so it adapts to every photo.
+    """
     v = np.clip(values, 0, 255).astype(np.uint8).reshape(-1, 1)
     t, _ = cv2.threshold(v, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     return float(t)

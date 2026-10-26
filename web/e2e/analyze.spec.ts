@@ -121,7 +121,8 @@ test('"How this was calculated": steps with this run\'s numbers, real code, copy
   await expect(steps).toHaveCount(8);
   await expect(steps.nth(3)).toContainText(/spots found: \d+/);
   await page.getByRole('button', { name: /View code for Cut the leaf out/ }).click();
-  const block = page.getByTestId('code-block').first();
+  await expect(page.getByTestId('code-block').first()).toContainText('def otsu_threshold('); // the Otsu threshold comes first
+  const block = page.getByTestId('code-block').filter({ hasText: 'def segment_leaf(' });
   await expect(block).toContainText('def segment_leaf(');
   const [, file, start, end] = (await block.locator('figcaption span.block').nth(1).innerText()).match(/(\S+):(\d+)–(\d+)/)!;
   const src = readFileSync(new URL(`../../${file}`, import.meta.url), 'utf8').split('\n');

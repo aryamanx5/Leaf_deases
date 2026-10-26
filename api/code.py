@@ -19,6 +19,8 @@ from leafdx.robust import infer
 STAGES = (
     ("denoise", preprocess.denoise),
     ("colour", preprocess.preprocess),
+    ("segment", segment.otsu_threshold),
+    ("segment", segment.threshold_distance),
     ("segment", segment.segment_leaf),
     ("lesions", lesions.detect_lesions),
     ("measure", features.extract_features),
