@@ -39,6 +39,7 @@ def load(res):
     J["cnn_train"] = json.loads((res / "p3_cnn_train.json").read_text())
     J["embed"] = json.loads((res / "p3" / "embed_manifest.json").read_text())
     J["manifest"] = json.loads((ROOT / "models" / "manifest.json").read_text())
+    J["wild_ext"] = json.loads((res / "wild_ext.json").read_text()) if (res / "wild_ext.json").exists() else None
     return J
 
 
@@ -240,6 +241,48 @@ def render(J, figs) -> tuple[str, str]:
         if e in allc:
             L.append(f"| {short} | {reg.rstrip(']')} | {f3(allc[e]['test']['macro_f1'])} / {f3(allc[e]['wild']['macro_f1'])} | "
                      f"{f3(allc[best]['test']['macro_f1'])} / {f3(allc[best]['wild']['macro_f1'])} |")
+    X = J["wild_ext"]
+    if X:
+        e = X["end_to_end"]
+        L += ["## Extended field test set (evaluation only)", "",
+              f"Built by `scripts/build_wild_ext.py` (data/wild_ext/labels.csv), scored by `scripts/p3_wild_ext.py` with the "
+              f"{X['protocol']}. {X['n']['labelled_leaves']} disease-labelled target leaves in "
+              f"{X['n']['groups_labelled']} near-duplicate / capture groups, {X['n']['target_images']} target images in all "
+              f"(incl. whole black gram field scenes, crop label only), and {X['n']['other_plants']} leaves of five other "
+              f"plant species. Note: {X['small_print']}.", "",
+              "| arm | macro-F1 [95% CI] | ROC-AUC | ECE | turmeric macro-F1 | black gram macro-F1 |", "|---|---|---|---|---|---|"]
+        for a, v in X["disease"].items():
+            if "pooled" in v:
+                L.append(f"| {a}{' (production)' if a == prod['disease'] else ''} | {ci(v['pooled'], 'macro_f1')} | "
+                         f"{f3(v['pooled']['roc_auc'])} | {f3(v['pooled']['ece'])} | {f3(v.get('turmeric', {}).get('macro_f1'))} | "
+                         f"{f3(v.get('blackgram', {}).get('macro_f1'))} |")
+        srcs = [k for k in X["disease"].get(prod["disease"], {}) if k.startswith("mendeley:")]
+        if srcs:
+            L += ["", "Production model by source: " + "; ".join(
+                f"{k} macro-F1 {ci(X['disease'][prod['disease']][k], 'macro_f1')} (n {X['disease'][prod['disease']][k]['n']})"
+                for k in srcs) + "."]
+        L += ["", f"Crop ID accuracy: all target images {ci(X['crop']['pooled'], 'accuracy')}; " + "; ".join(
+            f"{k} {f3(v['accuracy'])} (n {v['n']})" for k, v in X["crop"].items() if k != "pooled") + ".",
+            f"Other plant species: {X['other_plants']['refused_share']:.0%} refused by the gates "
+            f"({', '.join(f'{k} {v}' for k, v in X['other_plants']['refused_by'].items())}); "
+            f"{X['other_plants']['answered_as_target_crop']} of {X['other_plants']['n']} were answered as turmeric or black gram.",
+            f"End-to-end with every gate ({e['production_model']}): answered {e['coverage']:.0%} of labelled leaves; on those, "
+            f"crop accuracy {f3(e['crop_accuracy_answered'])}, disease accuracy {f3(e['disease_accuracy_answered'])}, "
+            f"end-to-end {f3(e['end_to_end_accuracy_answered'])} (all leaves, no abstention: {f3(e['end_to_end_accuracy_all'])}). "
+            "Abstain reasons: " + ", ".join(f"{k} {v}" for k, v in e["abstain_reasons"].items()) + ".", ""]
+        pf = X["disease"][prod["disease"]]["pooled"]["macro_f1"]
+        better = [a for a, v in X["disease"].items() if v.get("pooled", {}).get("macro_f1", 0) > pf and a != prod["disease"]]
+        L += ["What this adds to the 125-image wild set:", "",
+              f"- The production model's macro-F1 is {f3(pf)} here vs {f3(arms[prod['disease']]['wild']['pooled']['macro_f1'])} "
+              "on the small wild set: the small set was optimistic.",
+              f"- {len(better)} arm(s) score higher than the production model here ({', '.join(better) or 'none'}). The production "
+              "model was fixed on validation data before this set existed; switching now would use this test set for "
+              "selection, so it is reported, not acted on. A future model change should be chosen on a separate "
+              "validation split of new field data.",
+              f"- Disease conformal coverage on these leaves is {f3(e['disease_conformal_coverage'])} against the "
+              f"{T['target_coverage']:.0%} target: the guarantee holds for VAL-like data only.",
+              f"- Quality gate pass rate on target images {f3(e['quality_pass_rate_targets'])}; the rejections are mostly "
+              "small leaf crops cut from the 1024 px field scenes (low detail), not whole photos.", ""]
     L += ["", "## Honest limitations", "",
           f"- Wild set size: {D['n']['wild']} disease-labelled images from two Bangladeshi Mendeley datasets "
           "(labels by those datasets' authors, not re-verified by an agronomist); the crop-only iNaturalist/Commons "
@@ -275,6 +318,10 @@ def render(J, figs) -> tuple[str, str]:
         f"{S['comparison']['wild']['verdict']}.",
         f"- With every gate on, the app answers {T['sets']['wild_all']['coverage_after_gates']:.0%} of wild photos and "
         f"abstains on the rest with a stated reason.",
+        *([f"- On a larger extended field test set ({X['n']['labelled_leaves']} labelled leaves, evaluation only) the "
+           f"production model reaches macro-F1 {ci(X['disease'][prod['disease']]['pooled'], 'macro_f1')}; with every gate "
+           f"it answers {X['end_to_end']['coverage']:.0%} of them and refuses "
+           f"{X['other_plants']['refused_share']:.0%} of {X['other_plants']['n']} leaves of other plant species."] if X else []),
         "",
         "Not claimed:",
         "- No \"state of the art\", \"best in the market\" or field-validated accuracy: the wild set is small and from two "

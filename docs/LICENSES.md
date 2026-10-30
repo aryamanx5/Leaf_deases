@@ -26,6 +26,9 @@ MobileSAM (P3-M06 skipped, see PROGRESS.md).
 | Turmeric leaf disease, Mendeley jtttfbx342 v2 | CC BY 4.0 | wild set (evaluation only) |
 | Black gram leaf disease, Mendeley z55yrbmn2d v3 | CC BY 4.0 | wild set (evaluation only) |
 | iNaturalist observations (CC0 / CC BY / CC BY-SA) and Wikimedia Commons files | per file, recorded in data/wild/SOURCES.csv | wild set, crop label only |
+| More originals from jtttfbx342 / z55yrbmn2d (not in data/wild) | CC BY 4.0 | extended field test set (evaluation only) |
+| Black gram field scenes + leaf boxes, Mendeley 45djgf3p96 (Hridoy et al.) | CC BY 4.0 | extended field test set: leaf crops (healthy / yellow mosaic) and whole scenes (crop ID) |
+| Medicinal plant leaves (aloe, neem, hibiscus, kalanchoe, betel), Mendeley 89rfgtxbdc | CC BY 4.0 | extended field test set: "other plant" refusal test |
 | User-reported Google image (`data/wild/user_reported/turmeric_google_01.jpg`) | copyright of its owner; not committed | regression check only |
 
 For a college research project these licences are compatible with the use made here. Before any commercial use, review the ImageNet terms that apply to the torchvision weights.

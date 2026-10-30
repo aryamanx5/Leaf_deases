@@ -3,7 +3,7 @@ PIP ?= .venv/bin/pip
 export PYTHONPATH := src
 
 .PHONY: setup data splits features train-ip train-cnn compare report app test lint verify all \
-	wild robust p3 site-data api web-install dev web-build web-preview e2e
+	wild wild-ext robust p3 site-data api web-install dev web-build web-preview e2e
 
 setup:
 	test -d .venv || python3.11 -m venv .venv
@@ -57,6 +57,11 @@ robust:          # diagnosis -> hierarchical crop + disease models -> calibratio
 	$(PY) scripts/train_robust.py
 	$(PY) scripts/calibrate.py
 	$(PY) scripts/evaluate_robust.py
+
+wild-ext:        # extended field test set (evaluation only): download + dedupe, then score the frozen Phase 3 bundle
+	$(PY) scripts/build_wild_ext.py
+	$(PY) scripts/p3_wild_ext.py
+	$(PY) scripts/p3_report.py
 
 p3:              # Phase 3: audit -> embeddings -> CNN arms -> crop ID -> disease arms -> stack -> trust -> report
 	$(PY) scripts/p3_audit.py

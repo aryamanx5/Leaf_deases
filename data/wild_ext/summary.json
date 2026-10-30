@@ -1,0 +1,19 @@
+{
+ "n": 1529,
+ "dropped_near_duplicates_of_existing": 45,
+ "by_crop_label": {
+  "blackgram/diseased": 544,
+  "blackgram/healthy": 337,
+  "blackgram/unknown": 150,
+  "other/unknown": 180,
+  "turmeric/diseased": 213,
+  "turmeric/healthy": 105
+ },
+ "by_source": {
+  "mendeley:45djgf3p96": 650,
+  "mendeley:z55yrbmn2d": 381,
+  "mendeley:jtttfbx342": 318,
+  "mendeley:89rfgtxbdc": 180
+ },
+ "n_groups": 1153
+}

@@ -1,11 +1,11 @@
 CHECK                                                        RESULT  DETAIL
 lint (ruff)                                                  PASS    All checks passed!
-all tests incl. pipeline + app smoke                         PASS    99 passed in 50.28s
+all tests incl. pipeline + app smoke                         PASS    99 passed in 36.83s
 split leakage                                                PASS    0 clusters span splits; 1606 images
 artefacts                                                    PASS    all present
 REPORT.md numbers vs sources                                 PASS    identical to a fresh render; 545 numbers re-read from sources
 comparison.md numbers in comparison.csv                      PASS    all numbers found in comparison.csv
-regression: user-reported turmeric image                     PASS    1 passed in 13.06s
+regression: user-reported turmeric image                     PASS    1 passed in 9.51s
 robustness targets                                           PASS    3/3 met
 Phase 2 artefacts                                            PASS    all present
 site.json fresh vs results                                   PASS    site.json newer than its sources
@@ -14,10 +14,10 @@ P3 leakage (pHash groups across train/val/test/wild/user)    PASS    groups span
 P3 artefacts                                                 PASS    all present
 P3 licences file                                             PASS    6 weights listed
 P3 report + README numbers vs results JSON                   PASS    final_report.md / README block match a fresh render
-P3 API contract + 3 wild images + user image                 PASS    7 passed in 24.40s
+P3 API contract + 3 wild images + user image                 PASS    7 passed in 16.77s
 web typecheck                                                PASS    
 web lint                                                     PASS    
-web build                                                    PASS    ✓ built in 1.64s
-web E2E (analyze, healing, axe, reduced motion, long tasks)  PASS    functional: 14 passed (32.9s) | timing (1 worker): 5 passed (19.9s)
+web build                                                    PASS    ✓ built in 1.49s
+web E2E (analyze, healing, axe, reduced motion, long tasks)  PASS    functional: 14 passed (30.4s) | timing (1 worker): 5 passed (19.3s)
 
 OVERALL: PASS

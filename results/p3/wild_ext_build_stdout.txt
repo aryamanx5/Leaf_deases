@@ -1,0 +1,43 @@
+== jtttfbx342 mendeley_files
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__2_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__56_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__141_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__192_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__148_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__16_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__29_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__157_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__98_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__150_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__50_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__95_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__105_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__17_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__88_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_leaf_spot_leaf_spot__45_jpg.jpg
+   344 images so far
+== z55yrbmn2d mendeley_zip
+   744 images so far
+== 45djgf3p96 mendeley_boxes
+   1394 images so far
+== 89rfgtxbdc mendeley_zip_other
+   1574 images so far
+{
+ "n": 1529,
+ "dropped_near_duplicates_of_existing": 45,
+ "by_crop_label": {
+  "blackgram/diseased": 544,
+  "blackgram/healthy": 337,
+  "blackgram/unknown": 150,
+  "other/unknown": 180,
+  "turmeric/diseased": 213,
+  "turmeric/healthy": 105
+ },
+ "by_source": {
+  "mendeley:45djgf3p96": 650,
+  "mendeley:z55yrbmn2d": 381,
+  "mendeley:jtttfbx342": 318,
+  "mendeley:89rfgtxbdc": 180
+ },
+ "n_groups": 1153
+}

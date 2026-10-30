@@ -368,6 +368,21 @@ Started 2026-10-30. Precondition: PROGRESS.md has no literal `PHASE2_COMPLETE` s
 - data/wild/labels.csv (path, crop, healthy_or_diseased, source, labelled_by): 88 turmeric + 76 black gram wild images (>= 40 per crop), 125 disease-labelled; user image at data/wild/user_reported/turmeric_google_01.jpg.
 - results/p3/leakage_report.md: 1771 images hashed (train / val / test / wild / user), 0 near-duplicate groups span roles.
 
+#### 2026-10-30 P3-X01 Extended field test set (requested after Phase 3; evaluation only)
+- `scripts/build_wild_ext.py` (config `wild_ext`, `make wild-ext`) -> data/wild_ext/labels.csv (images gitignored, rebuildable):
+  1529 images, all CC BY 4.0 (docs/LICENSES.md): 318 more turmeric originals (jtttfbx342) and 381 more black gram
+  originals (z55yrbmn2d) not already in data/wild; 500 single-leaf crops (healthy / yellow mosaic) from the authors'
+  boxes in a NEW black gram FIELD dataset (45djgf3p96) plus 150 of its whole scenes (crop label only); 180 leaves of
+  five OTHER species (89rfgtxbdc) for the refusal test. Pest classes excluded. 45 near-duplicates of existing
+  train/val/test/wild images dropped (pHash, split rules); 14 turmeric downloads refused by the server after 5 retries.
+- `scripts/p3_wild_ext.py` scores the FROZEN bundle (no fitting) -> results/wild_ext.json, results/p3/preds_wild_ext.csv.gz,
+  section in results/final_report.md + README block line. 1199 labelled leaves (928 groups):
+  production F_fusion macro-F1 0.870 [0.847, 0.891] (small wild set: 0.928); C2 EfficientNet-B0 0.908, STACK 0.903,
+  E_openclip 0.896, C3 0.880 score higher -- reported, NOT re-selected (would turn this test set into a selection set).
+  Rule score 0.715. Crop ID 0.997 (field scenes 0.993). Other species: 94 % refused (11 of 180 answered as a target crop).
+  All gates: answers 53 % of leaves at 0.967 accuracy; disease conformal coverage 0.691 vs 0.90 target (shift);
+  quality rejections mostly small box crops from 1024 px scenes.
+
 ### Phase 3 decisions
 
 - **Wild set never selects anything.** P3-M02 says "select by wild macro-F1"; that conflicts with the add-on's own hard rule and "do not pick models using the wild set". The hard rule wins: all selection uses clean VAL + VAL-swap (each VAL leaf composited once onto a TRAIN-bank / procedural background, no collage) as a non-wild robustness proxy. Phase 2 selected and calibrated on wild_val; Phase 3 therefore also reports `wild_test` (the half Phase 2 never touched).

@@ -119,6 +119,37 @@ Few-shot adaptation: not run: the wild set is reserved for evaluation (no adapta
 | dinov2 | percrop,swap | 0.994 / 0.920 | 0.995 / 0.952 |
 | openclip | percrop,swap | 0.962 / 0.903 | 1.000 / 0.904 |
 | bioclip2 | percrop,swap | 0.989 / 0.928 | 1.000 / 0.928 |
+## Extended field test set (evaluation only)
+
+Built by `scripts/build_wild_ext.py` (data/wild_ext/labels.csv), scored by `scripts/p3_wild_ext.py` with the frozen Phase 3 bundle; nothing fitted on this set. 1199 disease-labelled target leaves in 928 near-duplicate / capture groups, 1349 target images in all (incl. whole black gram field scenes, crop label only), and 180 leaves of five other plant species. Note: labels come from the source datasets' authors and were not re-checked by an agronomist; all sources are from Bangladesh; pest classes (aphids, insect, flea beetle) are excluded.
+
+| arm | macro-F1 [95% CI] | ROC-AUC | ECE | turmeric macro-F1 | black gram macro-F1 |
+|---|---|---|---|---|---|
+| A_rule | 0.715 [0.686, 0.742] | 0.800 | 0.093 | 0.877 | 0.657 |
+| B_svm | 0.860 [0.840, 0.883] | 0.944 | 0.039 | 0.965 | 0.824 |
+| B2_lgbm | 0.863 [0.842, 0.886] | 0.945 | 0.045 | 0.955 | 0.832 |
+| C1_mobilenet_v2 | 0.804 [0.775, 0.829] | 0.905 | 0.116 | 0.900 | 0.768 |
+| C2_efficientnet_b0 | 0.908 [0.888, 0.924] | 0.968 | 0.042 | 0.912 | 0.906 |
+| C3_convnext_tiny | 0.880 [0.860, 0.901] | 0.957 | 0.075 | 0.807 | 0.908 |
+| D_dinov2 | 0.834 [0.810, 0.857] | 0.914 | 0.086 | 0.938 | 0.797 |
+| E_openclip | 0.896 [0.877, 0.915] | 0.946 | 0.046 | 0.955 | 0.875 |
+| E_bioclip2 | 0.864 [0.843, 0.885] | 0.952 | 0.056 | 0.972 | 0.824 |
+| F_fusion (production) | 0.870 [0.847, 0.891] | 0.951 | 0.063 | 0.929 | 0.849 |
+| STACK | 0.903 [0.885, 0.922] | 0.970 | 0.072 | 0.900 | 0.905 |
+
+Production model by source: mendeley:45djgf3p96 macro-F1 0.827 [0.791, 0.860] (n 500); mendeley:jtttfbx342 macro-F1 0.929 [0.890, 0.963] (n 318); mendeley:z55yrbmn2d macro-F1 0.875 [0.827, 0.916] (n 381).
+
+Crop ID accuracy: all target images 0.997 [0.993, 0.999]; field scenes 0.993 (n 150); mendeley:45djgf3p96 0.994 (n 500); mendeley:jtttfbx342 1.000 (n 318); mendeley:z55yrbmn2d 1.000 (n 381).
+Other plant species: 94% refused by the gates (quality 0, ood 126, crop uncertain 43); 11 of 180 were answered as turmeric or black gram.
+End-to-end with every gate (F_fusion): answered 53% of labelled leaves; on those, crop accuracy 1.000, disease accuracy 0.967, end-to-end 0.967 (all leaves, no abstention: 0.880). Abstain reasons: disease status uncertain 211, crop uncertain 200, quality 98, ood 60.
+
+What this adds to the 125-image wild set:
+
+- The production model's macro-F1 is 0.870 here vs 0.928 on the small wild set: the small set was optimistic.
+- 4 arm(s) score higher than the production model here (C2_efficientnet_b0, C3_convnext_tiny, E_openclip, STACK). The production model was fixed on validation data before this set existed; switching now would use this test set for selection, so it is reported, not acted on. A future model change should be chosen on a separate validation split of new field data.
+- Disease conformal coverage on these leaves is 0.691 against the 90% target: the guarantee holds for VAL-like data only.
+- Quality gate pass rate on target images 0.927; the rejections are mostly small leaf crops cut from the 1024 px field scenes (low detail), not whole photos.
+
 
 ## Honest limitations
 

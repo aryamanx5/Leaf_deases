@@ -55,7 +55,7 @@ P3_ARTEFACTS = [
     "results/trust.json", "results/robustness_p3.json", "results/final_report.md", "results/p3/audit.json",
     "results/p3/leakage_report.md", "results/p3/timing.json", "results/p3/embed_manifest.json", "models/manifest.json",
     "models/p3/crop_head.joblib", "models/p3/stacker.joblib", "models/p3/trust.json", "models/p3/ood_reference.npy",
-    "docs/LICENSES.md", "data/wild/labels.csv",
+    "docs/LICENSES.md", "data/wild/labels.csv", "data/wild_ext/labels.csv", "results/wild_ext.json",
 ]
 WEB_COPY_DIRS = ["web/src/sections", "web/src/pages", "web/src/components"]
 TIMING_SPECS = ["e2e/perf.spec.ts", "e2e/hero.spec.ts"]

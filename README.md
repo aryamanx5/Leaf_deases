@@ -197,6 +197,7 @@ Claimed, with numbers in results/final_report.md (all from results/*.json):
 - On 125 disease-labelled wild photos from two other datasets it reaches macro-F1 0.928 [0.877, 0.968] (small sample: treat the interval as unreliable).
 - The best single arm by validation is F_fusion (wild macro-F1 0.928 [0.877, 0.968]); the stacking ensemble's verdict against it: TEST no significant difference, wild no significant difference.
 - With every gate on, the app answers 61% of wild photos and abstains on the rest with a stated reason.
+- On a larger extended field test set (1199 labelled leaves, evaluation only) the production model reaches macro-F1 0.870 [0.847, 0.891]; with every gate it answers 53% of them and refuses 94% of 180 leaves of other plant species.
 
 Not claimed:
 - No "state of the art", "best in the market" or field-validated accuracy: the wild set is small and from two sources, labels are the datasets' own, and no agronomist re-checked them.

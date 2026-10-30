@@ -1,0 +1,138 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+A_rule acc 0.720
+B_svm acc 0.866
+B2_lgbm acc 0.871
+C1_mobilenet_v2 acc 0.820
+C2_efficientnet_b0 acc 0.913
+C3_convnext_tiny acc 0.887
+D_dinov2 acc 0.850
+E_openclip acc 0.905
+E_bioclip2 acc 0.878
+F_fusion acc 0.880
+{
+ "n": {
+  "target_images": 1349,
+  "labelled_leaves": 1199,
+  "other_plants": 180,
+  "groups_labelled": 928,
+  "by_source_label": {
+   "mendeley:45djgf3p96 / blackgram / diseased": 250,
+   "mendeley:45djgf3p96 / blackgram / healthy": 250,
+   "mendeley:45djgf3p96 / blackgram / unknown": 150,
+   "mendeley:89rfgtxbdc / other / unknown": 180,
+   "mendeley:jtttfbx342 / turmeric / diseased": 213,
+   "mendeley:jtttfbx342 / turmeric / healthy": 105,
+   "mendeley:z55yrbmn2d / blackgram / diseased": 294,
+   "mendeley:z55yrbmn2d / blackgram / healthy": 87
+  }
+ },
+ "end_to_end": {
+  "production_model": "F_fusion",
+  "coverage": 0.5254378648874062,
+  "abstain_reasons": {
+   "disease status uncertain": 211,
+   "crop uncertain": 200,
+   "quality": 98,
+   "ood": 60
+  },
+  "crop_accuracy_answered": 1.0,
+  "disease_accuracy_answered": 0.9666666666666667,
+  "end_to_end_accuracy_answered": 0.9666666666666667,
+  "end_to_end_accuracy_all": 0.8798999165971643,
+  "disease_conformal_coverage": 0.6914095079232694,
+  "quality_pass_rate_targets": 0.927353595255745,
+  "ood_flag_rate_targets": 0.05189028910303929,
+  "abstention_curve": [
+   {
+    "coverage": 0.05,
+    "accuracy": 0.95,
+    "min_conf": 0.9999861356513172
+   },
+   {
+    "coverage": 0.1001,
+    "accuracy": 0.9666666666666667,
+    "min_conf": 0.9999662213190711
+   },
+   {
+    "coverage": 0.1501,
+    "accuracy": 0.9722222222222222,
+    "min_conf": 0.9999413403893016
+   },
+   {
+    "coverage": 0.2002,
+    "accuracy": 0.975,
+    "min_conf": 0.9999040597039957
+   },
+   {
+    "coverage": 0.2502,
+    "accuracy": 0.98,
+    "min_conf": 0.9998413237986327
+   },
+   {
+    "coverage": 0.3003,
+    "accuracy": 0.9833333333333333,
+    "min_conf": 0.9997541118780406
+   },
+   {
+    "coverage": 0.3503,
+    "accuracy": 0.9857142857142858,
+    "min_conf": 0.9996363238491152
+   },
+   {
+    "coverage": 0.4003,
+    "accuracy": 0.9875,
+    "min_conf": 0.9993762086616652
+   },
+   {
+    "coverage": 0.4504,
+    "accuracy": 0.9888888888888889,
+    "min_conf": 0.998733147140741
+   },
+   {
+    "coverage": 0.4996,
+    "accuracy": 0.989983305509182,
+    "min_conf": 0.9974678396711064
+   },
+   {
+    "coverage": 0.5496,
+    "accuracy": 0.9863429438543247,
+    "min_conf": 0.9949157102234414
+   },
+   {
+    "coverage": 0.5997,
+    "accuracy": 0.9847009735744089,
+    "min_conf": 0.9905965975187074
+   },
+   {
+    "coverage": 0.6497,
+    "accuracy": 0.9768934531450578,
+    "min_conf": 0.9836430454711339
+   },
+   {
+    "coverage": 0.6997,
+    "accuracy": 0.9630512514898689,
+    "min_conf": 0.9710106053092561
+   },
+   {
+    "coverage": 0.7498,
+    "accuracy": 0.9555061179087876,
+    "min_conf": 0.944418813430888
+   },
+   {
+    "coverage": 0.7998,
+    "accuracy": 0.9447340980187695,
+    "min_conf": 0.9069037677791946
+   },
+   {
+    "coverage": 0.8499,
+    "accuracy": 0.9371933267909716,
+    "min_conf": 0.8555503281210749
+   },
+   {
+    "coverage": 0.8999,
+    "accuracy": 0.9212233549582948,
+    "min_conf": 0.7677112854517159
+   },
+   {
+    "coverage": 0
+{'A_rule': 0.715, 'B_svm': 0.86, 'B2_lgbm': 0.863, 'C1_mobilenet_v2': 0.804, 'C2_efficientnet_b0': 0.908, 'C3_convnext_tiny': 0.88, 'D_dinov2': 0.834, 'E_openclip': 0.896, 'E_bioclip2': 0.864, 'F_fusion': 0.87, 'STACK': 0.903}

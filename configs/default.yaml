@@ -324,3 +324,22 @@ p3:                        # Phase 3 model upgrade (frozen backbones, fusion, tr
          stages: [{epochs: 3, lr: 0.001, unfreeze_last_blocks: 0}, {epochs: 15, lr: 0.0002, unfreeze_last_blocks: 3}]}
       - {name: C3_convnext_tiny, arch: convnext_tiny, time_budget_min: 20,
          stages: [{epochs: 2, lr: 0.001, unfreeze_last_blocks: 0}, {epochs: 10, lr: 0.0001, unfreeze_last_blocks: 2}]}
+
+wild_ext:                  # extended field test set (evaluation ONLY: no training, tuning, calibration or selection)
+  root: data/wild_ext
+  max_side: 1600
+  seed: 7                  # different from the wild set's sample seed
+  sources:
+    - {kind: mendeley_files, id: jtttfbx342, version: 2, crop: turmeric, licence: CC BY 4.0,
+       citation: "Image Dataset for Turmeric Plant Leaf Disease Detection, Mendeley Data, doi:10.17632/jtttfbx342.2",
+       classes: {healthy: [healthy, 120], blotch: [diseased, 120], leaf_spot: [diseased, 120]}}   # aphids: pest, excluded
+    - {kind: mendeley_zip, id: z55yrbmn2d, version: 3, crop: blackgram, licence: CC BY 4.0,
+       citation: "Image Dataset for Disease Detection in Black Gram (Vigna mungo) Leaves, Mendeley Data, doi:10.17632/z55yrbmn2d.3",
+       classes: {healthy: [healthy, 100], cercospora leaf spot: [diseased, 100], leaf crinkle: [diseased, 100],
+                 yellow mosaic: [diseased, 100]}}                                                   # insect: pest, excluded
+    - {kind: mendeley_boxes, id: 45djgf3p96, version: 2, crop: blackgram, licence: CC BY 4.0,
+       citation: "Hridoy et al., Black Gram Leaf Image Dataset for Disease Detection in Field Conditions, Mendeley Data, doi:10.17632/45djgf3p96",
+       boxes: {LA: [healthy, 250], LC: [diseased, 250]}, min_box_side: 128, pad: 0.05,               # LB flea beetle: pest, excluded
+       scenes: 150}                                                                                  # whole field images, crop label only
+    - {kind: mendeley_zip_other, id: 89rfgtxbdc, version: 1, licence: CC BY 4.0, zip: "Original Image Dataset.zip", per_folder: 12,
+       citation: "A medicinal plant leaf image dataset for plant health condition detection and classification, Mendeley Data, doi:10.17632/89rfgtxbdc.1"}
