@@ -62,16 +62,24 @@ def test_user_selected_crop(client):
 
 
 def test_uncertain_path(client):
-    from leafdx.robust.infer import RobustModel
+    from leafdx.p3 import production as p3
 
-    rm = RobustModel.load()
-    old = rm.cal["tau_crop"]
-    rm.cal["tau_crop"] = 1.01  # no prediction can reach this -> must abstain
+    if p3.available():  # Phase 3: a negative conformal threshold gives every image an empty crop set
+        m = p3.load()
+        cal, key, value = m.trust, "crop_q_lac", -1.0
+    else:  # Phase 2: no prediction can reach this confidence
+        from leafdx.robust.infer import RobustModel
+
+        cal, key, value = RobustModel.load().cal, "tau_crop", 1.01
+    old = cal[key]
+    cal[key] = value  # -> must abstain on the crop
     try:
         j = client.post("/api/analyze", files={"file": ("leaf.jpg", _sample(), "image/jpeg")}).json()
     finally:
-        rm.cal["tau_crop"] = old
+        cal[key] = old
     assert j["crop"]["status"] == "uncertain"
+    if p3.available():
+        assert j["abstain"] == {"flag": True, "reason": "crop uncertain"}
 
 
 def test_rejects_non_image_bad_crop_and_oversize(client):

@@ -23,3 +23,8 @@ data/wild/turmeric/
 data/wild/blackgram/
 web/.env.local
 models/cnn_smoke.pt
+
+# Phase 3 caches (embeddings, derived views)
+.cache/
+# ConvNeXt-Tiny checkpoints are 118 MB each (over the GitHub file limit); rebuild: scripts/p3_train_cnns.py
+models/p3/C3_convnext_tiny_*.pt

@@ -7,6 +7,10 @@
             Phase 2 artefacts, site.json freshness, no hard-coded metrics in the web copy,
             web typecheck/lint/build, Playwright E2E (incl. healing interaction) against a
             temporary API + production build.
+            Phase 3: pHash leakage over train/val/test/wild/user (0 shared groups), Phase 3
+            artefacts, licences file covers every backbone, final_report.md + README block equal
+            a fresh render from results JSON, API contract + smoke on three wild images
+            (tests/test_p3_api.py, incl. the user-reported turmeric image).
   --no-web : skip the web build and E2E checks (Python-only machines)
 """
 
@@ -46,7 +50,16 @@ P2_ARTEFACTS = [
 SITE_SOURCES = ["results/comparison.csv", "results/robustness.json", "results/calibration.json",
                 "data/processed/splits.csv", "data/processed/split_meta.json", "web/public/media/heal/heal_21x9.json",
                 "web/public/media/heal/heal_9x16.json"]
+P3_ARTEFACTS = [
+    "results/crop_models.json", "results/crop_errors.md", "results/disease_models.json", "results/stacking.json",
+    "results/trust.json", "results/robustness_p3.json", "results/final_report.md", "results/p3/audit.json",
+    "results/p3/leakage_report.md", "results/p3/timing.json", "results/p3/embed_manifest.json", "models/manifest.json",
+    "models/p3/crop_head.joblib", "models/p3/stacker.joblib", "models/p3/trust.json", "models/p3/ood_reference.npy",
+    "docs/LICENSES.md", "data/wild/labels.csv",
+]
 WEB_COPY_DIRS = ["web/src/sections", "web/src/pages", "web/src/components"]
+TIMING_SPECS = ["e2e/perf.spec.ts", "e2e/hero.spec.ts"]
+TIMING_GREP = ["no long tasks while scrolling", "scrolling scrubs the clip"]  # titles of the timing tests
 API_PORT, PREVIEW_PORT = 8019, 4189  # private ports so a running `make dev` is not disturbed
 NUM = re.compile(r"(?<![\w./])-?\d+(?:\.\d+)?%?(?![\w])")
 
@@ -163,6 +176,10 @@ LITERAL = re.compile(r"'([^'\n]*)'|\"([^\"\n]*)\"|`([^`]*)`|>([^<>{}]+)<")
 LAYOUT_ATTR = re.compile(r"\b(d|viewBox|points|stroke\w*|fill\w*|opacity|x\d?|y\d?|r|width|height)=$")
 LAYOUT_LINE = re.compile(r"^\s*(/\*|\*)|\.style\.|setProperty\(")
 TRIGGER_POS = re.compile(r"^(top|bottom|center)\b")
+# a property line inside a React style={{...}} object is layout, like the .style writes above
+STYLE_PROP_LINE = re.compile(r"^\s*(top|left|right|bottom|width|height|maxWidth|minHeight|inset|transform|opacity)\s*:")
+# reviewed exceptions: (file, literal) -> why it is not a reported metric
+METRIC_ALLOW = {("web/src/components/analyze/Verdict.tsx", "under 1%"): "wording for an area below one percent"}
 
 
 def check_no_hardcoded_metrics() -> tuple[bool, str]:
@@ -171,7 +188,7 @@ def check_no_hardcoded_metrics() -> tuple[bool, str]:
         for f in sorted((ROOT / d).rglob("*.tsx")):
             for i, line in enumerate(f.read_text().splitlines(), 1):
                 code = line.split("//")[0] if not line.strip().startswith("{/*") else ""
-                if LAYOUT_LINE.search(code):
+                if LAYOUT_LINE.search(code) or STYLE_PROP_LINE.search(code):
                     continue
                 for m in LITERAL.finditer(code):
                     text = next(g for g in m.groups() if g is not None)
@@ -179,7 +196,7 @@ def check_no_hardcoded_metrics() -> tuple[bool, str]:
                     if ("className" in before or LAYOUT_ATTR.search(before) or CSS_HINT.search(text)
                             or TRIGGER_POS.match(text)):
                         continue
-                    if METRIC.search(text):
+                    if METRIC.search(text) and (str(f.relative_to(ROOT)), text.strip()) not in METRIC_ALLOW:
                         hits.append(f"{f.relative_to(ROOT)}:{i}: {text.strip()[:60]}")
     return not hits, "none in sections/pages/components" if not hits else f"{len(hits)}: {hits[:6]}"
 
@@ -214,7 +231,12 @@ def check_e2e() -> tuple[bool, str]:
         base = f"http://localhost:{PREVIEW_PORT}"
         if not (_wait(f"http://127.0.0.1:{API_PORT}/api/health", 90) and _wait(f"{base}/api/health", 30)):
             return False, "API or preview server did not start"
-        return run_web(["npx", "playwright", "test"], {"E2E_BASE_URL": base, "PERF_URL": base + "/"})
+        env = {"E2E_BASE_URL": base, "PERF_URL": base + "/"}
+        # functional specs in parallel; the frame-timing specs (long tasks, scroll-scrubbed video) alone on one
+        # worker afterwards -- parallel browser workers starve the main thread they measure
+        ok1, msg1 = run_web(["npx", "playwright", "test", f"--grep-invert={'|'.join(TIMING_GREP)}"], env)
+        ok2, msg2 = run_web(["npx", "playwright", "test", "--workers=1", *TIMING_SPECS], env)
+        return ok1 and ok2, f"functional: {msg1} | timing (1 worker): {msg2}"
     finally:
         for proc in (web, api):
             proc.terminate()
@@ -222,6 +244,21 @@ def check_e2e() -> tuple[bool, str]:
                 proc.wait(timeout=10)
             except subprocess.TimeoutExpired:
                 proc.kill()
+
+
+def check_p3_artefacts() -> tuple[bool, str]:
+    missing = [a for a in P3_ARTEFACTS if not (ROOT / a).exists()]
+    man = json.loads((ROOT / "models/manifest.json").read_text()) if (ROOT / "models/manifest.json").exists() else {}
+    missing += [v["file"] for v in man.get("arms", {}).values() if not (ROOT / v["file"]).exists()]
+    return not missing, "all present" if not missing else f"missing: {missing}"
+
+
+def check_licences() -> tuple[bool, str]:
+    cfg = load_config()
+    text = (ROOT / "docs/LICENSES.md").read_text()
+    names = list(cfg["p3"]["backbones"]) + [a["arch"] for a in cfg["p3"]["cnn_arms"]["arms"]]
+    miss = [n for n in names if f"`{n}`" not in text]
+    return not miss, f"{len(names)} weights listed" if not miss else f"not in docs/LICENSES.md: {miss}"
 
 
 def main() -> int:
@@ -242,7 +279,11 @@ def main() -> int:
                    ("comparison.md numbers in comparison.csv", check_comparison_md),
                    ("regression: user-reported turmeric image", lambda: run([py, "-m", "pytest", "-q", "-rs", "tests/test_regressions.py"])),
                    ("robustness targets", check_targets), ("Phase 2 artefacts", check_p2_artefacts),
-                   ("site.json fresh vs results", check_site_fresh), ("no hard-coded metrics in web copy", check_no_hardcoded_metrics)]
+                   ("site.json fresh vs results", check_site_fresh), ("no hard-coded metrics in web copy", check_no_hardcoded_metrics),
+                   ("P3 leakage (pHash groups across train/val/test/wild/user)", lambda: run([py, "scripts/p3_audit.py"])),
+                   ("P3 artefacts", check_p3_artefacts), ("P3 licences file", check_licences),
+                   ("P3 report + README numbers vs results JSON", lambda: run([py, "scripts/p3_report.py", "--check"])),
+                   ("P3 API contract + 3 wild images + user image", lambda: run([py, "-m", "pytest", "-q", "-rs", "tests/test_p3_api.py"]))]
         if not args.no_web:
             checks += [("web typecheck", lambda: run_web(["npm", "run", "-s", "typecheck"])),
                        ("web lint", lambda: run_web(["npm", "run", "-s", "lint"])),

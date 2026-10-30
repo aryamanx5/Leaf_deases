@@ -15,9 +15,10 @@ from leafdx.viz import contact_sheet
 
 
 def gradcam(model: torch.nn.Module, x: torch.Tensor, class_idx: int | None = None,
-            target=None) -> tuple[np.ndarray, np.ndarray]:
+            target=None, plus_plus: bool = False) -> tuple[np.ndarray, np.ndarray]:
     """Return (heatmap in [0,1] at input resolution, softmax probabilities) for one image.
-    `target(logits) -> scalar` overrides the class score (e.g. a crop's summed logits)."""
+    `target(logits) -> scalar` overrides the class score (e.g. a crop's summed logits).
+    `plus_plus` uses Grad-CAM++ channel weights (Chattopadhay et al. 2018, closed form)."""
     model.eval()
     acts, grads = {}, {}
     layer = gradcam_layer(model)
@@ -30,8 +31,14 @@ def gradcam(model: torch.nn.Module, x: torch.Tensor, class_idx: int | None = Non
         idx = int(probs.argmax()) if class_idx is None else class_idx
         model.zero_grad()
         (target(logits[0]) if target is not None else logits[0, idx]).backward()
-        w = grads["g"].mean(dim=(2, 3), keepdim=True)
-        cam = torch.relu((w * acts["a"]).sum(1))[0].detach().numpy()
+        g, a = grads["g"], acts["a"]
+        if plus_plus:
+            g2, g3 = g ** 2, g ** 3
+            alpha = g2 / (2 * g2 + a.sum(dim=(2, 3), keepdim=True) * g3 + 1e-8)
+            w = (alpha * torch.relu(g)).sum(dim=(2, 3), keepdim=True)
+        else:
+            w = g.mean(dim=(2, 3), keepdim=True)
+        cam = torch.relu((w * a).sum(1))[0].detach().numpy()
     finally:
         h1.remove()
         h2.remove()

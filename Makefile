@@ -3,7 +3,7 @@ PIP ?= .venv/bin/pip
 export PYTHONPATH := src
 
 .PHONY: setup data splits features train-ip train-cnn compare report app test lint verify all \
-	wild robust site-data api web-install dev web-build web-preview e2e
+	wild robust p3 site-data api web-install dev web-build web-preview e2e
 
 setup:
 	test -d .venv || python3.11 -m venv .venv
@@ -57,6 +57,19 @@ robust:          # diagnosis -> hierarchical crop + disease models -> calibratio
 	$(PY) scripts/train_robust.py
 	$(PY) scripts/calibrate.py
 	$(PY) scripts/evaluate_robust.py
+
+p3:              # Phase 3: audit -> embeddings -> CNN arms -> crop ID -> disease arms -> stack -> trust -> report
+	$(PY) scripts/p3_audit.py
+	$(PY) scripts/p3_embed.py
+	$(PY) scripts/p3_train_cnns.py
+	$(PY) scripts/p3_crop.py
+	$(PY) scripts/p3_disease.py
+	$(PY) scripts/p3_metrics.py && $(PY) scripts/p3_timing.py && $(PY) scripts/p3_metrics.py
+	$(PY) scripts/p3_stack.py
+	$(PY) scripts/p3_trust.py
+	$(PY) scripts/p3_robustness.py
+	$(PY) scripts/p3_finalize.py
+	$(PY) scripts/p3_report.py
 
 site-data:       # every number and image the website shows (web/public/data, web/public/media)
 	$(PY) scripts/make_heal_assets.py

@@ -8,20 +8,25 @@ import type { Heal, Site } from '@/lib/site';
 // Appendix A spotlight gradient stops
 const STOPS: [number, number][] = [[0, 1], [0.4, 1], [0.6, 0.75], [0.75, 0.4], [0.88, 0.12], [1, 0]];
 const DECAY_PER_60HZ_FRAME = 0.01;
+// 0.99 per frame takes the mask from 1 to below 1/255 in ~550 frames (9.2 s): after this long without a stamp the
+// mask is empty, so the canvas only needs the diseased photo and the loop stops repainting
+const LIVE_MS = 10_000;
 
 type Fit = { s: number; dx: number; dy: number };
 const coverFit = (cw: number, ch: number, iw: number, ih: number): Fit => {
   const s = Math.max(cw / iw, ch / ih);
   return { s, dx: (cw - iw * s) / 2, dy: (ch - ih * s) / 2 };
 };
-const loadImg = (src: string) =>
-  new Promise<HTMLImageElement>((res, rej) => {
-    const im = new Image();
-    im.decoding = 'async';
-    im.onload = () => res(im);
-    im.onerror = rej;
-    im.src = src;
-  });
+/** Loaded AND decoded: `onload` fires before decoding, and a canvas drawImage of an undecoded photo decodes it
+ *  synchronously inside the animation frame (~37 ms for the two full-width heal photos: a long task). decode()
+ *  does that work off the main thread first. */
+const loadImg = async (src: string) => {
+  const im = new Image();
+  im.decoding = 'async';
+  im.src = src;
+  await im.decode();
+  return im;
+};
 
 function pickFile(files: string[], wantW: number) {
   const webp = files.filter((f) => f.endsWith('.webp'));
@@ -116,6 +121,8 @@ export default function Run({ site }: { site: Site }) {
     const layer = document.createElement('canvas');
     const lctx = layer.getContext('2d')!;
     let W = 0, H = 0, dpr = 1, R = 260, fit: Fit = { s: 1, dx: 0, dy: 0 };
+    let needsDraw = true; // repaint the plain diseased photo (first frame, resize, after healing has decayed)
+    let lastStamp = -Infinity;
     const resize = () => {
       dpr = Math.min(2, window.devicePixelRatio || 1);
       W = sec.clientWidth;
@@ -126,6 +133,7 @@ export default function Run({ site }: { site: Site }) {
       canvas.style.height = `${H}px`;
       mask.width = Math.round(W * 0.5);
       mask.height = Math.round(H * 0.5);
+      needsDraw = true;
       R = Math.max(140, Math.min(0.17 * Math.min(W, H) * 1.6, 260));
       fit = coverFit(W, H, assets.dis.naturalWidth, assets.dis.naturalHeight);
       canvas.dataset.r = String(R); // read by the e2e healing test
@@ -191,9 +199,25 @@ export default function Run({ site }: { site: Site }) {
         const n = Math.max(1, Math.ceil(dist / (R / 4)));
         for (let i = 1; i <= n; i++) stamp(from.x + ((smooth.x - from.x) * i) / n, from.y + ((smooth.y - from.y) * i) / n);
         prev = { x: smooth.x, y: smooth.y };
+        lastStamp = now;
       }
-      // render: diseased, then healed through the mask
       const iw = assets.dis.naturalWidth, ih = assets.dis.naturalHeight;
+      if (now - lastStamp > LIVE_MS) {
+        // nothing healed: the canvas already shows the diseased photo, so skip the full composite (each costs
+        // ~55 ms on a software-rendered canvas); repaint only when asked, with the mask cleared
+        if (needsDraw) {
+          needsDraw = false;
+          mctx.globalCompositeOperation = 'source-over';
+          mctx.clearRect(0, 0, mask.width, mask.height);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.drawImage(assets.dis, fit.dx, fit.dy, iw * fit.s, ih * fit.s);
+          setCurrent(initial);
+        }
+        raf = requestAnimationFrame(frame);
+        return;
+      }
+      needsDraw = true; // when healing has decayed, paint the clean photo once more
+      // render: diseased, then healed through the mask
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.drawImage(assets.dis, fit.dx, fit.dy, iw * fit.s, ih * fit.s);
       lctx.setTransform(dpr, 0, 0, dpr, 0, 0);

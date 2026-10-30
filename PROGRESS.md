@@ -298,3 +298,117 @@ Prompt: claude_loop_prompt_v2.txt + speed_rules_prompt.txt (speed rules: batch s
 ## NEXT (Phase 2)
 
 All Phase 2 tasks are DONE (P2-F04 DONE-WITH-CAVEAT, see BLOCKERS.md) and `python scripts/verify_all.py` exits 0. Possible follow-ups (out of scope): hero footage + frame scrubber once a licensed clip and ffmpeg are available; a hosted deployment (set VITE_DEPLOYED_APP_URL); cross-region test data.
+
+## Phase 3: model upgrade
+
+Started 2026-10-30. Precondition: PROGRESS.md has no literal `PHASE2_COMPLETE` string, but every Phase 2 task is DONE (P2-F04 DONE-WITH-CAVEAT) and verify_all passed at the end of Phase 2, so Phase 3 ran in full.
+
+| ID | Task | Status | Evidence pointer |
+|----|------|--------|------------------|
+| P3-M00 | Baseline audit | DONE | P3 log M00 |
+| P3-M01 | Embedding cache | DONE | P3 log M01 |
+| P3-M02 | Crop identification v3 | DONE | P3 log M02 |
+| P3-M03 | Disease arms A-F | DONE | P3 log M03 |
+| P3-M04 | Stacking ensemble | DONE | P3 log M04 |
+| P3-M05 | Trust layer | DONE | P3 log M05 |
+| P3-M06 | Segmentation upgrade (optional) | SKIPPED | P3 decisions |
+| P3-M07 | Augmentation + robustness checks | DONE (few-shot part not run) | P3 log M07 |
+| P3-M08 | Explanations | DONE | P3 log M08 |
+| P3-M09 | API + UI integration | DONE | P3 log M09 |
+| P3-M10 | Final evaluation + report | DONE | P3 log M10 |
+| P3-V01 | Full verification | DONE | P3 log V01 |
+
+### Phase 3 evidence log (newest first)
+
+#### 2026-10-30 P3-M10 Final report
+- `scripts/p3_report.py` -> results/final_report.md (+ results/figures/p3/: reliability, abstention, confusion, arms) and the README block "What is and is not claimed (Phase 3)" between `<!-- p3:begin -->` markers. Every number is read from results/*.json; `p3_report.py --check` re-renders and compares (PASS).
+- Report covers: all arms on TEST / wild / wild_test with grouped bootstrap CIs, per-crop wild macro-F1, stacking (McNemar + paired CI), crop candidates, trust layer, background-swap ablation, shortcut test, fusion ablation (with / without the 57 features), honest limitations.
+
+#### 2026-10-30 P3-M09 API + UI
+- `POST /api/analyze` (schema v1 kept, fields added): crop_confidence, crop_set, disease_confidence, disease_set, abstain {flag, reason}, affected_pct, severity (mild < 5 %, moderate 5-15 %, severe > 15 %; config p3.severity_cuts, labelled heuristic), severity_note, arms (per-arm label/prob/config/ms), production_model, explanation, segmenter, quality, timings_ms; new form field `arms=all|production`.
+- leafdx.p3.production reads models/manifest.json (production disease model F_fusion = `F_fusion_bioclip2[percrop,swap]`, crop model `bioclip2_head`, weights hashes, training date, dataset hashes, licences) written by scripts/p3_finalize.py.
+- Web /analyze: abstain state ("Not sure about this photo" + reason), severity chip, reason string, new "Every model's answer" panel (components/analyze/Arms.tsx); verdict confidence is "low" whenever the trust layer abstains. Existing design tokens and components reused.
+- tests/test_p3_api.py: 7 passed (v3 contract, arms modes + bad value, 3 wild images, /api/explain, user Google image -> turmeric or abstain).
+
+#### 2026-10-30 P3-M08 Explanations
+- Grad-CAM++ (closed-form weights) added to leafdx.cnn.gradcam (`plus_plus=True`); leafdx.p3.explain: Grad-CAM++ for the CNN arm and a DINOv2 patch-similarity map (cosine of each patch token to the CLS token), both with Stage 1 lesion contours drawn on top. `POST /api/explain` returns both maps, the lesion overlay and the reason string ("affected area x %, n lesions, yellow-brown pixels y %; <model> confidence z %").
+
+#### 2026-10-30 P3-M07 Augmentation and robustness
+- results/robustness_p3.json. Background-swap + strong colour/blur/JPEG vs v1 augmentation, wild macro-F1 (paired grouped-bootstrap CI): C2 EfficientNet-B0 0.920 -> 0.968 (+0.048 [+0.008, +0.098]), C3 ConvNeXt-T 0.920 -> 0.960 (+0.040 [+0.008, +0.077]), C1 MobileNetV2 0.952 -> 0.951 (no change); B SVM 0.912 -> 0.968, F fusion 0.912 -> 0.928 (CI includes 0).
+- Shortcut test (leaf-only vs full, macro-F1 drop): no arm drops more than 0.10 on TEST or wild (largest: A rule 0.034 wild, BioCLIP 2 head 0.040 wild). Crop model: TEST 1.000 / 1.000, wild 0.988 full / 1.000 leaf-only.
+- Few-shot adaptation: not run; the wild set stays evaluation-only.
+
+#### 2026-10-30 P3-M05 Trust layer
+- results/trust.json, models/p3/trust.json, models/p3/ood_reference.npy (float16).
+- Temperature on VAL + VAL-swap per model; production F_fusion ECE TEST 0.006 -> 0.006, wild 0.036 -> 0.037 (already calibrated).
+- Split conformal LAC (APS also reported), alpha 0.10, calibration VAL + VAL-swap: crop q 0.0002, disease q 0.0357. Empirical coverage: crop TEST 0.895 / wild 0.805; disease TEST 0.967 / wild 0.800 (wild coverage below target = distribution shift; reported, not guaranteed).
+- kNN OOD (DINOv2, k = 10, reference = TRAIN + swap views, threshold = 95th percentile of VAL + VAL-swap = 0.388): flag rate val 0.008, TEST 0.000, wild 0.116, user image 0 (distance 0.249).
+- Quality gate pass rate: val / TEST 1.000, wild 0.982 (2 blurry, 1 too little leaf).
+- With all gates: TEST answered 0.870 (crop acc. 1.000, disease acc. 1.000); wild answered 0.610 (crop 1.000, disease 0.987, end-to-end 0.987). Abstain reasons wild: crop uncertain 26, disease uncertain 18, OOD 17, quality 3.
+
+#### 2026-10-30 P3-M04 Stacking
+- results/stacking.json: LR over the calibrated log-odds of the 10 selected arms, fitted on VAL + VAL-swap. Best single arm by selection score: F_fusion. STACK - F_fusion macro-F1: TEST -0.016 [-0.038, +0.000] (McNemar p 0.250), wild -0.008 [-0.056, +0.041] (p 1.000), wild_test +0.016 [-0.049, +0.085] -> "no significant difference" everywhere -> production = F_fusion (simpler).
+
+#### 2026-10-30 P3-M03 Disease arms
+- `scripts/p3_disease.py` -> 39 configurations (A; B, B2, D, E x2, F x3 each pooled/percrop x orig/swap; C1-C3 x swap/plain), 1279 s. `scripts/p3_metrics.py` -> results/disease_models.json (accuracy, precision, recall, macro-F1, ROC-AUC, ECE before/after T, CPU ms/image; TEST, wild, wild_test; pooled + per crop; 1000 grouped bootstrap resamples).
+- Selected per arm (VAL + VAL-swap): A 0.845 TEST / 0.782 wild macro-F1; B_svm[pooled,swap] 0.962 / 0.968; B2_lgbm[pooled,swap] 0.940 / 0.944; C1[plain] 0.989 / 0.952; C2[swap] 0.984 / 0.968; C3[plain] 0.978 / 0.920; D[percrop,swap] 0.994 / 0.920; E_openclip[percrop,swap] 0.962 / 0.903; E_bioclip2[pooled,swap] 0.989 / 0.968; F_fusion_bioclip2[percrop,swap] 1.000 [1.000, 1.000] / 0.928 [0.877, 0.968].
+- Several arms score higher than the production model on the wild set (B, C2, E_bioclip2: 0.968), all inside overlapping CIs; the wild set is not used to choose.
+- CPU ms/image (sequential, 10 images; results/p3/timing.json): Stage 1 523, DINOv2 33, OpenCLIP 35, BioCLIP 2 375, MobileNetV2 (6 TTA views) 131, EfficientNet-B0 543, ConvNeXt-T 2247.
+- CNN training (results/p3_cnn_train.json, best VAL macro-F1): C1 plain 0.979 (2.6 min), C1 swap = Phase 2 disease_cnn.pt (reused, same recipe); C2 swap 0.984 (13.9 min), plain 0.995 (6.8 min); C3 swap 0.984 (stopped by the 20 min budget at epoch 8; trained while other jobs shared the GPU), plain 0.989 (15.7 min).
+
+#### 2026-10-30 P3-M02 Crop identification
+- results/crop_models.json, results/crop_errors.md, models/p3/crop_head.joblib. 7 candidates (3 heads, concatenated head, 2 zero-shot, head x zero-shot). Chosen `bioclip2_head` (VAL + VAL-swap macro-F1 1.000, tie broken by ECE). TEST acc 1.000; wild (164 images incl. field scenes) acc 0.988 [0.963, 1.000]. Wild errors: 2 confident (0.96), both near-identical Commons shots of one black gram field (group w1733), a whole-plant scene.
+- Acceptance: user Google turmeric image -> P(turmeric) 1.000, singleton crop set, not OOD -> **turmeric**.
+
+#### 2026-10-30 P3-M01 Embedding cache
+- `scripts/p3_embed.py` -> .cache/embeddings/<model>/<weights hash>/<image sha1>[__view].npy; results/p3/embed_manifest.json: 7396 cached per backbone (1771 images + 646 leaf-only + 481 VAL/TEST swap views + 4500 TRAIN swap views; a few byte-identical files share a key). DINOv2 332 s, OpenCLIP 290 s, BioCLIP 2 2560 s (GPU shared with CNN training). BioCLIP 2 (imageomics/bioclip-2, MIT) downloaded and used; no fallback needed.
+
+#### 2026-10-30 P3-M00 Baseline audit
+- CLAHE: present (leafdx.ip.preprocess.clahe_l on Lab L), feeds the texture/edge features; segmentation and colour features use the non-CLAHE image by design (T03). Added an optional `preprocess.clahe_enabled` flag (default true; documented as a comment so the Stage 1 cache key is unchanged) + tests/test_p3.py::test_clahe_runs_on_l_channel_and_flag_disables_it.
+- data/wild/labels.csv (path, crop, healthy_or_diseased, source, labelled_by): 88 turmeric + 76 black gram wild images (>= 40 per crop), 125 disease-labelled; user image at data/wild/user_reported/turmeric_google_01.jpg.
+- results/p3/leakage_report.md: 1771 images hashed (train / val / test / wild / user), 0 near-duplicate groups span roles.
+
+### Phase 3 decisions
+
+- **Wild set never selects anything.** P3-M02 says "select by wild macro-F1"; that conflicts with the add-on's own hard rule and "do not pick models using the wild set". The hard rule wins: all selection uses clean VAL + VAL-swap (each VAL leaf composited once onto a TRAIN-bank / procedural background, no collage) as a non-wild robustness proxy. Phase 2 selected and calibrated on wild_val; Phase 3 therefore also reports `wild_test` (the half Phase 2 never touched).
+- Temperature is fitted on VAL + VAL-swap (clean VAL alone is near-separable for several arms). If a calibration set is perfectly separable, T is not allowed below 1 (the NLL then just keeps falling as T -> 0; the first crop run had T = 0.05 and 100 %-confident wrong answers on wild).
+- Quality gate: exposure is measured on the Stage 1 leaf pixels, not the whole frame. The first version flagged 64 Bangladeshi black gram wild photos (leaf on a white cut-out background) as over-exposed; this was found by looking at those wild images, so it is disclosed here. Only the definition changed; thresholds stayed as set before any evaluation (config p3.quality).
+- Conformal crop sets are often empty rather than two-label (VAL is near-separable, so q is tiny); empty and two-label sets both mean "crop uncertain".
+- No negative ("other") training images under a usable licence: handled by the zero-shot "other" prompt (BioCLIP 2) and the kNN OOD gate.
+- P3-M06 skipped: comparing MobileSAM needs hand-checked leaf masks on >= 30 wild images, which need a human annotator; none exist. The lesion U-Net is skipped for the same reason (< 50 hand-labelled lesion masks). The API reports `segmenter: "classical"`.
+- ConvNeXt-Tiny checkpoints (118 MB each) are gitignored (GitHub file limit); the API skips a CNN arm whose checkpoint is missing.
+
+### Phase 3 failed attempts / problems (kept, not hidden)
+
+- First leakage audit reported 4 cross-role groups: my audit let the "burst" rule (consecutive file numbers) join files across classes and datasets. Fixed to apply it within one source class only, as in the split; result 0.
+- Phase 2's data/wild/splits.csv lists one Commons file twice (two titles saved to one filename); de-duplicated in leafdx.p3.data (wild 165 -> 164 images).
+- Swap-view generation pickled the 200 MB background bank per joblib task (minutes per batch); fixed by passing one memory-mapped array.
+- Stage 1 workers oversubscribed the CPU (OpenCV threads x 10 processes, load ~100); fixed with cv2.setNumThreads(1) per worker.
+- LightGBM + PyTorch on macOS: two libomp runtimes -> segfault (exit 139) or deadlock in load_state_dict, including when unpickling a LightGBM model inside a web request thread. Fix: LightGBM n_jobs=1 and its own libomp pinned to one thread per thread (leafdx.p3.heads.pin_lightgbm_openmp). Import-order tricks were tried and failed.
+- A background `nohup` launch was killed when its shell exited; two CNN-training processes briefly ran concurrently after a restart (the duplicate was stopped before it saved a checkpoint).
+- tests/test_api.py::test_uncertain_path and tests/test_app.py assumed the Phase 2 decision path / "CNN Confidence" label; updated to accept the Phase 3 path.
+
+#### 2026-10-30 P3-V01 Full verification
+- `python scripts/verify_all.py` -> **OVERALL: PASS** (20/20): lint; 99 tests; split leakage; artefacts; REPORT.md fresh
+  render (545 numbers); comparison.md; regression; robustness targets 3/3; Phase 2 artefacts; site.json freshness; no
+  hard-coded metrics; P3 pHash leakage (0 groups across train/val/test/wild/user); P3 artefacts; P3 licences (6
+  weights); P3 final_report.md + README block = fresh render; P3 API contract + 3 wild images + user image (7 passed);
+  web typecheck, lint, build; web E2E functional 14 passed + timing 5 passed (1 worker).
+- First runs failed on web E2E; causes and fixes:
+  * Landing scroll long task (pre-existing: same ~65 ms task on a build of the committed pre-Phase-3 web code). LoAF
+    attribution: the healing canvas rAF loop (sections/Run.tsx). (1) `onload` fires before decoding, so the first
+    drawImage decoded both full-width heal photos synchronously in a frame -> images now `await img.decode()`.
+    (2) The loop repainted the full composite (2 photos + masked layer, ~55 ms/frame on a software canvas) every
+    frame even with an empty mask -> it now repaints only while healing is live (a stamp within the last 10 s, the
+    time decay needs to empty the mask) and otherwise paints the plain diseased photo once. Pixels are unchanged
+    (empty mask = diseased photo); heal.spec passes 3/3, perf.spec 0 long tasks 3/3.
+  * Parallel E2E: frame-timing specs (perf, hero scroll scrub) were starved by parallel browser workers; verify_all now
+    runs functional specs in parallel and the two timing specs alone on one worker afterwards.
+  * API cold start (> 60 s first request: every Phase 3 model loaded lazily): warm-up at start-up (~15 s) -> first
+    request ~4 s; per-model table moved to the Detailed view; timings_ms.total double count fixed.
+  * Hard-coded-metric check: React style-object properties treated as layout; one reviewed allowlist entry
+    ("under 1%" wording). A planted "0.994 and 97.5%" is still caught.
+
+## NEXT (Phase 3)
+
+All Phase 3 tasks are DONE except P3-M06 (optional, skipped: no hand-checked leaf masks) and the optional few-shot part of P3-M07 (not run: wild set kept evaluation-only); `python scripts/verify_all.py` exits 0. Possible follow-ups: hand-label >= 30 wild leaf masks to run the MobileSAM comparison; a larger, agronomist-verified wild set from other regions.

@@ -60,6 +60,8 @@ preprocess:
   gaussian_ksize: 5
   clahe_clip: 2.0
   clahe_tile: 8
+  # clahe_enabled: true    # optional flag (default true). CLAHE (Lab L only) feeds texture/edge
+  #                        # features; segmentation and colour features use the non-CLAHE image.
 
 segment:
   hue_min: 8              # OpenCV hue 0-180; 8 ~ brown/orange, 95 ~ blue-green
@@ -293,3 +295,32 @@ robust:                    # P2-B04 hierarchical crop + disease models
       - {epochs: 4, lr: 0.001, unfreeze_last_blocks: 0}
       - {epochs: 22, lr: 0.0002, unfreeze_last_blocks: 4}
   latency_images: 10
+
+p3:                        # Phase 3 model upgrade (frozen backbones, fusion, trust layer)
+  # Selection rule (all phases of P3): the wild set is NEVER used to fit, tune, select or
+  # calibrate. Model selection uses clean VAL plus "val_swap" (each VAL leaf composited once
+  # onto a TRAIN-bank / procedural background, no collage) as a non-wild robustness proxy.
+  embed_cache: .cache/embeddings
+  backbones: [dinov2_vits14, openclip_vitb32, bioclip2]
+  train_swap_views: 4      # background-swap views per TRAIN image for frozen-backbone heads
+  head_C: [0.01, 0.1, 1.0, 10.0]
+  bootstrap: 1000
+  conformal_alpha: 0.10    # target coverage 90%
+  ood_quantile: 0.95       # kNN OOD threshold = this quantile of in-distribution VAL distances
+  ood_k: 10
+  quality: {blur_min: 30.0, dark_max: 0.6, bright_max: 0.6, min_leaf_frac: 0.03}
+  severity_cuts: {mild: 5.0, moderate: 15.0}   # heuristic: affected % <5 mild, 5-15 moderate, >15 severe
+  crop_prompts:
+    turmeric: ["a photo of a Curcuma longa (turmeric) leaf"]
+    blackgram: ["a photo of a Vigna mungo (black gram) leaf"]
+    other: ["a photo of something that is not a leaf", "a photo of soil, a hand or an object"]
+  cnn_arms:                # C1-C3 disease CNNs (crop-conditioned 2-logit head, as in Phase 2)
+    batch_size: 32
+    patience: 4
+    arms:
+      - {name: C1_mobilenet_v2, arch: mobilenet_v2, time_budget_min: 20, reuse_swap: models/disease_cnn.pt,
+         stages: [{epochs: 4, lr: 0.001, unfreeze_last_blocks: 0}, {epochs: 22, lr: 0.0002, unfreeze_last_blocks: 4}]}
+      - {name: C2_efficientnet_b0, arch: efficientnet_b0, time_budget_min: 15,
+         stages: [{epochs: 3, lr: 0.001, unfreeze_last_blocks: 0}, {epochs: 15, lr: 0.0002, unfreeze_last_blocks: 3}]}
+      - {name: C3_convnext_tiny, arch: convnext_tiny, time_budget_min: 20,
+         stages: [{epochs: 2, lr: 0.001, unfreeze_last_blocks: 0}, {epochs: 10, lr: 0.0001, unfreeze_last_blocks: 2}]}

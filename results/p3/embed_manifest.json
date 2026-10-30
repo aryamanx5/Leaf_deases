@@ -1,0 +1,29 @@
+{
+  "n_images": 1772,
+  "n_leafonly": 647,
+  "n_swap_eval": 481,
+  "n_train_views": 4500,
+  "backbones": {
+    "dinov2_vits14": {
+      "status": "ok",
+      "weights_hash": "72b5ae1ffa6560787ca9479ef6d02e587352dc92",
+      "cached_before": 0,
+      "cached_after": 7396,
+      "seconds": 332.0
+    },
+    "openclip_vitb32": {
+      "status": "ok",
+      "weights_hash": "49d0397545a687232e40828013e6e56d80e7e166",
+      "cached_before": 0,
+      "cached_after": 7396,
+      "seconds": 290.4
+    },
+    "bioclip2": {
+      "status": "ok",
+      "weights_hash": "b6477ebfb09e905738786dcbfb35583d413e6927",
+      "cached_before": 0,
+      "cached_after": 7396,
+      "seconds": 2560.2
+    }
+  }
+}

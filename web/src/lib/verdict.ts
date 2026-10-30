@@ -8,13 +8,13 @@ export type Level = 'high' | 'medium' | 'low';
  * How sure the verdict is, in words. The rule is the one scripts/export_site_data.py `confidence_levels()` scores
  * on held-out photos (site.json "confidence_levels"), with its cut-offs:
  *  low    the CNN is under `low_below_conf` sure, or the two methods disagree and it is under `high_min_conf`,
- *         or the crop itself is unsure;
+ *         or the crop itself is unsure, or the trust layer abstained;
  *  high   the CNN is at least `high_min_conf` sure, both methods agree and the photo is not flagged as unusual;
  *  medium everything else.
  */
 export function confidenceLevel(r: AnalyzeResponse, c: Pick<Site['confidence_levels'], 'high_min_conf' | 'low_below_conf'>): Level {
   const conf = r.disease.confidence;
-  if (r.crop.status === 'uncertain' || conf < c.low_below_conf || (!r.agreement && conf < c.high_min_conf)) return 'low';
+  if (r.abstain?.flag || r.crop.status === 'uncertain' || conf < c.low_below_conf || (!r.agreement && conf < c.high_min_conf)) return 'low';
   if (conf >= c.high_min_conf && r.agreement && !r.ood.flagged) return 'high';
   return 'medium';
 }

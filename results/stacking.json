@@ -1,0 +1,254 @@
+{
+ "members": {
+  "A_rule": "A_rule",
+  "B_svm": "B_svm[pooled,swap]",
+  "B2_lgbm": "B2_lgbm[pooled,swap]",
+  "C1_mobilenet_v2": "C1_mobilenet_v2[plain]",
+  "C2_efficientnet_b0": "C2_efficientnet_b0[swap]",
+  "C3_convnext_tiny": "C3_convnext_tiny[plain]",
+  "D_dinov2": "D_dinov2[percrop,swap]",
+  "E_openclip": "E_openclip[percrop,swap]",
+  "E_bioclip2": "E_bioclip2[pooled,swap]",
+  "F_fusion": "F_fusion_bioclip2[percrop,swap]"
+ },
+ "weights": {
+  "A_rule": 0.8136838336262119,
+  "B_svm": -0.6247021788726839,
+  "B2_lgbm": 0.8548820545996227,
+  "C1_mobilenet_v2": 0.3870903317954956,
+  "C2_efficientnet_b0": 0.6217188227723892,
+  "C3_convnext_tiny": 0.6083124438478802,
+  "D_dinov2": -0.10006549696456397,
+  "E_openclip": 0.3222924426247447,
+  "E_bioclip2": 0.7236613368775767,
+  "F_fusion": -0.30290739482577844
+ },
+ "intercept": -2.822394689748686,
+ "fit_on": "VAL + VAL-swap predictions",
+ "best_single_arm": "F_fusion",
+ "best_single_config": "F_fusion_bioclip2[percrop,swap]",
+ "selection_f1": {
+  "STACK": 1.0,
+  "F_fusion": 0.9841467409105797
+ },
+ "comparison": {
+  "test": {
+   "n": 239,
+   "STACK": {
+    "n": 239,
+    "accuracy": 0.9874476987447699,
+    "precision": 0.9943502824858758,
+    "recall": 0.9887640449438202,
+    "macro_f1": 0.9835795259361044,
+    "ece": 0.012248061617625258,
+    "roc_auc": 0.9996316080309449,
+    "ci95": {
+     "accuracy": [
+      0.9708333333333333,
+      1.0
+     ],
+     "macro_f1": [
+      0.961740793878527,
+      1.0
+     ],
+     "roc_auc": [
+      0.9985633914283585,
+      1.0
+     ],
+     "ece": [
+      0.0013858234898169552,
+      0.026798487056748695
+     ]
+    }
+   },
+   "F_fusion": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.005715209642193193,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.00230635960270528,
+      0.010061333722099637
+     ]
+    }
+   },
+   "mcnemar_stack_vs_best": {
+    "a_right_b_wrong": 0,
+    "a_wrong_b_right": 3,
+    "p_value": 0.25
+   },
+   "macro_f1_diff_stack_minus_best": {
+    "metric": "macro_f1",
+    "diff": -0.016420474063895574,
+    "ci95": [
+     -0.038259206121473044,
+     0.0
+    ],
+    "ci_contains_0": true
+   },
+   "verdict": "no significant difference"
+  },
+  "wild": {
+   "n": 125,
+   "STACK": {
+    "n": 125,
+    "accuracy": 0.92,
+    "precision": 1.0,
+    "recall": 0.8571428571428571,
+    "macro_f1": 0.9198717948717949,
+    "ece": 0.06448015771967201,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      0.865052380952381,
+      0.968
+     ],
+     "macro_f1": [
+      0.8634114451986469,
+      0.967741935483871
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.026018037329657354,
+      0.11427309278939475
+     ]
+    }
+   },
+   "F_fusion": {
+    "n": 125,
+    "accuracy": 0.928,
+    "precision": 1.0,
+    "recall": 0.8714285714285714,
+    "macro_f1": 0.9278337289114119,
+    "ece": 0.0370610538291569,
+    "roc_auc": 0.9971428571428571,
+    "ci95": {
+     "accuracy": [
+      0.8790076711250984,
+      0.968503937007874
+     ],
+     "macro_f1": [
+      0.8772276300006906,
+      0.9683465399820439
+     ],
+     "roc_auc": [
+      0.9894001792781517,
+      1.0
+     ],
+     "ece": [
+      0.02473916590520438,
+      0.0868423315438215
+     ]
+    }
+   },
+   "mcnemar_stack_vs_best": {
+    "a_right_b_wrong": 4,
+    "a_wrong_b_right": 5,
+    "p_value": 1.0
+   },
+   "macro_f1_diff_stack_minus_best": {
+    "metric": "macro_f1",
+    "diff": -0.00796193403961698,
+    "ci95": [
+     -0.055805691675867165,
+     0.04052664171865672
+    ],
+    "ci_contains_0": true
+   },
+   "verdict": "no significant difference"
+  },
+  "wild_test": {
+   "n": 62,
+   "STACK": {
+    "n": 62,
+    "accuracy": 0.9032258064516129,
+    "precision": 1.0,
+    "recall": 0.8285714285714286,
+    "macro_f1": 0.903125,
+    "ece": 0.08041679913150933,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      0.8225806451612904,
+      0.967741935483871
+     ],
+     "macro_f1": [
+      0.8221642764015646,
+      0.967741935483871
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.02452465579903014,
+      0.15748362819415637
+     ]
+    }
+   },
+   "F_fusion": {
+    "n": 62,
+    "accuracy": 0.8870967741935484,
+    "precision": 1.0,
+    "recall": 0.8,
+    "macro_f1": 0.8870673952641166,
+    "ece": 0.06174396012490001,
+    "roc_auc": 0.9936507936507937,
+    "ci95": {
+     "accuracy": [
+      0.8064516129032258,
+      0.9516129032258065
+     ],
+     "macro_f1": [
+      0.8056426332288402,
+      0.9516003122560499
+     ],
+     "roc_auc": [
+      0.9768644957983194,
+      1.0
+     ],
+     "ece": [
+      0.030284080903380608,
+      0.14053382201591988
+     ]
+    }
+   },
+   "mcnemar_stack_vs_best": {
+    "a_right_b_wrong": 3,
+    "a_wrong_b_right": 2,
+    "p_value": 1.0
+   },
+   "macro_f1_diff_stack_minus_best": {
+    "metric": "macro_f1",
+    "diff": 0.016057604735883357,
+    "ci95": [
+     -0.04941411364231474,
+     0.08504841657015572
+    ],
+    "ci_contains_0": true
+   },
+   "verdict": "no significant difference"
+  }
+ },
+ "production_choice": "F_fusion",
+ "production_reason": "stack not significantly better on both TEST and wild -> prefer the simpler single arm"
+}

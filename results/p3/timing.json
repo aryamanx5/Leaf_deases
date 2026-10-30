@@ -1,0 +1,77 @@
+{
+ "device": "cpu",
+ "torch_threads": 4,
+ "n_images": 10,
+ "components_ms": {
+  "stage1": 522.6842791998934,
+  "embed_dinov2_vits14": 32.97420000017155,
+  "embed_openclip_vitb32": 34.91979589962284,
+  "embed_bioclip2": 374.81719170027645,
+  "cnn_C1_mobilenet_v2": 131.3766792001843,
+  "cnn_C2_efficientnet_b0": 543.332575000386,
+  "cnn_C3_convnext_tiny": 2246.680029100389
+ },
+ "arms": {
+  "A_rule": {
+   "ms_per_image": 522.6842791998934,
+   "components": [
+    "stage1"
+   ]
+  },
+  "B_svm": {
+   "ms_per_image": 522.6842791998934,
+   "components": [
+    "stage1"
+   ]
+  },
+  "B2_lgbm": {
+   "ms_per_image": 522.6842791998934,
+   "components": [
+    "stage1"
+   ]
+  },
+  "D_dinov2": {
+   "ms_per_image": 32.97420000017155,
+   "components": [
+    "embed_dinov2_vits14"
+   ]
+  },
+  "E_openclip": {
+   "ms_per_image": 34.91979589962284,
+   "components": [
+    "embed_openclip_vitb32"
+   ]
+  },
+  "E_bioclip2": {
+   "ms_per_image": 374.81719170027645,
+   "components": [
+    "embed_bioclip2"
+   ]
+  },
+  "C1_mobilenet_v2": {
+   "ms_per_image": 131.3766792001843,
+   "components": [
+    "cnn_C1_mobilenet_v2"
+   ]
+  },
+  "C2_efficientnet_b0": {
+   "ms_per_image": 543.332575000386,
+   "components": [
+    "cnn_C2_efficientnet_b0"
+   ]
+  },
+  "C3_convnext_tiny": {
+   "ms_per_image": 2246.680029100389,
+   "components": [
+    "cnn_C3_convnext_tiny"
+   ]
+  },
+  "F_fusion": {
+   "ms_per_image": 897.5014709001698,
+   "components": [
+    "stage1",
+    "embed_bioclip2"
+   ]
+  }
+ }
+}

@@ -59,8 +59,12 @@ for (const vp of [{ name: 'desktop', width: 1440, height: 900 }, { name: 'mobile
     await expect(page.getByTestId('card-crop')).toContainText(/Crop:\s*(Turmeric \(\d+%\)|Unsure — Turmeric \d+% \/ Black gram \d+%)/);
     await expect(page.getByTestId('card-prediction')).toContainText(/Prediction:\s*(Healthy|Diseased)/);
     await expect(page.getByTestId('card-affected-region')).toContainText(/Affected Region:\s*\d+\.\d%/);
-    await expect(page.getByTestId('card-cnn-confidence')).toContainText(/CNN Confidence:\s*\d+%/);
+    // Phase 3 bundle: "Model Confidence" (fusion head); Phase 2: "CNN Confidence"; abstained: "Model leaning"
+    await expect(page.locator('[data-testid="card-cnn-confidence"], [data-testid="card-model-confidence"], [data-testid="card-model-leaning"]'))
+      .toContainText(/(CNN|Model) (Confidence|leaning):\s*\S+/);
     await expect(page.getByTestId('agreement')).toHaveText(/Agree|Disagree/);
+    // Phase 3 bundle: every model's answer, Detailed view only
+    if (await page.getByTestId('arms').count()) await expect(page.getByTestId('arms').locator('tbody tr').first()).toBeVisible();
     await expect(page.getByRole('img', { name: /^Damaged spots/ })).toBeVisible();
     await expect(page.getByText(/4-class|four-class/i)).toHaveCount(0); // never the old 4-class table
     await page.screenshot({ path: `test-results/shots/${vp.name}-analyze-result.png`, fullPage: true });
@@ -148,7 +152,7 @@ test('plain-language layer: Simple by default, verdict first, confidence in word
   await chooseSample(page, s.id);
   const verdict = page.getByTestId('verdict');
   await expect(verdict).toBeVisible({ timeout: 60_000 });
-  await expect(page.getByTestId('verdict-title')).toHaveText(/^This leaf looks (healthy|diseased)\.$/);
+  await expect(page.getByTestId('verdict-title')).toHaveText(/^(This leaf looks (healthy|diseased)|Not sure about this photo)\.$/);
   await expect(page.getByTestId('confidence-level')).toHaveText(/^(High|Medium|Low)/);
   await expect(page.getByTestId('what-to-do')).toContainText('not a diagnosis');
   // the verdict comes before every other block of the result

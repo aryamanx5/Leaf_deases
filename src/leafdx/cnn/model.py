@@ -29,6 +29,8 @@ def build_model(arch: str, num_classes: int, pretrained: bool = True) -> tuple[n
         ctor, weights = models.mobilenet_v2, models.MobileNet_V2_Weights.IMAGENET1K_V2
     elif arch == "efficientnet_b0":
         ctor, weights = models.efficientnet_b0, models.EfficientNet_B0_Weights.IMAGENET1K_V1
+    elif arch == "convnext_tiny":
+        ctor, weights = models.convnext_tiny, models.ConvNeXt_Tiny_Weights.IMAGENET1K_V1
     else:
         raise ValueError(f"unknown arch {arch}")
     loaded = False

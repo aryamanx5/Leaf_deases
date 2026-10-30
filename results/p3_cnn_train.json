@@ -1,0 +1,78 @@
+{
+  "C1_mobilenet_v2_swap": {
+    "arm": "C1_mobilenet_v2",
+    "variant": "swap",
+    "reused": "models/disease_cnn.pt",
+    "checkpoint": "models/p3/C1_mobilenet_v2_swap.pt"
+  },
+  "C1_mobilenet_v2_plain": {
+    "arm": "C1_mobilenet_v2",
+    "variant": "plain",
+    "arch": "mobilenet_v2",
+    "pretrained": true,
+    "checkpoint": "models/p3/C1_mobilenet_v2_plain.pt",
+    "best_val_macro_f1": 0.9791666666666667,
+    "best_epoch": 6,
+    "epochs_run": 10,
+    "minutes": 2.6148478865623472,
+    "device": "mps",
+    "time_budget_min": 20,
+    "stopped_by_time_budget": false
+  },
+  "C2_efficientnet_b0_swap": {
+    "arm": "C2_efficientnet_b0",
+    "variant": "swap",
+    "arch": "efficientnet_b0",
+    "pretrained": true,
+    "checkpoint": "models/p3/C2_efficientnet_b0_swap.pt",
+    "best_val_macro_f1": 0.9841467409105797,
+    "best_epoch": 7,
+    "epochs_run": 11,
+    "minutes": 13.94268825451533,
+    "device": "mps",
+    "time_budget_min": 15,
+    "stopped_by_time_budget": false
+  },
+  "C2_efficientnet_b0_plain": {
+    "arm": "C2_efficientnet_b0",
+    "variant": "plain",
+    "arch": "efficientnet_b0",
+    "pretrained": true,
+    "checkpoint": "models/p3/C2_efficientnet_b0_plain.pt",
+    "best_val_macro_f1": 0.9947155803035266,
+    "best_epoch": 4,
+    "epochs_run": 8,
+    "minutes": 6.770680916309357,
+    "device": "mps",
+    "time_budget_min": 15,
+    "stopped_by_time_budget": false
+  },
+  "C3_convnext_tiny_swap": {
+    "arm": "C3_convnext_tiny",
+    "variant": "swap",
+    "arch": "convnext_tiny",
+    "pretrained": true,
+    "checkpoint": "models/p3/C3_convnext_tiny_swap.pt",
+    "best_val_macro_f1": 0.9841467409105797,
+    "best_epoch": 8,
+    "epochs_run": 8,
+    "minutes": 20.36108088095983,
+    "device": "mps",
+    "time_budget_min": 20,
+    "stopped_by_time_budget": true
+  },
+  "C3_convnext_tiny_plain": {
+    "arm": "C3_convnext_tiny",
+    "variant": "plain",
+    "arch": "convnext_tiny",
+    "pretrained": true,
+    "checkpoint": "models/p3/C3_convnext_tiny_plain.pt",
+    "best_val_macro_f1": 0.9894828335506303,
+    "best_epoch": 4,
+    "epochs_run": 8,
+    "minutes": 15.739128569761911,
+    "device": "mps",
+    "time_budget_min": 20,
+    "stopped_by_time_budget": false
+  }
+}

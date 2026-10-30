@@ -3,6 +3,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { Evidence } from '@/components/analyze/Evidence';
 import { HowCalculated } from '@/components/analyze/HowCalculated';
 import { CropControl, DropZone, PointToggle, Preview, type Picked } from '@/components/analyze/Input';
+import { Arms } from '@/components/analyze/Arms';
 import { Compare, Measurements, Progress, ResultCard } from '@/components/analyze/Result';
 import { SampleCheck } from '@/components/analyze/Samples';
 import { EmptyState, ErrorState, ResultSkeleton } from '@/components/analyze/States';
@@ -186,6 +187,11 @@ export default function Analyze() {
                 <div className="reveal [animation-delay:160ms]">
                   <Compare r={r} detailed={detailed} />
                 </div>
+                {r.arms && detailed && (
+                  <div className="reveal [animation-delay:200ms]">
+                    <Arms r={r} />
+                  </div>
+                )}
                 {detailed ? (
                   <>
                     <ResultCard r={r} />

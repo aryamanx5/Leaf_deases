@@ -7,12 +7,23 @@ import { confidenceLevel, LEVEL_CUTOFFS, type Level } from '@/lib/verdict';
 
 const LEVEL_WORD: Record<Level, string> = { high: 'High', medium: 'Medium', low: 'Low' };
 const LEVEL_FILL: Record<Level, number> = { high: 3, medium: 2, low: 1 };
+/** Trust-layer abstention reasons (leafdx.p3.production) in plain words. */
+const ABSTAIN_TEXT: Record<string, string> = {
+  'crop uncertain': 'We could not tell reliably whether this is turmeric or black gram',
+  'disease status uncertain': 'The answer falls inside the zone where our models are often wrong',
+  'this does not look like a turmeric or black gram leaf': 'This does not look like a turmeric or black gram leaf we have learned from',
+  'image too blurry': 'The photo is too blurry',
+  'image too dark': 'The photo is too dark',
+  'image over-exposed': 'The photo is over-exposed',
+  'too little leaf area found': 'Too little of the photo is leaf',
+};
 
 /** The plain-language answer, first in the result: verdict, how much is damaged, agreement, confidence, next step. */
 export function Verdict({ r, levels, onPickCrop }: { r: AnalyzeResponse; levels: Site['confidence_levels'] | undefined; onPickCrop: (c: Crop) => void }) {
   const diseased = r.disease.label === 'diseased';
   const level = confidenceLevel(r, levels ?? LEVEL_CUTOFFS);
   const unsureCrop = r.crop.status === 'uncertain';
+  const abstained = !!r.abstain?.flag;
   const crop = CROP_NAME[r.crop.label];
   const m = r.measurements;
   const n = m.lesion_count;
@@ -35,11 +46,37 @@ export function Verdict({ r, levels, onPickCrop }: { r: AnalyzeResponse; levels:
       <p className="caption text-[11px] text-muted" data-testid="verdict-crop">
         {unsureCrop ? 'Crop: not sure' : `${crop} leaf${r.crop.status === 'user_selected' ? ' · you chose the crop' : ''}`}
       </p>
-      <h2 id="verdict-title" data-testid="verdict-title" className="mt-2 text-[28px] leading-[1.15] tracking-[-0.03em] sm:text-[34px]">
-        This leaf looks{' '}
-        <span className={`font-playfair italic ${diseased ? 'text-turmeric' : 'text-leaf'}`}>{diseased ? 'diseased' : 'healthy'}</span>.
-      </h2>
+      {abstained ? (
+        <>
+          <h2 id="verdict-title" data-testid="verdict-title" className="mt-2 text-[28px] leading-[1.15] tracking-[-0.03em] sm:text-[34px]">
+            <span className="font-playfair italic text-chlorosis">Not sure</span> about this photo.
+          </h2>
+          <p className="mt-3 flex max-w-[60ch] gap-2 text-[16px] leading-relaxed text-text/90" data-testid="abstain-reason">
+            <AlertTriangle size={18} aria-hidden="true" className="mt-1 shrink-0 text-chlorosis" />
+            <span>{ABSTAIN_TEXT[r.abstain!.reason ?? ''] ?? r.abstain!.reason}. The models lean towards{' '}
+              <strong className="font-medium">{r.disease.label}</strong>, but not strongly enough to say so.</span>
+          </p>
+        </>
+      ) : (
+        <h2 id="verdict-title" data-testid="verdict-title" className="mt-2 text-[28px] leading-[1.15] tracking-[-0.03em] sm:text-[34px]">
+          This leaf looks{' '}
+          <span className={`font-playfair italic ${diseased ? 'text-turmeric' : 'text-leaf'}`}>{diseased ? 'diseased' : 'healthy'}</span>.
+        </h2>
+      )}
+      {r.severity && !abstained && (
+        <p className="mt-2" data-testid="severity" title={r.severity_note}>
+          <span className="mono inline-block rounded-full bg-turmeric/15 px-3 py-1 text-[11px] uppercase tracking-[0.08em] text-turmeric">
+            {r.severity} damage
+          </span>
+        </p>
+      )}
       <p className="mt-3 max-w-[60ch] text-[16px] leading-relaxed text-text/90">{damage}</p>
+      {r.explanation && (
+        <p className="mono mt-2 max-w-[70ch] text-[12px] leading-relaxed text-muted" data-testid="explanation">{r.explanation}</p>
+      )}
+      {r.severity && r.severity_note && !abstained && (
+        <p className="mt-1 max-w-[70ch] text-[12px] leading-relaxed text-muted">Severity is a {r.severity_note}.</p>
+      )}
       <p className="mt-2 max-w-[60ch] text-[16px] leading-relaxed text-text/90" data-testid="verdict-agreement">
         {r.agreement
           ? 'Both methods agree, so this is a stronger answer.'

@@ -76,6 +76,31 @@ class Trace(BaseModel):
     stages: list[StageTrace]
 
 
+class ArmOut(BaseModel):
+    name: str
+    label: Literal["healthy", "diseased"]
+    prob: float = Field(ge=0, le=1)
+    config: str
+    ms: float
+
+
+class Abstain(BaseModel):
+    flag: bool
+    reason: str | None
+
+
+class ExplainResponse(BaseModel):
+    request_id: str
+    crop: Literal["turmeric", "blackgram"]
+    cnn_arm: str
+    gradcam_pp: str
+    vit_patch_map: str
+    lesion_overlay: str
+    explanation: str
+    affected_pct: float
+    severity: str | None
+
+
 class AnalyzeResponse(BaseModel):
     schema_version: str = SCHEMA_VERSION
     request_id: str
@@ -91,6 +116,21 @@ class AnalyzeResponse(BaseModel):
     # optional additions (schema v1 stays compatible): per-stage trace and the plain-text result card
     trace: Trace | None = None
     result_card: list[str] | None = None
+    # Phase 3 additions (present when the Phase 3 bundle, models/manifest.json, is installed)
+    crop_confidence: float | None = None
+    crop_set: list[Literal["turmeric", "blackgram"]] | None = None
+    disease_confidence: float | None = None
+    disease_set: list[Literal["healthy", "diseased"]] | None = None
+    abstain: Abstain | None = None
+    affected_pct: float | None = None
+    severity: Literal["mild", "moderate", "severe"] | None = None
+    severity_note: str | None = None
+    arms: dict[str, ArmOut] | None = None
+    production_model: str | None = None
+    production_model_name: str | None = None
+    explanation: str | None = None
+    segmenter: Literal["classical", "mobilesam"] | None = None
+    quality: dict[str, Any] | None = None
 
 
 class ErrorBody(BaseModel):

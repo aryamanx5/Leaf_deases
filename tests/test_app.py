@@ -14,5 +14,5 @@ def test_app_renders_sample_without_exceptions():
     assert not at.exception, at.exception
     codes = [c.value for c in at.code]
     assert any(v.startswith("Crop: ") and "Prediction: " in v and "Affected Region: " in v
-               and "CNN Confidence: " in v for v in codes), codes
+               and ("CNN Confidence: " in v or "Model Confidence: " in v) for v in codes), codes
     assert len(at.tabs) == 2

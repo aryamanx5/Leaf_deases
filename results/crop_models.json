@@ -1,0 +1,861 @@
+{
+ "selection_rule": "max mean macro-F1 on clean VAL and VAL-swap, tie-break lower ECE on the same; wild set reporting only",
+ "chosen": "bioclip2_head",
+ "candidates": {
+  "dinov2_head": {
+   "info": {
+    "kind": "logistic head",
+    "backbone": "dinov2_vits14",
+    "C": 1.0
+   },
+   "temperature": 1.174583855343642,
+   "selection": {
+    "val_valswap_macro_f1": 0.9933197151217358,
+    "val_valswap_ece": 0.0067575744173800426
+   },
+   "val": {
+    "n": 242,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.0005503117026581794,
+    "roc_auc": 1.0
+   },
+   "val_swap": {
+    "n": 242,
+    "accuracy": 0.987603305785124,
+    "precision": 1.0,
+    "recall": 0.9666666666666667,
+    "macro_f1": 0.9866394302434716,
+    "ece": 0.012964837132101961,
+    "roc_auc": 0.9993421052631579
+   },
+   "test": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.0003537141063756355,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.000247755922482204,
+      0.0004969848811535394
+     ]
+    }
+   },
+   "test_swap": {
+    "n": 239,
+    "accuracy": 0.99581589958159,
+    "precision": 1.0,
+    "recall": 0.9887640449438202,
+    "macro_f1": 0.9955140116748316,
+    "ece": 0.008652013685608735,
+    "roc_auc": 0.9999250936329588
+   },
+   "wild_all": {
+    "n": 164,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.010998879150118731,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.004023537585976861,
+      0.019702452292879057
+     ]
+    }
+   },
+   "user": [
+    {
+     "path": "data/wild/user_reported/turmeric_google_01.jpg",
+     "p_turmeric": 0.9999922538415759,
+     "p_other": null
+    }
+   ],
+   "test_leafonly": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.00039743254934687666,
+    "roc_auc": 1.0
+   },
+   "wild_all_leafonly": {
+    "n": 164,
+    "accuracy": 0.975609756097561,
+    "precision": 0.9666666666666667,
+    "recall": 0.9886363636363636,
+    "macro_f1": 0.9754307116104869,
+    "ece": 0.021192933913035075,
+    "roc_auc": 0.9992523923444976
+   }
+  },
+  "openclip_head": {
+   "info": {
+    "kind": "logistic head",
+    "backbone": "openclip_vitb32",
+    "C": 0.1
+   },
+   "temperature": 1.0,
+   "selection": {
+    "val_valswap_macro_f1": 1.0,
+    "val_valswap_ece": 0.003823813717265326
+   },
+   "val": {
+    "n": 242,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.00025190614434200675,
+    "roc_auc": 1.0
+   },
+   "val_swap": {
+    "n": 242,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.007395721290188829,
+    "roc_auc": 1.0
+   },
+   "test": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.0003023124344526673,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      7.934983228316817e-05,
+      0.0007046474852777429
+     ]
+    }
+   },
+   "test_swap": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.004694813730470296,
+    "roc_auc": 1.0
+   },
+   "wild_all": {
+    "n": 164,
+    "accuracy": 0.9512195121951219,
+    "precision": 0.9545454545454546,
+    "recall": 0.9545454545454546,
+    "macro_f1": 0.950956937799043,
+    "ece": 0.035926186232038186,
+    "roc_auc": 0.9938696172248804,
+    "ci95": {
+     "accuracy": [
+      0.9202453987730062,
+      0.9763198757763973
+     ],
+     "macro_f1": [
+      0.9196464906085134,
+      0.9761335251523632
+     ],
+     "roc_auc": [
+      0.9854901811151812,
+      0.999276165241479
+     ],
+     "ece": [
+      0.0209301351526976,
+      0.06355633618418412
+     ]
+    }
+   },
+   "user": [
+    {
+     "path": "data/wild/user_reported/turmeric_google_01.jpg",
+     "p_turmeric": 0.8851569356916186,
+     "p_other": null
+    }
+   ],
+   "test_leafonly": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.00038706136225463705,
+    "roc_auc": 1.0
+   },
+   "wild_all_leafonly": {
+    "n": 164,
+    "accuracy": 0.926829268292683,
+    "precision": 0.9523809523809523,
+    "recall": 0.9090909090909091,
+    "macro_f1": 0.926654740608229,
+    "ece": 0.06243225484579738,
+    "roc_auc": 0.975627990430622
+   }
+  },
+  "bioclip2_head": {
+   "info": {
+    "kind": "logistic head",
+    "backbone": "bioclip2",
+    "C": 1.0
+   },
+   "temperature": 1.0,
+   "selection": {
+    "val_valswap_macro_f1": 1.0,
+    "val_valswap_ece": 0.0019488854154594796
+   },
+   "val": {
+    "n": 242,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.0012533707341429224,
+    "roc_auc": 1.0
+   },
+   "val_swap": {
+    "n": 242,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.0026444000967760597,
+    "roc_auc": 1.0
+   },
+   "test": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.00016417338984897611,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      6.619126987429947e-05,
+      0.00030645918869703914
+     ]
+    }
+   },
+   "test_swap": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.0036783866460012517,
+    "roc_auc": 1.0
+   },
+   "wild_all": {
+    "n": 164,
+    "accuracy": 0.9878048780487805,
+    "precision": 0.9777777777777777,
+    "recall": 1.0,
+    "macro_f1": 0.9877153558052434,
+    "ece": 0.011734373039978055,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      0.9634146341463414,
+      1.0
+     ],
+     "macro_f1": [
+      0.9626054504006633,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.0005809747922680769,
+      0.03624588316045136
+     ]
+    }
+   },
+   "user": [
+    {
+     "path": "data/wild/user_reported/turmeric_google_01.jpg",
+     "p_turmeric": 0.9999999999647455,
+     "p_other": null
+    }
+   ],
+   "test_leafonly": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.0002341177184617127,
+    "roc_auc": 1.0
+   },
+   "wild_all_leafonly": {
+    "n": 164,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.002509846413689702,
+    "roc_auc": 1.0
+   }
+  },
+  "concat_dinov2+bioclip2_head": {
+   "info": {
+    "kind": "logistic head on concatenated embeddings",
+    "backbones": [
+     "dinov2",
+     "bioclip2"
+    ],
+    "C": 0.01
+   },
+   "temperature": 0.7523198190666432,
+   "selection": {
+    "val_valswap_macro_f1": 0.9977836798241597,
+    "val_valswap_ece": 0.0023269931528506482
+   },
+   "val": {
+    "n": 242,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.00011745206955848797,
+    "roc_auc": 1.0
+   },
+   "val_swap": {
+    "n": 242,
+    "accuracy": 0.9958677685950413,
+    "precision": 1.0,
+    "recall": 0.9888888888888889,
+    "macro_f1": 0.9955673596483194,
+    "ece": 0.004536534236142868,
+    "roc_auc": 1.0
+   },
+   "test": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.00013398302188016853,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      8.370166011700819e-05,
+      0.00019366772136835962
+     ]
+    }
+   },
+   "test_swap": {
+    "n": 239,
+    "accuracy": 0.99581589958159,
+    "precision": 1.0,
+    "recall": 0.9887640449438202,
+    "macro_f1": 0.9955140116748316,
+    "ece": 0.005660867025637697,
+    "roc_auc": 1.0
+   },
+   "wild_all": {
+    "n": 164,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.0062085864796,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.001033316997584094,
+      0.015551300434173269
+     ]
+    }
+   },
+   "user": [
+    {
+     "path": "data/wild/user_reported/turmeric_google_01.jpg",
+     "p_turmeric": 0.9999467632691719,
+     "p_other": null
+    }
+   ],
+   "test_leafonly": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 8.596829641627224e-05,
+    "roc_auc": 1.0
+   },
+   "wild_all_leafonly": {
+    "n": 164,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.003977850159093651,
+    "roc_auc": 1.0
+   }
+  },
+  "openclip_zeroshot": {
+   "info": {
+    "kind": "zero-shot",
+    "backbone": "openclip_vitb32",
+    "prompts": {
+     "turmeric": [
+      "a photo of a Curcuma longa (turmeric) leaf"
+     ],
+     "blackgram": [
+      "a photo of a Vigna mungo (black gram) leaf"
+     ],
+     "other": [
+      "a photo of something that is not a leaf",
+      "a photo of soil, a hand or an object"
+     ]
+    }
+   },
+   "temperature": 1.9598622971666544,
+   "selection": {
+    "val_valswap_macro_f1": 0.7882286013979528,
+    "val_valswap_ece": 0.047674991400120985
+   },
+   "val": {
+    "n": 242,
+    "accuracy": 0.8181818181818182,
+    "precision": 0.6742424242424242,
+    "recall": 0.9888888888888889,
+    "macro_f1": 0.816931435252046,
+    "ece": 0.047941716716332156,
+    "roc_auc": 0.9671052631578947
+   },
+   "val_swap": {
+    "n": 242,
+    "accuracy": 0.7603305785123967,
+    "precision": 0.6159420289855072,
+    "recall": 0.9444444444444444,
+    "macro_f1": 0.7595257675438596,
+    "ece": 0.06672002221677409,
+    "roc_auc": 0.8888157894736841
+   },
+   "test": {
+    "n": 239,
+    "accuracy": 0.8158995815899581,
+    "precision": 0.6859504132231405,
+    "recall": 0.9325842696629213,
+    "macro_f1": 0.8131485429992893,
+    "ece": 0.047207508142708646,
+    "roc_auc": 0.9531086142322097,
+    "ci95": {
+     "accuracy": [
+      0.766375865971603,
+      0.8649789029535865
+     ],
+     "macro_f1": [
+      0.7599539686937505,
+      0.8621239892903474
+     ],
+     "roc_auc": [
+      0.9263854020555832,
+      0.9750177255953189
+     ],
+     "ece": [
+      0.04105794652457903,
+      0.1040851955225439
+     ]
+    }
+   },
+   "test_swap": {
+    "n": 239,
+    "accuracy": 0.7573221757322176,
+    "precision": 0.6165413533834586,
+    "recall": 0.9213483146067416,
+    "macro_f1": 0.7560881193693694,
+    "ece": 0.058786728665373475,
+    "roc_auc": 0.8982022471910112
+   },
+   "wild_all": {
+    "n": 164,
+    "accuracy": 0.8780487804878049,
+    "precision": 0.8333333333333334,
+    "recall": 0.9659090909090909,
+    "macro_f1": 0.8749046529366895,
+    "ece": 0.07817769089129657,
+    "roc_auc": 0.944078947368421,
+    "ci95": {
+     "accuracy": [
+      0.8220584336893131,
+      0.9221672725976618
+     ],
+     "macro_f1": [
+      0.816699100351365,
+      0.9204649373431683
+     ],
+     "roc_auc": [
+      0.9027374240746334,
+      0.9764072859403632
+     ],
+     "ece": [
+      0.07022910213948366,
+      0.1419434929277785
+     ]
+    }
+   },
+   "user": [
+    {
+     "path": "data/wild/user_reported/turmeric_google_01.jpg",
+     "p_turmeric": 0.9570835511326068,
+     "p_other": 7.874224365878035e-07
+    }
+   ],
+   "test_leafonly": {
+    "n": 239,
+    "accuracy": 0.6820083682008368,
+    "precision": 0.5408805031446541,
+    "recall": 0.9662921348314607,
+    "macro_f1": 0.6815568022440393,
+    "ece": 0.14899595130412452,
+    "roc_auc": 0.9176029962546816
+   },
+   "wild_all_leafonly": {
+    "n": 164,
+    "accuracy": 0.7987804878048781,
+    "precision": 0.7350427350427351,
+    "recall": 0.9772727272727273,
+    "macro_f1": 0.7853658536585366,
+    "ece": 0.04096091485919003,
+    "roc_auc": 0.9467703349282296
+   }
+  },
+  "bioclip2_zeroshot": {
+   "info": {
+    "kind": "zero-shot",
+    "backbone": "bioclip2",
+    "prompts": {
+     "turmeric": [
+      "a photo of a Curcuma longa (turmeric) leaf"
+     ],
+     "blackgram": [
+      "a photo of a Vigna mungo (black gram) leaf"
+     ],
+     "other": [
+      "a photo of something that is not a leaf",
+      "a photo of soil, a hand or an object"
+     ]
+    }
+   },
+   "temperature": 2.0100908312408463,
+   "selection": {
+    "val_valswap_macro_f1": 0.85128987164824,
+    "val_valswap_ece": 0.05902517718412318
+   },
+   "val": {
+    "n": 242,
+    "accuracy": 0.9710743801652892,
+    "precision": 0.946236559139785,
+    "recall": 0.9777777777777777,
+    "macro_f1": 0.9692464099631465,
+    "ece": 0.045755019790536824,
+    "roc_auc": 0.9953947368421051
+   },
+   "val_swap": {
+    "n": 242,
+    "accuracy": 0.7355371900826446,
+    "precision": 0.6,
+    "recall": 0.8666666666666667,
+    "macro_f1": 0.7333333333333334,
+    "ece": 0.1209212453594712,
+    "roc_auc": 0.9006578947368421
+   },
+   "test": {
+    "n": 239,
+    "accuracy": 0.9707112970711297,
+    "precision": 0.9361702127659575,
+    "recall": 0.9887640449438202,
+    "macro_f1": 0.9690099101602296,
+    "ece": 0.04968750060916382,
+    "roc_auc": 0.9987265917602997,
+    "ci95": {
+     "accuracy": [
+      0.9487179487179487,
+      0.9915611814345991
+     ],
+     "macro_f1": [
+      0.9440536840626691,
+      0.9905509913531217
+     ],
+     "roc_auc": [
+      0.9964409624904854,
+      1.0
+     ],
+     "ece": [
+      0.04468612156427439,
+      0.07351496354136881
+     ]
+    }
+   },
+   "test_swap": {
+    "n": 239,
+    "accuracy": 0.7364016736401674,
+    "precision": 0.5970149253731343,
+    "recall": 0.898876404494382,
+    "macro_f1": 0.7352149828541281,
+    "ece": 0.09528583219138702,
+    "roc_auc": 0.8992509363295881
+   },
+   "wild_all": {
+    "n": 164,
+    "accuracy": 0.9451219512195121,
+    "precision": 0.9072164948453608,
+    "recall": 1.0,
+    "macro_f1": 0.9442071442071442,
+    "ece": 0.029820884450582973,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      0.9030303030303031,
+      0.9759036144578314
+     ],
+     "macro_f1": [
+      0.9003009453576221,
+      0.9756785609150931
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.03350074054971785,
+      0.0717843438782973
+     ]
+    }
+   },
+   "user": [
+    {
+     "path": "data/wild/user_reported/turmeric_google_01.jpg",
+     "p_turmeric": 0.9922363546068255,
+     "p_other": 9.146712545771152e-05
+    }
+   ],
+   "test_leafonly": {
+    "n": 239,
+    "accuracy": 0.8619246861924686,
+    "precision": 0.7592592592592593,
+    "recall": 0.9213483146067416,
+    "macro_f1": 0.8575247936123707,
+    "ece": 0.07830137438725017,
+    "roc_auc": 0.9545318352059926
+   },
+   "wild_all_leafonly": {
+    "n": 164,
+    "accuracy": 0.9451219512195121,
+    "precision": 0.9072164948453608,
+    "recall": 1.0,
+    "macro_f1": 0.9442071442071442,
+    "ece": 0.05611893007073883,
+    "roc_auc": 0.995663875598086
+   }
+  },
+  "openclip_head+bioclip2_zeroshot": {
+   "info": {
+    "kind": "product of experts (sum of log-odds)",
+    "members": [
+     "openclip_head",
+     "bioclip2_zeroshot"
+    ]
+   },
+   "temperature": 0.5936016039869858,
+   "selection": {
+    "val_valswap_macro_f1": 0.9977937020221359,
+    "val_valswap_ece": 0.0052312860825216925
+   },
+   "val": {
+    "n": 242,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 2.243634555254559e-06,
+    "roc_auc": 1.0
+   },
+   "val_swap": {
+    "n": 242,
+    "accuracy": 0.9958677685950413,
+    "precision": 0.989010989010989,
+    "recall": 1.0,
+    "macro_f1": 0.9955874040442718,
+    "ece": 0.010460328530488089,
+    "roc_auc": 1.0
+   },
+   "test": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 1.9203187351379825e-07,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      1.3438404519727775e-08,
+      5.41575923729276e-07
+     ]
+    }
+   },
+   "test_swap": {
+    "n": 239,
+    "accuracy": 0.99581589958159,
+    "precision": 0.9888888888888889,
+    "recall": 1.0,
+    "macro_f1": 0.9955344631079389,
+    "ece": 0.0052491281777902726,
+    "roc_auc": 0.9999250936329588
+   },
+   "wild_all": {
+    "n": 164,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 0.001844833511233226,
+    "roc_auc": 1.0,
+    "ci95": {
+     "accuracy": [
+      1.0,
+      1.0
+     ],
+     "macro_f1": [
+      1.0,
+      1.0
+     ],
+     "roc_auc": [
+      1.0,
+      1.0
+     ],
+     "ece": [
+      0.00023539901247012496,
+      0.00386990288435081
+     ]
+    }
+   },
+   "user": [
+    {
+     "path": "data/wild/user_reported/turmeric_google_01.jpg",
+     "p_turmeric": 0.9999999976419944,
+     "p_other": 9.146712545771152e-05
+    }
+   ],
+   "test_leafonly": {
+    "n": 239,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "ece": 2.9284994998213243e-05,
+    "roc_auc": 1.0
+   },
+   "wild_all_leafonly": {
+    "n": 164,
+    "accuracy": 0.9878048780487805,
+    "precision": 0.9777777777777777,
+    "recall": 1.0,
+    "macro_f1": 0.9877153558052434,
+    "ece": 0.010413951368169019,
+    "roc_auc": 0.9998504784688995
+   }
+  }
+ },
+ "negatives": "no openly licensed 'other' training images in the repository; 'other' handled by the zero-shot prompt and the kNN OOD gate",
+ "seconds": 34.940868854522705
+}

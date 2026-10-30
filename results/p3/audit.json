@@ -1,0 +1,48 @@
+{
+  "clahe": {
+    "clahe_function_present": true,
+    "applied_on_lab_L": true,
+    "enhanced_used_by_features": true,
+    "stage1_calls_preprocess": true,
+    "functional_L_changed_mean_abs": 11.643329620361328,
+    "functional_ab_changed_mean_abs": 0.39652442932128906,
+    "flag_off_enhanced_equals_filtered": true,
+    "stage1_runs": true,
+    "note": "CLAHE runs before feature extraction (texture/edge features). Segmentation and colour features deliberately use the denoised, non-CLAHE image because CLAHE shifts colour statistics; this is the v1 design (PROGRESS.md T03)."
+  },
+  "wild_counts": {
+    "blackgram": {
+      "diseased": 40,
+      "healthy": 30,
+      "unknown": 6
+    },
+    "turmeric": {
+      "diseased": 30,
+      "healthy": 25,
+      "unknown": 34
+    }
+  },
+  "wild_per_crop": {
+    "turmeric": 88,
+    "blackgram": 76
+  },
+  "wild_small_sample": {
+    "turmeric": false,
+    "blackgram": false
+  },
+  "leakage": {
+    "n_images": 1771,
+    "by_role": {
+      "train": 1125,
+      "val": 242,
+      "test": 239,
+      "wild": 164,
+      "user": 1
+    },
+    "n_phash_groups": 1709,
+    "n_multi_image_groups": 54,
+    "groups_spanning_roles": 0,
+    "spanning_detail": [],
+    "clean_split_groups_spanning_splits_(split_meta)": 0
+  }
+}

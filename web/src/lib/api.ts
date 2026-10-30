@@ -42,7 +42,23 @@ export type AnalyzeResponse = {
   };
   /** The plain-text result card (leafdx.service.result_card), as the old Streamlit app showed it. */
   result_card?: string[];
+  /** Phase 3 additions: conformal sets, abstention, severity and every model's answer. */
+  crop_confidence?: number | null;
+  crop_set?: Crop[];
+  disease_confidence?: number;
+  disease_set?: Health[];
+  abstain?: { flag: boolean; reason: string | null };
+  affected_pct?: number;
+  severity?: 'mild' | 'moderate' | 'severe' | null;
+  severity_note?: string;
+  arms?: Record<string, ArmAnswer>;
+  production_model?: string;
+  production_model_name?: string;
+  explanation?: string;
+  segmenter?: 'classical' | 'mobilesam';
 };
+
+export type ArmAnswer = { name: string; label: Health; prob: number; config: string; ms: number };
 
 /** One whitelisted pipeline function from GET /api/code. */
 export type CodeItem = { stage: string; name: string; file: string; start_line: number; end_line: number; source: string };

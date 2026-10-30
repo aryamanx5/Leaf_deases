@@ -1,0 +1,57 @@
+== C1_mobilenet_v2 [swap]
+{'arm': 'C1_mobilenet_v2', 'variant': 'swap', 'reused': 'models/disease_cnn.pt', 'checkpoint': 'models/p3/C1_mobilenet_v2_swap.pt'}
+== C1_mobilenet_v2 [plain]
+  epoch 1 loss 0.541 val 0.8649 (13s) *
+  epoch 2 loss 0.357 val 0.9278 (11s) *
+  epoch 3 loss 0.293 val 0.9149 (11s)
+  epoch 4 loss 0.269 val 0.9243 (21s)
+  epoch 5 loss 0.156 val 0.9445 (21s) *
+  epoch 6 loss 0.082 val 0.9792 (13s) *
+  epoch 7 loss 0.056 val 0.9741 (16s)
+  epoch 8 loss 0.051 val 0.9792 (25s)
+  epoch 9 loss 0.036 val 0.9792 (13s)
+  epoch 10 loss 0.032 val 0.9741 (13s)
+{'arm': 'C1_mobilenet_v2', 'variant': 'plain', 'arch': 'mobilenet_v2', 'pretrained': True, 'checkpoint': 'models/p3/C1_mobilenet_v2_plain.pt', 'best_val_macro_f1': 0.9791666666666667, 'best_epoch': 6, 'epochs_run': 10, 'minutes': 2.6148478865623472, 'device': 'mps', 'time_budget_min': 20, 'stopped_by_time_budget': False}
+== C2_efficientnet_b0 [swap]
+  epoch 1 loss 0.591 val 0.8413 (24s) *
+  epoch 2 loss 0.448 val 0.8676 (23s) *
+  epoch 3 loss 0.422 val 0.8591 (40s)
+  epoch 4 loss 0.270 val 0.9688 (57s) *
+  epoch 5 loss 0.179 val 0.9688 (42s)
+  epoch 6 loss 0.165 val 0.9591 (111s)
+  epoch 7 loss 0.173 val 0.9841 (209s) *
+  epoch 8 loss 0.143 val 0.9684 (172s)
+  epoch 9 loss 0.154 val 0.9350 (79s)
+  epoch 10 loss 0.125 val 0.9538 (45s)
+  epoch 11 loss 0.117 val 0.9738 (32s)
+{'arm': 'C2_efficientnet_b0', 'variant': 'swap', 'arch': 'efficientnet_b0', 'pretrained': True, 'checkpoint': 'models/p3/C2_efficientnet_b0_swap.pt', 'best_val_macro_f1': 0.9841467409105797, 'best_epoch': 7, 'epochs_run': 11, 'minutes': 13.94268825451533, 'device': 'mps', 'time_budget_min': 15, 'stopped_by_time_budget': False}
+== C2_efficientnet_b0 [plain]
+  epoch 1 loss 0.511 val 0.9149 (23s) *
+  epoch 2 loss 0.313 val 0.9243 (20s) *
+  epoch 3 loss 0.271 val 0.9149 (19s)
+  epoch 4 loss 0.135 val 0.9947 (49s) *
+  epoch 5 loss 0.061 val 0.9843 (59s)
+  epoch 6 loss 0.059 val 0.9841 (61s)
+  epoch 7 loss 0.050 val 0.9684 (105s)
+  epoch 8 loss 0.032 val 0.9637 (68s)
+{'arm': 'C2_efficientnet_b0', 'variant': 'plain', 'arch': 'efficientnet_b0', 'pretrained': True, 'checkpoint': 'models/p3/C2_efficientnet_b0_plain.pt', 'best_val_macro_f1': 0.9947155803035266, 'best_epoch': 4, 'epochs_run': 8, 'minutes': 6.770680916309357, 'device': 'mps', 'time_budget_min': 15, 'stopped_by_time_budget': False}
+== C3_convnext_tiny [swap]
+  epoch 1 loss 0.573 val 0.8413 (109s) *
+  epoch 2 loss 0.410 val 0.8667 (112s) *
+  epoch 3 loss 0.296 val 0.9634 (144s) *
+  epoch 4 loss 0.173 val 0.9591 (172s)
+  epoch 5 loss 0.159 val 0.9397 (194s)
+  epoch 6 loss 0.152 val 0.9738 (189s) *
+  epoch 7 loss 0.148 val 0.9637 (113s)
+  epoch 8 loss 0.133 val 0.9841 (186s) *
+{'arm': 'C3_convnext_tiny', 'variant': 'swap', 'arch': 'convnext_tiny', 'pretrained': True, 'checkpoint': 'models/p3/C3_convnext_tiny_swap.pt', 'best_val_macro_f1': 0.9841467409105797, 'best_epoch': 8, 'epochs_run': 8, 'minutes': 20.36108088095983, 'device': 'mps', 'time_budget_min': 20, 'stopped_by_time_budget': True}
+== C3_convnext_tiny [plain]
+  epoch 1 loss 0.465 val 0.8710 (121s) *
+  epoch 2 loss 0.278 val 0.8929 (101s) *
+  epoch 3 loss 0.130 val 0.9741 (126s) *
+  epoch 4 loss 0.051 val 0.9895 (116s) *
+  epoch 5 loss 0.034 val 0.9843 (112s)
+  epoch 6 loss 0.020 val 0.9741 (117s)
+  epoch 7 loss 0.015 val 0.9843 (116s)
+  epoch 8 loss 0.012 val 0.9895 (130s)
+{'arm': 'C3_convnext_tiny', 'variant': 'plain', 'arch': 'convnext_tiny', 'pretrained': True, 'checkpoint': 'models/p3/C3_convnext_tiny_plain.pt', 'best_val_macro_f1': 0.9894828335506303, 'best_epoch': 4, 'epochs_run': 8, 'minutes': 15.739128569761911, 'device': 'mps', 'time_budget_min': 20, 'stopped_by_time_budget': False}

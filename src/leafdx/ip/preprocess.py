@@ -45,12 +45,13 @@ def preprocess(img: np.ndarray, cfg: dict) -> dict[str, np.ndarray]:
     """Run the pre-processing chain; returns every intermediate plus HSV/Lab views.
 
     `filtered` is used for colour measurements (CLAHE would distort them);
-    `enhanced` (CLAHE) is used for texture and edge-sensitive steps.
+    `enhanced` (CLAHE) is used for texture and edge-sensitive steps (GLCM, edge density).
+    `preprocess.clahe_enabled: false` turns CLAHE off (`enhanced` = `filtered`); default on.
     """
     p = cfg["preprocess"]
     resized = resize_max_side(img, p["max_side"])
     filtered = denoise(resized, p["median_ksize"], p["gaussian_ksize"])
-    enhanced = clahe_l(filtered, p["clahe_clip"], p["clahe_tile"])
+    enhanced = clahe_l(filtered, p["clahe_clip"], p["clahe_tile"]) if p.get("clahe_enabled", True) else filtered
     return {
         "resized": resized,
         "filtered": filtered,

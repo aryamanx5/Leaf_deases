@@ -1,0 +1,41 @@
+frames: {'train': 1125, 'val': 242, 'test': 239, 'wild_all': 164, 'user': 1, 'wild': 125, 'val_swap': 242, 'test_swap': 239, 'train_swap': 4500, 'val_leafonly': 242, 'test_leafonly': 239, 'wild_leafonly': 125, 'wild_all_leafonly': 164, 'user_leafonly': 1} 5s
+B_svm[pooled,orig] {'all': 'svm C=3 g=scale'} 0s
+B_svm[pooled,swap] {'all': 'svm C=10 g=0.01'} 8s
+B_svm[percrop,orig] {'turmeric': 'svm C=0.3 g=scale', 'blackgram': 'svm C=3 g=0.03'} 0s
+B_svm[percrop,swap] {'turmeric': 'svm C=30 g=0.003', 'blackgram': 'svm C=10 g=scale'} 4s
+B2_lgbm[pooled,orig] {'all': 'lgbm leaves=7'} 1s
+B2_lgbm[pooled,swap] {'all': 'lgbm leaves=7'} 2s
+B2_lgbm[percrop,orig] {'turmeric': 'lgbm leaves=31', 'blackgram': 'lgbm leaves=7'} 1s
+B2_lgbm[percrop,swap] {'turmeric': 'lgbm leaves=31', 'blackgram': 'lgbm leaves=31'} 2s
+D_dinov2[pooled,orig] {'all': 'mlp(256) alpha=0.1'} 7s
+D_dinov2[pooled,swap] {'all': 'lgbm leaves=15'} 12s
+D_dinov2[percrop,orig] {'turmeric': 'mlp(256) alpha=0.1', 'blackgram': 'mlp(256) alpha=0.1'} 7s
+D_dinov2[percrop,swap] {'turmeric': 'lgbm leaves=15', 'blackgram': 'mlp(256) alpha=0.001'} 16s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+E_openclip[pooled,orig] {'all': 'mlp(256) alpha=0.001'} 10s
+E_openclip[pooled,swap] {'all': 'logreg C=0.01'} 17s
+E_openclip[percrop,orig] {'turmeric': 'logreg C=1.0', 'blackgram': 'mlp(256) alpha=0.1'} 9s
+E_openclip[percrop,swap] {'turmeric': 'lgbm leaves=15', 'blackgram': 'logreg C=1.0'} 22s
+E_bioclip2[pooled,orig] {'all': 'logreg C=10.0'} 14s
+E_bioclip2[pooled,swap] {'all': 'mlp(256) alpha=0.001'} 24s
+E_bioclip2[percrop,orig] {'turmeric': 'mlp(256) alpha=0.1', 'blackgram': 'logreg C=10.0'} 14s
+E_bioclip2[percrop,swap] {'turmeric': 'mlp(256) alpha=0.001', 'blackgram': 'logreg C=1.0'} 33s
+F_fusion_dinov2[pooled,orig] {'all': 'mlp(256) alpha=0.1'} 8s
+F_fusion_dinov2[pooled,swap] {'all': 'lgbm leaves=31'} 12s
+F_fusion_dinov2[percrop,orig] {'turmeric': 'logreg C=1.0', 'blackgram': 'logreg C=1.0'} 7s
+F_fusion_dinov2[percrop,swap] {'turmeric': 'lgbm leaves=31', 'blackgram': 'lgbm leaves=15'} 19s
+F_fusion_openclip[pooled,orig] {'all': 'mlp(256) alpha=0.1'} 9s
+F_fusion_openclip[pooled,swap] {'all': 'mlp(256) alpha=0.1'} 16s
+F_fusion_openclip[percrop,orig] {'turmeric': 'logreg C=1.0', 'blackgram': 'mlp(256) alpha=0.1'} 9s
+F_fusion_openclip[percrop,swap] {'turmeric': 'logreg C=1.0', 'blackgram': 'mlp(256) alpha=0.001'} 26s
+F_fusion_bioclip2[pooled,orig] {'all': 'mlp(256) alpha=0.1'} 14s
+F_fusion_bioclip2[pooled,swap] {'all': 'mlp(256) alpha=0.1'} 24s
+F_fusion_bioclip2[percrop,orig] {'turmeric': 'mlp(256) alpha=0.1', 'blackgram': 'logreg C=10.0'} 14s
+F_fusion_bioclip2[percrop,swap] {'turmeric': 'lgbm leaves=31', 'blackgram': 'lgbm leaves=15'} 36s
+C1_mobilenet_v2[swap] 71s
+C1_mobilenet_v2[plain] 70s
+C2_efficientnet_b0[swap] 119s
+C2_efficientnet_b0[plain] 119s
+C3_convnext_tiny[swap] 242s
+C3_convnext_tiny[plain] 251s
+done in 1279s; 39 configurations

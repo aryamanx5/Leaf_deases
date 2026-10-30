@@ -1,0 +1,21 @@
+/Users/aryamansingh/Documents/claude/Sip/leaf-dise/Users/aryamansingh/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/Users/aryamansingh/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/Users/aryamansingh/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+dinov2_vits14 {'status': 'ok', 'weights_hash': '72b5ae1ffa6560787ca9479ef6d02e587352dc92', 'cached_before': 0, 'cached_after': 7396, 'seconds': 332.0}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+openclip_vitb32 {'status': 'ok', 'weights_hash': '49d0397545a687232e40828013e6e56d80e7e166', 'cached_before': 0, 'cached_after': 7396, 'seconds': 290.4}
+bioclip2 {'status': 'ok', 'weights_hash': 'b6477ebfb09e905738786dcbfb35583d413e6927', 'cached_before': 0, 'cached_after': 7396, 'seconds': 2560.2}
+': 1, '/var/folders/7x/g7r8dm916_n9g7r7t9207cf80000gn/T/joblib_memmapping_folder_10813_62af1669f14d4c16b71b13ed7d9fab41_f8cfca5e6e6b4cf1882c0cb29abdbe5f': 1, '/var/folders/7x/g7r8dm916_n9g7r7t9207cf80000gn/T/joblib_memmapping_folder_10813_ae0ca8e08abf41dfa27fba2c011d6a78_44547c613c5a475c8be20b5322b0d336': 1}
+  warnings.warn(
+/Users/aryamansingh/Documents/claude/Sip/leaf-disease/.venv/lib/python3.11/site-packages/joblib/externals/loky/backend/resource_tracker.py:468: UserWarning: resource_tracker: /var/folders/7x/g7r8dm916_n9g7r7t9207cf80000gn/T/joblib_memmapping_folder_10813_ae0ca8e08abf41dfa27fba2c011d6a78_809f821aac334e1996e478b091133be9: FileNotFoundError(2, 'No such file or directory')
+  warnings.warn('resource_tracker: %s: %r' % (name, e))
+/Users/aryamansingh/Documents/claude/Sip/leaf-disease/.venv/lib/python3.11/site-packages/joblib/externals/loky/backend/resource_tracker.py:468: UserWarning: resource_tracker: /var/folders/7x/g7r8dm916_n9g7r7t9207cf80000gn/T/joblib_memmapping_folder_10813_ae0ca8e08abf41dfa27fba2c011d6a78_597146a49f5244dfbdabe1c62c184973: FileNotFoundError(2, 'No such file or directory')
+  warnings.warn('resource_tracker: %s: %r' % (name, e))
+/Users/aryamansingh/Documents/claude/Sip/leaf-disease/.venv/lib/python3.11/site-packages/joblib/externals/loky/backend/resource_tracker.py:468: UserWarning: resource_tracker: /var/folders/7x/g7r8dm916_n9g7r7t9207cf80000gn/T/joblib_memmapping_folder_10813_62af1669f14d4c16b71b13ed7d9fab41_f8cfca5e6e6b4cf1882c0cb29abdbe5f: FileNotFoundError(2, 'No such file or directory')
+  warnings.warn('resource_tracker: %s: %r' % (name, e))
+/Users/aryamansingh/Documents/claude/Sip/leaf-disease/.venv/lib/python3.11/site-packages/joblib/externals/loky/backend/resource_tracker.py:468: UserWarning: resource_tracker: /var/folders/7x/g7r8dm916_n9g7r7t9207cf80000gn/T/joblib_memmapping_folder_10813_ae0ca8e08abf41dfa27fba2c011d6a78_44547c613c5a475c8be20b5322b0d336: FileNotFoundError(2, 'No such file or directory')
+  warnings.warn('resource_tracker: %s: %r' % (name, e))
+exit 0

@@ -1,0 +1,8 @@
+dinov2_head sel 0.9933 ece 0.0068 T 1.17 test acc 1.000 wild acc 1.000 f1 1.000
+openclip_head sel 1.0000 ece 0.0038 T 1.00 test acc 1.000 wild acc 0.951 f1 0.951
+bioclip2_head sel 1.0000 ece 0.0019 T 1.00 test acc 1.000 wild acc 0.988 f1 0.988
+concat_dinov2+bioclip2_head sel 0.9978 ece 0.0023 T 0.75 test acc 1.000 wild acc 1.000 f1 1.000
+openclip_zeroshot sel 0.7882 ece 0.0477 T 1.96 test acc 0.816 wild acc 0.878 f1 0.875
+bioclip2_zeroshot sel 0.8513 ece 0.0590 T 2.01 test acc 0.971 wild acc 0.945 f1 0.944
+openclip_head+bioclip2_zeroshot sel 0.9978 ece 0.0052 T 0.59 test acc 1.000 wild acc 1.000 f1 1.000
+chosen: bioclip2_head | user: [{'p_turmeric': 0.9999999999647455, 'p_other': nan}]
