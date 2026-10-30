@@ -1,0 +1,327 @@
+{
+ "plan": "docs/PLAN_field_validation.md",
+ "field_val_sha1": "2683c42cd461a63791ad22f088593d97db3f6f2d",
+ "n": {
+  "labelled": 911,
+  "groups": 572,
+  "other": 158,
+  "by_source": {
+   "mendeley:45djgf3p96": 400,
+   "mendeley:z55yrbmn2d": 341,
+   "mendeley:jtttfbx342": 170
+  },
+  "by_crop_label": {
+   "blackgram/diseased": 511,
+   "blackgram/healthy": 230,
+   "turmeric/diseased": 123,
+   "turmeric/healthy": 47
+  }
+ },
+ "candidates": {
+  "A_rule": {
+   "macro_f1": 0.7097172859971748,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 0.8863055194932925,
+   "blackgram_f1": 0.6712739364574815
+  },
+  "B_svm[pooled,orig]": {
+   "macro_f1": 0.8230139144132318,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 0.9307366362451108,
+   "blackgram_f1": 0.799908424908425
+  },
+  "B_svm[pooled,swap]": {
+   "macro_f1": 0.8539562578724379,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 1.0,
+   "blackgram_f1": 0.8238818728891251
+  },
+  "B_svm[percrop,orig]": {
+   "macro_f1": 0.774963970616403,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 0.7043058464378261,
+   "blackgram_f1": 0.7913238319130179
+  },
+  "B_svm[percrop,swap]": {
+   "macro_f1": 0.8449927078269324,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 0.9634801288936627,
+   "blackgram_f1": 0.8202844228861206
+  },
+  "B2_lgbm[pooled,orig]": {
+   "macro_f1": 0.8520001065303079,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 0.9713273739247765,
+   "blackgram_f1": 0.8269924812030076
+  },
+  "B2_lgbm[pooled,swap]": {
+   "macro_f1": 0.8450800414117545,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 0.9507021831890302,
+   "blackgram_f1": 0.8222660378892592
+  },
+  "B2_lgbm[percrop,orig]": {
+   "macro_f1": 0.8828048873950316,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 0.9709699453551912,
+   "blackgram_f1": 0.8641751527494907
+  },
+  "B2_lgbm[percrop,swap]": {
+   "macro_f1": 0.8556259904912837,
+   "ms": 522.6842791998934,
+   "turmeric_f1": 0.9777980932480084,
+   "blackgram_f1": 0.8296030632588264
+  },
+  "D_dinov2[pooled,orig]": {
+   "macro_f1": 0.8976528225147009,
+   "ms": 32.97420000017155,
+   "turmeric_f1": 0.9439775910364145,
+   "blackgram_f1": 0.8871340399925344
+  },
+  "D_dinov2[pooled,swap]": {
+   "macro_f1": 0.8393239429766943,
+   "ms": 32.97420000017155,
+   "turmeric_f1": 0.9501236430697011,
+   "blackgram_f1": 0.8124899882761263
+  },
+  "D_dinov2[percrop,orig]": {
+   "macro_f1": 0.8561941165195233,
+   "ms": 32.97420000017155,
+   "turmeric_f1": 0.916883963494133,
+   "blackgram_f1": 0.8423806687654216
+  },
+  "D_dinov2[percrop,swap]": {
+   "macro_f1": 0.8512975295891354,
+   "ms": 32.97420000017155,
+   "turmeric_f1": 0.9177552007740687,
+   "blackgram_f1": 0.8347788496541682
+  },
+  "E_openclip[pooled,orig]": {
+   "macro_f1": 0.8818626584143825,
+   "ms": 34.91979589962284,
+   "turmeric_f1": 0.9925993644160027,
+   "blackgram_f1": 0.8572908572908573
+  },
+  "E_openclip[pooled,swap]": {
+   "macro_f1": 0.9142331393358438,
+   "ms": 34.91979589962284,
+   "turmeric_f1": 0.9925993644160027,
+   "blackgram_f1": 0.8974245938192806
+  },
+  "E_openclip[percrop,orig]": {
+   "macro_f1": 0.8784092755507068,
+   "ms": 34.91979589962284,
+   "turmeric_f1": 0.9774923871309413,
+   "blackgram_f1": 0.8570877531340405
+  },
+  "E_openclip[percrop,swap]": {
+   "macro_f1": 0.916463014364583,
+   "ms": 34.91979589962284,
+   "turmeric_f1": 0.9639387382800899,
+   "blackgram_f1": 0.9057615731401407
+  },
+  "E_bioclip2[pooled,orig]": {
+   "macro_f1": 0.828539557259828,
+   "ms": 374.81719170027645,
+   "turmeric_f1": 0.8987251280829263,
+   "blackgram_f1": 0.8095478343645883
+  },
+  "E_bioclip2[pooled,swap]": {
+   "macro_f1": 0.8638510282161646,
+   "ms": 374.81719170027645,
+   "turmeric_f1": 0.9373233378394986,
+   "blackgram_f1": 0.8458808068110394
+  },
+  "E_bioclip2[percrop,orig]": {
+   "macro_f1": 0.8407915702904138,
+   "ms": 374.81719170027645,
+   "turmeric_f1": 0.792613951425086,
+   "blackgram_f1": 0.852291902316008
+  },
+  "E_bioclip2[percrop,swap]": {
+   "macro_f1": 0.8342944895038168,
+   "ms": 374.81719170027645,
+   "turmeric_f1": 0.8801691729323309,
+   "blackgram_f1": 0.8219408502772643
+  },
+  "F_fusion_dinov2[pooled,orig]": {
+   "macro_f1": 0.9193573372872729,
+   "ms": 555.6584792000649,
+   "turmeric_f1": 0.9307366362451108,
+   "blackgram_f1": 0.9168038922155688
+  },
+  "F_fusion_dinov2[pooled,swap]": {
+   "macro_f1": 0.8595980649901169,
+   "ms": 555.6584792000649,
+   "turmeric_f1": 0.9926960257787325,
+   "blackgram_f1": 0.8290587852141345
+  },
+  "F_fusion_dinov2[percrop,orig]": {
+   "macro_f1": 0.9037953830232116,
+   "ms": 555.6584792000649,
+   "turmeric_f1": 0.9050127713920817,
+   "blackgram_f1": 0.9035042963121097
+  },
+  "F_fusion_dinov2[percrop,swap]": {
+   "macro_f1": 0.883191197519084,
+   "ms": 555.6584792000649,
+   "turmeric_f1": 0.9854849726775956,
+   "blackgram_f1": 0.8596388367729831
+  },
+  "F_fusion_openclip[pooled,orig]": {
+   "macro_f1": 0.9229611338497445,
+   "ms": 557.6040750995162,
+   "turmeric_f1": 0.9925993644160027,
+   "blackgram_f1": 0.9081882729466316
+  },
+  "F_fusion_openclip[pooled,swap]": {
+   "macro_f1": 0.9300292009941381,
+   "ms": 557.6040750995162,
+   "turmeric_f1": 1.0,
+   "blackgram_f1": 0.9146752933559574
+  },
+  "F_fusion_openclip[percrop,orig]": {
+   "macro_f1": 0.9082024680494745,
+   "ms": 557.6040750995162,
+   "turmeric_f1": 1.0,
+   "blackgram_f1": 0.8884880573636542
+  },
+  "F_fusion_openclip[percrop,swap]": {
+   "macro_f1": 0.9138110465666333,
+   "ms": 557.6040750995162,
+   "turmeric_f1": 0.949514233592126,
+   "blackgram_f1": 0.9057615731401407
+  },
+  "F_fusion_bioclip2[pooled,orig]": {
+   "macro_f1": 0.8848110422376174,
+   "ms": 897.5014709001698,
+   "turmeric_f1": 0.8987251280829263,
+   "blackgram_f1": 0.8811869784668195
+  },
+  "F_fusion_bioclip2[pooled,swap]": {
+   "macro_f1": 0.8952873563218391,
+   "ms": 897.5014709001698,
+   "turmeric_f1": 0.9373233378394986,
+   "blackgram_f1": 0.885205782706215
+  },
+  "F_fusion_bioclip2[percrop,orig]": {
+   "macro_f1": 0.8759078037064918,
+   "ms": 897.5014709001698,
+   "turmeric_f1": 0.7702618795427152,
+   "blackgram_f1": 0.9030839587242027
+  },
+  "F_fusion_bioclip2[percrop,swap]": {
+   "macro_f1": 0.8908936381437215,
+   "ms": 897.5014709001698,
+   "turmeric_f1": 0.9507021831890302,
+   "blackgram_f1": 0.8771680335020067
+  },
+  "C1_mobilenet_v2[swap]": {
+   "macro_f1": 0.8961075445877236,
+   "ms": 131.3766792001843,
+   "turmeric_f1": 0.9439775910364145,
+   "blackgram_f1": 0.8854895835073592
+  },
+  "C1_mobilenet_v2[plain]": {
+   "macro_f1": 0.8280412429659171,
+   "ms": 131.3766792001843,
+   "turmeric_f1": 0.8987251280829263,
+   "blackgram_f1": 0.8112436101132909
+  },
+  "C2_efficientnet_b0[swap]": {
+   "macro_f1": 0.9190298765407714,
+   "ms": 543.332575000386,
+   "turmeric_f1": 0.9439775910364145,
+   "blackgram_f1": 0.9134126935227893
+  },
+  "C2_efficientnet_b0[plain]": {
+   "macro_f1": 0.8768880267876278,
+   "ms": 543.332575000386,
+   "turmeric_f1": 0.9701963534361852,
+   "blackgram_f1": 0.8575936883629192
+  },
+  "C3_convnext_tiny[swap]": {
+   "macro_f1": 0.9198060018695585,
+   "ms": 2246.680029100389,
+   "turmeric_f1": 0.9242147922998987,
+   "blackgram_f1": 0.9188034188034188
+  },
+  "C3_convnext_tiny[plain]": {
+   "macro_f1": 0.9085678824914725,
+   "ms": 2246.680029100389,
+   "turmeric_f1": 0.8210257181531058,
+   "blackgram_f1": 0.9304114423742621
+  },
+  "STACK_fv": {
+   "macro_f1": 0.9462817575308309,
+   "ms": 3886.7847501009237,
+   "turmeric_f1": 0.9242147922998987,
+   "blackgram_f1": 0.9513116870179336
+  }
+ },
+ "selection": {
+  "best_point": "STACK_fv",
+  "best_f1": 0.9462817575308309,
+  "best_ci_low": 0.9291480985525875,
+  "tied": [
+   "STACK_fv",
+   "F_fusion_openclip[pooled,swap]"
+  ],
+  "winner": "F_fusion_openclip[pooled,swap]",
+  "winner_f1": 0.9300292009941381,
+  "ms": {
+   "F_fusion_openclip[pooled,swap]": 557.6040750995162,
+   "STACK_fv": 3886.7847501009237
+  }
+ },
+ "leave_one_source_out_winner": {
+  "mendeley:45djgf3p96": "E_openclip[percrop,swap]",
+  "mendeley:jtttfbx342": "STACK_fv",
+  "mendeley:z55yrbmn2d": "E_openclip[pooled,swap]"
+ },
+ "loso_stable": false,
+ "calibration": {
+  "temperature": 2.9955620707912947,
+  "disease_q_lac": 0.2634498923398034,
+  "fold_stability": [
+   {
+    "T": 2.913102836946381,
+    "q": 0.2772917420401728,
+    "held_out_coverage": 0.9234972677595629
+   },
+   {
+    "T": 3.0508320359594556,
+    "q": 0.24086225295797314,
+    "held_out_coverage": 0.8846153846153846
+   },
+   {
+    "T": 2.950403585934983,
+    "q": 0.26014661428197516,
+    "held_out_coverage": 0.8956043956043956
+   },
+   {
+    "T": 2.992927105357895,
+    "q": 0.2648805140285935,
+    "held_out_coverage": 0.9065934065934066
+   },
+   {
+    "T": 3.0650807194442393,
+    "q": 0.26774351174467925,
+    "held_out_coverage": 0.8956043956043956
+   }
+  ],
+  "crop_accuracy_field_val": 0.9934138309549945,
+  "crop_kept": true,
+  "crop_temperature": 1.0967777498753994,
+  "crop_q_lac": 0.002982824644979898,
+  "ood_threshold": 0.4142959415912628,
+  "ood_other_species_refused": 0.6012658227848101,
+  "quality": "unchanged (config p3.quality)"
+ },
+ "old_production": {
+  "disease": "F_fusion",
+  "disease_config": "F_fusion_bioclip2[percrop,swap]",
+  "crop": "bioclip2_head",
+  "reason": "stack not significantly better on both TEST and wild -> prefer the simpler single arm"
+ }
+}

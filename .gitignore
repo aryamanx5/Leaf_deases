@@ -29,3 +29,4 @@ models/cnn_smoke.pt
 # ConvNeXt-Tiny checkpoints are 118 MB each (over the GitHub file limit); rebuild: scripts/p3_train_cnns.py
 models/p3/C3_convnext_tiny_*.pt
 data/wild_ext/*/
+data/field_val/*/

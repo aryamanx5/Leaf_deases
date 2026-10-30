@@ -38,8 +38,13 @@ def load(res):
     J["timing"] = json.loads((res / "p3" / "timing.json").read_text())
     J["cnn_train"] = json.loads((res / "p3_cnn_train.json").read_text())
     J["embed"] = json.loads((res / "p3" / "embed_manifest.json").read_text())
-    J["manifest"] = json.loads((ROOT / "models" / "manifest.json").read_text())
-    J["wild_ext"] = json.loads((res / "wild_ext.json").read_text()) if (res / "wild_ext.json").exists() else None
+    mdir = ROOT / "models"
+    # Phase 3 sections describe the Phase 3 bundle; after a field-validated switch it is kept as manifest_phase3.json
+    J["manifest"] = json.loads((mdir / ("manifest_phase3.json" if (mdir / "manifest_phase3.json").exists()
+                                        else "manifest.json")).read_text())
+    J["manifest_current"] = json.loads((mdir / "manifest.json").read_text())
+    for n in ("wild_ext", "reselection", "reselection_selection", "wild_ext_field"):
+        J[n] = json.loads((res / f"{n}.json").read_text()) if (res / f"{n}.json").exists() else None
     return J
 
 
@@ -117,6 +122,74 @@ def figures(res, J, write: bool) -> list[str]:
     return names
 
 
+def fmt_ms(ms) -> str:
+    return "n/a" if ms is None else f"{ms:.0f}"
+
+
+def reselection_section(J, T) -> list[str]:
+    RS, SEL, XF = J["reselection"], J["reselection_selection"], J["wild_ext_field"]
+    n, sel, cal, cand = SEL["n"], SEL["selection"], SEL["calibration"], SEL["candidates"]
+    old_cfg = RS["old_production"]["disease_config"]
+    L = ["## Field-validated re-selection (pre-registered: docs/PLAN_field_validation.md)", "",
+         "The plan and the SHA-1 of every wild / wild_ext file (results/test_manifest.json) were committed before any "
+         "field-validation data existed. A new validation split, data/field_val (`scripts/build_wild_ext.py --section "
+         f"field_val`), holds {n['labelled']} disease-labelled leaves in {n['groups']} near-duplicate / scene / capture "
+         f"groups (" + ", ".join(f"{k} {v}" for k, v in n["by_crop_label"].items()) + f") and {n['other']} leaves of "
+         "other plant species, from the same CC BY sources as wild_ext but sharing no image, field scene or capture "
+         "minute with wild or wild_ext (a `verify_all` check). Base models were not retrained: field_val only chose "
+         "among the existing configurations and re-fitted temperature, conformal and OOD thresholds "
+         "(`scripts/p3_reselect.py`). The test sets were then scored once (`scripts/p3_reselect_eval.py`).", "",
+         "| candidate (field_val) | macro-F1 | turmeric F1 | black gram F1 | CPU ms/img |", "|---|---|---|---|---|"]
+    top = sorted(cand, key=lambda c: -cand[c]["macro_f1"])[:8]
+    for c in top + ([old_cfg] if old_cfg not in top and old_cfg in cand else []):
+        v = cand[c]
+        tag = " (chosen)" if c == sel["winner"] else " (Phase 3 production)" if c == old_cfg else ""
+        L.append(f"| `{c}`{tag} | {f3(v['macro_f1'])} | {f3(v.get('turmeric_f1'))} | {f3(v.get('blackgram_f1'))} | "
+                 f"{fmt_ms(v.get('ms'))} |")
+    L += ["", f"Best point estimate: `{sel['best_point']}` ({f3(sel['best_f1'])}, grouped-bootstrap CI lower bound "
+          f"{f3(sel['best_ci_low'])}). By the pre-registered tie rule the fastest candidate at or above that bound "
+          f"was chosen: **`{sel['winner']}`** ({f3(sel['winner_f1'])}). Field_val calibration: temperature "
+          f"{cal['temperature']:.2f}; held-out conformal coverage over 5 grouped folds "
+          + ", ".join(f"{f['held_out_coverage']:.2f}" for f in cal["fold_stability"]) + f" (target "
+          f"{T['target_coverage']:.2f}); crop ID kept (field_val accuracy {f3(cal['crop_accuracy_field_val'])}); kNN "
+          f"OOD threshold {cal['ood_threshold']:.3f} (keeps 95% of field_val target leaves; refuses "
+          f"{cal['ood_other_species_refused']:.0%} of field_val other-species leaves on its own).", "",
+          "Leave-one-source-out check: " + "; ".join(f"without {k} the winner is `{v}`" for k, v in
+                                                     SEL["leave_one_source_out_winner"].items()) + ". "
+          + ("The winner is stable." if SEL["loso_stable"] else
+             "**The winner changes with every source removed**: the choice depends on which field sources are in "
+             "the validation split, so the specific configuration is not robustly better than its close rivals "
+             "(OpenCLIP-based heads and the stack)."), "",
+          "### Once-only test evaluation: new vs Phase 3 production", "",
+          f"Test files verified against the frozen hashes: {RS['test_files_verified']}.", "",
+          "| test set | n | Phase 3 macro-F1 [CI] | field-validated macro-F1 [CI] | paired diff [CI] | McNemar (new right / old right, p) |",
+          "|---|---|---|---|---|---|"]
+    for s_, v in RS["sets"].items():
+        d, m = v["new_minus_old_macro_f1"], v["mcnemar_new_vs_old"]
+        L.append(f"| {s_} | {v['n']} | {ci(v['old'], 'macro_f1')} | {ci(v['new'], 'macro_f1')} | {d['diff']:+.3f} "
+                 f"[{d['ci95'][0]:+.3f}, {d['ci95'][1]:+.3f}] | {m['a_right_b_wrong']} / {m['a_wrong_b_right']}, "
+                 f"p {m['p_value']:.2g} |")
+    L += ["", f"Verdict (pre-registered rule): **{RS['verdict']}**; production switched: **{'yes' if RS['switch'] else 'no'}**."
+          + (f" `models/manifest.json` now serves `{RS['new_production']['disease_config']}`; the Phase 3 bundle is kept "
+             "as `models/manifest_phase3.json` and every Phase 3 section above describes it." if RS["switch"] else ""),
+          ""]
+    if XF:
+        e, o = XF["end_to_end"], XF["other_plants"]
+        e0, o0 = J["wild_ext"]["end_to_end"], J["wild_ext"]["other_plants"]
+        L += ["Trust layer on wild_ext, Phase 3 bundle vs field-validated bundle (`results/wild_ext_field.json`):", "",
+              "| | Phase 3 | field-validated |", "|---|---|---|",
+              f"| answered with every gate on | {e0['coverage']:.0%} | {e['coverage']:.0%} |",
+              f"| end-to-end accuracy on answered leaves | {f3(e0['end_to_end_accuracy_answered'])} | {f3(e['end_to_end_accuracy_answered'])} |",
+              f"| end-to-end accuracy, all leaves | {f3(e0['end_to_end_accuracy_all'])} | {f3(e['end_to_end_accuracy_all'])} |",
+              f"| disease conformal coverage (target {T['target_coverage']:.2f}) | {f3(e0['disease_conformal_coverage'])} | {f3(e['disease_conformal_coverage'])} |",
+              f"| other plant species refused | {o0['refused_share']:.0%} | {o['refused_share']:.0%} |", "",
+              f"The looser field_val OOD threshold answers more real leaves but refuses fewer other-species leaves "
+              f"({o['answered_as_target_crop']} of {o['n']} answered as turmeric or black gram). Disease conformal "
+              f"coverage on wild_ext is still below the {T['target_coverage']:.0%} target: field_val and wild_ext come "
+              "from the same sources but are not exchangeable (different scenes, sessions and class mix).", ""]
+    return L
+
+
 def render(J, figs) -> tuple[str, str]:
     D, C, S, T, R, A = (J[k] for k in ("disease_models", "crop_models", "stacking", "trust", "robustness_p3", "audit"))
     arms = {a: v for a, v in D["arms"].items() if "selected_config" in v}
@@ -168,7 +241,10 @@ def render(J, figs) -> tuple[str, str]:
         L.append(f"| {s} | {c['n']} | {ci(c['STACK'], 'macro_f1')} | {ci(c[S['best_single_arm']], 'macro_f1')} | "
                  f"{d['diff']:+.3f} [{d['ci95'][0]:+.3f}, {d['ci95'][1]:+.3f}] | "
                  f"{c['mcnemar_stack_vs_best']['p_value']:.3f} | {c['verdict']} |")
-    L += ["", f"Production disease model: **{prod['disease']}** ({prod['reason']}).", ""]
+    RS = J["reselection"]
+    L += ["", f"Production disease model: **{prod['disease']}** ({prod['reason']})."
+          + (" Replaced after Phase 3 by the field-validated re-selection (last section but one)." if RS and RS["switch"]
+             else ""), ""]
     ch = C["candidates"][C["chosen"]]
     L += ["## Crop identification (P3-M02)", "",
           "| candidate | VAL+VAL-swap macro-F1 | TEST acc [CI] | wild acc [CI] | wild macro-F1 | wild ECE |",
@@ -278,11 +354,13 @@ def render(J, figs) -> tuple[str, str]:
               f"- {len(better)} arm(s) score higher than the production model here ({', '.join(better) or 'none'}). The production "
               "model was fixed on validation data before this set existed; switching now would use this test set for "
               "selection, so it is reported, not acted on. A future model change should be chosen on a separate "
-              "validation split of new field data.",
+              "validation split of new field data" + (" (done: see the next section)." if RS else "."),
               f"- Disease conformal coverage on these leaves is {f3(e['disease_conformal_coverage'])} against the "
               f"{T['target_coverage']:.0%} target: the guarantee holds for VAL-like data only.",
               f"- Quality gate pass rate on target images {f3(e['quality_pass_rate_targets'])}; the rejections are mostly "
               "small leaf crops cut from the 1024 px field scenes (low detail), not whole photos.", ""]
+    if RS:
+        L += reselection_section(J, T)
     L += ["", "## Honest limitations", "",
           f"- Wild set size: {D['n']['wild']} disease-labelled images from two Bangladeshi Mendeley datasets "
           "(labels by those datasets' authors, not re-verified by an agronomist); the crop-only iNaturalist/Commons "
@@ -322,6 +400,13 @@ def render(J, figs) -> tuple[str, str]:
            f"production model reaches macro-F1 {ci(X['disease'][prod['disease']]['pooled'], 'macro_f1')}; with every gate "
            f"it answers {X['end_to_end']['coverage']:.0%} of them and refuses "
            f"{X['other_plants']['refused_share']:.0%} of {X['other_plants']['n']} leaves of other plant species."] if X else []),
+        *([f"- Field-validated re-selection (pre-registered, chosen on a separate field validation split): production "
+           f"now uses `{J['reselection']['new_production']['disease_config']}`, macro-F1 "
+           f"{ci(J['reselection']['sets']['wild_ext']['new'], 'macro_f1')} on the extended field test set vs "
+           f"{ci(J['reselection']['sets']['wild_ext']['old'], 'macro_f1')} for the Phase 3 model (paired difference "
+           f"{J['reselection']['sets']['wild_ext']['new_minus_old_macro_f1']['diff']:+.3f}, CI excludes 0). The exact "
+           "winner changes when any one field source is left out of validation."]
+          if J["reselection"] and J["reselection"]["switch"] else []),
         "",
         "Not claimed:",
         "- No \"state of the art\", \"best in the market\" or field-validated accuracy: the wild set is small and from two "

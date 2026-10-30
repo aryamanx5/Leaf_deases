@@ -253,6 +253,28 @@ def check_p3_artefacts() -> tuple[bool, str]:
     return not missing, "all present" if not missing else f"missing: {missing}"
 
 
+def check_field_val_disjoint() -> tuple[bool, str]:
+    """docs/PLAN_field_validation.md: field_val shares no image, field scene or capture minute with a test set."""
+    fv_f = ROOT / "data/field_val/labels.csv"
+    if not fv_f.exists():
+        return True, "no field_val (re-selection not run)"
+    fv, ext = pd.read_csv(fv_f), pd.read_csv(ROOT / "data/wild_ext/labels.csv")
+    wild = pd.read_csv(ROOT / "data/wild/splits.csv")
+    minute = re.compile(r"(\d{8}_\d{4})")
+
+    def keys(df, col):
+        return {(v.split(":")[0], m.group(1)) for v in df[col] if (m := minute.search(str(v)))}
+
+    paths = set(fv.path) & (set(ext.path) | set(wild.path))
+    scenes = {g for g in fv.src_group if g.startswith("45djgf3p96:")} & {g for g in ext.src_group if g.startswith("45djgf3p96:")}
+    minutes = keys(fv, "src_group") & (keys(ext, "src_group") | {("z55yrbmn2d", m.group(1)) for p in wild.path
+                                                                if "z55yrbmn2d" in p and (m := minute.search(p))})
+    files = set(fv.path.map(lambda p: p.split("/")[-1])) & set(ext.path.map(lambda p: p.split("/")[-1]))
+    ok = not (paths or scenes or minutes or files)
+    return ok, (f"{len(fv)} field_val images; 0 shared images / scenes / capture minutes with wild + wild_ext" if ok else
+                f"shared: {len(paths)} paths, {len(scenes)} scenes, {len(minutes)} minutes, {len(files)} file names")
+
+
 def check_licences() -> tuple[bool, str]:
     cfg = load_config()
     text = (ROOT / "docs/LICENSES.md").read_text()
@@ -282,6 +304,7 @@ def main() -> int:
                    ("site.json fresh vs results", check_site_fresh), ("no hard-coded metrics in web copy", check_no_hardcoded_metrics),
                    ("P3 leakage (pHash groups across train/val/test/wild/user)", lambda: run([py, "scripts/p3_audit.py"])),
                    ("P3 artefacts", check_p3_artefacts), ("P3 licences file", check_licences),
+                   ("field_val disjoint from test sets", check_field_val_disjoint),
                    ("P3 report + README numbers vs results JSON", lambda: run([py, "scripts/p3_report.py", "--check"])),
                    ("P3 API contract + 3 wild images + user image", lambda: run([py, "-m", "pytest", "-q", "-rs", "tests/test_p3_api.py"]))]
         if not args.no_web:

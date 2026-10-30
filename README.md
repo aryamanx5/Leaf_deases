@@ -198,6 +198,7 @@ Claimed, with numbers in results/final_report.md (all from results/*.json):
 - The best single arm by validation is F_fusion (wild macro-F1 0.928 [0.877, 0.968]); the stacking ensemble's verdict against it: TEST no significant difference, wild no significant difference.
 - With every gate on, the app answers 61% of wild photos and abstains on the rest with a stated reason.
 - On a larger extended field test set (1199 labelled leaves, evaluation only) the production model reaches macro-F1 0.870 [0.847, 0.891]; with every gate it answers 53% of them and refuses 94% of 180 leaves of other plant species.
+- Field-validated re-selection (pre-registered, chosen on a separate field validation split): production now uses `F_fusion_openclip[pooled,swap]`, macro-F1 0.917 [0.900, 0.934] on the extended field test set vs 0.870 [0.847, 0.891] for the Phase 3 model (paired difference +0.047, CI excludes 0). The exact winner changes when any one field source is left out of validation.
 
 Not claimed:
 - No "state of the art", "best in the market" or field-validated accuracy: the wild set is small and from two sources, labels are the datasets' own, and no agronomist re-checked them.

@@ -164,6 +164,7 @@ class P3Model:
         if prod == "STACK":
             X = np.array([[logit(per_arm[a]["prob"]) for a in self.stacker["members"]]])
             p_dis = float(self.stacker["meta"].predict_proba(X)[0, 1])
+            p_dis = float(sigmoid(logit(p_dis) / self.stacker.get("temperature", 1.0)))  # field_val stacker only
         else:
             p_dis = per_arm[prod]["prob"]
         dset_mask = conformal_sets(np.array([[p_dis, 1 - p_dis]]), tr["disease_q_lac"])[0]

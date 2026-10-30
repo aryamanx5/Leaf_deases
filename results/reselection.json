@@ -1,0 +1,164 @@
+{
+ "selection_file": "results/reselection_selection.json",
+ "new_production": {
+  "disease": "F_fusion",
+  "disease_config": "F_fusion_openclip[pooled,swap]",
+  "crop": "bioclip2_head",
+  "reason": "field-validated re-selection (docs/PLAN_field_validation.md)"
+ },
+ "old_production": {
+  "disease": "F_fusion",
+  "disease_config": "F_fusion_bioclip2[percrop,swap]",
+  "crop": "bioclip2_head",
+  "reason": "stack not significantly better on both TEST and wild -> prefer the simpler single arm"
+ },
+ "test_files_verified": 1693,
+ "sets": {
+  "wild_ext": {
+   "n": 1199,
+   "old": {
+    "n": 1199,
+    "accuracy": 0.8798999165971643,
+    "precision": 0.8975356679636836,
+    "recall": 0.9141347424042272,
+    "macro_f1": 0.8701209604621774,
+    "ece": 0.06255502438999107,
+    "roc_auc": 0.951193087742159,
+    "ci95": {
+     "accuracy": [
+      0.8586558916019238,
+      0.8991617805812502
+     ],
+     "macro_f1": [
+      0.8471333352699874,
+      0.8907385483567147
+     ],
+     "roc_auc": [
+      0.9361274322918778,
+      0.9643273769910218
+     ],
+     "ece": [
+      0.05050236964925894,
+      0.08404901445255533
+     ]
+    }
+   },
+   "new": {
+    "n": 1199,
+    "accuracy": 0.9241034195162635,
+    "precision": 0.9247448979591837,
+    "recall": 0.9577278731836195,
+    "macro_f1": 0.9173815363343598,
+    "ece": 0.021549014683018987,
+    "roc_auc": 0.9714579460480464,
+    "ci95": {
+     "accuracy": [
+      0.908026257314273,
+      0.939831309336595
+     ],
+     "macro_f1": [
+      0.9004197406366896,
+      0.9340630096803457
+     ],
+     "roc_auc": [
+      0.9613868207713128,
+      0.9803971841782655
+     ],
+     "ece": [
+      0.016523030381222374,
+      0.039037877798535854
+     ]
+    }
+   },
+   "new_minus_old_macro_f1": {
+    "metric": "macro_f1",
+    "diff": 0.047260575872182464,
+    "ci95": [
+     0.02766196380656399,
+     0.0685875865897593
+    ],
+    "ci_contains_0": false
+   },
+   "mcnemar_new_vs_old": {
+    "a_right_b_wrong": 86,
+    "a_wrong_b_right": 33,
+    "p_value": 1.266758571730809e-06
+   }
+  },
+  "wild": {
+   "n": 125,
+   "old": {
+    "n": 125,
+    "accuracy": 0.928,
+    "precision": 1.0,
+    "recall": 0.8714285714285714,
+    "macro_f1": 0.9278337289114119,
+    "ece": 0.0370610538291569,
+    "roc_auc": 0.9971428571428571,
+    "ci95": {
+     "accuracy": [
+      0.8790076711250984,
+      0.968503937007874
+     ],
+     "macro_f1": [
+      0.8772276300006906,
+      0.9683465399820439
+     ],
+     "roc_auc": [
+      0.9894001792781517,
+      1.0
+     ],
+     "ece": [
+      0.02473916590520438,
+      0.0868423315438215
+     ]
+    }
+   },
+   "new": {
+    "n": 125,
+    "accuracy": 0.96,
+    "precision": 0.9850746268656716,
+    "recall": 0.9428571428571428,
+    "macro_f1": 0.9596279310122086,
+    "ece": 0.05137417085715474,
+    "roc_auc": 0.9984415584415585,
+    "ci95": {
+     "accuracy": [
+      0.9206190476190476,
+      0.9919354838709677
+     ],
+     "macro_f1": [
+      0.9198888866187206,
+      0.9917904669349891
+     ],
+     "roc_auc": [
+      0.9934989992103861,
+      1.0
+     ],
+     "ece": [
+      0.033745812489269986,
+      0.08203923084406549
+     ]
+    }
+   },
+   "new_minus_old_macro_f1": {
+    "metric": "macro_f1",
+    "diff": 0.03179420210079664,
+    "ci95": [
+     -0.018021970866929266,
+     0.08808630974855176
+    ],
+    "ci_contains_0": true
+   },
+   "mcnemar_new_vs_old": {
+    "a_right_b_wrong": 8,
+    "a_wrong_b_right": 4,
+    "p_value": 0.3876953125
+   }
+  }
+ },
+ "switch": true,
+ "verdict": "new model better on wild_ext",
+ "loso_stable": false,
+ "trust_wild_ext_field": "results/wild_ext_field.json"
+}

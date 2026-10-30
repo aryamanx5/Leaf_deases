@@ -1,0 +1,131 @@
+{
+ "schema": 1,
+ "created": "2026-10-30T15:19:12",
+ "training_date": "2026-10-30T15:17:04",
+ "dataset_hash": {
+  "splits.csv_sha1": "a904fc5656ceaf64f03f2c101c6ca600d783b017",
+  "features.csv_sha1": "d6dfad1d27cd436d1d8db22631d01f940d7579a9"
+ },
+ "production": {
+  "disease": "F_fusion",
+  "disease_config": "F_fusion_openclip[pooled,swap]",
+  "crop": "bioclip2_head",
+  "reason": "field-validated re-selection (docs/PLAN_field_validation.md)"
+ },
+ "crop": {
+  "config": "bioclip2_head",
+  "file": "models/p3/crop_head_field.joblib",
+  "weights_sha1": "1d7795f7c6ef230fd44beeee27ee99db737fd84c"
+ },
+ "arms": {
+  "A_rule": {
+   "config": "A_rule",
+   "kind": "rule",
+   "file": "models/p3/arms/A_rule.joblib",
+   "weights_sha1": "9f1a852fc8f6c081d4d87b8a13effd8ce42745f9"
+  },
+  "B_svm": {
+   "config": "B_svm[pooled,swap]",
+   "kind": "feat",
+   "file": "models/p3/arms/B_svm.joblib",
+   "weights_sha1": "465cea22e4471b3d038690dca9dd8d845a151d3e"
+  },
+  "B2_lgbm": {
+   "config": "B2_lgbm[pooled,swap]",
+   "kind": "feat",
+   "file": "models/p3/arms/B2_lgbm.joblib",
+   "weights_sha1": "26e0bd310662bab8857a395c1f5d2f9ea60022d7"
+  },
+  "C1_mobilenet_v2": {
+   "config": "C1_mobilenet_v2[plain]",
+   "kind": "cnn",
+   "file": "models/p3/arms/C1_mobilenet_v2.joblib",
+   "checkpoint": "models/p3/C1_mobilenet_v2_plain.pt",
+   "weights_sha1": "906d96af0c7eda83be24cc27e124a36027a345cd",
+   "licence": "BSD-3-Clause (torchvision ImageNet weights)"
+  },
+  "C2_efficientnet_b0": {
+   "config": "C2_efficientnet_b0[swap]",
+   "kind": "cnn",
+   "file": "models/p3/arms/C2_efficientnet_b0.joblib",
+   "checkpoint": "models/p3/C2_efficientnet_b0_swap.pt",
+   "weights_sha1": "5d81fc12814d0629486bc443a9144e254d4b25a7",
+   "licence": "BSD-3-Clause (torchvision ImageNet weights)"
+  },
+  "C3_convnext_tiny": {
+   "config": "C3_convnext_tiny[plain]",
+   "kind": "cnn",
+   "file": "models/p3/arms/C3_convnext_tiny.joblib",
+   "checkpoint": "models/p3/C3_convnext_tiny_plain.pt",
+   "weights_sha1": "215689b311c50b95a60bcd6e3e3efebda80654ed",
+   "licence": "BSD-3-Clause (torchvision ImageNet weights)"
+  },
+  "D_dinov2": {
+   "config": "D_dinov2[percrop,swap]",
+   "kind": "emb",
+   "file": "models/p3/arms/D_dinov2.joblib",
+   "weights_sha1": "0e23895e8e7049ed072847353c3c03795c40664e",
+   "backbone": "dinov2_vits14",
+   "backbone_weights_hash": "72b5ae1ffa6560787ca9479ef6d02e587352dc92",
+   "licence": "Apache-2.0 (facebookresearch/dinov2)"
+  },
+  "E_openclip": {
+   "config": "E_openclip[percrop,swap]",
+   "kind": "emb",
+   "file": "models/p3/arms/E_openclip.joblib",
+   "weights_sha1": "2c23d4ba09bbade3969c0b6fbe889a1d6b2dd913",
+   "backbone": "openclip_vitb32",
+   "backbone_weights_hash": "49d0397545a687232e40828013e6e56d80e7e166",
+   "licence": "MIT (OpenCLIP code); LAION-2B weights released under MIT"
+  },
+  "E_bioclip2": {
+   "config": "E_bioclip2[pooled,swap]",
+   "kind": "emb",
+   "file": "models/p3/arms/E_bioclip2.joblib",
+   "weights_sha1": "c0a2b064ef9dd9eb62fc38781d4e8f0fc641ed1f",
+   "backbone": "bioclip2",
+   "backbone_weights_hash": "b6477ebfb09e905738786dcbfb35583d413e6927",
+   "licence": "MIT (imageomics/bioclip-2 model card)"
+  },
+  "F_fusion": {
+   "config": "F_fusion_openclip[pooled,swap]",
+   "kind": "fusion",
+   "file": "models/p3/arms_field/F_fusion.joblib",
+   "weights_sha1": "22e0d496e80a1e8b5cbc1617da3d66891928355b",
+   "backbone": "bioclip2",
+   "backbone_weights_hash": "b6477ebfb09e905738786dcbfb35583d413e6927",
+   "licence": "MIT (imageomics/bioclip-2 model card)"
+  }
+ },
+ "stacker": null,
+ "trust": {
+  "alpha": 0.1,
+  "crop_model": "bioclip2_head",
+  "disease_model": "F_fusion_bioclip2[percrop,swap]",
+  "crop_q_lac": 0.002982824644979898,
+  "disease_q_lac": 0.2634498923398034,
+  "ood_threshold": 0.4142959415912628,
+  "ood_k": 10,
+  "ood_backbone": "dinov2_vits14",
+  "quality": {
+   "blur_min": 30.0,
+   "dark_max": 0.6,
+   "bright_max": 0.6,
+   "min_leaf_frac": 0.03
+  },
+  "ood_reference": "models/p3/ood_reference.npy",
+  "calibrated_on": "field_val"
+ },
+ "licences": {
+  "dinov2_vits14": "Apache-2.0 (facebookresearch/dinov2)",
+  "openclip_vitb32": "MIT (OpenCLIP code); LAION-2B weights released under MIT",
+  "bioclip2": "MIT (imageomics/bioclip-2 model card)",
+  "mobilenet_v2": "BSD-3-Clause (torchvision ImageNet weights)",
+  "efficientnet_b0": "BSD-3-Clause (torchvision ImageNet weights)",
+  "convnext_tiny": "BSD-3-Clause (torchvision ImageNet weights)"
+ },
+ "data_licences": {
+  "turmeric": "Mendeley g46dvrcvwn v2 (CC BY 4.0)",
+  "blackgram": "BPLD Mendeley zfcv9fmrgv v3 (CC BY 4.0)"
+ }
+}

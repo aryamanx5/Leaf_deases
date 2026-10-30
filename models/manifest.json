@@ -8,13 +8,13 @@
  },
  "production": {
   "disease": "F_fusion",
-  "disease_config": "F_fusion_bioclip2[percrop,swap]",
+  "disease_config": "F_fusion_openclip[pooled,swap]",
   "crop": "bioclip2_head",
-  "reason": "stack not significantly better on both TEST and wild -> prefer the simpler single arm"
+  "reason": "field-validated re-selection (docs/PLAN_field_validation.md)"
  },
  "crop": {
   "config": "bioclip2_head",
-  "file": "models/p3/crop_head.joblib",
+  "file": "models/p3/crop_head_field.joblib",
   "weights_sha1": "1d7795f7c6ef230fd44beeee27ee99db737fd84c"
  },
  "arms": {
@@ -88,37 +88,23 @@
    "licence": "MIT (imageomics/bioclip-2 model card)"
   },
   "F_fusion": {
-   "config": "F_fusion_bioclip2[percrop,swap]",
+   "config": "F_fusion_openclip[pooled,swap]",
    "kind": "fusion",
-   "file": "models/p3/arms/F_fusion.joblib",
+   "file": "models/p3/arms_field/F_fusion.joblib",
    "weights_sha1": "22e0d496e80a1e8b5cbc1617da3d66891928355b",
    "backbone": "bioclip2",
    "backbone_weights_hash": "b6477ebfb09e905738786dcbfb35583d413e6927",
    "licence": "MIT (imageomics/bioclip-2 model card)"
   }
  },
- "stacker": {
-  "file": "models/p3/stacker.joblib",
-  "members": {
-   "A_rule": "A_rule",
-   "B_svm": "B_svm[pooled,swap]",
-   "B2_lgbm": "B2_lgbm[pooled,swap]",
-   "C1_mobilenet_v2": "C1_mobilenet_v2[plain]",
-   "C2_efficientnet_b0": "C2_efficientnet_b0[swap]",
-   "C3_convnext_tiny": "C3_convnext_tiny[plain]",
-   "D_dinov2": "D_dinov2[percrop,swap]",
-   "E_openclip": "E_openclip[percrop,swap]",
-   "E_bioclip2": "E_bioclip2[pooled,swap]",
-   "F_fusion": "F_fusion_bioclip2[percrop,swap]"
-  }
- },
+ "stacker": null,
  "trust": {
   "alpha": 0.1,
   "crop_model": "bioclip2_head",
   "disease_model": "F_fusion_bioclip2[percrop,swap]",
-  "crop_q_lac": 0.00019830820729849208,
-  "disease_q_lac": 0.035686228590243174,
-  "ood_threshold": 0.3878780007362366,
+  "crop_q_lac": 0.002982824644979898,
+  "disease_q_lac": 0.2634498923398034,
+  "ood_threshold": 0.4142959415912628,
   "ood_k": 10,
   "ood_backbone": "dinov2_vits14",
   "quality": {
@@ -127,7 +113,8 @@
    "bright_max": 0.6,
    "min_leaf_frac": 0.03
   },
-  "ood_reference": "models/p3/ood_reference.npy"
+  "ood_reference": "models/p3/ood_reference.npy",
+  "calibrated_on": "field_val"
  },
  "licences": {
   "dinov2_vits14": "Apache-2.0 (facebookresearch/dinov2)",

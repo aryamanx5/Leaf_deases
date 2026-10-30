@@ -32,6 +32,7 @@ from leafdx.p3.data import file_hash  # noqa: E402
 from leafdx.p3.features import features_for  # noqa: E402
 from leafdx.p3.frames import embeddings  # noqa: E402
 from leafdx.p3.quality import quality_stats, quality_verdict  # noqa: E402
+from leafdx.p3.score import config_z  # noqa: E402
 from leafdx.p3.stats import (  # noqa: E402
     abstention_curve,
     conformal_sets,
@@ -51,40 +52,21 @@ def frame(df: pd.DataFrame) -> pd.DataFrame:
     return d
 
 
-def arm_z(arm: str, b: dict, d: pd.DataFrame, feats: np.ndarray) -> np.ndarray:
-    ci = (d.crop == "turmeric").to_numpy(float)[:, None]
-    if "checkpoint" in b:  # CNN arm
-        from leafdx.p3.cnnpred import logits
-
-        return logits(b["checkpoint"], b["arch"], d)
-    if b["kind"] == "rule":
-        row = pd.DataFrame(feats, columns=FEATURE_NAMES).assign(crop=d.crop.values)
-        return 10 * (b["rule"].score(row).to_numpy() - d.crop.map(b["rule"].threshold).to_numpy())
-    parts = []
-    if b["kind"] in ("emb", "fusion"):
-        parts.append(embeddings(b["backbone"], d))
-    if b["kind"] in ("feat", "fusion"):
-        parts.append(feats)
-    X = np.column_stack([*parts, ci]).astype(np.float32)
-    if b["mode"] == "pooled":
-        return heads.raw_score(b["heads"]["all"], X)
-    z = np.zeros(len(d))
-    for c in ("turmeric", "blackgram"):
-        m = (d.crop == c).to_numpy()
-        if m.any():
-            z[m] = heads.raw_score(b["heads"][c], X[m])
-    return z
-
-
 def _q(p: str, leafonly: str) -> dict:
     lo = cv2.imread(leafonly)
     return quality_stats(load_bgr(ROOT / p), (lo != GREY).any(-1))
 
 
 def main() -> int:
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--manifest", default="models/manifest.json")
+    ap.add_argument("--out", default="wild_ext")  # results/<out>.json, results/p3/preds_<out>.csv.gz
+    args = ap.parse_args()
     cfg = load_config()
     heads.pin_lightgbm_openmp()
-    man = json.loads((ROOT / "models" / "manifest.json").read_text())
+    man = json.loads((ROOT / args.manifest).read_text())
     tr = man["trust"]
     nb, seed = cfg["p3"]["bootstrap"], cfg["seed"]
     lab = pd.read_csv(ROOT / cfg["wild_ext"]["root"] / "labels.csv")
@@ -123,14 +105,16 @@ def main() -> int:
         b = joblib.load(ROOT / v["file"])
         if "checkpoint" in b and not (ROOT / b["checkpoint"]).exists():
             continue
-        P[arm] = sigmoid(arm_z(arm, b, labd, Fl) / b["temperature"])
+        P[arm] = sigmoid(config_z(b, labd, Fl) / b["temperature"])
         print(arm, f"acc {np.mean((P[arm] >= 0.5) == labd.y):.3f}", flush=True)
-    stk = joblib.load(ROOT / man["stacker"]["file"])
-    if all(a in P for a in stk["members"]):
+    stk = joblib.load(ROOT / man["stacker"]["file"]) if man.get("stacker") else {"members": {"none": None}}
+    # a stacker is scored only if every member is the configuration it was fitted on
+    if all(a in P and man["arms"][a]["config"] == c for a, c in stk["members"].items()):
         P["STACK"] = stk["meta"].predict_proba(np.column_stack([logit(P[a]) for a in stk["members"]]))[:, 1]
     prod = man["production"]["disease"]
 
-    res = {"protocol": "frozen Phase 3 bundle; nothing fitted on this set", "n": {}, "disease": {}, "crop": {},
+    res = {"protocol": "field-validated bundle (selected and calibrated on data/field_val); nothing fitted on this set"
+           if man["trust"].get("calibrated_on") == "field_val" else "frozen Phase 3 bundle; nothing fitted on this set", "n": {}, "disease": {}, "crop": {},
            "other_plants": {}, "end_to_end": {}}
     res["n"] = {"target_images": len(target), "labelled_leaves": len(labd), "other_plants": len(other),
                 "groups_labelled": int(labd.group.nunique()),
@@ -189,11 +173,12 @@ def main() -> int:
     res["small_print"] = ("labels come from the source datasets' authors and were not re-checked by an agronomist; "
                           "all sources are from Bangladesh; pest classes (aphids, insect, flea beetle) are excluded")
     out = path("results", cfg)
-    (out / "wild_ext.json").write_text(json.dumps(res, indent=1, default=float))
+    res["manifest"] = args.manifest
+    (out / f"{args.out}.json").write_text(json.dumps(res, indent=1, default=float))
     preds = labd[["path", "crop", "label", "y", "group", "source"]].copy()
     for a, p in P.items():
         preds[a] = p
-    preds.to_csv(out / "p3" / "preds_wild_ext.csv.gz", index=False)
+    preds.to_csv(out / "p3" / f"preds_{args.out}.csv.gz", index=False)
     print(json.dumps({k: res[k] for k in ("n", "end_to_end", "other_plants")}, indent=1, default=float)[:3000])
     print({a: round(v["pooled"]["macro_f1"], 3) for a, v in res["disease"].items() if "pooled" in v})
     return 0

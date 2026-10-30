@@ -1,0 +1,43 @@
+field_val: 911 labelled leaves (572 groups), 158 other; 39 configs
+  A_rule                                       0.0s
+  B_svm[pooled,orig]                           0.0s
+  B_svm[pooled,swap]                           0.1s
+  B_svm[percrop,orig]                          0.0s
+  B_svm[percrop,swap]                          0.0s
+  B2_lgbm[pooled,orig]                         0.0s
+  B2_lgbm[pooled,swap]                         0.0s
+  B2_lgbm[percrop,orig]                        0.0s
+  B2_lgbm[percrop,swap]                        0.0s
+  D_dinov2[pooled,orig]                       11.2s
+  D_dinov2[pooled,swap]                        0.0s
+  D_dinov2[percrop,orig]                       0.0s
+  D_dinov2[percrop,swap]                       0.0s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  E_openclip[pooled,orig]                     10.6s
+  E_openclip[pooled,swap]                      0.0s
+  E_openclip[percrop,orig]                     0.0s
+  E_openclip[percrop,swap]                     0.0s
+  E_bioclip2[pooled,orig]                     73.8s
+  E_bioclip2[pooled,swap]                      0.0s
+  E_bioclip2[percrop,orig]                     0.0s
+  E_bioclip2[percrop,swap]                     0.0s
+  F_fusion_dinov2[pooled,orig]                 0.0s
+  F_fusion_dinov2[pooled,swap]                 0.0s
+  F_fusion_dinov2[percrop,orig]                0.0s
+  F_fusion_dinov2[percrop,swap]                0.0s
+  F_fusion_openclip[pooled,orig]               0.0s
+  F_fusion_openclip[pooled,swap]               0.0s
+  F_fusion_openclip[percrop,orig]              0.0s
+  F_fusion_openclip[percrop,swap]              0.0s
+  F_fusion_bioclip2[pooled,orig]               0.0s
+  F_fusion_bioclip2[pooled,swap]               0.0s
+  F_fusion_bioclip2[percrop,orig]              0.0s
+  F_fusion_bioclip2[percrop,swap]              0.0s
+  C1_mobilenet_v2[swap]                       22.8s
+  C1_mobilenet_v2[plain]                      22.4s
+  C2_efficientnet_b0[swap]                    32.2s
+  C2_efficientnet_b0[plain]                   32.0s
+  C3_convnext_tiny[swap]                      56.0s
+  C3_convnext_tiny[plain]                     58.2s
+winner: F_fusion_openclip[pooled,swap] {"best_point": "STACK_fv", "best_f1": 0.9462817575308309, "best_ci_low": 0.9291480985525875, "winner_f1": 0.9300292009941381}
+stage 1 written: results/reselection_selection.json, models/manifest_field.json

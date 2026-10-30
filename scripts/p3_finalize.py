@@ -88,7 +88,10 @@ def main() -> int:
         "licences": LICENCES,
         "data_licences": {"turmeric": "Mendeley g46dvrcvwn v2 (CC BY 4.0)", "blackgram": "BPLD Mendeley zfcv9fmrgv v3 (CC BY 4.0)"},
     }
-    (path("models", cfg).parent / "models" / "manifest.json").write_text(json.dumps(man, indent=1))
+    mdir = path("models", cfg).parent / "models"
+    # after a field-validated switch (scripts/p3_reselect_eval.py) the Phase 3 bundle lives in manifest_phase3.json
+    target = mdir / ("manifest_phase3.json" if (mdir / "manifest_phase3.json").exists() else "manifest.json")
+    target.write_text(json.dumps(man, indent=1))
     print(json.dumps(man["production"], indent=1))
     return 0
 

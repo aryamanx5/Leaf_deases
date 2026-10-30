@@ -1,0 +1,31 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+wild_ext old 0.870 new 0.917 diff +0.047 [0.028, 0.069]
+wild old 0.928 new 0.960 diff +0.032 [-0.018, 0.088]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+A_rule acc 0.720
+B_svm acc 0.866
+B2_lgbm acc 0.871
+C1_mobilenet_v2 acc 0.820
+C2_efficientnet_b0 acc 0.913
+C3_convnext_tiny acc 0.887
+D_dinov2 acc 0.850
+E_openclip acc 0.905
+E_bioclip2 acc 0.878
+F_fusion acc 0.924
+Traceback (most recent call last):
+  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/scripts/p3_wild_ext.py", line 186, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/scripts/p3_wild_ext.py", line 179, in main
+    preds.to_csv(out / "p3" / f"preds_{a.out}.csv.gz", index=False)
+                                       ^^^^^
+AttributeError: 'str' object has no attribute 'out'
+Traceback (most recent call last):
+  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/scripts/p3_reselect_eval.py", line 105, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/aryamansingh/Documents/claude/Sip/leaf-disease/scripts/p3_reselect_eval.py", line 92, in main
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "p3_wild_ext.py"), "--manifest", "models/manifest_field.json",
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_2/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Users/aryamansingh/Documents/claude/Sip/leaf-disease/.venv/bin/python', '/Users/aryamansingh/Documents/claude/Sip/leaf-disease/scripts/p3_wild_ext.py', '--manifest', 'models/manifest_field.json', '--out', 'wild_ext_field']' returned non-zero exit status 1.

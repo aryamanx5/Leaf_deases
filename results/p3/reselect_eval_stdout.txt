@@ -1,0 +1,139 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+wild_ext old 0.870 new 0.917 diff +0.047 [0.028, 0.069]
+wild old 0.928 new 0.960 diff +0.032 [-0.018, 0.088]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+A_rule acc 0.720
+B_svm acc 0.866
+B2_lgbm acc 0.871
+C1_mobilenet_v2 acc 0.820
+C2_efficientnet_b0 acc 0.913
+C3_convnext_tiny acc 0.887
+D_dinov2 acc 0.850
+E_openclip acc 0.905
+E_bioclip2 acc 0.878
+F_fusion acc 0.924
+{
+ "n": {
+  "target_images": 1349,
+  "labelled_leaves": 1199,
+  "other_plants": 180,
+  "groups_labelled": 928,
+  "by_source_label": {
+   "mendeley:45djgf3p96 / blackgram / diseased": 250,
+   "mendeley:45djgf3p96 / blackgram / healthy": 250,
+   "mendeley:45djgf3p96 / blackgram / unknown": 150,
+   "mendeley:89rfgtxbdc / other / unknown": 180,
+   "mendeley:jtttfbx342 / turmeric / diseased": 213,
+   "mendeley:jtttfbx342 / turmeric / healthy": 105,
+   "mendeley:z55yrbmn2d / blackgram / diseased": 294,
+   "mendeley:z55yrbmn2d / blackgram / healthy": 87
+  }
+ },
+ "end_to_end": {
+  "production_model": "F_fusion",
+  "coverage": 0.7714762301918265,
+  "abstain_reasons": {
+   "quality": 98,
+   "disease status uncertain": 75,
+   "crop uncertain": 59,
+   "ood": 42
+  },
+  "crop_accuracy_answered": 1.0,
+  "disease_accuracy_answered": 0.9664864864864865,
+  "end_to_end_accuracy_answered": 0.9664864864864865,
+  "end_to_end_accuracy_all": 0.9232693911592994,
+  "disease_conformal_coverage": 0.8623853211009175,
+  "quality_pass_rate_targets": 0.927353595255745,
+  "ood_flag_rate_targets": 0.03558191252779837,
+  "abstention_curve": [
+   {
+    "coverage": 0.05,
+    "accuracy": 1.0,
+    "min_conf": 0.9901656642749856
+   },
+   {
+    "coverage": 0.1001,
+    "accuracy": 0.9916666666666667,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.1501,
+    "accuracy": 0.9944444444444445,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.2002,
+    "accuracy": 0.9958333333333333,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.2502,
+    "accuracy": 0.9966666666666667,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.3003,
+    "accuracy": 0.9972222222222222,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.3503,
+    "accuracy": 0.9833333333333333,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.4003,
+    "accuracy": 0.9854166666666667,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.4504,
+    "accuracy": 0.987037037037037,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.4996,
+    "accuracy": 0.988313856427379,
+    "min_conf": 0.9901226910830511
+   },
+   {
+    "coverage": 0.5496,
+    "accuracy": 0.9863429438543247,
+    "min_conf": 0.9869087159830161
+   },
+   {
+    "coverage": 0.5997,
+    "accuracy": 0.9874826147426982,
+    "min_conf": 0.9813082821177145
+   },
+   {
+    "coverage": 0.6497,
+    "accuracy": 0.9871630295250321,
+    "min_conf": 0.9722113154638617
+   },
+   {
+    "coverage": 0.6997,
+    "accuracy": 0.9856972586412396,
+    "min_conf": 0.9592925899333781
+   },
+   {
+    "coverage": 0.7498,
+    "accuracy": 0.9810901001112347,
+    "min_conf": 0.9407110105365594
+   },
+   {
+    "coverage": 0.7998,
+    "accuracy": 0.9749739311783108,
+    "min_conf": 0.9118800797959956
+   },
+   {
+    "coverage": 0.8499,
+    "accuracy": 0.9636898920510304,
+    "min_conf": 0.8469213726204754
+   },
+   {
+    "coverage": 0.8999,
+    "accuracy": 0.953660797034291,
+    "min_conf": 0.754207517
+{'A_rule': 0.715, 'B_svm': 0.86, 'B2_lgbm': 0.863, 'C1_mobilenet_v2': 0.804, 'C2_efficientnet_b0': 0.908, 'C3_convnext_tiny': 0.88, 'D_dinov2': 0.834, 'E_openclip': 0.896, 'E_bioclip2': 0.864, 'F_fusion': 0.917, 'STACK': 0.903}
+verdict: new model better on wild_ext | switch: True

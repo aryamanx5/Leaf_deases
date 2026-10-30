@@ -1,4 +1,6 @@
-"""Extended field test set (evaluation ONLY): data/wild_ext/.
+"""Extended field test set (evaluation ONLY): data/wild_ext/. Also builds data/field_val (`--section field_val`):
+the field VALIDATION split of docs/PLAN_field_validation.md, disjoint from every test image, field scene and capture
+minute (config `field_val.exclude_sets`).
 
 Sources (config `wild_ext`, all CC BY 4.0, recorded per image in data/wild_ext/labels.csv):
   * more ORIGINAL images from the two wild-set datasets (images already in data/wild are skipped),
@@ -10,7 +12,7 @@ Near-duplicates of any train / val / test / wild image are dropped (same pHash r
 within one source class); near-duplicates inside wild_ext share a group (for grouped bootstrap).
 Nothing here is used for training, tuning, calibration or selection.
 
-    python scripts/build_wild_ext.py
+    python scripts/build_wild_ext.py [--section wild_ext|field_val]
 """
 
 from __future__ import annotations
@@ -98,7 +100,12 @@ def _zip(s, name=None):
     return zipfile.ZipFile(HttpRangeFile(f["content_details"]["download_url"]))
 
 
-def mendeley_zip(s, out, used, rng, max_side):
+def _minute(name: str) -> str | None:
+    ts = re.search(r"(\d{8}_\d{4})", name)
+    return ts.group(1) if ts else None
+
+
+def mendeley_zip(s, out, used, rng, max_side, used_minutes=frozenset()):
     z = _zip(s)
     by_cls: dict[str, list] = {}
     for i in z.infolist():
@@ -107,23 +114,25 @@ def mendeley_zip(s, out, used, rng, max_side):
     rows = []
     for cls, (label, n) in s["classes"].items():
         pool = sorted((i for i in by_cls.get(normalise_class(cls), [])
-                       if p2_stem(s["id"], cls, i.filename.split("/")[-1]) not in used), key=lambda i: i.filename)
+                       if p2_stem(s["id"], cls, i.filename.split("/")[-1]) not in used
+                       and (s["id"], _minute(i.filename.split("/")[-1])) not in used_minutes), key=lambda i: i.filename)
         for i in rng.sample(pool, min(n, len(pool))):
             stem = re.sub(r"[^\w]+", "_", f"{s['id']}_{cls}_{i.filename.split('/')[-1]}").strip("_")
             dest = out / s["crop"] / label / f"{stem}.jpg"
             if not dest.exists():
                 _save(Image.open(io.BytesIO(z.read(i))), dest, max_side)
             # capture-time groups: files named YYYYMMDD_HHMMSS; shots within the same minute share a group
-            ts = re.match(r"(\d{8}_\d{4})", i.filename.split("/")[-1])
+            mn = _minute(i.filename.split("/")[-1])
             rows.append(_row(dest, s["crop"], label, cls, s["id"], s["licence"],
-                             f"{s['id']}:{cls}:{ts.group(1) if ts else i.filename}", s["citation"],
+                             f"{s['id']}:{cls}:{mn or i.filename}", s["citation"],
                              f"https://data.mendeley.com/datasets/{s['id']}/{s['version']}"))
     return rows
 
 
-def mendeley_boxes(s, out, rng, max_side):
+def mendeley_boxes(s, out, rng, max_side, used_scenes=frozenset()):
     z = _zip(s)
-    names = {i.filename.split("/")[-1]: i for i in z.infolist() if i.filename.lower().endswith(".jpg")}
+    names = {i.filename.split("/")[-1]: i for i in z.infolist()
+             if i.filename.lower().endswith(".jpg") and i.filename.split("/")[-1] not in used_scenes}
     lab = pd.read_csv(io.BytesIO(z.read(next(i for i in z.namelist() if i.endswith("labels.csv")))))
     lab = lab[lab.image_name.isin(names)]
     rows = []
@@ -148,7 +157,7 @@ def mendeley_boxes(s, out, rng, max_side):
             rows.append(_row(dest, "blackgram", label, f"box {code}", s["id"], s["licence"],
                              f"{s['id']}:{r.image_name}", s["citation"],
                              f"https://data.mendeley.com/datasets/{s['id']}/{s['version']}"))
-    for n in rng.sample(sorted(names), min(s["scenes"], len(names))):
+    for n in rng.sample(sorted(names), min(s.get("scenes", 0), len(names))):
         dest = out / "blackgram" / "scene" / f"{s['id']}_scene_{n[:-4]}.jpg"
         if not dest.exists():
             _save(img(n).copy(), dest, max_side)
@@ -158,12 +167,13 @@ def mendeley_boxes(s, out, rng, max_side):
     return rows
 
 
-def mendeley_zip_other(s, out, rng, max_side):
+def mendeley_zip_other(s, out, rng, max_side, used_files=frozenset()):
     z = _zip(s, s["zip"])
     by_dir: dict[str, list] = {}
     for i in z.infolist():
         if not i.is_dir() and i.filename.lower().endswith((".jpg", ".jpeg", ".png")):
-            by_dir.setdefault(i.filename.split("/")[-2], []).append(i)
+            if i.filename not in used_files:
+                by_dir.setdefault(i.filename.split("/")[-2], []).append(i)
     rows = []
     for folder, items in sorted(by_dir.items()):
         for i in rng.sample(sorted(items, key=lambda x: x.filename), min(s["per_folder"], len(items))):
@@ -179,28 +189,41 @@ def mendeley_zip_other(s, out, rng, max_side):
 
 
 def main() -> int:
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--section", default="wild_ext", choices=["wild_ext", "field_val"])
+    section = ap.parse_args().section
     cfg = load_config()
-    w = cfg["wild_ext"]
+    w = cfg[section]
     out = ROOT / w["root"]
     rng = random.Random(w["seed"])
     wild_src = pd.read_csv(ROOT / cfg["wild"]["root"] / "SOURCES.csv")
-    used = {p.split("/")[-1][:-4] for p in wild_src.path}  # stems of images already in data/wild
+    excl = [pd.read_csv(ROOT / f) for f in w.get("exclude_sets", [])]
+    paths = list(wild_src.path) + [p for e in excl for p in e.path]
+    used = {p.split("/")[-1][:-4] for p in paths}  # stems of images already in data/wild (+ excluded sets)
+    groups = [g for e in excl for g in e.src_group]
+    used_minutes = {(g.split(":")[0], _minute(g)) for g in groups if _minute(g)} | \
+        {(p.split("/")[-1].split("_")[0], _minute(p.split("/")[-1])) for p in paths if _minute(p.split("/")[-1])}
+    used_scenes = {g.split(":", 1)[1] for g in groups if g.startswith("45djgf3p96:")}
+    used_files = {g.split(":", 2)[2] for g in groups if g.startswith("89rfgtxbdc:")}
     rows = []
     for s in w["sources"]:
         print("==", s["id"], s["kind"], flush=True)
         if s["kind"] == "mendeley_files":
             rows += mendeley_files(s, out, used, rng, w["max_side"])
         elif s["kind"] == "mendeley_zip":
-            rows += mendeley_zip(s, out, used, rng, w["max_side"])
+            rows += mendeley_zip(s, out, used, rng, w["max_side"], used_minutes)
         elif s["kind"] == "mendeley_boxes":
-            rows += mendeley_boxes(s, out, rng, w["max_side"])
+            rows += mendeley_boxes(s, out, rng, w["max_side"], used_scenes)
         else:
-            rows += mendeley_zip_other(s, out, rng, w["max_side"])
+            rows += mendeley_zip_other(s, out, rng, w["max_side"], used_files)
         print(f"   {len(rows)} images so far", flush=True)
     df = pd.DataFrame(rows).drop_duplicates("path").reset_index(drop=True)
 
     # near-duplicates against every existing image (train / val / test / wild / user) and inside wild_ext
     t = image_table(cfg)
+    t = pd.concat([t, *[e.assign(split="excluded_set") for e in excl]], ignore_index=True)
     allp = pd.concat([t[["path", "crop"]].assign(orig=t.source + ":" + t.orig_class, kind="existing"),
                       df[["path", "crop"]].assign(orig=df.source + ":" + df.orig_class, kind="ext")], ignore_index=True)
     hashes = Parallel(n_jobs=-1)(delayed(phash_pair)(ROOT / p) for p in allp.path)
@@ -216,7 +239,9 @@ def main() -> int:
     keep.to_csv(out / "labels.csv", index=False)
     summary = {"n": len(keep), "dropped_near_duplicates_of_existing": int(df.dup_of_existing.sum()),
                "by_crop_label": {f"{a}/{b}": int(v) for (a, b), v in keep.groupby(["crop", "label"]).size().items()},
-               "by_source": keep.source.value_counts().to_dict(), "n_groups": int(keep.group.nunique())}
+               "by_source": keep.source.value_counts().to_dict(), "n_groups": int(keep.group.nunique()),
+               "excluded_sets": w.get("exclude_sets", []), "excluded_scenes": len(used_scenes),
+               "excluded_capture_minutes": len(used_minutes)}
     (out / "summary.json").write_text(json.dumps(summary, indent=1))
     print(json.dumps(summary, indent=1))
     return 0

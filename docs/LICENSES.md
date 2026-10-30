@@ -29,6 +29,7 @@ MobileSAM (P3-M06 skipped, see PROGRESS.md).
 | More originals from jtttfbx342 / z55yrbmn2d (not in data/wild) | CC BY 4.0 | extended field test set (evaluation only) |
 | Black gram field scenes + leaf boxes, Mendeley 45djgf3p96 (Hridoy et al.) | CC BY 4.0 | extended field test set: leaf crops (healthy / yellow mosaic) and whole scenes (crop ID) |
 | Medicinal plant leaves (aloe, neem, hibiscus, kalanchoe, betel), Mendeley 89rfgtxbdc | CC BY 4.0 | extended field test set: "other plant" refusal test |
+| Further originals from jtttfbx342 / z55yrbmn2d, leaf boxes from 45djgf3p96 scenes not used in wild_ext, more 89rfgtxbdc images (`data/field_val`) | CC BY 4.0 | field validation split: model re-selection and calibration only (docs/PLAN_field_validation.md), never training; no image, scene or capture minute shared with wild / wild_ext |
 | User-reported Google image (`data/wild/user_reported/turmeric_google_01.jpg`) | copyright of its owner; not committed | regression check only |
 
 For a college research project these licences are compatible with the use made here. Before any commercial use, review the ImageNet terms that apply to the torchvision weights.

@@ -320,6 +320,30 @@ Started 2026-10-30. Precondition: PROGRESS.md has no literal `PHASE2_COMPLETE` s
 
 ### Phase 3 evidence log (newest first)
 
+#### 2026-10-30 P3-X02 Field-validated re-selection (pre-registered: docs/PLAN_field_validation.md)
+- Plan + SHA-1 of all 1693 wild / wild_ext files (results/test_manifest.json) committed (6eba2e6) before any field_val data existed.
+- `scripts/build_wild_ext.py --section field_val` -> data/field_val: 911 disease-labelled leaves (572 groups) + 158
+  other-species leaves; 180 near-duplicates of existing images dropped; 0 shared images / 45djgf3p96 scenes /
+  z55yrbmn2d capture minutes with wild + wild_ext (`verify_all` check "field_val disjoint from test sets").
+- `scripts/p3_reselect.py` (field_val only): best point STACK_fv 0.946 (CI low 0.929); tie rule -> fastest at or above
+  that bound = `F_fusion_openclip[pooled,swap]` 0.930 (Phase 3 production `F_fusion_bioclip2[percrop,swap]`: 0.891).
+  T 3.00, held-out fold coverage 0.88-0.92, crop ID kept (0.993), OOD threshold 0.414. Leave-one-source-out: winner
+  changes with every source removed (flagged in the report).
+- `scripts/p3_reselect_eval.py` (once): wild_ext 0.870 -> 0.917, paired diff +0.047 [+0.028, +0.069], McNemar
+  86 / 33, p 1.3e-6 -> "new model better", production switched (models/manifest.json; Phase 3 kept as
+  models/manifest_phase3.json). wild (125): +0.032 [-0.018, +0.088], not significant. Trust layer on wild_ext:
+  answered 53% -> 77%, accuracy on answered 0.967 -> 0.966, disease conformal coverage 0.69 -> 0.86 (target 0.90),
+  other species refused 94% -> 85%.
+- Deviations from the plan, logged here: turmeric validation is 170 leaves, not ~250 (near-duplicate removal and 6
+  downloads that failed after 5 retries); the build script is `build_wild_ext.py --section field_val`, not a separate
+  `build_field_val.py`.
+- Problems: the first stage-2 run crashed in the trust-layer sub-step (`p3_wild_ext.py` reused `a` for its argparse
+  result and a loop variable) after printing the comparison; re-run after the fix gave identical comparison numbers
+  (fixed bootstrap seed). The first wild_ext_field.json also scored the Phase 3 stacker with the new F_fusion as a
+  member (invalid STACK row): stale stackers are now dropped from a switched manifest and skipped when scoring.
+- Tooling: every "Phase 3 bundle" reader (p3_finalize, p3_reselect, `make wild-ext`, p3_report) uses
+  manifest_phase3.json when present; `make reselect` re-runs the whole procedure. API tests: 13 passed on the new bundle.
+
 #### 2026-10-30 P3-M10 Final report
 - `scripts/p3_report.py` -> results/final_report.md (+ results/figures/p3/: reliability, abstention, confusion, arms) and the README block "What is and is not claimed (Phase 3)" between `<!-- p3:begin -->` markers. Every number is read from results/*.json; `p3_report.py --check` re-renders and compares (PASS).
 - Report covers: all arms on TEST / wild / wild_test with grouped bootstrap CIs, per-crop wild macro-F1, stacking (McNemar + paired CI), crop candidates, trust layer, background-swap ablation, shortcut test, fusion ablation (with / without the 57 features), honest limitations.

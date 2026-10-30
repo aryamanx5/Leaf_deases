@@ -1,0 +1,37 @@
+== jtttfbx342 mendeley_files
+   skipped after 5 attempts: jtttfbx342_blotch_blotch__218_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_blotch_blotch__179_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_blotch_blotch__231_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_blotch_blotch__124_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_blotch_blotch__175_jpg.jpg
+   skipped after 5 attempts: jtttfbx342_blotch_blotch__220_jpg.jpg
+   265 images so far
+== z55yrbmn2d mendeley_zip
+   665 images so far
+== 45djgf3p96 mendeley_boxes
+   1069 images so far
+== 89rfgtxbdc mendeley_zip_other
+   1249 images so far
+{
+ "n": 1069,
+ "dropped_near_duplicates_of_existing": 180,
+ "by_crop_label": {
+  "blackgram/diseased": 511,
+  "blackgram/healthy": 230,
+  "other/unknown": 158,
+  "turmeric/diseased": 123,
+  "turmeric/healthy": 47
+ },
+ "by_source": {
+  "mendeley:45djgf3p96": 400,
+  "mendeley:z55yrbmn2d": 341,
+  "mendeley:jtttfbx342": 170,
+  "mendeley:89rfgtxbdc": 158
+ },
+ "n_groups": 727,
+ "excluded_sets": [
+  "data/wild_ext/labels.csv"
+ ],
+ "excluded_scenes": 385,
+ "excluded_capture_minutes": 286
+}

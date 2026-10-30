@@ -3,7 +3,7 @@ PIP ?= .venv/bin/pip
 export PYTHONPATH := src
 
 .PHONY: setup data splits features train-ip train-cnn compare report app test lint verify all \
-	wild wild-ext robust p3 site-data api web-install dev web-build web-preview e2e
+	wild wild-ext reselect robust p3 site-data api web-install dev web-build web-preview e2e
 
 setup:
 	test -d .venv || python3.11 -m venv .venv
@@ -48,6 +48,8 @@ all: data splits features train-ip train-cnn compare report
 
 # ---- Phase 2: robust models, API, web ----------------------------------------------------------
 API_PORT ?= 8010
+# the frozen Phase 3 bundle (manifest_phase3.json exists only after a field-validated switch)
+P3_MANIFEST = $(if $(wildcard models/manifest_phase3.json),models/manifest_phase3.json,models/manifest.json)
 
 wild:            # openly licensed field photos (test/val only, never trained on)
 	$(PY) scripts/build_wild_set.py
@@ -60,7 +62,13 @@ robust:          # diagnosis -> hierarchical crop + disease models -> calibratio
 
 wild-ext:        # extended field test set (evaluation only): download + dedupe, then score the frozen Phase 3 bundle
 	$(PY) scripts/build_wild_ext.py
-	$(PY) scripts/p3_wild_ext.py
+	$(PY) scripts/p3_wild_ext.py --manifest $(P3_MANIFEST)
+	$(PY) scripts/p3_report.py
+
+reselect:        # field-validated re-selection (docs/PLAN_field_validation.md): build field_val, select, evaluate once
+	$(PY) scripts/build_wild_ext.py --section field_val
+	$(PY) scripts/p3_reselect.py
+	$(PY) scripts/p3_reselect_eval.py
 	$(PY) scripts/p3_report.py
 
 p3:              # Phase 3: audit -> embeddings -> CNN arms -> crop ID -> disease arms -> stack -> trust -> report

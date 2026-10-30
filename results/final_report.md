@@ -39,7 +39,7 @@ Stacker: logistic regression over the calibrated log-odds of 10 arms, fitted on 
 | wild | 125 | 0.920 [0.863, 0.968] | 0.928 [0.877, 0.968] | -0.008 [-0.056, +0.041] | 1.000 | no significant difference |
 | wild_test | 62 | 0.903 [0.822, 0.968] | 0.887 [0.806, 0.952] | +0.016 [-0.049, +0.085] | 1.000 | no significant difference |
 
-Production disease model: **F_fusion** (stack not significantly better on both TEST and wild -> prefer the simpler single arm).
+Production disease model: **F_fusion** (stack not significantly better on both TEST and wild -> prefer the simpler single arm). Replaced after Phase 3 by the field-validated re-selection (last section but one).
 
 ## Crop identification (P3-M02)
 
@@ -146,9 +146,52 @@ End-to-end with every gate (F_fusion): answered 53% of labelled leaves; on those
 What this adds to the 125-image wild set:
 
 - The production model's macro-F1 is 0.870 here vs 0.928 on the small wild set: the small set was optimistic.
-- 4 arm(s) score higher than the production model here (C2_efficientnet_b0, C3_convnext_tiny, E_openclip, STACK). The production model was fixed on validation data before this set existed; switching now would use this test set for selection, so it is reported, not acted on. A future model change should be chosen on a separate validation split of new field data.
+- 4 arm(s) score higher than the production model here (C2_efficientnet_b0, C3_convnext_tiny, E_openclip, STACK). The production model was fixed on validation data before this set existed; switching now would use this test set for selection, so it is reported, not acted on. A future model change should be chosen on a separate validation split of new field data (done: see the next section).
 - Disease conformal coverage on these leaves is 0.691 against the 90% target: the guarantee holds for VAL-like data only.
 - Quality gate pass rate on target images 0.927; the rejections are mostly small leaf crops cut from the 1024 px field scenes (low detail), not whole photos.
+
+## Field-validated re-selection (pre-registered: docs/PLAN_field_validation.md)
+
+The plan and the SHA-1 of every wild / wild_ext file (results/test_manifest.json) were committed before any field-validation data existed. A new validation split, data/field_val (`scripts/build_wild_ext.py --section field_val`), holds 911 disease-labelled leaves in 572 near-duplicate / scene / capture groups (blackgram/diseased 511, blackgram/healthy 230, turmeric/diseased 123, turmeric/healthy 47) and 158 leaves of other plant species, from the same CC BY sources as wild_ext but sharing no image, field scene or capture minute with wild or wild_ext (a `verify_all` check). Base models were not retrained: field_val only chose among the existing configurations and re-fitted temperature, conformal and OOD thresholds (`scripts/p3_reselect.py`). The test sets were then scored once (`scripts/p3_reselect_eval.py`).
+
+| candidate (field_val) | macro-F1 | turmeric F1 | black gram F1 | CPU ms/img |
+|---|---|---|---|---|
+| `STACK_fv` | 0.946 | 0.924 | 0.951 | 3887 |
+| `F_fusion_openclip[pooled,swap]` (chosen) | 0.930 | 1.000 | 0.915 | 558 |
+| `F_fusion_openclip[pooled,orig]` | 0.923 | 0.993 | 0.908 | 558 |
+| `C3_convnext_tiny[swap]` | 0.920 | 0.924 | 0.919 | 2247 |
+| `F_fusion_dinov2[pooled,orig]` | 0.919 | 0.931 | 0.917 | 556 |
+| `C2_efficientnet_b0[swap]` | 0.919 | 0.944 | 0.913 | 543 |
+| `E_openclip[percrop,swap]` | 0.916 | 0.964 | 0.906 | 35 |
+| `E_openclip[pooled,swap]` | 0.914 | 0.993 | 0.897 | 35 |
+| `F_fusion_bioclip2[percrop,swap]` (Phase 3 production) | 0.891 | 0.951 | 0.877 | 898 |
+
+Best point estimate: `STACK_fv` (0.946, grouped-bootstrap CI lower bound 0.929). By the pre-registered tie rule the fastest candidate at or above that bound was chosen: **`F_fusion_openclip[pooled,swap]`** (0.930). Field_val calibration: temperature 3.00; held-out conformal coverage over 5 grouped folds 0.92, 0.88, 0.90, 0.91, 0.90 (target 0.90); crop ID kept (field_val accuracy 0.993); kNN OOD threshold 0.414 (keeps 95% of field_val target leaves; refuses 60% of field_val other-species leaves on its own).
+
+Leave-one-source-out check: without mendeley:45djgf3p96 the winner is `E_openclip[percrop,swap]`; without mendeley:jtttfbx342 the winner is `STACK_fv`; without mendeley:z55yrbmn2d the winner is `E_openclip[pooled,swap]`. **The winner changes with every source removed**: the choice depends on which field sources are in the validation split, so the specific configuration is not robustly better than its close rivals (OpenCLIP-based heads and the stack).
+
+### Once-only test evaluation: new vs Phase 3 production
+
+Test files verified against the frozen hashes: 1693.
+
+| test set | n | Phase 3 macro-F1 [CI] | field-validated macro-F1 [CI] | paired diff [CI] | McNemar (new right / old right, p) |
+|---|---|---|---|---|---|
+| wild_ext | 1199 | 0.870 [0.847, 0.891] | 0.917 [0.900, 0.934] | +0.047 [+0.028, +0.069] | 86 / 33, p 1.3e-06 |
+| wild | 125 | 0.928 [0.877, 0.968] | 0.960 [0.920, 0.992] | +0.032 [-0.018, +0.088] | 8 / 4, p 0.39 |
+
+Verdict (pre-registered rule): **new model better on wild_ext**; production switched: **yes**. `models/manifest.json` now serves `F_fusion_openclip[pooled,swap]`; the Phase 3 bundle is kept as `models/manifest_phase3.json` and every Phase 3 section above describes it.
+
+Trust layer on wild_ext, Phase 3 bundle vs field-validated bundle (`results/wild_ext_field.json`):
+
+| | Phase 3 | field-validated |
+|---|---|---|
+| answered with every gate on | 53% | 77% |
+| end-to-end accuracy on answered leaves | 0.967 | 0.966 |
+| end-to-end accuracy, all leaves | 0.880 | 0.923 |
+| disease conformal coverage (target 0.90) | 0.691 | 0.862 |
+| other plant species refused | 94% | 85% |
+
+The looser field_val OOD threshold answers more real leaves but refuses fewer other-species leaves (27 of 180 answered as turmeric or black gram). Disease conformal coverage on wild_ext is still below the 90% target: field_val and wild_ext come from the same sources but are not exchangeable (different scenes, sessions and class mix).
 
 
 ## Honest limitations
