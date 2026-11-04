@@ -32,7 +32,7 @@ from leafdx.config import ROOT, load_config
 from leafdx.data import HttpRangeFile, normalise_class
 from leafdx.p3.data import image_table
 from leafdx.p4 import minute
-from leafdx.split import cluster_images, phash_pair
+from leafdx.split import UnionFind, cluster_images, phash_pair
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_wild_ext as bwe  # noqa: E402  (shared helpers: _save, _row, p2_stem, mendeley_boxes)
@@ -182,22 +182,21 @@ def main() -> int:
     existing = set(allp.loc[allp.kind == "existing", "cl"])
     cl = allp.loc[allp.kind == "pool", "cl"].to_numpy()
     df["dup_of_existing"] = [c in existing for c in cl]
-    df["group"] = "p" + pd.Series(cl).astype(str)
-    df["group"] = df.groupby("src_group")["group"].transform("min")  # union with source group
-    # a pHash cluster can bridge two source groups: take connected components over both keys
-    parent = {g: g for g in df.group}
-    for _, gs in df.groupby(pd.Series(cl, index=df.index))["group"]:
-        gs = sorted(set(gs))
-        for g in gs[1:]:
-            parent[g] = gs[0]
-
-    def root(g):
-        while parent[g] != g:
-            parent[g] = parent[parent[g]]
-            g = parent[g]
-        return g
-
-    df["group"] = df.group.map(root)
+    # split groups = source group (capture minute / field scene / leaf pair) + STRONG pHash duplicates within a crop.
+    # The medium / burst rules above chain similar-looking field leaves into one giant cluster (592 images): right
+    # for dropping near-duplicates of test images, too coarse for splitting the pool.
+    pool_idx = np.flatnonzero((allp.kind == "pool").to_numpy())
+    strong = {**cfg["split"]["dedup"], "medium_d64": -1, "medium_d256": -1, "burst_index_gap": -1}
+    cl_s = cluster_images(df.assign(orig_class=df.source), hs[pool_idx], hl[pool_idx], strong, use_stems=False)
+    uf = UnionFind(len(df))
+    for key in (df.src_group.to_numpy(), cl_s):
+        first: dict = {}
+        for i, k in enumerate(key):
+            if k in first:
+                uf.union(first[k], i)
+            else:
+                first[k] = i
+    df["group"] = [f"p{uf.find(i)}" for i in range(len(df))]
     keep = df[~df.dup_of_existing].reset_index(drop=True)
 
     # ---- grouped, stratified split --------------------------------------------------------------------------------
