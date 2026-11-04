@@ -275,6 +275,23 @@ def check_field_val_disjoint() -> tuple[bool, str]:
                 f"shared: {len(paths)} paths, {len(scenes)} scenes, {len(minutes)} minutes, {len(files)} file names")
 
 
+def check_p4_disjoint() -> tuple[bool, str]:
+    """docs/PLAN_phase4_more_data.md: the Phase 4 pool shares no image, file name, field scene or capture minute
+    (both camera name forms) with wild / wild_ext, and no group spans two Phase 4 splits."""
+    from leafdx.p4 import overlap_with_tests
+
+    f = ROOT / "data/p4/labels.csv"
+    if not f.exists():
+        return True, "no Phase 4 pool (scripts/build_p4_pool.py not run)"
+    pool = pd.read_csv(f)
+    ov = overlap_with_tests(pool, list(pd.read_csv(ROOT / "data/wild/SOURCES.csv").path),
+                            pd.read_csv(ROOT / "data/wild_ext/labels.csv"))
+    span = int((pool.groupby("group").p4_split.nunique() > 1).sum())
+    ok = not any(ov.values()) and span == 0
+    return ok, (f"{len(pool)} pool images; 0 shared with wild + wild_ext; 0 groups across splits" if ok else
+                f"shared {ov}; {span} groups across splits")
+
+
 def check_licences() -> tuple[bool, str]:
     cfg = load_config()
     text = (ROOT / "docs/LICENSES.md").read_text()
@@ -305,6 +322,7 @@ def main() -> int:
                    ("P3 leakage (pHash groups across train/val/test/wild/user)", lambda: run([py, "scripts/p3_audit.py"])),
                    ("P3 artefacts", check_p3_artefacts), ("P3 licences file", check_licences),
                    ("field_val disjoint from test sets", check_field_val_disjoint),
+                   ("Phase 4 pool disjoint from test sets", check_p4_disjoint),
                    ("P3 report + README numbers vs results JSON", lambda: run([py, "scripts/p3_report.py", "--check"])),
                    ("P3 API contract + 3 wild images + user image", lambda: run([py, "-m", "pytest", "-q", "-rs", "tests/test_p3_api.py"]))]
         if not args.no_web:
