@@ -451,3 +451,59 @@ Started 2026-10-30. Precondition: PROGRESS.md has no literal `PHASE2_COMPLETE` s
 ## NEXT (Phase 3)
 
 All Phase 3 tasks are DONE except P3-M06 (optional, skipped: no hand-checked leaf masks) and the optional few-shot part of P3-M07 (not run: wild set kept evaluation-only); `python scripts/verify_all.py` exits 0. Possible follow-ups: hand-label >= 30 wild leaf masks to run the MobileSAM comparison; a larger, agronomist-verified wild set from other regions.
+
+## Phase 4: more field training data (pre-registered: docs/PLAN_phase4_more_data.md)
+
+Started 2026-11-04. Plan committed (9bcb445) before any Phase 4 split or model existed.
+
+| ID | Task | Status | Evidence pointer |
+|----|------|--------|------------------|
+| P4-01 | Plan + switch rule | DONE | 9bcb445 |
+| P4-02 | Data pool + grouped split | DONE | P4 log 02 |
+| P4-03 | Re-fit, select, calibrate on p4_val | DONE | P4 log 03 |
+| P4-04 | Once-only evaluation + switch | DONE (switched) | P4 log 04 |
+| P4-05 | Report, checks, tests | DONE | P4 log 05 |
+
+### Phase 4 evidence log (newest first)
+
+#### 2026-11-04 P4-05 Report, checks, tests
+- `scripts/p4_report.py` -> results/p4_report.md (73 lines, numbers from JSON only; `--check` in verify_all).
+- `verify_all` check "Phase 4 pool disjoint from test sets" (paths, file names, 45djgf3p96 scenes, z55yrbmn2d capture
+  minutes in both camera name forms; no group across splits). tests/test_p4.py: 8 passed.
+- `pytest tests/test_p3_api.py tests/test_p4.py tests/test_p3.py` with the switched bundle -> 29 passed.
+
+#### 2026-11-04 P4-04 Once-only evaluation (`scripts/p4_eval.py`)
+- Disease (true crop), previous `F_fusion_openclip[pooled,swap]` -> Phase 4 `D_dinov2[pooled,orig]`, macro-F1:
+  p4_test 0.922 -> 0.963 (paired +0.042 [+0.002, +0.089], McNemar 12/3 p 0.035); wild_ext 0.917 -> 0.962
+  (+0.044 [+0.027, +0.062]); wild 0.960 -> 0.976 (n.s.); clean TEST 1.000 -> 0.989 (-0.011 [-0.030, 0.000]).
+- Black gram field leaves: p4_test 0.911 -> 0.958, wild_ext 0.895 -> 0.954. Turmeric unchanged (p4_test n 34).
+- Trust on p4_test (no quality gate): answered 79% -> 85%, end-to-end accuracy on answered 0.970 -> 1.000;
+  other species refused 87% -> 89% (n 38).
+- Switch rule met (CI lower bound > 0, clean TEST drop 0.011 <= 0.02): models/manifest.json = manifest_p4.json;
+  previous bundle stays as models/manifest_field.json.
+
+#### 2026-11-04 P4-03 Training and selection (`scripts/p4_train.py`, 394 s)
+- 32 configurations re-fitted on clean TRAIN (+ swap) + 995 p4_train leaves; p4_val macro-F1 0.943-0.987.
+- Best point `F_fusion_dinov2[percrop,orig]` 0.987 (CI low 0.968); 12 tied; fastest tied = `D_dinov2[pooled,orig]`
+  (0.978, 33 ms/image; MLP head). T 1.49; crop head C 0.01, p4_val crop accuracy 1.000; OOD threshold 0.303 over
+  6662 reference leaves (71% of p4_val other species refused by OOD alone).
+
+#### 2026-11-04 P4-02 Data pool (`scripts/build_p4_pool.py`)
+- 1919 images, 833 groups: z55yrbmn2d 1089 (field_val 234 + 855 new), 45djgf3p96 400 (field_val), PhilMedic
+  tsvdyhbphs 207 (turmeric crop-only 69, other species 138), jtttfbx342 170 (field_val), 89rfgtxbdc 53 (field_val).
+- Disease-labelled leaves: p4_train 995 / p4_val 333 / p4_test 331. 329 near-duplicates of clean / wild / wild_ext dropped.
+
+### Phase 4 deviations and problems (kept, not hidden)
+- **Phase 3 capture-minute gap.** Phase 3's rule (`\d{8}_\d{4}`) missed `IMGyyyymmddhhmmss` names, so 196 field_val
+  images (93 black gram, 103 other species) share a capture minute with a wild / wild_ext image. Phase 3's field_val
+  re-selection was therefore not fully disjoint from wild_ext; its wild_ext gain (0.870 -> 0.917) may be slightly
+  optimistic. Phase 4 drops those images and uses `leafdx.p4.minute` (both forms) everywhere.
+- **Split groups (deviation from the plan's "merged with pHash clusters").** The medium / burst pHash rules chained 592
+  similar-looking field leaves into one group, forcing a 73/13/13 split. Split groups now use source group + strong
+  pHash duplicates only (60/20/20); the full rules still drive the near-duplicate drop against test images.
+- **First build kept too few z55 images**: shots sharing a minute only with pool images were dropped; they are now
+  kept and grouped. **No new 45djgf3p96 boxes**: the 61 unused scenes hold almost only flea-beetle (pest) boxes.
+- **README.md** is deleted in the working tree (not by this phase, not committed); `scripts/p3_report.py` needs it,
+  so the Phase 4 report is a separate file and final_report.md (Phase 3, the paper's frozen numbers) is unchanged.
+- After Phase 4, wild / wild_ext share sources (not images, scenes or capture minutes) with training: they measure
+  new images from known sources. Phase 3's numbers keep the "new sources" claim.
