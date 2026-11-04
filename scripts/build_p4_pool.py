@@ -150,7 +150,7 @@ def main() -> int:
     for s in w["sources"]:
         print("==", s["id"], s["kind"], flush=True)
         if s["kind"] == "mendeley_zip":
-            rows += z55_rows(s, out, used_stems, test_minutes | pool_minutes, w["max_side"])
+            rows += z55_rows(s, out, used_stems, test_minutes, w["max_side"])  # pool minutes: grouped, not dropped
         elif s["kind"] == "mendeley_boxes":
             rows += bwe.mendeley_boxes(s, out, rng, w["max_side"], used_scenes)
         elif s["kind"] == "mendeley_prefix":
