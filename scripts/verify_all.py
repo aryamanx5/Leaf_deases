@@ -271,7 +271,8 @@ def check_field_val_disjoint() -> tuple[bool, str]:
                                                                 if "z55yrbmn2d" in p and (m := minute.search(p))})
     files = set(fv.path.map(lambda p: p.split("/")[-1])) & set(ext.path.map(lambda p: p.split("/")[-1]))
     ok = not (paths or scenes or minutes or files)
-    return ok, (f"{len(fv)} field_val images; 0 shared images / scenes / capture minutes with wild + wild_ext" if ok else
+    return ok, (f"{len(fv)} field_val images; 0 shared images / scenes / capture minutes (Phase 3 yyyymmdd_hhmm rule; "
+                "196 share a minute under the full rule, see PROGRESS Phase 4) with wild + wild_ext" if ok else
                 f"shared: {len(paths)} paths, {len(scenes)} scenes, {len(minutes)} minutes, {len(files)} file names")
 
 
