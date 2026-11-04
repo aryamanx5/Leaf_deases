@@ -3,7 +3,7 @@ PIP ?= .venv/bin/pip
 export PYTHONPATH := src
 
 .PHONY: setup data splits features train-ip train-cnn compare report app test lint verify all \
-	wild wild-ext reselect robust p3 site-data api web-install dev web-build web-preview e2e
+	wild wild-ext reselect robust p3 p4 site-data api web-install dev web-build web-preview e2e
 
 setup:
 	test -d .venv || python3.11 -m venv .venv
@@ -70,6 +70,11 @@ reselect:        # field-validated re-selection (docs/PLAN_field_validation.md):
 	$(PY) scripts/p3_reselect.py
 	$(PY) scripts/p3_reselect_eval.py
 	$(PY) scripts/p3_report.py
+
+p4:              # Phase 4: more field training data (docs/PLAN_phase4_more_data.md): pool -> train -> evaluate once
+	$(PY) scripts/build_p4_pool.py
+	$(PY) scripts/p4_train.py
+	$(PY) scripts/p4_eval.py
 
 p3:              # Phase 3: audit -> embeddings -> CNN arms -> crop ID -> disease arms -> stack -> trust -> report
 	$(PY) scripts/p3_audit.py
