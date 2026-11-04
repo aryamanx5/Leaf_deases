@@ -323,6 +323,8 @@ def main() -> int:
                    ("P3 artefacts", check_p3_artefacts), ("P3 licences file", check_licences),
                    ("field_val disjoint from test sets", check_field_val_disjoint),
                    ("Phase 4 pool disjoint from test sets", check_p4_disjoint),
+                   ("Phase 4 report vs results JSON", lambda: run([py, "scripts/p4_report.py", "--check"])
+                    if (ROOT / "results/p4/selection.json").exists() else (True, "Phase 4 not run")),
                    ("P3 report + README numbers vs results JSON", lambda: run([py, "scripts/p3_report.py", "--check"])),
                    ("P3 API contract + 3 wild images + user image", lambda: run([py, "-m", "pytest", "-q", "-rs", "tests/test_p3_api.py"]))]
         if not args.no_web:
