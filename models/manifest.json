@@ -1,20 +1,20 @@
 {
  "schema": 1,
- "created": "2026-10-30T15:19:12",
+ "created": "2026-11-04T19:56:54",
  "training_date": "2026-10-30T15:17:04",
  "dataset_hash": {
   "splits.csv_sha1": "a904fc5656ceaf64f03f2c101c6ca600d783b017",
   "features.csv_sha1": "d6dfad1d27cd436d1d8db22631d01f940d7579a9"
  },
  "production": {
-  "disease": "F_fusion",
-  "disease_config": "F_fusion_openclip[pooled,swap]",
+  "disease": "D_dinov2",
+  "disease_config": "D_dinov2[pooled,orig]",
   "crop": "bioclip2_head",
-  "reason": "field-validated re-selection (docs/PLAN_field_validation.md)"
+  "reason": "Phase 4: trained with field data (docs/PLAN_phase4_more_data.md)"
  },
  "crop": {
   "config": "bioclip2_head",
-  "file": "models/p3/crop_head_field.joblib",
+  "file": "models/p4/crop_head.joblib",
   "weights_sha1": "1d7795f7c6ef230fd44beeee27ee99db737fd84c"
  },
  "arms": {
@@ -61,13 +61,11 @@
    "licence": "BSD-3-Clause (torchvision ImageNet weights)"
   },
   "D_dinov2": {
-   "config": "D_dinov2[percrop,swap]",
+   "config": "D_dinov2[pooled,orig]",
    "kind": "emb",
-   "file": "models/p3/arms/D_dinov2.joblib",
-   "weights_sha1": "0e23895e8e7049ed072847353c3c03795c40664e",
+   "file": "models/p4/arms/D_dinov2.joblib",
    "backbone": "dinov2_vits14",
-   "backbone_weights_hash": "72b5ae1ffa6560787ca9479ef6d02e587352dc92",
-   "licence": "Apache-2.0 (facebookresearch/dinov2)"
+   "trained_on": "clean train (+ swap views) + p4_train"
   },
   "E_openclip": {
    "config": "E_openclip[percrop,swap]",
@@ -101,10 +99,10 @@
  "trust": {
   "alpha": 0.1,
   "crop_model": "bioclip2_head",
-  "disease_model": "F_fusion_bioclip2[percrop,swap]",
-  "crop_q_lac": 0.002982824644979898,
-  "disease_q_lac": 0.2634498923398034,
-  "ood_threshold": 0.4142959415912628,
+  "disease_model": "D_dinov2[pooled,orig]",
+  "crop_q_lac": 0.005953354308247283,
+  "disease_q_lac": 0.033155469712063956,
+  "ood_threshold": 0.30263495445251465,
   "ood_k": 10,
   "ood_backbone": "dinov2_vits14",
   "quality": {
@@ -113,8 +111,8 @@
    "bright_max": 0.6,
    "min_leaf_frac": 0.03
   },
-  "ood_reference": "models/p3/ood_reference.npy",
-  "calibrated_on": "field_val"
+  "ood_reference": "models/p4/ood_reference.npy",
+  "calibrated_on": "p4_val"
  },
  "licences": {
   "dinov2_vits14": "Apache-2.0 (facebookresearch/dinov2)",
@@ -127,5 +125,10 @@
  "data_licences": {
   "turmeric": "Mendeley g46dvrcvwn v2 (CC BY 4.0)",
   "blackgram": "BPLD Mendeley zfcv9fmrgv v3 (CC BY 4.0)"
+ },
+ "p4": {
+  "labels_sha1": "cb1ac9219bd1213692e9202df5074bcfd3ea5047",
+  "n_p4_train": 995,
+  "n_p4_val": 333
  }
 }
