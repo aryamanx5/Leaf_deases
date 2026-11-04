@@ -43,7 +43,7 @@ ARTEFACTS = [
 P2_ARTEFACTS = [
     "results/diagnosis.md", "results/robustness.md", "results/robustness.json", "results/calibration.json",
     "results/crop_model_selection.csv", "results/api_latency.json", "results/web_quality.json",
-    "models/MODEL_CARD.md", "models/crop_model.joblib", "models/disease_cnn.pt", "models/calibration.json",
+    "models/MODEL_CARD_phase2.md", "models/crop_model.joblib", "models/disease_cnn.pt", "models/calibration.json",
     "models/ood_reference.npy", "api/main.py", "api/schemas.py", "web/public/data/site.json",
 ]
 # results files that scripts/export_site_data.py reads: site.json must be newer than all of them
@@ -327,6 +327,8 @@ def main() -> int:
                    ("Phase 4 pool disjoint from test sets", check_p4_disjoint),
                    ("Phase 4 report vs results JSON", lambda: run([py, "scripts/p4_report.py", "--check"])
                     if (ROOT / "results/p4/selection.json").exists() else (True, "Phase 4 not run")),
+                   ("MODEL_CARD.md vs deployed manifest", lambda: run([py, "scripts/model_card.py", "--check"])
+                    if (ROOT / "results/p4/eval.json").exists() else (True, "Phase 4 not run")),
                    ("P3 report + README numbers vs results JSON", lambda: run([py, "scripts/p3_report.py", "--check"])),
                    ("P3 API contract + 3 wild images + user image", lambda: run([py, "-m", "pytest", "-q", "-rs", "tests/test_p3_api.py"]))]
         if not args.no_web:

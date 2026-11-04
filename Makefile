@@ -75,6 +75,8 @@ p4:              # Phase 4: more field training data (docs/PLAN_phase4_more_data
 	$(PY) scripts/build_p4_pool.py
 	$(PY) scripts/p4_train.py
 	$(PY) scripts/p4_eval.py
+	$(PY) scripts/p4_report.py
+	$(PY) scripts/model_card.py
 
 p3:              # Phase 3: audit -> embeddings -> CNN arms -> crop ID -> disease arms -> stack -> trust -> report
 	$(PY) scripts/p3_audit.py
