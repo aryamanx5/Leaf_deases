@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { fix, int, METHOD_NAME, pct } from '@/lib/format';
 import { useInView } from '@/lib/motion';
 import type { Method, Site } from '@/lib/site';
+import FieldModel from '@/sections/FieldModel';
 
 // the last flag marks columns kept on narrow screens
 const COLS = [
@@ -121,6 +122,8 @@ export default function Results({ site }: { site: Site }) {
             </p>
           </aside>
         </div>
+
+        <FieldModel site={site} />
       </div>
     </section>
   );
