@@ -467,6 +467,9 @@ Started 2026-11-04. Plan committed (9bcb445) before any Phase 4 split or model e
 ### Phase 4 evidence log (newest first)
 
 #### 2026-11-04 P4-05 Report, checks, tests
+- README.md restored from git; full `python scripts/verify_all.py` with the switched bundle -> **OVERALL: PASS**
+  (22/22): lint; 107 tests incl. pipeline + app smoke; all leakage checks (incl. Phase 4 pool); P3 + P4 reports = fresh
+  render; P3 API contract (7 passed); web typecheck, lint, build; E2E 14 + 5 timing passed. No file regenerated.
 - `scripts/p4_report.py` -> results/p4_report.md (73 lines, numbers from JSON only; `--check` in verify_all).
 - `verify_all` check "Phase 4 pool disjoint from test sets" (paths, file names, 45djgf3p96 scenes, z55yrbmn2d capture
   minutes in both camera name forms; no group across splits). tests/test_p4.py: 8 passed.
@@ -503,7 +506,7 @@ Started 2026-11-04. Plan committed (9bcb445) before any Phase 4 split or model e
   pHash duplicates only (60/20/20); the full rules still drive the near-duplicate drop against test images.
 - **First build kept too few z55 images**: shots sharing a minute only with pool images were dropped; they are now
   kept and grouped. **No new 45djgf3p96 boxes**: the 61 unused scenes hold almost only flea-beetle (pest) boxes.
-- **README.md** is deleted in the working tree (not by this phase, not committed); `scripts/p3_report.py` needs it,
-  so the Phase 4 report is a separate file and final_report.md (Phase 3, the paper's frozen numbers) is unchanged.
+- **README.md** was deleted in the working tree during this phase (not by it, never committed; restored from git at
+  the end). The Phase 4 report is a separate file, so final_report.md (Phase 3, the paper's frozen numbers) is unchanged.
 - After Phase 4, wild / wild_ext share sources (not images, scenes or capture minutes) with training: they measure
   new images from known sources. Phase 3's numbers keep the "new sources" claim.
