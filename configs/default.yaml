@@ -362,3 +362,24 @@ field_val:                 # field VALIDATION split (docs/PLAN_field_validation.
        boxes: {LA: [healthy, 250], LC: [diseased, 250]}, min_box_side: 128, pad: 0.05, scenes: 0}   # only scenes unused by wild_ext
     - {kind: mendeley_zip_other, id: 89rfgtxbdc, version: 1, licence: CC BY 4.0, zip: "Original Image Dataset.zip", per_folder: 12,
        citation: "A medicinal plant leaf image dataset for plant health condition detection and classification, Mendeley Data, doi:10.17632/89rfgtxbdc.1"}
+
+p4:                        # Phase 4: more field training data (docs/PLAN_phase4_more_data.md, pre-registered)
+  root: data/p4
+  max_side: 1600
+  seed: 4
+  folds: 5                 # StratifiedGroupKFold: folds 0-2 -> p4_train (60%), 3 -> p4_val (20%), 4 -> p4_test (20%)
+  reuse: [data/field_val/labels.csv]          # the Phase 3 validation split joins the pool (its role ends here)
+  exclude_sets: [data/wild_ext/labels.csv]    # plus data/wild: test only, no shared image / scene / capture minute
+  sources:
+    - {kind: mendeley_zip, id: z55yrbmn2d, version: 3, crop: blackgram, licence: CC BY 4.0,
+       local_zip: "data/downloads/z55yrbmn2d/Black Gram Leaf.zip",   # optional cache; else read remotely by range
+       citation: "Image Dataset for Disease Detection in Black Gram (Vigna mungo) Leaves, Mendeley Data, doi:10.17632/z55yrbmn2d.3",
+       classes: {healthy: [healthy, 9999], cercospora leaf spot: [diseased, 9999], leaf crinkle: [diseased, 9999],
+                 yellow mosaic: [diseased, 9999]}}                  # insect: pest, excluded
+    - {kind: mendeley_boxes, id: 45djgf3p96, version: 2, crop: blackgram, licence: CC BY 4.0,
+       citation: "Hridoy et al., Black Gram Leaf Image Dataset for Disease Detection in Field Conditions, Mendeley Data, doi:10.17632/45djgf3p96",
+       boxes: {LA: [healthy, 9999], LC: [diseased, 9999]}, min_box_side: 128, pad: 0.05, scenes: 0}   # scenes unused by wild_ext / field_val
+    - {kind: mendeley_prefix, id: tsvdyhbphs, version: 1, licence: CC BY 4.0,
+       citation: "PhilMedic: Philippine Medicinal Plant Leaf Dataset, Mendeley Data, doi:10.17632/tsvdyhbphs.1",
+       target: {Class15: turmeric},                                 # Curcuma longa: crop label only (not disease-labelled)
+       other_per_class: 4}                                          # other 38 species: 'other plant' leaves

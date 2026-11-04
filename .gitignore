@@ -30,3 +30,4 @@ models/cnn_smoke.pt
 models/p3/C3_convnext_tiny_*.pt
 data/wild_ext/*/
 data/field_val/*/
+data/p4/*/
