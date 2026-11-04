@@ -67,6 +67,17 @@ export type Sample = {
   set?: 'test' | 'wild_test';
   credit?: string;
 };
+export type FieldSet = 'p4_test' | 'wild_ext' | 'wild' | 'test';
+type Score = { macro_f1: number; accuracy: number; ci95: [number, number] };
+export type FieldSetScores = {
+  n: number;
+  old: Score;
+  new: Score;
+  diff: number;
+  diff_ci95: [number, number];
+  mcnemar_p: number;
+  by_crop: Partial<Record<'turmeric' | 'blackgram', { n: number; old: number; new: number }>>;
+};
 export type Site = {
   generated_at: string;
   dataset: {
@@ -105,6 +116,22 @@ export type Site = {
   };
   example_card: string[] | null;
   samples: Sample[];
+  /** The deployed disease model vs the one it replaced, scored once on held-out field photos (results/p4/eval.json). */
+  field_model: {
+    config: string;
+    previous_config: string;
+    switched: boolean;
+    train_field_leaves: number;
+    sets: Record<FieldSet, FieldSetScores>;
+    trust: Record<'old' | 'new', {
+      answered_share_labelled: number;
+      end_to_end_accuracy_answered: number;
+      other_species_refused: number;
+      n_other: number;
+      n_targets: number;
+    }>;
+    ms: Record<'old' | 'new', number | null>;
+  };
   /** How often each verdict confidence level was right on held-out photos (scripts/export_site_data.py). */
   confidence_levels: {
     high_min_conf: number;
