@@ -79,7 +79,7 @@ any web photo:
   validation and the final robustness test, never for training.
 * `make robust`: diagnosis (`results/diagnosis.md`), background-swap augmentation, a crop model (OpenCLIP features +
   zero-shot prior) with temperature scaling, an out-of-distribution check and an "unsure" answer, a crop-conditioned
-  disease CNN, and the before/after report `results/robustness.md`. Model details: `models/MODEL_CARD.md`.
+  disease CNN, and the before/after report `results/robustness.md`. Model details: `models/MODEL_CARD_phase2.md` (deployed bundle: `models/MODEL_CARD.md`).
 * Stage 1 now handles field scenes (foliage mask, watershed fallback, optional click on the leaf).
 * `make api`: FastAPI on `http://127.0.0.1:8010` with `GET /api/health`, `GET /api/meta` and
   `POST /api/analyze` (multipart `file`, optional `crop` = auto | turmeric | blackgram, optional `roi_x`/`roi_y`
