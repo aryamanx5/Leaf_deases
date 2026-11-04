@@ -290,6 +290,35 @@ def confidence_levels(cfg: dict) -> dict:
     return out
 
 
+FIELD_SETS = ("p4_test", "wild_ext", "wild", "test")
+
+
+def field_model(cfg: dict) -> dict:
+    """The deployed disease model vs the one it replaced (results/p4/eval.json, scored once per
+    docs/PLAN_phase4_more_data.md), with per-image CPU time from results/p4/selection.json."""
+    res = path("results", cfg)
+    ev = json.loads((res / "p4" / "eval.json").read_text())
+    sel = json.loads((res / "p4" / "selection.json").read_text())
+
+    def pick(m: dict) -> dict:
+        return {"macro_f1": m["macro_f1"], "accuracy": m["accuracy"], "ci95": m["ci95"]["macro_f1"]}
+
+    sets = {}
+    for s in FIELD_SETS:
+        r = ev["sets"][s]
+        d = r["new_minus_old_macro_f1"]
+        sets[s] = {"n": r["n"], "old": pick(r["old"]["pooled"]), "new": pick(r["new"]["pooled"]),
+                   "diff": d["diff"], "diff_ci95": d["ci95"], "mcnemar_p": r["mcnemar_new_vs_old"]["p_value"],
+                   "by_crop": {c: {"n": r["new"][c]["n"], "old": r["old"][c]["macro_f1"], "new": r["new"][c]["macro_f1"]}
+                               for c in ("turmeric", "blackgram") if c in r["new"] and c in r["old"]}}
+    keys = ("answered_share_labelled", "end_to_end_accuracy_answered", "other_species_refused", "n_other", "n_targets")
+    trust = {who: {k: ev["trust_p4_test"][who][k] for k in keys} for who in ("old", "new")}
+    ms = {who: sel["candidates"].get(ev[who]["disease_config"], {}).get("ms") for who in ("old", "new")}
+    return {"config": ev["new"]["disease_config"], "previous_config": ev["old"]["disease_config"],
+            "switched": ev["switch"]["switched"], "train_field_leaves": sel["n"]["p4_train"],
+            "sets": sets, "trust": trust, "ms": ms}
+
+
 def metrics_block(m: dict) -> dict:
     return {k: m[k] for k in ("accuracy", "precision", "recall", "f1", "macro_f1", "healthy_recall", "roc_auc") if k in m}
 
@@ -337,6 +366,7 @@ def main() -> int:
         "robustness": {"before": rob["before"], "after": rob["after"], "targets": rob["targets"]},
         "calibration": {"tau_crop": cal["tau_crop"], "ood_threshold": cal["ood"]["threshold"]},
         "confidence_levels": confidence_levels(load_config()),
+        "field_model": field_model(cfg),
         "showcase": showcase,
         "heal": heal,
         "crops": crop_panels(cfg),
