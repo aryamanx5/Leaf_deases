@@ -31,6 +31,7 @@ from sklearn.model_selection import StratifiedGroupKFold
 from leafdx.config import ROOT, load_config
 from leafdx.data import HttpRangeFile, normalise_class
 from leafdx.p3.data import image_table
+from leafdx.p4 import minute
 from leafdx.split import cluster_images, phash_pair
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -50,13 +51,6 @@ def save(im: Image.Image, dest: Path, max_side: int) -> None:
         im.thumbnail((max_side, max_side), Image.LANCZOS)
         dest.parent.mkdir(parents=True, exist_ok=True)
         im.save(dest, quality=92)
-
-
-def minute(name: str) -> str | None:
-    """Capture minute from a camera file name: '20241104_110935', 'IMG_20241101_220925' or 'IMG20241104113250'.
-    (Phase 3's helper only knew the first two forms, so IMGyyyymmddhhmmss shots were grouped by file, not minute.)"""
-    m = re.search(r"(\d{8})_(\d{4})\d{2}", name) or re.search(r"(?<!\d)(\d{8})(\d{4})\d{2}(?!\d)", name)
-    return m.group(1) + m.group(2) if m else None
 
 
 def local_or_remote_zip(s: dict) -> zipfile.ZipFile:
