@@ -463,8 +463,18 @@ Started 2026-11-04. Plan committed (9bcb445) before any Phase 4 split or model e
 | P4-03 | Re-fit, select, calibrate on p4_val | DONE | P4 log 03 |
 | P4-04 | Once-only evaluation + switch | DONE (switched) | P4 log 04 |
 | P4-05 | Report, checks, tests | DONE | P4 log 05 |
+| P4-06 | Website panel + model card for the deployed bundle | DONE | P4 log 06 |
 
 ### Phase 4 evidence log (newest first)
+
+#### 2026-11-05 P4-06 Website and model card
+- site.json gains `field_model` (results/p4/eval.json + selection.json; both now site.json sources); media byte-identical.
+- Landing page, Results section: "The deployed model on field photos" (web/src/sections/FieldModel.tsx): previous vs
+  deployed macro-F1 with paired CIs on p4_test / wild_ext / wild / clean TEST, per-crop gain, trust gates, CPU time,
+  same-sources caveat; every number from site.json. Checked at desktop and 375 px (no horizontal scroll).
+- models/MODEL_CARD.md now describes the deployed bundle (`scripts/model_card.py`, `--check` in verify_all); the Phase 2
+  card moved to models/MODEL_CARD_phase2.md (train_robust.py writes it there).
+- `python scripts/verify_all.py` -> **OVERALL: PASS** (23/23, incl. the new card check, axe and E2E).
 
 #### 2026-11-04 P4-05 Report, checks, tests
 - README.md restored from git; full `python scripts/verify_all.py` with the switched bundle -> **OVERALL: PASS**
