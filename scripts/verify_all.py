@@ -179,7 +179,8 @@ TRIGGER_POS = re.compile(r"^(top|bottom|center)\b")
 # a property line inside a React style={{...}} object is layout, like the .style writes above
 STYLE_PROP_LINE = re.compile(r"^\s*(top|left|right|bottom|width|height|maxWidth|minHeight|inset|transform|opacity)\s*:")
 # reviewed exceptions: (file, literal) -> why it is not a reported metric
-METRIC_ALLOW = {("web/src/components/analyze/Verdict.tsx", "under 1%"): "wording for an area below one percent"}
+METRIC_ALLOW = {("web/src/components/analyze/Verdict.tsx", "under 1%"): "wording for an area below one percent",
+                ("web/src/sections/FieldModel.tsx", "[95% CI]"): "confidence level of the interval, not a result"}
 
 
 def check_no_hardcoded_metrics() -> tuple[bool, str]:
