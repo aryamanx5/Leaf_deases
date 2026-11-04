@@ -1,0 +1,48 @@
+{
+ "n": 1919,
+ "n_groups": 833,
+ "dropped_near_duplicates_of_existing": 329,
+ "by_split": {
+  "p4_test": {
+   "blackgram/diseased": 239,
+   "blackgram/healthy": 58,
+   "other/unknown": 38,
+   "turmeric/diseased": 25,
+   "turmeric/healthy": 9,
+   "turmeric/unknown": 14
+  },
+  "p4_train": {
+   "blackgram/diseased": 716,
+   "blackgram/healthy": 177,
+   "other/unknown": 115,
+   "turmeric/diseased": 74,
+   "turmeric/healthy": 28,
+   "turmeric/unknown": 42
+  },
+  "p4_val": {
+   "blackgram/diseased": 239,
+   "blackgram/healthy": 60,
+   "other/unknown": 38,
+   "turmeric/diseased": 24,
+   "turmeric/healthy": 10,
+   "turmeric/unknown": 13
+  }
+ },
+ "by_source": {
+  "mendeley:z55yrbmn2d": 1089,
+  "mendeley:45djgf3p96": 400,
+  "mendeley:tsvdyhbphs": 207,
+  "mendeley:jtttfbx342": 170,
+  "mendeley:89rfgtxbdc": 53
+ },
+ "by_from": {
+  "new": 1070,
+  "field_val": 849
+ },
+ "excluded": {
+  "test_capture_minutes": 429,
+  "pool_capture_minutes_reused": 326,
+  "field_scenes": 526,
+  "field_val_rows_sharing_a_test_capture_minute": 196
+ }
+}
