@@ -41,6 +41,17 @@ UA = {"User-Agent": "leafdx-research/0.1 (university research prototype; contact
 SPLIT_OF_FOLD = {0: "p4_train", 1: "p4_train", 2: "p4_train", 3: "p4_val", 4: "p4_test"}
 
 
+def save(im: Image.Image, dest: Path, max_side: int) -> None:
+    """bwe._save, but an image whose EXIF block is malformed (PIL cannot rewrite it) is saved unrotated."""
+    try:
+        bwe._save(im, dest, max_side)
+    except (TypeError, ValueError, SyntaxError):
+        im = im.convert("RGB")
+        im.thumbnail((max_side, max_side), Image.LANCZOS)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        im.save(dest, quality=92)
+
+
 def minute(name: str) -> str | None:
     """Capture minute from a camera file name: '20241104_110935', 'IMG_20241101_220925' or 'IMG20241104113250'.
     (Phase 3's helper only knew the first two forms, so IMGyyyymmddhhmmss shots were grouped by file, not minute.)"""
@@ -74,7 +85,7 @@ def z55_rows(s, out, used_stems, used_minutes, max_side) -> list[dict]:
             continue
         dest = out / s["crop"] / label / f"{bwe.p2_stem(s['id'], cls, parts[-1])}.jpg"
         if not dest.exists():
-            bwe._save(Image.open(io.BytesIO(z.read(i))), dest, max_side)
+            save(Image.open(io.BytesIO(z.read(i))), dest, max_side)
         rows.append(bwe._row(dest, s["crop"], label, cls, s["id"], s["licence"], f"{s['id']}:{mn or stem}",
                              s["citation"], f"https://data.mendeley.com/datasets/{s['id']}/{s['version']}"))
     return rows
@@ -111,7 +122,7 @@ def philmedic_rows(s, out, rng, max_side) -> list[dict]:
             try:
                 r = requests.get(url, timeout=180, headers=UA)
                 if r.ok and r.headers.get("content-type", "").startswith("image"):
-                    bwe._save(Image.open(io.BytesIO(r.content)), dest, max_side)
+                    save(Image.open(io.BytesIO(r.content)), dest, max_side)
                     return
             except (requests.RequestException, OSError):
                 pass
@@ -154,6 +165,11 @@ def main() -> int:
     new = pd.DataFrame(rows).drop_duplicates("path")
     new["from"] = "new"
     fv = reuse.drop(columns=[c for c in ("dup_of_existing", "group") if c in reuse.columns]).assign(**{"from": "field_val"})
+    # field_val was built with Phase 3's minute rule, which missed IMGyyyymmddhhmmss names: drop its images whose
+    # capture minute a test image shares (they would put same-minute shots of test leaves into training)
+    same_minute = np.array([minute(p) in test_minutes for p in fv.path])
+    n_fv_same_minute = int(same_minute.sum())
+    fv = fv[~same_minute]
     df = pd.concat([fv, new], ignore_index=True)
     # one capture-minute group per z55 image, whichever split it came from
     is_z55 = df.source == "mendeley:z55yrbmn2d"
@@ -206,7 +222,7 @@ def main() -> int:
                      for s, g in keep.groupby("p4_split")},
         "by_source": keep.source.value_counts().to_dict(), "by_from": keep["from"].value_counts().to_dict(),
         "excluded": {"test_capture_minutes": len(test_minutes), "pool_capture_minutes_reused": len(pool_minutes),
-                     "field_scenes": len(used_scenes)},
+                     "field_scenes": len(used_scenes), "field_val_rows_sharing_a_test_capture_minute": n_fv_same_minute},
     }
     (out / "summary.json").write_text(json.dumps(summary, indent=1))
     print(json.dumps(summary, indent=1))
