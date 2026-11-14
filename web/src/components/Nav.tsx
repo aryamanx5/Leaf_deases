@@ -1,9 +1,10 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, Search, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '@/components/Logo';
 import RunModelLink from '@/components/RunModelLink';
 import { BRAND_NAME } from '@/content/brand';
+import { openPalette } from '@/lib/palette';
 import { useActiveSection, type SectionId } from '@/lib/sections';
 import { scrollToId } from '@/lib/smooth';
 
@@ -54,9 +55,16 @@ export default function Nav() {
           </a>
         ))}
       </div>
-      <RunModelLink className="hidden rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100 md:block">
-        Run the model
-      </RunModelLink>
+      <div className="hidden items-center gap-2 md:flex">
+        <button type="button" onClick={openPalette} aria-label="Jump to a part of the site" aria-keyshortcuts="Meta+K Control+K"
+                className={`hidden h-10 items-center gap-2 rounded-full border border-white/20 pl-3 pr-2.5 text-white/85 backdrop-blur-md transition-colors duration-500 hover:text-white lg:flex ${light ? 'bg-ink/85' : 'bg-ink/45'}`}>
+          <Search size={14} aria-hidden="true" />
+          <kbd className="mono rounded border border-white/20 px-1.5 py-0.5 text-[10px]">⌘K</kbd>
+        </button>
+        <RunModelLink className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100">
+          Run the model
+        </RunModelLink>
+      </div>
       <button
         type="button"
         className={`rounded-full p-2 md:hidden ${light ? 'text-ink' : 'text-white'}`}

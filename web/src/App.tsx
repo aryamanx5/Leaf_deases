@@ -2,6 +2,8 @@ import { AnimatePresence, motion } from 'motion/react';
 import { lazy, Suspense } from 'react';
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import CommandPalette from '@/components/fx/CommandPalette';
+import ScrollProgress from '@/components/fx/ScrollProgress';
 import Nav from '@/components/Nav';
 import { DEPLOYED_APP_URL } from '@/content/brand';
 import { useReducedMotion } from '@/lib/motion';
@@ -25,7 +27,9 @@ export default function App() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[300] focus:rounded-full focus:bg-paper focus:px-4 focus:py-2 focus:text-ink">
         Skip to content
       </a>
+      <ScrollProgress />
       <Nav />
+      <CommandPalette />
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={location.pathname}
