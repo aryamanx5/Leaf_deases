@@ -160,3 +160,91 @@ body {
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
+
+/* ---- additions: scroll reveals, word-mask headings, marquee, cards, palette (all still under reduced motion) ---- */
+.rv {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s var(--ease) var(--rv-d, 0ms), transform 0.9s var(--ease) var(--rv-d, 0ms);
+}
+.rv.rv-in { opacity: 1; transform: none; }
+
+.sh-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.sh-word {
+  display: inline-block;
+  transform: translateY(105%);
+  transition: transform 0.95s var(--ease) calc(var(--sh-i, 0) * 45ms);
+}
+.sh-in .sh-word { transform: none; }
+
+@keyframes marqueeLeft {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+.marquee-track { display: flex; width: max-content; animation: marqueeLeft var(--marquee-s, 48s) linear infinite; }
+.marquee-track.rev { animation-direction: reverse; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* a soft light that follows the pointer across a card (--mx / --my are set by the Spotlight component) */
+.spot { position: relative; isolation: isolate; }
+.spot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(var(--leaf-rgb) / 0.13), transparent 62%);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.spot:hover::before, .spot:focus-within::before { opacity: 1; }
+.spot-paper::before { background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(var(--turmeric-rgb) / 0.12), transparent 62%); }
+
+@keyframes paletteIn {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.palette-in { animation: paletteIn 0.28s var(--ease) both; }
+@keyframes veilIn { from { opacity: 0; } to { opacity: 1; } }
+.veil-in { animation: veilIn 0.2s ease both; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-y { animation: floatY 5s ease-in-out infinite; }
+
+@keyframes pulseRing {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.pulse-ring { animation: pulseRing 2.2s var(--ease) infinite; }
+
+/* dots of the unit chart pop in by row */
+.dot-pop { transform: scale(0); transform-box: fill-box; transform-origin: center; transition: transform 0.5s var(--ease) var(--dot-d, 0ms); }
+.dots-in .dot-pop { transform: scale(1); }
+
+/* lines that draw themselves (pathLength = 1) */
+.draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s var(--ease) var(--draw-d, 0ms); }
+.draw-in .draw { stroke-dashoffset: 0; }
+
+/* range inputs in the lab and sliders */
+.lab-range { -webkit-appearance: none; appearance: none; background: transparent; height: 44px; cursor: ew-resize; }
+.lab-range::-webkit-slider-runnable-track { height: 2px; background: rgba(232, 240, 228, 0.25); }
+.lab-range::-moz-range-track { height: 2px; background: rgba(232, 240, 228, 0.25); }
+.lab-range::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 22px; height: 22px; margin-top: -10px; border-radius: 9999px;
+  background: var(--paper); border: 2px solid var(--ink); box-shadow: 0 0 0 1px var(--paper);
+}
+.lab-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 9999px; background: var(--paper); border: 2px solid var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; transition: none; }
+  .sh-word { transform: none; transition: none; }
+  .marquee-track { animation: none; }
+  .palette-in, .veil-in, .float-y, .pulse-ring { animation: none; }
+  .dot-pop { transform: scale(1); transition: none; }
+  .draw { stroke-dashoffset: 0; transition: none; }
+  .spot::before { transition: none; }
+}
