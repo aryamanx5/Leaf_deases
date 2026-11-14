@@ -1,6 +1,10 @@
 import { Check } from 'lucide-react';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { CameraCapture } from '@/components/analyze/Camera';
+import { DropAnywhere } from '@/components/analyze/DropAnywhere';
 import { Evidence } from '@/components/analyze/Evidence';
+import { Glance } from '@/components/analyze/Glance';
+import { History, HISTORY_MAX, type Run } from '@/components/analyze/History';
 import { HowCalculated } from '@/components/analyze/HowCalculated';
 import { CropControl, DropZone, PointToggle, Preview, type Picked } from '@/components/analyze/Input';
 import { Arms } from '@/components/analyze/Arms';
@@ -47,6 +51,7 @@ export default function Analyze() {
   const [revealed, setRevealed] = useState<ReadonlySet<string>>(new Set());
   const [mode, setMode] = useViewMode();
   const [openHow, setOpenHow] = useState(false);
+  const [history, setHistory] = useState<Run[]>([]);
   const abort = useRef<AbortController | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
   const inputCol = useRef<HTMLDivElement>(null);
@@ -72,6 +77,7 @@ export default function Analyze() {
       const r = await analyze(p.blob, c, point, ac.signal, p.name);
       if (ac.signal.aborted) return;
       setState({ kind: 'done', r });
+      setHistory((h) => [{ picked: p, r }, ...h.filter((x) => x.r.request_id !== r.request_id)].slice(0, HISTORY_MAX));
       const id = p.sample?.id;
       if (id) setRevealed((v) => (v.has(id) ? v : new Set(v).add(id)));
     } catch (e) {
@@ -84,6 +90,20 @@ export default function Analyze() {
     setPicked(p);
     setRoi(null);
     void run(p, crop, null);
+  };
+  // a photo dropped anywhere on the page, or taken with the camera, goes down the same path as an upload
+  const pickFile = useCallback((f: File) => {
+    const p: Picked = { blob: f, url: URL.createObjectURL(f), name: f.name || 'dropped image' };
+    setPicked(p);
+    setRoi(null);
+    void run(p, crop, null);
+  }, [run, crop]);
+  // an earlier result from this visit, shown again from memory
+  const reopen = (h: Run) => {
+    abort.current?.abort();
+    setPicked(h.picked);
+    setRoi(null);
+    setState({ kind: 'done', r: h.r });
   };
   const chooseCrop = (c: CropChoice) => {
     setCrop(c);
@@ -118,6 +138,7 @@ export default function Analyze() {
 
   return (
     <main className="min-h-dvh bg-ink pb-24 pt-28 sm:pt-32">
+      <DropAnywhere onFile={pickFile} />
       <div className="container-grid">
         <p className="caption mb-4 text-muted">Run the model</p>
         <h1 className="max-w-[820px] text-4xl font-normal leading-[1.05] tracking-[-0.04em] sm:text-5xl">
@@ -133,8 +154,9 @@ export default function Analyze() {
           <div ref={inputCol} id="step-1"
                className={`flex min-w-0 scroll-mt-24 flex-col gap-5 lg:col-span-5 lg:self-start lg:gap-4 ${sticky ? 'lg:sticky lg:top-24' : ''}`}
                data-sticky={sticky ? 'true' : 'false'} data-testid="input-column">
-            <div className="flex min-h-[52px] items-center">
+            <div className="flex min-h-[52px] items-center justify-between gap-3">
               <StepHeading n={1} title="Choose a leaf" />
+              <CameraCapture onPick={pick} disabled={busy} />
             </div>
             {picked && <Preview url={picked.url} busy={busy} pointMode={pointMode} roi={roi} onPoint={point} />}
             {picked && (
@@ -180,6 +202,7 @@ export default function Analyze() {
                   <Verdict r={r} levels={site?.confidence_levels} onPickCrop={(c) => chooseCrop(c)} />
                   {picked?.sample && <SampleCheck s={picked.sample} r={r} />}
                   <Progress busy={false} r={r} detailed={detailed} />
+                  <Glance r={r} />
                 </div>
                 <div className="reveal [animation-delay:80ms]">
                   <Evidence r={r} />
@@ -211,6 +234,7 @@ export default function Analyze() {
                     </button>
                   </div>
                 )}
+                <History runs={history} currentId={r.request_id} onOpen={reopen} />
                 <p className="max-w-[640px] text-[13px] leading-relaxed text-muted">
                   A research prototype trained on two public datasets. It is not a diagnosis; confirm with an agronomist before
                   treating a crop.
