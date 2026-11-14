@@ -34,4 +34,18 @@ MobileSAM (P3-M06 skipped, see PROGRESS.md).
 | PhilMedic: Philippine Medicinal Plant Leaf Dataset, Mendeley tsvdyhbphs v1 (class 15 Curcuma longa; 4 leaves of each other species) | CC BY 4.0 | Phase 4: turmeric crop ID and OOD reference (not disease-labelled); other species for the refusal test |
 | User-reported Google image (`data/wild/user_reported/turmeric_google_01.jpg`) | copyright of its owner; not committed | regression check only |
 
+## Site footage
+
+Atmosphere clips on the landing page (`web/public/media/film/`, listed in `web/src/lib/film.ts`). They set the scene
+only: none is a dataset image and none is shown as a result. Each is credited where it plays.
+
+| Clip | Source | Licence | Used for |
+|---|---|---|---|
+| `field-*.mp4` (a ginger field; re-encoded to 720p / 540p, first 10 s) | Pexels video 39172117, vijay kumar, https://www.pexels.com/video/lush-ginger-field-in-rural-setting-39172117/ | Pexels Licence (free use, modification allowed, no attribution required) | "The field" interlude |
+| `hand-*.mp4` (a hand brushing along maize leaves) | Pexels video 14035105, Feyza Yıldırım, https://www.pexels.com/video/woman-touching-leaves-14035105/ | Pexels Licence | "Field notes" section |
+| `dew-*.mp4` (wet leaves) | Pexels video 34796496, Nothing Ahead, https://www.pexels.com/video/close-up-of-dewy-green-leaves-in-garden-setting-34796496/ | Pexels Licence | "Field notes" section |
+
+Posters (`*-poster-*.webp`) are the first frame of each clip. The Pexels Licence does not allow selling or
+redistributing the clips on their own; they are part of the site only.
+
 For a college research project these licences are compatible with the use made here. Before any commercial use, review the ImageNet terms that apply to the torchvision weights.
