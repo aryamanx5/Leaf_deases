@@ -132,6 +132,28 @@ export type Site = {
     }>;
     ms: Record<'old' | 'new', number | null>;
   };
+  /** Phase 5: the deployed bundle vs the Phase 4 bundle it replaced (results/p5). Absent before that switch. */
+  confidence_model?: {
+    candidate: string;
+    members: number;
+    candidates_compared: number;
+    second_read_of_p4_test: boolean;
+    sets: Record<FieldSet, FieldSetScores>;
+    trust: Record<'old' | 'new', {
+      answered_share_labelled: number;
+      answered_labelled: number;
+      errors_answered: number;
+      n_labelled: number;
+      end_to_end_accuracy_answered: number;
+      other_species_refused: number;
+      n_other: number;
+      disease_min_confidence: number;
+      crop_min_confidence: number;
+    }>;
+    confidence_p4_test: Record<'old' | 'new', { mean_confidence_right: number; ece: number }>;
+    max_error_target: number;
+    validation: { answered: number; errors: number; error_upper_bound: number };
+  };
   /** How often each verdict confidence level was right on held-out photos (scripts/export_site_data.py). */
   confidence_levels: {
     high_min_conf: number;
