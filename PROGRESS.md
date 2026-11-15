@@ -520,3 +520,53 @@ Started 2026-11-04. Plan committed (9bcb445) before any Phase 4 split or model e
   the end). The Phase 4 report is a separate file, so final_report.md (Phase 3, the paper's frozen numbers) is unchanged.
 - After Phase 4, wild / wild_ext share sources (not images, scenes or capture minutes) with training: they measure
   new images from known sources. Phase 3's numbers keep the "new sources" claim.
+
+## Phase 5: sharper answers, fewer needless refusals (pre-registered: docs/PLAN_phase5_confidence.md)
+
+Started and finished 2026-11-15. Plan committed (cf31ac1) before any Phase 5 number was computed. Nothing was trained.
+
+| ID | Task | Status | Evidence pointer |
+|----|------|--------|------------------|
+| P5-01 | Plan + switch rule | DONE | cf31ac1 |
+| P5-02 | Selection + thresholds on p4_val | DONE | P5 log 02 |
+| P5-03 | Evaluation + switch | DONE (switched) | P5 log 03 |
+| P5-04 | Report, model card, tests, website | DONE | P5 log 04 |
+
+### Phase 5 evidence log (newest first)
+
+#### 2026-11-15 P5-04 Report, card, tests, website
+- `scripts/p5_report.py` -> results/p5_report.md (numbers from JSON only; `--check` in verify_all). `scripts/model_card.py`
+  renders the Phase 5 bundle (members, thresholds, second-read caveat). tests/test_p5.py: 6 passed (combiner, Clopper-Pearson
+  bound, threshold search, bundle = selection, switch rule re-derived from eval.json).
+- site.json gains `confidence_model` (results/p5); everything else byte-identical apart from `generated_at`. Landing page:
+  the evidence section draws the deployed model's gates and all three model versions, with a "newest step" block; the
+  Phase 4 panel now speaks in the past tense; the timeline has a fifth phase.
+- API restarted on the new bundle: all 28 site samples classified correctly, 27 answered (1 "crop uncertain"). The clean-test
+  turmeric blotch leaf that prompted this phase now reads "diseased", High, instead of "Not sure".
+
+#### 2026-11-15 P5-03 Evaluation (`scripts/p5_eval.py`)
+- Disease (true crop), Phase 4 `D_dinov2[pooled,orig]` -> Phase 5 M1, macro-F1: p4_test 0.963 -> 0.973 (paired +0.009
+  [0.000, +0.025]); wild_ext 0.962 -> 0.974 (+0.012 [+0.005, +0.021], McNemar p 0.007); wild 0.976 -> 1.000;
+  clean TEST 0.989 -> 1.000.
+- Trust on p4_test (no quality gate): answered 281 -> 300 of 331 (85% -> 91%); wrong among answered 0 -> 3 (accuracy on
+  answered 1.000 -> 0.990); refused by the disease gate 7.6% -> 0.6%; crop and OOD gates unchanged; other species refused
+  34 of 38 both times. Mean confidence on right answers 0.990 -> 0.994, ECE 0.013 -> 0.011.
+- All five switch conditions met: models/manifest.json = manifest_p5.json; the Phase 4 bundle stays as manifest_p4.json.
+
+#### 2026-11-15 P5-02 Selection on p4_val (`scripts/p5_select.py`, 15 s, reads `.cache/p4configs` only)
+- Candidates: M0 (deployed head) F1 0.978 NLL 0.046; M1 (3 embedding heads) 0.987 / 0.029; M2 (6 heads) 0.991 / 0.028;
+  M3 (2 heads) 0.987 / 0.035. All admissible; M1 and M2 tied on NLL; fewest members -> **M1**.
+- Disease threshold 0.967 -> 0.737 (2 wrong among 330 answered of 333; upper bound 1.9%). Crop threshold stays at 0.994:
+  any lower value lets one more of the 38 other-species leaves through.
+
+### Phase 5 decisions, deviations and caveats (kept, not hidden)
+- **p4_test read a second time.** Phase 4 scored it once for its own switch. Phase 5 scored it again for a different,
+  pre-registered decision; nothing was fitted or selected on it. Phase 4's numbers remain the once-only result.
+- **More answers cost some wrong answers.** Phase 4 answered 281 leaves, all right; Phase 5 answers 300 with 3 wrong. The
+  risk target (95% upper bound on error among answered <= 2% on p4_val) was fixed in the plan before any number was seen.
+- **The crop gate is now the main source of refusals** (7.6% of p4_test) and Phase 5 could not loosen it without letting
+  other species through. A larger other-species validation set (38 leaves now) is the way to revisit it.
+- The production answer needs the OpenCLIP embedding as well as DINOv2 and BioCLIP 2; `arms=production` requests now
+  compute three embeddings instead of two.
+- The website's High / Medium / Low evidence (`confidence_levels`) is still the Phase 2 CNN study on clean VAL + TEST; it was
+  not recomputed for the Phase 5 bundle.
