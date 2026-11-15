@@ -130,7 +130,8 @@ class P3Model:
                 z = float(heads.raw_score(h, X)[0])
                 T = b["temperature"]
             p = float(sigmoid(z / T))
-            out[a] = {"label": "diseased" if p >= 0.5 else "healthy", "prob": p, "z": z, "name": ARM_LABELS.get(a, a),
+            out[a] = {"label": "diseased" if p >= 0.5 else "healthy", "prob": p, "z": z,
+                      "name": self.man["arms"][a].get("label") or ARM_LABELS.get(a, a),
                       "config": self.man["arms"][a]["config"], "ms": 1000 * (time.perf_counter() - t0)}
         return out
 
@@ -180,7 +181,9 @@ class P3Model:
             reason = "disease status uncertain"
         label = "diseased" if p_dis >= 0.5 else "healthy"
         conf = max(p_dis, 1 - p_dis)
-        prod_name = ARM_LABELS.get(prod, prod)
+        # a Phase 5 bundle names its combiner itself ("Average of 3 models"); Phase 3's stacker has no name
+        prod_name = (self.stacker or {}).get("name") if prod == "STACK" else None
+        prod_name = prod_name or ARM_LABELS.get(prod, prod)
         return {
             "crop": crop, "crop_confidence": (p_tu if crop == "turmeric" else 1 - p_tu) if user_crop is None else None,
             "crop_probs": {"turmeric": p_tu, "blackgram": 1 - p_tu}, "crop_p_other_prompt": p_other,
