@@ -534,6 +534,12 @@ Started and finished 2026-11-15. Plan committed (cf31ac1) before any Phase 5 num
 
 ### Phase 5 evidence log (newest first)
 
+#### 2026-11-15 P5-V Full verification
+- `python scripts/verify_all.py` with the Phase 5 bundle deployed -> **OVERALL: PASS** (26/26): lint; 113 tests; all
+  leakage checks; P3 / P4 / P5 reports and MODEL_CARD.md = fresh render; site.json fresh; no hard-coded metrics in web
+  copy; P3 API contract (7 passed); web typecheck, lint, build; E2E 28 functional + 5 timing passed (0 long tasks on
+  the longer landing page).
+
 #### 2026-11-15 P5-04 Report, card, tests, website
 - `scripts/p5_report.py` -> results/p5_report.md (numbers from JSON only; `--check` in verify_all). `scripts/model_card.py`
   renders the Phase 5 bundle (members, thresholds, second-read caveat). tests/test_p5.py: 6 passed (combiner, Clopper-Pearson
