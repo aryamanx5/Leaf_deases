@@ -49,7 +49,8 @@ P2_ARTEFACTS = [
 # results files that scripts/export_site_data.py reads: site.json must be newer than all of them
 SITE_SOURCES = ["results/comparison.csv", "results/robustness.json", "results/calibration.json",
                 "data/processed/splits.csv", "data/processed/split_meta.json", "web/public/media/heal/heal_21x9.json",
-                "web/public/media/heal/heal_9x16.json", "results/p4/eval.json", "results/p4/selection.json"]
+                "web/public/media/heal/heal_9x16.json", "results/p4/eval.json", "results/p4/selection.json",
+                *[f for f in ("results/p5/eval.json", "results/p5/selection.json") if (ROOT / f).exists()]]
 P3_ARTEFACTS = [
     "results/crop_models.json", "results/crop_errors.md", "results/disease_models.json", "results/stacking.json",
     "results/trust.json", "results/robustness_p3.json", "results/final_report.md", "results/p3/audit.json",
@@ -327,6 +328,10 @@ def main() -> int:
                    ("Phase 4 pool disjoint from test sets", check_p4_disjoint),
                    ("Phase 4 report vs results JSON", lambda: run([py, "scripts/p4_report.py", "--check"])
                     if (ROOT / "results/p4/selection.json").exists() else (True, "Phase 4 not run")),
+                   ("Phase 5 report vs results JSON", lambda: run([py, "scripts/p5_report.py", "--check"])
+                    if (ROOT / "results/p5/eval.json").exists() else (True, "Phase 5 not run")),
+                   ("Phase 5 bundle = selection, switch rule holds", lambda: run([py, "-m", "pytest", "-q", "-rs", "tests/test_p5.py"])
+                    if (ROOT / "results/p5/eval.json").exists() else (True, "Phase 5 not run")),
                    ("MODEL_CARD.md vs deployed manifest", lambda: run([py, "scripts/model_card.py", "--check"])
                     if (ROOT / "results/p4/eval.json").exists() else (True, "Phase 4 not run")),
                    ("P3 report + README numbers vs results JSON", lambda: run([py, "scripts/p3_report.py", "--check"])),
