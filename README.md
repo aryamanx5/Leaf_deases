@@ -108,6 +108,15 @@ clean VAL plus "VAL-swap" (each VAL leaf composited onto a new background). The 
   bundle is described by `models/manifest.json`; licences are in `docs/LICENSES.md`.
 * Report: `results/final_report.md` (generated; `verify_all.py` re-renders it and compares).
 
+## Phase 4 and 5: field training, then fewer needless refusals
+
+* `make p4` (docs/PLAN_phase4_more_data.md, pre-registered): field photos added to training, selection on a field
+  validation split, one evaluation on a held-out field test split, and a switch rule. Report: `results/p4_report.md`.
+* `make p5` (docs/PLAN_phase5_confidence.md, pre-registered): trains nothing. The production answer becomes the plain
+  average of the Phase 4 heads of three backbones, and the refusal thresholds are re-derived on validation leaves
+  against a stated error target, so the system stops saying "not sure" about leaves it gets right. Report:
+  `results/p5_report.md`; deployed bundle: `models/MODEL_CARD.md`; earlier bundles stay as `models/manifest_*.json`.
+
 ## Web app
 
 `web/` is the project site, **Patra**: a scroll-story landing page (React 18 + TypeScript + Vite + Tailwind, GSAP
