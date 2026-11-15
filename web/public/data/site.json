@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T18:24:38+00:00",
+ "generated_at": "2026-11-15T02:24:00+00:00",
  "dataset": {
   "total": 1606,
   "by_crop_label": {
@@ -387,6 +387,202 @@
   "ms": {
    "old": 557.6040750995162,
    "new": 32.97420000017155
+  }
+ },
+ "confidence_model": {
+  "candidate": "M1",
+  "members": 3,
+  "candidates_compared": 4,
+  "second_read_of_p4_test": true,
+  "sets": {
+   "p4_test": {
+    "n": 331,
+    "old": {
+     "macro_f1": 0.9633809049673636,
+     "accuracy": 0.9758308157099698,
+     "ci95": [
+      0.9332467851868548,
+      0.9879657105735113
+     ]
+    },
+    "new": {
+     "macro_f1": 0.9725356787255228,
+     "accuracy": 0.9818731117824774,
+     "ci95": [
+      0.9444203265360192,
+      0.9948093359362454
+     ]
+    },
+    "diff": 0.009154773758159207,
+    "diff_ci95": [
+     0.0,
+     0.024733605873462072
+    ],
+    "mcnemar_p": 0.5,
+    "by_crop": {
+     "turmeric": {
+      "n": 34,
+      "old": 1.0,
+      "new": 1.0
+     },
+     "blackgram": {
+      "n": 297,
+      "old": 0.9582278481012658,
+      "new": 0.9686708860759494
+     }
+    }
+   },
+   "wild_ext": {
+    "n": 1199,
+    "old": {
+     "macro_f1": 0.961603054060475,
+     "accuracy": 0.9641367806505421,
+     "ci95": [
+      0.9495257733503245,
+      0.9733216579538294
+     ]
+    },
+    "new": {
+     "macro_f1": 0.9740805262165291,
+     "accuracy": 0.97581317764804,
+     "ci95": [
+      0.9640257152476088,
+      0.9832808544800371
+     ]
+    },
+    "diff": 0.012477472156054104,
+    "diff_ci95": [
+     0.005170428975136654,
+     0.021254262367732937
+    ],
+    "mcnemar_p": 0.006610751152038574,
+    "by_crop": {
+     "turmeric": {
+      "n": 318,
+      "old": 0.9824338507429707,
+      "new": 0.9894116471880932
+     },
+     "blackgram": {
+      "n": 881,
+      "old": 0.9543980951758257,
+      "new": 0.9687986966992492
+     }
+    }
+   },
+   "wild": {
+    "n": 125,
+    "old": {
+     "macro_f1": 0.9757767586073252,
+     "accuracy": 0.976,
+     "ci95": [
+      0.9434542388605108,
+      1.0
+     ]
+    },
+    "new": {
+     "macro_f1": 1.0,
+     "accuracy": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "diff": 0.024223241392674844,
+    "diff_ci95": [
+     0.0,
+     0.05654576113948922
+    ],
+    "mcnemar_p": 0.25,
+    "by_crop": {
+     "turmeric": {
+      "n": 55,
+      "old": 0.963527851458886,
+      "new": 1.0
+     },
+     "blackgram": {
+      "n": 70,
+      "old": 0.985474164764474,
+      "new": 1.0
+     }
+    }
+   },
+   "test": {
+    "n": 239,
+    "old": {
+     "macro_f1": 0.9888733705772812,
+     "accuracy": 0.9916317991631799,
+     "ci95": [
+      0.9698361549555204,
+      1.0
+     ]
+    },
+    "new": {
+     "macro_f1": 1.0,
+     "accuracy": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "diff": 0.011126629422718803,
+    "diff_ci95": [
+     0.0,
+     0.0301638450444796
+    ],
+    "mcnemar_p": 0.5,
+    "by_crop": {
+     "turmeric": {
+      "n": 89,
+      "old": 1.0,
+      "new": 1.0
+     },
+     "blackgram": {
+      "n": 150,
+      "old": 0.9796692870696666,
+      "new": 1.0
+     }
+    }
+   }
+  },
+  "trust": {
+   "old": {
+    "answered_share_labelled": 0.8489425981873112,
+    "answered_labelled": 281,
+    "errors_answered": 0,
+    "n_labelled": 331,
+    "end_to_end_accuracy_answered": 1.0,
+    "other_species_refused": 0.8947368421052632,
+    "n_other": 38,
+    "disease_min_confidence": 0.966844530287936,
+    "crop_min_confidence": 0.9940466456917527
+   },
+   "new": {
+    "answered_share_labelled": 0.9063444108761329,
+    "answered_labelled": 300,
+    "errors_answered": 3,
+    "n_labelled": 331,
+    "end_to_end_accuracy_answered": 0.99,
+    "other_species_refused": 0.8947368421052632,
+    "n_other": 38,
+    "disease_min_confidence": 0.7367486693746379,
+    "crop_min_confidence": 0.9940134080001385
+   }
+  },
+  "confidence_p4_test": {
+   "old": {
+    "mean_confidence_right": 0.9903679326510331,
+    "ece": 0.012823196698813566
+   },
+   "new": {
+    "mean_confidence_right": 0.9938246502974737,
+    "ece": 0.011432022547323586
+   }
+  },
+  "max_error_target": 0.02,
+  "validation": {
+   "answered": 330,
+   "errors": 2,
+   "error_upper_bound": 0.018954365855519656
   }
  },
  "showcase": {
