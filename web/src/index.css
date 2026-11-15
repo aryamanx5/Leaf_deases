@@ -248,3 +248,157 @@ html.lenis, html.lenis body { height: auto; }
   .draw { stroke-dashoffset: 0; transition: none; }
   .spot::before { transition: none; }
 }
+
+/* ---- second pass: themes, film-in-type, ambient light, intro curtain, aurora glows ---- */
+
+/* Two alternative night palettes (the default is "forest"). Only the custom properties change, so every
+   component follows; the data colours for tissue types stay the same in every theme. */
+html[data-theme='monsoon'] {
+  --ink: #070c12;
+  --ink-rgb: 7 12 18;
+  --soil: #0f1a25;
+  --soil-rgb: 15 26 37;
+  --paper: #e3e9ec;
+  --paper-rgb: 227 233 236;
+  --text: #e2edf3;
+  --muted: rgba(226, 237, 243, 0.64);
+  --line: rgba(226, 237, 243, 0.13);
+  --leaf: #6fd0b4;
+  --leaf-rgb: 111 208 180;
+  --turmeric: #f2a23a;
+  --turmeric-rgb: 242 162 58;
+}
+html[data-theme='dusk'] {
+  --ink: #110b10;
+  --ink-rgb: 17 11 16;
+  --soil: #1e141c;
+  --soil-rgb: 30 20 28;
+  --paper: #f0e7e2;
+  --paper-rgb: 240 231 226;
+  --text: #f3e9ec;
+  --muted: rgba(243, 233, 236, 0.64);
+  --line: rgba(243, 233, 236, 0.13);
+  --leaf: #b5cf85;
+  --leaf-rgb: 181 207 133;
+  --turmeric: #ff8257;
+  --turmeric-rgb: 255 130 87;
+}
+/* theme change: the new palette opens as a circle from the button (View Transitions API, see lib/theme.ts) */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-new(root) { z-index: 2; }
+::view-transition-old(root) { z-index: 1; }
+
+/* film inside letters: a black sheet with white type, multiplied over the clip behind it */
+.type-sheet { background: #000; mix-blend-mode: multiply; }
+
+/* a soft light that trails the pointer over the dark page */
+.glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 85;
+  width: 640px;
+  height: 640px;
+  margin: -320px 0 0 -320px;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgb(var(--leaf-rgb) / 0.1) 0%, rgb(var(--leaf-rgb) / 0.04) 35%, transparent 68%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  will-change: transform;
+}
+.glow[data-on='1'] { opacity: 1; }
+
+/* slow coloured haze behind a section heading */
+.aurora {
+  position: absolute;
+  pointer-events: none;
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 9999px;
+  opacity: 0.55;
+  will-change: transform;
+}
+.aurora-a {
+  left: -18vw;
+  top: -22vw;
+  background: radial-gradient(circle, rgb(var(--leaf-rgb) / 0.16) 0%, transparent 62%);
+  animation: auroraDrift 22s ease-in-out infinite alternate;
+}
+.aurora-b {
+  right: -20vw;
+  top: 10%;
+  background: radial-gradient(circle, rgb(var(--turmeric-rgb) / 0.13) 0%, transparent 62%);
+  animation: auroraDrift 28s ease-in-out infinite alternate-reverse;
+}
+@keyframes auroraDrift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(9vw, 6vw, 0) scale(1.18); }
+}
+
+/* a thin light that travels round a card's edge */
+@property --edge-a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.edge { position: relative; }
+.edge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from var(--edge-a), transparent 0deg, rgb(var(--leaf-rgb) / 0.9) 40deg, rgb(var(--turmeric-rgb) / 0.8) 70deg, transparent 120deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: edgeTurn 7s linear infinite;
+  pointer-events: none;
+}
+@keyframes edgeTurn { to { --edge-a: 360deg; } }
+
+/* intro curtain: the mark draws itself, then the sheet lifts (first page of a visit only) */
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: var(--ink);
+  pointer-events: none;
+  animation: curtainLift 0.9s var(--ease) 1.25s both;
+}
+@keyframes curtainLift {
+  from { clip-path: inset(0 0 0 0); }
+  to { clip-path: inset(0 0 100% 0); }
+}
+.curtain path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: curtainDraw 0.9s var(--ease) both; }
+.curtain path:nth-child(2) { animation-delay: 0.12s; }
+.curtain path:nth-child(3) { animation-delay: 0.3s; }
+@keyframes curtainDraw { to { stroke-dashoffset: 0; } }
+.curtain-word { opacity: 0; animation: heroFadeUp 0.7s var(--ease) 0.35s both; }
+.curtain-bar { width: 120px; height: 1px; background: rgba(232, 240, 228, 0.18); overflow: hidden; }
+.curtain-bar::after { content: ''; display: block; height: 100%; background: var(--leaf); transform-origin: left; animation: curtainFill 1.1s var(--ease) 0.1s both; }
+@keyframes curtainFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* marquee leans with the scroll speed (--lean is written by the Marquee component) */
+.marquee-track > div { transform: skewX(var(--lean, 0deg)); transition: transform 0.5s var(--ease); }
+
+/* magnetic buttons ease back when the pointer leaves */
+.magnet { transition: transform 0.5s var(--ease); will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-a, .aurora-b { animation: none; }
+  .edge::after { animation: none; }
+  .curtain { display: none; }
+  .glow { display: none; }
+  .marquee-track > div { transform: none; }
+  .magnet { transition: none; }
+}
+@media (hover: none) {
+  .glow { display: none; }
+}
