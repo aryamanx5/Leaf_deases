@@ -3,6 +3,8 @@ import { lazy, Suspense } from 'react';
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import CommandPalette from '@/components/fx/CommandPalette';
+import Glow from '@/components/fx/Glow';
+import Intro from '@/components/fx/Intro';
 import ScrollProgress from '@/components/fx/ScrollProgress';
 import Nav from '@/components/Nav';
 import { DEPLOYED_APP_URL } from '@/content/brand';
@@ -27,6 +29,8 @@ export default function App() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[300] focus:rounded-full focus:bg-paper focus:px-4 focus:py-2 focus:text-ink">
         Skip to content
       </a>
+      <Intro />
+      <Glow />
       <ScrollProgress />
       <Nav />
       <CommandPalette />

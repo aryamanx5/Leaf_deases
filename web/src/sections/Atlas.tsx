@@ -63,8 +63,9 @@ export default function Atlas({ site }: { site: Site }) {
   const count = site.dataset.by_class[entry.key];
 
   return (
-    <section id="atlas" aria-labelledby="atlas-title" className="section-pad bg-ink">
-      <div className="container-grid">
+    <section id="atlas" aria-labelledby="atlas-title" className="section-pad relative overflow-hidden bg-ink">
+      <div aria-hidden="true" className="aurora aurora-a" />
+      <div className="container-grid relative">
         <Reveal as="p" className="caption mb-6 text-muted">Field guide · Eight classes</Reveal>
         <SplitHeading id="atlas-title" text="What the camera is asked to tell apart," italic="leaf by leaf."
                       className="mb-12 max-w-[900px] text-4xl font-normal leading-[1.05] tracking-[-0.04em] sm:text-5xl lg:mb-16 lg:text-[56px]" />

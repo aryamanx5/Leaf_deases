@@ -1,6 +1,7 @@
 import { Menu, Search, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ThemeButton from '@/components/fx/ThemeButton';
 import Logo from '@/components/Logo';
 import RunModelLink from '@/components/RunModelLink';
 import { BRAND_NAME } from '@/content/brand';
@@ -62,6 +63,7 @@ export default function Nav() {
           <span className="sr-only">Jump to a part of the site, </span>
           <kbd className="mono rounded border border-white/20 px-1.5 py-0.5 text-[10px]">⌘K</kbd>
         </button>
+        <ThemeButton className={`hidden lg:flex ${light ? 'bg-ink/85' : 'bg-ink/45'}`} />
         <RunModelLink className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100">
           Run the model
         </RunModelLink>

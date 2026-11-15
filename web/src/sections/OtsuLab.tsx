@@ -111,8 +111,9 @@ export default function OtsuLab({ site }: { site: Site }) {
   const p = s.params;
 
   return (
-    <section id="lab" aria-labelledby="lab-title" className="section-pad bg-ink">
-      <div ref={nearRef} className="container-grid">
+    <section id="lab" aria-labelledby="lab-title" className="section-pad relative overflow-hidden bg-ink">
+      <div aria-hidden="true" className="aurora aurora-b" />
+      <div ref={nearRef} className="container-grid relative">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <div>
             <Reveal as="p" className="caption mb-6 text-muted">Try it · Otsu’s method</Reveal>
@@ -159,7 +160,7 @@ export default function OtsuLab({ site }: { site: Site }) {
           </Reveal>
 
           <Reveal delay={120} className="lg:col-span-7">
-            <div className="rounded-[6px] border hairline p-5 sm:p-7">
+            <div className="edge rounded-[6px] border hairline bg-ink/60 p-5 sm:p-7">
               <div className="flex items-baseline justify-between gap-4">
                 <p className="caption text-[11px] text-muted">Brightness of the distance map</p>
                 <p className="mono flex items-center gap-4 text-[11px] text-muted" aria-hidden="true">

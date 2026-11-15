@@ -1,6 +1,7 @@
 import { Focus, Leaf, Plus, Square, Sun } from 'lucide-react';
 import { useRef, type ReactNode } from 'react';
 import LazyVideo from '@/components/fx/LazyVideo';
+import Magnetic from '@/components/fx/Magnetic';
 import { Reveal, SplitHeading } from '@/components/fx/Reveal';
 import RunModelLink from '@/components/RunModelLink';
 import Spotlight from '@/components/fx/Spotlight';
@@ -59,8 +60,9 @@ export default function FieldNotes({ site }: { site: Site }) {
   const ref = useRef<HTMLElement>(null);
   useRefreshOnResize(ref);
   return (
-    <section id="notes" ref={ref} aria-labelledby="notes-title" className="section-pad bg-ink">
-      <div className="container-grid">
+    <section id="notes" ref={ref} aria-labelledby="notes-title" className="section-pad relative overflow-hidden bg-ink">
+      <div aria-hidden="true" className="aurora aurora-b" />
+      <div className="container-grid relative">
         <Reveal as="p" className="caption mb-6 text-muted">Field notes · Before you take the photo</Reveal>
         <SplitHeading id="notes-title" text="A photo the model can read" italic="takes four habits."
                       className="mb-12 max-w-[820px] text-4xl font-normal leading-[1.05] tracking-[-0.04em] sm:text-5xl lg:mb-16 lg:text-[56px]" />
@@ -107,9 +109,11 @@ export default function FieldNotes({ site }: { site: Site }) {
               What people ask before they trust a camera with a crop.
             </Reveal>
             <Reveal delay={160} className="mt-8">
-              <RunModelLink className="inline-flex min-h-[44px] items-center rounded-full bg-cta px-6 text-sm font-medium text-white transition-colors hover:bg-cta-hover">
-                Run the model
-              </RunModelLink>
+              <Magnetic>
+                <RunModelLink className="inline-flex min-h-[44px] items-center rounded-full bg-cta px-6 text-sm font-medium text-white transition-colors hover:bg-cta-hover">
+                  Run the model
+                </RunModelLink>
+              </Magnetic>
             </Reveal>
             <Reveal delay={220} className="mt-10 hidden lg:block">
               <LazyVideo clip="dew" className="aspect-[4/3] w-full max-w-[340px] rounded-[14px]" />

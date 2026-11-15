@@ -15,9 +15,11 @@ import OtsuLab from '@/sections/OtsuLab';
 import Pipeline from '@/sections/Pipeline';
 import Problem from '@/sections/Problem';
 import Proof from '@/sections/Proof';
+import Reel from '@/sections/Reel';
 import Results from '@/sections/Results';
 import Run from '@/sections/Run';
 import System from '@/sections/System';
+import TypeBand from '@/sections/TypeBand';
 
 export default function Landing() {
   const site = useSite();
@@ -49,8 +51,10 @@ export default function Landing() {
         <Results site={site} />
         <Proof site={site} />
         <System site={site} />
+        <Reel />
         <Journey site={site} />
         <FieldNotes site={site} />
+        <TypeBand />
         <Run site={site} />
       </main>
       <Footer />
