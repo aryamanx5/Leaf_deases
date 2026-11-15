@@ -56,9 +56,10 @@ export default function Nav() {
         ))}
       </div>
       <div className="hidden items-center gap-2 md:flex">
-        <button type="button" onClick={openPalette} aria-label="Jump to a part of the site" aria-keyshortcuts="Meta+K Control+K"
+        <button type="button" onClick={openPalette} aria-keyshortcuts="Meta+K Control+K"
                 className={`hidden h-10 items-center gap-2 rounded-full border border-white/20 pl-3 pr-2.5 text-white/85 backdrop-blur-md transition-colors duration-500 hover:text-white lg:flex ${light ? 'bg-ink/85' : 'bg-ink/45'}`}>
           <Search size={14} aria-hidden="true" />
+          <span className="sr-only">Jump to a part of the site, </span>
           <kbd className="mono rounded border border-white/20 px-1.5 py-0.5 text-[10px]">⌘K</kbd>
         </button>
         <RunModelLink className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100">
