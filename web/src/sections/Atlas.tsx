@@ -71,7 +71,7 @@ export default function Atlas({ site }: { site: Site }) {
 
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           {/* the index: every class, grouped by crop */}
-          <Reveal className="lg:col-span-3">
+          <Reveal className="min-w-0 lg:col-span-3">
             <div className="-mx-6 flex gap-6 overflow-x-auto px-6 pb-2 md:-mx-10 md:px-10 lg:mx-0 lg:block lg:overflow-visible lg:px-0 lg:pb-0">
               {(['turmeric', 'blackgram'] as const).map((crop) => (
                 <div key={crop} role="group" aria-label={`${CROP_NAME[crop]} classes`} className="shrink-0 lg:mb-8">
@@ -95,7 +95,7 @@ export default function Atlas({ site }: { site: Site }) {
           </Reveal>
 
           {/* the photos of the chosen class */}
-          <Reveal delay={80} className="lg:col-span-5">
+          <Reveal delay={80} className="min-w-0 lg:col-span-5">
             <div className="lg:min-h-[460px]">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.div key={entry.key} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
@@ -107,7 +107,7 @@ export default function Atlas({ site }: { site: Site }) {
           </Reveal>
 
           {/* what it is and how it reads */}
-          <Reveal delay={160} className="lg:col-span-4">
+          <Reveal delay={160} className="min-w-0 lg:col-span-4">
             <div className="lg:min-h-[460px]" aria-live="polite">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div key={entry.key} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
