@@ -44,6 +44,11 @@ only: none is a dataset image and none is shown as a result. Each is credited wh
 | `field-*.mp4` (a ginger field; re-encoded to 720p / 540p, first 10 s) | Pexels video 39172117, vijay kumar, https://www.pexels.com/video/lush-ginger-field-in-rural-setting-39172117/ | Pexels Licence (free use, modification allowed, no attribution required) | "The field" interlude |
 | `hand-*.mp4` (a hand brushing along maize leaves) | Pexels video 14035105, Feyza Yıldırım, https://www.pexels.com/video/woman-touching-leaves-14035105/ | Pexels Licence | "Field notes" section |
 | `dew-*.mp4` (wet leaves) | Pexels video 34796496, Nothing Ahead, https://www.pexels.com/video/close-up-of-dewy-green-leaves-in-garden-setting-34796496/ | Pexels Licence | "Field notes" section |
+| `veins-*.mp4` (a backlit leaf with dead patches; first 10 s) | Pexels video 40382375, Bil Hinton, https://www.pexels.com/video/close-up-of-sunlit-leaf-macro-view-40382375/ | Pexels Licence | film reel |
+| `rain-*.mp4` (rain on banana leaves; first 8 s) | Pexels video 32089669, Srinivas Kashyap, https://www.pexels.com/video/tropical-rainfall-on-banana-leaves-in-slow-motion-32089669/ | Pexels Licence | film reel |
+| `soil-*.mp4` (hands holding soil and a seedling) | Pexels video 11960802, Sergei Skrynnik, https://www.pexels.com/video/close-up-view-of-land-in-hands-11960802/ | Pexels Licence | film reel |
+| `farmer-*.mp4` in `media/film/` (a farmer walking a field; first 8 s) | Pexels video 39364382, Hữu Thịnh 79, https://www.pexels.com/video/tranquil-scene-of-a-farmer-in-lush-paddy-field-39364382/ | Pexels Licence | film reel |
+| `macro-*.mp4` (leaf veins, very close) | Pexels video 15783159, CW Tan, https://www.pexels.com/video/extreme-close-up-of-a-green-leaf-15783159/ | Pexels Licence | film reel; inside the letters of the "Read the leaf" band |
 
 Posters (`*-poster-*.webp`) are the first frame of each clip. The Pexels Licence does not allow selling or
 redistributing the clips on their own; they are part of the site only.
