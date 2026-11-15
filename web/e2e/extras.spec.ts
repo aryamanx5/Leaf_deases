@@ -133,9 +133,52 @@ test.describe('landing additions', () => {
     await expect(button).toBeFocused();
   });
 
+  test('film reel: one panel is open, and only its clip is fetched', async ({ page }) => {
+    await toSection(page, 'reel', 100);
+    const panels = page.getByTestId('reel').getByRole('button');
+    await expect(panels).toHaveCount(5);
+    await expect(panels.nth(0)).toHaveAttribute('aria-pressed', 'true');
+    const fetched = () => page.evaluate(() => Array.from(document.querySelectorAll<HTMLVideoElement>('#reel video')).filter((v) => v.currentSrc).length);
+    await expect.poll(fetched, { timeout: 15_000 }).toBe(1);
+    await panels.nth(2).focus(); // keyboard users open a panel by tabbing to it
+    await expect(panels.nth(2)).toHaveAttribute('aria-pressed', 'true');
+    await expect(panels.nth(0)).toHaveAttribute('aria-pressed', 'false');
+    await expect.poll(fetched, { timeout: 15_000 }).toBe(2);
+    await expect.poll(() => page.evaluate(() => Array.from(document.querySelectorAll<HTMLVideoElement>('#reel video')).filter((v) => !v.paused).length)).toBe(1);
+  });
+
+  test('theme: the button cycles palettes, the choice survives a reload, the palette can reset it', async ({ page }) => {
+    const theme = () => page.evaluate(() => document.documentElement.dataset.theme ?? 'forest');
+    const ink = () => page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    const forestInk = await ink();
+    await page.getByTestId('theme-button').click();
+    await expect.poll(theme).toBe('monsoon');
+    await expect.poll(ink).not.toBe(forestInk);
+    await page.reload({ waitUntil: 'networkidle' });
+    expect(await theme()).toBe('monsoon');
+    await page.keyboard.press('ControlOrMeta+k');
+    await page.keyboard.type('forest theme');
+    await page.keyboard.press('Enter');
+    await expect.poll(theme).toBe('forest');
+    await expect.poll(ink).toBe(forestInk);
+  });
+
+  test('intro curtain: shown once per visit, never blocks input, then gone', async ({ page }) => {
+    await page.evaluate(() => sessionStorage.clear());
+    await page.reload();
+    await expect(page.getByTestId('intro')).toBeVisible();
+    // the page under it already takes input
+    await page.keyboard.press('ControlOrMeta+k');
+    await expect(page.getByRole('dialog', { name: 'Jump to a part of the site' })).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.getByTestId('intro')).toHaveCount(0, { timeout: 6000 });
+    await page.reload();
+    await expect(page.getByTestId('intro')).toHaveCount(0);
+  });
+
   test('no serious axe violations in the new sections', async ({ page }) => {
     const found: string[] = [];
-    for (const id of ['interlude', 'atlas', 'lab', 'proof', 'journey', 'notes']) {
+    for (const id of ['interlude', 'atlas', 'lab', 'proof', 'reel', 'journey', 'notes', 'band']) {
       await page.evaluate((id) => {
         const el = document.getElementById(id)!;
         window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY + Math.max(0, el.offsetHeight - window.innerHeight));
@@ -153,7 +196,7 @@ test.describe('landing additions', () => {
   test('no horizontal overflow on a phone, new sections included', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/', { waitUntil: 'networkidle' });
-    for (const id of ['interlude', 'atlas', 'lab', 'proof', 'journey', 'notes']) {
+    for (const id of ['interlude', 'atlas', 'lab', 'proof', 'reel', 'journey', 'notes', 'band']) {
       await toSection(page, id, 200);
       await page.waitForTimeout(250);
       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), id).toBeLessThanOrEqual(0);
