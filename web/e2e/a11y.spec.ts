@@ -59,7 +59,7 @@ test('reduced motion: nothing pinned, healing becomes a before/after slider', as
     Array.from(document.querySelectorAll<HTMLElement>('main .sticky')).filter((e) => e.parentElement!.offsetHeight > window.innerHeight * 1.1).length);
   expect(pinned).toBe(0);
   await page.evaluate(() => document.getElementById('run')!.scrollIntoView());
-  const slider = page.getByRole('slider');
+  const slider = page.getByRole('slider', { name: 'Reveal the healed leaves' }); // the threshold lab has a slider too
   await expect(slider).toBeVisible();
   const before = await page.getByTestId('meter').textContent();
   await slider.fill('1');
