@@ -22,7 +22,7 @@ const SECTIONS: [string, string, string][] = [
   ['proof', 'How sure is sure', 'every held-out photo as a dot'],
   ['system', 'The system', 'two readings, one answer'],
   ['reel', 'Film reel', 'five clips from the field'],
-  ['journey', 'How it was built', 'four phases'],
+  ['journey', 'How it was built', 'phase by phase'],
   ['notes', 'Photo tips and questions', 'take a photo the model can read'],
   ['run', 'Heal the leaves', 'the interactive finale'],
 ];

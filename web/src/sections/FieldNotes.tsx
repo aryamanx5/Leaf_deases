@@ -17,9 +17,10 @@ const HABITS: { Icon: typeof Leaf; title: string; why: string }[] = [
 ];
 
 function faq(site: Site): { q: string; a: ReactNode }[] {
-  const t = site.field_model.trust.new;
-  const held = site.field_model.sets.p4_test;
-  const clean = site.field_model.sets.test;
+  const t = (site.confidence_model ?? site.field_model).trust.new;
+  const deployed = site.confidence_model ?? site.field_model; // the newest evaluated step describes the deployed model
+  const held = deployed.sets.p4_test;
+  const clean = deployed.sets.test;
   return [
     {
       q: 'Is this a diagnosis?',

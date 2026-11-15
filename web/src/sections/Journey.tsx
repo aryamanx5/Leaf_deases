@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Reveal, SplitHeading } from '@/components/fx/Reveal';
-import { fix, int } from '@/lib/format';
+import { fix, int, pct } from '@/lib/format';
 import { useInView, useReducedMotion } from '@/lib/motion';
 import type { Site } from '@/lib/site';
 import { ScrollTrigger } from '@/lib/smooth';
 import { createGrower, drawVeins, type Veins } from '@/lib/veins';
 
-type Phase = { n: string; title: string; broke: string; changed: (site: Site) => string };
+type Phase = { n: string; title: string; broke: string; changed: (site: Site) => string; when?: (site: Site) => boolean };
 
 const PHASES: Phase[] = [
   {
@@ -39,6 +39,16 @@ const PHASES: Phase[] = [
       return `${int(s.field_model.train_field_leaves)} field leaves added to training, under a switch rule written down before any result was seen. Held-out field macro-F1 went from ${fix(h.old.macro_f1)} to ${fix(h.new.macro_f1)}.`;
     },
   },
+  {
+    n: '05',
+    title: 'Fewer needless refusals',
+    when: (s) => !!s.confidence_model,
+    broke: 'It said “not sure” about leaves it had right. The refusal line had been set stricter than the models needed.',
+    changed: (s) => {
+      const c = s.confidence_model!;
+      return `The answer became the average of ${c.members} equally good models, and the refusal line was reset against a stated error target. It now answers ${pct(c.trust.new.answered_share_labelled, 0)} of held-out field leaves, up from ${pct(c.trust.old.answered_share_labelled, 0)}.`;
+    },
+  },
 ];
 
 /**
@@ -50,7 +60,9 @@ export default function Journey({ site }: { site: Site }) {
   const [nearRef, near] = useInView<HTMLElement>({ margin: '600px 0px', threshold: 0 });
   const bandRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [phase, setPhase] = useState(reduced ? PHASES.length : 0);
+  const phases = PHASES.filter((p) => !p.when || p.when(site));
+  const count = phases.length;
+  const [phase, setPhase] = useState(reduced ? count : 0);
 
   useEffect(() => {
     const band = bandRef.current;
@@ -119,7 +131,7 @@ export default function Journey({ site }: { site: Site }) {
       scrub: true,
       onUpdate: (self) => {
         progress = self.progress;
-        setPhase(Math.min(PHASES.length, Math.floor(self.progress * PHASES.length * 1.02) + (self.progress > 0.02 ? 1 : 0)));
+        setPhase(Math.min(count, Math.floor(self.progress * count * 1.02) + (self.progress > 0.02 ? 1 : 0)));
         kick();
       },
     });
@@ -128,12 +140,12 @@ export default function Journey({ site }: { site: Site }) {
       ro.disconnect();
       cancelAnimationFrame(raf);
     };
-  }, [near, reduced]);
+  }, [near, reduced, count]);
 
   return (
     <section id="journey" ref={nearRef} aria-labelledby="journey-title" className="section-pad overflow-hidden bg-ink">
       <div className="container-grid">
-        <Reveal as="p" className="caption mb-6 text-muted">How it was built · Four phases</Reveal>
+        <Reveal as="p" className="caption mb-6 text-muted">How it was built · {count > 4 ? 'Five' : 'Four'} phases</Reveal>
         <SplitHeading id="journey-title" text="It grew the way a leaf does:" italic="one vein at a time."
                       className="max-w-[860px] text-4xl font-normal leading-[1.05] tracking-[-0.04em] sm:text-5xl lg:text-[56px]" />
         <Reveal as="p" delay={120} className="mt-6 max-w-[560px] text-[17px] leading-relaxed text-muted">
@@ -146,8 +158,8 @@ export default function Journey({ site }: { site: Site }) {
                 aria-label="A leaf’s veins growing from the base to the tip as the page scrolls." data-testid="veins" />
         {/* one marker per phase along the midrib */}
         <ol className="pointer-events-none absolute inset-x-[2%] top-1/2 hidden sm:block" aria-hidden="true">
-          {PHASES.map((p, i) => (
-            <li key={p.n} className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `calc(${(i + 0.5) / PHASES.length} * 100%)` }}>
+          {phases.map((p, i) => (
+            <li key={p.n} className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `calc(${(i + 0.5) / count} * 100%)` }}>
               <span className={`mono flex h-9 w-9 items-center justify-center rounded-full border text-[11px] transition-all duration-700 ease-out ${
                 phase > i ? 'scale-100 border-leaf bg-ink text-leaf' : 'scale-75 border-white/20 bg-ink text-muted'}`}>
                 {p.n}
@@ -158,8 +170,8 @@ export default function Journey({ site }: { site: Site }) {
       </div>
 
       <div className="container-grid">
-        <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-testid="journey-phases">
-          {PHASES.map((p, i) => (
+        <ol className={`mt-10 grid gap-6 sm:grid-cols-2 ${count > 4 ? 'lg:grid-cols-5' : 'lg:grid-cols-4'}`} data-testid="journey-phases">
+          {phases.map((p, i) => (
             <li key={p.n} className={`border-t pt-5 transition-[border-color,transform] duration-700 ease-out ${phase > i ? 'border-leaf/70' : 'translate-y-2 border-white/15'}`}>
               <p className="mono text-[12px] text-leaf">Phase {p.n}</p>
               <h3 className="mt-2 font-playfair text-[26px] italic leading-tight tracking-[-0.02em]">{p.title}</h3>

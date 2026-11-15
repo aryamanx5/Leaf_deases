@@ -8,6 +8,7 @@ type SiteJson = {
   samples: { id: string; src: string }[];
   confidence_levels: { high: { n: number }; medium: { n: number }; low: { n: number } };
   dataset: { by_class: Record<string, number> };
+  confidence_model?: { trust: { new: { answered_labelled: number } } };
 };
 const site = JSON.parse(readFileSync(new URL('../public/data/site.json', import.meta.url), 'utf8')) as SiteJson;
 
@@ -101,7 +102,7 @@ test.describe('landing additions', () => {
     const early = await painted();
     await toSection(page, 'journey', 500);
     await expect.poll(painted, { timeout: 10_000 }).toBeGreaterThan(early + 2000);
-    await expect(page.getByTestId('journey-phases').locator('li')).toHaveCount(4);
+    await expect(page.getByTestId('journey-phases').locator('li')).toHaveCount(site.confidence_model ? 5 : 4);
   });
 
   test('questions open and close with the keyboard', async ({ page }) => {
