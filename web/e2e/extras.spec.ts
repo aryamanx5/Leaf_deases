@@ -1,5 +1,6 @@
 // The sections and tools added on top of the original story: film interlude, field guide, threshold lab,
 // evidence dots, timeline, questions, command palette; and on /analyze the camera, at-a-glance tiles and history.
+import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
@@ -130,6 +131,23 @@ test.describe('landing additions', () => {
     await page.keyboard.press('Escape');
     await expect(dialog).toHaveCount(0);
     await expect(button).toBeFocused();
+  });
+
+  test('no serious axe violations in the new sections', async ({ page }) => {
+    const found: string[] = [];
+    for (const id of ['interlude', 'atlas', 'lab', 'proof', 'journey', 'notes']) {
+      await page.evaluate((id) => {
+        const el = document.getElementById(id)!;
+        window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY + Math.max(0, el.offsetHeight - window.innerHeight));
+      }, id);
+      await page.waitForTimeout(1300);
+      await page.waitForFunction(() =>
+        document.getAnimations().every((a) => a.playState !== 'running' || a.effect?.getComputedTiming().endTime === Infinity));
+      const r = await new AxeBuilder({ page }).include(`#${id}`).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+      found.push(...r.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical')
+        .map((v) => `${id} ${v.id}: ${v.nodes.map((n) => n.target.join(' ')).slice(0, 3).join(' | ')}`));
+    }
+    expect(found).toEqual([]);
   });
 
   test('no horizontal overflow on a phone, new sections included', async ({ page }) => {
