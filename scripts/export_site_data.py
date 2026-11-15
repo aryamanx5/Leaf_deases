@@ -319,6 +319,42 @@ def field_model(cfg: dict) -> dict:
             "sets": sets, "trust": trust, "ms": ms}
 
 
+def confidence_model(cfg: dict) -> dict | None:
+    """Phase 5 (docs/PLAN_phase5_confidence.md): the deployed bundle vs the Phase 4 bundle it replaced, from
+    results/p5/eval.json and results/p5/selection.json. None until Phase 5 has been evaluated and switched."""
+    res = path("results", cfg)
+    fe, fs = res / "p5" / "eval.json", res / "p5" / "selection.json"
+    if not (fe.exists() and fs.exists()):
+        return None
+    ev, sel = json.loads(fe.read_text()), json.loads(fs.read_text())
+    if not ev["switch"]["switched"]:
+        return None
+
+    def pick(m: dict) -> dict:
+        return {"macro_f1": m["macro_f1"], "accuracy": m["accuracy"], "ci95": m["ci95"]["macro_f1"]}
+
+    sets = {}
+    for s in FIELD_SETS:
+        r = ev["sets"][s]
+        d = r["new_minus_old_macro_f1"]
+        sets[s] = {"n": r["n"], "old": pick(r["old"]["pooled"]), "new": pick(r["new"]["pooled"]),
+                   "diff": d["diff"], "diff_ci95": d["ci95"], "mcnemar_p": r["mcnemar_new_vs_old"]["p_value"],
+                   "by_crop": {c: {"n": r["new"][c]["n"], "old": r["old"][c]["macro_f1"], "new": r["new"][c]["macro_f1"]}
+                               for c in ("turmeric", "blackgram") if c in r["new"] and c in r["old"]}}
+    keys = ("answered_share_labelled", "answered_labelled", "errors_answered", "n_labelled", "end_to_end_accuracy_answered",
+            "other_species_refused", "n_other", "disease_min_confidence", "crop_min_confidence")
+    trust = {who: {k: ev["trust_p4_test"][who][k] for k in keys} for who in ("old", "new")}
+    conf = {who: {"mean_confidence_right": ev["sets"]["p4_test"][who]["pooled"]["confidence"]["mean_confidence_right"],
+                  "ece": ev["sets"]["p4_test"][who]["pooled"]["ece"]} for who in ("old", "new")}
+    win = sel["candidates"][sel["selection"]["winner"]]
+    rule = json.loads((path("models", cfg) / "manifest.json").read_text())["trust"]["threshold_rule"]
+    return {"candidate": sel["selection"]["winner"], "members": len(win["members"]), "candidates_compared": len(sel["candidates"]),
+            "second_read_of_p4_test": True, "sets": sets, "trust": trust, "confidence_p4_test": conf,
+            "max_error_target": rule["disease_max_error"],
+            "validation": {"answered": sel["thresholds"]["disease"]["answered"], "errors": sel["thresholds"]["disease"]["errors"],
+                           "error_upper_bound": sel["thresholds"]["disease"]["error_upper_bound"]}}
+
+
 def metrics_block(m: dict) -> dict:
     return {k: m[k] for k in ("accuracy", "precision", "recall", "f1", "macro_f1", "healthy_recall", "roc_auc") if k in m}
 
@@ -367,6 +403,7 @@ def main() -> int:
         "calibration": {"tau_crop": cal["tau_crop"], "ood_threshold": cal["ood"]["threshold"]},
         "confidence_levels": confidence_levels(load_config()),
         "field_model": field_model(cfg),
+        **({"confidence_model": cm} if (cm := confidence_model(cfg)) else {}),
         "showcase": showcase,
         "heal": heal,
         "crops": crop_panels(cfg),
