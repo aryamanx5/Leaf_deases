@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import LazyVideo from '@/components/fx/LazyVideo';
 import { Reveal, SplitHeading } from '@/components/fx/Reveal';
-import type { ClipName } from '@/lib/film';
+import { FILM, type ClipName } from '@/lib/film';
 
 const FRAMES: { clip: ClipName; title: string; line: string; focus?: string }[] = [
   {
@@ -53,7 +53,7 @@ export default function Reel() {
               <li key={f.clip}
                   className={`reel-panel relative min-w-0 overflow-hidden rounded-[14px] border transition-[flex-grow,height,border-color] duration-700 ease-out motion-reduce:transition-none ${
                     on ? 'h-[62vw] max-h-[420px] border-white/25 lg:h-auto lg:max-h-none lg:grow-[6]' : 'h-[72px] border-white/10 lg:h-auto lg:grow'} lg:basis-0`}>
-                <LazyVideo clip={f.clip} active={on} credit={on} focus={f.focus} sizes="(max-width: 1024px) 100vw, 60vw"
+                <LazyVideo clip={f.clip} active={on} credit={false} focus={f.focus} sizes="(max-width: 1024px) 100vw, 60vw"
                            className="absolute inset-0 h-full w-full" />
                 <div aria-hidden="true" className={`pointer-events-none absolute inset-0 transition-colors duration-700 ${
                   on ? 'bg-[linear-gradient(180deg,rgba(10,14,11,0.05)_35%,rgba(10,14,11,0.88)_100%)]' : 'bg-ink/65'}`} />
@@ -70,6 +70,12 @@ export default function Reel() {
                     </span>
                   </span>
                 </button>
+                {on && (
+                  <a href={FILM[f.clip].url} target="_blank" rel="noreferrer"
+                     className="mono reveal absolute right-3 top-3 rounded-full bg-ink/80 px-2.5 py-1 text-[10px] text-white/80 underline-offset-2 hover:underline">
+                    Footage: {FILM[f.clip].by} / Pexels
+                  </a>
+                )}
                 {on && (
                   <p className="reveal pointer-events-none absolute bottom-5 right-5 hidden max-w-[300px] text-[14px] leading-relaxed text-white/90 sm:bottom-6 sm:right-6 md:block lg:bottom-14">
                     {f.line}
