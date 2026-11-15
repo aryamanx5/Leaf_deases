@@ -17,9 +17,10 @@ export default function FieldModel({ site }: { site: Site }) {
   const bg = held.by_crop.blackgram;
   const tu = held.by_crop.turmeric;
   const t = f.trust;
+  const later = !!site.confidence_model; // a later step (Phase 5) replaced this model: speak of it in the past tense
   return (
     <div className="mt-20 border-t border-ink/15 pt-12" aria-labelledby="field-model-title">
-      <p className="caption mb-4 text-[11px] text-ink/70">The deployed model on field photos</p>
+      <p className="caption mb-4 text-[11px] text-ink/70">{later ? 'Step one · training on field photos' : 'The deployed model on field photos'}</p>
       <h3 id="field-model-title" className="max-w-[860px] font-playfair text-[26px] italic leading-[1.2] tracking-[-0.02em] sm:text-[34px]">
         Training on {int(f.train_field_leaves)} more field leaves lifted macro-F1 on held-out field photos from{' '}
         <span className="mono not-italic">{fix(held.old.macro_f1)}</span> to <span className="mono not-italic">{fix(held.new.macro_f1)}</span>.
@@ -83,14 +84,17 @@ export default function FieldModel({ site }: { site: Site }) {
           </li>
         )}
         <li className="border-l-2 border-ink/20 pl-4">
-          With its safety checks on, the system now answers <span className="mono">{pct(t.new.answered_share_labelled, 0)}</span> of
-          held-out field leaves (was <span className="mono">{pct(t.old.answered_share_labelled, 0)}</span>) and is right on{' '}
-          <span className="mono">{pct(t.new.end_to_end_accuracy_answered, 0)}</span> of those it answers. It declines{' '}
+          With its safety checks on, {later ? 'that model answered' : 'the system now answers'}{' '}
+          <span className="mono">{pct(t.new.answered_share_labelled, 0)}</span> of
+          held-out field leaves (was <span className="mono">{pct(t.old.answered_share_labelled, 0)}</span>) and {later ? 'was' : 'is'} right on{' '}
+          <span className="mono">{pct(t.new.end_to_end_accuracy_answered, 0)}</span> of those it {later ? 'answered' : 'answers'}. It{' '}
+          {later ? 'declined' : 'declines'}{' '}
           <span className="mono">{pct(t.new.other_species_refused, 0)}</span> of {int(t.new.n_other)} leaves from other plants.
+          {later && ' The step after this one, drawn below, is about the leaves it left unanswered.'}
         </li>
         {f.ms.new != null && f.ms.old != null && (
           <li className="border-l-2 border-ink/20 pl-4">
-            The new disease model takes <span className="mono">{fix(f.ms.new, 0)}</span> ms per image on CPU, against{' '}
+            {later ? 'That disease model took' : 'The new disease model takes'} <span className="mono">{fix(f.ms.new, 0)}</span> ms per image on CPU, against{' '}
             <span className="mono">{fix(f.ms.old, 0)}</span> ms for the one it replaced.
           </li>
         )}
