@@ -1,11 +1,12 @@
 import { ArrowRight, CornerDownLeft, Search } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DEPLOYED_APP_URL } from '@/content/brand';
 import { PALETTE_EVENT } from '@/lib/palette';
 import { getLenis, scrollToId } from '@/lib/smooth';
+import { setTheme, THEMES } from '@/lib/theme';
 
-type Item = { id: string; label: string; hint: string; group: 'Go to' | 'Explore' | 'Do'; run: () => void };
+type Item = { id: string; label: string; hint: string; group: 'Go to' | 'Explore' | 'Do' | 'Theme'; run: () => void };
 
 
 const SECTIONS: [string, string, string][] = [
@@ -20,6 +21,7 @@ const SECTIONS: [string, string, string][] = [
   ['results', 'Results', 'the comparison table'],
   ['proof', 'How sure is sure', 'every held-out photo as a dot'],
   ['system', 'The system', 'two readings, one answer'],
+  ['reel', 'Film reel', 'five clips from the field'],
   ['journey', 'How it was built', 'four phases'],
   ['notes', 'Photo tips and questions', 'take a photo the model can read'],
   ['run', 'Heal the leaves', 'the interactive finale'],
@@ -58,9 +60,13 @@ export default function CommandPalette() {
     return [
       { id: 'do-run', label: 'Run the model on a leaf', hint: 'upload or pick a test photo', group: 'Do', run: runModel },
       ...SECTIONS.map(([id, label, hint]): Item => ({
-        id: `go-${id}`, label, hint, group: ['atlas', 'lab', 'proof', 'interlude', 'journey', 'notes'].includes(id) ? 'Explore' : 'Go to', run: go(id),
+        id: `go-${id}`, label, hint, group: ['atlas', 'lab', 'proof', 'interlude', 'reel', 'journey', 'notes'].includes(id) ? 'Explore' : 'Go to', run: go(id),
       })),
       { id: 'do-home', label: 'Back to the landing page', hint: 'home', group: 'Do', run: () => navigate('/') },
+      ...THEMES.map((t): Item => ({
+        id: `theme-${t.id}`, label: `${t.name} theme`, hint: 'change the colours', group: 'Theme',
+        run: () => window.setTimeout(() => setTheme(t.id), 60),
+      })),
     ];
   }, [navigate, pathname]);
 
@@ -86,15 +92,14 @@ export default function CommandPalette() {
     };
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open) return;
     opener.current = document.activeElement as HTMLElement | null;
     setQ('');
     setCursor(0);
     getLenis()?.stop();
-    const t = window.setTimeout(() => inputRef.current?.focus(), 20);
+    inputRef.current?.focus(); // at once, so keys typed straight after the shortcut land in the box
     return () => {
-      window.clearTimeout(t);
       getLenis()?.start();
       opener.current?.focus?.();
     };
